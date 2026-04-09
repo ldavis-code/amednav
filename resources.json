@@ -1,0 +1,104 @@
+[
+  {
+    "name": "American Kidney Fund (AKF)",
+    "url": "https://www.kidneyfund.org/",
+    "description": "Gives money to help dialysis and transplant patients pay for treatment if they qualify.",
+    "category": "Foundation"
+  },
+  {
+    "name": "American Transplant Foundation",
+    "url": "https://www.americantransplantfoundation.org/",
+    "description": "Gives grants to help patients pay for medicines. Also links transplant patients with mentors who've been through the same thing.",
+    "category": "Foundation"
+  },
+  {
+    "name": "Cost Plus Drugs",
+    "url": "https://costplusdrugs.com/",
+    "description": "A low-cost online pharmacy with clear, low prices. Good for comparing cash prices to what you pay with insurance.",
+    "category": "Low-Cost Pharmacy"
+  },
+  {
+    "name": "Donate Life America",
+    "url": "https://donatelife.net/",
+    "description": "Connects transplant patients with local resources, events, and support groups across the United States.",
+    "category": "Support Group"
+  },
+  {
+    "name": "Drugs.com",
+    "url": "https://www.drugs.com/",
+    "description": "Look up medicines, find who makes them, and connect to their help programs.",
+    "category": "Medication Database"
+  },
+  {
+    "name": "GoodRx",
+    "url": "https://www.goodrx.com/",
+    "description": "Free drug discount coupons. Compare prices at different pharmacies and get coupons right away.",
+    "category": "Discount Program"
+  },
+  {
+    "name": "HealthWell Foundation",
+    "url": "https://www.healthwellfoundation.org/",
+    "description": "Helps patients who don't have enough insurance coverage. Pays for copays, travel costs, and insurance premiums.",
+    "category": "Foundation"
+  },
+  {
+    "name": "Heartfelt Help Foundation",
+    "url": "https://www.heartfelthelpfoundation.com/",
+    "description": "Helps heart transplant patients in Northern California who need money help. Pays for housing near the hospital and other costs insurance doesn't cover.",
+    "category": "Foundation"
+  },
+  {
+    "name": "Medicare.gov",
+    "url": "https://www.medicare.gov",
+    "description": "The official U.S. government site for Medicare. Compare drug plans and check if you qualify for help.",
+    "category": "Government"
+  },
+  {
+    "name": "National Alliance for Caregiving",
+    "url": "https://www.caregiving.org/",
+    "description": "A group that helps family caregivers. Offers tips, info, and support for people caring for loved ones.",
+    "category": "Caregiver Support"
+  },
+  {
+    "name": "NORD RareCare",
+    "url": "https://rarediseases.org/",
+    "description": "Helps pay for life-saving medications, insurance premiums, and copays. Also helps with testing for rare diseases.",
+    "category": "Foundation"
+  },
+  {
+    "name": "Patient Advocate Foundation (includes PAN Foundation)",
+    "url": "https://www.patientadvocate.org/",
+    "description": "PAF and PAN Foundation merged in 2026 to form the nation's most comprehensive patient assistance nonprofit. Starting July 1, 2026, their new TotalAssist program offers 130+ disease-specific funds to help with copays, premiums, and out-of-pocket costs.",
+    "category": "Foundation"
+  },
+  {
+    "name": "PAN Foundation FundFinder",
+    "url": "https://fundfinder.panfoundation.org/",
+    "description": "A list of over 150 patient groups that offer helplines, support, and education for specific diseases.",
+    "category": "Foundation Directory"
+  },
+  {
+    "name": "Accessia Health (formerly Patient Services Inc)",
+    "url": "https://www.accessiahealth.org/",
+    "description": "Helps pay for medications and insurance costs. Also helps you understand your insurance and gives legal advice.",
+    "category": "Foundation"
+  },
+  {
+    "name": "PhRMA's Medicine Assistance Tool (MAT)",
+    "url": "https://medicineassistancetool.org/",
+    "description": "A free search tool to find patient assistance programs from drug companies. It is not a program itself, but helps you find many programs.",
+    "category": "Search Engine"
+  },
+  {
+    "name": "Rx Outreach",
+    "url": "https://rxoutreach.org/",
+    "description": "A nonprofit pharmacy that sells medicines at low prices. Has saved patients lots of money.",
+    "category": "Low-Cost Pharmacy"
+  },
+  {
+    "name": "TRIO (Transplant Recipients International Organization)",
+    "url": "https://www.trioweb.org/",
+    "description": "The largest group for transplant patients, donors, and their families. Offers local chapters, mentoring, and learning resources.",
+    "category": "Support Group"
+  }
+]

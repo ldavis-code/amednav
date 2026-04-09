@@ -1,0 +1,461 @@
+[
+  {
+    "category": "About This Site",
+    "questions": [
+      {
+        "q": "What is Transplant Med Navigator?",
+        "a": "We help transplant patients find free or low-cost medicine. We show you programs that can help pay for your drugs."
+      },
+      {
+        "q": "Is this site free to use?",
+        "a": "Yes! Our My Path Quiz is completely free for patients. Use it as many times as you need. Our guides and links to assistance programs are always free. Never pay to apply for help. If a site asks for money, that's a scam. We offer enterprise plans for hospitals and healthcare organizations."
+      },
+      {
+        "q": "Who should use this site?",
+        "a": "This site is for:\n• Transplant patients\n• Family members and caregivers\n• Social workers\n• Anyone who needs help paying for transplant drugs"
+      },
+      {
+        "q": "How is this site funded?",
+        "a": "Our tools are free for patients. We offer enterprise plans for hospitals and healthcare organizations that want to help their patients find medication assistance programs. This allows us to keep our patient tools free."
+      },
+      {
+        "q": "Is my information kept private?",
+        "a": "Yes. Your quiz answers stay on your phone or computer. We do not save them on our servers. When you close your browser, the data is gone."
+      }
+    ]
+  },
+  {
+    "category": "Patient Assistance Programs (PAPs)",
+    "questions": [
+      {
+        "q": "What is a Patient Assistance Program (PAP)?",
+        "a": "Drug companies run these programs. They give free medicine to people who cannot afford it. Each company has its own rules."
+      },
+      {
+        "q": "Who can get help from PAPs?",
+        "a": "Most programs look at:\n• How much money you make\n• If you have insurance\n• If you live in the U.S.\n\nSome programs help people with no insurance. Others help people whose insurance costs too much."
+      },
+      {
+        "q": "How do I apply for a PAP?",
+        "a": "Each program is different. You usually need:\n• Your basic info (name, address)\n• Proof of income (tax forms or pay stubs)\n• A form signed by your doctor\n\nOur site shows you where to apply."
+      },
+      {
+        "q": "What is the difference between PAPs and copay cards?",
+        "a": "**Copay cards** lower what you pay at the pharmacy. They work fast but only if you have private insurance.\n\n**PAPs** give you free medicine. They take longer to get but help more people."
+      },
+      {
+        "q": "Can I use a PAP if I have Medicare?",
+        "a": "Most PAPs do NOT help Medicare patients. This is due to federal law.\n\nBut Medicare patients CAN get help from:\n• Copay foundations (nonprofit groups)\n• Medicare Extra Help (a government program)\n• State drug programs"
+      },
+      {
+        "q": "Do I need to renew my PAP every year?",
+        "a": "Yes. Most programs need you to renew every 12 months.\n\n**To renew, you will need:**\n• Updated income proof\n• A new prescription or doctor signature\n• Updated insurance info\n\n**Tips to stay enrolled:**\n• Mark your calendar 30-45 days before renewal\n• Keep copies of your paperwork\n• Ask your social worker for help\n\nIf you miss the deadline, you may run out of medicine while you wait."
+      }
+    ]
+  },
+  {
+    "category": "Copay Foundations",
+    "questions": [
+      {
+        "q": "What is a copay foundation?",
+        "a": "These are nonprofit groups that help pay your drug costs. They can help with:\n• What you pay at the pharmacy\n• Your monthly insurance cost\n• Your deductible\n\nUnlike drug company programs, these CAN help Medicare patients."
+      },
+      {
+        "q": "What is the difference between a foundation and a PAP?",
+        "a": "**Foundations** are nonprofit groups. They CAN help Medicare patients.\n\n**PAPs** are run by drug companies. They often CANNOT help Medicare patients, but may give you free medicine."
+      },
+      {
+        "q": "How do I know if a foundation is real?",
+        "a": "Real foundations NEVER charge you to apply. They are registered nonprofits.\n\nIf someone asks you to pay to get help, that's a scam.\n\nExamples of real groups:\n• HealthWell Foundation\n• PAN Foundation\n• NORD"
+      },
+      {
+        "q": "Do foundations have waiting lists?",
+        "a": "Yes. Many foundations run out of money and close to new people. They reopen when they get more funds.\n\n**Tips:**\n• Apply early\n• Check back often\n• Try more than one foundation"
+      }
+    ]
+  },
+  {
+    "category": "Copay Cards",
+    "questions": [
+      {
+        "q": "What is a copay card?",
+        "a": "Copay cards (also called copay assistance cards or manufacturer coupons) are programs offered by pharmaceutical companies that reduce or eliminate your out-of-pocket costs for brand-name medications.\n\n**Who can use them:**\n• Patients with commercial (private) insurance only\n• NOT available for Medicare, Medicaid, Tricare, or VA benefits\n\nCopay cards are different from copay foundations. Copay cards come from drug companies and only work with private insurance. Copay foundations are nonprofits that CAN help Medicare patients."
+      },
+      {
+        "q": "How do copay cards work?",
+        "a": "When you fill a prescription, here's what happens:\n\n**Step 1:** Your commercial insurance processes the claim and determines your copay or coinsurance amount.\n\n**Step 2:** The copay card then covers some or all of that remaining cost.\n\n**The result:** Your out-of-pocket cost is often reduced to $0-$25 per fill, regardless of whether the medication costs $500 or $15,000.\n\n**Example:**\nYour insurance says you owe $200 for your tacrolimus. You present your copay card, and it covers $195. You pay only $5."
+      },
+      {
+        "q": "Who pays for copay cards?",
+        "a": "The money comes directly from the drug manufacturer, not your insurance.\n\n**Why do drug companies do this?**\nCopay cards are essentially a marketing tool. Manufacturers use them to keep patients on their brand-name drugs rather than switching to generics or competitors.\n\n**What this means for you:**\n• The help is real money that reduces your costs\n• It does not affect your insurance benefits\n• You are not borrowing or taking out a loan\n• There is no credit check or repayment"
+      },
+      {
+        "q": "Can I use copay cards with Medicare, Medicaid, or other government insurance?",
+        "a": "**No.** Copay cards cannot be used with government insurance programs:\n• Medicare (including Part D)\n• Medicaid\n• Tricare\n• VA benefits\n• Other federal or state programs\n\n**Why not?**\nFederal anti-kickback laws prohibit drug manufacturers from providing this type of assistance to government insurance beneficiaries.\n\n**What government insurance patients CAN use:**\n• Copay foundations (nonprofit groups like HealthWell, PAN Foundation)\n• Medicare Extra Help (if income qualifies)\n• State pharmaceutical assistance programs"
+      },
+      {
+        "q": "Do copay cards have annual limits?",
+        "a": "**Yes.** Most copay cards have caps and requirements:\n\n**Annual caps:**\n• Commonly $10,000-$20,000 per year\n• Some programs have higher limits for expensive drugs\n• Once you hit the cap, you pay full price for the rest of the year\n\n**Other requirements:**\n• Most require re-enrollment annually\n• Some expire after a set time period\n• You may need to re-verify your insurance status\n\n**Tips:**\n• Mark your calendar for renewal dates\n• Check your remaining balance throughout the year\n• Know what your costs will be if you hit the cap"
+      },
+      {
+        "q": "What is a copay accumulator or maximizer program?",
+        "a": "This is increasingly important for transplant patients on expensive immunosuppressants.\n\n**What it is:**\nSome insurance plans use \"copay accumulator\" or \"copay maximizer\" programs that do NOT count manufacturer copay assistance toward your deductible or out-of-pocket maximum.\n\n**Why this matters:**\nNormally, your copays count toward your deductible. Once you hit your out-of-pocket max, insurance pays 100%. But with accumulator programs:\n• The copay card pays your costs\n• But those payments don't count toward your deductible\n• When the copay card runs out, you still have your full deductible to meet\n• You could face thousands in unexpected costs\n\n**What to do:**\n• Ask your insurance if they have an accumulator or maximizer program\n• Read your plan documents carefully\n• Budget for costs after your copay card benefit is exhausted\n• Talk to your transplant social worker about backup options"
+      }
+    ]
+  },
+  {
+    "category": "When Insurance Sends You Away",
+    "questions": [
+      {
+        "q": "What does it mean when my plan 'diverts' me?",
+        "a": "Some plans try to avoid paying for your drugs. They tell you to get free drugs from drug makers first.\n\n**Why plans do this:** It saves them money.\n\n**Why this is bad:** You may wait weeks for your drugs. You might not get the free drugs. Then you have no help.\n\n**Three ways plans do this:**\n• Copay accumulator\n• Copay maximizer\n• Alternative funding (AFP)"
+      },
+      {
+        "q": "What is alternative funding (AFP)?",
+        "a": "This is when your work plan says: \"We won't cover this drug. Go get it free from the drug maker.\"\n\n**How it works:**\n• Your plan won't pay for some drugs\n• Another company calls you to help apply for free drugs\n• If you can't get free drugs, then your plan might pay\n\n**Why this is risky:**\n• You may wait weeks or months\n• You might not get the free drugs\n• If you can't get free drugs, you pay full price\n• Missing your transplant drugs is dangerous"
+      },
+      {
+        "q": "How do I know if my plan does this?",
+        "a": "**Watch for these signs:**\n• Your plan papers say \"copay accumulator\"\n• Copay card money is not showing on your tracker\n• They tell you to call another company first\n• Your drug is \"carved out\" (not covered)\n• You must ask for free drugs before your plan will help\n\n**Ask your plan:**\n• \"Do you use a copay accumulator?\"\n• \"Will my copay card count toward what I owe?\"\n• \"Is my drug fully covered?\""
+      },
+      {
+        "q": "Which states have laws to stop this?",
+        "a": "Many states now have laws to help. In these states, copay card money must count toward what you owe.\n\n**States with laws to help:**\nArizona, Arkansas, California, Connecticut, Delaware, Georgia, Illinois, Kentucky, Louisiana, Maine, Maryland, Missouri, New Jersey, New York, North Carolina, Ohio, Oklahoma, Oregon, Tennessee, Texas, Virginia, Washington, West Virginia, and more.\n\n**What to do:**\nCall your state. Ask what laws help you. More states add laws each year."
+      },
+      {
+        "q": "What can I do if this happens to me?",
+        "a": "**Step 1:** Read your plan papers. Look for words like \"accumulator\" or \"alternative funding.\"\n\n**Step 2:** Keep track of what you pay. Check if it shows on your plan's tracker.\n\n**Step 3:** If they say no, appeal. Ask your transplant team to write a letter saying you need this drug.\n\n**Step 4:** Call your state insurance office. They can help you file a complaint.\n\n**Step 5:** If you get insurance from work, talk to HR. Tell them how this hurts you.\n\n**Get help:** Call the Patient Advocate Foundation. They help for free."
+      },
+      {
+        "q": "Why is this so bad for transplant patients?",
+        "a": "Transplant patients face extra risks:\n\n**1. You can't skip doses**\nYour drugs must be taken on time. Waiting for free drugs is risky.\n\n**2. Free drugs are not a sure thing**\nDrug makers have rules. You might not qualify. The money might run out.\n\n**3. You pay for your plan**\nYou pay every month. But some plans make drug makers pay instead.\n\n**4. Big bills can hit fast**\nWhen your copay card runs out, you may owe a lot of money all at once."
+      }
+    ]
+  },
+  {
+    "category": "Insurance & Coverage",
+    "questions": [
+      {
+        "q": "What is a Specialty Pharmacy?",
+        "a": "A specialty pharmacy handles expensive drugs like transplant medicine. They often ship drugs to your home.\n\nMost insurance plans make you use a specific specialty pharmacy. You usually cannot fill these drugs at your local store."
+      },
+      {
+        "q": "Can I use copay cards with Medicare?",
+        "a": "No. Federal law does not allow this. But Medicare patients CAN use copay foundations to help pay what they owe."
+      },
+      {
+        "q": "What is the Medicare donut hole?",
+        "a": "The \"donut hole\" is a gap in Medicare drug coverage. After you spend a certain amount, you pay more for a while.\n\n**Good news:** New laws have made this gap much smaller. Starting in 2026, you will pay at most $2,100 per year for drugs."
+      },
+      {
+        "q": "What is Medicare Extra Help?",
+        "a": "This is a government program that helps people with low income pay for drugs. It can lower or remove:\n• Monthly premiums\n• Deductibles\n• Copays\n\nWhether you qualify depends on your income and savings."
+      },
+      {
+        "q": "Do drug tiers change by insurance plan?",
+        "a": "Yes. Each plan decides which \"tier\" to put each drug on. The tier affects your cost.\n\n**Example:**\n• Tier 2 drug might cost $25\n• Same drug on Tier 4 could cost $150+\n\nWhen picking a plan, check which tier your drugs are on."
+      },
+      {
+        "q": "My pharmacy gave me a different brand of my medicine. Is that a problem?",
+        "a": "For transplant patients, this CAN be a problem.\n\n**Why it matters:**\nAnti-rejection drugs need to stay at steady levels in your body. Switching brands can change those levels.\n\n**What to do:**\n• Tell your transplant team right away\n• Ask for blood tests within a week\n• Write down the new brand name\n• Watch for any new symptoms\n\n**To prevent this:**\n• Ask your doctor to write \"Do Not Substitute\" on your prescription\n• Ask your pharmacy to notify you before any changes\n\n**Important:** Do not stop taking your medicine because of a switch. Take what you have and call your transplant team."
+      },
+      {
+        "q": "What are State Drug Programs?",
+        "a": "Some states have programs that help residents pay for drugs.\n\n**Who can use them:**\n• Often people age 65+ or disabled\n• People with limited income\n• State residents\n\n**Examples:**\n• New York: EPIC\n• Pennsylvania: PACE\n• New Jersey: PAAD\n\n**How to find your state's program:**\n• Visit Medicare.gov\n• Call 1-800-MEDICARE\n• Ask your social worker"
+      },
+      {
+        "q": "What is Medicare Part B-ID and how much does it cost in 2026?",
+        "a": "**Part B-ID** is a special Medicare benefit just for kidney transplant patients. It covers immunosuppressive drugs (anti-rejection medicines) for life, even after your full Medicare ends.\n\n**2026 Costs:**\n• Monthly premium: **$121.60** (up from $110.40 in 2025)\n• Annual deductible: **$283**\n• Coinsurance: **20%** of the drug cost\n\n**Who qualifies:**\n• Kidney transplant recipients whose full Medicare (Part A/B) ended 36 months after transplant\n• People who don't have other insurance covering immunosuppressants\n\n**Important:** Part B-ID only covers immunosuppressive drugs. It does not cover other medical services. If you need full coverage, look into Medicare Savings Programs (MSP) to help pay premiums."
+      },
+      {
+        "q": "What are the 2026 Medicare Part B costs?",
+        "a": "Here are the standard Medicare Part B costs for 2026:\n\n**Monthly premium:** $202.90 (up from $185.00 in 2025)\n**Annual deductible:** $283 (up from $257 in 2025)\n**Coinsurance:** 20% of Medicare-approved costs after deductible\n\n**Part B-ID premium** (kidney transplant patients): $121.60/month\n\n**If you have low income:**\nMedicare Savings Programs (QMB, SLMB, QI) can help pay your Part B premium and may cover deductibles and coinsurance too.\n\n**Higher income:** If you earn more than $109,000/year (single) or $218,000 (married), you pay more for Part B."
+      },
+      {
+        "q": "What is the CMS WISeR prior authorization pilot?",
+        "a": "Starting January 2026, CMS launched the **WISeR** (Wasteful and Inappropriate Service Reduction) model. It adds prior authorization for 17 outpatient Medicare Part B services.\n\n**Affected states:** Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington.\n\n**What transplant patients should know:**\n• WISeR does NOT affect your transplant medications\n• It covers outpatient procedures like nerve stimulators, spinal procedures, and wound care\n• If you need one of these procedures, your provider must get approval first\n• Decisions are made within 72 hours (48 hours for urgent cases)\n\n**Important:** This only affects Original Medicare (fee-for-service), not Medicare Advantage plans. The model runs through December 2031."
+      }
+    ]
+  },
+  {
+    "category": "Did You Know? Drug Pricing",
+    "questions": [
+      {
+        "q": "Why do drug prices change?",
+        "a": "Drug prices follow patterns:\n• Brand-name drugs often go up in January and July\n• Generic drug prices change every month\n\nKnowing when prices change can help you plan ahead."
+      },
+      {
+        "q": "When do brand-name drug prices change?",
+        "a": "Brand-name drug prices usually go up in January and July. Your insurance also updates its drug list on January 1st. That is when your copay might change."
+      },
+      {
+        "q": "What should I do before January each year?",
+        "a": "Check your insurance during open enrollment (usually in the fall). Make sure your plan still covers your transplant drugs the same way in the new year."
+      },
+      {
+        "q": "Why does my generic medicine cost different amounts each month?",
+        "a": "Generic drug prices change often. If you pay cash or use a discount card, your price can change a lot from month to month."
+      },
+      {
+        "q": "How can I get better prices on generic drugs?",
+        "a": "**Tips:**\n• Check the price online before you refill\n• If the price went up, try a different pharmacy\n• Ask for a 90-day supply to lock in the price longer"
+      },
+      {
+        "q": "What drugs are being negotiated by Medicare?",
+        "a": "Medicare is negotiating drug prices under the Inflation Reduction Act. Here is where things stand:\n\n**First 10 drugs (prices in effect January 2026):**\nEliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, and NovoLog/Fiasp. These save patients up to 79% on some drugs.\n\n**Second round (15 drugs, prices effective 2027):**\nA second group of 15 drugs was selected for negotiation with prices taking effect in 2027.\n\n**Third round (announced January 27, 2026, prices effective 2028):**\n15 new drugs including the first-ever Part B drugs. Transplant-relevant picks include Orencia (related to Belatacept for kidney transplant), Trulicity (for post-transplant diabetes), Xolair and Anoro Ellipta (for lung transplant patients). Also includes Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, and Xeljanz.\n\n**Why it matters:** Lower prices mean you hit your $2,100 out-of-pocket cap faster, or pay less overall."
+      }
+    ]
+  },
+  {
+    "category": "Prescription Discount Cards (GoodRx, SingleCare, etc.)",
+    "questions": [
+      {
+        "q": "What are GoodRx and similar apps?",
+        "a": "These are discount card companies. They are NOT insurance. When you use their coupon, you pay a discounted cash price instead of using insurance.\n\nThis might save money on one drug. But for transplant patients, it can cost you more over time."
+      },
+      {
+        "q": "What is the \"Deductible Trap\" with discount cards?",
+        "a": "When you use a discount card, the money you pay does NOT count toward your deductible.\n\n**Why this matters:**\nTransplant patients have high drug costs. Many reach their out-of-pocket max within a few months. After that, insurance pays 100%.\n\nDiscount cards delay when you hit that max. You end up paying out of pocket longer."
+      },
+      {
+        "q": "Can I use a discount card AND my insurance at the same time?",
+        "a": "No. You must choose one or the other. If you use a discount card, that payment does NOT count toward your deductible."
+      },
+      {
+        "q": "When should transplant patients use discount cards?",
+        "a": "Only in limited cases:\n1. For a drug your insurance does not cover\n2. For a cheap, one-time drug (like an antibiotic)\n3. If you have no insurance\n\n**Never use discount cards** for your daily transplant drugs like Tacrolimus or Mycophenolate."
+      },
+      {
+        "q": "What are better options than discount cards?",
+        "a": "For transplant patients:\n1. **PAPs** - Drug companies give free medicine based on income\n2. **Copay foundations** - Nonprofits help pay your copays\n3. **Medicare Extra Help** - For Medicare patients with low income\n\nSearch our site or check NeedyMeds.org to find programs for your drugs."
+      },
+      {
+        "q": "Why is hitting my out-of-pocket max important?",
+        "a": "Once you hit your max, insurance pays 100% for the rest of the year. For transplant patients, this usually happens in the first few months.\n\nAfter that, your drugs are basically free. Every dollar spent with discount cards does NOT bring you closer to that point."
+      }
+    ]
+  },
+  {
+    "category": "GoodRx Alternatives & Competitors",
+    "questions": [
+      {
+        "q": "What apps compete with GoodRx?",
+        "a": "Several free apps work like GoodRx:\n• **SingleCare** - Sometimes has lower prices\n• **Optum Perks** - Good discounts\n• **ScriptSave WellRx** - Works at many pharmacies\n• **BuzzRx** - Donates to charity when you use it\n\nAlways compare prices across apps."
+      },
+      {
+        "q": "What are 'Cost-Plus' and mail order pharmacies?",
+        "a": "These are real pharmacies that ship drugs to you:\n• **Mark Cuban Cost Plus Drug Company** - Sells generics at cost plus a small fee\n• **Amazon Pharmacy** - Prime members get savings on generics\n• **Blink Health** - Pay online first, then pick up"
+      },
+      {
+        "q": "What pharmacy membership programs exist?",
+        "a": "Large stores have programs that beat discount cards:\n• **Costco Pharmacy** - Very low cash prices (often no membership needed)\n• **Kroger Rx Savings Club** - About $36/year for discounts\n• **Walgreens Prescription Savings Club** - Paid membership with discounts"
+      },
+      {
+        "q": "Which discount option should I use?",
+        "a": "It depends:\n• **For same-day pickup:** Compare GoodRx, SingleCare, and Optum Perks\n• **For cheapest generics by mail:** Check Cost Plus Drug Company\n• **For Amazon Prime members:** Check Amazon Pharmacy\n\n**Remember:** Transplant patients should usually use insurance to reach their out-of-pocket max faster."
+      }
+    ]
+  },
+  {
+    "category": "Questions Transplant Patients Ask",
+    "questions": [
+      {
+        "q": "What if I make too much money for assistance programs?",
+        "a": "Don't give up! Here's why:\n\n1. Different programs have different rules. Some let you make a lot of money and still get help.\n\n2. Some programs look at your bills, not just your income. If you have high medical costs, you might still qualify.\n\n3. Subscribe and take the My Path Quiz. It will show you programs that match your situation.\n\nMany people are surprised they qualify!"
+      },
+      {
+        "q": "Are generic anti-rejection drugs safe?",
+        "a": "Generic drugs are FDA approved and work the same as brand drugs.\n\n**Why some centers are careful:**\nAnti-rejection drugs need to stay at steady levels in your body. Switching between different generics can cause changes.\n\n**What you can do:**\n• Ask your doctor to specify one generic maker on your prescription\n• Ask for more blood tests after any change\n• If your pharmacy switches your generic, call your transplant team right away\n\n**Important:** Talk to your transplant team about this. Do not decide based on cost alone."
+      },
+      {
+        "q": "What happens when I hit the Medicare donut hole?",
+        "a": "The donut hole is a gap in Medicare drug coverage. You pay more during this time.\n\n**Good news for 2026:**\n• There is now a $2,100 yearly cap on what you pay\n• Once you hit it, you pay $0 for the rest of the year\n\n**Tips:**\n• Budget for it - you may hit the cap early in the year\n• Apply for Extra Help if your income is low\n• Apply to copay foundations early before funds run out\n• Check your Medicare plan each fall during Open Enrollment"
+      },
+      {
+        "q": "I am about to turn 26 and lose my parents' insurance. What are my options?",
+        "a": "Start planning 3-6 months before your birthday.\n\n**Your options:**\n• **Job insurance:** If your employer offers it, this is often best\n• **Marketplace plans:** Go to HealthCare.gov for plans. You may get help paying for it.\n• **Medicaid:** If your income is low, you may qualify\n• **COBRA:** You can keep your parents' plan but YOU pay the full cost\n\n**Do not let your coverage lapse.** Even a short gap can cause problems."
+      },
+      {
+        "q": "Can I use copay cards if I have Medicare?",
+        "a": "No. Federal law does not allow drug company copay cards for Medicare patients.\n\n**What you CAN do:**\n• Apply for foundation grants (HealthWell, PAN Foundation)\n• Apply for Medicare Extra Help if your income is low\n• Talk to your social worker about other resources"
+      },
+      {
+        "q": "My specialty pharmacy will not ship to my state. What do I do?",
+        "a": "This happens due to pharmacy licensing rules.\n\n**What to try:**\n1. Call your transplant center. They may know other pharmacies.\n2. Ask your insurance which pharmacies can ship to you.\n3. Check if your transplant center has its own pharmacy.\n4. Contact the drug company for direct help.\n\n**Do not wait** until you run out of medicine. These issues can take weeks to fix."
+      },
+      {
+        "q": "My insurance denied my medicine. How do I appeal?",
+        "a": "Denials are common. Appeals often work. Do not give up.\n\n**Step 1:** Find out why it was denied. Get it in writing.\n\n**Step 2:** Work with your transplant team. They can write a letter saying why you need this medicine.\n\n**Step 3:** File the appeal before the deadline (usually 30-60 days).\n\n**Step 4:** If you will run out of medicine soon, ask for an urgent review.\n\n**Step 5:** If denied again, you can ask for a review by an outside group.\n\nYour social worker or pharmacist can help with this."
+      },
+      {
+        "q": "It is Friday night and I just ran out of my medicine. What do I do?",
+        "a": "**This is urgent.** Stopping your anti-rejection drugs can cause problems.\n\n**Tonight:**\n• Call your transplant center's after-hours line. They have 24/7 help.\n• Check for 24-hour pharmacies (CVS, Walgreens). Your team can send a prescription there.\n• As a last resort, an ER can give you a small emergency supply.\n\n**To prevent this in the future:**\n• Set up automatic refills\n• Keep a 3-5 day emergency supply at home\n• Set phone reminders 7 days before you run out\n• When traveling, bring extra medicine"
+      },
+      {
+        "q": "How do I deal with side effects from my drugs?",
+        "a": "Anti-rejection drugs have side effects. Here are common ones and what to do:\n\n**Tacrolimus:**\n• Shaking hands - Tell your team. Limit caffeine.\n• Headaches - Stay hydrated. Ask about safe pain medicine.\n• High blood sugar - Check your levels often.\n\n**Mycophenolate (CellCept):**\n• Upset stomach, nausea, diarrhea - Take with food. Tell your team if you feel bad.\n\n**Prednisone:**\n• Weight gain, mood changes, trouble sleeping - Usually gets better as the dose goes down.\n\n**Important:** Never stop or change your drugs on your own. Talk to your transplant team first."
+      },
+      {
+        "q": "Are medicine needs different for each organ type?",
+        "a": "Yes. The core drugs are similar, but there are differences:\n\n**Kidney transplant:**\n• Special Medicare coverage (Part B-ID)\n• May be able to reduce drugs over time\n\n**Liver transplant:**\n• May need less immune suppression over time\n\n**Heart transplant:**\n• Needs more intense drug treatment\n• Regular heart checks required\n\n**Lung transplant:**\n• Highest rejection risk\n• Needs the most drugs\n\nYour transplant team knows what is best for your organ type."
+      }
+    ]
+  },
+  {
+    "category": "Medication Regimens by Transplant Type",
+    "questions": [
+      {
+        "q": "What medications do heart transplant patients typically take?",
+        "a": "Heart transplant recipients typically receive a combination of three types of medications:\n\n**Calcineurin Inhibitor (Tacrolimus or Cyclosporine)**\n• Mainstay of maintenance therapy\n• Prevents your immune system from attacking the new heart\n\n**Antimetabolite (Mycophenolate Mofetil or Azathioprine)**\n• Used in combination with the calcineurin inhibitor\n• Provides additional immune suppression\n\n**Corticosteroid (Prednisone)**\n• Often tapered to a low dose or discontinued over time\n• Helps control inflammation"
+      },
+      {
+        "q": "What medications do kidney transplant patients typically take?",
+        "a": "Kidney transplant immunosuppression is similar to heart transplants, with a focus on balancing efficacy and minimizing side effects:\n\n**Calcineurin Inhibitor (Tacrolimus or Cyclosporine)**\n• Standard of care for maintenance therapy\n\n**Antimetabolite (Mycophenolate Mofetil or Mycophenolic Acid)**\n• Commonly used in combination with a CNI\n\n**Corticosteroid (Prednisone)**\n• Many centers aim for steroid-free regimens to reduce long-term side effects\n\n**Belatacept (Nulojix)**\n• A biologic alternative to calcineurin inhibitors for certain patients"
+      },
+      {
+        "q": "What medications do liver transplant patients typically take?",
+        "a": "Liver transplant patients often require lower levels of immunosuppression compared to other organ recipients due to the liver's unique immunological properties:\n\n**Calcineurin Inhibitor (Tacrolimus)**\n• The most commonly used CNI in liver transplantation\n\n**Antimetabolite (Mycophenolate Mofetil)**\n• Often used in combination with a CNI\n\n**Corticosteroid (Prednisone)**\n• Typically tapered and discontinued within the first few months post-transplant"
+      },
+      {
+        "q": "What medications do lung transplant patients typically take?",
+        "a": "Lung transplant recipients are at a high risk of rejection, and immunosuppressive regimens are often more intensive:\n\n**Calcineurin Inhibitor (Tacrolimus)**\n• Preferred CNI for lung transplant patients\n\n**Antimetabolite (Mycophenolate Mofetil)**\n• Used in combination with tacrolimus\n\n**Corticosteroid (Prednisone)**\n• Maintained at a low dose long-term\n\nLung transplant patients typically require the most intensive immunosuppression due to the higher rejection risk."
+      },
+      {
+        "q": "What medications do pancreas transplant patients typically take?",
+        "a": "Pancreas transplant immunosuppression is similar to kidney transplantation, as the two are often performed together:\n\n**Calcineurin Inhibitor (Tacrolimus)**\n• Standard of care for maintenance therapy\n\n**Antimetabolite (Mycophenolate Mofetil)**\n• Used in combination with tacrolimus\n\n**Corticosteroid (Prednisone)**\n• Often tapered to a low dose or discontinued over time"
+      },
+      {
+        "q": "Important: What should I know about managing my transplant medications?",
+        "a": "Post-transplant medication regimens are complex and require careful management by a specialized transplant team.\n\n**Key points to remember:**\n• Lifelong adherence to these medications is crucial for the long-term success of your transplant and your health\n• Never change your medication regimen without consulting your transplant team first\n• This includes stopping, adjusting doses, or adding new medications\n• Even over-the-counter drugs and supplements can interact with your transplant medications\n\n**Always consult your transplant team before:**\n• Making any changes to your medication schedule\n• Starting any new medications\n• Taking over-the-counter drugs\n• Using herbal supplements or vitamins\n\nYour transplant team is your best resource for medication questions."
+      }
+    ]
+  },
+  {
+    "category": "Using This Site",
+    "questions": [
+      {
+        "q": "How does the \"My Path\" quiz work?",
+        "a": "The quiz is available to subscribers. It asks about you:\n• Your role (patient, caregiver, etc.)\n• Your transplant status\n• Your organ type\n• Your insurance\n• Your medicines\n\nBased on your answers, we show you programs that help you pay for your medicine."
+      },
+      {
+        "q": "Can I search for a specific medicine?",
+        "a": "Yes! Use the \"Search Meds\" page. You will see prices, drug company programs, and foundation resources for each drug."
+      },
+      {
+        "q": "What do the cost badges mean on medicine cards?",
+        "a": "When you search for a medicine, you see colored badges:\n\n• **Cost badge:** Low (green), Medium (yellow), or High (red) cost\n• **Tier badge:** Lower tiers (blue) = lower copays. Higher tiers (orange/purple) = higher copays\n• **Generic Available (green checkmark):** A cheaper generic version exists\n\nYour actual cost depends on YOUR insurance plan."
+      },
+      {
+        "q": "How accurate are the price estimates?",
+        "a": "Our prices are estimates based on typical costs. Your actual cost depends on:\n• Your specific insurance plan\n• Whether you met your deductible\n• Your pharmacy\n\nUse our estimates to plan. Call your pharmacy for exact prices."
+      },
+      {
+        "q": "How do I use the Assistance tab on a medicine page?",
+        "a": "The Assistance tab shows:\n• Links to drug company programs for free medicine\n• Links to copay foundations that help pay\n\nWe connect you directly to the right resources for each medicine."
+      },
+      {
+        "q": "What is the difference between the PRICE, ASSISTANCE, and OVERVIEW tabs?",
+        "a": "• **PRICE:** Shows cost estimates at different pharmacies\n• **ASSISTANCE:** Shows programs that can help you pay (most important!)\n• **OVERVIEW:** Shows general info about the medicine"
+      },
+      {
+        "q": "What if my medicine is not listed?",
+        "a": "We focus on common transplant medicines, but our list is growing. You can also check GoodRx, RxAssist, or NeedyMeds for other medicines."
+      },
+      {
+        "q": "Can I print my results?",
+        "a": "Yes! Exporting or printing your medication lists is available to all users. You can use the Export button on the My Medications page to download your list, or use your browser's print function on any page to share with your healthcare team."
+      }
+    ]
+  },
+  {
+    "category": "Getting Help",
+    "questions": [
+      {
+        "q": "I am overwhelmed. Where do I start?",
+        "a": "Start by browsing our free drug information and assistance programs. For personalized guidance, subscribe and take the \"My Path\" quiz - it will guide you step by step. If you need more help, contact your transplant center's social worker."
+      },
+      {
+        "q": "Can you help me fill out applications?",
+        "a": "We cannot fill out forms for you. But our site explains each step. Your transplant center's social worker can help you fill out forms."
+      },
+      {
+        "q": "What if I get denied?",
+        "a": "Do not give up!\n• Many programs let you appeal\n• Try other foundations - each has different rules\n• Ask your social worker for help"
+      },
+      {
+        "q": "I applied and was told I do not qualify. Should I give up?",
+        "a": "No! Keep trying.\n\nThere is often more than one way to get help. If one program says no, try a different type of program. Ask about:\n• Income-based PAPs\n• Foundation grants\n• State programs\n• Hospital charity care"
+      },
+      {
+        "q": "Who can I contact for more help?",
+        "a": "Contact your transplant center's social worker. They know these programs well.\n\nYou can also reach out to:\n• National Kidney Foundation\n• American Liver Foundation\n• Other organ-specific groups"
+      }
+    ]
+  },
+  {
+    "category": "Got Denied? Fighting Insurance Denials",
+    "questions": [
+      {
+        "q": "Why did my insurance deny my transplant medication?",
+        "a": "Your denial letter tells you why they said no. Here are the most common reasons:\n\n• **Prior Auth Needed:** Your doctor needs to ask permission first\n• **Not on the List:** Your drug isn't on their approved list (formulary)\n• **Step Therapy:** They want you to try a cheaper drug first\n• **Quantity Limits:** They say you're getting too much of this drug\n• **Use the Generic:** They want you to use a cheaper version\n\nThe letter should say what to do next. If it doesn't, call your insurance and ask."
+      },
+      {
+        "q": "What is step therapy and why is it bad for transplant patients?",
+        "a": "**Step therapy** means your insurance wants you to try a cheaper drug before they'll pay for the one your doctor picked. Some people call this \"fail first.\"\n\n**Why This Can Be Bad for Transplant Patients:**\n• Anti-rejection drugs need to stay at the right level in your blood. Small changes matter a lot.\n• Trying the wrong drug could hurt your transplant.\n• Your transplant team picked your drug for good reasons.\n• Switching drugs means more blood tests and doctor visits.\n\n**Good News:** You can ask them to skip step therapy. Transplant drugs often get approved when your doctor says you need them."
+      },
+      {
+        "q": "Can I ask my insurance to skip step therapy?",
+        "a": "Yes! You can request a step therapy exception.\n\n**What helps:**\n• A letter from your transplant doctor explaining why you need this specific drug\n• Your transplant records and lab results\n• Notes about why other drugs won't work for you\n\n**Also know:**\n• Many states have laws that protect patients from step therapy\n• Transplant drugs often get exceptions because of medical necessity\n• Your transplant center can help you fight this"
+      },
+      {
+        "q": "Why does my insurance want me to use a generic instead of brand-name?",
+        "a": "Generic drugs cost less, so insurance prefers them. For most drugs, generics are fine - the FDA says they work the same way.\n\n**But transplant drugs are different:**\n• Anti-rejection drugs are \"narrow therapeutic index\" drugs\n• Even tiny changes in how much gets into your blood can cause problems\n• Too little drug = your body might reject the transplant\n• Too much drug = side effects and toxicity\n• Switching brands can change how your body absorbs the drug\n\nMany transplant centers don't allow switches for tacrolimus and other critical drugs."
+      },
+      {
+        "q": "When should I fight for brand-name instead of generic?",
+        "a": "Consider fighting for brand-name when:\n\n• Your drug levels have been steady on this brand\n• You had problems when you switched before\n• Your transplant center requires brand-name\n• Your body has trouble absorbing the drug\n• You're taking tacrolimus or another narrow therapeutic index drug\n\n**What to do:**\n• Ask your transplant doctor to write a letter explaining why you need brand-name\n• Include your lab history showing stable levels\n• Note any past problems with generic versions"
+      },
+      {
+        "q": "How do I appeal an insurance denial?",
+        "a": "**Step 1: Get It in Writing**\nAsk for a letter that says exactly why they said no. You need this to know what to say in your appeal.\n\n**Step 2: Watch the Clock**\nYou usually have 30 to 60 days to appeal. Mark the date on your calendar.\n\n**Step 3: Get Your Papers Together**\n• A letter from your doctor saying why you need this drug\n• Your transplant records\n• Recent lab results\n• Any records of past rejection or problems\n\n**Step 4: Send Your Appeal**\nSend everything together. Keep copies of everything.\n\n**Step 5: Ask for Fast Review**\nIf you're going to run out of medicine soon, ask for an expedited (fast) review."
+      },
+      {
+        "q": "What should be in my doctor's appeal letter?",
+        "a": "A strong medical necessity letter should include:\n\n• **Your diagnosis:** The specific transplant and date\n• **Current medication:** What you're taking and why\n• **Why this specific drug:** Medical reasons for this choice\n• **Why alternatives won't work:** Side effects, absorption issues, past failures\n• **Risk of changing:** Rejection risk, hospitalization risk\n• **Clinical guidelines:** References to KDIGO, ISHLT, or other transplant guidelines\n\nWe have a letter template on our Appeals page that your doctor can use. Visit our Education section and click \"Got Denied?\" to find it."
+      },
+      {
+        "q": "What if my first appeal is denied?",
+        "a": "Don't give up! You have more options:\n\n**Level 2 Appeal:** You can appeal to a higher level within your insurance company.\n\n**External Review:** You can ask someone outside the company to review your case. This is often a panel of doctors who don't work for your insurance.\n\n**State Help:** Your state insurance commissioner can help. They have staff who handle complaints.\n\n**Keep Records:** Save copies of all letters, faxes, and notes from phone calls.\n\nMany people win on their second or third try. The key is not giving up."
+      },
+      {
+        "q": "Can I get my medicine while I wait for my appeal?",
+        "a": "Sometimes! Here's what to ask for:\n\n**Expedited Review:** If you're running low on medicine, tell them it's urgent. Transplant drugs usually count as urgent because stopping them is dangerous.\n\n**Continuation of Coverage:** If you were already on the drug and they're now denying it, you may be able to keep getting it while you appeal.\n\n**Bridge Supply:** Some pharmacies or drug companies can give you a short supply while you wait.\n\n**Emergency Supply:** If it's an emergency, call your transplant center. They may have samples or other options."
+      },
+      {
+        "q": "Who can help me with my appeal?",
+        "a": "You don't have to do this alone:\n\n• **Transplant Social Worker:** They know these systems and can help with paperwork\n• **Your Transplant Coordinator:** Can provide medical records quickly\n• **Your Doctor's Office:** They file appeals often and know what works\n• **Patient Advocates:** Your hospital may have staff who help with insurance\n• **State Insurance Office:** They can explain your rights and file complaints\n\nAsk for help early. Don't wait until your medicine runs out."
+      }
+    ]
+  },
+  {
+    "category": "Special Situations",
+    "questions": [
+      {
+        "q": "How do I travel with my transplant drugs?",
+        "a": "**Before you travel:**\n• Get extra medicine (at least 7 extra days)\n• Get a letter from your doctor listing your drugs\n• Check if any drugs need to stay cold\n\n**When packing:**\n• ALWAYS keep drugs in your carry-on bag\n• Keep them in the original bottles\n• Bring more than you need\n\n**At the airport:**\n• Drugs do not have to follow the liquid rules\n• You can show your doctor's letter if asked\n\n**Time zones:**\n• For short trips, keep taking drugs on your home time\n• For longer trips, slowly shift your times by 1-2 hours a day"
+      },
+      {
+        "q": "I am a parent of a child with a transplant. What should I know?",
+        "a": "**Medicine tips:**\n• Doses change as kids grow\n• Liquid forms are available for kids who cannot swallow pills\n• Make taking medicine part of the daily routine\n\n**School tips:**\n• Work with the school nurse on a medicine plan\n• Provide written instructions\n• Make sure the school can store medicine properly\n\n**Helping teens:**\n• Start teaching them to manage their own medicine around age 10-12\n• Use pill boxes and phone apps\n• Include them in doctor visits\n\n**Insurance:**\n• Kids may qualify for state programs with higher income limits\n• Plan ahead for when they turn 26 and lose your insurance"
+      },
+      {
+        "q": "I live outside the United States. Can this site help me?",
+        "a": "Our site is made for the U.S. health care system.\n\n**What works anywhere:**\n• General medicine info\n• Tips for staying on your medicine\n• Emergency planning\n\n**What is U.S.-only:**\n• PAPs from drug companies\n• Medicare/Medicaid info\n• Copay foundations\n• Discount cards\n\n**For international patients:**\n• Contact your transplant center for local resources\n• Connect with transplant groups in your country"
+      },
+      {
+        "q": "I am a young adult living on my own for the first time. Any tips?",
+        "a": "**Medicine tips:**\n• Set up a system NOW (pill box, phone alarms, or apps)\n• Never rely on memory alone\n• Find a pharmacy near your new home\n• Keep your transplant center's number in your phone\n\n**Insurance:**\n• If you are turning 26, start planning at 25\n• Learn about your coverage - deductibles, copays, which pharmacy to use\n\n**College tips:**\n• Tell at least one trusted friend about your transplant\n• Know where student health services is\n• Plan how to store medicine in a dorm\n\n**Money tips:**\n• Learn about financial help programs\n• Keep records of all medical costs\n• Ask about income-based help if money is tight"
+      }
+    ]
+  }
+]
