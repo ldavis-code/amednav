@@ -217,7 +217,7 @@ export default function ReportingDashboard() {
                             <BarChart3 className="h-8 w-8 text-blue-600" />
                             <div>
                                 <h1 className="text-xl font-bold text-gray-900">Analytics Dashboard</h1>
-                                <p className="text-sm text-gray-500">Transplant Medication Navigator</p>
+                                <p className="text-sm text-gray-500">AMedNav</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">

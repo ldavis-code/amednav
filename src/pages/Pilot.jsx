@@ -70,7 +70,7 @@ const Pilot = () => {
                 <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                     {isGenericPilot
                         ? 'Your healthcare provider has partnered with us to help you find medication assistance programs.'
-                        : `${partnerConfig.displayName} has partnered with Transplant Medication Navigator to help you find medication assistance programs.`
+                        : `${partnerConfig.displayName} has partnered with AMedNav to help you find medication assistance programs.`
                     }
                 </p>
             </header>
@@ -166,7 +166,7 @@ const Pilot = () => {
             {/* About Section */}
             <section className="text-center py-4">
                 <p className="text-slate-600 text-sm">
-                    Transplant Medication Navigator™ was built by a transplant recipient to help patients find medication assistance with free educational resources.
+                    AMedNav™ was built by a transplant recipient to help patients find medication assistance with free educational resources.
                 </p>
                 <Link to="/" className="text-emerald-700 font-medium hover:underline text-sm mt-2 inline-block">
                     Learn more about us

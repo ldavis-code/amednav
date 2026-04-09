@@ -108,7 +108,7 @@ const Demo = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Transplant Medication Navigator
+              AMedNav
             </h1>
 
             <p className="text-xl text-purple-100 max-w-2xl mx-auto mb-8">

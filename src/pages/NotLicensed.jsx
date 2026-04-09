@@ -4,7 +4,7 @@ import { ShieldAlert, Mail, Building2 } from 'lucide-react';
  * NotLicensed Page
  *
  * Shown when an Epic EHR launch comes from a transplant center
- * that hasn't activated their TMN license yet.
+ * that hasn't activated their AMedNav license yet.
  * The epic-ehr-callback sets short-lived cookies (tmn_org_id, tmn_iss)
  * so this page could read them if needed in the future.
  */
@@ -16,7 +16,7 @@ const NotLicensed = () => {
         <div className="text-5xl mb-4" aria-hidden="true">💊</div>
 
         <h1 className="text-xl font-bold text-slate-900 mb-2">
-          Transplant Medication Navigator
+          AMedNav
         </h1>
 
         <p className="text-slate-500 mb-6 leading-relaxed">

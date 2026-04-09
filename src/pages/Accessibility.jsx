@@ -61,7 +61,7 @@ const Accessibility = () => {
                         Our Commitment
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        TransplantNav LLC is committed to making the Transplant Medication Navigator website accessible to everyone, including people with disabilities. We believe that all transplant patients deserve equal access to medication assistance information, regardless of ability.
+                        TransplantNav LLC is committed to making the AMedNav website accessible to everyone, including people with disabilities. We believe that all transplant patients deserve equal access to medication assistance information, regardless of ability.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         We work to follow the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines help make web content more usable for people with disabilities and better for everyone.

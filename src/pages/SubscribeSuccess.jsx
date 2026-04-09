@@ -29,7 +29,7 @@ const SubscribeSuccess = () => {
                     Welcome to Pro!
                 </h1>
                 <p className="text-xl text-slate-600">
-                    Your subscription is now active. Thank you for supporting Transplant Medication Navigator!
+                    Your subscription is now active. Thank you for supporting AMedNav!
                 </p>
             </header>
 
