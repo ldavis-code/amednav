@@ -26,7 +26,7 @@ export function AdminGuard({ children, fallback = null }) {
       <div style={{ fontSize:48, marginBottom:16 }}>🔒</div>
       <h2 style={{ margin:"0 0 8px" }}>Admin Access Required</h2>
       <p style={{ color:"#4a6080" }}>You don't have permission to view this page.</p>
-      <a href="/" style={{ color:"#00c9a7", marginTop:16 }}>Back to TMN</a>
+      <a href="/" style={{ color:"#00c9a7", marginTop:16 }}>Back to AMedNav</a>
     </div>
   );
   return children;

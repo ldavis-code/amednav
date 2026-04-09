@@ -62,7 +62,7 @@ export default function Login() {
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
           <p className="text-gray-600 mt-1">
-            {org.slug !== 'public' ? org.name : 'Transplant Medication Navigator'}
+            {org.slug !== 'public' ? org.name : 'AMedNav'}
           </p>
         </div>
 

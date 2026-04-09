@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-8">
                 <section>
                     <p className="text-slate-700 leading-relaxed">
-                        TransplantNav LLC ("we," "us," or "our") operates the Transplant Medication Navigator website (the "Website"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our Website.
+                        TransplantNav LLC ("we," "us," or "our") operates the AMedNav website (the "Website"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our Website.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         Please read this Privacy Policy carefully. By using the Website, you agree to the collection and use of information in accordance with this policy.

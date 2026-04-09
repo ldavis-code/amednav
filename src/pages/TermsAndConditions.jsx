@@ -19,7 +19,7 @@ const TermsAndConditions = () => {
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-8">
                 <section>
                     <p className="text-slate-700 leading-relaxed">
-                        Welcome to the Transplant Medication Navigator website (the "Website"), operated by TransplantNav LLC ("we," "us," or "our"). These Terms and Conditions ("Terms") govern your access to and use of the Website and its content, which is intended to be an educational resource for transplant patients and their caregivers.
+                        Welcome to the AMedNav website (the "Website"), operated by TransplantNav LLC ("we," "us," or "our"). These Terms and Conditions ("Terms") govern your access to and use of the Website and its content, which is intended to be an educational resource for transplant patients and their caregivers.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         By accessing or using the Website, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Website.

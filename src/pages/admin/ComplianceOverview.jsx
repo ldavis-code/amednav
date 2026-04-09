@@ -673,7 +673,7 @@ export default function ComplianceOverview() {
 
       {/* ── Print footer ─────────────────────────────── */}
       <div className="hidden print:block mt-8 pt-4 border-t border-gray-200 text-xs text-gray-400 text-center">
-        Transplant Medication Navigator — Compliance Overview — Generated {new Date().toLocaleDateString()}
+        AMedNav — Compliance Overview — Generated {new Date().toLocaleDateString()}
       </div>
     </AdminLayout>
   );

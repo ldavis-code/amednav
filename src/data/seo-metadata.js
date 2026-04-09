@@ -4,14 +4,14 @@
  */
 
 const BASE_URL = 'https://transplantmedicationnavigator.com';
-const SITE_NAME = 'Transplant Medication Navigator™';
+const SITE_NAME = 'AMedNav™';
 
 export const seoMetadata = {
   home: {
-    title: 'Transplant Medication Navigator™',
+    title: 'AMedNav™',
     description: 'Get FREE transplant medications through Patient Assistance Programs. Find help paying for tacrolimus, mycophenolate, immunosuppressants. Compare prices, copay foundations & grants for kidney, liver, heart transplant patients. Created by a transplant recipient.',
     canonical: `${BASE_URL}/`,
-    ogTitle: 'Free Transplant Medication Help | Transplant Medication Navigator™',
+    ogTitle: 'Free Transplant Medication Help | AMedNav™',
     ogDescription: 'Find FREE medications for transplant patients through Patient Assistance Programs. Get tacrolimus, mycophenolate & immunosuppressants at no cost. Compare prices, find copay foundations & grants. Created by a transplant recipient.',
     twitterTitle: 'Free Transplant Medication Help | Medication Navigator',
     twitterDescription: 'Find FREE medications through Patient Assistance Programs. Compare prices, find copay foundations & grants for transplant patients.',
@@ -19,7 +19,7 @@ export const seoMetadata = {
   },
 
   wizard: {
-    title: 'My Path Quiz - Find Free Medication Help | Transplant Medication Navigator™',
+    title: 'My Path Quiz - Find Free Medication Help | AMedNav™',
     description: 'Take our free 2-minute quiz to find Patient Assistance Programs for your transplant medications. Get personalized recommendations for free tacrolimus, mycophenolate, and copay help based on your insurance and income.',
     canonical: `${BASE_URL}/wizard`,
     ogTitle: 'Find Your Path to Free Transplant Medications',
@@ -30,7 +30,7 @@ export const seoMetadata = {
   },
 
   medications: {
-    title: 'Search Transplant Medications & Prices | Transplant Medication Navigator™',
+    title: 'Search Transplant Medications & Prices | AMedNav™',
     description: 'Compare transplant medication prices and find FREE assistance programs. Search tacrolimus (Prograf), mycophenolate (CellCept), prednisone, sirolimus (Rapamune), and more. Find copay cards, PAPs, and foundation grants.',
     canonical: `${BASE_URL}/medications`,
     ogTitle: 'Search Transplant Medications - Compare Prices & Find Free Help',
@@ -41,7 +41,7 @@ export const seoMetadata = {
   },
 
   education: {
-    title: 'Education & Resources for Transplant Patients | Transplant Medication Navigator™',
+    title: 'Education & Resources for Transplant Patients | AMedNav™',
     description: 'Educational guides on transplant medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
     canonical: `${BASE_URL}/education`,
     ogTitle: 'Transplant Medication Education & Resources',
@@ -52,7 +52,7 @@ export const seoMetadata = {
   },
 
   applicationHelp: {
-    title: 'How to Apply for Medication Assistance | Transplant Medication Navigator™',
+    title: 'How to Apply for Medication Assistance | AMedNav™',
     description: 'Step-by-step guide to applying for Patient Assistance Programs. Learn what documents you need, how to complete applications, and get approval faster.',
     canonical: `${BASE_URL}/application-help`,
     ogTitle: 'Apply for Patient Assistance Programs',
@@ -63,7 +63,7 @@ export const seoMetadata = {
   },
 
   faq: {
-    title: 'Frequently Asked Questions | Transplant Medication Navigator™',
+    title: 'Frequently Asked Questions | AMedNav™',
     description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for transplant patients.',
     canonical: `${BASE_URL}/faq`,
     ogTitle: 'Transplant Medication Assistance FAQs',
@@ -74,29 +74,29 @@ export const seoMetadata = {
   },
 
   notFound: {
-    title: 'Page Not Found | Transplant Medication Navigator™',
+    title: 'Page Not Found | AMedNav™',
     description: 'The page you are looking for could not be found. Visit our homepage to find medication assistance programs and resources for transplant patients.',
     canonical: `${BASE_URL}/`,
     ogTitle: 'Page Not Found',
-    ogDescription: 'This page could not be found. Visit Transplant Medication Navigator™ to find medication assistance programs for transplant patients.',
+    ogDescription: 'This page could not be found. Visit AMedNav™ to find medication assistance programs for transplant patients.',
     twitterTitle: 'Page Not Found',
     twitterDescription: 'This page could not be found. Visit our homepage to find medication assistance programs for transplant patients.',
     breadcrumbName: 'Page Not Found',
   },
 
   forTransplantPrograms: {
-    title: 'For Transplant Programs | Transplant Medication Navigator™',
+    title: 'For Transplant Programs | AMedNav™',
     description: 'Help transplant patients find affordable medications with our privacy-safe resource. Reduce financial barriers to adherence with verified help programs.',
     canonical: `${BASE_URL}/for-transplant-programs`,
     ogTitle: 'Transplant Program Partnerships',
-    ogDescription: 'Partner with Transplant Medication Navigator to help your patients find medication assistance programs. Privacy-safe, no PHI collected.',
+    ogDescription: 'Partner with AMedNav to help your patients find medication assistance programs. Privacy-safe, no PHI collected.',
     twitterTitle: 'For Transplant Programs',
     twitterDescription: 'Help your transplant patients find affordable medications with free educational resources and verified help programs.',
     breadcrumbName: 'For Transplant Programs',
   },
 
   forEmployers: {
-    title: 'For Employers | Transplant Medication Navigator™',
+    title: 'For Employers | AMedNav™',
     description: 'Reduce specialty drug costs for transplant employees. Connect your workforce to copay cards, manufacturer assistance, and foundation support.',
     canonical: `${BASE_URL}/for-employers`,
     ogTitle: 'Employer Benefits for Transplant Employees',
@@ -107,7 +107,7 @@ export const seoMetadata = {
   },
 
   forHospitalAdmin: {
-    title: 'For Hospital Administrators | Transplant Medication Navigator\u2122',
+    title: 'For Hospital Administrators | AMedNav\u2122',
     description: 'Improve SRTR outcomes, reduce readmissions, and strengthen CMS compliance. HIPAA-compliant medication assistance tool with Epic integration for transplant programs.',
     canonical: `${BASE_URL}/for-hospitals`,
     ogTitle: 'For Hospital Administrators & Transplant Coordinators',
@@ -118,7 +118,7 @@ export const seoMetadata = {
   },
 
   forPayers: {
-    title: 'For Payers | Transplant Medication Navigator™',
+    title: 'For Payers | AMedNav™',
     description: 'Help members access manufacturer assistance programs for transplant medications. Reduce plan spend on high-cost drugs with our privacy-safe resource.',
     canonical: `${BASE_URL}/for-payers`,
     ogTitle: 'Payer Partnerships for Medication Assistance',
@@ -129,7 +129,7 @@ export const seoMetadata = {
   },
 
   pricing: {
-    title: 'Pricing | Transplant Medication Navigator™',
+    title: 'Pricing | AMedNav™',
     description: 'Free access to education, subscription options for patients, and partnership options for organizations. View our clear pricing.',
     canonical: `${BASE_URL}/pricing`,
     ogTitle: 'Clear Pricing',
@@ -140,7 +140,7 @@ export const seoMetadata = {
   },
 
   pilot: {
-    title: 'Partner Pilot Program | Transplant Medication Navigator™',
+    title: 'Partner Pilot Program | AMedNav™',
     description: 'Welcome to the pilot program. Find medication assistance programs, search transplant medications, and access verified financial resources.',
     canonical: `${BASE_URL}/pilot`,
     ogTitle: 'Partner Pilot Program',
@@ -151,40 +151,40 @@ export const seoMetadata = {
   },
 
   termsAndConditions: {
-    title: 'Terms and Conditions | Transplant Medication Navigator™',
-    description: 'Read the Terms and Conditions for using the Transplant Medication Navigator website. Understand your rights, responsibilities, and our disclaimer about medical advice.',
+    title: 'Terms and Conditions | AMedNav™',
+    description: 'Read the Terms and Conditions for using the AMedNav website. Understand your rights, responsibilities, and our disclaimer about medical advice.',
     canonical: `${BASE_URL}/terms-and-conditions`,
-    ogTitle: 'Terms and Conditions - Transplant Medication Navigator™',
-    ogDescription: 'Terms and Conditions governing the use of Transplant Medication Navigator, an educational resource for transplant patients and caregivers.',
+    ogTitle: 'Terms and Conditions - AMedNav™',
+    ogDescription: 'Terms and Conditions governing the use of AMedNav, an educational resource for transplant patients and caregivers.',
     twitterTitle: 'Terms and Conditions',
-    twitterDescription: 'Terms and Conditions for using Transplant Medication Navigator, an educational resource for transplant patients.',
+    twitterDescription: 'Terms and Conditions for using AMedNav, an educational resource for transplant patients.',
     breadcrumbName: 'Terms and Conditions',
   },
 
   privacyPolicy: {
-    title: 'Privacy Policy | Transplant Medication Navigator™',
-    description: 'Read our Privacy Policy to understand how Transplant Medication Navigator collects, uses, and protects your personal information.',
+    title: 'Privacy Policy | AMedNav™',
+    description: 'Read our Privacy Policy to understand how AMedNav collects, uses, and protects your personal information.',
     canonical: `${BASE_URL}/privacy`,
-    ogTitle: 'Privacy Policy - Transplant Medication Navigator™',
-    ogDescription: 'Learn how Transplant Medication Navigator collects, uses, and safeguards your personal information.',
+    ogTitle: 'Privacy Policy - AMedNav™',
+    ogDescription: 'Learn how AMedNav collects, uses, and safeguards your personal information.',
     twitterTitle: 'Privacy Policy',
-    twitterDescription: 'Privacy Policy for Transplant Medication Navigator - how we collect, use, and protect your data.',
+    twitterDescription: 'Privacy Policy for AMedNav - how we collect, use, and protect your data.',
     breadcrumbName: 'Privacy Policy',
   },
 
   account: {
-    title: 'My Account | Transplant Medication Navigator™',
-    description: 'Manage your Transplant Medication Navigator account, view subscription status, and update billing information.',
+    title: 'My Account | AMedNav™',
+    description: 'Manage your AMedNav account, view subscription status, and update billing information.',
     canonical: `${BASE_URL}/account`,
-    ogTitle: 'My Account - Transplant Medication Navigator™',
-    ogDescription: 'Manage your account and subscription for Transplant Medication Navigator.',
+    ogTitle: 'My Account - AMedNav™',
+    ogDescription: 'Manage your account and subscription for AMedNav.',
     twitterTitle: 'My Account',
-    twitterDescription: 'Manage your Transplant Medication Navigator account and subscription.',
+    twitterDescription: 'Manage your AMedNav account and subscription.',
     breadcrumbName: 'My Account',
   },
 
   survey: {
-    title: 'Share Your Journey | Transplant Medication Navigator™',
+    title: 'Share Your Journey | AMedNav™',
     description: 'Share your medication experience to help improve access for all patients. Anonymous surveys for transplant recipients and anyone managing chronic conditions.',
     canonical: `${BASE_URL}/survey`,
     ogTitle: 'Share Your Medication Journey',
@@ -195,7 +195,7 @@ export const seoMetadata = {
   },
 
   surveyTransplant: {
-    title: 'Transplant Medication Survey | Transplant Medication Navigator™',
+    title: 'Transplant Medication Survey | AMedNav™',
     description: 'Share your transplant medication journey. Help us understand challenges with anti-rejection drugs, pharmacies, insurance, and assistance programs.',
     canonical: `${BASE_URL}/survey/transplant`,
     ogTitle: 'Transplant Medication Journey Survey',
@@ -206,7 +206,7 @@ export const seoMetadata = {
   },
 
   surveyGeneral: {
-    title: 'General Medication Survey | Transplant Medication Navigator™',
+    title: 'General Medication Survey | AMedNav™',
     description: 'Share your experience managing medications for chronic conditions. Help us advocate for better medication access and affordability.',
     canonical: `${BASE_URL}/survey/general`,
     ogTitle: 'General Medication Survey',
@@ -217,7 +217,7 @@ export const seoMetadata = {
   },
 
   myMedications: {
-    title: 'My Medications | Transplant Medication Navigator™',
+    title: 'My Medications | AMedNav™',
     description: 'Track your transplant medications, renewal dates, and costs. Manage your medication list privately on your device with export and import options.',
     canonical: `${BASE_URL}/my-medications`,
     ogTitle: 'My Medications - Track Your Prescriptions',
@@ -229,7 +229,7 @@ export const seoMetadata = {
   },
 
   savingsTracker: {
-    title: 'Savings Calculator | Transplant Medication Navigator™',
+    title: 'Savings Calculator | AMedNav™',
     description: 'Calculate how much you could save on transplant medications with assistance programs. Track actual savings and see your total benefits over time.',
     canonical: `${BASE_URL}/savings-tracker`,
     ogTitle: 'Medication Savings Calculator',
@@ -240,7 +240,7 @@ export const seoMetadata = {
   },
 
   copayReminders: {
-    title: 'Copay Card Reminders | Transplant Medication Navigator™',
+    title: 'Copay Card Reminders | AMedNav™',
     description: 'Never miss a copay card renewal. Track expiration dates for manufacturer copay cards and patient assistance programs. Get reminders before your cards expire.',
     canonical: `${BASE_URL}/copay-reminders`,
     ogTitle: 'Copay Card Reminders - Never Miss a Renewal',
@@ -251,30 +251,30 @@ export const seoMetadata = {
   },
 
   subscribe: {
-    title: 'Subscribe to Pro | Transplant Medication Navigator™',
+    title: 'Subscribe to Pro | AMedNav™',
     description: 'Unlock unlimited features with a Pro subscription. Save medications, track savings, and get personalized assistance recommendations.',
     canonical: `${BASE_URL}/subscribe`,
     ogTitle: 'Subscribe to Pro - Unlock All Features',
     ogDescription: 'Get unlimited access to My Path Quiz, medication tracking, savings calculator, and more with a Pro subscription.',
     twitterTitle: 'Subscribe to Pro',
-    twitterDescription: 'Unlock unlimited features with a Transplant Medication Navigator Pro subscription.',
+    twitterDescription: 'Unlock unlimited features with a AMedNav Pro subscription.',
     breadcrumbName: 'Subscribe',
   },
 
   subscribeSuccess: {
-    title: 'Welcome to Pro! | Transplant Medication Navigator™',
-    description: 'Your Pro subscription is now active. Enjoy unlimited access to all Transplant Medication Navigator features.',
+    title: 'Welcome to Pro! | AMedNav™',
+    description: 'Your Pro subscription is now active. Enjoy unlimited access to all AMedNav features.',
     canonical: `${BASE_URL}/subscribe/success`,
     ogTitle: 'Welcome to Pro!',
-    ogDescription: 'Your subscription is active. Enjoy unlimited access to all Transplant Medication Navigator features.',
+    ogDescription: 'Your subscription is active. Enjoy unlimited access to all AMedNav features.',
     twitterTitle: 'Welcome to Pro!',
     twitterDescription: 'Your Pro subscription is now active. Enjoy all features.',
     breadcrumbName: 'Subscription Success',
   },
 
   subscribeCancel: {
-    title: 'Subscription Cancelled | Transplant Medication Navigator™',
-    description: 'Your subscription checkout was cancelled. You can still use all free features of Transplant Medication Navigator.',
+    title: 'Subscription Cancelled | AMedNav™',
+    description: 'Your subscription checkout was cancelled. You can still use all free features of AMedNav.',
     canonical: `${BASE_URL}/subscribe/cancel`,
     ogTitle: 'Subscription Cancelled',
     ogDescription: 'Checkout cancelled. You can still use all free features including medication search and educational resources.',
@@ -284,13 +284,13 @@ export const seoMetadata = {
   },
 
   accessibility: {
-    title: 'Accessibility & Section 504 Compliance | Transplant Medication Navigator™',
-    description: 'HHS Section 504 compliance, WCAG 2.1 Level AA conformance, non-discrimination notice, and grievance procedure for Transplant Medication Navigator. Our commitment to accessibility for all users.',
+    title: 'Accessibility & Section 504 Compliance | AMedNav™',
+    description: 'HHS Section 504 compliance, WCAG 2.1 Level AA conformance, non-discrimination notice, and grievance procedure for AMedNav. Our commitment to accessibility for all users.',
     canonical: `${BASE_URL}/accessibility`,
-    ogTitle: 'Accessibility & Section 504 Compliance - Transplant Medication Navigator™',
-    ogDescription: 'Section 504 non-discrimination notice, accessibility features, WCAG 2.1 AA conformance, and grievance procedure for Transplant Medication Navigator.',
+    ogTitle: 'Accessibility & Section 504 Compliance - AMedNav™',
+    ogDescription: 'Section 504 non-discrimination notice, accessibility features, WCAG 2.1 AA conformance, and grievance procedure for AMedNav.',
     twitterTitle: 'Accessibility & Section 504 Compliance',
-    twitterDescription: 'Section 504 compliance, WCAG 2.1 AA conformance, and accessibility features for Transplant Medication Navigator.',
+    twitterDescription: 'Section 504 compliance, WCAG 2.1 AA conformance, and accessibility features for AMedNav.',
     breadcrumbName: 'Accessibility & Section 504',
   },
 };

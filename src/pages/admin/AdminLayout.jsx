@@ -1,6 +1,6 @@
 /**
  * Admin Layout
- * Shared TMN-branded layout with sidebar navigation for all admin pages
+ * Shared AMedNav-branded layout with sidebar navigation for all admin pages
  */
 
 import { Link, useLocation } from 'react-router-dom';
@@ -43,7 +43,7 @@ export default function AdminLayout({ children, title, subtitle, actions }) {
           <div className="flex items-center gap-3 px-5 py-5 border-b border-white/20">
             <img src="/logo.svg" alt="" className="h-9 w-9 rounded-lg bg-white p-1" />
             <div className="min-w-0">
-              <p className="text-sm font-bold truncate leading-tight">TMN Admin</p>
+              <p className="text-sm font-bold truncate leading-tight">AMedNav Admin</p>
               <p className="text-xs text-white/70 truncate">{org?.name || 'Transplant Med Nav'}</p>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function AdminLayout({ children, title, subtitle, actions }) {
         <header className="md:hidden bg-[#006838] text-white px-4 py-3 flex items-center justify-between print:hidden">
           <div className="flex items-center gap-2">
             <img src="/logo.svg" alt="" className="h-7 w-7 rounded bg-white p-0.5" />
-            <span className="font-bold text-sm">TMN Admin</span>
+            <span className="font-bold text-sm">AMedNav Admin</span>
           </div>
           <div className="flex items-center gap-3">
             <Link to="/" className="text-white/70 hover:text-white">

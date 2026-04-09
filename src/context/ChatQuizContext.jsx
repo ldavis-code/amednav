@@ -11,7 +11,7 @@ const ChatQuizContext = createContext(null);
 
 // Storage key for localStorage persistence
 const STORAGE_KEY = 'medication_navigator_progress';
-const SUBSCRIBER_TOKEN_KEY = 'tmn_subscriber_token';
+const SUBSCRIBER_TOKEN_KEY = 'amednav_subscriber_token';
 
 // Free tier - unlimited for patients
 const MAX_FREE_SEARCHES = Infinity;
@@ -27,43 +27,6 @@ const SYNC_DEBOUNCE_MS = 2000;
 
 // Question definitions for the quiz mode
 const QUIZ_QUESTIONS = [
-  {
-    id: 'role',
-    question: "Who am I helping today?",
-    type: 'single',
-    options: [
-      { value: 'patient', label: 'Patient', description: "I'm the transplant patient" },
-      { value: 'carepartner', label: 'Carepartner / Family', description: "I'm helping a loved one" },
-      { value: 'social_worker', label: 'Social Worker / Coordinator', description: "I'm a healthcare professional" },
-    ],
-    tip: "Social workers and carepartners can complete this quiz on behalf of a patient to find assistance programs.",
-  },
-  {
-    id: 'transplant_stage',
-    question: "Where are you in the transplant process?",
-    type: 'single',
-    options: [
-      { value: 'pre', label: 'Pre-transplant', description: 'On the waitlist or in evaluation' },
-      { value: 'post_1yr', label: 'Post-transplant (< 1 year)', description: 'Within the first year' },
-      { value: 'post_1yr_plus', label: 'Post-transplant (1+ years)', description: 'More than a year post-transplant' },
-    ],
-    tip: "Some programs have different eligibility based on how long since transplant. The first year often has the most options.",
-  },
-  {
-    id: 'organ_type',
-    question: "What type of transplant?",
-    type: 'single',
-    options: [
-      { value: 'kidney', label: 'Kidney' },
-      { value: 'liver', label: 'Liver' },
-      { value: 'heart', label: 'Heart' },
-      { value: 'lung', label: 'Lung' },
-      { value: 'pancreas', label: 'Pancreas' },
-      { value: 'multi', label: 'Multi-organ' },
-      { value: 'other', label: 'Other' },
-    ],
-    tip: "For multi-organ transplants, you may qualify for assistance from multiple organ-specific foundations.",
-  },
   {
     id: 'insurance_type',
     question: "What's your primary insurance?",
@@ -138,25 +101,7 @@ const QUIZ_QUESTIONS = [
       { value: 'unaffordable', label: 'Unaffordable', description: "I struggle to pay for meds" },
       { value: 'crisis', label: 'Crisis', description: "I've skipped or rationed doses", urgent: true },
     ],
-    tip: "If you're in crisis, reach out to your transplant center social worker immediately. Never skip doses—there are emergency options available.",
-  },
-  {
-    id: 'transplant_pharmacy',
-    question: "Are you filling prescriptions at your transplant center's pharmacy?",
-    type: 'single',
-    options: [
-      { value: 'yes', label: 'Yes', description: "I use my transplant center's pharmacy" },
-      { value: 'no', label: 'No', description: "I use a different pharmacy" },
-      { value: 'not_sure', label: "I'm not sure", description: "I don't know if my center has one" },
-      { value: 'will_check', label: "I'll check!", description: "Good idea—I'll call and ask" },
-    ],
-    tip: "Some transplant centers offer their own pharmacy with lower pricing that patients don't know about. It's worth one phone call to check—you might save significantly on your medications.",
-    // This question only shows when patient is uninsured OR struggling with costs
-    showIf: (answers) => {
-      const isUninsured = answers.insurance_type === 'uninsured';
-      const isStrugglingWithCosts = ['challenging', 'unaffordable', 'crisis'].includes(answers.cost_burden);
-      return isUninsured || isStrugglingWithCosts;
-    },
+    tip: "If you're in crisis, contact your healthcare provider or a patient assistance program immediately. Never skip doses—there are emergency options available.",
   },
 ];
 
@@ -680,9 +625,6 @@ export function ChatQuizProvider({ children }) {
     const requiredVisibleQuestions = visibleQuestions.filter(q => !q.allowSkip);
     const answeredCount = requiredVisibleQuestions.filter(q => answers[q.id] !== undefined).length;
     return {
-      role: answers.role,
-      transplantStage: answers.transplant_stage,
-      organType: answers.organ_type,
       insuranceType: answers.insurance_type,
       costBurden: answers.cost_burden,
       medications: selectedMedications,

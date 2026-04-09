@@ -59,7 +59,7 @@ export default function ReportingLogin() {
                     </div>
                     <h1 className="text-2xl font-bold text-white">Analytics Dashboard</h1>
                     <p className="text-slate-600 mt-1">
-                        Transplant Medication Navigator
+                        AMedNav
                     </p>
                 </div>
 

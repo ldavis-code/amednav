@@ -113,7 +113,7 @@ const Pricing = () => {
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-2">Is medication data private?</h3>
                                     <p className="text-slate-600">
-                                        Yes. Transplant Medication Navigator does not store or access medication lists. Data stays on the device.
+                                        Yes. AMedNav does not store or access medication lists. Data stays on the device.
                                     </p>
                                 </div>
                             </div>

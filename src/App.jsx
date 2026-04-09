@@ -319,7 +319,7 @@ const ChatWidget = () => {
         {
             id: 1,
             type: 'assistant',
-            text: "👋 Hi! I'm your Transplant Medication Navigator™ assistant. I can help you find medication assistance, understand insurance, and use our tools.\n\nWhat can I help you with today?",
+            text: "👋 Hi! I'm your AMedNav™ assistant. I can help you find medication assistance, understand insurance, and use our tools.\n\nWhat can I help you with today?",
             timestamp: new Date()
         }
     ]);
@@ -538,7 +538,7 @@ const Layout = ({ children }) => {
             {/* Header */}
             <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200 no-print" role="banner">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-emerald-700 hover:text-emerald-800 transition" aria-label="Transplant Medication Navigator™ home">
+                    <Link to="/" className="flex items-center gap-2 text-emerald-700 hover:text-emerald-800 transition" aria-label="AMedNav™ home">
                         <img src="/photos/logo.png" alt="" width={32} height={32} aria-hidden="true" className="flex-shrink-0" />
                         <span className="font-bold text-lg md:text-xl leading-tight">
                             Transplant Medication<br className="md:hidden"/> Navigator<sup className="text-xs">™</sup>
@@ -640,7 +640,7 @@ const Layout = ({ children }) => {
                         <Clock className="inline-block w-4 h-4 mr-1 -mt-0.5" aria-hidden="true" />
                         Information last updated: {LAST_UPDATED}
                     </p>
-                    <p>© 2026 Transplant Medication Navigator™. All Rights Reserved.</p>
+                    <p>© 2026 AMedNav™. All Rights Reserved.</p>
                     <p className="mt-4 text-slate-300 text-sm">Created by Lorrinda Gray-Davis. est August 2025</p>
                     <p className="mt-2 text-slate-400 text-sm">
                         <a href="mailto:info@transplantmedicationnavigator.com" className="text-emerald-400 hover:text-emerald-300 underline">info@transplantmedicationnavigator.com</a>
@@ -934,7 +934,7 @@ const Home = () => {
                 <div className="flex flex-col md:flex-row gap-6 items-center md:items-start mb-8">
                     <img
                         src="/photos/lorrinda-gray-davis.jpg"
-                        alt="Lorrinda Gray-Davis, founder of Transplant Medication Navigator"
+                        alt="Lorrinda Gray-Davis, founder of AMedNav"
                         className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-emerald-200 shadow-lg flex-shrink-0"
                         onError={(e) => { e.target.style.display = 'none'; }}
                     />
@@ -1558,29 +1558,17 @@ const Wizard = () => {
 
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState({
-        role: null,
-        status: null,
-        organs: [],
         insurance: null,
         medications: [],
         specialtyPharmacyAware: null,
         financialStatus: null,
     });
 
-    // Medication verification state - patient confirms their medications
-
-    // Search state for Step 5
+    // Search state for medication step
     const [medSearchTerm, setMedSearchTerm] = useState('');
     const [medSearchResult, setMedSearchResult] = useState(null);
     const [isMedSearching, setIsMedSearching] = useState(false);
 
-    // Email collection state for Step 6 (Your Plan)
-    const [userEmail, setUserEmail] = useState('');
-    const [marketingOptIn, setMarketingOptIn] = useState(false);
-    const [isSubmittingEmail, setIsSubmittingEmail] = useState(false);
-    const [emailError, setEmailError] = useState('');
-    const [emailSentSuccess, setEmailSentSuccess] = useState(null); // null = not attempted, true = sent, false = failed
-    const [emailErrorDetails, setEmailErrorDetails] = useState(null); // Detailed error info for debugging
 
     // Scroll to top when step changes for accessibility
     useEffect(() => {
@@ -1655,95 +1643,31 @@ const Wizard = () => {
     const nextStep = () => setStep(step + 1);
     const prevStep = () => setStep(step - 1);
 
-    // Navigation Logic - Updated for grouped sections
-    const handleNextFromAboutYou = () => { trackServerEvent('quiz_start'); setStep(2); };
-    const handleNextFromTransplant = () => setStep(3);
-    const handleNextFromCoverage = () => setStep(4);
-    const handleNextFromMeds = () => setStep(5);
-    const handleNextFromCosts = () => {
+    // Navigation Logic - 3 quiz steps + results
+    const handleNextFromMeds = () => { trackServerEvent('quiz_start'); setStep(2); };
+    const handleNextFromInsurance = () => setStep(3);
+    const handleNextFromAffordability = () => {
         // Go directly to results
-        setStep(7);
-    };
-
-    // Email submission handler
-    const handleEmailSubmit = async () => {
-        // Basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!userEmail.trim()) {
-            setEmailError('Please enter your email address');
-            return;
-        }
-        if (!emailRegex.test(userEmail.trim())) {
-            setEmailError('Please enter a valid email address');
-            return;
-        }
-
-        setEmailError('');
-        setIsSubmittingEmail(true);
-
-        try {
-            const response = await fetch('/.netlify/functions/quiz-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: userEmail.trim(),
-                    marketingOptIn: marketingOptIn,
-                    quizAnswers: answers,
-                    selectedMedications: answers.medications || [],
-                    source: 'quiz'
-                })
-            });
-
-            // Parse response to check status and get details
-            const result = await response.json();
-
-            if (!response.ok) {
-                // Server returned an error - capture the details
-                setEmailSentSuccess(false);
-                setEmailErrorDetails(result.errorDetails || result.error || 'Server error');
-                setStep(7);
-                return;
-            }
-            setEmailSentSuccess(result.emailSent === true);
-
-            // Capture error details for debugging if email failed
-            if (!result.emailSent && result.errorDetails) {
-                setEmailErrorDetails(result.errorDetails);
-            }
-
-            // Success - proceed to results
-            setStep(7);
-        } catch (error) {
-            console.error('Error submitting email:', error);
-            // Still proceed to results even if email save fails
-            // We don't want to block the user from seeing their results
-            setEmailSentSuccess(false);
-            setEmailErrorDetails(error.message || 'Network error');
-            setStep(7);
-        } finally {
-            setIsSubmittingEmail(false);
-        }
+        setStep(4);
     };
 
     // Track quiz completion when user reaches results
     useEffect(() => {
-        if (step === 7) trackServerEvent('quiz_complete');
+        if (step === 4) trackServerEvent('quiz_complete');
     }, [step]);
 
     // Check if commercial insurance for specialty pharmacy question
     const isCommercialInsurance = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
 
-    // New grouped step labels with color themes
-    const stepLabels = ['About You', 'Transplant', 'Coverage', 'Medications', 'Costs'];
-    const totalVisibleSteps = 5; // 5 sections shown in progress
+    // Step labels for progress bar (3 quiz steps, results is step 4)
+    const stepLabels = ['Medications', 'Insurance', 'Affordability'];
+    const totalVisibleSteps = 3; // 3 sections shown in progress
 
-    // Color themes for each step (matching the icon colors)
+    // Color themes for each step
     const stepColors = {
-        1: { bg: 'bg-emerald-500', bgLight: 'bg-emerald-100', ring: 'ring-emerald-100', text: 'text-emerald-600', textBold: 'text-emerald-700', border: 'border-emerald-500', bgSelect: 'bg-emerald-50', hoverBorder: 'hover:border-emerald-200', badge: 'bg-emerald-600' },
-        2: { bg: 'bg-rose-500', bgLight: 'bg-rose-100', ring: 'ring-rose-100', text: 'text-rose-600', textBold: 'text-rose-700', border: 'border-rose-500', bgSelect: 'bg-rose-50', hoverBorder: 'hover:border-rose-200', badge: 'bg-rose-600' },
-        3: { bg: 'bg-blue-500', bgLight: 'bg-blue-100', ring: 'ring-blue-100', text: 'text-blue-600', textBold: 'text-blue-700', border: 'border-blue-500', bgSelect: 'bg-blue-50', hoverBorder: 'hover:border-blue-200', badge: 'bg-blue-600' },
-        4: { bg: 'bg-purple-500', bgLight: 'bg-purple-100', ring: 'ring-purple-100', text: 'text-purple-600', textBold: 'text-purple-700', border: 'border-purple-500', bgSelect: 'bg-purple-50', hoverBorder: 'hover:border-purple-200', badge: 'bg-purple-600' },
-        5: { bg: 'bg-teal-500', bgLight: 'bg-teal-100', ring: 'ring-teal-100', text: 'text-teal-600', textBold: 'text-teal-700', border: 'border-teal-500', bgSelect: 'bg-teal-50', hoverBorder: 'hover:border-teal-200', badge: 'bg-teal-600' },
+        1: { bg: 'bg-purple-500', bgLight: 'bg-purple-100', ring: 'ring-purple-100', text: 'text-purple-600', textBold: 'text-purple-700', border: 'border-purple-500', bgSelect: 'bg-purple-50', hoverBorder: 'hover:border-purple-200', badge: 'bg-purple-600' },
+        2: { bg: 'bg-blue-500', bgLight: 'bg-blue-100', ring: 'ring-blue-100', text: 'text-blue-600', textBold: 'text-blue-700', border: 'border-blue-500', bgSelect: 'bg-blue-50', hoverBorder: 'hover:border-blue-200', badge: 'bg-blue-600' },
+        3: { bg: 'bg-teal-500', bgLight: 'bg-teal-100', ring: 'ring-teal-100', text: 'text-teal-600', textBold: 'text-teal-700', border: 'border-teal-500', bgSelect: 'bg-teal-50', hoverBorder: 'hover:border-teal-200', badge: 'bg-teal-600' },
     };
 
     const renderProgress = () => {
@@ -1791,136 +1715,8 @@ const Wizard = () => {
     };
 
 
-    // Step 1: About You (combines Role + Status)
-    if (step === 1) {
-        return (
-            <div className="max-w-2xl mx-auto">
-
-                {renderProgress()}
-                <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-emerald-100 p-2 rounded-lg">
-                        <Users size={24} className="text-emerald-600" />
-                    </div>
-                    <h1 className="text-2xl font-bold">About You</h1>
-                </div>
-                <p className="text-slate-600 mb-4">Let's start with some basics to personalize your experience.</p>
-                <p className="text-sm text-slate-500 mb-4 bg-slate-50 border border-slate-200 rounded-lg p-3">
-                    <strong>Note:</strong> This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your transplant team or healthcare provider with any questions about your medical condition or treatment.
-                </p>
-
-                {/* Question 1a: Role */}
-                <div className="mb-8">
-                    <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-emerald-600 text-white text-xs font-bold px-2 py-1 rounded">1a</span>
-                        <h2 className="text-lg font-bold text-slate-800">Who am I helping today?</h2>
-                    </div>
-                    <div className="space-y-3" role="radiogroup" aria-label="Select your role">
-                        {Object.values(Role).map((r) => (
-                            <button
-                                key={r}
-                                onClick={() => handleSingleSelect('role', r)}
-                                className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 flex justify-between items-center shadow-sm ${
-                                    answers.role === r
-                                        ? 'border-emerald-600 bg-emerald-100 ring-2 ring-emerald-300 shadow-md'
-                                        : 'border-slate-300 bg-slate-50 hover:border-emerald-400 hover:bg-emerald-50 hover:shadow-md'
-                                }`}
-                                role="radio"
-                                aria-checked={answers.role === r}
-                            >
-                                <span className={`font-bold text-lg ${answers.role === r ? 'text-emerald-800' : 'text-slate-800'}`}>{r}</span>
-                                {answers.role === r && <CheckCircle className="text-emerald-600" size={24} aria-hidden="true" />}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Question 1b: Status - shows after role is selected */}
-                {answers.role && (
-                    <div className="mb-8 ">
-                        <div className="flex items-center gap-2 mb-4">
-                            <span className="bg-emerald-600 text-white text-xs font-bold px-2 py-1 rounded">1b</span>
-                            <h2 className="text-lg font-bold text-slate-800">Where are you in the transplant process?</h2>
-                        </div>
-                        <div className="space-y-3" role="radiogroup" aria-label="Select your transplant status">
-                            {Object.values(TransplantStatus).map((s) => (
-                                <button
-                                    key={s}
-                                    onClick={() => handleSingleSelect('status', s)}
-                                    className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 flex justify-between items-center shadow-sm ${
-                                        answers.status === s
-                                            ? 'border-emerald-600 bg-emerald-100 ring-2 ring-emerald-300 shadow-md'
-                                            : 'border-slate-300 bg-slate-50 hover:border-emerald-400 hover:bg-emerald-50 hover:shadow-md'
-                                    }`}
-                                    role="radio"
-                                    aria-checked={answers.status === s}
-                                >
-                                    <span className={`font-bold text-lg ${answers.status === s ? 'text-emerald-800' : 'text-slate-800'}`}>{s}</span>
-                                    {answers.status === s && <CheckCircle className="text-emerald-600" size={24} aria-hidden="true" />}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* Next button - enabled when both role and status are selected */}
-                <button
-                    disabled={!answers.role || !answers.status}
-                    onClick={handleNextFromAboutYou}
-                    className="w-full py-3 bg-emerald-700 disabled:bg-slate-300 text-white font-bold rounded-lg disabled:cursor-not-allowed transition hover:bg-emerald-800"
-                    aria-label="Continue to next section"
-                >
-                    Next Section
-                </button>
-            </div>
-        );
-    }
-
-    // Step 2: Your Transplant (Organ selection)
+    // Step 2: Your Insurance (combines Insurance + Specialty Pharmacy for commercial)
     if (step === 2) {
-        return (
-            <div className="max-w-2xl mx-auto">
-
-                {renderProgress()}
-                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
-                <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-rose-100 p-2 rounded-lg">
-                        <Heart size={24} className="text-rose-600" />
-                    </div>
-                    <h1 className="text-2xl font-bold">Your Transplant</h1>
-                </div>
-                <p className="text-slate-600 mb-6">Select your organ type(s) - choose all that apply.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8" role="group" aria-label="Select organ types">
-                    {Object.values(OrganType).map((o) => (
-                        <button
-                            key={o}
-                            onClick={() => handleMultiSelect('organs', o)}
-                            className={`p-5 text-left rounded-xl border-3 transition-all duration-200 flex justify-between items-center shadow-sm ${
-                                answers.organs.includes(o)
-                                    ? 'border-rose-600 bg-rose-100 ring-2 ring-rose-300 shadow-md'
-                                    : 'border-slate-300 bg-slate-50 hover:border-rose-400 hover:bg-rose-50 hover:shadow-md'
-                            }`}
-                            role="checkbox"
-                            aria-checked={answers.organs.includes(o)}
-                        >
-                            <span className={`font-bold text-lg ${answers.organs.includes(o) ? 'text-rose-800' : 'text-slate-800'}`}>{o}</span>
-                            {answers.organs.includes(o) && <CheckCircle size={24} className="text-rose-600" aria-hidden="true" />}
-                        </button>
-                    ))}
-                </div>
-                <button
-                    disabled={answers.organs.length === 0}
-                    onClick={handleNextFromTransplant}
-                    className="w-full py-3 bg-emerald-700 disabled:bg-slate-300 text-white font-bold rounded-lg disabled:cursor-not-allowed transition hover:bg-emerald-800"
-                    aria-label="Continue to next section"
-                >
-                    Next Section
-                </button>
-            </div>
-        );
-    }
-
-    // Step 3: Your Coverage (combines Insurance + Specialty Pharmacy for commercial)
-    if (step === 3) {
         const insuranceOptions = [
             {
                 value: InsuranceType.COMMERCIAL,
@@ -1969,17 +1765,17 @@ const Wizard = () => {
                     <div className="bg-blue-100 p-2 rounded-lg">
                         <Shield size={24} className="text-blue-600" />
                     </div>
-                    <h1 className="text-2xl font-bold">Your Coverage</h1>
+                    <h1 className="text-2xl font-bold">Your Insurance</h1>
                 </div>
                 <div className="flex items-center gap-2 mb-6 text-slate-700">
                     <Lightbulb className="text-amber-500 flex-shrink-0" size={18} aria-hidden="true" />
                     <p className="text-sm"><strong>Having insurance doesn't mean you can't get additional help!</strong></p>
                 </div>
 
-                {/* Question 3a: Insurance Type */}
+                {/* Question 2a: Insurance Type */}
                 <div className="mb-8">
                     <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">3a</span>
+                        <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">2a</span>
                         <h2 className="text-lg font-bold text-slate-800">What's your insurance type?</h2>
                     </div>
                     <div className="space-y-3" role="radiogroup" aria-label="Select your insurance type">
@@ -2013,11 +1809,11 @@ const Wizard = () => {
                     </div>
                 </div>
 
-                {/* Question 3b: Specialty Pharmacy - only shows for commercial insurance */}
+                {/* Question 2b: Specialty Pharmacy - only shows for commercial insurance */}
                 {isCommercialInsurance && answers.insurance && (
                     <div className="mb-8 ">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">3b</span>
+                            <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">2b</span>
                             <h2 className="text-lg font-bold text-slate-800">Does your plan require a specific specialty pharmacy?</h2>
                         </div>
                         <p className="text-slate-600 text-sm mb-4">Some commercial plans require you to use a specific pharmacy for transplant medications.</p>
@@ -2056,7 +1852,7 @@ const Wizard = () => {
                 {/* Next button */}
                 <button
                     disabled={!answers.insurance}
-                    onClick={handleNextFromCoverage}
+                    onClick={handleNextFromInsurance}
                     className="w-full py-3 bg-emerald-700 disabled:bg-slate-300 text-white font-bold rounded-lg disabled:cursor-not-allowed transition hover:bg-emerald-800"
                     aria-label="Continue to next section"
                 >
@@ -2066,15 +1862,12 @@ const Wizard = () => {
         );
     }
 
-    // Step 4: Your Medications
-    if (step === 4) {
-        const isPreTransplant = answers.status === TransplantStatus.PRE_EVAL;
-
+    // Step 1: Your Medications
+    if (step === 1) {
         return (
             <div className="max-w-3xl mx-auto">
 
                 {renderProgress()}
-                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="mb-6">
                     <div className="flex items-center gap-3 mb-2">
                         <div className="bg-purple-100 p-2 rounded-lg">
@@ -2083,23 +1876,12 @@ const Wizard = () => {
                         <h1 className="text-2xl font-bold">Your Medications</h1>
                     </div>
                     <p className="text-slate-600 mb-3">
-                        {answers.organs && answers.organs.length > 0 ? (
-                            <>Based on your <strong className="text-emerald-700">{answers.organs.length > 1 ? answers.organs.slice(0, -1).join(', ') + ' and ' + answers.organs.slice(-1) : answers.organs[0]}</strong> transplant, we've filtered to the most common medications.</>
-                        ) : (
-                            <>Select your medications from the options below.</>
-                        )}
+                        Search and select the medications you currently take.
                     </p>
-                    <p className="text-sm text-slate-500">
-                        First select your core immunosuppressants, then add any other transplant-related medications you take.
+                    <p className="text-sm text-slate-500 mb-4 bg-slate-50 border border-slate-200 rounded-lg p-3">
+                        <strong>Note:</strong> This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice.
                     </p>
                 </div>
-
-                {/* Organ-Specific Medication Guide - show pre-transplant or post-transplant based on status */}
-                {isPreTransplant ? (
-                    <PreTransplantMedicationGuide answers={answers} onMedicationClick={setMedSearchTerm} />
-                ) : (
-                    <OrganMedicationGuide answers={answers} onMedicationClick={addMedFromSearch} />
-                )}
 
                 {/* Epic MyChart Integration */}
                 <EpicConnectButton
@@ -2213,7 +1995,7 @@ const Wizard = () => {
                         <div className="text-sm text-amber-800">
                             <p className="font-bold mb-2">Important Medical Information</p>
                             <p>
-                                Lifelong medication adherence is essential for transplant success. Always consult your transplant team before changing medications or adding any new ones, including over-the-counter drugs and supplements.
+                                Always consult your healthcare provider before changing medications or adding any new ones, including over-the-counter drugs and supplements.
                             </p>
                         </div>
                     </div>
@@ -2230,8 +2012,8 @@ const Wizard = () => {
         );
     }
 
-    // Step 5: Your Costs (Financial Status)
-    if (step === 5) {
+    // Step 3: Affordability (Financial Status)
+    if (step === 3) {
         return (
             <div className="max-w-2xl mx-auto">
 
@@ -2241,7 +2023,7 @@ const Wizard = () => {
                     <div className="bg-amber-100 p-2 rounded-lg">
                         <DollarSign size={24} className="text-amber-600" />
                     </div>
-                    <h1 className="text-2xl font-bold">Your Costs</h1>
+                    <h1 className="text-2xl font-bold">Affordability</h1>
                 </div>
                 <p className="text-slate-600 mb-6">How would you describe your current medication costs?</p>
 
@@ -2291,7 +2073,7 @@ const Wizard = () => {
                         return (
                             <button
                                 key={opt.val}
-                                onClick={() => { handleSingleSelect('financialStatus', opt.val); handleNextFromCosts(); }}
+                                onClick={() => { handleSingleSelect('financialStatus', opt.val); handleNextFromAffordability(); }}
                                 className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm hover:shadow-md ${
                                     isSelected ? styles.selected + ' shadow-md' : styles.unselected
                                 }`}
@@ -2311,9 +2093,8 @@ const Wizard = () => {
         );
     }
 
-    // Step 7: Results (formerly step 6 was email collection, now skipped)
-    if (step === 7) {
-        const isKidney = answers.organs.includes(OrganType.KIDNEY);
+    // Step 4: Results
+    if (step === 4) {
         const isMedicare = answers.insurance === InsuranceType.MEDICARE;
         const isCommercial = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
         const isUninsured = answers.insurance === InsuranceType.UNINSURED;
@@ -2324,7 +2105,7 @@ const Wizard = () => {
 
                 {/* Back Button */}
                 <button
-                    onClick={() => setStep(5)}
+                    onClick={() => setStep(3)}
                     className="text-slate-700 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px] no-print"
                     aria-label="Go back to previous step"
                 >
@@ -2352,22 +2133,6 @@ const Wizard = () => {
                     </button>
                 </div>
 
-                {/* Critical Alerts */}
-                {isKidney && isMedicare && (
-                    <aside className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-indigo-600" role="alert" aria-labelledby="medicare-alert">
-                        <h2 id="medicare-alert" className="text-xl font-bold text-indigo-900 flex items-center gap-2">
-                            <AlertCircle aria-hidden="true" /> Important: Medicare Part B-ID
-                        </h2>
-                        <p className="mt-2 text-slate-700">
-                            Since you are a kidney transplant recipient on Medicare, you may qualify for <strong>Medicare Part B-ID</strong>.
-                            This extends coverage for immunosuppressive drugs for life. The 2026 premium is <strong>$121.60/month</strong> (up from $110.40 in 2025), plus 20% coinsurance after a $283 deductible.
-                        </p>
-                        <a href="https://www.medicare.gov" target="_blank" rel="noreferrer" className="mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition no-print">
-                            Check Eligibility on Medicare.gov
-                        </a>
-                    </aside>
-                )}
-                
                 <div className="grid md:grid-cols-2 gap-6">
 
                     {/* Column 1 (Left): Med List & Tools */}
