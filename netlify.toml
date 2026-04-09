@@ -1,0 +1,297 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[functions."*"]
+  external_node_modules = ["@anthropic-ai/sdk", "@neondatabase/serverless"]
+  included_files = ["src/data/medications.json", "src/data/programs.json"]
+
+# WWW to non-WWW redirect (301 permanent) - must come first
+# This ensures all traffic goes to the canonical non-www domain
+[[redirects]]
+  from = "https://www.transplantmedicationnavigator.com/*"
+  to = "https://transplantmedicationnavigator.com/:splat"
+  status = 301
+  force = true
+
+# API routes - redirect to Netlify Functions (force=true ensures these take priority)
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+  force = true
+
+# Admin API routes (specific routes before generic /api/*)
+[[redirects]]
+  from = "/api/admin-auth/*"
+  to = "/.netlify/functions/admin-auth/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin-api/*"
+  to = "/.netlify/functions/admin-api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin-seed"
+  to = "/.netlify/functions/admin-seed"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin-compliance/*"
+  to = "/.netlify/functions/admin-compliance/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin-compliance"
+  to = "/.netlify/functions/admin-compliance"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin-licenses/*"
+  to = "/.netlify/functions/admin-licenses/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/admin-licenses"
+  to = "/.netlify/functions/admin-licenses"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/netlify-analytics"
+  to = "/.netlify/functions/netlify-analytics"
+  status = 200
+  force = true
+
+# Generic API route (must come AFTER specific routes)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# Outbound redirect routes for tracking program clicks
+[[redirects]]
+  from = "/out/copay/*"
+  to = "/.netlify/functions/out-redirect"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/out/foundation/*"
+  to = "/.netlify/functions/out-redirect"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/out/pap/*"
+  to = "/.netlify/functions/out-redirect"
+  status = 200
+  force = true
+
+# TrumpRx resource page - serve static HTML
+[[redirects]]
+  from = "/trumprx"
+  to = "/trumprx.html"
+  status = 200
+
+# Prerendered pages - serve static HTML with SEO meta tags
+# These rules ensure search engines see page-specific meta descriptions
+[[redirects]]
+  from = "/faq"
+  to = "/faq/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/wizard"
+  to = "/wizard/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/medications"
+  to = "/medications/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/education"
+  to = "/education/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/application-help"
+  to = "/application-help/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/my-medications"
+  to = "/my-medications/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/savings-tracker"
+  to = "/savings-tracker/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/subscribe"
+  to = "/subscribe/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/survey"
+  to = "/survey/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/survey/transplant"
+  to = "/survey/transplant/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/survey/general"
+  to = "/survey/general/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pilot"
+  to = "/pilot/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms-and-conditions"
+  to = "/terms-and-conditions/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/accessibility"
+  to = "/accessibility/index.html"
+  status = 200
+
+# Epic FHIR OAuth callback - serve static HTML (must come before SPA fallback)
+[[redirects]]
+  from = "/auth/epic/callback"
+  to = "/auth/epic/callback/index.html"
+  status = 200
+
+# SPA fallback - must come AFTER prerendered pages and API routes
+# This catches all other routes and serves the React SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache static assets aggressively (1 year) - Vite adds content hashes to filenames
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache JavaScript chunks (1 year) - content-hashed
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache CSS files (1 year) - content-hashed
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache fonts (1 year)
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images (1 year)
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files - short cache, must revalidate
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Epic callback page - no cache
+[[headers]]
+  for = "/auth/epic/callback/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
+
+# Scheduled compliance checks - runs every 6 hours
+[functions."compliance-checks"]
+  schedule = "0 */6 * * *"
+
+# Security headers for all responses
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # HSTS - Enforce HTTPS for 1 year, include subdomains
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # CSP - Control what resources can be loaded
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.stripe.com https://*.supabase.co https://*.neon.tech wss://*.supabase.co https://www.google-analytics.com https://fhir.epic.com https://*.epic.com; frame-src https://js.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self' https://fhir.epic.com https://*.epic.com"
+    # Permissions Policy - Restrict browser features
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(self), usb=()"
