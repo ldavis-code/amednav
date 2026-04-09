@@ -1,0 +1,962 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utility classes for quiz accessibility */
+@layer utilities {
+    /* Border width 3px (not in default Tailwind) */
+    .border-3 {
+        border-width: 3px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS FOR TRANSPLANT PATIENTS
+   Priority: Vision changes from medications require higher contrast
+   ======================================== */
+
+/* Base font size - minimum 16px for readability */
+html {
+    font-size: 16px;
+}
+
+/* Ensure body text is readable */
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Minimum tap target size for touch devices (44x44px) - WCAG 2.1 AAA */
+@layer components {
+    .tap-target {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Accessible button base - applies minimum tap target */
+    .btn-accessible {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Enhanced focus indicators for keyboard navigation */
+@layer base {
+    /* Global focus styles - high contrast ring with increased visibility */
+    *:focus-visible {
+        outline: 3px solid #047857 !important; /* emerald-700 for better contrast */
+        outline-offset: 3px !important;
+    }
+
+    /* Remove default outline since we use focus-visible */
+    *:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /* Enhanced focus for interactive elements - larger, more visible */
+    button:focus-visible,
+    a:focus-visible,
+    [role="button"]:focus-visible,
+    [role="tab"]:focus-visible,
+    [role="checkbox"]:focus-visible,
+    [role="radio"]:focus-visible,
+    [role="option"]:focus-visible,
+    [role="link"]:focus-visible,
+    [role="menuitem"]:focus-visible,
+    [tabindex]:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        outline: 3px solid #047857 !important; /* emerald-700 */
+        outline-offset: 3px !important;
+        box-shadow: 0 0 0 6px rgba(4, 120, 87, 0.25);
+    }
+
+    /* High contrast focus for dark backgrounds - white outline */
+    .bg-emerald-600 *:focus-visible,
+    .bg-emerald-700 *:focus-visible,
+    .bg-emerald-800 *:focus-visible,
+    .bg-emerald-900 *:focus-visible,
+    .bg-emerald-950 *:focus-visible,
+    .bg-slate-800 *:focus-visible,
+    .bg-slate-900 *:focus-visible,
+    .bg-indigo-600 *:focus-visible,
+    .bg-indigo-700 *:focus-visible,
+    .bg-indigo-800 *:focus-visible,
+    .bg-indigo-900 *:focus-visible {
+        outline-color: #fff !important;
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Focus indicator for cards and larger clickable areas */
+    .group:focus-visible,
+    [role="listitem"]:focus-visible {
+        outline: 3px solid #047857 !important;
+        outline-offset: 2px !important;
+        border-radius: 0.5rem;
+    }
+}
+
+/* Skip link enhancement - more visible */
+.sr-only.focus\:not-sr-only:focus {
+    position: absolute !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 1rem 1.5rem !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: nowrap !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+/* ========================================
+   FONT SIZE OVERRIDES - Minimum 16px base
+   ======================================== */
+
+/* Override text-xs to be 14px minimum (0.875rem) */
+.text-xs {
+    font-size: 0.875rem !important; /* 14px - up from 12px */
+    line-height: 1.5 !important;
+}
+
+/* Override text-sm to be 15px minimum (0.9375rem) */
+.text-sm {
+    font-size: 0.9375rem !important; /* 15px - up from 14px */
+    line-height: 1.5 !important;
+}
+
+/* ========================================
+   COLOR CONTRAST OVERRIDES - WCAG AA Compliant
+   Transplant patients often have vision changes from medications
+   ======================================== */
+
+@layer utilities {
+    /* High contrast text utilities */
+    .text-accessible-muted {
+        color: #374151 !important; /* gray-700 - 7:1 contrast ratio */
+    }
+
+    .text-accessible-secondary {
+        color: #475569 !important; /* slate-600 - 5.5:1 contrast ratio */
+    }
+
+    /* Override low-contrast slate colors */
+    .text-slate-300 {
+        color: #cbd5e1 !important; /* Keep for dark backgrounds - passes on dark */
+    }
+
+    .text-slate-400 {
+        color: #94a3b8 !important; /* slate-400 - only use on dark backgrounds */
+    }
+
+    /* Footer text on dark backgrounds - ensure readability */
+    .bg-slate-900 .text-slate-300 {
+        color: #e2e8f0 !important; /* slate-200 for better contrast on dark */
+    }
+
+    .bg-slate-900 .text-slate-400 {
+        color: #cbd5e1 !important; /* slate-300 for better contrast on dark */
+    }
+
+    /* Emerald text on emerald backgrounds - ensure contrast */
+    .bg-emerald-800 .text-emerald-100,
+    .bg-emerald-900 .text-emerald-100,
+    .bg-emerald-950 .text-emerald-100 {
+        color: #d1fae5 !important; /* emerald-100 - good contrast */
+    }
+}
+
+/* ========================================
+   LINK AND BUTTON ACCESSIBILITY
+   ======================================== */
+
+/* Ensure all links have visible underlines or other indicators */
+@layer base {
+    /* Links in content areas should have underlines */
+    main a:not([class*="btn"]):not([class*="rounded"]):not([role="tab"]):not([role="button"]) {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+    }
+
+    main a:not([class*="btn"]):not([class*="rounded"]):not([role="tab"]):not([role="button"]):hover {
+        text-decoration-thickness: 2px;
+    }
+}
+
+/* Minimum touch target for inline interactive elements */
+@layer utilities {
+    .touch-target-inline {
+        position: relative;
+        padding: 0.5rem;
+        margin: -0.5rem;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION - For users with vestibular disorders
+   Respects user's system preference for reduced motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Disable spinning animations */
+    .animate-spin {
+        animation: none !important;
+    }
+
+    /* Disable bounce and pulse animations */
+    .animate-bounce,
+    .animate-pulse {
+        animation: none !important;
+    }
+
+    /* Keep essential visual feedback but make it instant */
+    *:focus-visible {
+        transition: none !important;
+    }
+}
+
+/* ========================================
+   HIGH CONTRAST MODE - For users with low vision
+   Respects user's system preference for high contrast
+   ======================================== */
+
+@media (prefers-contrast: more) {
+    /* Increase all borders for visibility */
+    * {
+        border-color: currentColor !important;
+    }
+
+    /* Stronger focus indicators */
+    *:focus-visible {
+        outline-width: 4px !important;
+        outline-style: solid !important;
+        outline-color: #000 !important;
+        outline-offset: 4px !important;
+    }
+
+    /* Ensure buttons have visible borders */
+    button,
+    [role="button"],
+    a[class*="btn"],
+    input[type="submit"],
+    input[type="button"] {
+        border: 2px solid currentColor !important;
+    }
+
+    /* Increase text contrast */
+    .text-slate-400,
+    .text-slate-500,
+    .text-gray-400,
+    .text-gray-500 {
+        color: #1f2937 !important; /* gray-800 */
+    }
+
+    /* Make progress bars more visible */
+    [role="progressbar"] > div {
+        background-color: #000 !important;
+    }
+
+    /* Ensure form inputs have visible borders */
+    input,
+    select,
+    textarea {
+        border: 2px solid #000 !important;
+    }
+
+    /* Selected states must be very clear */
+    [aria-selected="true"],
+    [aria-checked="true"],
+    .bg-emerald-50 {
+        outline: 3px solid #000 !important;
+        outline-offset: -3px !important;
+    }
+}
+
+/* ========================================
+   FORCED COLORS MODE - For Windows High Contrast
+   ======================================== */
+
+@media (forced-colors: active) {
+    /* Reset custom colors to system colors */
+    *:focus-visible {
+        outline: 3px solid Highlight !important;
+        outline-offset: 2px !important;
+    }
+
+    /* Ensure links are visible */
+    a {
+        color: LinkText !important;
+    }
+
+    a:visited {
+        color: VisitedText !important;
+    }
+
+    /* Buttons use system button colors */
+    button,
+    [role="button"] {
+        background-color: ButtonFace !important;
+        color: ButtonText !important;
+        border: 2px solid ButtonText !important;
+    }
+
+    button:hover,
+    [role="button"]:hover {
+        background-color: Highlight !important;
+        color: HighlightText !important;
+    }
+
+    /* Form inputs */
+    input,
+    select,
+    textarea {
+        background-color: Field !important;
+        color: FieldText !important;
+        border: 2px solid FieldText !important;
+    }
+
+    /* Selected items */
+    [aria-selected="true"],
+    [aria-checked="true"] {
+        background-color: Highlight !important;
+        color: HighlightText !important;
+    }
+
+    /* Disabled states */
+    [disabled],
+    [aria-disabled="true"] {
+        color: GrayText !important;
+    }
+
+    /* Tab icons in forced colors mode */
+    [role="tab"] span[aria-hidden="true"] {
+        background-color: ButtonFace !important;
+        border: 1px solid ButtonText !important;
+    }
+
+    [role="tab"][aria-selected="true"] span[aria-hidden="true"] {
+        background-color: Highlight !important;
+    }
+}
+
+/* ========================================
+   TAB ICON ACCESSIBILITY ENHANCEMENTS
+   Ensures colored tab icons work with accessibility preferences
+   ======================================== */
+
+/* High contrast mode - ensure tab icons have sufficient contrast */
+@media (prefers-contrast: more) {
+    [role="tab"] span[aria-hidden="true"] {
+        border: 2px solid currentColor !important;
+    }
+
+    [role="tab"][aria-selected="true"] span[aria-hidden="true"] {
+        outline: 3px solid #000 !important;
+        outline-offset: 2px !important;
+    }
+}
+
+/* Reduced motion - disable scale transform on tab icons */
+@media (prefers-reduced-motion: reduce) {
+    [role="tab"] span[aria-hidden="true"] {
+        transform: none !important;
+    }
+}
+
+/* ========================================
+   SCREEN READER ONLY - Visually hidden but accessible
+   ======================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip to main content link - visible on focus */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #047857;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 9999;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ========================================
+   QUIZ ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Quiz option buttons - ensure 48px touch target (exceeds WCAG 44px minimum) */
+[role="radiogroup"] button,
+[role="listbox"] button,
+[role="group"] button {
+    min-height: 48px;
+    min-width: 48px;
+}
+
+/* Progress bar visual enhancement - consistent color for accessibility */
+[role="progressbar"] {
+    position: relative;
+}
+
+[role="progressbar"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+/* Quiz option enhanced visibility for people with disabilities */
+[role="radiogroup"] button:hover,
+[role="group"] button:hover {
+    transform: translateY(-1px);
+}
+
+/* High contrast mode support for quiz options */
+@media (prefers-contrast: high) {
+    [role="radiogroup"] button,
+    [role="group"] button {
+        border-width: 4px !important;
+    }
+
+    [role="radiogroup"] button[aria-checked="true"],
+    [role="group"] button[aria-checked="true"] {
+        outline: 3px solid currentColor;
+        outline-offset: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    [role="radiogroup"] button,
+    [role="group"] button {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* Keyboard navigation indicators */
+kbd {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    box-shadow: 0 1px 0 #cbd5e1;
+}
+
+/* ========================================
+   PRINT STYLESHEET
+   Optimized for printing medication and program information
+   ======================================== */
+
+@media print {
+    /* ---- Page Setup ---- */
+    @page {
+        size: letter;
+        margin: 0.75in;
+    }
+
+    /* ---- Base Styles ---- */
+    html, body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+    }
+
+    * {
+        color: black !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* ---- Hide Unnecessary UI Elements ---- */
+    header,
+    footer,
+    nav,
+    .no-print,
+    button.no-print,
+    [role="navigation"],
+    [role="banner"],
+    [role="contentinfo"],
+    /* Chat widget */
+    .fixed.bottom-4,
+    .fixed.bottom-6,
+    /* Mobile menu */
+    .md\\:hidden,
+    /* Action buttons */
+    button:not(.print-visible),
+    /* Tab navigation */
+    [role="tablist"],
+    /* Search inputs */
+    input[type="search"],
+    input[type="text"],
+    /* Share/copy buttons */
+    [aria-label*="Copy"],
+    [aria-label*="Share"],
+    /* External link icons in actions */
+    td.no-print,
+    th.no-print,
+    .no-print {
+        display: none !important;
+    }
+
+    /* ---- Main Content ---- */
+    main {
+        padding: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    article {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* ---- Typography ---- */
+    h1 {
+        font-size: 18pt !important;
+        margin-bottom: 12pt !important;
+        page-break-after: avoid;
+    }
+
+    h2 {
+        font-size: 14pt !important;
+        margin-bottom: 8pt !important;
+        margin-top: 16pt !important;
+        page-break-after: avoid;
+    }
+
+    h3 {
+        font-size: 12pt !important;
+        margin-bottom: 6pt !important;
+        page-break-after: avoid;
+    }
+
+    p, li, td, th {
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+    }
+
+    /* ---- Links - Show URLs ---- */
+    a[href^="http"]:after,
+    a[href^="https"]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666 !important;
+        word-break: break-all;
+    }
+
+    /* Don't show URL for internal links or buttons styled as links */
+    a[href^="/"]:after,
+    a[href^="#"]:after,
+    a[role="button"]:after,
+    a[role="tab"]:after,
+    nav a:after {
+        content: none !important;
+    }
+
+    /* ---- Cards and Sections ---- */
+    .rounded-xl,
+    .rounded-lg,
+    .rounded-2xl {
+        border-radius: 0 !important;
+        border: 1px solid #ccc !important;
+        margin-bottom: 12pt !important;
+        padding: 12pt !important;
+    }
+
+    /* Remove colored backgrounds */
+    .bg-emerald-50,
+    .bg-emerald-100,
+    .bg-blue-50,
+    .bg-indigo-50,
+    .bg-purple-50,
+    .bg-rose-50,
+    .bg-slate-50,
+    .bg-slate-100,
+    .bg-white {
+        background: white !important;
+    }
+
+    /* ---- Tables ---- */
+    table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+        font-size: 10pt !important;
+    }
+
+    th, td {
+        border: 1px solid #999 !important;
+        padding: 6pt !important;
+        text-align: left !important;
+    }
+
+    thead {
+        background: #f0f0f0 !important;
+    }
+
+    thead th {
+        font-weight: bold !important;
+        background: #e0e0e0 !important;
+    }
+
+    /* ---- Medication Cards ---- */
+    .medication-card,
+    [class*="MedicationCard"] {
+        page-break-inside: avoid;
+        border: 1px solid #999 !important;
+        padding: 12pt !important;
+        margin-bottom: 12pt !important;
+    }
+
+    /* ---- Page Breaks ---- */
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+
+    table, figure, img {
+        page-break-inside: avoid;
+    }
+
+    /* Avoid orphans and widows */
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* ---- Badges and Tags ---- */
+    .rounded-full {
+        border-radius: 2pt !important;
+        border: 1px solid #999 !important;
+        padding: 2pt 6pt !important;
+    }
+
+    /* ---- Website URL Header ---- */
+    body::before {
+        content: "Transplant Medication Navigator™ - TransplantMedNavigator.com";
+        display: block;
+        text-align: center;
+        font-size: 10pt;
+        color: #666 !important;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8pt;
+        margin-bottom: 16pt;
+    }
+
+    /* ---- Print Date Footer ---- */
+    body::after {
+        content: "Printed from TransplantMedNavigator.com - Information may change. Always verify with your healthcare provider.";
+        display: block;
+        text-align: center;
+        font-size: 9pt;
+        color: #666 !important;
+        border-top: 1px solid #ccc;
+        padding-top: 8pt;
+        margin-top: 24pt;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* ---- Specific Component Adjustments ---- */
+
+    /* Price comparison table - keep visible columns */
+    .overflow-x-auto {
+        overflow: visible !important;
+    }
+
+    /* Assistance program info */
+    .prose {
+        max-width: 100% !important;
+    }
+
+    /* Remove gradients */
+    [class*="gradient"] {
+        background: white !important;
+    }
+
+    /* Icons - hide decorative, keep informational */
+    svg[aria-hidden="true"] {
+        display: none !important;
+    }
+
+    /* Keep checkmarks visible */
+    svg.text-emerald-500,
+    svg.text-green-500 {
+        display: inline !important;
+        width: 12pt !important;
+        height: 12pt !important;
+    }
+}
+
+/* ========================================
+   TEXT SPACING SUPPORT - WCAG 1.4.12
+   Ensures content remains readable when users apply custom
+   text spacing via browser extensions or user stylesheets.
+   Required for HHS Section 504 compliance (WCAG 2.1 Level AA).
+   ======================================== */
+
+/* Ensure containers can grow to accommodate increased text spacing */
+main,
+article,
+section,
+[role="dialog"],
+[role="alertdialog"] {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Prevent fixed-height containers from clipping text */
+p,
+li,
+td,
+th,
+label,
+span,
+a,
+button,
+[role="button"],
+input,
+select,
+textarea {
+    line-height: inherit;
+}
+
+/* Ensure text-containing cards expand for custom text spacing.
+   Only apply to elements that explicitly opt in, to avoid breaking
+   Tailwind overflow-hidden layout on containers and progress bars. */
+.text-spacing-safe {
+    overflow: visible;
+}
+
+/* ========================================
+   REFLOW SUPPORT - WCAG 1.4.10
+   Content reflows without horizontal scroll at 320px viewport width.
+   ======================================== */
+
+/* Ensure tables can scroll horizontally when constrained */
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Smooth scrolling - only for anchor navigation, not global.
+   Global scroll-behavior: smooth can cause perceived blank space
+   during fast scrolling on slower devices. */
+
+/* ========================================
+   SIMPLE VIEW MODE
+   Large fonts, high contrast, hides non-essential elements
+   Toggled via the "Simple View" button in the site header
+   ======================================== */
+
+/* --- Typography: Larger base font and scaled headings --- */
+html.simple-view {
+    font-size: 20px;
+}
+
+html.simple-view body {
+    line-height: 1.8;
+}
+
+html.simple-view h1 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+}
+
+html.simple-view h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+}
+
+html.simple-view h3 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+html.simple-view p,
+html.simple-view li,
+html.simple-view td,
+html.simple-view th,
+html.simple-view label,
+html.simple-view span,
+html.simple-view a {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* Override Tailwind small text classes to be larger in simple view */
+html.simple-view .text-xs {
+    font-size: 1rem !important;
+}
+
+html.simple-view .text-sm {
+    font-size: 1.05rem !important;
+}
+
+html.simple-view .text-base {
+    font-size: 1.15rem !important;
+}
+
+/* --- High Contrast Colors --- */
+html.simple-view body {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+html.simple-view main {
+    background-color: #ffffff;
+}
+
+/* Force high contrast text throughout */
+html.simple-view .text-slate-400,
+html.simple-view .text-slate-500,
+html.simple-view .text-gray-400,
+html.simple-view .text-gray-500,
+html.simple-view .text-slate-600 {
+    color: #1f2937 !important;
+}
+
+html.simple-view .text-slate-700,
+html.simple-view .text-slate-800,
+html.simple-view .text-slate-900 {
+    color: #111827 !important;
+}
+
+/* High contrast links */
+html.simple-view a:not([role="button"]):not([class*="bg-emerald"]) {
+    color: #047857 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+}
+
+/* High contrast buttons */
+html.simple-view button,
+html.simple-view [role="button"] {
+    border-width: 2px;
+}
+
+/* Stronger borders on cards and sections */
+html.simple-view .rounded-xl,
+html.simple-view .rounded-lg,
+html.simple-view .rounded-2xl {
+    border: 2px solid #374151 !important;
+}
+
+/* Brighter focus indicator */
+html.simple-view *:focus-visible {
+    outline: 4px solid #000 !important;
+    outline-offset: 4px !important;
+}
+
+/* --- Hide Non-Essential Elements --- */
+
+/* Decorative images and icons */
+html.simple-view img:not([role="img"]):not(.simple-view-keep) {
+    display: none !important;
+}
+
+/* Keep the logo visible */
+html.simple-view header img {
+    display: inline-block !important;
+}
+
+/* Hide decorative SVG icons (aria-hidden ones are decorative) */
+html.simple-view svg[aria-hidden="true"] {
+    display: none !important;
+}
+
+/* Keep icons inside buttons/links visible for context */
+html.simple-view button svg[aria-hidden="true"],
+html.simple-view a svg[aria-hidden="true"],
+html.simple-view [role="button"] svg[aria-hidden="true"] {
+    display: inline-block !important;
+}
+
+/* Hide non-essential navigation items in simple view */
+html.simple-view .simple-view-hidden {
+    display: none !important;
+}
+
+/* Hide the chat widget in simple view */
+html.simple-view .fixed.bottom-4,
+html.simple-view .fixed.bottom-6 {
+    display: none !important;
+}
+
+/* Simplify background colors for clarity */
+html.simple-view .bg-slate-50,
+html.simple-view .bg-slate-100,
+html.simple-view .bg-gray-50,
+html.simple-view .bg-gray-100 {
+    background-color: #ffffff !important;
+}
+
+html.simple-view .bg-emerald-50 {
+    background-color: #ecfdf5 !important;
+    border: 2px solid #047857 !important;
+}
+
+/* Ensure form inputs are highly visible */
+html.simple-view input,
+html.simple-view select,
+html.simple-view textarea {
+    border: 2px solid #374151 !important;
+    font-size: 1.15rem !important;
+    padding: 0.75rem !important;
+}
+
+/* Larger touch targets */
+html.simple-view button,
+html.simple-view [role="button"],
+html.simple-view a {
+    min-height: 48px;
+}
+
+/* --- Simple View Header Adjustments --- */
+/* Keep the header functional but compact */
+html.simple-view header nav a {
+    font-size: 1rem !important;
+    padding: 0.5rem 0.625rem !important;
+}
