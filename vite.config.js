@@ -86,7 +86,7 @@ export default defineConfig({
             urlPattern: ({ request }) => request.mode === 'navigate',
             handler: 'NetworkFirst',
             options: {
-              cacheName: 'pages-v2',
+              cacheName: 'pages-v3',
               networkTimeoutSeconds: 3,
             }
           },
@@ -95,7 +95,7 @@ export default defineConfig({
             urlPattern: /^https:\/\/.*\/api\/.*/i,
             handler: 'NetworkFirst',
             options: {
-              cacheName: 'api-cache-v2',
+              cacheName: 'api-cache-v3',
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 // 1 hour
@@ -109,7 +109,7 @@ export default defineConfig({
             urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
             handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'image-cache-v3',
+              cacheName: 'image-cache-v4',
               expiration: {
                 maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
@@ -121,7 +121,7 @@ export default defineConfig({
             urlPattern: /\.(?:woff|woff2|ttf|otf|eot)$/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'font-cache-v2',
+              cacheName: 'font-cache-v3',
               expiration: {
                 maxEntries: 20,
                 maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
@@ -133,7 +133,7 @@ export default defineConfig({
             urlPattern: /\.(?:js|css)$/i,
             handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'static-resources-v2',
+              cacheName: 'static-resources-v3',
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
