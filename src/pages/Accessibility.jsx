@@ -61,7 +61,7 @@ const Accessibility = () => {
                         Our Commitment
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        TransplantNav LLC is committed to making the AMedNav website accessible to everyone, including people with disabilities. We believe that all transplant patients deserve equal access to medication assistance information, regardless of ability.
+                        TransplantNav LLC is committed to making the AMedNav website accessible to everyone, including people with disabilities. We believe that all patients deserve equal access to medication assistance information, regardless of ability.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         We work to follow the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines help make web content more usable for people with disabilities and better for everyone.
@@ -122,7 +122,7 @@ const Accessibility = () => {
                         <div className="bg-slate-50 rounded-lg p-4">
                             <h3 className="font-semibold text-slate-900 mb-2">Color and Contrast</h3>
                             <p className="text-slate-700">
-                                Text colors meet WCAG AA contrast requirements (at least 4.5:1 for normal text and 3:1 for large text). We use a custom high-contrast color palette designed for transplant patients who may have vision changes from medications. Color is never the only way to convey information.
+                                Text colors meet WCAG AA contrast requirements (at least 4.5:1 for normal text and 3:1 for large text). We use a custom high-contrast color palette designed for patients who may have vision changes from medications. Color is never the only way to convey information.
                             </p>
                         </div>
                         <div className="bg-slate-50 rounded-lg p-4">

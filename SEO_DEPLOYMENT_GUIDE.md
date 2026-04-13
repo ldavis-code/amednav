@@ -193,7 +193,7 @@ Your content already targets good keywords:
 1. **Medical directories:** Submit to health resource directories
 2. **Transplant organizations:** Ask TRIO and related orgs to link to you
 3. **Social media:** Share on Facebook, Twitter, LinkedIn
-4. **Medical forums:** Share in transplant patient communities (Reddit, Facebook groups)
+4. **Medical forums:** Share in patient communities (Reddit, Facebook groups)
 
 ### Local SEO (if applicable)
 

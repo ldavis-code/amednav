@@ -11,7 +11,7 @@
 }
 
 /* ========================================
-   ACCESSIBILITY IMPROVEMENTS FOR TRANSPLANT PATIENTS
+   ACCESSIBILITY IMPROVEMENTS FOR PATIENTS
    Priority: Vision changes from medications require higher contrast
    ======================================== */
 
@@ -128,7 +128,7 @@ body {
 
 /* ========================================
    COLOR CONTRAST OVERRIDES - WCAG AA Compliant
-   Transplant patients often have vision changes from medications
+   Patients often have vision changes from medications
    ======================================== */
 
 @layer utilities {

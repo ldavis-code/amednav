@@ -37,7 +37,7 @@ export default function SurveyLanding() {
               </h2>
             </div>
             <p className="text-slate-600 mb-4">
-              For transplant patients dealing with anti-rejection drugs, pharmacies, and insurance.
+              For patients dealing with anti-rejection drugs, pharmacies, and insurance.
             </p>
             <p className="text-sm text-slate-500 mb-6">
               8 topic areas - complete only the ones relevant to you

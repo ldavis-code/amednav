@@ -66,12 +66,12 @@ No term definition exceeds 15 words. No jargon is left undefined.
 ### Home Page (`src/App.jsx`, Home component)
 
 - Hero: "Compare medication prices and find verified assistance programs in one place."
-- Mission: "We help transplant patients get the medicine they need."
+- Mission: "We help patients get the medicine they need."
 - Core values: "We break down hard forms into easy steps so you don't need a college degree to get help with your medicine."
 
 ### Resources (`src/data/resources.json`)
 
-- Every description in plain language: "Gives money to help dialysis and transplant patients pay for treatment if they qualify."
+- Every description in plain language: "Gives money to help dialysis and patients pay for treatment if they qualify."
 - Avoids institutional language
 
 ---
@@ -117,13 +117,13 @@ No term definition exceeds 15 words. No jargon is left undefined.
 
 ### Overall Perceived Value: HIGH
 
-This site addresses a genuine, critical need — transplant patients navigating a fragmented, high-stakes medication affordability landscape — with unusual clarity and completeness.
+This site addresses a genuine, critical need — patients navigating a fragmented, high-stakes medication affordability landscape — with unusual clarity and completeness.
 
 ### Core Value Propositions
 
 #### 1. Aggregation of fragmented information (HIGH VALUE)
 
-184 medications, 60+ assistance programs, 65+ copay cards, and 50+ external resources in a single searchable interface. This information is otherwise scattered across dozens of manufacturer websites, government portals, and nonprofit organizations. For a transplant patient or social worker, this consolidation alone justifies the tool.
+184 medications, 60+ assistance programs, 65+ copay cards, and 50+ external resources in a single searchable interface. This information is otherwise scattered across dozens of manufacturer websites, government portals, and nonprofit organizations. For a patient or social worker, this consolidation alone justifies the tool.
 
 #### 2. "My Path" personalization quiz (HIGH VALUE)
 
@@ -147,7 +147,7 @@ The "When Insurance Sends You Away" section educates about copay accumulators, m
 
 #### 5. Price comparison and savings tools (MODERATE-HIGH VALUE)
 
-Medication search with estimates across GoodRx, Cost Plus, Walmart, Amazon, SingleCare. Savings Calculator and tracker add ongoing utility. The "Deductible Trap" education (warning transplant patients not to use discount cards for daily medications) is a nuanced, genuinely helpful insight most discount card sites would never mention.
+Medication search with estimates across GoodRx, Cost Plus, Walmart, Amazon, SingleCare. Savings Calculator and tracker add ongoing utility. The "Deductible Trap" education (warning patients not to use discount cards for daily medications) is a nuanced, genuinely helpful insight most discount card sites would never mention.
 
 #### 6. Privacy-first design (MODERATE VALUE, HIGH TRUST)
 
@@ -163,7 +163,7 @@ Quiz answers stored locally, no PHI collection, clear privacy statements. For a 
 
 | Persona | Perceived Value | Why |
 |---------|----------------|-----|
-| **Newly post-transplant patient** | Very High | Overwhelmed, unfamiliar with assistance landscape. Personalized quiz + plain-language guidance addresses core need. |
+| **Newly post-patient** | Very High | Overwhelmed, unfamiliar with assistance landscape. Personalized quiz + plain-language guidance addresses core need. |
 | **Stable, long-term patient** | High | Annual renewal reminders, copay diversion awareness, Medicare Part B-ID education, insurance appeal tools. |
 | **Young adult aging off parent's insurance** | Very High | Dedicated FAQ, clear options breakdown (marketplace, Medicaid, COBRA, employer). |
 | **Caregiver/family member** | High | Can research on behalf of patient. Plain language helps explain complex topics to patient. |

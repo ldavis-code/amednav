@@ -6,7 +6,7 @@ Transform the Transplant Medication Navigator from a free informational tool int
 ---
 
 ## Phase 1: Foundation (Current)
-*Free informational tool for transplant patients*
+*Free informational tool for patients*
 
 - [x] Medication database with assistance programs
 - [x] Copay card and PAP information

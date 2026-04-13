@@ -1,7 +1,7 @@
 {
   "name": "amednav",
   "version": "1.0.0",
-  "description": "From Prescription to Possession - Free guide for transplant patients",
+  "description": "From Prescription to Possession - Free guide for patients",
   "type": "module",
   "scripts": {
     "dev": "vite",

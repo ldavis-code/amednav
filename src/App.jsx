@@ -866,7 +866,7 @@ const Home = () => {
                         </div>
 
                         <p className="text-lg text-plum-100 leading-relaxed">
-                            We help transplant patients get the medicine they need. We show you how to find help paying for your medicine. We give you clear, honest information.
+                            We help patients get the medicine they need. We show you how to find help paying for your medicine. We give you clear, honest information.
                         </p>
                     </div>
                     <div className="p-8 md:p-12 md:pt-8 flex flex-col justify-center bg-plum-800/50">
@@ -875,7 +875,7 @@ const Home = () => {
                             <h2 className="text-2xl font-bold tracking-tight">Our Vision</h2>
                         </div>
                         <p className="text-lg text-plum-100 leading-relaxed">
-                            Every transplant patient deserves a fair chance. You should not lose your health because medicine costs too much.
+                            Every patient deserves a fair chance. You should not lose your health because medicine costs too much.
                         </p>
                     </div>
                 </div>
@@ -1012,7 +1012,7 @@ const Home = () => {
                         <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
                             <span className="inline-block bg-plum-100 text-plum-800 text-xs font-bold px-2 py-0.5 rounded mb-2">Peer-Reviewed Journal</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
-                                Fight Songs: Why Transplant Patients Battling for Life Deserve Positive Anthems, Too
+                                Fight Songs: Why Patients Battling for Life Deserve Positive Anthems, Too
                             </p>
                             <p className="text-slate-500 text-xs leading-relaxed">
                                 Liver Transplantation, 2026 · First Author
@@ -1099,7 +1099,7 @@ const Home = () => {
                     Need to Talk to Someone?
                 </h3>
                 <p className="text-slate-600 mb-4">
-                    Being a transplant patient can be hard on your feelings. You can get free, private help any time, day or night.
+                    Being a patient can be hard on your feelings. You can get free, private help any time, day or night.
                 </p>
                 <div className="mb-4">
                     <a href="tel:988" className="inline-block text-5xl md:text-6xl font-black text-rose-600 hover:text-rose-700 transition mb-2 tracking-tight">
@@ -1170,7 +1170,7 @@ const ORGAN_MEDICATIONS = {
     },
     Liver: {
         title: 'Liver Transplant',
-        description: 'Liver transplant patients often require lower levels of immunosuppression compared to other organ recipients due to the liver\'s unique immunological properties.',
+        description: 'Liver patients often require lower levels of immunosuppression compared to other organ recipients due to the liver\'s unique immunological properties.',
         medications: [
             { id: 'tacrolimus', name: 'Tacrolimus', brand: 'Prograf', class: 'Calcineurin Inhibitor', notes: 'The most commonly used CNI in liver transplantation.' },
             { id: 'mycophenolate', name: 'Mycophenolate Mofetil', brand: 'CellCept', class: 'Antimetabolite', notes: 'Often used in combination with a CNI.' },
@@ -1181,7 +1181,7 @@ const ORGAN_MEDICATIONS = {
         title: 'Lung Transplant',
         description: 'Lung transplant recipients are at a high risk of rejection, and immunosuppressive regimens are often more intensive.',
         medications: [
-            { id: 'tacrolimus', name: 'Tacrolimus', brand: 'Prograf', class: 'Calcineurin Inhibitor', notes: 'Preferred CNI for lung transplant patients.' },
+            { id: 'tacrolimus', name: 'Tacrolimus', brand: 'Prograf', class: 'Calcineurin Inhibitor', notes: 'Preferred CNI for lung patients.' },
             { id: 'mycophenolate', name: 'Mycophenolate Mofetil', brand: 'CellCept', class: 'Antimetabolite', notes: 'Used in combination with tacrolimus.' },
             { id: 'prednisone', name: 'Prednisone', brand: 'Prednisone', class: 'Corticosteroid', notes: 'Maintained at a low dose long-term.' }
         ]
@@ -2704,7 +2704,7 @@ const MedicationSearch = () => {
                     <div className="flex items-start gap-3">
                         <AlertTriangle className="text-red-600 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
                         <div>
-                            <p className="font-bold text-red-800 mb-1">Important Safety Note for Transplant Patients</p>
+                            <p className="font-bold text-red-800 mb-1">Important Safety Note for Patients</p>
                             <p className="text-red-700 text-sm">Never switch from brand name to generic (or between different generic manufacturers) without your transplant team's approval. In transplant medicine, slight variations in bioavailability can cause organ rejection. <strong>"Cheaper" isn't always "safe"</strong> if the manufacturer changes.</p>
                         </div>
                     </div>
@@ -3267,7 +3267,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
 
                     <div className="bg-plum-50 p-3 rounded-lg text-xs text-plum-800 flex items-start gap-2">
                         <Info size={14} className="mt-0.5 flex-shrink-0" />
-                        <p>Your report helps other transplant patients estimate costs. Data is stored locally on your device only.</p>
+                        <p>Your report helps other patients estimate costs. Data is stored locally on your device only.</p>
                     </div>
 
                     <div className="flex gap-3 pt-2">
@@ -4075,7 +4075,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                         </td>
                                         <td className="p-3 no-print">
                                             <div className="flex flex-col gap-1">
-                                                <a href="/trumprx" className="text-teal-600 hover:underline font-medium flex items-center gap-1" aria-label="View TrumpRx guide for transplant patients">
+                                                <a href="/trumprx" className="text-teal-600 hover:underline font-medium flex items-center gap-1" aria-label="View TrumpRx guide for patients">
                                                     Our Guide <ArrowRight size={14} aria-hidden="true" />
                                                 </a>
                                                 <a href="/out/pap/trumprx-gov" target="_blank" rel="noreferrer" className="text-teal-500 hover:underline text-sm flex items-center gap-1 min-h-[44px] px-2" aria-label="Visit TrumpRx.gov (opens in new tab)">
@@ -4344,7 +4344,7 @@ const InsuranceChangeSimulator = () => {
                 { type: 'loss', icon: '🚫', title: 'Copay Cards', desc: 'Most manufacturer copay cards are NOT allowed with Medicare. This is a major change.' },
                 { type: 'gain', icon: '✅', title: 'PAP Access', desc: 'You may now qualify for Patient Assistance Programs if your income is low enough (many have higher limits for Medicare patients).' },
                 { type: 'change', icon: '🔄', title: 'Foundation Help', desc: 'Foundations like PAN, PANF, and HealthWell CAN help Medicare patients with copays.' },
-                { type: 'info', icon: '💡', title: 'Part B-ID Option', desc: 'Kidney transplant patients may qualify for Part B coverage of immunosuppressants (Part B-ID). Premium: $121.60/month in 2026 (up from $110.40 in 2025), plus 20% coinsurance after $283 deductible.' },
+                { type: 'info', icon: '💡', title: 'Part B-ID Option', desc: 'Kidney patients may qualify for Part B coverage of immunosuppressants (Part B-ID). Premium: $121.60/month in 2026 (up from $110.40 in 2025), plus 20% coinsurance after $283 deductible.' },
                 { type: 'info', icon: '📅', title: '2026 Cap', desc: 'Annual out-of-pocket cap on Part D drugs: $2,100 in 2026 (up from $2,000 in 2025).' },
             ],
             action: 'Apply to manufacturer PAPs 3 months before your Medicare start date. Register with foundations early as funds run out.',
@@ -4634,7 +4634,7 @@ const Education = () => {
                     <div className="max-w-4xl mx-auto space-y-8">
                         <div className="prose prose-slate max-w-none">
                             <h2 className="text-2xl font-bold text-slate-900">Mixing Programs</h2>
-                            <p className="text-lg text-slate-700">Most transplant patients use a mix of help programs to pay for their medicines. It's like a puzzle.</p>
+                            <p className="text-lg text-slate-700">Most patients use a mix of help programs to pay for their medicines. It's like a puzzle.</p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                              <section className="bg-purple-50 p-6 rounded-xl border border-purple-100">
@@ -4922,7 +4922,7 @@ const Education = () => {
                                 </div>
 
                                 <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-                                    <h3 className="font-bold text-yellow-900 text-lg mb-3">Why This Matters for Transplant Patients</h3>
+                                    <h3 className="font-bold text-yellow-900 text-lg mb-3">Why This Matters for Patients</h3>
                                     <p className="text-yellow-900 mb-4">Your anti-rejection medicines are specialty medications. They are expensive. Understanding these words helps you:</p>
                                     <ul className="text-yellow-900 space-y-2 ml-6 list-disc">
                                         <li>Know what you'll pay</li>
@@ -4995,7 +4995,7 @@ const Education = () => {
                                     </ul>
                                 </div>
                                 <div className="bg-white p-4 rounded-lg border border-amber-200">
-                                    <h3 className="font-bold text-amber-900 mb-2">What Transplant Patients Should Know</h3>
+                                    <h3 className="font-bold text-amber-900 mb-2">What Patients Should Know</h3>
                                     <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
                                         <li>WISeR covers outpatient procedures (nerve stimulators, spinal procedures, wound care), <strong>not</strong> transplant medications</li>
                                         <li>Your immunosuppressant drugs are NOT affected</li>
@@ -5141,7 +5141,7 @@ const Education = () => {
                     <div className="max-w-4xl mx-auto space-y-8">
                         <div className="text-center mb-8">
                             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The Deductible Trap</h1>
-                            <p className="text-xl text-slate-600">Why Prescription Discount Cards Can Cost Transplant Patients More</p>
+                            <p className="text-xl text-slate-600">Why Prescription Discount Cards Can Cost Patients More</p>
                         </div>
 
                         <div className="bg-gradient-to-br from-red-50 to-orange-50 border-4 border-red-300 rounded-2xl p-8 shadow-lg">
@@ -5150,7 +5150,7 @@ const Education = () => {
                                     <AlertTriangle size={32} />
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-bold text-red-900 mb-2">⚠️ Important Warning for Transplant Patients</h2>
+                                    <h2 className="text-2xl font-bold text-red-900 mb-2">⚠️ Important Warning for Patients</h2>
                                     <p className="text-lg font-bold text-red-800">Using discount cards like GoodRx or SingleCare can cost you THOUSANDS of extra dollars each year.</p>
                                 </div>
                             </div>
@@ -5209,7 +5209,7 @@ const Education = () => {
                         </section>
 
                         <section className="bg-gradient-to-r from-plum-50 to-plum-50 p-8 rounded-xl border border-plum-200" aria-labelledby="when-to-use">
-                            <h2 id="when-to-use" className="text-2xl font-bold text-slate-900 mb-6">When Should Transplant Patients Use Discount Cards?</h2>
+                            <h2 id="when-to-use" className="text-2xl font-bold text-slate-900 mb-6">When Should Patients Use Discount Cards?</h2>
                             <div className="space-y-4">
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
                                     <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
@@ -5503,7 +5503,7 @@ const Education = () => {
                         </section>
 
                         <section className="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl border-2 border-amber-300" aria-labelledby="why-matters">
-                            <h2 id="why-matters" className="text-2xl font-bold text-slate-900 mb-6">Why Transplant Patients Must Know This</h2>
+                            <h2 id="why-matters" className="text-2xl font-bold text-slate-900 mb-6">Why Patients Must Know This</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start gap-3">
                                     <div className="bg-amber-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</div>
@@ -6221,7 +6221,7 @@ ${patientName || "[Your Name]"}`;
                                         <span id="manufacturer-script">Calling Manufacturers</span>
                                     </div>
                                     <div className="p-6 bg-white">
-                                        <p className="font-serif text-xl text-slate-800 leading-relaxed">"I'm a transplant patient. Do you have a Patient Assistance Program for <span className="bg-yellow-100 px-1">[drug name]</span>?"</p>
+                                        <p className="font-serif text-xl text-slate-800 leading-relaxed">"I'm a patient. Do you have a Patient Assistance Program for <span className="bg-yellow-100 px-1">[drug name]</span>?"</p>
                                     </div>
                                 </section>
                                 <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="foundation-script">

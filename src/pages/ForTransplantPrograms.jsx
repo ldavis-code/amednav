@@ -49,7 +49,7 @@ const ForTransplantPrograms = () => {
                     Help Your Patients Find Affordable Medications
                 </h1>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-                    Give transplant patients a trusted resource with free educational content to find help programs and reduce money problems that prevent them from taking medications.
+                    Give patients a trusted resource with free educational content to find help programs and reduce money problems that prevent them from taking medications.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
