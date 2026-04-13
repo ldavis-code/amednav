@@ -541,7 +541,8 @@ const Layout = ({ children }) => {
                     <Link to="/" className="flex items-center gap-2 text-plum-700 hover:text-plum-800 transition" aria-label="AMedNav™ home">
                         <img src="/photos/logo.png" alt="" width={32} height={32} aria-hidden="true" className="flex-shrink-0" />
                         <span className="font-bold text-lg md:text-xl leading-tight">
-                            Transplant Medication<br className="md:hidden"/> Navigator<sup className="text-xs">™</sup>
+                            AMedNav<sup className="text-xs">™</sup><br/>
+                            <span className="text-xs md:text-sm font-medium text-slate-500">Medication Navigator</span>
                         </span>
                     </Link>
 
@@ -640,7 +641,7 @@ const Layout = ({ children }) => {
                         <Clock className="inline-block w-4 h-4 mr-1 -mt-0.5" aria-hidden="true" />
                         Information last updated: {LAST_UPDATED}
                     </p>
-                    <p>© 2026 AMedNav™. All Rights Reserved.</p>
+                    <p>© 2026 AMedNav™ - Medication Navigator. All Rights Reserved.</p>
                     <p className="mt-4 text-slate-300 text-sm">Created by Lorrinda Gray-Davis. est August 2025</p>
                     <p className="mt-2 text-slate-400 text-sm">
                         <a href="mailto:info@transplantmedicationnavigator.com" className="text-plum-400 hover:text-plum-300 underline">info@transplantmedicationnavigator.com</a>
