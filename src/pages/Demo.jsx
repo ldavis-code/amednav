@@ -99,7 +99,7 @@ const Demo = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-blue-700 text-white">
+      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-plum-700 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full mb-6">
@@ -224,7 +224,7 @@ const Demo = () => {
 
       {/* CTA Section */}
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12 border border-purple-100">
+        <div className="bg-gradient-to-br from-purple-50 to-plum-50 rounded-2xl p-8 md:p-12 border border-purple-100">
           <Sparkles className="mx-auto text-purple-600 mb-4" size={32} />
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Ready to Support Your Transplant Patients?

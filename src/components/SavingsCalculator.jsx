@@ -368,8 +368,8 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                     </p>
                 </div>
                 <div className="bg-slate-50 rounded-xl p-4 text-center">
-                    <div className="inline-flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full mb-3">
-                        <Database className="w-5 h-5 text-blue-600" aria-hidden="true" />
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-plum-100 rounded-full mb-3">
+                        <Database className="w-5 h-5 text-plum-600" aria-hidden="true" />
                     </div>
                     <h4 className="font-semibold text-slate-900 mb-1">Real Price Data</h4>
                     <p className="text-sm text-slate-600">

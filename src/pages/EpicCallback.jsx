@@ -175,12 +175,12 @@ const EpicCallback = () => {
             <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 text-center">
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 ${
-                    status === 'processing' ? 'bg-blue-100' :
+                    status === 'processing' ? 'bg-plum-100' :
                     status === 'success' ? 'bg-emerald-100' :
                     'bg-red-100'
                 }`}>
                     {status === 'processing' && (
-                        <Loader2 size={32} className="text-blue-600 animate-spin" aria-hidden="true" />
+                        <Loader2 size={32} className="text-plum-600 animate-spin" aria-hidden="true" />
                     )}
                     {status === 'success' && (
                         <CheckCircle size={32} className="text-emerald-600" aria-hidden="true" />
@@ -199,7 +199,7 @@ const EpicCallback = () => {
 
                 {/* Message */}
                 <p className={`mb-6 ${
-                    status === 'processing' ? 'text-blue-700' :
+                    status === 'processing' ? 'text-plum-700' :
                     status === 'success' ? 'text-emerald-700' :
                     'text-red-700'
                 }`}>
@@ -216,8 +216,8 @@ const EpicCallback = () => {
                             </div>
                         </div>
                         {programCount > 0 && (
-                            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                                <p className="text-blue-800 font-medium text-sm">
+                            <div className="bg-plum-50 border border-plum-200 rounded-lg p-4 mb-6">
+                                <p className="text-plum-800 font-medium text-sm">
                                     {programCount} assistance program{programCount !== 1 ? 's' : ''} found for your medications.
                                 </p>
                             </div>
@@ -230,7 +230,7 @@ const EpicCallback = () => {
                     <div className="space-y-3">
                         <Link
                             to={returnPath}
-                            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition"
+                            className="inline-flex items-center gap-2 bg-plum-600 hover:bg-plum-700 text-white px-6 py-3 rounded-lg font-bold transition"
                         >
                             Go Back and Try Again
                             <ArrowRight size={16} aria-hidden="true" />

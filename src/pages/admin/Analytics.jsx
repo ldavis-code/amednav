@@ -67,7 +67,7 @@ export default function Analytics() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -100,7 +100,7 @@ export default function Analytics() {
               </div>
               <button
                 onClick={handleExport}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700"
+                className="flex items-center gap-2 px-4 py-2 bg-plum-600 text-white rounded-lg text-sm hover:bg-plum-700"
               >
                 <Download className="h-4 w-4" />
                 Export CSV
@@ -171,7 +171,7 @@ export default function Analytics() {
               <div className="bg-white rounded-lg shadow-sm border p-4">
                 <p className="text-sm text-gray-500">Marketing Opt-ins</p>
                 <p className="text-2xl font-bold text-gray-900">{quizAnalytics.marketingOptIns}</p>
-                <p className="text-xs text-blue-600 mt-1">{quizAnalytics.optInRate}% opt-in rate</p>
+                <p className="text-xs text-plum-600 mt-1">{quizAnalytics.optInRate}% opt-in rate</p>
               </div>
             </div>
 
@@ -231,7 +231,7 @@ export default function Analytics() {
                         </td>
                         <td className="px-6 py-4 text-center">
                           <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
-                            lead.converted ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
+                            lead.converted ? 'bg-plum-100 text-plum-700' : 'bg-gray-100 text-gray-500'
                           }`}>
                             {lead.converted ? 'Yes' : 'No'}
                           </span>
@@ -306,7 +306,7 @@ export default function Analytics() {
                       <td className="px-6 py-4 text-sm font-medium text-gray-900">{row.programId}</td>
                       <td className="px-6 py-4">
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          row.programType === 'copay' ? 'bg-blue-100 text-blue-800' :
+                          row.programType === 'copay' ? 'bg-plum-100 text-plum-800' :
                           row.programType === 'foundation' ? 'bg-green-100 text-green-800' :
                           'bg-purple-100 text-purple-800'
                         }`}>

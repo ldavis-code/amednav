@@ -83,7 +83,7 @@ export default function MedicationConfig() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -121,7 +121,7 @@ export default function MedicationConfig() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search medications..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-plum-500"
             />
           </div>
           <select
@@ -137,7 +137,7 @@ export default function MedicationConfig() {
         </div>
 
         {/* Info */}
-        <div className="bg-blue-50 rounded-lg p-4 border border-blue-100 text-sm text-blue-800">
+        <div className="bg-plum-50 rounded-lg p-4 border border-plum-100 text-sm text-plum-800">
           <Star className="inline h-4 w-4 mr-1" /> <strong>Featured</strong> medications are highlighted for your patients.
           <EyeOff className="inline h-4 w-4 mx-1 ml-3" /> <strong>Hidden</strong> medications won't appear in search results.
         </div>
@@ -157,7 +157,7 @@ export default function MedicationConfig() {
                     <p className="text-xs text-gray-500">{med.generic_name}</p>
                   </div>
                   {saving === med.id && (
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600" />
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-plum-600" />
                   )}
                 </div>
                 <span className="inline-block px-2 py-0.5 rounded-full text-xs bg-gray-100 text-gray-600 mb-3">

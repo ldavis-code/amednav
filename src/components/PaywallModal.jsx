@@ -188,7 +188,7 @@ const PaywallModal = ({ isOpen, onClose, featureType = 'quiz', onPromoSuccess })
 
         {/* Icon */}
         <div className="flex justify-center mb-4">
-          <div className="bg-gradient-to-br from-purple-100 to-blue-100 p-4 rounded-full">
+          <div className="bg-gradient-to-br from-purple-100 to-plum-100 p-4 rounded-full">
             <Lock size={32} className="text-purple-600" aria-hidden="true" />
           </div>
         </div>

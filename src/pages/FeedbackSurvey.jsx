@@ -156,7 +156,7 @@ export default function FeedbackSurvey() {
       rose: 'bg-rose-50 hover:bg-rose-100 border-rose-300 text-rose-800 focus:ring-rose-300',
       amber: 'bg-amber-50 hover:bg-amber-100 border-amber-300 text-amber-800 focus:ring-amber-300',
       slate: 'bg-slate-50 hover:bg-slate-100 border-slate-300 text-slate-700 focus:ring-slate-300',
-      blue: 'bg-blue-50 hover:bg-blue-100 border-blue-300 text-blue-800 focus:ring-blue-300',
+      blue: 'bg-plum-50 hover:bg-plum-100 border-plum-300 text-plum-800 focus:ring-plum-300',
     };
 
     return (

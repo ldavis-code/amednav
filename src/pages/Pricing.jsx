@@ -31,11 +31,11 @@ const Pricing = () => {
 
     const colorClasses = {
         indigo: {
-            bg: 'bg-indigo-50',
-            border: 'border-indigo-200',
-            icon: 'bg-indigo-100 text-indigo-600',
-            button: 'bg-indigo-700 hover:bg-indigo-800',
-            check: 'text-indigo-600'
+            bg: 'bg-plum-50',
+            border: 'border-plum-200',
+            icon: 'bg-plum-100 text-plum-600',
+            button: 'bg-plum-700 hover:bg-plum-800',
+            check: 'text-plum-600'
         }
     };
 

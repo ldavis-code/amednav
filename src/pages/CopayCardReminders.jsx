@@ -442,9 +442,9 @@ export default function CopayCardReminders() {
         </div>
 
         {/* Tips Section */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
-          <h3 className="font-semibold text-blue-900 mb-2">Tips for Managing Copay Cards</h3>
-          <ul className="text-sm text-blue-800 space-y-2">
+        <div className="bg-plum-50 border border-plum-200 rounded-xl p-4 mb-6">
+          <h3 className="font-semibold text-plum-900 mb-2">Tips for Managing Copay Cards</h3>
+          <ul className="text-sm text-plum-800 space-y-2">
             <li>Most manufacturer copay cards expire on December 31st and require annual re-enrollment</li>
             <li>Some programs have maximum annual benefits (e.g., $6,000/year) - track your usage</li>
             <li>Keep the enrollment phone number handy for quick re-enrollment</li>

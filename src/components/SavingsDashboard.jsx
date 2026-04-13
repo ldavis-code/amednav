@@ -210,7 +210,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
             {totalEntries > 0 && (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="bg-white rounded-xl border border-slate-200 p-4 text-center">
-                        <DollarSign className="mx-auto text-blue-500 mb-2" size={24} aria-hidden="true" />
+                        <DollarSign className="mx-auto text-plum-500 mb-2" size={24} aria-hidden="true" />
                         <div className="text-2xl font-bold text-slate-900">${avgPerFill.toFixed(0)}</div>
                         <div className="text-sm text-slate-500">Avg per fill</div>
                     </div>

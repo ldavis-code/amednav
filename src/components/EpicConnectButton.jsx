@@ -147,16 +147,16 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
     };
 
     return (
-        <div className={`bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 ${className}`}>
+        <div className={`bg-gradient-to-r from-plum-50 to-plum-50 border border-plum-200 rounded-xl p-5 ${className}`}>
             <div className="flex items-start gap-4">
-                <div className="bg-blue-600 text-white p-2.5 rounded-lg flex-shrink-0">
+                <div className="bg-plum-600 text-white p-2.5 rounded-lg flex-shrink-0">
                     <Zap size={22} aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                    <h3 className="font-bold text-lg text-blue-900 mb-1">
+                    <h3 className="font-bold text-lg text-plum-900 mb-1">
                         Connect to My Health System
                     </h3>
-                    <p className="text-blue-700 text-sm mb-3">
+                    <p className="text-plum-700 text-sm mb-3">
                         Securely connect to your health system to automatically import your current medications. This saves time and helps us find the right assistance programs for you.
                     </p>
 
@@ -181,7 +181,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                                         )}
                                     </p>
                                     {importedData.assistancePrograms && importedData.assistancePrograms.length > 0 && (
-                                        <p className="text-blue-700 mt-2 font-medium">
+                                        <p className="text-plum-700 mt-2 font-medium">
                                             {importedData.assistancePrograms.length} assistance program{importedData.assistancePrograms.length !== 1 ? 's' : ''} found for your medications.
                                         </p>
                                     )}
@@ -192,7 +192,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
 
                     {/* Health System Selector */}
                     <div className="mb-3 relative">
-                        <label htmlFor="health-system-search" className="block text-sm font-semibold text-blue-900 mb-1.5">
+                        <label htmlFor="health-system-search" className="block text-sm font-semibold text-plum-900 mb-1.5">
                             Select Your Health System
                         </label>
                         <div className="relative">
@@ -219,7 +219,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                                     // Delay to allow click on dropdown item
                                     setTimeout(() => setShowDropdown(false), 200);
                                 }}
-                                className="w-full pl-9 pr-8 py-2.5 border border-blue-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full pl-9 pr-8 py-2.5 border border-plum-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-plum-500 focus:border-transparent"
                                 autoComplete="off"
                             />
                             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -228,7 +228,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                         </div>
 
                         {showDropdown && (
-                            <ul className="absolute z-10 w-full mt-1 bg-white border border-blue-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                            <ul className="absolute z-10 w-full mt-1 bg-white border border-plum-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                                 {filteredSystems.length === 0 ? (
                                     <li className="px-4 py-3 text-sm text-slate-500">
                                         No matching health systems found. Contact us to add yours.
@@ -238,8 +238,8 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                                         <li key={sys.id}>
                                             <button
                                                 type="button"
-                                                className={`w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition-colors ${
-                                                    selectedSystem === sys.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-slate-700'
+                                                className={`w-full text-left px-4 py-2.5 text-sm hover:bg-plum-50 transition-colors ${
+                                                    selectedSystem === sys.id ? 'bg-plum-50 text-plum-700 font-medium' : 'text-slate-700'
                                                 }`}
                                                 onMouseDown={(e) => {
                                                     e.preventDefault();
@@ -264,7 +264,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                     <button
                         onClick={handleConnect}
                         disabled={loading || !selectedSystem}
-                        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
+                        className="inline-flex items-center gap-2 bg-plum-600 hover:bg-plum-700 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
                         aria-label="Connect to your health system to import your medications"
                     >
                         {loading ? (
@@ -280,7 +280,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                         )}
                     </button>
 
-                    <p className="text-xs text-blue-600 mt-2">
+                    <p className="text-xs text-plum-600 mt-2">
                         Your data is transmitted securely using PKCE. We do not store your login credentials.
                     </p>
                 </div>

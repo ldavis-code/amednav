@@ -68,7 +68,7 @@ const FeedbackWidget = ({ medicationName }) => {
       red: 'bg-rose-500 hover:bg-rose-600',
       amber: 'bg-amber-500 hover:bg-amber-600',
       gray: 'bg-slate-500 hover:bg-slate-600',
-      blue: 'bg-blue-600 hover:bg-blue-700'
+      blue: 'bg-plum-600 hover:bg-plum-700'
     };
 
     return (

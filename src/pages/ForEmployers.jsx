@@ -42,8 +42,8 @@ const ForEmployers = () => {
         <article className="max-w-5xl mx-auto space-y-12 pb-12">
             {/* Hero Section */}
             <header className="text-center py-8 md:py-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-                    <Briefcase size={32} className="text-blue-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-6">
+                    <Briefcase size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     Reduce Specialty Drug Costs for Your Transplant Employees
@@ -54,7 +54,7 @@ const ForEmployers = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                         href="mailto:info@transplantmedicationnavigator.com?subject=Employer%20Partnership%20Inquiry"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                     >
                         <Mail size={20} aria-hidden="true" />
                         Learn More
@@ -65,8 +65,8 @@ const ForEmployers = () => {
             {/* Value Props */}
             <section className="grid md:grid-cols-2 gap-6">
                 {valueProps.map((prop, index) => (
-                    <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-100 transition">
-                        <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
+                    <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-plum-100 transition">
+                        <div className="w-12 h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
                             <prop.icon size={24} />
                         </div>
                         <h2 className="text-xl font-bold text-slate-900 mb-2">{prop.title}</h2>
@@ -81,7 +81,7 @@ const ForEmployers = () => {
                 <div className="grid md:grid-cols-2 gap-3">
                     {benefits.map((benefit, index) => (
                         <div key={index} className="flex items-center gap-3 bg-white p-4 rounded-lg">
-                            <CheckCircle size={20} className="text-blue-600 flex-shrink-0" aria-hidden="true" />
+                            <CheckCircle size={20} className="text-plum-600 flex-shrink-0" aria-hidden="true" />
                             <span className="text-slate-700">{benefit}</span>
                         </div>
                     ))}
@@ -93,17 +93,17 @@ const ForEmployers = () => {
                 <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">How It Works</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center">
-                        <div className="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
+                        <div className="w-12 h-12 bg-plum-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
                         <h3 className="font-bold text-slate-900 mb-2">Share the Resource</h3>
                         <p className="text-slate-600 text-sm">Add the link to your benefits portal, open enrollment materials, or HR communications</p>
                     </div>
                     <div className="text-center">
-                        <div className="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
+                        <div className="w-12 h-12 bg-plum-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                         <h3 className="font-bold text-slate-900 mb-2">Employees Search</h3>
                         <p className="text-slate-600 text-sm">Employees search for their transplant medications and find applicable assistance programs</p>
                     </div>
                     <div className="text-center">
-                        <div className="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
+                        <div className="w-12 h-12 bg-plum-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
                         <h3 className="font-bold text-slate-900 mb-2">Lower Costs</h3>
                         <p className="text-slate-600 text-sm">Employees apply for copay cards and PAPs, reducing their costs and potentially plan spend</p>
                     </div>
@@ -111,7 +111,7 @@ const ForEmployers = () => {
             </section>
 
             {/* Use Case */}
-            <section className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-8">
+            <section className="bg-gradient-to-br from-plum-50 to-plum-50 border-2 border-plum-200 rounded-2xl p-8">
                 <h2 className="text-xl font-bold text-slate-900 mb-4">Real Impact for Transplant Employees</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
                     Transplant recipients typically take 3-5 medications daily for life. Immunosuppressants like tacrolimus and mycophenolate can cost hundreds to thousands per month. Even with good insurance, copays add up.
@@ -122,17 +122,17 @@ const ForEmployers = () => {
             </section>
 
             {/* For Employees Callout */}
-            <section className="bg-blue-50 border border-blue-200 rounded-2xl p-8 text-center">
+            <section className="bg-plum-50 border border-plum-200 rounded-2xl p-8 text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                    <Users size={24} className="text-blue-700" aria-hidden="true" />
-                    <h2 className="text-xl font-bold text-blue-900">What Employees See</h2>
+                    <Users size={24} className="text-plum-700" aria-hidden="true" />
+                    <h2 className="text-xl font-bold text-plum-900">What Employees See</h2>
                 </div>
-                <p className="text-blue-800 mb-6 max-w-2xl mx-auto">
+                <p className="text-plum-800 mb-6 max-w-2xl mx-auto">
                     Employees get access to medication search, assistance programs, and free educational resources—no login required for education.
                 </p>
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 text-blue-700 font-medium hover:underline"
+                    className="inline-flex items-center gap-2 text-plum-700 font-medium hover:underline"
                 >
                     Preview the employee experience
                     <ArrowRight size={16} aria-hidden="true" />
@@ -147,7 +147,7 @@ const ForEmployers = () => {
                 </p>
                 <a
                     href="mailto:info@transplantmedicationnavigator.com?subject=Employer%20Partnership%20Inquiry"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                 >
                     <Mail size={20} aria-hidden="true" />
                     Contact Us

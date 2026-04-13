@@ -111,7 +111,7 @@ const ForPayers = () => {
             </section>
 
             {/* Compliance Note */}
-            <section className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl p-8">
+            <section className="bg-gradient-to-br from-purple-50 to-plum-50 border-2 border-purple-200 rounded-2xl p-8">
                 <div className="flex items-center gap-3 mb-4">
                     <Shield size={24} className="text-purple-700" aria-hidden="true" />
                     <h2 className="text-xl font-bold text-slate-900">Privacy & Compliance</h2>

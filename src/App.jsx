@@ -716,7 +716,7 @@ const Home = () => {
                     </Link>
                     <Link
                         to="/application-help"
-                        className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-blue-700 border-2 border-blue-200 font-bold rounded-xl hover:border-blue-300 transition flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-plum-700 border-2 border-plum-200 font-bold rounded-xl hover:border-plum-300 transition flex items-center justify-center gap-2"
                         aria-label="Find grants and foundations"
                     >
                         <HeartHandshake size={20} aria-hidden="true" />
@@ -840,14 +840,14 @@ const Home = () => {
             <section className="bg-emerald-900 rounded-3xl overflow-hidden shadow-2xl text-white my-16 max-w-6xl mx-auto" aria-labelledby="mission-heading">
 
                 {/* 988 Mental Health Hotline Banner */}
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 border-b-2 border-blue-800 px-6 py-4">
+                <div className="bg-gradient-to-r from-plum-600 to-plum-700 border-b-2 border-plum-800 px-6 py-4">
                     <div className="flex items-center justify-center gap-3 text-center">
                         <Phone size={24} className="text-white flex-shrink-0" aria-hidden="true" />
                         <div>
                             <p className="text-white font-bold text-lg">
-                                Mental Health Crisis? Call or Text <a href="tel:988" className="underline hover:text-blue-200 transition-colors">988</a>
+                                Mental Health Crisis? Call or Text <a href="tel:988" className="underline hover:text-plum-200 transition-colors">988</a>
                             </p>
-                            <p className="text-blue-100 text-sm">
+                            <p className="text-plum-100 text-sm">
                                 24/7 Suicide & Crisis Lifeline - You are not alone
                             </p>
                         </div>
@@ -1076,7 +1076,7 @@ const Home = () => {
 
                         {/* World Transplant Congress */}
                         <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
-                            <span className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded mb-2">World Transplant Congress</span>
+                            <span className="inline-block bg-plum-100 text-plum-800 text-xs font-bold px-2 py-0.5 rounded mb-2">World Transplant Congress</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
                                 Do Social Determinants of Health Contribute to Inactivation of Adult Kidney Candidates?
                             </p>
@@ -1386,7 +1386,7 @@ const PreTransplantMedicationGuide = ({ answers, onMedicationClick }) => {
         <div className="mb-6">
             <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
-                    <Pill size={18} className="text-blue-600" />
+                    <Pill size={18} className="text-plum-600" />
                     <h3 className="font-bold text-slate-800">Common Medications Pre-Transplant by Organ Type</h3>
                 </div>
                 <p className="text-sm text-slate-600 mb-4">
@@ -1405,15 +1405,15 @@ const PreTransplantMedicationGuide = ({ answers, onMedicationClick }) => {
                                 onClick={() => handleOrganClick(organ)}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition font-medium text-sm ${
                                     isExpanded
-                                        ? 'bg-blue-600 text-white border-blue-600'
+                                        ? 'bg-plum-600 text-white border-plum-600'
                                         : isSelected
-                                            ? 'bg-blue-50 text-blue-700 border-blue-300 hover:border-blue-400'
-                                            : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                                            ? 'bg-plum-50 text-plum-700 border-plum-300 hover:border-plum-400'
+                                            : 'bg-white text-slate-700 border-slate-200 hover:border-plum-300 hover:bg-plum-50'
                                 }`}
                             >
                                 <IconComponent size={16} />
                                 {organ}
-                                {isSelected && !isExpanded && <CheckCircle size={14} className="text-blue-600" />}
+                                {isSelected && !isExpanded && <CheckCircle size={14} className="text-plum-600" />}
                                 <ChevronDown size={14} className={`transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                             </button>
                         );
@@ -1426,7 +1426,7 @@ const PreTransplantMedicationGuide = ({ answers, onMedicationClick }) => {
                         <div className="flex items-start gap-3 mb-4">
                             {(() => {
                                 const IconComponent = organIcons[expandedOrgan];
-                                return <IconComponent size={24} className="text-blue-600 flex-shrink-0 mt-1" />;
+                                return <IconComponent size={24} className="text-plum-600 flex-shrink-0 mt-1" />;
                             })()}
                             <div>
                                 <h4 className="font-bold text-lg text-slate-900">{PRE_TRANSPLANT_MEDICATIONS[expandedOrgan].title}</h4>
@@ -1460,7 +1460,7 @@ const PreTransplantMedicationGuide = ({ answers, onMedicationClick }) => {
                                                             {idx > 0 && ', '}
                                                             <button
                                                                 onClick={() => onMedicationClick && onMedicationClick(example.trim())}
-                                                                className="text-slate-600 hover:text-blue-700 underline decoration-dotted underline-offset-2 transition-colors"
+                                                                className="text-slate-600 hover:text-plum-700 underline decoration-dotted underline-offset-2 transition-colors"
                                                             >
                                                                 {example.trim()}
                                                             </button>
@@ -1666,7 +1666,7 @@ const Wizard = () => {
     // Color themes for each step
     const stepColors = {
         1: { bg: 'bg-purple-500', bgLight: 'bg-purple-100', ring: 'ring-purple-100', text: 'text-purple-600', textBold: 'text-purple-700', border: 'border-purple-500', bgSelect: 'bg-purple-50', hoverBorder: 'hover:border-purple-200', badge: 'bg-purple-600' },
-        2: { bg: 'bg-blue-500', bgLight: 'bg-blue-100', ring: 'ring-blue-100', text: 'text-blue-600', textBold: 'text-blue-700', border: 'border-blue-500', bgSelect: 'bg-blue-50', hoverBorder: 'hover:border-blue-200', badge: 'bg-blue-600' },
+        2: { bg: 'bg-plum-500', bgLight: 'bg-plum-100', ring: 'ring-plum-100', text: 'text-plum-600', textBold: 'text-plum-700', border: 'border-plum-500', bgSelect: 'bg-plum-50', hoverBorder: 'hover:border-plum-200', badge: 'bg-plum-600' },
         3: { bg: 'bg-teal-500', bgLight: 'bg-teal-100', ring: 'ring-teal-100', text: 'text-teal-600', textBold: 'text-teal-700', border: 'border-teal-500', bgSelect: 'bg-teal-50', hoverBorder: 'hover:border-teal-200', badge: 'bg-teal-600' },
     };
 
@@ -1762,8 +1762,8 @@ const Wizard = () => {
                 {renderProgress()}
                 <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-blue-100 p-2 rounded-lg">
-                        <Shield size={24} className="text-blue-600" />
+                    <div className="bg-plum-100 p-2 rounded-lg">
+                        <Shield size={24} className="text-plum-600" />
                     </div>
                     <h1 className="text-2xl font-bold">Your Insurance</h1>
                 </div>
@@ -1775,7 +1775,7 @@ const Wizard = () => {
                 {/* Question 2a: Insurance Type */}
                 <div className="mb-8">
                     <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">2a</span>
+                        <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">2a</span>
                         <h2 className="text-lg font-bold text-slate-800">What's your insurance type?</h2>
                     </div>
                     <div className="space-y-3" role="radiogroup" aria-label="Select your insurance type">
@@ -1785,24 +1785,24 @@ const Wizard = () => {
                                 onClick={() => handleSingleSelect('insurance', option.value)}
                                 className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
                                     answers.insurance === option.value
-                                        ? 'border-blue-600 bg-blue-100 ring-2 ring-blue-300 shadow-md'
-                                        : 'border-slate-300 bg-slate-50 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md'
+                                        ? 'border-plum-600 bg-plum-100 ring-2 ring-plum-300 shadow-md'
+                                        : 'border-slate-300 bg-slate-50 hover:border-plum-400 hover:bg-plum-50 hover:shadow-md'
                                 }`}
                                 role="radio"
                                 aria-checked={answers.insurance === option.value}
                             >
                                 <div className="flex justify-between items-start">
                                     <div>
-                                        <div className={`font-bold text-lg ${answers.insurance === option.value ? 'text-blue-800' : 'text-blue-700'}`}>{option.label}</div>
-                                        <div className={`text-sm mt-1 ${answers.insurance === option.value ? 'text-blue-700' : 'text-slate-600'}`}>{option.description}</div>
+                                        <div className={`font-bold text-lg ${answers.insurance === option.value ? 'text-plum-800' : 'text-plum-700'}`}>{option.label}</div>
+                                        <div className={`text-sm mt-1 ${answers.insurance === option.value ? 'text-plum-700' : 'text-slate-600'}`}>{option.description}</div>
                                         {option.helpText && (
-                                            <div className={`text-sm mt-2 flex items-center gap-1 ${answers.insurance === option.value ? 'text-blue-800 font-medium' : 'text-blue-700'}`}>
+                                            <div className={`text-sm mt-2 flex items-center gap-1 ${answers.insurance === option.value ? 'text-plum-800 font-medium' : 'text-plum-700'}`}>
                                                 <Lightbulb className="text-amber-500" size={14} aria-hidden="true" />
                                                 {option.helpText}
                                             </div>
                                         )}
                                     </div>
-                                    {answers.insurance === option.value && <CheckCircle className="text-blue-600 flex-shrink-0" size={24} aria-hidden="true" />}
+                                    {answers.insurance === option.value && <CheckCircle className="text-plum-600 flex-shrink-0" size={24} aria-hidden="true" />}
                                 </div>
                             </button>
                         ))}
@@ -1813,7 +1813,7 @@ const Wizard = () => {
                 {isCommercialInsurance && answers.insurance && (
                     <div className="mb-8 ">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">2b</span>
+                            <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">2b</span>
                             <h2 className="text-lg font-bold text-slate-800">Does your plan require a specific specialty pharmacy?</h2>
                         </div>
                         <p className="text-slate-600 text-sm mb-4">Some commercial plans require you to use a specific pharmacy for transplant medications.</p>
@@ -1828,8 +1828,8 @@ const Wizard = () => {
                                         onClick={() => handleSingleSelect('specialtyPharmacyAware', opt === 'Yes' ? true : opt === 'No' ? false : null)}
                                         className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 flex justify-between items-center shadow-sm ${
                                             isSelected
-                                                ? 'border-blue-600 bg-blue-100 ring-2 ring-blue-300 shadow-md'
-                                                : 'border-slate-300 bg-slate-50 hover:border-blue-400 hover:bg-blue-50 hover:shadow-md'
+                                                ? 'border-plum-600 bg-plum-100 ring-2 ring-plum-300 shadow-md'
+                                                : 'border-slate-300 bg-slate-50 hover:border-plum-400 hover:bg-plum-50 hover:shadow-md'
                                         }`}
                                         role="radio"
                                         aria-checked={
@@ -1837,10 +1837,10 @@ const Wizard = () => {
                                             (opt === 'No' && answers.specialtyPharmacyAware === false)
                                         }
                                     >
-                                        <span className={`font-bold text-lg ${isSelected ? 'text-blue-800' : 'text-slate-800'}`}>{opt}</span>
+                                        <span className={`font-bold text-lg ${isSelected ? 'text-plum-800' : 'text-slate-800'}`}>{opt}</span>
                                         {((opt === 'Yes' && answers.specialtyPharmacyAware === true) ||
                                           (opt === 'No' && answers.specialtyPharmacyAware === false)) &&
-                                            <CheckCircle className="text-blue-600" size={24} aria-hidden="true" />
+                                            <CheckCircle className="text-plum-600" size={24} aria-hidden="true" />
                                         }
                                     </button>
                                 );
@@ -2115,7 +2115,7 @@ const Wizard = () => {
                 {/* Header */}
                 <div className={`p-8 rounded-2xl shadow-xl text-white flex justify-between items-start ${
                     financial === FinancialStatus.CRISIS || financial === FinancialStatus.UNAFFORDABLE
-                    ? 'bg-indigo-900'
+                    ? 'bg-plum-900'
                     : 'bg-emerald-900'
                 }`}>
                     <div>
@@ -2276,7 +2276,7 @@ const Wizard = () => {
                                         </li>
                                     )}
                                     <li className="flex gap-3 items-start">
-                                        <div className="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Comparison tip">Compare</div>
+                                        <div className="bg-plum-100 text-plum-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Comparison tip">Compare</div>
                                         <div>
                                             <strong>Check Cash Prices.</strong>
                                             <p className="text-sm text-slate-600 mt-1">Compare your insurance copay against cash prices at Mark Cuban Cost Plus Drugs or using GoodRx.</p>
@@ -2705,12 +2705,12 @@ const MedicationSearch = () => {
                             )}
                             {searchResult.showExternalOption && (
                                 <div className="border-t border-slate-100 pt-2 mt-1">
-                                    <button onClick={addCustomToList} className="w-full text-left p-3 rounded-lg hover:bg-indigo-50 flex justify-between items-center group transition" aria-label={`Add custom medication ${searchTerm} to list`}>
+                                    <button onClick={addCustomToList} className="w-full text-left p-3 rounded-lg hover:bg-plum-50 flex justify-between items-center group transition" aria-label={`Add custom medication ${searchTerm} to list`}>
                                         <div>
-                                            <span className="font-bold text-indigo-900 block">Add "{searchTerm}" to list</span>
-                                            <span className="text-xs text-indigo-600">Check price on external sites</span>
+                                            <span className="font-bold text-plum-900 block">Add "{searchTerm}" to list</span>
+                                            <span className="text-xs text-plum-600">Check price on external sites</span>
                                         </div>
-                                        <span className="text-indigo-700 bg-indigo-100 px-3 py-1 rounded-full text-sm font-bold group-hover:bg-indigo-200 flex items-center gap-1"><PlusCircle size={16} aria-hidden="true" /> Add Custom</span>
+                                        <span className="text-plum-700 bg-plum-100 px-3 py-1 rounded-full text-sm font-bold group-hover:bg-plum-200 flex items-center gap-1"><PlusCircle size={16} aria-hidden="true" /> Add Custom</span>
                                     </button>
                                 </div>
                             )}
@@ -2737,23 +2737,23 @@ const MedicationSearch = () => {
 
                     {/* Medication Verification Alert - Accessible alert for patients */}
                     <div
-                        className="mb-6 bg-blue-50 border-2 border-blue-400 rounded-xl p-5 ring-2 ring-blue-200"
+                        className="mb-6 bg-plum-50 border-2 border-plum-400 rounded-xl p-5 ring-2 ring-plum-200"
                         role="alert"
                         aria-live="polite"
                         aria-atomic="true"
                     >
                         <div className="flex items-start gap-4">
-                            <div className="p-2 bg-blue-100 rounded-full flex-shrink-0">
-                                <AlertCircle className="text-blue-600" size={28} aria-hidden="true" />
+                            <div className="p-2 bg-plum-100 rounded-full flex-shrink-0">
+                                <AlertCircle className="text-plum-600" size={28} aria-hidden="true" />
                             </div>
                             <div>
-                                <h2 className="font-bold text-lg text-blue-800 mb-2">
+                                <h2 className="font-bold text-lg text-plum-800 mb-2">
                                     Please Verify Your Medications
                                 </h2>
-                                <p className="text-blue-700 mb-3">
+                                <p className="text-plum-700 mb-3">
                                     Review the medication list below carefully. If you take other transplant medications not shown, add them using the search box.
                                 </p>
-                                <p className="text-blue-600 text-sm font-medium">
+                                <p className="text-plum-600 text-sm font-medium">
                                     Accurate medication information helps us find the best savings options for you.
                                 </p>
                             </div>
@@ -2809,9 +2809,9 @@ const MedicationSearch = () => {
                                     </div>
                                 )}
                                 {searchResult.showExternalOption && (
-                                    <button onClick={addCustomToList} className="w-full text-left p-3 rounded-lg hover:bg-indigo-50 flex justify-between items-center border-t border-slate-100">
-                                        <span className="font-bold text-indigo-900">Add "{searchTerm}" as custom medication</span>
-                                        <span className="text-indigo-700 bg-indigo-100 px-3 py-1 rounded-full text-sm font-bold"><PlusCircle size={16} className="inline" /> Add</span>
+                                    <button onClick={addCustomToList} className="w-full text-left p-3 rounded-lg hover:bg-plum-50 flex justify-between items-center border-t border-slate-100">
+                                        <span className="font-bold text-plum-900">Add "{searchTerm}" as custom medication</span>
+                                        <span className="text-plum-700 bg-plum-100 px-3 py-1 rounded-full text-sm font-bold"><PlusCircle size={16} className="inline" /> Add</span>
                                     </button>
                                 )}
                             </div>
@@ -2919,11 +2919,11 @@ const MedicationSearch = () => {
                                         <p className="text-green-700">Estimates vary by pills prescribed or dosage</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 bg-blue-100 border border-blue-300 rounded-xl p-4">
-                                    <Info className="text-blue-600 flex-shrink-0" size={24} aria-hidden="true" />
+                                <div className="flex items-center gap-3 bg-plum-100 border border-plum-300 rounded-xl p-4">
+                                    <Info className="text-plum-600 flex-shrink-0" size={24} aria-hidden="true" />
                                     <div>
-                                        <p className="font-bold text-blue-800 text-lg">Overview</p>
-                                        <p className="text-blue-700">Basic info about the medication</p>
+                                        <p className="font-bold text-plum-800 text-lg">Overview</p>
+                                        <p className="text-plum-700">Basic info about the medication</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3 bg-slate-100 border border-slate-300 rounded-xl p-4">
@@ -3180,7 +3180,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
                         />
                     </div>
 
-                    <div className="bg-blue-50 p-3 rounded-lg text-xs text-blue-800 flex items-start gap-2">
+                    <div className="bg-plum-50 p-3 rounded-lg text-xs text-plum-800 flex items-start gap-2">
                         <Info size={14} className="mt-0.5 flex-shrink-0" />
                         <p>Your report helps other transplant patients estimate costs. Data is stored locally on your device only.</p>
                     </div>
@@ -3346,7 +3346,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                             {med.typical_copay_tier && (
                                 <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
                                     med.typical_copay_tier === 'Specialty' ? 'bg-purple-100 text-purple-800' :
-                                    med.typical_copay_tier <= 2 ? 'bg-blue-100 text-blue-800' :
+                                    med.typical_copay_tier <= 2 ? 'bg-plum-100 text-plum-800' :
                                     'bg-orange-100 text-orange-800'
                                 }`}>
                                     <Pill size={12} aria-hidden="true" />
@@ -3459,7 +3459,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                             Commonly prescribed for: <strong>{med.commonOrgans.join(', ')}</strong> recipients.
                             {med.stage && <><br/>Stage: <strong>{med.stage}</strong></>}
                         </p>
-                        <div className="bg-blue-50 p-4 rounded-lg text-sm text-blue-800 flex gap-2 items-start" role="note">
+                        <div className="bg-plum-50 p-4 rounded-lg text-sm text-plum-800 flex gap-2 items-start" role="note">
                             <Info size={16} className="mt-0.5 flex-shrink-0" aria-hidden="true" />
                             <strong>Tip:</strong> Always verify with your doctor if you can switch between Brand and Generic versions.
                         </div>
@@ -3628,7 +3628,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
 
                         {/* Foundations & Grants */}
                         {(activeFilter === 'all' || activeFilter === 'free') && (
-                            <section className="border border-sky-200 rounded-xl p-5 bg-gradient-to-r from-sky-50/50 to-blue-50/50">
+                            <section className="border border-sky-200 rounded-xl p-5 bg-gradient-to-r from-sky-50/50 to-plum-50/50">
                                 <div className="flex items-start gap-3">
                                     <span className="w-3 h-3 rounded-full bg-sky-500 flex-shrink-0 mt-1.5"></span>
                                     <div className="flex-grow">
@@ -3648,19 +3648,19 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
 
                         {/* Medicare Part D Information */}
                         {medicarePartD && (activeFilter === 'all') && (
-                            <section className="border border-blue-200 rounded-xl p-5 bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
+                            <section className="border border-plum-200 rounded-xl p-5 bg-gradient-to-r from-plum-50/50 to-plum-50/50">
                                 <div className="flex items-start gap-3">
-                                    <span className="w-3 h-3 rounded-full bg-blue-500 flex-shrink-0 mt-1.5"></span>
+                                    <span className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0 mt-1.5"></span>
                                     <div className="flex-grow">
-                                        <h3 className="font-bold text-blue-800 flex items-center gap-2">
+                                        <h3 className="font-bold text-plum-800 flex items-center gap-2">
                                             <Shield size={18} aria-hidden="true" />
                                             Medicare Part D Information
                                         </h3>
                                         <p className="text-sm text-slate-600 mt-2">
                                             Learn about Medicare Part D coverage changes and savings options for {med.brandName}.
-                                            {(medicarePartD.notes || med.medicare2026Note) && <span className="block mt-2 text-blue-700 font-medium">{medicarePartD.notes || med.medicare2026Note}</span>}
+                                            {(medicarePartD.notes || med.medicare2026Note) && <span className="block mt-2 text-plum-700 font-medium">{medicarePartD.notes || med.medicare2026Note}</span>}
                                         </p>
-                                        <a href={medicarePartD.url} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-blue-700 hover:text-blue-800 font-medium text-sm" aria-label={`View Medicare Part D information for ${med.brandName} (opens in new tab)`}>
+                                        <a href={medicarePartD.url} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-plum-700 hover:text-plum-800 font-medium text-sm" aria-label={`View Medicare Part D information for ${med.brandName} (opens in new tab)`}>
                                             View Details <ExternalLink size={14} aria-hidden="true" />
                                         </a>
                                     </div>
@@ -3712,13 +3712,13 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                         </div>
 
                         {/* Help with Forms */}
-                        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-xl p-5 shadow-sm no-print">
+                        <div className="bg-gradient-to-r from-plum-50 to-purple-50 border-2 border-plum-200 rounded-xl p-5 shadow-sm no-print">
                             <div className="flex items-start gap-4">
-                                <div className="bg-indigo-600 text-white p-2.5 rounded-lg flex-shrink-0" aria-hidden="true">
+                                <div className="bg-plum-600 text-white p-2.5 rounded-lg flex-shrink-0" aria-hidden="true">
                                     <FileText size={20} />
                                 </div>
                                 <div className="flex-grow">
-                                    <h4 className="font-bold text-indigo-900 mb-1 flex items-center gap-2">
+                                    <h4 className="font-bold text-plum-900 mb-1 flex items-center gap-2">
                                         Need Help Filling Out the Forms?
                                     </h4>
                                     <p className="text-sm text-slate-700 mb-3">
@@ -3726,7 +3726,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                     </p>
                                     <Link
                                         to="/application-help"
-                                        className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition text-sm shadow-md"
+                                        className="inline-flex items-center gap-2 px-4 py-2 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg transition text-sm shadow-md"
                                         aria-label="View complete application guide"
                                     >
                                         <BookOpen size={16} aria-hidden="true" />
@@ -3761,9 +3761,9 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="w-3 h-3 rounded-full bg-blue-500 flex-shrink-0"></span>
+                                    <span className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0"></span>
                                     <div>
-                                        <div className="font-semibold text-blue-600">Discount Cards</div>
+                                        <div className="font-semibold text-plum-600">Discount Cards</div>
                                         <div className="text-slate-500">GoodRx, SingleCare</div>
                                     </div>
                                 </div>
@@ -3848,22 +3848,22 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
 
                                     {/* GoodRx Row - Blue */}
                                     {isGoodRxAvailable && (
-                                    <tr className="bg-blue-50/50 hover:bg-blue-50">
+                                    <tr className="bg-plum-50/50 hover:bg-plum-50">
                                         <td className="p-3">
                                             <div className="flex items-center gap-2">
-                                                <span className="w-2.5 h-2.5 rounded-full bg-blue-500 flex-shrink-0"></span>
-                                                <div className="font-bold text-blue-600">GoodRx</div>
+                                                <span className="w-2.5 h-2.5 rounded-full bg-plum-500 flex-shrink-0"></span>
+                                                <div className="font-bold text-plum-600">GoodRx</div>
                                             </div>
                                             <div className="text-xs text-slate-500 mt-0.5 ml-4.5">Free coupons at 70,000+ pharmacies</div>
                                             {goodRxStats && (
-                                                <div className="text-xs text-blue-600 flex items-center gap-1 mt-1 ml-4.5">
+                                                <div className="text-xs text-plum-600 flex items-center gap-1 mt-1 ml-4.5">
                                                     <Users size={14} />
                                                     Community: ${goodRxStats.min}-${goodRxStats.max} ({goodRxStats.count} reports)
                                                 </div>
                                             )}
                                         </td>
                                         <td className="p-3">
-                                            <div className="text-blue-600 font-bold">
+                                            <div className="text-plum-600 font-bold">
                                                 {getPriceEstimate(med.id, med.category, 'goodrx')}
                                             </div>
                                             <div className="text-xs text-slate-500 flex items-center gap-1 mt-1">
@@ -3873,7 +3873,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                         </td>
                                         <td className="p-3 no-print">
                                             <div className="flex flex-col gap-1">
-                                                <a href={`/out/copay/goodrx-search?q=${encodeURIComponent(med.genericName)}`} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline font-medium flex items-center gap-1" aria-label={`Check live price on GoodRx for ${med.genericName} (opens in new tab)`}>
+                                                <a href={`/out/copay/goodrx-search?q=${encodeURIComponent(med.genericName)}`} target="_blank" rel="noreferrer" className="text-plum-600 hover:underline font-medium flex items-center gap-1" aria-label={`Check live price on GoodRx for ${med.genericName} (opens in new tab)`}>
                                                     Check Live <ExternalLink size={14} aria-hidden="true" />
                                                 </a>
                                                 <button onClick={() => openReportModal('goodrx', 'GoodRx')} className="text-slate-500 hover:underline text-sm flex items-center gap-1 min-h-[44px] px-2">
@@ -3886,22 +3886,22 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
 
                                     {/* SingleCare Row - Blue */}
                                     {isSingleCareAvailable && (
-                                    <tr className="bg-blue-50/50 hover:bg-blue-50">
+                                    <tr className="bg-plum-50/50 hover:bg-plum-50">
                                         <td className="p-3">
                                             <div className="flex items-center gap-2">
-                                                <span className="w-2.5 h-2.5 rounded-full bg-blue-500 flex-shrink-0"></span>
-                                                <div className="font-bold text-blue-600">SingleCare</div>
+                                                <span className="w-2.5 h-2.5 rounded-full bg-plum-500 flex-shrink-0"></span>
+                                                <div className="font-bold text-plum-600">SingleCare</div>
                                             </div>
                                             <div className="text-xs text-slate-500 mt-0.5 ml-4.5">Free card at 35,000+ pharmacies</div>
                                             {singleCareStats && (
-                                                <div className="text-xs text-blue-600 flex items-center gap-1 mt-1 ml-4.5">
+                                                <div className="text-xs text-plum-600 flex items-center gap-1 mt-1 ml-4.5">
                                                     <Users size={14} />
                                                     Community: ${singleCareStats.min}-${singleCareStats.max} ({singleCareStats.count} reports)
                                                 </div>
                                             )}
                                         </td>
                                         <td className="p-3">
-                                            <div className="text-blue-600 font-bold">
+                                            <div className="text-plum-600 font-bold">
                                                 {getPriceEstimate(med.id, med.category, 'singlecare')}
                                             </div>
                                             <div className="text-xs text-slate-500 flex items-center gap-1 mt-1">
@@ -3911,7 +3911,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                         </td>
                                         <td className="p-3 no-print">
                                             <div className="flex flex-col gap-1">
-                                                <a href={`/out/copay/singlecare-search?q=${encodeURIComponent(med.genericName)}`} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline font-medium flex items-center gap-1" aria-label={`Check live price on SingleCare for ${med.genericName} (opens in new tab)`}>
+                                                <a href={`/out/copay/singlecare-search?q=${encodeURIComponent(med.genericName)}`} target="_blank" rel="noreferrer" className="text-plum-600 hover:underline font-medium flex items-center gap-1" aria-label={`Check live price on SingleCare for ${med.genericName} (opens in new tab)`}>
                                                     Check Live <ExternalLink size={14} aria-hidden="true" />
                                                 </a>
                                                 <button onClick={() => openReportModal('singlecare', 'SingleCare')} className="text-slate-500 hover:underline text-sm flex items-center gap-1 min-h-[44px] px-2">
@@ -4102,13 +4102,13 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 {isGoodRxAvailable && (
                                     <div className="flex justify-between">
                                         <span>GoodRx:</span>
-                                        <strong className="text-blue-600">{getPriceEstimate(med.id, med.category, 'goodrx')}</strong>
+                                        <strong className="text-plum-600">{getPriceEstimate(med.id, med.category, 'goodrx')}</strong>
                                     </div>
                                 )}
                                 {isSingleCareAvailable && (
                                     <div className="flex justify-between">
                                         <span>SingleCare:</span>
-                                        <strong className="text-blue-600">{getPriceEstimate(med.id, med.category, 'singlecare')}</strong>
+                                        <strong className="text-plum-600">{getPriceEstimate(med.id, med.category, 'singlecare')}</strong>
                                     </div>
                                 )}
                                 {isCostPlusAvailable && (
@@ -4200,13 +4200,13 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
 const ExternalMedCard = ({ name, onRemove }) => {
     const encodedTerm = encodeURIComponent(name);
     return (
-        <article className="bg-white rounded-xl shadow-sm border border-indigo-200 overflow-hidden transition hover:shadow-md break-inside-avoid" aria-labelledby={`custom-med-${name}`}>
-            <header className="bg-indigo-50 px-6 py-4 border-b border-indigo-100 flex justify-between items-center">
+        <article className="bg-white rounded-xl shadow-sm border border-plum-200 overflow-hidden transition hover:shadow-md break-inside-avoid" aria-labelledby={`custom-med-${name}`}>
+            <header className="bg-plum-50 px-6 py-4 border-b border-plum-100 flex justify-between items-center">
                 <div>
-                    <h2 id={`custom-med-${name}`} className="text-xl font-bold text-indigo-900 flex items-center gap-2"><Globe size={20} aria-hidden="true" /> {name}</h2>
-                    <p className="text-indigo-700 text-xs font-medium">External / Custom Search</p>
+                    <h2 id={`custom-med-${name}`} className="text-xl font-bold text-plum-900 flex items-center gap-2"><Globe size={20} aria-hidden="true" /> {name}</h2>
+                    <p className="text-plum-700 text-xs font-medium">External / Custom Search</p>
                 </div>
-                <button onClick={onRemove} className="text-indigo-300 hover:text-red-500 transition p-2 no-print" title="Remove from list" aria-label={`Remove ${name} from list`}><Trash2 size={20} /></button>
+                <button onClick={onRemove} className="text-plum-300 hover:text-red-500 transition p-2 no-print" title="Remove from list" aria-label={`Remove ${name} from list`}><Trash2 size={20} /></button>
             </header>
             <div className="p-6">
                 <div className="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-400 text-sm text-amber-900 mb-4 flex gap-2 items-start" role="note">
@@ -4228,7 +4228,7 @@ const ExternalMedCard = ({ name, onRemove }) => {
                     </a>
                 </nav>
                 <div className="mt-4 pt-4 border-t border-slate-100 text-center no-print">
-                    <a href={`/out/pap/drugs-com-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="text-sm font-bold text-blue-600 hover:underline flex items-center justify-center gap-1" aria-label={`Search for ${name} assistance programs on Drugs.com (opens in new tab)`}>
+                    <a href={`/out/pap/drugs-com-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="text-sm font-bold text-plum-600 hover:underline flex items-center justify-center gap-1" aria-label={`Search for ${name} assistance programs on Drugs.com (opens in new tab)`}>
                         Search "{name}" on Drugs.com for Assistance Programs <ExternalLink size={12} aria-hidden="true" />
                     </a>
                 </div>
@@ -4345,14 +4345,14 @@ const InsuranceChangeSimulator = () => {
     };
 
     return (
-        <section className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-2xl p-6 md:p-8" aria-labelledby="insurance-simulator">
+        <section className="bg-gradient-to-br from-plum-50 to-purple-50 border-2 border-plum-200 rounded-2xl p-6 md:p-8" aria-labelledby="insurance-simulator">
             <div className="flex items-center gap-3 mb-4">
-                <div className="bg-indigo-600 text-white p-2 rounded-lg">
+                <div className="bg-plum-600 text-white p-2 rounded-lg">
                     <ArrowRight size={24} />
                 </div>
                 <div>
-                    <h2 id="insurance-simulator" className="text-xl md:text-2xl font-bold text-indigo-900">Insurance Change Simulator</h2>
-                    <p className="text-sm text-indigo-700">See how your medication options change when switching insurance</p>
+                    <h2 id="insurance-simulator" className="text-xl md:text-2xl font-bold text-plum-900">Insurance Change Simulator</h2>
+                    <p className="text-sm text-plum-700">See how your medication options change when switching insurance</p>
                 </div>
             </div>
 
@@ -4363,7 +4363,7 @@ const InsuranceChangeSimulator = () => {
                         id="current-insurance"
                         value={currentInsurance}
                         onChange={(e) => { setCurrentInsurance(e.target.value); setShowResults(false); }}
-                        className="w-full p-3 rounded-lg border border-indigo-200 bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full p-3 rounded-lg border border-plum-200 bg-white focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     >
                         <option value="">-- Select current --</option>
                         {insuranceTypes.map(t => <option key={t.id} value={t.id}>{t.label}</option>)}
@@ -4375,7 +4375,7 @@ const InsuranceChangeSimulator = () => {
                         id="future-insurance"
                         value={futureInsurance}
                         onChange={(e) => { setFutureInsurance(e.target.value); setShowResults(false); }}
-                        className="w-full p-3 rounded-lg border border-indigo-200 bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full p-3 rounded-lg border border-plum-200 bg-white focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     >
                         <option value="">-- Select future --</option>
                         {insuranceTypes.map(t => <option key={t.id} value={t.id}>{t.label}</option>)}
@@ -4386,7 +4386,7 @@ const InsuranceChangeSimulator = () => {
             <button
                 onClick={handleSimulate}
                 disabled={!currentInsurance || !futureInsurance || currentInsurance === futureInsurance}
-                className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold py-3 px-8 rounded-lg transition flex items-center justify-center gap-2"
+                className="w-full md:w-auto bg-plum-600 hover:bg-plum-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold py-3 px-8 rounded-lg transition flex items-center justify-center gap-2"
             >
                 <ArrowRight size={20} />
                 See What Changes
@@ -4394,7 +4394,7 @@ const InsuranceChangeSimulator = () => {
 
             {showResults && transition && (
                 <div className="mt-8 space-y-6">
-                    <div className="bg-white rounded-xl p-6 border border-indigo-100">
+                    <div className="bg-white rounded-xl p-6 border border-plum-100">
                         <h3 className="text-xl font-bold text-slate-900 mb-1">{transition.title}</h3>
                         <p className="text-sm text-slate-600 mb-6">{transition.timing}</p>
 
@@ -4404,7 +4404,7 @@ const InsuranceChangeSimulator = () => {
                                     change.type === 'loss' ? 'bg-red-50 border border-red-100' :
                                     change.type === 'gain' ? 'bg-green-50 border border-green-100' :
                                     change.type === 'change' ? 'bg-amber-50 border border-amber-100' :
-                                    'bg-blue-50 border border-blue-100'
+                                    'bg-plum-50 border border-plum-100'
                                 }`}>
                                     <span className="text-2xl" aria-hidden="true">{change.icon}</span>
                                     <div>
@@ -4430,7 +4430,7 @@ const InsuranceChangeSimulator = () => {
             )}
 
             {currentInsurance && futureInsurance && currentInsurance === futureInsurance && (
-                <p className="mt-4 text-sm text-indigo-600">Please select different insurance types to see the transition changes.</p>
+                <p className="mt-4 text-sm text-plum-600">Please select different insurance types to see the transition changes.</p>
             )}
         </section>
     );
@@ -4493,9 +4493,9 @@ const Education = () => {
             </header>
 
             {/* PAF + PAN Foundation Merger Announcement */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6">
+            <div className="bg-gradient-to-r from-plum-50 to-plum-50 border border-plum-200 rounded-xl p-6">
                 <div className="flex items-start gap-4">
-                    <div className="bg-blue-100 text-blue-600 p-3 rounded-xl flex-shrink-0" aria-hidden="true">
+                    <div className="bg-plum-100 text-plum-600 p-3 rounded-xl flex-shrink-0" aria-hidden="true">
                         <Info size={24} />
                     </div>
                     <div>
@@ -4506,7 +4506,7 @@ const Education = () => {
                         <p className="text-slate-700 text-sm leading-relaxed mb-3">
                             <strong>Starting July 1, 2026</strong>, the new <strong>TotalAssist</strong> program will combine all financial assistance into one place—with 130+ disease-specific funds, no wait lists, and instant eligibility decisions. TotalAssist helps cover medication copays, coinsurance, deductibles, insurance premiums, and treatment-related charges.
                         </p>
-                        <a href="https://uniting.patientadvocate.org/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 hover:text-blue-900 transition-colors">
+                        <a href="https://uniting.patientadvocate.org/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-plum-700 hover:text-plum-900 transition-colors">
                             Learn more about the merger <ExternalLink size={14} aria-hidden="true" />
                         </a>
                     </div>
@@ -4577,11 +4577,11 @@ const Education = () => {
                                  <p className="text-slate-700 text-sm mb-4"><strong>Covered drugs:</strong> Wegovy and Zepbound will be covered for patients with weight-related health issues. Your copay should be about <strong>$50/month</strong> after you meet your deductible.</p>
                                  <p className="text-slate-700 text-sm italic">Eli Lilly and Novo Nordisk agreed to give these drugs at lower prices for Medicare patients.</p>
                              </section>
-                             <section className="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+                             <section className="bg-plum-50 p-6 rounded-xl border border-plum-100">
                                  <div className="flex items-center gap-2 mb-3">
-                                    <h3 className="font-bold text-indigo-900">Medicare Prescription Payment Plan</h3>
+                                    <h3 className="font-bold text-plum-900">Medicare Prescription Payment Plan</h3>
                                  </div>
-                                 <p className="text-sm text-indigo-900 mb-4 font-medium">A big change from new laws</p>
+                                 <p className="text-sm text-plum-900 mb-4 font-medium">A big change from new laws</p>
                                  <p className="text-slate-700 text-sm mb-4 leading-relaxed">Since 2025, Medicare Part D patients can spread out their drug costs over the year instead of paying large amounts all at once (like when you hit the donut hole).</p>
                                  <p className="text-slate-700 text-sm mb-4">This program makes your costs more steady and easier to manage.</p>
                                  <p className="text-slate-700 text-sm font-medium">Ask your Part D plan about this payment plan during open enrollment.</p>
@@ -4592,13 +4592,13 @@ const Education = () => {
                             <h2 className="text-2xl font-bold text-slate-900 mb-4">Part D vs Medicare Advantage: Picking Your Plan</h2>
                             <p className="text-slate-600 mb-6">Knowing the differences can save you a lot of money on transplant medicines.</p>
                             <div className="grid md:grid-cols-2 gap-6 mb-8">
-                                <section className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200">
-                                    <h3 className="font-bold text-blue-900 text-xl mb-3">Medicare Part D (Traditional)</h3>
+                                <section className="bg-gradient-to-br from-plum-50 to-plum-50 p-6 rounded-xl border border-plum-200">
+                                    <h3 className="font-bold text-plum-900 text-xl mb-3">Medicare Part D (Traditional)</h3>
                                     <p className="text-sm text-slate-600 mb-4">A drug plan that works with Original Medicare. It's a separate plan just for medicines.</p>
                                     <ul className="space-y-2 text-slate-700 text-sm">
-                                        <li className="flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span><span>Works with any Medicare-accepting provider</span></li>
-                                        <li className="flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span><span>Separate deductible and premium</span></li>
-                                        <li className="flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span><span>$2,100 out-of-pocket cap (2026, up from $2,000 in 2025)</span></li>
+                                        <li className="flex items-start gap-2"><span className="text-plum-600 font-bold">✓</span><span>Works with any Medicare-accepting provider</span></li>
+                                        <li className="flex items-start gap-2"><span className="text-plum-600 font-bold">✓</span><span>Separate deductible and premium</span></li>
+                                        <li className="flex items-start gap-2"><span className="text-plum-600 font-bold">✓</span><span>$2,100 out-of-pocket cap (2026, up from $2,000 in 2025)</span></li>
                                     </ul>
                                 </section>
                                 <section className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
@@ -4616,34 +4616,34 @@ const Education = () => {
                                 <h3 className="text-xl font-bold text-slate-900 mb-4">How to Compare Plans for Your Medicines</h3>
                                 <div className="space-y-4">
                                     <div className="flex items-start gap-3">
-                                        <div className="bg-blue-100 text-blue-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">1</div>
+                                        <div className="bg-plum-100 text-plum-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">1</div>
                                         <div className="flex-1">
                                             <h4 className="font-bold text-slate-800 mb-1">Check Drug Lists</h4>
                                             <p className="text-slate-600 text-sm mb-2">Use the Medicare Plan Finder tool at medicare.gov to see which plans cover your drugs and how much they cost.</p>
-                                            <a href="https://www.medicare.gov/plan-compare/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline text-sm font-medium flex items-center gap-1" aria-label="Visit Medicare Plan Finder (opens in new tab)">Medicare Plan Finder <ExternalLink size={12} aria-hidden="true" /></a>
+                                            <a href="https://www.medicare.gov/plan-compare/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm font-medium flex items-center gap-1" aria-label="Visit Medicare Plan Finder (opens in new tab)">Medicare Plan Finder <ExternalLink size={12} aria-hidden="true" /></a>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <div className="bg-blue-100 text-blue-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">2</div>
+                                        <div className="bg-plum-100 text-plum-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">2</div>
                                         <div className="flex-1">
                                             <h4 className="font-bold text-slate-800 mb-1">Compare Total Costs</h4>
                                             <p className="text-slate-600 text-sm">Look at monthly fees, deductibles, copays, and which pharmacies you can use. Remember the $2,100 yearly limit (2026) when you add up costs.</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <div className="bg-blue-100 text-blue-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">3</div>
+                                        <div className="bg-plum-100 text-plum-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">3</div>
                                         <div className="flex-1">
                                             <h4 className="font-bold text-slate-800 mb-1">Look Into Extra Help</h4>
                                             <p className="text-slate-600 text-sm mb-2">If you have low income, the Extra Help program can cut costs for Part D and MA-PD plans. It can remove your monthly fees and deductible ($615 in 2026) and cap copays for both generic and brand-name drugs.</p>
-                                            <a href="https://www.ssa.gov/medicare/part-d-extra-help" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline text-sm font-medium flex items-center gap-1" aria-label="Apply for Extra Help (opens in new tab)">Apply for Extra Help <ExternalLink size={12} aria-hidden="true" /></a>
+                                            <a href="https://www.ssa.gov/medicare/part-d-extra-help" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm font-medium flex items-center gap-1" aria-label="Apply for Extra Help (opens in new tab)">Apply for Extra Help <ExternalLink size={12} aria-hidden="true" /></a>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <div className="bg-blue-100 text-blue-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">4</div>
+                                        <div className="bg-plum-100 text-plum-800 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">4</div>
                                         <div className="flex-1">
                                             <h4 className="font-bold text-slate-800 mb-1">Get Free Help</h4>
                                             <p className="text-slate-600 text-sm mb-2">Call your State Health Insurance Assistance Program (SHIP) for free help picking a plan.</p>
-                                            <a href="https://www.shiphelp.org/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline text-sm font-medium flex items-center gap-1" aria-label="Find Your Local SHIP (opens in new tab)">Find Your Local SHIP <ExternalLink size={12} aria-hidden="true" /></a>
+                                            <a href="https://www.shiphelp.org/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm font-medium flex items-center gap-1" aria-label="Find Your Local SHIP (opens in new tab)">Find Your Local SHIP <ExternalLink size={12} aria-hidden="true" /></a>
                                         </div>
                                     </div>
                                 </div>
@@ -4654,21 +4654,21 @@ const Education = () => {
                                 <p className="text-slate-600 mb-4">Knowing which part of Medicare pays for your transplant medicines is key.</p>
                                 <div className="grid md:grid-cols-3 gap-4">
                                     <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                        <h4 className="font-bold text-blue-700 text-lg mb-2">Part A (Hospital)</h4>
+                                        <h4 className="font-bold text-plum-700 text-lg mb-2">Part A (Hospital)</h4>
                                         <p className="text-xs text-slate-600 mb-3">Pays for drugs given while you're in the hospital.</p>
                                         <ul className="text-sm text-slate-700 list-disc pl-4">
                                             <li>Induction agents (Thymoglobulin, Simulect)</li>
                                         </ul>
                                     </div>
                                     <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                        <h4 className="font-bold text-blue-700 text-lg mb-2">Part B (Medical)</h4>
+                                        <h4 className="font-bold text-plum-700 text-lg mb-2">Part B (Medical)</h4>
                                         <p className="text-xs text-slate-600 mb-3">Pays for some drugs you get at clinics. Also covers anti-rejection drugs if you don't have Part D.</p>
                                         <ul className="text-sm text-slate-700 list-disc pl-4">
                                             <li>IV infusions (Belatacept/Nulojix)</li>
                                         </ul>
                                     </div>
                                     <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                        <h4 className="font-bold text-blue-700 text-lg mb-2">Part D (Prescription)</h4>
+                                        <h4 className="font-bold text-plum-700 text-lg mb-2">Part D (Prescription)</h4>
                                         <p className="text-xs text-slate-600 mb-3">Pays for most of the pills you take at home each day.</p>
                                         <ul className="text-sm text-slate-700 list-disc pl-4">
                                             <li>Tacrolimus, Mycophenolate, etc.</li>
@@ -4703,46 +4703,46 @@ const Education = () => {
                         </aside>
 
                         <div className="border-t border-slate-200 pt-8">
-                            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl border border-blue-200">
+                            <div className="bg-gradient-to-r from-plum-50 to-plum-50 p-8 rounded-xl border border-plum-200">
                                 <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                                    <BookOpen size={24} className="text-blue-600" aria-hidden="true" />
+                                    <BookOpen size={24} className="text-plum-600" aria-hidden="true" />
                                     Insurance Words Made Simple
                                 </h2>
                                 <p className="text-slate-600 mb-6">Knowing what these words mean helps you handle costs and find help.</p>
 
                                 <div className="space-y-6">
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Premium</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Premium</h3>
                                         <p className="text-slate-700 text-sm">The amount you pay each month to have insurance. Think of it like a gym membership - you pay every month whether you use it or not.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2"><TermTooltip term="deductible" showIcon={false}>Deductible</TermTooltip></h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="deductible" showIcon={false}>Deductible</TermTooltip></h3>
                                         <p className="text-slate-700 text-sm">The amount you must pay yourself before your insurance starts helping. If your deductible is $500, you pay the first $500 of medicine costs. After that, insurance helps pay.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2"><TermTooltip term="copay" showIcon={false}>Copay</TermTooltip> (or Co-payment)</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="copay" showIcon={false}>Copay</TermTooltip> (or Co-payment)</h3>
                                         <p className="text-slate-700 text-sm">A fixed amount you pay each time you get medicine. Example: You might pay $10 for each prescription, and insurance pays the rest.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2"><TermTooltip term="coinsurance" showIcon={false}>Coinsurance</TermTooltip></h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="coinsurance" showIcon={false}>Coinsurance</TermTooltip></h3>
                                         <p className="text-slate-700 text-sm">The percentage you pay after meeting your deductible. If you have 20% coinsurance, you pay $20 for every $100 of medicine cost. Insurance pays the other $80.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Yearly Spending Limit (<TermTooltip term="out-of-pocket-maximum" showIcon={false}>Out-of-Pocket Maximum</TermTooltip>)</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Yearly Spending Limit (<TermTooltip term="out-of-pocket-maximum" showIcon={false}>Out-of-Pocket Maximum</TermTooltip>)</h3>
                                         <p className="text-slate-700 text-sm">The most money you will pay in one year. Once you reach this amount, insurance pays 100% of covered medicines. This is your safety net.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Covered Medicines List (<TermTooltip term="formulary" showIcon={false}>Formulary</TermTooltip>)</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Covered Medicines List (<TermTooltip term="formulary" showIcon={false}>Formulary</TermTooltip>)</h3>
                                         <p className="text-slate-700 text-sm">The list of medicines your insurance will cover. Think of it as the insurance company's menu. If your medicine isn't on the list, you might pay more or need special approval.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Tier</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Tier</h3>
                                         <p className="text-slate-700 text-sm mb-3">How insurance groups medicines by cost. Lower tiers (1-2) cost less. Higher tiers (3-4-5) cost more.</p>
                                         <ul className="text-slate-600 text-sm space-y-1 ml-4 list-disc">
                                             <li><strong>Tier 1:</strong> Usually generic drugs (lowest cost)</li>
@@ -4752,86 +4752,86 @@ const Education = () => {
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2"><TermTooltip term="prior-authorization" showIcon={false}>Prior Authorization</TermTooltip></h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="prior-authorization" showIcon={false}>Prior Authorization</TermTooltip></h3>
                                         <p className="text-slate-700 text-sm">When you need insurance company approval before they will pay for a medicine. Your doctor must explain why you need that specific medicine.</p>
                                         <div className="mt-3 p-2 bg-amber-50 rounded border border-amber-200">
                                             <p className="text-amber-900 text-xs font-bold">New in 2026: CMS WISeR Pilot</p>
-                                            <p className="text-slate-700 text-xs">The WISeR (Wasteful and Inappropriate Service Reduction) model requires prior authorization for 17 outpatient Medicare Part B services in 6 states: Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington. While it does not directly affect transplant medications, it may add steps for some procedures. <a href="/appeals" className="text-blue-600 hover:underline">Learn more on our Appeals page</a>.</p>
+                                            <p className="text-slate-700 text-xs">The WISeR (Wasteful and Inappropriate Service Reduction) model requires prior authorization for 17 outpatient Medicare Part B services in 6 states: Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington. While it does not directly affect transplant medications, it may add steps for some procedures. <a href="/appeals" className="text-plum-600 hover:underline">Learn more on our Appeals page</a>.</p>
                                         </div>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2"><TermTooltip term="generic" showIcon={false}>Generic</TermTooltip> Medicine</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="generic" showIcon={false}>Generic</TermTooltip> Medicine</h3>
                                         <p className="text-slate-700 text-sm">A medicine that works the same as a brand name but costs less. Like store-brand cereal versus name-brand - same thing, different package.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Brand Name Medicine</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Brand Name Medicine</h3>
                                         <p className="text-slate-700 text-sm">The original version of a medicine made by the company that invented it. Usually costs more than generic.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2"><TermTooltip term="specialty-pharmacy" showIcon={false}>Specialty</TermTooltip> Medication</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="specialty-pharmacy" showIcon={false}>Specialty</TermTooltip> Medication</h3>
                                         <p className="text-slate-700 text-sm">Expensive medicines that need special handling or monitoring. Most transplant medicines are specialty medications. They often cost $600+ per month.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Medicare Part D</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Medicare Part D</h3>
                                         <p className="text-slate-700 text-sm">The part of Medicare that helps pay for prescription medicines. You must sign up for this separately.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Donut Hole (Coverage Gap)</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Donut Hole (Coverage Gap)</h3>
                                         <p className="text-slate-700 text-sm">A temporary limit in Medicare Part D coverage. After you and your plan spend a certain amount, you pay more until you reach catastrophic coverage. This happens in the middle of the year for some people.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Catastrophic Coverage</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Catastrophic Coverage</h3>
                                         <p className="text-slate-700 text-sm">After you spend a lot on medicines in one year, Medicare pays almost everything. You only pay a small amount (about $4-$12) per prescription.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">In-Network Pharmacy</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">In-Network Pharmacy</h3>
                                         <p className="text-slate-700 text-sm">A pharmacy that works with your insurance. You pay less here. Think of it as a preferred partner.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Out-of-Network Pharmacy</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Out-of-Network Pharmacy</h3>
                                         <p className="text-slate-700 text-sm">A pharmacy that doesn't have a deal with your insurance. You might pay more or get no coverage here.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">PBM (Pharmacy Benefit Manager)</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">PBM (Pharmacy Benefit Manager)</h3>
                                         <p className="text-slate-700 text-sm">The company that manages prescription drug coverage for your insurance. They decide which medicines are covered and how much they cost.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Patient Assistance Program (<TermTooltip term="pap" showIcon={false}>PAP</TermTooltip>)</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Patient Assistance Program (<TermTooltip term="pap" showIcon={false}>PAP</TermTooltip>)</h3>
                                         <p className="text-slate-700 text-sm">Free or low-cost medicine programs run by drug companies. If you can't afford your medicine, these programs might help.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Copay Card or Coupon</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Copay Card or Coupon</h3>
                                         <p className="text-slate-700 text-sm">Help from drug companies to lower what you pay for brand name medicines. <strong>Important:</strong> These often don't work with Medicare.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Manufacturer Assistance</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Manufacturer Assistance</h3>
                                         <p className="text-slate-700 text-sm">Help directly from the company that makes your medicine. This can be free medicine, copay help, or discounts.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Mail Order Pharmacy</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Mail Order Pharmacy</h3>
                                         <p className="text-slate-700 text-sm">A pharmacy that ships medicine to your home. Usually gives you 90 days of medicine at once. Often costs less than getting 30 days at a local pharmacy.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Step Therapy</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Step Therapy</h3>
                                         <p className="text-slate-700 text-sm">When insurance requires you to try a cheaper medicine first before they'll pay for a more expensive one. Like having to try the basic version before getting the premium version.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                        <h3 className="font-bold text-lg text-blue-800 mb-2">Exclusion</h3>
+                                        <h3 className="font-bold text-lg text-plum-800 mb-2">Exclusion</h3>
                                         <p className="text-slate-700 text-sm">A medicine that insurance will not cover at all. You must pay the full price yourself or find other help.</p>
                                     </div>
                                 </div>
@@ -4872,7 +4872,7 @@ const Education = () => {
                                             <h3 className="font-bold text-lg text-slate-900 group-hover:text-emerald-700 pr-2">{res.name}</h3>
                                             <ExternalLink size={16} className="opacity-50 group-hover:opacity-100 text-slate-400 flex-shrink-0 mt-1" aria-hidden="true" />
                                         </div>
-                                        <span className={`text-xs px-2 py-1 rounded-full font-bold mb-3 inline-block ${res.category === 'Foundation' ? 'bg-rose-50 text-rose-700' : res.category === 'Government' ? 'bg-purple-50 text-purple-700' : res.category === 'Support Group' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>{res.category}</span>
+                                        <span className={`text-xs px-2 py-1 rounded-full font-bold mb-3 inline-block ${res.category === 'Foundation' ? 'bg-rose-50 text-rose-700' : res.category === 'Government' ? 'bg-purple-50 text-purple-700' : res.category === 'Support Group' ? 'bg-emerald-50 text-emerald-700' : 'bg-plum-50 text-plum-700'}`}>{res.category}</span>
                                         <p className="text-slate-600 text-sm leading-relaxed">{res.description}</p>
                                     </a>
                                 ))}
@@ -4924,8 +4924,8 @@ const Education = () => {
                             </p>
                         </section>
 
-                        <div className="bg-blue-50 border border-blue-100 p-4 rounded-lg text-center mb-8" role="note">
-                            <p className="text-blue-900 font-medium">Each type of insurance has its own benefits, costs, and best ways to save.</p>
+                        <div className="bg-plum-50 border border-plum-100 p-4 rounded-lg text-center mb-8" role="note">
+                            <p className="text-plum-900 font-medium">Each type of insurance has its own benefits, costs, and best ways to save.</p>
                         </div>
 
                         {/* Healthcare Insurance Infographic */}
@@ -4955,11 +4955,11 @@ const Education = () => {
                                 <h3 className="font-bold text-lg text-slate-800 mb-4">Medicare Parts for Transplant Drugs</h3>
                                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                                     <div className="border border-slate-200 p-4 rounded-lg bg-slate-50">
-                                        <strong className="text-blue-700 text-lg block mb-1">Part A (Hospital)</strong>
+                                        <strong className="text-plum-700 text-lg block mb-1">Part A (Hospital)</strong>
                                         <ul className="text-sm font-medium text-slate-800 list-disc pl-4"><li>Induction agents</li><li>(Thymoglobulin, Simulect)</li></ul>
                                     </div>
                                     <div className="border border-slate-200 p-4 rounded-lg bg-slate-50">
-                                        <strong className="text-blue-700 text-lg block mb-1">Part B (Medical)</strong>
+                                        <strong className="text-plum-700 text-lg block mb-1">Part B (Medical)</strong>
                                         <ul className="text-sm font-medium text-slate-800 list-disc pl-4"><li>IV infusions (Belatacept)</li><li>Anti-rejection drugs (if Part B-ID eligible)</li><li>2026: $202.90/month premium, $283 deductible</li><li>Part B-ID premium: $121.60/month (kidney patients)</li></ul>
                                     </div>
                                     <div className="border border-purple-200 p-4 rounded-lg bg-purple-50">
@@ -4967,7 +4967,7 @@ const Education = () => {
                                         <ul className="text-sm font-medium text-slate-800 list-disc pl-4"><li>Combines A, B, and usually D</li><li>May have extra benefits</li><li>You must use certain doctors</li></ul>
                                     </div>
                                     <div className="border border-slate-200 p-4 rounded-lg bg-slate-50">
-                                        <strong className="text-blue-700 text-lg block mb-1">Part D (Prescription)</strong>
+                                        <strong className="text-plum-700 text-lg block mb-1">Part D (Prescription)</strong>
                                         <ul className="text-sm font-medium text-slate-800 list-disc pl-4"><li>Tacrolimus</li><li>Mycophenolate</li><li>Valcyte, etc.</li></ul>
                                     </div>
                                 </div>
@@ -4977,11 +4977,11 @@ const Education = () => {
                                 <div className="overflow-hidden border border-slate-200 rounded-xl">
                                     <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
                                         <div className="p-6">
-                                            <h4 className="font-bold text-indigo-700 text-lg mb-2">Part D (Traditional)</h4>
+                                            <h4 className="font-bold text-plum-700 text-lg mb-2">Part D (Traditional)</h4>
                                             <ul className="space-y-2 text-sm text-slate-800 list-disc pl-5"><li>Works with any Medicare-accepting provider</li><li>Separate deductible and premium</li><li>$2,100 out-of-pocket cap (2026)</li></ul>
                                         </div>
                                         <div className="p-6">
-                                            <h4 className="font-bold text-indigo-700 text-lg mb-2">Medicare Advantage (MA-PD)</h4>
+                                            <h4 className="font-bold text-plum-700 text-lg mb-2">Medicare Advantage (MA-PD)</h4>
                                             <ul className="space-y-2 text-sm text-slate-800 list-disc pl-5"><li>Often lower or $0 premiums</li><li>Provider networks may be limited</li><li>$2,100 out-of-pocket cap (2026)</li></ul>
                                         </div>
                                     </div>
@@ -4989,7 +4989,7 @@ const Education = () => {
                             </div>
                         </section>
                         <section aria-labelledby="commercial-insurance">
-                            <h2 id="commercial-insurance" className="text-xl font-bold text-blue-900 bg-blue-50 p-4 rounded-t-xl border-b border-blue-100">Commercial Insurance</h2>
+                            <h2 id="commercial-insurance" className="text-xl font-bold text-plum-900 bg-plum-50 p-4 rounded-t-xl border-b border-plum-100">Commercial Insurance</h2>
                             <div className="bg-white border border-slate-200 rounded-b-xl p-6 space-y-4">
                                 <p className="text-slate-700">Your main payer for the first 30 months after transplant.</p>
                                 <div className="grid md:grid-cols-2 gap-8">
@@ -5004,16 +5004,16 @@ const Education = () => {
                         <div className="grid md:grid-cols-2 gap-6">
                             <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="va-health">
                                 <h2 id="va-health" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">VA Health Care</h2>
-                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For veterans who qualify.</p><div className="text-sm"><strong className="block text-emerald-700">Best Strategy</strong>Priority Groups 1–6: $0 for medicines. Use the VA pharmacy first. Work with your VA transplant team.</div><a href="https://www.va.gov/health-care/eligibility/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit VA Prescription Information (opens in new tab)">VA Prescription Information <ExternalLink size={12} aria-hidden="true" /></a></div>
+                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For veterans who qualify.</p><div className="text-sm"><strong className="block text-emerald-700">Best Strategy</strong>Priority Groups 1–6: $0 for medicines. Use the VA pharmacy first. Work with your VA transplant team.</div><a href="https://www.va.gov/health-care/eligibility/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit VA Prescription Information (opens in new tab)">VA Prescription Information <ExternalLink size={12} aria-hidden="true" /></a></div>
                             </section>
                             <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="tricare">
                                 <h2 id="tricare" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">TRICARE</h2>
-                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For military members and families.</p><div className="text-sm"><strong className="block text-emerald-700">Best Strategy</strong>Use the military pharmacy ($0 copay). Use TRICARE mail order for ongoing medicines. Check the drug list search tool.</div><a href="https://www.tricare.mil/CoveredServices/Pharmacy" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit TRICARE Formulary Search (opens in new tab)">TRICARE Drug List Search <ExternalLink size={12} aria-hidden="true" /></a></div>
+                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For military members and families.</p><div className="text-sm"><strong className="block text-emerald-700">Best Strategy</strong>Use the military pharmacy ($0 copay). Use TRICARE mail order for ongoing medicines. Check the drug list search tool.</div><a href="https://www.tricare.mil/CoveredServices/Pharmacy" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit TRICARE Formulary Search (opens in new tab)">TRICARE Drug List Search <ExternalLink size={12} aria-hidden="true" /></a></div>
                             </section>
                         </div>
                         <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="no-insurance">
                             <h2 id="no-insurance" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">No Insurance</h2>
-                            <div className="p-6 bg-white"><p className="text-slate-700 mb-4">For patients without insurance.</p><h3 className="font-bold text-emerald-700 mb-2">Best Strategy</h3><ul className="list-disc pl-5 text-slate-600 text-sm space-y-1"><li>Start with drug maker PAPs</li><li>Check Cost Plus Drugs prices</li><li>Use discount tools (GoodRx, SingleCare, etc.)</li><li>Look into Medicaid or Marketplace plans</li></ul><a href="https://www.healthcare.gov/" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline text-sm flex items-center gap-1 mt-4" aria-label="Explore Insurance Options on Healthcare.gov (opens in new tab)">Find Insurance Options <ExternalLink size={12} aria-hidden="true" /></a></div>
+                            <div className="p-6 bg-white"><p className="text-slate-700 mb-4">For patients without insurance.</p><h3 className="font-bold text-emerald-700 mb-2">Best Strategy</h3><ul className="list-disc pl-5 text-slate-600 text-sm space-y-1"><li>Start with drug maker PAPs</li><li>Check Cost Plus Drugs prices</li><li>Use discount tools (GoodRx, SingleCare, etc.)</li><li>Look into Medicaid or Marketplace plans</li></ul><a href="https://www.healthcare.gov/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-4" aria-label="Explore Insurance Options on Healthcare.gov (opens in new tab)">Find Insurance Options <ExternalLink size={12} aria-hidden="true" /></a></div>
                         </section>
 
                         <section aria-labelledby="medicaid-section">
@@ -5123,7 +5123,7 @@ const Education = () => {
                             </div>
                         </section>
 
-                        <section className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl border border-blue-200" aria-labelledby="when-to-use">
+                        <section className="bg-gradient-to-r from-plum-50 to-plum-50 p-8 rounded-xl border border-plum-200" aria-labelledby="when-to-use">
                             <h2 id="when-to-use" className="text-2xl font-bold text-slate-900 mb-6">When Should Transplant Patients Use Discount Cards?</h2>
                             <div className="space-y-4">
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
@@ -5168,10 +5168,10 @@ const Education = () => {
                                     <p className="text-slate-700 text-sm mb-4">Free or low-cost medicines straight from drug makers.</p>
                                     <p className="text-emerald-800 font-bold text-sm">✅ Counts toward your yearly limit</p>
                                 </div>
-                                <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
-                                    <h3 className="font-bold text-blue-900 text-lg mb-3">Co-pay Foundations</h3>
+                                <div className="bg-plum-50 p-6 rounded-xl border border-plum-200">
+                                    <h3 className="font-bold text-plum-900 text-lg mb-3">Co-pay Foundations</h3>
                                     <p className="text-slate-700 text-sm mb-4">Groups that help pay for your copays and deductibles.</p>
-                                    <p className="text-blue-800 font-bold text-sm">✅ Counts toward your yearly limit</p>
+                                    <p className="text-plum-800 font-bold text-sm">✅ Counts toward your yearly limit</p>
                                 </div>
                                 <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
                                     <h3 className="font-bold text-purple-900 text-lg mb-3">Drug Maker Copay Cards</h3>
@@ -5240,13 +5240,13 @@ const Education = () => {
 
                         <section className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm" aria-labelledby="types-heading">
                             <h2 id="types-heading" className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                <List className="text-indigo-600" size={28} aria-hidden="true" />
+                                <List className="text-plum-600" size={28} aria-hidden="true" />
                                 Three Ways Plans Do This
                             </h2>
                             <p className="text-slate-600 mb-8">These tricks have fancy names. But they all do the same thing: make someone else pay for your drugs.</p>
 
                             <div className="space-y-6">
-                                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-2 border-purple-200">
+                                <div className="bg-gradient-to-r from-purple-50 to-plum-50 p-6 rounded-xl border-2 border-purple-200">
                                     <div className="flex items-start gap-4">
                                         <div className="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div>
                                         <div>
@@ -5338,19 +5338,19 @@ const Education = () => {
                                     <h3 className="font-bold text-slate-900 mb-4">Ask Your Plan These Questions:</h3>
                                     <ul className="space-y-3">
                                         <li className="flex items-start gap-3 text-slate-700">
-                                            <HelpCircle size={20} className="text-blue-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <HelpCircle size={20} className="text-plum-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                             <span>"Do you use a copay accumulator?"</span>
                                         </li>
                                         <li className="flex items-start gap-3 text-slate-700">
-                                            <HelpCircle size={20} className="text-blue-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <HelpCircle size={20} className="text-plum-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                             <span>"Will my copay card count toward what I owe?"</span>
                                         </li>
                                         <li className="flex items-start gap-3 text-slate-700">
-                                            <HelpCircle size={20} className="text-blue-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <HelpCircle size={20} className="text-plum-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                             <span>"Is my drug fully covered?"</span>
                                         </li>
                                         <li className="flex items-start gap-3 text-slate-700">
-                                            <HelpCircle size={20} className="text-blue-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                            <HelpCircle size={20} className="text-plum-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                             <span>"Do I have to ask for free drugs first?"</span>
                                         </li>
                                     </ul>
@@ -5402,17 +5402,17 @@ const Education = () => {
                             </div>
                         </section>
 
-                        <section className="bg-blue-50 p-8 rounded-xl border border-blue-200" aria-labelledby="state-laws-heading">
+                        <section className="bg-plum-50 p-8 rounded-xl border border-plum-200" aria-labelledby="state-laws-heading">
                             <h2 id="state-laws-heading" className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                                <Scale className="text-blue-600" size={28} aria-hidden="true" />
+                                <Scale className="text-plum-600" size={28} aria-hidden="true" />
                                 States That Protect You
                             </h2>
                             <p className="text-slate-700 mb-6">Some states made laws to stop these tricks. In these states, copay card money must count toward what you owe.</p>
-                            <div className="bg-white p-6 rounded-xl border border-blue-200">
-                                <h3 className="font-bold text-blue-900 mb-3">States With Laws to Help (as of 2026):</h3>
+                            <div className="bg-white p-6 rounded-xl border border-plum-200">
+                                <h3 className="font-bold text-plum-900 mb-3">States With Laws to Help (as of 2026):</h3>
                                 <p className="text-slate-700 text-sm mb-4">Arizona, Arkansas, California, Connecticut, Delaware, Georgia, Illinois, Kentucky, Louisiana, Maine, Maryland, Minnesota, Missouri, New Jersey, New York, North Carolina, Ohio, Oklahoma, Oregon, Puerto Rico, Tennessee, Texas, Virginia, Washington, West Virginia, and more.</p>
-                                <div className="bg-blue-100 p-4 rounded-lg mt-4">
-                                    <p className="text-blue-900 text-sm font-medium">Call your state insurance office to learn about new laws. More states add protections every year.</p>
+                                <div className="bg-plum-100 p-4 rounded-lg mt-4">
+                                    <p className="text-plum-900 text-sm font-medium">Call your state insurance office to learn about new laws. More states add protections every year.</p>
                                 </div>
                             </div>
                         </section>
@@ -5489,11 +5489,11 @@ const Education = () => {
                         </section>
 
                         <div className="grid md:grid-cols-2 gap-6">
-                            <a href="https://www.samhsa.gov/find-support" target="_blank" rel="noreferrer" className="group block bg-white p-6 rounded-xl border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg transition h-full" aria-label="Visit SAMHSA (opens in new tab)">
+                            <a href="https://www.samhsa.gov/find-support" target="_blank" rel="noreferrer" className="group block bg-white p-6 rounded-xl border-2 border-plum-200 hover:border-plum-400 hover:shadow-lg transition h-full" aria-label="Visit SAMHSA (opens in new tab)">
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
-                                        <h3 className="font-bold text-xl text-slate-900 group-hover:text-indigo-700 mb-1">SAMHSA</h3>
-                                        <span className="text-xs px-2 py-1 rounded-full font-bold bg-indigo-100 text-indigo-700">Government Resource</span>
+                                        <h3 className="font-bold text-xl text-slate-900 group-hover:text-plum-700 mb-1">SAMHSA</h3>
+                                        <span className="text-xs px-2 py-1 rounded-full font-bold bg-plum-100 text-plum-700">Government Resource</span>
                                     </div>
                                     <ExternalLink size={18} className="opacity-50 group-hover:opacity-100 text-slate-400 flex-shrink-0" aria-hidden="true" />
                                 </div>
@@ -5503,7 +5503,7 @@ const Education = () => {
                                 <div className="space-y-2 text-sm">
                                     <p className="text-slate-600">
                                         <strong className="text-slate-900">Helpline:</strong>{' '}
-                                        <a href="tel:1-800-662-4357" className="text-indigo-600 font-bold hover:underline">1-800-662-HELP (4357)</a>
+                                        <a href="tel:1-800-662-4357" className="text-plum-600 font-bold hover:underline">1-800-662-HELP (4357)</a>
                                     </p>
                                     <p className="text-slate-600 text-xs">Help finding treatment any time (24/7)</p>
                                 </div>
@@ -5874,25 +5874,25 @@ ${patientName || "[Your Name]"}`;
     return (
         <article className="max-w-5xl mx-auto space-y-8 pb-12">
             <header className="text-center py-8"><h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Application Education</h1><p className="text-xl md:text-2xl text-slate-700 max-w-3xl mx-auto leading-relaxed">Master the art of assistance applications with step-by-step guidance and insider tips.</p></header>
-            <Link to="/wizard" className="block bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-5 mb-6 hover:border-blue-400 transition group">
+            <Link to="/wizard" className="block bg-gradient-to-r from-plum-50 to-plum-50 border-2 border-plum-200 rounded-xl p-5 mb-6 hover:border-plum-400 transition group">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <div className="bg-blue-600 text-white p-3 rounded-lg">
+                        <div className="bg-plum-600 text-white p-3 rounded-lg">
                             <Sparkles size={24} aria-hidden="true" />
                         </div>
                         <div>
-                            <p className="font-bold text-lg text-blue-900">Not sure which programs to apply to?</p>
-                            <p className="text-base text-blue-700">Take the My Path Quiz first to get personalized recommendations</p>
+                            <p className="font-bold text-lg text-plum-900">Not sure which programs to apply to?</p>
+                            <p className="text-base text-plum-700">Take the My Path Quiz first to get personalized recommendations</p>
                         </div>
                     </div>
-                    <ArrowRight className="text-blue-600 group-hover:translate-x-1 transition-transform" size={24} aria-hidden="true" />
+                    <ArrowRight className="text-plum-600 group-hover:translate-x-1 transition-transform" size={24} aria-hidden="true" />
                 </div>
             </Link>
             <nav className="bg-white rounded-xl shadow-md border border-slate-200" role="tablist" aria-label="Application help sections">
                 <div className="flex flex-wrap">
                     <TabButton id="START" label="Getting Started" icon={HeartHandshake} iconBg="bg-rose-100" iconColor="text-rose-600" />
                     <TabButton id="INCOME" label="Income" icon={DollarSign} iconBg="bg-emerald-100" iconColor="text-emerald-600" />
-                    <TabButton id="STEPS" label="Steps" icon={ArrowRight} iconBg="bg-blue-100" iconColor="text-blue-600" />
+                    <TabButton id="STEPS" label="Steps" icon={ArrowRight} iconBg="bg-plum-100" iconColor="text-plum-600" />
                     <TabButton id="CHECKLIST" label="Checklist" icon={ClipboardList} iconBg="bg-amber-100" iconColor="text-amber-600" />
                     <TabButton id="LETTERS" label="Letters" icon={FileText} iconBg="bg-purple-100" iconColor="text-purple-600" />
                     <TabButton id="MEDS" label="Medications" icon={Pill} iconBg="bg-teal-100" iconColor="text-teal-600" />
@@ -5914,11 +5914,11 @@ ${patientName || "[Your Name]"}`;
                         </section>
 
                         <div className="grid md:grid-cols-3 gap-6">
-                            <section className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
-                                <div className="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                            <section className="bg-plum-50 p-6 rounded-xl border-2 border-plum-200">
+                                <div className="bg-plum-600 text-white w-14 h-14 rounded-full flex items-center justify-center mb-4">
                                     <Pill size={28} aria-hidden="true" />
                                 </div>
-                                <h3 className="font-bold text-blue-900 text-xl mb-3">Patient Assistance Programs</h3>
+                                <h3 className="font-bold text-plum-900 text-xl mb-3">Patient Assistance Programs</h3>
                                 <p className="text-slate-800 text-base leading-relaxed">
                                     Programs for everyone who needs affordable medications. Get prescription medications at no cost or minimal fee, regardless of insurance status.
                                 </p>
@@ -5956,11 +5956,11 @@ ${patientName || "[Your Name]"}`;
                                 </div>
                             </section>
 
-                            <section className="bg-indigo-50 p-6 rounded-xl border-2 border-indigo-200">
-                                <div className="bg-indigo-600 text-white w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                            <section className="bg-plum-50 p-6 rounded-xl border-2 border-plum-200">
+                                <div className="bg-plum-600 text-white w-14 h-14 rounded-full flex items-center justify-center mb-4">
                                     <Shield size={28} aria-hidden="true" />
                                 </div>
-                                <h3 className="font-bold text-indigo-900 text-xl mb-3">Help Paying for Insurance</h3>
+                                <h3 className="font-bold text-plum-900 text-xl mb-3">Help Paying for Insurance</h3>
                                 <p className="text-slate-800 text-base leading-relaxed">
                                     Ask the foundation to help pay what you owe to your insurance company to keep your medical or prescription coverage.
                                 </p>
@@ -5969,7 +5969,7 @@ ${patientName || "[Your Name]"}`;
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <section className="border border-slate-200 rounded-xl p-6 hover:border-emerald-300 transition-colors" aria-labelledby="pap-heading">
-                                <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3"><div className="p-3 bg-indigo-100 text-indigo-700 rounded-lg" aria-hidden="true"><FileText size={28} /></div><div><h2 id="pap-heading" className="font-bold text-xl text-slate-900">Patient Assistance Program (PAP)</h2><p className="text-base text-slate-700">Direct from Manufacturer</p></div></div>
+                                <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3"><div className="p-3 bg-plum-100 text-plum-700 rounded-lg" aria-hidden="true"><FileText size={28} /></div><div><h2 id="pap-heading" className="font-bold text-xl text-slate-900">Patient Assistance Program (PAP)</h2><p className="text-base text-slate-700">Direct from Manufacturer</p></div></div>
                                 <p className="text-slate-700 mb-4 text-base min-h-[40px]">Free or low-cost medications provided directly by the drug company.</p>
                                 <div className="space-y-3 text-base"><div><span className="font-bold text-slate-800 block">Best for:</span><ul className="list-disc pl-4 text-slate-700"><li>Commercial insurance</li><li>Uninsured</li><li>Underinsured</li></ul></div><div className="flex justify-between py-2 border-t border-slate-100"><span className="text-slate-700">Approval Time</span><span className="font-medium text-emerald-700">2–4 weeks</span></div></div>
                             </section>
@@ -6022,7 +6022,7 @@ ${patientName || "[Your Name]"}`;
                                 {progress === 100 && ( <div className="p-4 bg-emerald-100 text-emerald-800 rounded-xl text-center" role="alert" aria-live="polite"><span className="font-bold text-lg">🎉 You have everything you need! Time to apply.</span></div> )}
                             </div>
                             <aside className="lg:col-span-2 space-y-6">
-                                <section className="bg-slate-50 p-6 rounded-xl border border-slate-200" aria-labelledby="clinic-handles"><h3 id="clinic-handles" className="font-bold text-lg text-slate-800 mb-4 flex items-center gap-2"><Stethoscope size={24} className="text-indigo-600" aria-hidden="true" /> What the Clinic Handles</h3><p className="text-base text-slate-700 mb-4">You do <strong>NOT</strong> need to provide these. Your provider will fill them in:</p><ul className="space-y-3">{["ICD-10 diagnosis codes", "Provider NPI numbers", "Prescriber signatures", "Medical chart notes", "Treatment start dates"].map((item, i) => ( <li key={i} className="flex items-center gap-2 text-base text-slate-700"><CheckCircle size={18} className="text-indigo-500 flex-shrink-0" aria-hidden="true" />{item}</li> ))}</ul></section>
+                                <section className="bg-slate-50 p-6 rounded-xl border border-slate-200" aria-labelledby="clinic-handles"><h3 id="clinic-handles" className="font-bold text-lg text-slate-800 mb-4 flex items-center gap-2"><Stethoscope size={24} className="text-plum-600" aria-hidden="true" /> What the Clinic Handles</h3><p className="text-base text-slate-700 mb-4">You do <strong>NOT</strong> need to provide these. Your provider will fill them in:</p><ul className="space-y-3">{["ICD-10 diagnosis codes", "Provider NPI numbers", "Prescriber signatures", "Medical chart notes", "Treatment start dates"].map((item, i) => ( <li key={i} className="flex items-center gap-2 text-base text-slate-700"><CheckCircle size={18} className="text-plum-500 flex-shrink-0" aria-hidden="true" />{item}</li> ))}</ul></section>
                                 <aside className="bg-amber-50 p-6 rounded-xl border border-amber-200 shadow-sm" role="note"><h3 className="font-bold text-lg text-amber-800 mb-2 flex items-center gap-2"><AlertTriangle size={24} aria-hidden="true" /> Crucial Step</h3><p className="text-base text-amber-900 leading-relaxed">It is <strong>important to follow up</strong> to make sure the provider is getting the paperwork sent back to the program.</p></aside>
                             </aside>
                         </div>
@@ -6031,17 +6031,17 @@ ${patientName || "[Your Name]"}`;
                 {activeTab === 'LETTERS' && (
                     <div className="max-w-4xl mx-auto space-y-8">
                         {/* Letter Builder */}
-                        <section className="bg-indigo-50 p-6 md:p-8 rounded-xl border border-indigo-100" aria-labelledby="letter-builder">
+                        <section className="bg-plum-50 p-6 md:p-8 rounded-xl border border-plum-100" aria-labelledby="letter-builder">
                             <div className="flex items-center gap-3 mb-4">
-                                <FileText className="text-indigo-600" size={28} aria-hidden="true" />
-                                <h2 id="letter-builder" className="text-2xl font-bold text-indigo-900">Letter Builder</h2>
+                                <FileText className="text-plum-600" size={28} aria-hidden="true" />
+                                <h2 id="letter-builder" className="text-2xl font-bold text-plum-900">Letter Builder</h2>
                             </div>
-                            <p className="text-base text-indigo-800 mb-6 leading-relaxed">Select a letter type, fill in your details, and generate a professional letter you can copy and use.</p>
+                            <p className="text-base text-plum-800 mb-6 leading-relaxed">Select a letter type, fill in your details, and generate a professional letter you can copy and use.</p>
 
                             <div className="space-y-5">
                                 <div>
                                     <label htmlFor="letter-type" className="block text-base font-bold text-slate-800 mb-2">Letter Type</label>
-                                    <select id="letter-type" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white" value={letterType} onChange={(e) => { setLetterType(e.target.value); setGeneratedLetter(""); }}>
+                                    <select id="letter-type" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400 bg-white" value={letterType} onChange={(e) => { setLetterType(e.target.value); setGeneratedLetter(""); }}>
                                         <option value="appeal">Insurance Appeal Letter</option>
                                         <option value="pap">PAP Reconsideration Letter</option>
                                         <option value="doctor">Request Doctor's Support</option>
@@ -6052,18 +6052,18 @@ ${patientName || "[Your Name]"}`;
                                 <div className="grid md:grid-cols-2 gap-5">
                                     <div>
                                         <label htmlFor="patient-name" className="block text-base font-bold text-slate-800 mb-2">Your Name</label>
-                                        <input id="patient-name" type="text" placeholder="Your full name" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={patientName} onChange={(e) => setPatientName(e.target.value)} />
+                                        <input id="patient-name" type="text" placeholder="Your full name" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={patientName} onChange={(e) => setPatientName(e.target.value)} />
                                     </div>
                                     <div>
                                         <label htmlFor="medication-name" className="block text-base font-bold text-slate-800 mb-2">Medication Name</label>
-                                        <input id="medication-name" type="text" placeholder="e.g., Tacrolimus" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={medicationName} onChange={(e) => setMedicationName(e.target.value)} />
+                                        <input id="medication-name" type="text" placeholder="e.g., Tacrolimus" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={medicationName} onChange={(e) => setMedicationName(e.target.value)} />
                                     </div>
                                 </div>
 
                                 {letterType === "appeal" && (
                                     <div>
                                         <label htmlFor="appeal-reason" className="block text-base font-bold text-slate-800 mb-2">Reason for Appeal</label>
-                                        <select id="appeal-reason" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white" value={appealReason} onChange={(e) => setAppealReason(e.target.value)}>
+                                        <select id="appeal-reason" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400 bg-white" value={appealReason} onChange={(e) => setAppealReason(e.target.value)}>
                                             <option value="Financial Hardship">Financial Hardship</option>
                                             <option value="Access Issues">Access Issues (Timing/Delivery)</option>
                                             <option value="Clinical Stability">Clinical Stability (Already stable)</option>
@@ -6075,11 +6075,11 @@ ${patientName || "[Your Name]"}`;
                                     <div className="grid md:grid-cols-2 gap-5">
                                         <div>
                                             <label htmlFor="transplant-type" className="block text-base font-bold text-slate-800 mb-2">Transplant Type</label>
-                                            <input id="transplant-type" type="text" placeholder="e.g., Kidney, Liver, Heart" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={transplantType} onChange={(e) => setTransplantType(e.target.value)} />
+                                            <input id="transplant-type" type="text" placeholder="e.g., Kidney, Liver, Heart" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={transplantType} onChange={(e) => setTransplantType(e.target.value)} />
                                         </div>
                                         <div>
                                             <label htmlFor="transplant-date" className="block text-base font-bold text-slate-800 mb-2">Transplant Date (optional)</label>
-                                            <input id="transplant-date" type="text" placeholder="e.g., January 2023" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={transplantDate} onChange={(e) => setTransplantDate(e.target.value)} />
+                                            <input id="transplant-date" type="text" placeholder="e.g., January 2023" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={transplantDate} onChange={(e) => setTransplantDate(e.target.value)} />
                                         </div>
                                     </div>
                                 )}
@@ -6087,31 +6087,31 @@ ${patientName || "[Your Name]"}`;
                                 {letterType === "doctor" && (
                                     <div>
                                         <label htmlFor="doctor-name" className="block text-base font-bold text-slate-800 mb-2">Doctor's Name</label>
-                                        <input id="doctor-name" type="text" placeholder="e.g., Smith" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={doctorName} onChange={(e) => setDoctorName(e.target.value)} />
+                                        <input id="doctor-name" type="text" placeholder="e.g., Smith" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={doctorName} onChange={(e) => setDoctorName(e.target.value)} />
                                     </div>
                                 )}
 
                                 {(letterType === "pap" || letterType === "doctor") && (
                                     <div>
                                         <label htmlFor="program-name" className="block text-base font-bold text-slate-800 mb-2">Program Name(s)</label>
-                                        <input id="program-name" type="text" placeholder="e.g., Astellas Patient Assistance" className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={programName} onChange={(e) => setProgramName(e.target.value)} />
+                                        <input id="program-name" type="text" placeholder="e.g., Astellas Patient Assistance" className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={programName} onChange={(e) => setProgramName(e.target.value)} />
                                     </div>
                                 )}
 
                                 {(letterType === "pap" || letterType === "hardship") && (
                                     <div>
                                         <label htmlFor="hardship-details" className="block text-base font-bold text-slate-800 mb-2">Describe Your Situation</label>
-                                        <textarea id="hardship-details" rows={3} placeholder="Briefly describe your financial circumstances..." className="w-full p-3 text-base rounded-lg border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={hardshipDetails} onChange={(e) => setHardshipDetails(e.target.value)} />
+                                        <textarea id="hardship-details" rows={3} placeholder="Briefly describe your financial circumstances..." className="w-full p-3 text-base rounded-lg border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={hardshipDetails} onChange={(e) => setHardshipDetails(e.target.value)} />
                                     </div>
                                 )}
 
-                                <button onClick={generateLetter} className="bg-indigo-600 hover:bg-indigo-700 text-white text-base font-bold py-3 px-6 rounded-lg transition flex items-center gap-2">
+                                <button onClick={generateLetter} className="bg-plum-600 hover:bg-plum-700 text-white text-base font-bold py-3 px-6 rounded-lg transition flex items-center gap-2">
                                     <FileText size={20} aria-hidden="true" />
                                     Generate Letter
                                 </button>
 
                                 {generatedLetter && (
-                                    <div className="mt-6 bg-white p-6 rounded-xl border border-indigo-200 relative">
+                                    <div className="mt-6 bg-white p-6 rounded-xl border border-plum-200 relative">
                                         <div className="flex justify-between items-center mb-4">
                                             <h3 className="text-base font-bold text-slate-700 uppercase">Generated Letter:</h3>
                                             <button onClick={copyToClipboard} className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-base font-bold transition">
@@ -6119,7 +6119,7 @@ ${patientName || "[Your Name]"}`;
                                                 {copied ? 'Copied!' : 'Copy Text'}
                                             </button>
                                         </div>
-                                        <pre className="whitespace-pre-wrap font-serif text-base text-slate-800 leading-relaxed border-l-4 border-indigo-200 pl-4">{generatedLetter}</pre>
+                                        <pre className="whitespace-pre-wrap font-serif text-base text-slate-800 leading-relaxed border-l-4 border-plum-200 pl-4">{generatedLetter}</pre>
                                     </div>
                                 )}
                             </div>
@@ -6256,10 +6256,10 @@ ${patientName || "[Your Name]"}`;
                         </div>
 
                         {/* Commercial Insurance Question - always shown before medication cards */}
-                        <div className="mb-6 bg-white border-2 border-blue-200 rounded-xl p-5" role="group" aria-labelledby="apphelp-insurance-heading">
+                        <div className="mb-6 bg-white border-2 border-plum-200 rounded-xl p-5" role="group" aria-labelledby="apphelp-insurance-heading">
                             <div className="flex items-start gap-4">
-                                <div className="p-2 bg-blue-100 rounded-full flex-shrink-0">
-                                    <ShieldCheck className="text-blue-600" size={28} aria-hidden="true" />
+                                <div className="p-2 bg-plum-100 rounded-full flex-shrink-0">
+                                    <ShieldCheck className="text-plum-600" size={28} aria-hidden="true" />
                                 </div>
                                 <div className="flex-1">
                                     <h3 id="apphelp-insurance-heading" className="font-bold text-lg text-slate-900 mb-2">
@@ -6273,7 +6273,7 @@ ${patientName || "[Your Name]"}`;
                                             onClick={() => setLocalCommercialInsurance('yes')}
                                             className={`flex-1 py-3 px-4 rounded-lg font-bold text-center transition min-h-[48px] text-base ${
                                                 localCommercialInsurance === 'yes'
-                                                    ? 'bg-blue-600 text-white ring-2 ring-blue-600 shadow-md'
+                                                    ? 'bg-plum-600 text-white ring-2 ring-plum-600 shadow-md'
                                                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-2 border-slate-300'
                                             }`}
                                             role="radio"
@@ -6285,7 +6285,7 @@ ${patientName || "[Your Name]"}`;
                                             onClick={() => setLocalCommercialInsurance('no')}
                                             className={`flex-1 py-3 px-4 rounded-lg font-bold text-center transition min-h-[48px] text-base ${
                                                 localCommercialInsurance === 'no'
-                                                    ? 'bg-blue-600 text-white ring-2 ring-blue-600 shadow-md'
+                                                    ? 'bg-plum-600 text-white ring-2 ring-plum-600 shadow-md'
                                                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-2 border-slate-300'
                                             }`}
                                             role="radio"
@@ -6352,19 +6352,19 @@ ${patientName || "[Your Name]"}`;
                                 ))}
 
                                 {/* CTA to application education */}
-                                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5">
+                                <div className="bg-gradient-to-r from-plum-50 to-plum-50 border border-plum-200 rounded-xl p-5">
                                     <div className="flex items-start gap-4">
-                                        <div className="bg-blue-600 text-white p-3 rounded-lg">
+                                        <div className="bg-plum-600 text-white p-3 rounded-lg">
                                             <FileText size={24} aria-hidden="true" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-lg text-blue-900 mb-1">Ready to Apply?</h4>
-                                            <p className="text-blue-700 text-sm mb-3">Check out the other tabs on this page for step-by-step application guidance, checklists, and letter templates.</p>
+                                            <h4 className="font-bold text-lg text-plum-900 mb-1">Ready to Apply?</h4>
+                                            <p className="text-plum-700 text-sm mb-3">Check out the other tabs on this page for step-by-step application guidance, checklists, and letter templates.</p>
                                             <div className="flex flex-wrap gap-2">
-                                                <button onClick={() => setActiveTab('STEPS')} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
+                                                <button onClick={() => setActiveTab('STEPS')} className="bg-plum-600 hover:bg-plum-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
                                                     View Application Steps
                                                 </button>
-                                                <button onClick={() => setActiveTab('CHECKLIST')} className="bg-white border border-blue-300 text-blue-700 hover:bg-blue-50 px-4 py-2 rounded-lg text-sm font-bold transition">
+                                                <button onClick={() => setActiveTab('CHECKLIST')} className="bg-white border border-plum-300 text-plum-700 hover:bg-plum-50 px-4 py-2 rounded-lg text-sm font-bold transition">
                                                     View Checklist
                                                 </button>
                                             </div>

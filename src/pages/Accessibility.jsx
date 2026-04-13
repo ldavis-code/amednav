@@ -24,14 +24,14 @@ const Accessibility = () => {
                         <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
                         Section 504 Non-Discrimination Notice
                     </h2>
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                        <p className="text-blue-900 leading-relaxed">
+                    <div className="bg-plum-50 border border-plum-200 rounded-lg p-4 mb-4">
+                        <p className="text-plum-900 leading-relaxed">
                             In accordance with <strong>Section 504 of the Rehabilitation Act of 1973</strong> and the{' '}
                             <a
                                 href="https://www.hhs.gov/civil-rights/for-individuals/disability/section-504-rehabilitation-act-of-1973/index.html"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-700 hover:text-blue-800 underline inline-flex items-center gap-1"
+                                className="text-plum-700 hover:text-plum-800 underline inline-flex items-center gap-1"
                             >
                                 U.S. Department of Health and Human Services (HHS) Final Rule
                                 <ExternalLink size={14} aria-hidden="true" />

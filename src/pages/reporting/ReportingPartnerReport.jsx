@@ -108,14 +108,14 @@ export default function ReportingPartnerReport() {
     if (authLoading || !isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
     }
 
     const programTypeConfig = {
-        copay: { icon: CreditCard, color: 'bg-blue-100 text-blue-600', label: 'Copay' },
+        copay: { icon: CreditCard, color: 'bg-plum-100 text-plum-600', label: 'Copay' },
         foundation: { icon: Heart, color: 'bg-pink-100 text-pink-600', label: 'Foundation' },
         pap: { icon: Pill, color: 'bg-green-100 text-green-600', label: 'PAP' },
     };
@@ -168,7 +168,7 @@ export default function ReportingPartnerReport() {
                                 id="startDate"
                                 value={dateRange.start}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, start: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <div>
@@ -180,7 +180,7 @@ export default function ReportingPartnerReport() {
                                 id="endDate"
                                 value={dateRange.end}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, end: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <button
@@ -208,20 +208,20 @@ export default function ReportingPartnerReport() {
 
                 {loading ? (
                     <div className="py-12 text-center" role="status">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto" />
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600 mx-auto" />
                         <span className="sr-only">Loading report...</span>
                     </div>
                 ) : report ? (
                     <>
                         {/* Report Header */}
-                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-lg p-6 mb-6 text-white">
+                        <div className="bg-gradient-to-r from-plum-600 to-plum-700 rounded-lg shadow-lg p-6 mb-6 text-white">
                             <div className="flex items-center gap-4">
                                 <div className="p-3 bg-white/20 rounded-lg">
                                     <Building2 className="h-8 w-8" />
                                 </div>
                                 <div>
                                     <h2 className="text-2xl font-bold">{report.partner}</h2>
-                                    <p className="text-blue-100 flex items-center gap-2 mt-1">
+                                    <p className="text-plum-100 flex items-center gap-2 mt-1">
                                         <Calendar className="h-4 w-4" />
                                         {report.reportPeriod.start} to {report.reportPeriod.end}
                                         ({report.reportPeriod.days} days)
@@ -306,7 +306,7 @@ export default function ReportingPartnerReport() {
                                                 </div>
                                                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                                                     <div
-                                                        className={`h-full ${type === 'copay' ? 'bg-blue-500' : type === 'foundation' ? 'bg-pink-500' : 'bg-green-500'}`}
+                                                        className={`h-full ${type === 'copay' ? 'bg-plum-500' : type === 'foundation' ? 'bg-pink-500' : 'bg-green-500'}`}
                                                         style={{ width: `${percent}%` }}
                                                     />
                                                 </div>
@@ -320,11 +320,11 @@ export default function ReportingPartnerReport() {
                             <div className="bg-white rounded-lg shadow-sm border p-6">
                                 <h3 className="font-semibold text-gray-900 mb-4">Conversion Rates</h3>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <div className="text-center p-4 bg-blue-50 rounded-lg">
-                                        <p className="text-3xl font-bold text-blue-600">
+                                    <div className="text-center p-4 bg-plum-50 rounded-lg">
+                                        <p className="text-3xl font-bold text-plum-600">
                                             {report.conversionRates.quizStartRate}%
                                         </p>
-                                        <p className="text-sm text-blue-700 mt-1">Quiz Start Rate</p>
+                                        <p className="text-sm text-plum-700 mt-1">Quiz Start Rate</p>
                                     </div>
                                     <div className="text-center p-4 bg-purple-50 rounded-lg">
                                         <p className="text-3xl font-bold text-purple-600">
@@ -376,7 +376,7 @@ export default function ReportingPartnerReport() {
                                                     </div>
                                                     <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                                                         <div
-                                                            className="h-full bg-blue-500"
+                                                            className="h-full bg-plum-500"
                                                             style={{ width: `${widthPercent}%` }}
                                                         />
                                                     </div>
@@ -416,11 +416,11 @@ export default function ReportingPartnerReport() {
                                                     </div>
                                                     <div className="h-3 bg-gray-100 rounded-full overflow-hidden flex">
                                                         <div
-                                                            className="h-full bg-blue-200"
+                                                            className="h-full bg-plum-200"
                                                             style={{ width: `${widthPercent}%` }}
                                                         />
                                                         <div
-                                                            className="h-full bg-blue-600 -ml-1"
+                                                            className="h-full bg-plum-600 -ml-1"
                                                             style={{ width: `${(week.clicks / maxEvents) * 100}%` }}
                                                         />
                                                     </div>

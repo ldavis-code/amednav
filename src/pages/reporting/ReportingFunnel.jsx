@@ -95,7 +95,7 @@ export default function ReportingFunnel() {
     if (authLoading || !isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -107,7 +107,7 @@ export default function ReportingFunnel() {
             value: funnel.pageViews,
             rate: 100,
             icon: Eye,
-            color: 'bg-blue-500',
+            color: 'bg-plum-500',
         },
         {
             label: 'Quiz Starts',
@@ -190,7 +190,7 @@ export default function ReportingFunnel() {
                             <select
                                 value={partnerFilter}
                                 onChange={(e) => setPartnerFilter(e.target.value)}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             >
                                 <option value="">All Partners</option>
                                 {partners.map(p => (
@@ -206,7 +206,7 @@ export default function ReportingFunnel() {
                                 type="date"
                                 value={dateRange.start}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, start: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <div>
@@ -217,7 +217,7 @@ export default function ReportingFunnel() {
                                 type="date"
                                 value={dateRange.end}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, end: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <button
@@ -242,7 +242,7 @@ export default function ReportingFunnel() {
                 <div className="bg-white rounded-lg shadow-sm border p-6">
                     {loading ? (
                         <div className="py-12 text-center" role="status">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto" />
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600 mx-auto" />
                             <span className="sr-only">Loading funnel data...</span>
                         </div>
                     ) : (
@@ -295,7 +295,7 @@ export default function ReportingFunnel() {
                 {funnel && !loading && (
                     <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="bg-white rounded-lg shadow-sm border p-4 text-center">
-                            <p className="text-3xl font-bold text-blue-600">{funnel.quizStartRate}%</p>
+                            <p className="text-3xl font-bold text-plum-600">{funnel.quizStartRate}%</p>
                             <p className="text-sm text-gray-500 mt-1">Quiz Start Rate</p>
                         </div>
                         <div className="bg-white rounded-lg shadow-sm border p-4 text-center">
