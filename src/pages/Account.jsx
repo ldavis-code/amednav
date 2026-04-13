@@ -238,14 +238,14 @@ const Account = () => {
 
       {/* Data Migration Notice */}
       {migrationNeeded && migrationStatus !== 'success' && (
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div className="bg-plum-50 border border-plum-200 rounded-xl p-6">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
-              <Upload size={24} className="text-blue-600" />
+              <Upload size={24} className="text-plum-600" />
             </div>
             <div className="flex-1">
-              <h3 className="font-bold text-blue-900 mb-1">Sync Your Local Data</h3>
-              <p className="text-blue-800 text-sm mb-4">
+              <h3 className="font-bold text-plum-900 mb-1">Sync Your Local Data</h3>
+              <p className="text-plum-800 text-sm mb-4">
                 We found saved data on this device. Would you like to sync it to your account so you can access it anywhere?
               </p>
               {migrationStatus === 'error' && (
@@ -257,7 +257,7 @@ const Account = () => {
               <button
                 onClick={handleMigrate}
                 disabled={syncing || migrationStatus === 'migrating'}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition disabled:opacity-50 flex items-center gap-2"
+                className="px-4 py-2 bg-plum-600 hover:bg-plum-700 text-white font-medium rounded-lg transition disabled:opacity-50 flex items-center gap-2"
               >
                 {migrationStatus === 'migrating' ? (
                   <>

@@ -324,9 +324,9 @@ export default function ComplianceDashboard() {
 
       {/* Immunosuppressant Alert */}
       {summary && summary.immunosuppressants && summary.immunosuppressants.patientsTracked > 0 && (
-        <div className={'rounded-xl border p-5 mb-6 ' + (summary.immunosuppressants.highRiskCount > 0 ? 'bg-red-50 border-red-200' : 'bg-blue-50 border-blue-200')}>
+        <div className={'rounded-xl border p-5 mb-6 ' + (summary.immunosuppressants.highRiskCount > 0 ? 'bg-red-50 border-red-200' : 'bg-plum-50 border-plum-200')}>
           <div className="flex items-center gap-3 mb-3">
-            <ShieldCheck className={'h-5 w-5 ' + (summary.immunosuppressants.highRiskCount > 0 ? 'text-red-600' : 'text-blue-600')} />
+            <ShieldCheck className={'h-5 w-5 ' + (summary.immunosuppressants.highRiskCount > 0 ? 'text-red-600' : 'text-plum-600')} />
             <h3 className="text-sm font-semibold text-gray-900">Immunosuppressant Adherence</h3>
             <span className="text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 font-medium">High Priority</span>
           </div>
@@ -425,7 +425,7 @@ export default function ComplianceDashboard() {
                   const color = evt.type === 'taken' ? 'bg-green-500'
                     : evt.type === 'missed' ? 'bg-red-500'
                     : evt.type === 'late' ? 'bg-yellow-500'
-                    : evt.type === 'refill' ? 'bg-blue-500'
+                    : evt.type === 'refill' ? 'bg-plum-500'
                     : 'bg-gray-400';
                   return (
                     <div key={evt.type} className="flex items-center gap-3">

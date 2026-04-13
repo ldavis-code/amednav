@@ -39,7 +39,7 @@ const DemoBanner = () => {
     return (
       <button
         onClick={() => setIsMinimized(false)}
-        className="fixed top-4 right-4 z-[9998] flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all"
+        className="fixed top-4 right-4 z-[9998] flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-purple-600 to-plum-600 text-white text-sm font-medium rounded-full shadow-lg hover:shadow-xl transition-all"
         aria-label="Expand demo banner"
       >
         <Monitor size={16} />
@@ -60,7 +60,7 @@ const DemoBanner = () => {
   };
 
   return (
-    <div className="sticky top-0 z-[9998] bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
+    <div className="sticky top-0 z-[9998] bg-gradient-to-r from-purple-600 to-plum-600 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">

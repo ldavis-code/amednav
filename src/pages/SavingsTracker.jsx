@@ -191,7 +191,7 @@ export default function SavingsTracker() {
 
             {/* Sync Message */}
             {syncMessage && (
-                <div role="status" aria-live="polite" className="bg-blue-50 border border-blue-200 text-blue-800 px-4 py-2 rounded-lg mb-6 text-sm">
+                <div role="status" aria-live="polite" className="bg-plum-50 border border-plum-200 text-plum-800 px-4 py-2 rounded-lg mb-6 text-sm">
                     {syncMessage}
                 </div>
             )}
@@ -234,9 +234,9 @@ export default function SavingsTracker() {
                             />
 
                             {/* Tips */}
-                            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4">
-                                <h4 className="font-semibold text-blue-900 mb-2">Tips for Tracking</h4>
-                                <ul className="text-sm text-blue-800 space-y-2">
+                            <div className="mt-6 bg-plum-50 border border-plum-200 rounded-xl p-4">
+                                <h4 className="font-semibold text-plum-900 mb-2">Tips for Tracking</h4>
+                                <ul className="text-sm text-plum-800 space-y-2">
                                     <li>• Log each prescription fill as you pick it up</li>
                                     <li>• Include what you would have paid without assistance</li>
                                     <li>• Check your pharmacy receipt for the "You Saved" amount</li>

@@ -98,7 +98,7 @@ export default function ReportingPartners() {
     if (authLoading || !isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -151,7 +151,7 @@ export default function ReportingPartners() {
                                 type="date"
                                 value={dateRange.start}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, start: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <div>
@@ -162,7 +162,7 @@ export default function ReportingPartners() {
                                 type="date"
                                 value={dateRange.end}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, end: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <button
@@ -217,7 +217,7 @@ export default function ReportingPartners() {
                             {loading ? (
                                 <tr>
                                     <td colSpan={6} className="px-6 py-12 text-center" role="status">
-                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto" />
+                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600 mx-auto" />
                                         <span className="sr-only">Loading partner data...</span>
                                     </td>
                                 </tr>
@@ -232,7 +232,7 @@ export default function ReportingPartners() {
                                     <tr key={partner.partner} className="hover:bg-gray-50">
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="flex items-center gap-3">
-                                                <div className="p-2 rounded-lg bg-blue-100 text-blue-600">
+                                                <div className="p-2 rounded-lg bg-plum-100 text-plum-600">
                                                     <Building2 className="h-5 w-5" />
                                                 </div>
                                                 <div>
@@ -258,7 +258,7 @@ export default function ReportingPartners() {
                                             {partner.partner !== '(none)' && (
                                                 <Link
                                                     to={`/reporting/report/${partner.partner}`}
-                                                    className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 text-sm"
+                                                    className="inline-flex items-center gap-1 text-plum-600 hover:text-plum-800 text-sm"
                                                 >
                                                     <FileText className="h-4 w-4" />
                                                     View Report

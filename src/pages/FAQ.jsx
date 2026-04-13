@@ -102,12 +102,12 @@ const COBQuiz = () => {
                     </p>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+                <div className="bg-plum-50 border border-plum-200 rounded-xl p-5">
                     <div className="flex gap-3">
-                        <Lightbulb size={24} className="text-blue-600 flex-shrink-0" />
+                        <Lightbulb size={24} className="text-plum-600 flex-shrink-0" />
                         <div>
-                            <p className="font-semibold text-blue-900 mb-2">Why does this matter?</p>
-                            <p className="text-blue-800">
+                            <p className="font-semibold text-plum-900 mb-2">Why does this matter?</p>
+                            <p className="text-plum-800">
                                 Which insurance pays first changes what help you can get. Some savings programs only work with certain insurance types.
                             </p>
                         </div>
@@ -329,8 +329,8 @@ const COBQuiz = () => {
                 </div>
 
                 {/* Summary */}
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
-                    <p className="text-blue-900 leading-relaxed">{result.summary}</p>
+                <div className="bg-plum-50 border border-plum-200 rounded-xl p-5">
+                    <p className="text-plum-900 leading-relaxed">{result.summary}</p>
                 </div>
 
                 {/* Can you use copay cards? */}

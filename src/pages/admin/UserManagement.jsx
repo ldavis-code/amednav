@@ -111,7 +111,7 @@ export default function UserManagement() {
   const roleBadge = (role) => {
     const colors = {
       super_admin: 'bg-red-100 text-red-800',
-      org_admin: 'bg-blue-100 text-blue-800',
+      org_admin: 'bg-plum-100 text-plum-800',
       editor: 'bg-green-100 text-green-800',
       viewer: 'bg-gray-100 text-gray-800',
     };
@@ -125,7 +125,7 @@ export default function UserManagement() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -147,7 +147,7 @@ export default function UserManagement() {
             </div>
             <button
               onClick={() => setShowAddForm(!showAddForm)}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700"
+              className="flex items-center gap-2 px-4 py-2 bg-plum-600 text-white rounded-lg text-sm hover:bg-plum-700"
             >
               <UserPlus className="h-4 w-4" />
               Add User
@@ -175,7 +175,7 @@ export default function UserManagement() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-plum-500"
                   placeholder="Full name"
                 />
               </div>
@@ -186,7 +186,7 @@ export default function UserManagement() {
                   value={formData.email}
                   onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-plum-500"
                   placeholder="user@hospital.org"
                 />
               </div>
@@ -198,7 +198,7 @@ export default function UserManagement() {
                   onChange={(e) => setFormData(p => ({ ...p, password: e.target.value }))}
                   required
                   minLength={8}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-plum-500"
                   placeholder="Min 8 characters"
                 />
               </div>
@@ -207,7 +207,7 @@ export default function UserManagement() {
                 <select
                   value={formData.role}
                   onChange={(e) => setFormData(p => ({ ...p, role: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-plum-500"
                 >
                   {ROLES.filter(r => isSuperAdmin || r.value !== 'super_admin').map(r => (
                     <option key={r.value} value={r.value}>{r.label} — {r.desc}</option>
@@ -218,7 +218,7 @@ export default function UserManagement() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 disabled:opacity-50"
+                  className="px-4 py-2 bg-plum-600 text-white rounded-lg text-sm hover:bg-plum-700 disabled:opacity-50"
                 >
                   {submitting ? 'Creating...' : 'Create User'}
                 </button>
@@ -287,7 +287,7 @@ export default function UserManagement() {
                       <div className="flex justify-end gap-2">
                         <button
                           onClick={() => { setEditingId(u.id); setEditRole(u.role); }}
-                          className="text-gray-400 hover:text-blue-600"
+                          className="text-gray-400 hover:text-plum-600"
                           title="Edit role"
                         >
                           <Edit2 className="h-4 w-4" />

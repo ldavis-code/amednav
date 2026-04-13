@@ -97,7 +97,7 @@ export default function ImpactReport() {
               </span>
             )}
             {hasDb && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full">
+              <span className="inline-flex items-center gap-1 px-2 py-1 bg-plum-50 text-plum-700 text-xs rounded-full">
                 <BarChart3 className="h-3 w-3" /> Database Events
               </span>
             )}
@@ -129,7 +129,7 @@ export default function ImpactReport() {
             icon={Eye}
             label="Page Views"
             value={traffic.pageviews}
-            color="bg-blue-50 text-blue-600"
+            color="bg-plum-50 text-plum-600"
           />
           <StatCard
             icon={Users}
@@ -158,8 +158,8 @@ export default function ImpactReport() {
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Conversion Funnel</h2>
         <div className="bg-white rounded-lg shadow-sm border p-6">
           <div className="space-y-3">
-            <FunnelStep label="Page Views" value={funnel.pageViews} maxValue={funnel.pageViews} color="bg-blue-500" />
-            <FunnelStep label="Quiz Starts" value={funnel.quizStarts} maxValue={funnel.pageViews} color="bg-indigo-500"
+            <FunnelStep label="Page Views" value={funnel.pageViews} maxValue={funnel.pageViews} color="bg-plum-500" />
+            <FunnelStep label="Quiz Starts" value={funnel.quizStarts} maxValue={funnel.pageViews} color="bg-plum-500"
               rate={funnel.pageViews > 0 ? Math.round((funnel.quizStarts / funnel.pageViews) * 100) : 0} />
             <FunnelStep label="Quiz Completions" value={funnel.quizCompletes} maxValue={funnel.pageViews} color="bg-purple-500"
               rate={funnel.quizStarts > 0 ? Math.round((funnel.quizCompletes / funnel.quizStarts) * 100) : 0} />
@@ -226,7 +226,7 @@ export default function ImpactReport() {
               value={conn.copay}
               total={conn.total}
               description="Manufacturer copay assistance for commercially insured patients"
-              color="bg-blue-500"
+              color="bg-plum-500"
             />
             <ProgramCard
               label="Foundation Grants"
@@ -298,7 +298,7 @@ export default function ImpactReport() {
                     <td className="px-6 py-3 text-sm text-gray-600">{p.manufacturer || '—'}</td>
                     <td className="px-6 py-3">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        p.programType === 'copay' ? 'bg-blue-100 text-blue-800' :
+                        p.programType === 'copay' ? 'bg-plum-100 text-plum-800' :
                         p.programType === 'foundation' ? 'bg-green-100 text-green-800' :
                         'bg-purple-100 text-purple-800'
                       }`}>
@@ -400,7 +400,7 @@ export default function ImpactReport() {
           </div>
           <div className="bg-white rounded-lg shadow-sm border p-5">
             <div className="flex items-center gap-3 mb-2">
-              <Mail className="h-5 w-5 text-blue-500" />
+              <Mail className="h-5 w-5 text-plum-500" />
               <h3 className="font-medium text-gray-900">Email Leads Captured</h3>
             </div>
             <p className="text-2xl font-bold text-gray-900">{(data?.emailLeads || 0).toLocaleString()}</p>

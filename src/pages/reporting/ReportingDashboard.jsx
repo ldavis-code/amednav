@@ -101,7 +101,7 @@ export default function ReportingDashboard() {
     if (authLoading || !isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -112,7 +112,7 @@ export default function ReportingDashboard() {
             label: 'Total Events',
             value: stats?.totalEvents || 0,
             icon: Activity,
-            color: 'bg-blue-500',
+            color: 'bg-plum-500',
             description: 'All time',
         },
         {
@@ -143,7 +143,7 @@ export default function ReportingDashboard() {
             label: 'Copay Card Clicks',
             value: stats?.copayClicks || 0,
             icon: CreditCard,
-            color: 'text-blue-600 bg-blue-100',
+            color: 'text-plum-600 bg-plum-100',
         },
         {
             label: 'Foundation Clicks',
@@ -182,7 +182,7 @@ export default function ReportingDashboard() {
             description: 'View aggregated stats per partner',
             icon: Building2,
             href: '/reporting/partners',
-            color: 'bg-blue-100 text-blue-600',
+            color: 'bg-plum-100 text-plum-600',
         },
         {
             title: 'Events by Program',
@@ -214,7 +214,7 @@ export default function ReportingDashboard() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center py-4">
                         <div className="flex items-center gap-3">
-                            <BarChart3 className="h-8 w-8 text-blue-600" />
+                            <BarChart3 className="h-8 w-8 text-plum-600" />
                             <div>
                                 <h1 className="text-xl font-bold text-gray-900">Analytics Dashboard</h1>
                                 <p className="text-sm text-gray-500">AMedNav</p>
@@ -373,38 +373,38 @@ export default function ReportingDashboard() {
                                     <item.icon className="h-6 w-6" />
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                    <h3 className="font-semibold text-gray-900 group-hover:text-plum-600 transition-colors">
                                         {item.title}
                                     </h3>
                                     <p className="text-sm text-gray-500 mt-1">{item.description}</p>
                                 </div>
-                                <ChevronRight className="h-5 w-5 text-gray-500 group-hover:text-blue-600 transition-colors" aria-hidden="true" />
+                                <ChevronRight className="h-5 w-5 text-gray-500 group-hover:text-plum-600 transition-colors" aria-hidden="true" />
                             </div>
                         </Link>
                     ))}
                 </div>
 
                 {/* Quick Actions */}
-                <div className="mt-8 bg-blue-50 rounded-lg p-6 border border-blue-100">
-                    <h3 className="font-semibold text-blue-900 mb-2">Quick Actions</h3>
+                <div className="mt-8 bg-plum-50 rounded-lg p-6 border border-plum-100">
+                    <h3 className="font-semibold text-plum-900 mb-2">Quick Actions</h3>
                     <div className="flex flex-wrap gap-3">
                         <Link
                             to="/reporting/events"
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-blue-200 text-blue-700 hover:bg-blue-50 text-sm"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-plum-200 text-plum-700 hover:bg-plum-50 text-sm"
                         >
                             <MousePointerClick className="h-4 w-4" />
                             View Recent Events
                         </Link>
                         <Link
                             to="/reporting/partners"
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-blue-200 text-blue-700 hover:bg-blue-50 text-sm"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-plum-200 text-plum-700 hover:bg-plum-50 text-sm"
                         >
                             <Building2 className="h-4 w-4" />
                             Partner Stats
                         </Link>
                         <Link
                             to="/reporting/funnel"
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-blue-200 text-blue-700 hover:bg-blue-50 text-sm"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-plum-200 text-plum-700 hover:bg-plum-50 text-sm"
                         >
                             <TrendingUp className="h-4 w-4" />
                             View Funnel

@@ -26,8 +26,8 @@ export default function OrganizationSettings() {
   const [formData, setFormData] = useState({
     name: '',
     logoUrl: '',
-    primaryColor: '#1e40af',
-    secondaryColor: '#3b82f6',
+    primaryColor: '#26215C',
+    secondaryColor: '#534AB7',
     contactEmail: '',
     websiteUrl: '',
   });
@@ -41,8 +41,8 @@ export default function OrganizationSettings() {
       setFormData({
         name: org.name || '',
         logoUrl: org.logoUrl || '',
-        primaryColor: org.primaryColor || '#1e40af',
-        secondaryColor: org.secondaryColor || '#3b82f6',
+        primaryColor: org.primaryColor || '#26215C',
+        secondaryColor: org.secondaryColor || '#534AB7',
         contactEmail: org.contactEmail || '',
         websiteUrl: org.websiteUrl || '',
       });
@@ -97,7 +97,7 @@ export default function OrganizationSettings() {
   if (tenantLoading || !isAdmin) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -142,7 +142,7 @@ export default function OrganizationSettings() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="Mayo Clinic"
                 />
               </div>
@@ -159,7 +159,7 @@ export default function OrganizationSettings() {
                   name="logoUrl"
                   value={formData.logoUrl}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="https://example.com/logo.png"
                 />
                 {formData.logoUrl && (
@@ -202,8 +202,8 @@ export default function OrganizationSettings() {
                     onChange={(e) =>
                       handleChange({ target: { name: 'primaryColor', value: e.target.value } })
                     }
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="#1e40af"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
+                    placeholder="#26215C"
                   />
                 </div>
               </div>
@@ -226,8 +226,8 @@ export default function OrganizationSettings() {
                     onChange={(e) =>
                       handleChange({ target: { name: 'secondaryColor', value: e.target.value } })
                     }
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="#3b82f6"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
+                    placeholder="#534AB7"
                   />
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function OrganizationSettings() {
                   name="contactEmail"
                   value={formData.contactEmail}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="transplant@hospital.org"
                 />
               </div>
@@ -289,7 +289,7 @@ export default function OrganizationSettings() {
                   name="websiteUrl"
                   value={formData.websiteUrl}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="https://www.hospital.org"
                 />
               </div>
@@ -314,7 +314,7 @@ export default function OrganizationSettings() {
             <button
               type="submit"
               disabled={saving}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2"
+              className="px-6 py-2 bg-plum-600 text-white rounded-lg hover:bg-plum-700 disabled:opacity-50 flex items-center gap-2"
             >
               {saving ? (
                 <>

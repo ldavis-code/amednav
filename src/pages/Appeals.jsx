@@ -167,13 +167,13 @@ Contact: [Your Phone Number]
         hoverBg: 'hover:bg-amber-100'
       },
       blue: {
-        bg: 'bg-blue-50',
-        border: 'border-blue-200',
-        iconBg: 'bg-blue-100',
-        iconColor: 'text-blue-600',
-        headerBg: 'bg-blue-100',
-        text: 'text-blue-900',
-        hoverBg: 'hover:bg-blue-100'
+        bg: 'bg-plum-50',
+        border: 'border-plum-200',
+        iconBg: 'bg-plum-100',
+        iconColor: 'text-plum-600',
+        headerBg: 'bg-plum-100',
+        text: 'text-plum-900',
+        hoverBg: 'hover:bg-plum-100'
       },
       emerald: {
         bg: 'bg-emerald-50',
@@ -273,7 +273,7 @@ Contact: [Your Phone Number]
       orange: 'bg-orange-100 text-orange-600 border-orange-200',
       yellow: 'bg-yellow-100 text-yellow-600 border-yellow-200',
       purple: 'bg-purple-100 text-purple-600 border-purple-200',
-      blue: 'bg-blue-100 text-blue-600 border-blue-200'
+      blue: 'bg-plum-100 text-plum-600 border-plum-200'
     };
 
     return (
@@ -374,7 +374,7 @@ Contact: [Your Phone Number]
           </button>
           <button
             onClick={() => { setExpandedSections(prev => ({...prev, generics: true})); document.getElementById('generics')?.scrollIntoView({ behavior: 'smooth' }); }}
-            className="flex items-center gap-2 p-3 rounded-lg bg-blue-50 border-2 border-blue-200 text-blue-800 font-semibold hover:bg-blue-100 transition text-sm"
+            className="flex items-center gap-2 p-3 rounded-lg bg-plum-50 border-2 border-plum-200 text-plum-800 font-semibold hover:bg-plum-100 transition text-sm"
           >
             <Pill size={18} aria-hidden="true" />
             Generic vs Brand
@@ -517,19 +517,19 @@ Contact: [Your Phone Number]
       >
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           {/* The Basics */}
-          <div className="bg-white rounded-lg p-5 border-2 border-blue-200">
-            <h3 className="text-lg font-bold text-blue-800 mb-3">The Basics</h3>
+          <div className="bg-white rounded-lg p-5 border-2 border-plum-200">
+            <h3 className="text-lg font-bold text-plum-800 mb-3">The Basics</h3>
             <ul className="space-y-2 text-slate-700">
               <li className="flex items-start gap-2">
-                <span className="text-blue-500 mt-1">•</span>
+                <span className="text-plum-500 mt-1">•</span>
                 Generic drugs have the same main ingredient as brand-name drugs.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-500 mt-1">•</span>
+                <span className="text-plum-500 mt-1">•</span>
                 The FDA says they work the same way.
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-500 mt-1">•</span>
+                <span className="text-plum-500 mt-1">•</span>
                 For most drugs, generics are fine.
               </li>
             </ul>
@@ -555,8 +555,8 @@ Contact: [Your Phone Number]
         </div>
 
         {/* When You Might Need Brand Name */}
-        <div className="bg-blue-100 rounded-lg p-5 border-2 border-blue-300">
-          <h3 className="text-lg font-bold text-blue-900 mb-3">When You Might Need Brand Name</h3>
+        <div className="bg-plum-100 rounded-lg p-5 border-2 border-plum-300">
+          <h3 className="text-lg font-bold text-plum-900 mb-3">When You Might Need Brand Name</h3>
           <div className="grid md:grid-cols-2 gap-3">
             {[
               "Your drug levels have been steady on this brand",
@@ -565,7 +565,7 @@ Contact: [Your Phone Number]
               "Your body has trouble absorbing the drug"
             ].map((item, i) => (
               <div key={i} className="bg-white p-3 rounded-lg flex items-center gap-2">
-                <CheckCircle size={18} className="text-blue-600 flex-shrink-0" aria-hidden="true" />
+                <CheckCircle size={18} className="text-plum-600 flex-shrink-0" aria-hidden="true" />
                 <span className="text-slate-700">{item}</span>
               </div>
             ))}
@@ -660,7 +660,7 @@ Contact: [Your Phone Number]
       </SectionHeader>
 
       {/* Patient to Doctor Letter Builder - PURPLE */}
-      <section className="mb-8 rounded-xl border-2 border-purple-300 overflow-hidden bg-gradient-to-br from-purple-50 to-indigo-50">
+      <section className="mb-8 rounded-xl border-2 border-purple-300 overflow-hidden bg-gradient-to-br from-purple-50 to-plum-50">
         <div className="bg-purple-100 px-6 py-4 border-b-2 border-purple-200">
           <div className="flex items-center gap-3">
             <div className="bg-purple-600 text-white p-3 rounded-lg">
@@ -916,44 +916,44 @@ Contact: [Your Phone Number]
       </section>
 
       {/* Specialty Pharmacy Guide */}
-      <section className="mb-8 rounded-xl border-2 border-indigo-200 overflow-hidden">
-        <div className="bg-indigo-100 px-6 py-4 border-b-2 border-indigo-200">
+      <section className="mb-8 rounded-xl border-2 border-plum-200 overflow-hidden">
+        <div className="bg-plum-100 px-6 py-4 border-b-2 border-plum-200">
           <div className="flex items-center gap-3">
-            <div className="bg-indigo-600 text-white p-3 rounded-lg">
+            <div className="bg-plum-600 text-white p-3 rounded-lg">
               <Stethoscope size={24} aria-hidden="true" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-indigo-900">Specialty Pharmacy Guide</h2>
-              <p className="text-indigo-700">Know your rights and choices when your insurance makes you use a certain pharmacy.</p>
+              <h2 className="text-xl font-bold text-plum-900">Specialty Pharmacy Guide</h2>
+              <p className="text-plum-700">Know your rights and choices when your insurance makes you use a certain pharmacy.</p>
             </div>
           </div>
         </div>
 
-        <div className="p-6 bg-gradient-to-br from-indigo-50 to-blue-50">
-          <section className="bg-white p-6 rounded-xl border border-indigo-100 mb-8" aria-labelledby="sp-appeal-builder">
-            <div className="flex items-center gap-2 mb-4"><FileText className="text-indigo-600" size={24} aria-hidden="true" /><h3 id="sp-appeal-builder" className="text-xl font-bold text-indigo-900">Specialty Pharmacy Appeal Letter Builder</h3></div>
-            <p className="text-sm text-indigo-800 mb-6">Fill in your details below to make a letter you can copy and send to your insurance company.</p>
+        <div className="p-6 bg-gradient-to-br from-plum-50 to-plum-50">
+          <section className="bg-white p-6 rounded-xl border border-plum-100 mb-8" aria-labelledby="sp-appeal-builder">
+            <div className="flex items-center gap-2 mb-4"><FileText className="text-plum-600" size={24} aria-hidden="true" /><h3 id="sp-appeal-builder" className="text-xl font-bold text-plum-900">Specialty Pharmacy Appeal Letter Builder</h3></div>
+            <p className="text-sm text-plum-800 mb-6">Fill in your details below to make a letter you can copy and send to your insurance company.</p>
             <div className="grid md:grid-cols-3 gap-4 mb-4">
               <div>
-                <label htmlFor="sp-appeal-name" className="block text-sm font-medium text-indigo-900 mb-1">Your Name</label>
-                <input id="sp-appeal-name" type="text" placeholder="Your Name" autoComplete="name" className="w-full p-3 rounded border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={spAppealName} onChange={(e) => setSpAppealName(e.target.value)} />
+                <label htmlFor="sp-appeal-name" className="block text-sm font-medium text-plum-900 mb-1">Your Name</label>
+                <input id="sp-appeal-name" type="text" placeholder="Your Name" autoComplete="name" className="w-full p-3 rounded border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={spAppealName} onChange={(e) => setSpAppealName(e.target.value)} />
               </div>
               <div>
-                <label htmlFor="sp-appeal-drug" className="block text-sm font-medium text-indigo-900 mb-1">Medication Name</label>
-                <input id="sp-appeal-drug" type="text" placeholder="Medication Name" className="w-full p-3 rounded border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={spAppealDrug} onChange={(e) => setSpAppealDrug(e.target.value)} />
+                <label htmlFor="sp-appeal-drug" className="block text-sm font-medium text-plum-900 mb-1">Medication Name</label>
+                <input id="sp-appeal-drug" type="text" placeholder="Medication Name" className="w-full p-3 rounded border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400" value={spAppealDrug} onChange={(e) => setSpAppealDrug(e.target.value)} />
               </div>
               <div>
-                <label htmlFor="sp-appeal-reason" className="block text-sm font-medium text-indigo-900 mb-1">Reason for Appeal</label>
-                <select id="sp-appeal-reason" className="w-full p-3 rounded border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white" value={spAppealReason} onChange={(e) => setSpAppealReason(e.target.value)}>
+                <label htmlFor="sp-appeal-reason" className="block text-sm font-medium text-plum-900 mb-1">Reason for Appeal</label>
+                <select id="sp-appeal-reason" className="w-full p-3 rounded border border-plum-200 focus:outline-none focus:ring-2 focus:ring-plum-400 bg-white" value={spAppealReason} onChange={(e) => setSpAppealReason(e.target.value)}>
                 <option value="Financial Hardship">Financial Hardship</option>
                 <option value="Access Issues">Access Issues (Timing/Delivery)</option>
                 <option value="Clinical Stability">Clinical Stability (Already stable)</option>
               </select>
               </div>
             </div>
-            <button onClick={generateSpAppealLetter} disabled={!spAppealName || !spAppealDrug} className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Generate specialty pharmacy appeal letter">Generate Letter</button>
+            <button onClick={generateSpAppealLetter} disabled={!spAppealName || !spAppealDrug} className="bg-plum-600 hover:bg-plum-700 text-white font-bold py-2 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Generate specialty pharmacy appeal letter">Generate Letter</button>
             {spGeneratedLetter && (
-              <div className="mt-6 bg-white p-4 rounded border border-indigo-200 relative fade-in">
+              <div className="mt-6 bg-white p-4 rounded border border-plum-200 relative fade-in">
                 <h4 className="text-xs font-bold text-slate-600 uppercase mb-2">Preview:</h4>
                 <pre className="whitespace-pre-wrap font-serif text-sm text-slate-800 leading-relaxed border-l-4 border-slate-200 pl-4">{spGeneratedLetter}</pre>
                 <button onClick={copySpToClipboard} className="absolute top-4 right-4 flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1 rounded text-xs font-bold transition" aria-label="Copy letter text to clipboard">{spCopied ? <Check size={14} className="text-green-600" aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}{spCopied ? 'Copied!' : 'Copy Text'}</button>
@@ -964,7 +964,7 @@ Contact: [Your Phone Number]
           <div className="space-y-8">
             <h3 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">How to Appeal: A Step-by-Step Guide</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              <section className="border border-slate-200 rounded-xl p-5 bg-white" aria-labelledby="sp-medicare-appeals"><h4 id="sp-medicare-appeals" className="font-bold text-slate-800 mb-3">Medicare Appeals</h4><p className="text-xs text-slate-600 mb-3">Important: Act on time.</p><ol className="list-decimal pl-4 space-y-2 text-sm text-slate-700"><li><strong>Coverage Decision:</strong> Ask your plan to pay for your choice of pharmacy.</li><li><strong>Level 1 (Second Look):</strong> File within 65 days if they say no.</li><li><strong>Level 2 (Outside Review):</strong> An outside group looks at your case if denied again.</li></ol><a href="https://www.medicare.gov/claims-appeals/how-do-i-file-an-appeal" target="_blank" rel="noreferrer" className="block mt-4 text-xs text-blue-600 font-bold uppercase tracking-wide hover:underline" aria-label="Visit Official Medicare Guide (opens in new tab)">Official Medicare Guide</a></section>
+              <section className="border border-slate-200 rounded-xl p-5 bg-white" aria-labelledby="sp-medicare-appeals"><h4 id="sp-medicare-appeals" className="font-bold text-slate-800 mb-3">Medicare Appeals</h4><p className="text-xs text-slate-600 mb-3">Important: Act on time.</p><ol className="list-decimal pl-4 space-y-2 text-sm text-slate-700"><li><strong>Coverage Decision:</strong> Ask your plan to pay for your choice of pharmacy.</li><li><strong>Level 1 (Second Look):</strong> File within 65 days if they say no.</li><li><strong>Level 2 (Outside Review):</strong> An outside group looks at your case if denied again.</li></ol><a href="https://www.medicare.gov/claims-appeals/how-do-i-file-an-appeal" target="_blank" rel="noreferrer" className="block mt-4 text-xs text-plum-600 font-bold uppercase tracking-wide hover:underline" aria-label="Visit Official Medicare Guide (opens in new tab)">Official Medicare Guide</a></section>
               <section className="border border-slate-200 rounded-xl p-5 bg-white" aria-labelledby="sp-medicaid-appeals"><h4 id="sp-medicaid-appeals" className="font-bold text-slate-800 mb-3">Medicaid Appeals</h4><p className="text-sm text-slate-700 mb-3">Each state runs its own appeals. Call your state's Medicaid office.</p></section>
               <section className="border border-slate-200 rounded-xl p-5 bg-white" aria-labelledby="sp-private-insurance"><h4 id="sp-private-insurance" className="font-bold text-slate-800 mb-3">Private Insurance</h4><p className="text-sm text-slate-700 mb-3">You can ask your company to look again. If they still say no, you can ask for an outside review.</p></section>
             </div>
@@ -973,7 +973,7 @@ Contact: [Your Phone Number]
       </section>
 
       {/* Encouragement Footer */}
-      <footer className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200 text-center">
+      <footer className="bg-gradient-to-r from-plum-50 via-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200 text-center">
         <Heart size={32} className="text-purple-600 mx-auto mb-3" aria-hidden="true" />
         <h2 className="text-xl font-bold text-slate-900 mb-2">Remember: You Are Not Alone</h2>
         <p className="text-slate-700 max-w-2xl mx-auto">

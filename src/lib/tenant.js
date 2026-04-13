@@ -9,8 +9,8 @@ export const DEFAULT_ORG = {
   slug: 'public',
   name: 'AMedNav™',
   logoUrl: null,
-  primaryColor: '#1e40af',
-  secondaryColor: '#3b82f6',
+  primaryColor: '#26215C',
+  secondaryColor: '#534AB7',
   features: {
     price_reports: true,
     surveys: true,

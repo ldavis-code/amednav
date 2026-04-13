@@ -43,7 +43,7 @@ export default function ReportingLogin() {
     if (authLoading) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -54,7 +54,7 @@ export default function ReportingLogin() {
             <div className="max-w-md w-full">
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-600 rounded-full mb-4">
                         <BarChart3 className="h-8 w-8 text-white" />
                     </div>
                     <h1 className="text-2xl font-bold text-white">Analytics Dashboard</h1>
@@ -80,7 +80,7 @@ export default function ReportingLogin() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                     autoFocus
-                                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                     placeholder="Enter admin password"
                                 />
                                 <button
@@ -110,7 +110,7 @@ export default function ReportingLogin() {
                         <button
                             type="submit"
                             disabled={submitting || !password}
-                            className="w-full py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                         >
                             {submitting ? (
                                 <>
@@ -125,7 +125,7 @@ export default function ReportingLogin() {
 
                     {/* Links */}
                     <div className="mt-6 text-center text-sm text-gray-600">
-                        <Link to="/" className="text-blue-600 hover:underline">
+                        <Link to="/" className="text-plum-600 hover:underline">
                             Back to main site
                         </Link>
                     </div>

@@ -208,11 +208,11 @@ const Subscribe = () => {
 
     const colorClasses = {
         blue: {
-            bg: 'bg-blue-50',
-            border: 'border-blue-300',
-            button: 'bg-blue-700 hover:bg-blue-800',
-            check: 'text-blue-600',
-            badge: 'bg-blue-100 text-blue-800'
+            bg: 'bg-plum-50',
+            border: 'border-plum-300',
+            button: 'bg-plum-700 hover:bg-plum-800',
+            check: 'text-plum-600',
+            badge: 'bg-plum-100 text-plum-800'
         },
         purple: {
             bg: 'bg-purple-50',
@@ -396,7 +396,7 @@ const Subscribe = () => {
                     onClick={() => navigate('/subscribe?plan=monthly')}
                     className={`px-6 py-3 rounded-xl font-bold transition ${
                         plan === 'monthly'
-                            ? 'bg-blue-700 text-white'
+                            ? 'bg-plum-700 text-white'
                             : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                     }`}
                 >
@@ -484,8 +484,8 @@ const Subscribe = () => {
                 </div>
 
                 {!isAuthenticated && (
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
-                        <p className="text-blue-800 text-sm">
+                    <div className="bg-plum-50 border border-plum-200 rounded-lg p-3 mb-4">
+                        <p className="text-plum-800 text-sm">
                             Fill out your account details above, then enter your code below. We'll create your account and activate Pro access.
                         </p>
                     </div>

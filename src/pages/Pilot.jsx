@@ -91,9 +91,9 @@ const Pilot = () => {
                     </Link>
                     <Link
                         to="/wizard"
-                        className="flex flex-col items-center text-center p-6 bg-blue-50 hover:bg-blue-100 rounded-xl border border-blue-200 transition group"
+                        className="flex flex-col items-center text-center p-6 bg-plum-50 hover:bg-plum-100 rounded-xl border border-plum-200 transition group"
                     >
-                        <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-700 transition">
+                        <div className="w-14 h-14 bg-plum-600 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-plum-700 transition">
                             <Map size={24} aria-hidden="true" />
                         </div>
                         <h3 className="font-bold text-slate-900 mb-2">My Path Quiz</h3>

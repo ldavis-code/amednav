@@ -8,6 +8,22 @@ export default {
     extend: {
       // Accessible color palette for transplant patients with vision changes
       colors: {
+        // Plum color ramp - primary brand palette
+        'plum': {
+          50:  '#EEEDFE',  // Plum surface
+          100: '#DEDCFA',
+          200: '#CECBF6',  // Plum light
+          300: '#A7A1EA',
+          400: '#7F77DD',  // Plum mid (decorative/large text only)
+          500: '#6961CA',
+          600: '#534AB7',  // Plum primary
+          700: '#443C99',
+          800: '#352F7A',
+          900: '#26215C',  // Plum deep
+          950: '#1B1740',
+        },
+        // Warm canvas background
+        'canvas': '#F7F6F2',
         // High contrast text colors
         'accessible': {
           'dark': '#1e293b',      // slate-800 - for primary text

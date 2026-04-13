@@ -105,7 +105,7 @@ class ErrorBoundary extends React.Component {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  backgroundColor: '#2563eb',
+                  backgroundColor: '#534AB7',
                   color: 'white',
                   fontWeight: '600',
                   padding: '0.75rem 1.5rem',
@@ -115,10 +115,10 @@ class ErrorBoundary extends React.Component {
                   fontSize: '1rem',
                   transition: 'background-color 0.2s'
                 }}
-                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-                onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
-                onFocus={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-                onBlur={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#443C99'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#534AB7'}
+                onFocus={(e) => e.currentTarget.style.backgroundColor = '#443C99'}
+                onBlur={(e) => e.currentTarget.style.backgroundColor = '#534AB7'}
               >
                 <Home size={20} aria-hidden="true" />
                 Return to Home

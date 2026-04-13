@@ -473,7 +473,7 @@ export default function MyMedications() {
       <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 mb-6">
         <fieldset>
           <legend className="text-lg font-semibold text-slate-900 mb-2 flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-blue-600" aria-hidden="true" />
+            <ShieldCheck className="w-5 h-5 text-plum-600" aria-hidden="true" />
             Do you have commercial insurance?
           </legend>
           <p className="text-slate-600 text-sm mb-4">
@@ -483,9 +483,9 @@ export default function MyMedications() {
             <button
               type="button"
               onClick={() => setHasCommercialInsurance('yes')}
-              className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition min-h-[44px] focus:outline-none focus:ring-4 focus:ring-blue-500/50 ${
+              className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition min-h-[44px] focus:outline-none focus:ring-4 focus:ring-plum-500/50 ${
                 hasCommercialInsurance === 'yes'
-                  ? 'bg-blue-600 text-white ring-2 ring-blue-600'
+                  ? 'bg-plum-600 text-white ring-2 ring-plum-600'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300'
               }`}
               role="radio"
@@ -496,9 +496,9 @@ export default function MyMedications() {
             <button
               type="button"
               onClick={() => setHasCommercialInsurance('no')}
-              className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition min-h-[44px] focus:outline-none focus:ring-4 focus:ring-blue-500/50 ${
+              className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition min-h-[44px] focus:outline-none focus:ring-4 focus:ring-plum-500/50 ${
                 hasCommercialInsurance === 'no'
-                  ? 'bg-blue-600 text-white ring-2 ring-blue-600'
+                  ? 'bg-plum-600 text-white ring-2 ring-plum-600'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300'
               }`}
               role="radio"
@@ -508,8 +508,8 @@ export default function MyMedications() {
             </button>
           </div>
           {hasCommercialInsurance === 'yes' && (
-            <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-              <p className="text-blue-800 text-sm">
+            <div className="mt-3 p-3 bg-plum-50 border border-plum-200 rounded-lg">
+              <p className="text-plum-800 text-sm">
                 <strong>Copay cards can help!</strong> With commercial insurance, manufacturer copay cards can lower your cost to $0-$50/month for many transplant medications.
               </p>
             </div>
@@ -532,8 +532,8 @@ export default function MyMedications() {
 
         {/* Prompt to answer insurance question if not yet answered and has medications */}
         {hasCommercialInsurance === null && medications.length > 0 && (
-          <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-center">
-            <p className="text-blue-800 text-sm">
+          <div className="mb-4 p-3 bg-plum-50 border border-plum-200 rounded-lg text-center">
+            <p className="text-plum-800 text-sm">
               Answer the insurance question above to see savings programs for your medications.
             </p>
           </div>
@@ -685,14 +685,14 @@ export default function MyMedications() {
                   {/* Prompt for commercial insurance users with no copay match */}
                   {hasCommercialInsurance === 'yes' && copayCards.length === 0 && (
                     <div className="mt-3 border-t border-slate-100 pt-3">
-                      <h4 className="text-sm font-semibold text-blue-700 mb-2 flex items-center gap-1.5">
+                      <h4 className="text-sm font-semibold text-plum-700 mb-2 flex items-center gap-1.5">
                         <CreditCard className="w-4 h-4" aria-hidden="true" />
                         Copay Cards
                       </h4>
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                        <p className="text-blue-800 text-sm">
+                      <div className="bg-plum-50 border border-plum-200 rounded-lg p-3">
+                        <p className="text-plum-800 text-sm">
                           No specific copay card found for this medication name. Try searching with the exact brand name, or visit{' '}
-                          <a href="/out/pap/phrma-mat" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-900 font-medium">
+                          <a href="/out/pap/phrma-mat" target="_blank" rel="noopener noreferrer" className="underline hover:text-plum-900 font-medium">
                             PhRMA Medicine Assistance Tool
                           </a>
                           {' '}to search for available programs.

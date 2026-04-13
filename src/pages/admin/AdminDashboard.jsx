@@ -137,7 +137,7 @@ export default function AdminDashboard() {
   if (tenantLoading || !isAdmin) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
       description: 'Branding, colors, contact info',
       icon: Building2,
       href: '/admin/settings',
-      color: 'bg-blue-100 text-blue-600',
+      color: 'bg-plum-100 text-plum-600',
     },
     {
       title: 'User Management',
@@ -292,7 +292,7 @@ export default function AdminDashboard() {
                     {loadingSubs ? '...' : subscribers.totalUsers.toLocaleString()}
                   </p>
                 </div>
-                <Users className="h-8 w-8 text-blue-400" />
+                <Users className="h-8 w-8 text-plum-400" />
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-sm border p-6">

@@ -1209,16 +1209,16 @@ const MedicationAssistantChat = () => {
 
         {/* Blue Lightbulb Tip Section - Below Options */}
         {question.tip && (
-          <div className="mt-5 bg-blue-50 border-2 border-blue-200 rounded-xl p-5" role="note" aria-label="Helpful tip">
+          <div className="mt-5 bg-plum-50 border-2 border-plum-200 rounded-xl p-5" role="note" aria-label="Helpful tip">
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center" aria-hidden="true">
-                  <Lightbulb size={20} className="text-blue-600" />
+                <div className="w-10 h-10 rounded-full bg-plum-100 flex items-center justify-center" aria-hidden="true">
+                  <Lightbulb size={20} className="text-plum-600" />
                 </div>
               </div>
               <div>
-                <p className="font-semibold text-blue-800 mb-1">Helpful Tip</p>
-                <p className="text-base text-blue-700 leading-relaxed">{question.tip}</p>
+                <p className="font-semibold text-plum-800 mb-1">Helpful Tip</p>
+                <p className="text-base text-plum-700 leading-relaxed">{question.tip}</p>
               </div>
             </div>
           </div>
@@ -1291,24 +1291,24 @@ const MedicationAssistantChat = () => {
                 <div className="p-3 space-y-2">
                   {/* Cost Plus Drugs - show only for NON-commercial insurance and if generic is available */}
                   {answers.insurance_type !== 'commercial' && medGroup.cost_plus_available && medGroup.generic_available !== false && (
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                    <div className="bg-plum-50 border border-plum-200 rounded-lg p-3">
                       <div className="flex items-start justify-between gap-2">
-                        <div className="font-semibold text-blue-800 text-sm">Cost Plus Drugs</div>
-                        <span className="text-xs bg-blue-200 text-blue-800 px-2 py-0.5 rounded-full whitespace-nowrap">
+                        <div className="font-semibold text-plum-800 text-sm">Cost Plus Drugs</div>
+                        <span className="text-xs bg-plum-200 text-plum-800 px-2 py-0.5 rounded-full whitespace-nowrap">
                           Low Cost
                         </span>
                       </div>
-                      <div className="text-xs text-blue-700 mt-1">
+                      <div className="text-xs text-plum-700 mt-1">
                         <strong>Benefit:</strong> Wholesale cost + 15% + $5 pharmacy fee
                       </div>
-                      <p className="text-xs text-blue-600 mt-1">
+                      <p className="text-xs text-plum-600 mt-1">
                         Mark Cuban's transparent pricing pharmacy - often 50-90% less than retail
                       </p>
                       <a
                         href={`https://costplusdrugs.com/medications/${medGroup.generic_name?.toLowerCase().replace(/\s+/g, '-') || ''}/`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
+                        className="inline-flex items-center gap-1 text-xs bg-plum-600 hover:bg-plum-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
                       >
                         Check Price <ExternalLink size={12} />
                       </a>
@@ -1452,14 +1452,14 @@ const MedicationAssistantChat = () => {
               <div className="p-2 space-y-2">
                 {/* Cost Plus Drugs - show only for NON-commercial insurance and if generic is available */}
                 {answers.insurance_type !== 'commercial' && medGroup.cost_plus_available && medGroup.generic_available !== false && (
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                    <div className="font-semibold text-blue-800 text-sm">Cost Plus Drugs</div>
-                    <p className="text-xs text-blue-600 mt-1">Low-cost transparent pricing</p>
+                  <div className="bg-plum-50 border border-plum-200 rounded-lg p-3">
+                    <div className="font-semibold text-plum-800 text-sm">Cost Plus Drugs</div>
+                    <p className="text-xs text-plum-600 mt-1">Low-cost transparent pricing</p>
                     <a
                       href={`https://costplusdrugs.com/medications/${medGroup.generic_name?.toLowerCase().replace(/\s+/g, '-') || ''}/`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
+                      className="inline-flex items-center gap-1 text-xs bg-plum-600 hover:bg-plum-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
                     >
                       Check Price <ExternalLink size={12} />
                     </a>
@@ -1674,7 +1674,7 @@ const MedicationAssistantChat = () => {
                 )}
                 <button
                   onClick={printActionPlan}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl flex items-center justify-center gap-2 transition min-h-[44px]"
+                  className="w-full bg-plum-600 hover:bg-plum-700 text-white font-medium py-3 rounded-xl flex items-center justify-center gap-2 transition min-h-[44px]"
                 >
                   <Printer size={18} aria-hidden="true" />
                   Print Action Plan

@@ -47,7 +47,7 @@ body {
 @layer base {
     /* Global focus styles - high contrast ring with increased visibility */
     *:focus-visible {
-        outline: 3px solid #047857 !important; /* emerald-700 for better contrast */
+        outline: 3px solid #26215C !important; /* plum-900 for better contrast */
         outline-offset: 3px !important;
     }
 
@@ -70,9 +70,9 @@ body {
     input:focus-visible,
     select:focus-visible,
     textarea:focus-visible {
-        outline: 3px solid #047857 !important; /* emerald-700 */
+        outline: 3px solid #26215C !important; /* plum-900 */
         outline-offset: 3px !important;
-        box-shadow: 0 0 0 6px rgba(4, 120, 87, 0.25);
+        box-shadow: 0 0 0 6px rgba(38, 33, 92, 0.25);
     }
 
     /* High contrast focus for dark backgrounds - white outline */
@@ -83,10 +83,11 @@ body {
     .bg-emerald-950 *:focus-visible,
     .bg-slate-800 *:focus-visible,
     .bg-slate-900 *:focus-visible,
-    .bg-indigo-600 *:focus-visible,
-    .bg-indigo-700 *:focus-visible,
-    .bg-indigo-800 *:focus-visible,
-    .bg-indigo-900 *:focus-visible {
+    .bg-plum-600 *:focus-visible,
+    .bg-plum-700 *:focus-visible,
+    .bg-plum-800 *:focus-visible,
+    .bg-plum-900 *:focus-visible,
+    .bg-plum-950 *:focus-visible {
         outline-color: #fff !important;
         box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
     }
@@ -94,7 +95,7 @@ body {
     /* Focus indicator for cards and larger clickable areas */
     .group:focus-visible,
     [role="listitem"]:focus-visible {
-        outline: 3px solid #047857 !important;
+        outline: 3px solid #26215C !important;
         outline-offset: 2px !important;
         border-radius: 0.5rem;
     }
@@ -400,7 +401,7 @@ body {
     top: -100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #047857;
+    background: #26215C;
     color: white;
     padding: 1rem 2rem;
     border-radius: 0 0 0.5rem 0.5rem;
@@ -611,10 +612,13 @@ kbd {
     .bg-emerald-100,
     .bg-blue-50,
     .bg-indigo-50,
+    .bg-plum-50,
+    .bg-plum-100,
     .bg-purple-50,
     .bg-rose-50,
     .bg-slate-50,
     .bg-slate-100,
+    .bg-canvas,
     .bg-white {
         background: white !important;
     }
@@ -865,8 +869,8 @@ html.simple-view .text-slate-900 {
 }
 
 /* High contrast links */
-html.simple-view a:not([role="button"]):not([class*="bg-emerald"]) {
-    color: #047857 !important;
+html.simple-view a:not([role="button"]):not([class*="bg-emerald"]):not([class*="bg-plum"]) {
+    color: #26215C !important;
     text-decoration: underline !important;
     text-decoration-thickness: 2px !important;
 }

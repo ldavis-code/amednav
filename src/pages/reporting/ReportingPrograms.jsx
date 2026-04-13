@@ -21,7 +21,7 @@ import { useReportingAuth } from '../../context/ReportingAuthContext';
 const API_BASE = '/.netlify/functions/admin-api';
 
 const programTypeConfig = {
-    copay: { icon: CreditCard, color: 'bg-blue-100 text-blue-600', label: 'Copay Card' },
+    copay: { icon: CreditCard, color: 'bg-plum-100 text-plum-600', label: 'Copay Card' },
     foundation: { icon: Heart, color: 'bg-pink-100 text-pink-600', label: 'Foundation' },
     pap: { icon: Pill, color: 'bg-green-100 text-green-600', label: 'PAP' },
 };
@@ -128,7 +128,7 @@ export default function ReportingPrograms() {
     if (authLoading || !isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -141,7 +141,7 @@ export default function ReportingPrograms() {
         >
             <div className="flex items-center justify-end gap-1">
                 {children}
-                <ArrowUpDown className={`h-4 w-4 ${sortField === field ? 'text-blue-600' : 'text-gray-400'}`} />
+                <ArrowUpDown className={`h-4 w-4 ${sortField === field ? 'text-plum-600' : 'text-gray-400'}`} />
             </div>
         </th>
     );
@@ -192,7 +192,7 @@ export default function ReportingPrograms() {
                             <select
                                 value={programTypeFilter}
                                 onChange={(e) => setProgramTypeFilter(e.target.value)}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             >
                                 <option value="">All Types</option>
                                 <option value="copay">Copay Cards</option>
@@ -208,7 +208,7 @@ export default function ReportingPrograms() {
                                 type="date"
                                 value={dateRange.start}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, start: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <div>
@@ -219,7 +219,7 @@ export default function ReportingPrograms() {
                                 type="date"
                                 value={dateRange.end}
                                 onChange={(e) => setDateRange(prev => ({ ...prev, end: e.target.value }))}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <button
@@ -268,7 +268,7 @@ export default function ReportingPrograms() {
                             {loading ? (
                                 <tr>
                                     <td colSpan={5} className="px-6 py-12 text-center" role="status">
-                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto" />
+                                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600 mx-auto" />
                                         <span className="sr-only">Loading program data...</span>
                                     </td>
                                 </tr>

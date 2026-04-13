@@ -42,7 +42,7 @@ export default function SurveyResponses() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -99,7 +99,7 @@ export default function SurveyResponses() {
                 >
                   <div className="flex items-center gap-4">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      resp.survey_type === 'transplant' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'
+                      resp.survey_type === 'transplant' ? 'bg-purple-100 text-purple-800' : 'bg-plum-100 text-plum-800'
                     }`}>
                       {resp.survey_type || 'general'}
                     </span>

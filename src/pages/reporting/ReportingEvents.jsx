@@ -37,8 +37,8 @@ const eventNameColors = {
     quiz_start: 'bg-purple-100 text-purple-700',
     quiz_complete: 'bg-green-100 text-green-700',
     med_search: 'bg-orange-100 text-orange-700',
-    resource_view: 'bg-blue-100 text-blue-700',
-    copay_card_click: 'bg-blue-100 text-blue-700',
+    resource_view: 'bg-plum-100 text-plum-700',
+    copay_card_click: 'bg-plum-100 text-plum-700',
     foundation_click: 'bg-pink-100 text-pink-700',
     pap_click: 'bg-green-100 text-green-700',
     helpful_vote_yes: 'bg-emerald-100 text-emerald-700',
@@ -170,7 +170,7 @@ export default function ReportingEvents() {
     if (authLoading || !isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50" role="status">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -222,7 +222,7 @@ export default function ReportingEvents() {
                             <select
                                 value={filters.event_name}
                                 onChange={(e) => handleFilterChange('event_name', e.target.value)}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             >
                                 <option value="">All Events</option>
                                 {Object.entries(eventNameLabels).map(([key, label]) => (
@@ -237,7 +237,7 @@ export default function ReportingEvents() {
                             <select
                                 value={filters.partner}
                                 onChange={(e) => handleFilterChange('partner', e.target.value)}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             >
                                 <option value="">All Partners</option>
                                 {partners.map(p => (
@@ -253,7 +253,7 @@ export default function ReportingEvents() {
                                 type="date"
                                 value={filters.start}
                                 onChange={(e) => handleFilterChange('start', e.target.value)}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <div>
@@ -264,7 +264,7 @@ export default function ReportingEvents() {
                                 type="date"
                                 value={filters.end}
                                 onChange={(e) => handleFilterChange('end', e.target.value)}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             />
                         </div>
                         <button
@@ -330,7 +330,7 @@ export default function ReportingEvents() {
                                 {loading ? (
                                     <tr>
                                         <td colSpan={6} className="px-4 py-12 text-center" role="status">
-                                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto" />
+                                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600 mx-auto" />
                                             <span className="sr-only">Loading events...</span>
                                         </td>
                                     </tr>

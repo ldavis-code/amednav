@@ -46,18 +46,18 @@ export default function Login() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-plum-50 to-plum-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-600 rounded-full mb-4">
             <Shield className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
@@ -82,7 +82,7 @@ export default function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="admin@hospital.org"
                 />
               </div>
@@ -101,7 +101,7 @@ export default function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="••••••••"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {submitting ? (
                 <>
@@ -134,7 +134,7 @@ export default function Login() {
 
           {/* Links */}
           <div className="mt-6 text-center text-sm text-gray-600">
-            <Link to="/" className="text-blue-600 hover:underline">
+            <Link to="/" className="text-plum-600 hover:underline">
               ← Back to main site
             </Link>
           </div>
@@ -174,7 +174,7 @@ export default function Login() {
         {seedStatus && (
           <div className={`mt-4 p-3 rounded-lg text-sm text-center ${
             seedStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' :
-            seedStatus.type === 'info' ? 'bg-blue-50 text-blue-700 border border-blue-200' :
+            seedStatus.type === 'info' ? 'bg-plum-50 text-plum-700 border border-plum-200' :
             'bg-red-50 text-red-700 border border-red-200'
           }`}>
             {seedStatus.message}

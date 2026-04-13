@@ -92,7 +92,7 @@ export default function FeatureSettings() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" role="status">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
         <span className="sr-only">Loading...</span>
       </div>
     );
@@ -115,7 +115,7 @@ export default function FeatureSettings() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 bg-plum-600 text-white rounded-lg text-sm hover:bg-plum-700 disabled:opacity-50"
             >
               {saving ? (
                 <>
@@ -155,8 +155,8 @@ export default function FeatureSettings() {
               </div>
               <button
                 onClick={() => toggleFeature(feat.key)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                  features[feat.key] ? 'bg-blue-600' : 'bg-gray-200'
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-plum-500 focus:ring-offset-2 ${
+                  features[feat.key] ? 'bg-plum-600' : 'bg-gray-200'
                 }`}
                 role="switch"
                 aria-checked={!!features[feat.key]}
