@@ -94,7 +94,7 @@ import { ReportingAuthProvider } from './context/ReportingAuthContext.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { TenantProvider } from './context/TenantContext.jsx';
 import {
-    Map, Search, BookOpen, ShieldCheck, ArrowRight, Heart, Anchor, Lock, UserCheck, Award,
+    Activity, Map, Search, BookOpen, ShieldCheck, ArrowRight, Heart, Anchor, Lock, UserCheck, Award,
     Menu, X, ShieldAlert, HeartHandshake, CheckCircle, ChevronLeft, DollarSign,
     Shield, AlertTriangle, AlertCircle, Printer, ExternalLink, Building, PlusCircle,
     Trash2, Globe, List, Info, Copy, Check, Building2, LandPlot, Scale, FileText,
@@ -725,13 +725,21 @@ const Home = () => {
                 </div>
 
                 {/* Stats Banner */}
-                <div className="grid grid-cols-3 gap-3 md:gap-6 mt-10 max-w-3xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-10 max-w-4xl mx-auto">
+                    <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
+                            <Activity size={20} className="md:hidden" />
+                            <Activity size={24} className="hidden md:block" />
+                        </div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">76</div>
+                        <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Conditions</div>
+                    </div>
                     <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
                         <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <Pill size={20} className="md:hidden" />
                             <Pill size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">184</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">474</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Medications</div>
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 md:p-6 text-center border border-amber-200 shadow-sm hover:shadow-md transition-shadow">
@@ -739,7 +747,7 @@ const Home = () => {
                             <HeartHandshake size={20} className="md:hidden" />
                             <HeartHandshake size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-amber-700">60+</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-amber-700">96</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Assistance Programs</div>
                     </div>
                     <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
@@ -747,7 +755,7 @@ const Home = () => {
                             <CreditCard size={20} className="md:hidden" />
                             <CreditCard size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">65+</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">121</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Copay Cards</div>
                     </div>
                 </div>
