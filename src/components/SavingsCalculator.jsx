@@ -382,7 +382,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                     </div>
                     <h4 className="font-semibold text-slate-900 mb-1">Patient First</h4>
                     <p className="text-sm text-slate-600">
-                        Created by transplant patients, for transplant patients. Always transparent.
+                        Created by patients, for patients. Always transparent.
                     </p>
                 </div>
             </div>

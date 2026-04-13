@@ -98,7 +98,7 @@ const COBQuiz = () => {
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Do You Have Two Insurance Plans?</h3>
                     <p className="text-lg text-slate-600 max-w-xl mx-auto">
-                        Many transplant patients have more than one insurance. This quiz helps you know which one pays first.
+                        Many patients have more than one insurance. This quiz helps you know which one pays first.
                     </p>
                 </div>
 
@@ -115,7 +115,7 @@ const COBQuiz = () => {
                 </div>
 
                 <div className="bg-slate-50 rounded-xl p-5">
-                    <p className="font-semibold text-slate-800 mb-3">Common reasons transplant patients have two plans:</p>
+                    <p className="font-semibold text-slate-800 mb-3">Common reasons patients have two plans:</p>
                     <ul className="space-y-2 text-slate-700">
                         <li className="flex items-start gap-2">
                             <CheckCircle2 size={18} className="text-plum-500 mt-0.5 flex-shrink-0" />

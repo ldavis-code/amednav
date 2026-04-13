@@ -23,9 +23,9 @@ const pages = [
   {
     route: '/faq',
     title: 'Frequently Asked Questions | AMedNav™',
-    description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for transplant patients.',
+    description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for patients.',
     ogTitle: 'Transplant Medication Assistance FAQs',
-    ogDescription: 'Get answers to common questions about medication assistance, Patient Assistance Programs, copay support, and financial help for transplant patients.',
+    ogDescription: 'Get answers to common questions about medication assistance, Patient Assistance Programs, copay support, and financial help for patients.',
   },
   {
     route: '/wizard',
@@ -43,7 +43,7 @@ const pages = [
   },
   {
     route: '/education',
-    title: 'Education & Resources for Transplant Patients | AMedNav™',
+    title: 'Education & Resources for Patients | AMedNav™',
     description: 'Educational guides on transplant medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
     ogTitle: 'Transplant Medication Education & Resources',
     ogDescription: 'Learn about Medicare, Medicaid, insurance coverage, specialty pharmacies, and how to avoid the deductible trap.',
@@ -88,7 +88,7 @@ const pages = [
     title: 'Transplant Medication Survey | AMedNav™',
     description: 'Share your transplant medication journey. Help us understand challenges with anti-rejection drugs, pharmacies, insurance, and assistance programs.',
     ogTitle: 'Transplant Medication Journey Survey',
-    ogDescription: 'Share your experience with transplant medications. Your anonymous feedback helps improve access for all transplant patients.',
+    ogDescription: 'Share your experience with transplant medications. Your anonymous feedback helps improve access for all patients.',
   },
   {
     route: '/survey/general',

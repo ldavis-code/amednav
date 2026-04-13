@@ -325,7 +325,7 @@ const ForHospitalAdmin = () => {
                     <h2 className="text-xl font-bold text-plum-900">Built by a Patient Advocate</h2>
                 </div>
                 <p className="text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                    This tool was built by a transplant recipient with a seat at OPTN, not by a software company. When you recommend it to your patients, you are connecting them to a resource developed from lived experience, validated by published research, and grounded in seven years of post-transplant patient advocacy.
+                    This tool was built by a transplant recipient with a seat at OPTN, not by a software company. When you recommend it to your patients, you are connecting them to a resource developed from lived experience, validated by published research, and grounded in seven years of post-patient advocacy.
                 </p>
             </section>
 

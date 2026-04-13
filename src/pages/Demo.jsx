@@ -80,7 +80,7 @@ const Demo = () => {
       icon: TrendingUp,
       title: 'Reduce Non-Adherence',
       stat: '25-30%',
-      description: 'of transplant patients are non-adherent due to cost barriers',
+      description: 'of patients are non-adherent due to cost barriers',
     },
     {
       icon: Shield,
@@ -112,7 +112,7 @@ const Demo = () => {
             </h1>
 
             <p className="text-xl text-purple-100 max-w-2xl mx-auto mb-8">
-              Help your transplant patients find affordable medications and reduce
+              Help your patients find affordable medications and reduce
               the #1 cause of preventable graft loss: medication non-adherence.
             </p>
 
@@ -227,7 +227,7 @@ const Demo = () => {
         <div className="bg-gradient-to-br from-purple-50 to-plum-50 rounded-2xl p-8 md:p-12 border border-purple-100">
           <Sparkles className="mx-auto text-purple-600 mb-4" size={32} />
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Ready to Support Your Transplant Patients?
+            Ready to Support Your Patients?
           </h2>
           <p className="text-slate-600 mb-8 max-w-xl mx-auto">
             Schedule a call to discuss enterprise pricing, white-label options,

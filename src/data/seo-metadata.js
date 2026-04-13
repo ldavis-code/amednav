@@ -9,12 +9,12 @@ const SITE_NAME = 'AMedNav™';
 export const seoMetadata = {
   home: {
     title: 'AMedNav™',
-    description: 'Get FREE transplant medications through Patient Assistance Programs. Find help paying for tacrolimus, mycophenolate, immunosuppressants. Compare prices, copay foundations & grants for kidney, liver, heart transplant patients. Created by a transplant recipient.',
+    description: 'Get FREE transplant medications through Patient Assistance Programs. Find help paying for tacrolimus, mycophenolate, immunosuppressants. Compare prices, copay foundations & grants for kidney, liver, heart patients. Created by a transplant recipient.',
     canonical: `${BASE_URL}/`,
     ogTitle: 'Free Transplant Medication Help | AMedNav™',
-    ogDescription: 'Find FREE medications for transplant patients through Patient Assistance Programs. Get tacrolimus, mycophenolate & immunosuppressants at no cost. Compare prices, find copay foundations & grants. Created by a transplant recipient.',
+    ogDescription: 'Find FREE medications for patients through Patient Assistance Programs. Get tacrolimus, mycophenolate & immunosuppressants at no cost. Compare prices, find copay foundations & grants. Created by a transplant recipient.',
     twitterTitle: 'Free Transplant Medication Help | Medication Navigator',
-    twitterDescription: 'Find FREE medications through Patient Assistance Programs. Compare prices, find copay foundations & grants for transplant patients.',
+    twitterDescription: 'Find FREE medications through Patient Assistance Programs. Compare prices, find copay foundations & grants for patients.',
     breadcrumbName: 'Home',
   },
 
@@ -41,13 +41,13 @@ export const seoMetadata = {
   },
 
   education: {
-    title: 'Education & Resources for Transplant Patients | AMedNav™',
+    title: 'Education & Resources for Patients | AMedNav™',
     description: 'Educational guides on transplant medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
     canonical: `${BASE_URL}/education`,
     ogTitle: 'Transplant Medication Education & Resources',
-    ogDescription: 'Learn about Medicare, Medicaid, insurance coverage, specialty pharmacies, and how to avoid the deductible trap. Educational guides for transplant patients.',
+    ogDescription: 'Learn about Medicare, Medicaid, insurance coverage, specialty pharmacies, and how to avoid the deductible trap. Educational guides for patients.',
     twitterTitle: 'Transplant Medication Education Resources',
-    twitterDescription: 'Educational guides on Medicare, insurance, specialty pharmacies and medication coverage for transplant patients.',
+    twitterDescription: 'Educational guides on Medicare, insurance, specialty pharmacies and medication coverage for patients.',
     breadcrumbName: 'Education & Resources',
   },
 
@@ -64,34 +64,34 @@ export const seoMetadata = {
 
   faq: {
     title: 'Frequently Asked Questions | AMedNav™',
-    description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for transplant patients.',
+    description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for patients.',
     canonical: `${BASE_URL}/faq`,
     ogTitle: 'Transplant Medication Assistance FAQs',
-    ogDescription: 'Get answers to common questions about medication assistance, Patient Assistance Programs, copay support, and financial help for transplant patients.',
+    ogDescription: 'Get answers to common questions about medication assistance, Patient Assistance Programs, copay support, and financial help for patients.',
     twitterTitle: 'Medication Assistance FAQs',
-    twitterDescription: 'Answers to common questions about Patient Assistance Programs, copay foundations, and financial help for transplant patients.',
+    twitterDescription: 'Answers to common questions about Patient Assistance Programs, copay foundations, and financial help for patients.',
     breadcrumbName: 'FAQ',
   },
 
   notFound: {
     title: 'Page Not Found | AMedNav™',
-    description: 'The page you are looking for could not be found. Visit our homepage to find medication assistance programs and resources for transplant patients.',
+    description: 'The page you are looking for could not be found. Visit our homepage to find medication assistance programs and resources for patients.',
     canonical: `${BASE_URL}/`,
     ogTitle: 'Page Not Found',
-    ogDescription: 'This page could not be found. Visit AMedNav™ to find medication assistance programs for transplant patients.',
+    ogDescription: 'This page could not be found. Visit AMedNav™ to find medication assistance programs for patients.',
     twitterTitle: 'Page Not Found',
-    twitterDescription: 'This page could not be found. Visit our homepage to find medication assistance programs for transplant patients.',
+    twitterDescription: 'This page could not be found. Visit our homepage to find medication assistance programs for patients.',
     breadcrumbName: 'Page Not Found',
   },
 
   forTransplantPrograms: {
     title: 'For Transplant Programs | AMedNav™',
-    description: 'Help transplant patients find affordable medications with our privacy-safe resource. Reduce financial barriers to adherence with verified help programs.',
+    description: 'Help patients find affordable medications with our privacy-safe resource. Reduce financial barriers to adherence with verified help programs.',
     canonical: `${BASE_URL}/for-transplant-programs`,
     ogTitle: 'Transplant Program Partnerships',
     ogDescription: 'Partner with AMedNav to help your patients find medication assistance programs. Privacy-safe, no PHI collected.',
     twitterTitle: 'For Transplant Programs',
-    twitterDescription: 'Help your transplant patients find affordable medications with free educational resources and verified help programs.',
+    twitterDescription: 'Help your patients find affordable medications with free educational resources and verified help programs.',
     breadcrumbName: 'For Transplant Programs',
   },
 
@@ -155,9 +155,9 @@ export const seoMetadata = {
     description: 'Read the Terms and Conditions for using the AMedNav website. Understand your rights, responsibilities, and our disclaimer about medical advice.',
     canonical: `${BASE_URL}/terms-and-conditions`,
     ogTitle: 'Terms and Conditions - AMedNav™',
-    ogDescription: 'Terms and Conditions governing the use of AMedNav, an educational resource for transplant patients and caregivers.',
+    ogDescription: 'Terms and Conditions governing the use of AMedNav, an educational resource for patients and caregivers.',
     twitterTitle: 'Terms and Conditions',
-    twitterDescription: 'Terms and Conditions for using AMedNav, an educational resource for transplant patients.',
+    twitterDescription: 'Terms and Conditions for using AMedNav, an educational resource for patients.',
     breadcrumbName: 'Terms and Conditions',
   },
 
@@ -199,7 +199,7 @@ export const seoMetadata = {
     description: 'Share your transplant medication journey. Help us understand challenges with anti-rejection drugs, pharmacies, insurance, and assistance programs.',
     canonical: `${BASE_URL}/survey/transplant`,
     ogTitle: 'Transplant Medication Journey Survey',
-    ogDescription: 'Share your experience with transplant medications. Your anonymous feedback helps improve access for all transplant patients.',
+    ogDescription: 'Share your experience with transplant medications. Your anonymous feedback helps improve access for all patients.',
     twitterTitle: 'Transplant Medication Survey',
     twitterDescription: 'Share your transplant medication journey to help improve access for all patients.',
     breadcrumbName: 'Transplant Survey',

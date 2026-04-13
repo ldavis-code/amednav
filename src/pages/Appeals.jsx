@@ -27,7 +27,7 @@ import { useMetaTags } from '../hooks/useMetaTags.js';
 
 export default function Appeals() {
   useMetaTags({
-    title: 'Got Denied? Appeal Help for Transplant Patients | TransplantMedicationNavigator',
+    title: 'Got Denied? Appeal Help for Patients | TransplantMedicationNavigator',
     description: 'Learn how to appeal insurance denials for transplant medications. Includes step therapy exceptions, generic vs brand guidance, and medical necessity letter templates.',
     keywords: 'insurance appeal, step therapy, prior authorization, transplant medication denial, medical necessity letter'
   });
@@ -977,7 +977,7 @@ Contact: [Your Phone Number]
         <Heart size={32} className="text-purple-600 mx-auto mb-3" aria-hidden="true" />
         <h2 className="text-xl font-bold text-slate-900 mb-2">Remember: You Are Not Alone</h2>
         <p className="text-slate-700 max-w-2xl mx-auto">
-          Thousands of transplant patients successfully appeal their denials every year. Your health matters, and you have every right to fight for the medications you need. Stay strong and don't give up!
+          Thousands of patients successfully appeal their denials every year. Your health matters, and you have every right to fight for the medications you need. Stay strong and don't give up!
         </p>
       </footer>
     </article>

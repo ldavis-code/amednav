@@ -11,7 +11,7 @@ export default defineConfig({
       manifest: {
         name: 'AMedNav',
         short_name: 'AMedNav',
-        description: 'Free guide for transplant patients to find affordable medications and assistance programs',
+        description: 'Free guide for patients to find affordable medications and assistance programs',
         theme_color: '#534AB7',
         background_color: '#F7F6F2',
         display: 'standalone',
