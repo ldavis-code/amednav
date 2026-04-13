@@ -223,7 +223,7 @@ const PaywallModal = ({ isOpen, onClose, featureType = 'quiz', onPromoSuccess })
           <ul className="space-y-2">
             {proFeatures.map((feature, index) => (
               <li key={index} className="flex items-center gap-2 text-sm text-slate-700">
-                <CheckCircle size={16} className="text-emerald-500 flex-shrink-0" aria-hidden="true" />
+                <CheckCircle size={16} className="text-plum-500 flex-shrink-0" aria-hidden="true" />
                 {feature}
               </li>
             ))}
@@ -310,7 +310,7 @@ const PaywallModal = ({ isOpen, onClose, featureType = 'quiz', onPromoSuccess })
                   <p className="text-sm text-red-600 text-center">{promoError}</p>
                 )}
                 {promoSuccess && (
-                  <p className="text-sm text-emerald-600 text-center font-medium">{promoSuccess}</p>
+                  <p className="text-sm text-plum-600 text-center font-medium">{promoSuccess}</p>
                 )}
               </div>
             )}

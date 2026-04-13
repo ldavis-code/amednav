@@ -52,17 +52,17 @@ export default function SubscriberLogin() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-plum-50 to-teal-100 flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-600 rounded-full mb-4">
             <Heart className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
@@ -88,7 +88,7 @@ export default function SubscriberLogin() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="you@example.com"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function SubscriberLogin() {
                 </label>
                 <Link
                   to="/login/forgot-password"
-                  className="text-sm text-emerald-600 hover:text-emerald-700 hover:underline"
+                  className="text-sm text-plum-600 hover:text-plum-700 hover:underline"
                 >
                   Forgot password?
                 </Link>
@@ -116,7 +116,7 @@ export default function SubscriberLogin() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   autoComplete="current-password"
-                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="Enter your password"
                 />
                 <button
@@ -149,7 +149,7 @@ export default function SubscriberLogin() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
+              className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
             >
               {submitting ? (
                 <>
@@ -175,7 +175,7 @@ export default function SubscriberLogin() {
           {/* Register Link */}
           <Link
             to="/login/register"
-            className="block w-full py-3 text-center border border-emerald-600 text-emerald-600 rounded-lg font-medium hover:bg-emerald-50 transition"
+            className="block w-full py-3 text-center border border-plum-600 text-plum-600 rounded-lg font-medium hover:bg-plum-50 transition"
           >
             Create an Account
           </Link>
@@ -183,14 +183,14 @@ export default function SubscriberLogin() {
 
         {/* Footer Links */}
         <div className="mt-6 text-center space-y-2">
-          <Link to="/" className="block text-sm text-gray-600 hover:text-emerald-600">
+          <Link to="/" className="block text-sm text-gray-600 hover:text-plum-600">
             &larr; Back to main site
           </Link>
           <p className="text-xs text-gray-500">
             By signing in, you agree to our{' '}
-            <Link to="/terms-and-conditions" className="underline hover:text-emerald-600">Terms</Link>
+            <Link to="/terms-and-conditions" className="underline hover:text-plum-600">Terms</Link>
             {' '}and{' '}
-            <Link to="/privacy" className="underline hover:text-emerald-600">Privacy Policy</Link>
+            <Link to="/privacy" className="underline hover:text-plum-600">Privacy Policy</Link>
           </p>
         </div>
       </div>

@@ -384,25 +384,25 @@ export default function AdminDashboard() {
       )}
 
       {/* Epic EHR Status */}
-      <div className="mb-8 bg-emerald-50 rounded-lg p-5 border border-emerald-200 flex items-start gap-4">
-        <div className="bg-emerald-100 text-emerald-700 p-2.5 rounded-lg">
+      <div className="mb-8 bg-plum-50 rounded-lg p-5 border border-plum-200 flex items-start gap-4">
+        <div className="bg-plum-100 text-plum-700 p-2.5 rounded-lg">
           <Zap className="h-6 w-6" />
         </div>
         <div className="flex-1">
-          <h3 className="font-semibold text-emerald-900">Epic EHR Integration — Active</h3>
-          <p className="text-sm text-emerald-700 mt-1">
+          <h3 className="font-semibold text-plum-900">Epic EHR Integration — Active</h3>
+          <p className="text-sm text-plum-700 mt-1">
             SMART on FHIR EHR launch and patient standalone launch are configured.
             Clinicians can launch TMN directly from Epic MyChart or the EHR sidebar.
           </p>
-          <div className="flex gap-4 mt-3 text-xs text-emerald-600">
+          <div className="flex gap-4 mt-3 text-xs text-plum-600">
             <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" /> EHR Launch
+              <span className="h-2 w-2 rounded-full bg-plum-500" /> EHR Launch
             </span>
             <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" /> Patient Standalone
+              <span className="h-2 w-2 rounded-full bg-plum-500" /> Patient Standalone
             </span>
             <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" /> Medication Import
+              <span className="h-2 w-2 rounded-full bg-plum-500" /> Medication Import
             </span>
           </div>
         </div>

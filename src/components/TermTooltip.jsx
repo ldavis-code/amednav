@@ -88,7 +88,7 @@ const TermTooltip = ({
         onMouseLeave={() => setIsOpen(false)}
         onFocus={() => setIsOpen(true)}
         onBlur={() => setIsOpen(false)}
-        className="inline-flex items-center gap-0.5 text-emerald-700 underline decoration-dotted decoration-emerald-400 underline-offset-2 hover:text-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1 rounded cursor-help"
+        className="inline-flex items-center gap-0.5 text-plum-700 underline decoration-dotted decoration-plum-400 underline-offset-2 hover:text-plum-800 focus:outline-none focus:ring-2 focus:ring-plum-500 focus:ring-offset-1 rounded cursor-help"
         aria-describedby={`tooltip-${termKey}`}
         aria-expanded={isOpen}
       >
@@ -96,7 +96,7 @@ const TermTooltip = ({
         {showIcon && (
           <HelpCircle
             size={14}
-            className="inline-block text-emerald-600 flex-shrink-0"
+            className="inline-block text-plum-600 flex-shrink-0"
             aria-hidden="true"
           />
         )}
@@ -110,7 +110,7 @@ const TermTooltip = ({
           role="tooltip"
           className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 w-64 max-w-[90vw] text-sm text-white bg-slate-800 rounded-lg shadow-lg animate-in fade-in zoom-in-95 duration-150"
         >
-          <span className="block font-semibold text-emerald-300 mb-1">
+          <span className="block font-semibold text-plum-300 mb-1">
             {glossaryEntry.term}
           </span>
           <span className="block text-slate-100">
@@ -177,14 +177,14 @@ export const GlossaryLink = ({ term, linkText = "What's this?", className = '' }
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="text-emerald-700 hover:text-emerald-800 underline text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1 rounded"
+        className="text-plum-700 hover:text-plum-800 underline text-sm focus:outline-none focus:ring-2 focus:ring-plum-500 focus:ring-offset-1 rounded"
         aria-expanded={isOpen}
       >
         [{linkText}]
       </button>
       {isOpen && (
-        <span className="block mt-2 p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-sm text-slate-700">
-          <strong className="text-emerald-800">{glossaryEntry.term}:</strong>{' '}
+        <span className="block mt-2 p-3 bg-plum-50 border border-plum-200 rounded-lg text-sm text-slate-700">
+          <strong className="text-plum-800">{glossaryEntry.term}:</strong>{' '}
           {glossaryEntry.definition}
         </span>
       )}

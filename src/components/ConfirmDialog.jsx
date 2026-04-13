@@ -23,7 +23,7 @@ const iconMap = {
 
 const colorMap = {
   warning: { bg: 'bg-amber-100', icon: 'text-amber-600', button: 'bg-amber-600 hover:bg-amber-700' },
-  success: { bg: 'bg-emerald-100', icon: 'text-emerald-600', button: 'bg-emerald-600 hover:bg-emerald-700' },
+  success: { bg: 'bg-plum-100', icon: 'text-plum-600', button: 'bg-plum-600 hover:bg-plum-700' },
   info: { bg: 'bg-plum-100', icon: 'text-plum-600', button: 'bg-plum-600 hover:bg-plum-700' },
   error: { bg: 'bg-red-100', icon: 'text-red-600', button: 'bg-red-600 hover:bg-red-700' },
   confirm: { bg: 'bg-amber-100', icon: 'text-amber-600', button: 'bg-red-600 hover:bg-red-700' }
@@ -200,7 +200,7 @@ export default function ConfirmDialog({
             onClick={handleConfirm}
             className={`flex-1 py-3 px-6 ${colors.button} text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-4 focus:ring-opacity-50 min-h-[44px] ${
               type === 'confirm' ? 'focus:ring-red-300' :
-              type === 'success' ? 'focus:ring-emerald-300' :
+              type === 'success' ? 'focus:ring-plum-300' :
               type === 'warning' ? 'focus:ring-amber-300' :
               type === 'error' ? 'focus:ring-red-300' :
               'focus:ring-plum-300'

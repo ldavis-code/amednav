@@ -134,7 +134,7 @@ export default function GeneralMedicationSurvey() {
               onClick={() => updateResponse(q.id, opt)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
                 responses[q.id] === opt
-                  ? 'bg-emerald-600 text-white shadow-md'
+                  ? 'bg-plum-600 text-white shadow-md'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
@@ -153,7 +153,7 @@ export default function GeneralMedicationSurvey() {
               onClick={() => updateResponse(q.id, opt)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
                 responses[q.id] === opt
-                  ? 'bg-emerald-600 text-white shadow-md'
+                  ? 'bg-plum-600 text-white shadow-md'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
@@ -172,7 +172,7 @@ export default function GeneralMedicationSurvey() {
               onClick={() => updateResponse(q.id, opt)}
               className={`px-4 py-2.5 rounded-lg text-sm transition-all ${
                 responses[q.id] === opt
-                  ? 'bg-emerald-600 text-white shadow-md'
+                  ? 'bg-plum-600 text-white shadow-md'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
@@ -199,7 +199,7 @@ export default function GeneralMedicationSurvey() {
               }}
               className={`px-4 py-2.5 rounded-lg text-sm transition-all ${
                 selected.includes(opt)
-                  ? 'bg-emerald-600 text-white shadow-md'
+                  ? 'bg-plum-600 text-white shadow-md'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
@@ -225,9 +225,9 @@ export default function GeneralMedicationSurvey() {
             Choose the topics that matter most to you. Each section can be submitted independently.
           </p>
           {completedSections.size > 0 && (
-            <div className="mt-3 flex items-center gap-2 text-sm text-emerald-600">
+            <div className="mt-3 flex items-center gap-2 text-sm text-plum-600">
               <span className="font-medium">{completedSections.size} of {sections.length} sections completed</span>
-              <span className="text-emerald-400">- Thank you for sharing your experience!</span>
+              <span className="text-plum-400">- Thank you for sharing your experience!</span>
             </div>
           )}
         </div>
@@ -249,23 +249,23 @@ export default function GeneralMedicationSurvey() {
                     onClick={() => setActiveTab(section.id)}
                     className={`text-left p-6 rounded-2xl border-2 transition-all hover:shadow-lg ${
                       isCompleted
-                        ? 'bg-emerald-50 border-emerald-200 hover:border-emerald-300'
+                        ? 'bg-plum-50 border-plum-200 hover:border-plum-300'
                         : hasResponses
                         ? 'bg-amber-50 border-amber-200 hover:border-amber-300'
-                        : 'bg-white border-slate-200 hover:border-emerald-300'
+                        : 'bg-white border-slate-200 hover:border-plum-300'
                     }`}
                   >
                     <div className="flex items-start gap-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                        isCompleted ? 'bg-emerald-100' : 'bg-slate-100'
+                        isCompleted ? 'bg-plum-100' : 'bg-slate-100'
                       }`}>
-                        <section.icon className={`w-6 h-6 ${isCompleted ? 'text-emerald-600' : 'text-slate-600'}`} />
+                        <section.icon className={`w-6 h-6 ${isCompleted ? 'text-plum-600' : 'text-slate-600'}`} />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
                           <h3 className="font-bold text-slate-800">{section.title}</h3>
                           {isCompleted && (
-                            <span className="text-emerald-600 text-sm">✓ Submitted</span>
+                            <span className="text-plum-600 text-sm">✓ Submitted</span>
                           )}
                         </div>
                         <p className="text-sm text-slate-500 mt-1">{section.description}</p>
@@ -336,7 +336,7 @@ export default function GeneralMedicationSurvey() {
                 onClick={() => handleSubmitSection(activeSection.id)}
                 className={`px-8 py-3 rounded-xl font-medium transition-all shadow-md hover:shadow-lg ${
                   completedSections.has(activeSection.id)
-                    ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200'
+                    ? 'bg-plum-100 text-plum-700 hover:bg-plum-200'
                     : 'bg-slate-700 text-white hover:bg-slate-800'
                 }`}
               >

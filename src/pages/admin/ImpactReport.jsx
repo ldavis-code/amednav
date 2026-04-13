@@ -92,7 +92,7 @@ export default function ImpactReport() {
           </select>
           <div className="flex items-center gap-2 flex-wrap">
             {hasNetlify && (
-              <span className="inline-flex items-center gap-1 px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full">
+              <span className="inline-flex items-center gap-1 px-2 py-1 bg-plum-50 text-plum-700 text-xs rounded-full">
                 <Globe className="h-3 w-3" /> Netlify Analytics
               </span>
             )}

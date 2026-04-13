@@ -39,7 +39,7 @@ const SubscribeCancel = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                     to="/pricing"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl transition"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl transition"
                 >
                     <ArrowLeft size={18} />
                     Back to Pricing
@@ -57,7 +57,7 @@ const SubscribeCancel = () => {
                 <HelpCircle size={16} />
                 <span>
                     Questions? Email us at{' '}
-                    <a href="mailto:info@transplantmedicationnavigator.com" className="text-emerald-700 hover:underline">
+                    <a href="mailto:info@transplantmedicationnavigator.com" className="text-plum-700 hover:underline">
                         info@transplantmedicationnavigator.com
                     </a>
                 </span>

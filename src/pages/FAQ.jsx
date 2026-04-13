@@ -93,8 +93,8 @@ const COBQuiz = () => {
         return (
             <div className="space-y-6">
                 <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-                        <Shield size={32} className="text-emerald-600" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+                        <Shield size={32} className="text-plum-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Do You Have Two Insurance Plans?</h3>
                     <p className="text-lg text-slate-600 max-w-xl mx-auto">
@@ -118,19 +118,19 @@ const COBQuiz = () => {
                     <p className="font-semibold text-slate-800 mb-3">Common reasons transplant patients have two plans:</p>
                     <ul className="space-y-2 text-slate-700">
                         <li className="flex items-start gap-2">
-                            <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle2 size={18} className="text-plum-500 mt-0.5 flex-shrink-0" />
                             <span><strong>Kidney disease</strong> — You may get Medicare even if you're under 65</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle2 size={18} className="text-plum-500 mt-0.5 flex-shrink-0" />
                             <span><strong>Disability</strong> — After 2 years on disability, you get Medicare</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle2 size={18} className="text-plum-500 mt-0.5 flex-shrink-0" />
                             <span><strong>Still working at 65+</strong> — You have Medicare AND job insurance</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle2 size={18} className="text-plum-500 mt-0.5 flex-shrink-0" />
                             <span><strong>Spouse's insurance</strong> — Your spouse's job covers you too</span>
                         </li>
                     </ul>
@@ -138,7 +138,7 @@ const COBQuiz = () => {
 
                 <button
                     onClick={() => setStep('question1')}
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition-all text-lg"
+                    className="w-full bg-plum-600 hover:bg-plum-700 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition-all text-lg"
                 >
                     Start the Quiz
                     <ArrowRight size={20} />
@@ -153,7 +153,7 @@ const COBQuiz = () => {
         return (
             <div className="space-y-6">
                 <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <span className="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold">1 of 2</span>
+                    <span className="bg-plum-100 text-plum-700 px-2 py-0.5 rounded-full font-bold">1 of 2</span>
                     <span>Question 1</span>
                 </div>
 
@@ -169,7 +169,7 @@ const COBQuiz = () => {
                 <div className="space-y-3">
                     <button
                         onClick={() => { setHasTwoPlans(true); setStep('question2'); }}
-                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-plum-400 hover:bg-plum-50 transition-all"
                     >
                         <div className="flex items-center gap-4">
                             <div className="w-6 h-6 rounded-full border-2 border-slate-300" />
@@ -181,7 +181,7 @@ const COBQuiz = () => {
 
                     <button
                         onClick={() => { setHasTwoPlans(false); setSituation(null); setStep('result'); }}
-                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-plum-400 hover:bg-plum-50 transition-all"
                     >
                         <div className="flex items-center gap-4">
                             <div className="w-6 h-6 rounded-full border-2 border-slate-300" />
@@ -194,7 +194,7 @@ const COBQuiz = () => {
 
                 <button
                     onClick={resetQuiz}
-                    className="flex items-center gap-2 text-slate-600 hover:text-emerald-700 font-medium"
+                    className="flex items-center gap-2 text-slate-600 hover:text-plum-700 font-medium"
                 >
                     <ArrowLeft size={18} />
                     Start over
@@ -208,7 +208,7 @@ const COBQuiz = () => {
         return (
             <div className="space-y-6">
                 <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <span className="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold">2 of 2</span>
+                    <span className="bg-plum-100 text-plum-700 px-2 py-0.5 rounded-full font-bold">2 of 2</span>
                     <span>Question 2</span>
                 </div>
 
@@ -224,7 +224,7 @@ const COBQuiz = () => {
                 <div className="space-y-3">
                     <button
                         onClick={() => { setSituation('medicare_employer_working'); setStep('result'); }}
-                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-plum-400 hover:bg-plum-50 transition-all"
                     >
                         <div className="font-semibold text-slate-900">I have Medicare AND job insurance</div>
                         <div className="text-slate-600 text-sm mt-1">I or my spouse still works</div>
@@ -232,7 +232,7 @@ const COBQuiz = () => {
 
                     <button
                         onClick={() => { setSituation('medicare_retiree'); setStep('result'); }}
-                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-plum-400 hover:bg-plum-50 transition-all"
                     >
                         <div className="font-semibold text-slate-900">I have Medicare AND retiree insurance</div>
                         <div className="text-slate-600 text-sm mt-1">I'm retired but still have coverage from my old job</div>
@@ -240,7 +240,7 @@ const COBQuiz = () => {
 
                     <button
                         onClick={() => { setSituation('medicare_medicaid'); setStep('result'); }}
-                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-plum-400 hover:bg-plum-50 transition-all"
                     >
                         <div className="font-semibold text-slate-900">I have Medicare AND Medicaid</div>
                         <div className="text-slate-600 text-sm mt-1">I have both government programs</div>
@@ -248,7 +248,7 @@ const COBQuiz = () => {
 
                     <button
                         onClick={() => { setSituation('esrd_employer'); setStep('result'); }}
-                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all"
+                        className="w-full text-left p-5 rounded-xl border-2 border-slate-200 hover:border-plum-400 hover:bg-plum-50 transition-all"
                     >
                         <div className="font-semibold text-slate-900">I have kidney disease Medicare AND job insurance</div>
                         <div className="text-slate-600 text-sm mt-1">I got Medicare because of kidney failure (ESRD)</div>
@@ -265,7 +265,7 @@ const COBQuiz = () => {
 
                 <button
                     onClick={() => setStep('question1')}
-                    className="flex items-center gap-2 text-slate-600 hover:text-emerald-700 font-medium"
+                    className="flex items-center gap-2 text-slate-600 hover:text-plum-700 font-medium"
                 >
                     <ArrowLeft size={18} />
                     Go back
@@ -280,10 +280,10 @@ const COBQuiz = () => {
         if (!hasTwoPlans) {
             return (
                 <div className="space-y-6">
-                    <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6 text-center">
-                        <CheckCircle2 size={48} className="mx-auto text-emerald-600 mb-3" />
-                        <h3 className="text-xl font-bold text-emerald-900 mb-2">You Have One Insurance Plan</h3>
-                        <p className="text-emerald-800">
+                    <div className="bg-plum-50 border-2 border-plum-200 rounded-xl p-6 text-center">
+                        <CheckCircle2 size={48} className="mx-auto text-plum-600 mb-3" />
+                        <h3 className="text-xl font-bold text-plum-900 mb-2">You Have One Insurance Plan</h3>
+                        <p className="text-plum-800">
                             Since you have just one plan, you don't need to worry about which pays first. Use our main quiz to find help programs for your situation.
                         </p>
                     </div>
@@ -291,7 +291,7 @@ const COBQuiz = () => {
                     <div className="flex flex-col sm:flex-row gap-3">
                         <Link
                             to="/wizard"
-                            className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all"
+                            className="flex-1 bg-plum-600 hover:bg-plum-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all"
                         >
                             Find Help Programs
                         </Link>
@@ -309,16 +309,16 @@ const COBQuiz = () => {
         // Has dual coverage with results
         return (
             <div className="space-y-6">
-                <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6 text-center">
-                    <Shield size={48} className="mx-auto text-emerald-600 mb-3" />
-                    <h3 className="text-2xl font-bold text-emerald-900 mb-2">{result.title}</h3>
+                <div className="bg-plum-50 border-2 border-plum-200 rounded-xl p-6 text-center">
+                    <Shield size={48} className="mx-auto text-plum-600 mb-3" />
+                    <h3 className="text-2xl font-bold text-plum-900 mb-2">{result.title}</h3>
                 </div>
 
                 {/* Primary/Secondary display */}
                 <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="bg-emerald-50 border-2 border-emerald-300 rounded-xl p-4">
-                        <div className="text-sm font-bold text-emerald-700 mb-1">PAYS FIRST</div>
-                        <div className="text-lg font-bold text-emerald-900">{result.primary}</div>
+                    <div className="bg-plum-50 border-2 border-plum-300 rounded-xl p-4">
+                        <div className="text-sm font-bold text-plum-700 mb-1">PAYS FIRST</div>
+                        <div className="text-lg font-bold text-plum-900">{result.primary}</div>
                     </div>
                     {result.secondary && (
                         <div className="bg-slate-50 border-2 border-slate-200 rounded-xl p-4">
@@ -372,7 +372,7 @@ const COBQuiz = () => {
                     <ul className="space-y-2">
                         {result.tips.map((tip, index) => (
                             <li key={index} className="flex items-start gap-2 text-slate-700">
-                                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 flex-shrink-0" />
+                                <CheckCircle2 size={18} className="text-plum-500 mt-0.5 flex-shrink-0" />
                                 <span>{tip}</span>
                             </li>
                         ))}
@@ -383,7 +383,7 @@ const COBQuiz = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                         to="/wizard"
-                        className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all"
+                        className="flex-1 bg-plum-600 hover:bg-plum-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all"
                     >
                         Find Help Programs
                     </Link>
@@ -459,7 +459,7 @@ const FAQ = () => {
                     <span className="font-semibold text-slate-900 pr-4">{question}</span>
                     <ChevronDown
                         size={20}
-                        className={`flex-shrink-0 text-emerald-600 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        className={`flex-shrink-0 text-plum-600 transition-transform ${isOpen ? 'rotate-180' : ''}`}
                         aria-hidden="true"
                     />
                 </button>
@@ -479,8 +479,8 @@ const FAQ = () => {
     return (
         <article className="max-w-5xl mx-auto space-y-8 pb-12">
             <header className="text-center py-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-                    <Info size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+                    <Info size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Frequently Asked Questions</h1>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -489,7 +489,7 @@ const FAQ = () => {
             </header>
 
             {/* Coordination of Benefits Quiz Section */}
-            <section className="bg-white rounded-xl shadow-sm border-2 border-emerald-200 p-6 md:p-8">
+            <section className="bg-white rounded-xl shadow-sm border-2 border-plum-200 p-6 md:p-8">
                 <COBQuiz />
             </section>
 
@@ -498,7 +498,7 @@ const FAQ = () => {
                     faqs.map((section, sectionIndex) => (
                         <section key={sectionIndex} className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8">
                             <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                <span className="w-1 h-8 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                                <span className="w-1 h-8 bg-plum-600 rounded-full" aria-hidden="true"></span>
                                 {section.category}
                             </h2>
                             <div className="space-y-3">
@@ -523,7 +523,7 @@ const FAQ = () => {
                         <p className="text-slate-600 mb-6">Check back later for frequently asked questions.</p>
                         <Link
                             to="/education"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg transition"
                         >
                             Browse Resources
                         </Link>
@@ -531,21 +531,21 @@ const FAQ = () => {
                 )}
             </div>
 
-            <aside className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 md:p-8 text-center">
-                <h2 className="text-xl font-bold text-emerald-900 mb-3">Still have questions?</h2>
-                <p className="text-emerald-800 mb-6">
+            <aside className="bg-plum-50 border border-plum-200 rounded-xl p-6 md:p-8 text-center">
+                <h2 className="text-xl font-bold text-plum-900 mb-3">Still have questions?</h2>
+                <p className="text-plum-800 mb-6">
                     Your transplant center's social worker or financial coordinator is your best resource for personalized guidance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                         to="/wizard"
-                        className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg shadow-md transition"
+                        className="px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg shadow-md transition"
                     >
                         Start My Path Quiz
                     </Link>
                     <Link
                         to="/education"
-                        className="px-6 py-3 bg-white hover:bg-slate-50 text-emerald-700 font-bold rounded-lg shadow-md border border-emerald-200 transition"
+                        className="px-6 py-3 bg-white hover:bg-slate-50 text-plum-700 font-bold rounded-lg shadow-md border border-plum-200 transition"
                     >
                         Browse Resources
                     </Link>

@@ -83,7 +83,7 @@ export default function AdminLayout({ children, title, subtitle, actions }) {
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/60">
               <Zap className="h-4 w-4 shrink-0" />
               <span className="truncate">Epic EHR Ready</span>
-              <span className="ml-auto h-2 w-2 rounded-full bg-emerald-400 shrink-0" title="Epic integration active" />
+              <span className="ml-auto h-2 w-2 rounded-full bg-plum-400 shrink-0" title="Epic integration active" />
             </div>
 
             {/* User & logout */}

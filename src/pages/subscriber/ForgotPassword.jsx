@@ -40,11 +40,11 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-plum-50 to-teal-100 flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-600 rounded-full mb-4">
             <Heart className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Reset Your Password</h1>
@@ -58,8 +58,8 @@ export default function ForgotPassword() {
           {success ? (
             // Success message
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full mb-4">
-                <CheckCircle className="h-6 w-6 text-emerald-600" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-plum-100 rounded-full mb-4">
+                <CheckCircle className="h-6 w-6 text-plum-600" />
               </div>
               <h2 className="text-lg font-semibold text-gray-900 mb-2">Check Your Email</h2>
               <p className="text-gray-600 mb-6">
@@ -74,13 +74,13 @@ export default function ForgotPassword() {
                     setSuccess(false);
                     setEmail('');
                   }}
-                  className="w-full py-3 border border-emerald-600 text-emerald-600 rounded-lg font-medium hover:bg-emerald-50 transition"
+                  className="w-full py-3 border border-plum-600 text-plum-600 rounded-lg font-medium hover:bg-plum-50 transition"
                 >
                   Try Again
                 </button>
                 <Link
                   to="/login"
-                  className="block w-full py-3 text-center text-gray-600 hover:text-emerald-600 transition"
+                  className="block w-full py-3 text-center text-gray-600 hover:text-plum-600 transition"
                 >
                   <ArrowLeft className="inline-block h-4 w-4 mr-1" />
                   Back to Sign In
@@ -104,7 +104,7 @@ export default function ForgotPassword() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     autoComplete="email"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function ForgotPassword() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
+                className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
               >
                 {submitting ? (
                   <>
@@ -137,7 +137,7 @@ export default function ForgotPassword() {
               {/* Back to Login */}
               <Link
                 to="/login"
-                className="block w-full py-3 text-center text-gray-600 hover:text-emerald-600 transition"
+                className="block w-full py-3 text-center text-gray-600 hover:text-plum-600 transition"
               >
                 <ArrowLeft className="inline-block h-4 w-4 mr-1" />
                 Back to Sign In
@@ -148,7 +148,7 @@ export default function ForgotPassword() {
 
         {/* Footer Links */}
         <div className="mt-6 text-center space-y-2">
-          <Link to="/" className="block text-sm text-gray-600 hover:text-emerald-600">
+          <Link to="/" className="block text-sm text-gray-600 hover:text-plum-600">
             &larr; Back to main site
           </Link>
         </div>

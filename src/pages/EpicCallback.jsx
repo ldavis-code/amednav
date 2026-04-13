@@ -176,14 +176,14 @@ const EpicCallback = () => {
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-6 ${
                     status === 'processing' ? 'bg-plum-100' :
-                    status === 'success' ? 'bg-emerald-100' :
+                    status === 'success' ? 'bg-plum-100' :
                     'bg-red-100'
                 }`}>
                     {status === 'processing' && (
                         <Loader2 size={32} className="text-plum-600 animate-spin" aria-hidden="true" />
                     )}
                     {status === 'success' && (
-                        <CheckCircle size={32} className="text-emerald-600" aria-hidden="true" />
+                        <CheckCircle size={32} className="text-plum-600" aria-hidden="true" />
                     )}
                     {status === 'error' && (
                         <AlertCircle size={32} className="text-red-600" aria-hidden="true" />
@@ -200,7 +200,7 @@ const EpicCallback = () => {
                 {/* Message */}
                 <p className={`mb-6 ${
                     status === 'processing' ? 'text-plum-700' :
-                    status === 'success' ? 'text-emerald-700' :
+                    status === 'success' ? 'text-plum-700' :
                     'text-red-700'
                 }`}>
                     {message}
@@ -209,8 +209,8 @@ const EpicCallback = () => {
                 {/* Success details */}
                 {status === 'success' && (
                     <>
-                        <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
-                            <div className="flex items-center justify-center gap-2 text-emerald-800">
+                        <div className="bg-plum-50 border border-plum-200 rounded-lg p-4 mb-4">
+                            <div className="flex items-center justify-center gap-2 text-plum-800">
                                 <ShieldCheck size={18} aria-hidden="true" />
                                 <span className="font-medium">Redirecting you back automatically...</span>
                             </div>

@@ -43,8 +43,8 @@ const Pricing = () => {
         <article className="max-w-6xl mx-auto space-y-8 pb-12">
             {/* Hero Section */}
             <header className="text-center py-8 md:py-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-6">
-                    <CreditCard size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-6">
+                    <CreditCard size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     Pricing
@@ -129,7 +129,7 @@ const Pricing = () => {
                 </p>
                 <a
                     href="mailto:info@transplantmedicationnavigator.com?subject=Pricing%20Question"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                 >
                     <Mail size={20} aria-hidden="true" />
                     Contact Us

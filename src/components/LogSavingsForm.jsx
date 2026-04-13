@@ -107,7 +107,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
     return (
         <div className="bg-white rounded-xl border border-slate-200 p-6">
             <div className="flex items-center gap-2 mb-4">
-                <DollarSign className="text-emerald-600" size={24} aria-hidden="true" />
+                <DollarSign className="text-plum-600" size={24} aria-hidden="true" />
                 <h3 className="text-lg font-bold text-slate-900">Log Your Savings</h3>
             </div>
 
@@ -125,7 +125,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                 aria-atomic="true"
                 id="form-message"
                 className={message.text ? `mb-4 p-3 rounded-lg flex items-center gap-2 ${
-                    message.type === 'success' ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' :
+                    message.type === 'success' ? 'bg-plum-50 text-plum-800 border border-plum-200' :
                     message.type === 'warning' ? 'bg-amber-50 text-amber-800 border border-amber-200' :
                     'bg-red-50 text-red-800 border border-red-200'
                 }` : 'sr-only'}
@@ -152,7 +152,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                         value={formData.medicationName}
                         onChange={handleChange}
                         placeholder="e.g., Tacrolimus, Eliquis"
-                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                         list="medication-suggestions"
                         required
                         aria-required="true"
@@ -181,7 +181,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                             value={formData.programName}
                             onChange={handleChange}
                             placeholder="e.g., HealthWell Foundation"
-                            className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                         />
                     </div>
                     <div>
@@ -193,7 +193,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                             name="programType"
                             value={formData.programType}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                         >
                             <option value="">Select type...</option>
                             {Object.entries(programTypeLabels).map(([value, label]) => (
@@ -221,7 +221,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                                 min="0"
                                 step="0.01"
                                 placeholder="0.00"
-                                className="w-full pl-8 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                className="w-full pl-8 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                 required
                                 aria-required="true"
                                 aria-invalid={message.type === 'error' && message.text.includes('original') ? 'true' : undefined}
@@ -244,7 +244,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                                 min="0"
                                 step="0.01"
                                 placeholder="0.00"
-                                className="w-full pl-8 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                className="w-full pl-8 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                 required
                                 aria-required="true"
                                 aria-invalid={message.type === 'error' && message.text.includes('paid') ? 'true' : undefined}
@@ -255,9 +255,9 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
 
                 {/* Savings Preview */}
                 {savingsPreview !== null && (
-                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
-                        <span className="text-sm text-emerald-700">You saved</span>
-                        <div className="text-3xl font-bold text-emerald-600">
+                    <div className="bg-plum-50 border border-plum-200 rounded-lg p-4 text-center">
+                        <span className="text-sm text-plum-700">You saved</span>
+                        <div className="text-3xl font-bold text-plum-600">
                             ${savingsPreview.toFixed(2)}
                         </div>
                     </div>
@@ -274,7 +274,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                         name="fillDate"
                         value={formData.fillDate}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     />
                 </div>
 
@@ -290,7 +290,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                         onChange={handleChange}
                         rows={2}
                         placeholder="Any additional details..."
-                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     />
                 </div>
 
@@ -298,7 +298,7 @@ export default function LogSavingsForm({ onSuccess, medications = [] }) {
                 <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-emerald-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-h-[44px]"
+                    className="w-full bg-plum-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-plum-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-h-[44px]"
                 >
                     {isLoading ? (
                         <>

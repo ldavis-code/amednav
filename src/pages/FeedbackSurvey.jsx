@@ -152,7 +152,7 @@ export default function FeedbackSurvey() {
 
   const OptionButton = ({ onClick, color = 'blue', children, disabled, selected }) => {
     const colorClasses = {
-      emerald: 'bg-emerald-50 hover:bg-emerald-100 border-emerald-300 text-emerald-800 focus:ring-emerald-300',
+      emerald: 'bg-plum-50 hover:bg-plum-100 border-plum-300 text-plum-800 focus:ring-plum-300',
       rose: 'bg-rose-50 hover:bg-rose-100 border-rose-300 text-rose-800 focus:ring-rose-300',
       amber: 'bg-amber-50 hover:bg-amber-100 border-amber-300 text-amber-800 focus:ring-amber-300',
       slate: 'bg-slate-50 hover:bg-slate-100 border-slate-300 text-slate-700 focus:ring-slate-300',
@@ -182,7 +182,7 @@ export default function FeedbackSurvey() {
           <div
             key={i}
             className={`w-3 h-3 rounded-full transition-all ${
-              i + 1 <= currentStep ? 'bg-emerald-500' : 'bg-slate-200'
+              i + 1 <= currentStep ? 'bg-plum-500' : 'bg-slate-200'
             }`}
           />
         ))}
@@ -193,11 +193,11 @@ export default function FeedbackSurvey() {
   // Submitted state
   if (step === 'submitted') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <div className="min-h-screen bg-gradient-to-br from-plum-50 via-white to-teal-50">
         <div className="max-w-2xl mx-auto px-6 py-16">
-          <div className="bg-white rounded-2xl border-2 border-emerald-200 p-10 shadow-xl text-center">
-            <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-emerald-600" />
+          <div className="bg-white rounded-2xl border-2 border-plum-200 p-10 shadow-xl text-center">
+            <div className="w-20 h-20 bg-plum-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-plum-600" />
             </div>
             <h1 className="text-3xl font-bold text-slate-800 mb-4">
               Thank You!
@@ -207,7 +207,7 @@ export default function FeedbackSurvey() {
             </p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-100 border-2 border-emerald-400 text-emerald-800 font-medium rounded-xl hover:bg-emerald-200 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-plum-100 border-2 border-plum-400 text-plum-800 font-medium rounded-xl hover:bg-plum-200 transition-colors"
             >
               <Home className="w-5 h-5" />
               Back to Home
@@ -219,9 +219,9 @@ export default function FeedbackSurvey() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-plum-50 via-white to-teal-50">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-emerald-100">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-plum-100">
         <div className="max-w-2xl mx-auto px-6 py-8 text-center">
           <h1 className="text-3xl font-bold text-slate-800 mb-2">
             Share Your Feedback
@@ -240,8 +240,8 @@ export default function FeedbackSurvey() {
           {step === 1 && (
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 bg-plum-100 rounded-xl flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-plum-600" />
                 </div>
                 <h2 className="text-xl font-bold text-slate-800">
                   Did you find a program that helped?
@@ -265,8 +265,8 @@ export default function FeedbackSurvey() {
           {step === 2 && (
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <DollarSign className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 bg-plum-100 rounded-xl flex items-center justify-center">
+                  <DollarSign className="w-5 h-5 text-plum-600" />
                 </div>
                 <h2 className="text-xl font-bold text-slate-800">
                   How much did this save you?
@@ -293,8 +293,8 @@ export default function FeedbackSurvey() {
           {step === 3 && (
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <HelpCircle className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 bg-plum-100 rounded-xl flex items-center justify-center">
+                  <HelpCircle className="w-5 h-5 text-plum-600" />
                 </div>
                 <h2 className="text-xl font-bold text-slate-800">
                   What would you have done without this tool?
@@ -318,8 +318,8 @@ export default function FeedbackSurvey() {
           {step === 4 && (
             <form onSubmit={handleSubmit}>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <MessageSquare className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 bg-plum-100 rounded-xl flex items-center justify-center">
+                  <MessageSquare className="w-5 h-5 text-plum-600" />
                 </div>
                 <h2 className="text-xl font-bold text-slate-800">
                   Share Your Story (Optional)
@@ -343,7 +343,7 @@ export default function FeedbackSurvey() {
                     value={responses.comment}
                     onChange={(e) => updateResponse('comment', e.target.value)}
                     placeholder="Tell us about your experience finding medication assistance..."
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-plum-500 focus:border-plum-500 resize-none"
                   />
                 </div>
 
@@ -360,7 +360,7 @@ export default function FeedbackSurvey() {
                     value={responses.email}
                     onChange={(e) => updateResponse('email', e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   />
                   <p className="text-xs text-slate-500 mt-1">
                     We'll only use this to contact you about your testimonial.
@@ -372,7 +372,7 @@ export default function FeedbackSurvey() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-emerald-100 border-2 border-emerald-400 text-emerald-800 font-medium rounded-xl hover:bg-emerald-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-plum-100 border-2 border-plum-400 text-plum-800 font-medium rounded-xl hover:bg-plum-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Feedback'}
                   {!isSubmitting && <ArrowRight className="w-5 h-5" />}
@@ -392,7 +392,7 @@ export default function FeedbackSurvey() {
 
         {/* Privacy Notice */}
         <div className="text-center mt-8">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm">
+          <div className="inline-flex items-center gap-2 bg-plum-50 text-plum-700 px-4 py-2 rounded-full text-sm">
             <Shield className="w-4 h-4" />
             <span><strong>Privacy:</strong> Your feedback is anonymous unless you provide an email</span>
           </div>

@@ -92,8 +92,8 @@ export default function ResetPassword() {
   // Loading state
   if (tokenValid === null) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600" />
+      <div className="min-h-screen bg-gradient-to-br from-plum-50 to-teal-100 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
       </div>
     );
   }
@@ -101,7 +101,7 @@ export default function ResetPassword() {
   // Invalid or missing token
   if (!tokenValid) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center px-4 py-12">
+      <div className="min-h-screen bg-gradient-to-br from-plum-50 to-teal-100 flex items-center justify-center px-4 py-12">
         <div className="max-w-md w-full">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
@@ -116,13 +116,13 @@ export default function ResetPassword() {
           <div className="bg-white rounded-xl shadow-lg p-8 text-center">
             <Link
               to="/login/forgot-password"
-              className="block w-full py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition"
+              className="block w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 transition"
             >
               Request New Reset Link
             </Link>
             <Link
               to="/login"
-              className="block w-full py-3 mt-3 text-gray-600 hover:text-emerald-600 transition"
+              className="block w-full py-3 mt-3 text-gray-600 hover:text-plum-600 transition"
             >
               Back to Sign In
             </Link>
@@ -133,11 +133,11 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-plum-50 to-teal-100 flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-600 rounded-full mb-4">
             <Heart className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Create New Password</h1>
@@ -151,8 +151,8 @@ export default function ResetPassword() {
           {success ? (
             // Success message
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full mb-4">
-                <CheckCircle className="h-6 w-6 text-emerald-600" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-plum-100 rounded-full mb-4">
+                <CheckCircle className="h-6 w-6 text-plum-600" />
               </div>
               <h2 className="text-lg font-semibold text-gray-900 mb-2">Password Reset Successful</h2>
               <p className="text-gray-600 mb-6">
@@ -160,7 +160,7 @@ export default function ResetPassword() {
               </p>
               <button
                 onClick={() => navigate('/login')}
-                className="w-full py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition"
+                className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 transition"
               >
                 Sign In
               </button>
@@ -182,7 +182,7 @@ export default function ResetPassword() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     autoComplete="new-password"
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     placeholder="Enter new password"
                   />
                   <button
@@ -199,16 +199,16 @@ export default function ResetPassword() {
               {/* Password Requirements */}
               {password.length > 0 && (
                 <div className="bg-gray-50 rounded-lg p-3 space-y-1 text-sm">
-                  <div className={passwordRequirements.length ? 'text-emerald-600' : 'text-gray-500'}>
+                  <div className={passwordRequirements.length ? 'text-plum-600' : 'text-gray-500'}>
                     {passwordRequirements.length ? '✓' : '○'} At least 8 characters
                   </div>
-                  <div className={passwordRequirements.uppercase ? 'text-emerald-600' : 'text-gray-500'}>
+                  <div className={passwordRequirements.uppercase ? 'text-plum-600' : 'text-gray-500'}>
                     {passwordRequirements.uppercase ? '✓' : '○'} One uppercase letter
                   </div>
-                  <div className={passwordRequirements.lowercase ? 'text-emerald-600' : 'text-gray-500'}>
+                  <div className={passwordRequirements.lowercase ? 'text-plum-600' : 'text-gray-500'}>
                     {passwordRequirements.lowercase ? '✓' : '○'} One lowercase letter
                   </div>
-                  <div className={passwordRequirements.number ? 'text-emerald-600' : 'text-gray-500'}>
+                  <div className={passwordRequirements.number ? 'text-plum-600' : 'text-gray-500'}>
                     {passwordRequirements.number ? '✓' : '○'} One number
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export default function ResetPassword() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                     autoComplete="new-password"
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                     placeholder="Confirm new password"
                   />
                   <button
@@ -241,7 +241,7 @@ export default function ResetPassword() {
                   </button>
                 </div>
                 {confirmPassword.length > 0 && (
-                  <p className={`text-sm mt-1 ${passwordsMatch ? 'text-emerald-600' : 'text-red-500'}`}>
+                  <p className={`text-sm mt-1 ${passwordsMatch ? 'text-plum-600' : 'text-red-500'}`}>
                     {passwordsMatch ? '✓ Passwords match' : 'Passwords do not match'}
                   </p>
                 )}
@@ -259,7 +259,7 @@ export default function ResetPassword() {
               <button
                 type="submit"
                 disabled={submitting || !allRequirementsMet || !passwordsMatch}
-                className="w-full py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
+                className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
               >
                 {submitting ? (
                   <>
@@ -276,7 +276,7 @@ export default function ResetPassword() {
 
         {/* Footer Links */}
         <div className="mt-6 text-center space-y-2">
-          <Link to="/" className="block text-sm text-gray-600 hover:text-emerald-600">
+          <Link to="/" className="block text-sm text-gray-600 hover:text-plum-600">
             &larr; Back to main site
           </Link>
         </div>
