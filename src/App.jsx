@@ -726,15 +726,15 @@ const Home = () => {
 
                 {/* Stats Banner */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-10 max-w-4xl mx-auto">
-                    <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
+                    <div className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl p-4 md:p-6 text-center border border-sky-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <Activity size={20} className="md:hidden" />
                             <Activity size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">76</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-sky-700">76</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Conditions</div>
                     </div>
-                    <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="bg-gradient-to-br from-plum-50 to-plum-100 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
                         <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <Pill size={20} className="md:hidden" />
                             <Pill size={24} className="hidden md:block" />
@@ -750,28 +750,16 @@ const Home = () => {
                         <div className="text-2xl md:text-4xl font-extrabold text-amber-700">96</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Assistance Programs</div>
                     </div>
-                    <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
+                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <CreditCard size={20} className="md:hidden" />
                             <CreditCard size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">121</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">121</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Copay Cards</div>
                     </div>
                 </div>
             </section>
-
-            {/* Epic / MyChart Badge */}
-            <div className="flex justify-center max-w-4xl mx-auto">
-                <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-plum-50 to-green-50 border-2 border-plum-300 rounded-2xl shadow-md">
-                    <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 bg-plum-500 rounded-full ring-4 ring-plum-100" aria-hidden="true" />
-                        <span className="text-base md:text-lg font-extrabold text-slate-900">Listed in Epic Connection Hub</span>
-                    </div>
-                    <div className="w-px h-8 bg-plum-300" aria-hidden="true" />
-                    <span className="text-base md:text-lg font-extrabold text-plum-700">MyChart Integrated</span>
-                </div>
-            </div>
 
             {/* Features Grid */}
             <section className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" aria-label="Key features">
