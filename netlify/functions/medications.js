@@ -18,7 +18,7 @@ export async function handler(event) {
   try {
     // Single medication by ID
     if (params.id) {
-      const rows = await sql`SELECT * FROM medications WHERE id = ${params.id} LIMIT 1`;
+      const rows = await sql(`SELECT * FROM ${table} WHERE id = $1 LIMIT 1`, [params.id]);
       if (rows.length === 0) {
         return { statusCode: 404, headers, body: JSON.stringify({ error: 'Medication not found' }) };
       }
@@ -28,26 +28,24 @@ export async function handler(event) {
     // Search by name
     if (params.search) {
       const term = `%${params.search}%`;
-      const rows = await sql`
-        SELECT * FROM medications
-        WHERE brand_name ILIKE ${term} OR generic_name ILIKE ${term}
-        ORDER BY brand_name
-      `;
+      const rows = await sql(
+        `SELECT * FROM ${table} WHERE brand_name ILIKE $1 OR generic_name ILIKE $1 ORDER BY brand_name`,
+        [term]
+      );
       return { statusCode: 200, headers, body: JSON.stringify({ medications: rows.map(formatMedication) }) };
     }
 
     // Filter by category
     if (params.category) {
-      const rows = await sql`
-        SELECT * FROM medications
-        WHERE category = ${params.category}
-        ORDER BY brand_name
-      `;
+      const rows = await sql(
+        `SELECT * FROM ${table} WHERE category = $1 ORDER BY brand_name`,
+        [params.category]
+      );
       return { statusCode: 200, headers, body: JSON.stringify({ medications: rows.map(formatMedication) }) };
     }
 
     // All medications
-    const rows = await sql`SELECT * FROM medications ORDER BY brand_name`;
+    const rows = await sql(`SELECT * FROM ${table} ORDER BY brand_name`);
     return { statusCode: 200, headers, body: JSON.stringify({ medications: rows.map(formatMedication) }) };
 
   } catch (error) {

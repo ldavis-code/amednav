@@ -18,7 +18,7 @@ export async function handler(event) {
   try {
     // Single condition by ID
     if (params.id) {
-      const rows = await sql`SELECT * FROM conditions WHERE id = ${params.id} LIMIT 1`;
+      const rows = await sql(`SELECT * FROM ${table} WHERE id = $1 LIMIT 1`, [params.id]);
       if (rows.length === 0) {
         return { statusCode: 404, headers, body: JSON.stringify({ error: 'Condition not found' }) };
       }
@@ -28,16 +28,15 @@ export async function handler(event) {
     // Search by name
     if (params.search) {
       const term = `%${params.search}%`;
-      const rows = await sql`
-        SELECT * FROM conditions
-        WHERE name ILIKE ${term} OR description ILIKE ${term}
-        ORDER BY name
-      `;
+      const rows = await sql(
+        `SELECT * FROM ${table} WHERE name ILIKE $1 OR description ILIKE $1 ORDER BY name`,
+        [term]
+      );
       return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows }) };
     }
 
     // All conditions
-    const rows = await sql`SELECT * FROM conditions ORDER BY name`;
+    const rows = await sql(`SELECT * FROM ${table} ORDER BY name`);
     return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows }) };
 
   } catch (error) {

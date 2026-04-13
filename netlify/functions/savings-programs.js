@@ -18,37 +18,34 @@ export async function handler(event) {
   try {
     // Programs for a specific medication
     if (params.medicationId) {
-      const rows = await sql`
-        SELECT * FROM savings_programs
-        WHERE medication_id = ${params.medicationId}
-        ORDER BY program_type, program_name
-      `;
+      const rows = await sql(
+        `SELECT * FROM ${table} WHERE medication_id = $1 ORDER BY program_type, program_name`,
+        [params.medicationId]
+      );
       return { statusCode: 200, headers, body: JSON.stringify({ programs: rows.map(formatProgram) }) };
     }
 
     // Filter by program type (copay_card, pap, foundation)
     if (params.type) {
-      const rows = await sql`
-        SELECT * FROM savings_programs
-        WHERE program_type = ${params.type}
-        ORDER BY program_name
-      `;
+      const rows = await sql(
+        `SELECT * FROM ${table} WHERE program_type = $1 ORDER BY program_name`,
+        [params.type]
+      );
       return { statusCode: 200, headers, body: JSON.stringify({ programs: rows.map(formatProgram) }) };
     }
 
     // Search by name
     if (params.search) {
       const term = `%${params.search}%`;
-      const rows = await sql`
-        SELECT * FROM savings_programs
-        WHERE program_name ILIKE ${term} OR manufacturer ILIKE ${term}
-        ORDER BY program_name
-      `;
+      const rows = await sql(
+        `SELECT * FROM ${table} WHERE program_name ILIKE $1 OR manufacturer ILIKE $1 ORDER BY program_name`,
+        [term]
+      );
       return { statusCode: 200, headers, body: JSON.stringify({ programs: rows.map(formatProgram) }) };
     }
 
     // All programs
-    const rows = await sql`SELECT * FROM savings_programs ORDER BY program_type, program_name`;
+    const rows = await sql(`SELECT * FROM ${table} ORDER BY program_type, program_name`);
     return { statusCode: 200, headers, body: JSON.stringify({ programs: rows.map(formatProgram) }) };
 
   } catch (error) {
