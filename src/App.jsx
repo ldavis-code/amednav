@@ -1554,6 +1554,7 @@ const Wizard = () => {
 
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState({
+        conditions: [],
         insurance: null,
         medications: [],
         specialtyPharmacyAware: null,
@@ -1639,31 +1640,33 @@ const Wizard = () => {
     const nextStep = () => setStep(step + 1);
     const prevStep = () => setStep(step - 1);
 
-    // Navigation Logic - 3 quiz steps + results
-    const handleNextFromMeds = () => { trackServerEvent('quiz_start'); setStep(2); };
-    const handleNextFromInsurance = () => setStep(3);
+    // Navigation Logic - 4 quiz steps + results
+    const handleNextFromConditions = () => { trackServerEvent('quiz_start'); setStep(2); };
+    const handleNextFromMeds = () => setStep(3);
+    const handleNextFromInsurance = () => setStep(4);
     const handleNextFromAffordability = () => {
         // Go directly to results
-        setStep(4);
+        setStep(5);
     };
 
     // Track quiz completion when user reaches results
     useEffect(() => {
-        if (step === 4) trackServerEvent('quiz_complete');
+        if (step === 5) trackServerEvent('quiz_complete');
     }, [step]);
 
     // Check if commercial insurance for specialty pharmacy question
     const isCommercialInsurance = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
 
-    // Step labels for progress bar (3 quiz steps, results is step 4)
-    const stepLabels = ['Medications', 'Insurance', 'Affordability'];
-    const totalVisibleSteps = 3; // 3 sections shown in progress
+    // Step labels for progress bar (4 quiz steps, results is step 5)
+    const stepLabels = ['Conditions', 'Medications', 'Insurance', 'Affordability'];
+    const totalVisibleSteps = 4; // 4 sections shown in progress
 
     // Color themes for each step
     const stepColors = {
-        1: { bg: 'bg-purple-500', bgLight: 'bg-purple-100', ring: 'ring-purple-100', text: 'text-purple-600', textBold: 'text-purple-700', border: 'border-purple-500', bgSelect: 'bg-purple-50', hoverBorder: 'hover:border-purple-200', badge: 'bg-purple-600' },
-        2: { bg: 'bg-plum-500', bgLight: 'bg-plum-100', ring: 'ring-plum-100', text: 'text-plum-600', textBold: 'text-plum-700', border: 'border-plum-500', bgSelect: 'bg-plum-50', hoverBorder: 'hover:border-plum-200', badge: 'bg-plum-600' },
-        3: { bg: 'bg-teal-500', bgLight: 'bg-teal-100', ring: 'ring-teal-100', text: 'text-teal-600', textBold: 'text-teal-700', border: 'border-teal-500', bgSelect: 'bg-teal-50', hoverBorder: 'hover:border-teal-200', badge: 'bg-teal-600' },
+        1: { bg: 'bg-sky-500', bgLight: 'bg-sky-100', ring: 'ring-sky-100', text: 'text-sky-600', textBold: 'text-sky-700', border: 'border-sky-500', bgSelect: 'bg-sky-50', hoverBorder: 'hover:border-sky-200', badge: 'bg-sky-600' },
+        2: { bg: 'bg-purple-500', bgLight: 'bg-purple-100', ring: 'ring-purple-100', text: 'text-purple-600', textBold: 'text-purple-700', border: 'border-purple-500', bgSelect: 'bg-purple-50', hoverBorder: 'hover:border-purple-200', badge: 'bg-purple-600' },
+        3: { bg: 'bg-plum-500', bgLight: 'bg-plum-100', ring: 'ring-plum-100', text: 'text-plum-600', textBold: 'text-plum-700', border: 'border-plum-500', bgSelect: 'bg-plum-50', hoverBorder: 'hover:border-plum-200', badge: 'bg-plum-600' },
+        4: { bg: 'bg-teal-500', bgLight: 'bg-teal-100', ring: 'ring-teal-100', text: 'text-teal-600', textBold: 'text-teal-700', border: 'border-teal-500', bgSelect: 'bg-teal-50', hoverBorder: 'hover:border-teal-200', badge: 'bg-teal-600' },
     };
 
     const renderProgress = () => {
@@ -1711,8 +1714,8 @@ const Wizard = () => {
     };
 
 
-    // Step 2: Your Insurance (combines Insurance + Specialty Pharmacy for commercial)
-    if (step === 2) {
+    // Step 3: Your Insurance (combines Insurance + Specialty Pharmacy for commercial)
+    if (step === 3) {
         const insuranceOptions = [
             {
                 value: InsuranceType.COMMERCIAL,
@@ -1771,7 +1774,7 @@ const Wizard = () => {
                 {/* Question 2a: Insurance Type */}
                 <div className="mb-8">
                     <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">2a</span>
+                        <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">3a</span>
                         <h2 className="text-lg font-bold text-slate-800">What's your insurance type?</h2>
                     </div>
                     <div className="space-y-3" role="radiogroup" aria-label="Select your insurance type">
@@ -1809,7 +1812,7 @@ const Wizard = () => {
                 {isCommercialInsurance && answers.insurance && (
                     <div className="mb-8 ">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">2b</span>
+                            <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">3b</span>
                             <h2 className="text-lg font-bold text-slate-800">Does your plan require a specific specialty pharmacy?</h2>
                         </div>
                         <p className="text-slate-600 text-sm mb-4">Some commercial plans require you to use a specific pharmacy for transplant medications.</p>
@@ -1858,12 +1861,13 @@ const Wizard = () => {
         );
     }
 
-    // Step 1: Your Medications
-    if (step === 1) {
+    // Step 2: Your Medications
+    if (step === 2) {
         return (
             <div className="max-w-3xl mx-auto">
 
                 {renderProgress()}
+                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="mb-6">
                     <div className="flex items-center gap-3 mb-2">
                         <div className="bg-purple-100 p-2 rounded-lg">
@@ -2008,8 +2012,93 @@ const Wizard = () => {
         );
     }
 
-    // Step 3: Affordability (Financial Status)
-    if (step === 3) {
+    // Step 1: Your Conditions
+    if (step === 1) {
+        const conditionOptions = [
+            { value: OrganType.KIDNEY, label: 'Kidney Transplant', description: 'Including living donor, deceased donor, and kidney-pancreas' },
+            { value: OrganType.LIVER, label: 'Liver Transplant', description: 'Including living donor and deceased donor' },
+            { value: OrganType.HEART, label: 'Heart Transplant', description: 'Including mechanical circulatory support bridge' },
+            { value: OrganType.LUNG, label: 'Lung Transplant', description: 'Including single and bilateral lung' },
+            { value: OrganType.PANCREAS, label: 'Pancreas Transplant', description: 'Including simultaneous kidney-pancreas' },
+            { value: OrganType.MULTI, label: 'Multi-organ Transplant', description: 'Two or more organ transplants' },
+            { value: OrganType.OTHER, label: 'Other / Not Transplant', description: 'Chronic condition, autoimmune, or other medication needs' },
+        ];
+
+        return (
+            <div className="max-w-2xl mx-auto">
+
+                {renderProgress()}
+                <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-sky-100 p-2 rounded-lg">
+                        <Activity size={24} className="text-sky-600" />
+                    </div>
+                    <h1 className="text-2xl font-bold">Your Condition</h1>
+                </div>
+                <p className="text-slate-600 mb-6">Select the condition(s) that apply to you. This helps us tailor your medication and assistance options.</p>
+
+                <div className="space-y-3" role="group" aria-label="Select your conditions">
+                    {conditionOptions.map((option) => {
+                        const isSelected = (answers.conditions || []).includes(option.value);
+                        return (
+                            <button
+                                key={option.value}
+                                onClick={() => handleMultiSelect('conditions', option.value)}
+                                className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
+                                    isSelected
+                                        ? 'border-sky-600 bg-sky-100 ring-2 ring-sky-300 shadow-md'
+                                        : 'border-slate-300 bg-slate-50 hover:border-sky-400 hover:bg-sky-50 hover:shadow-md'
+                                }`}
+                                aria-pressed={isSelected}
+                            >
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <div className={`font-bold text-lg ${isSelected ? 'text-sky-800' : 'text-slate-800'}`}>{option.label}</div>
+                                        <div className={`text-sm mt-1 ${isSelected ? 'text-sky-700' : 'text-slate-600'}`}>{option.description}</div>
+                                    </div>
+                                    {isSelected && <CheckCircle className="text-sky-600 flex-shrink-0" size={24} aria-hidden="true" />}
+                                </div>
+                            </button>
+                        );
+                    })}
+                </div>
+
+                {(answers.conditions || []).length > 0 && (
+                    <div className="mt-4 bg-sky-50 border border-sky-200 rounded-xl p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                            <CheckCircle size={18} className="text-sky-600" />
+                            <h3 className="font-bold text-slate-800">Selected ({(answers.conditions || []).length})</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {(answers.conditions || []).map(val => (
+                                <span key={val} className="bg-white text-slate-700 px-3 py-1.5 rounded-full text-sm border border-sky-200 shadow-sm flex items-center gap-2">
+                                    {val}
+                                    <button
+                                        onClick={() => handleMultiSelect('conditions', val)}
+                                        className="text-slate-400 hover:text-red-500 transition"
+                                        aria-label={`Remove ${val}`}
+                                    >
+                                        <X size={14} />
+                                    </button>
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                <button
+                    disabled={(answers.conditions || []).length === 0}
+                    onClick={handleNextFromConditions}
+                    className="w-full mt-6 py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-sky-600 hover:bg-sky-700 text-white cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
+                    aria-label="Continue to medications"
+                >
+                    Continue to Medications →
+                </button>
+            </div>
+        );
+    }
+
+    // Step 4: Affordability (Financial Status)
+    if (step === 4) {
         return (
             <div className="max-w-2xl mx-auto">
 
@@ -2089,8 +2178,8 @@ const Wizard = () => {
         );
     }
 
-    // Step 4: Results
-    if (step === 4) {
+    // Step 5: Results
+    if (step === 5) {
         const isMedicare = answers.insurance === InsuranceType.MEDICARE;
         const isCommercial = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
         const isUninsured = answers.insurance === InsuranceType.UNINSURED;
@@ -2101,7 +2190,7 @@ const Wizard = () => {
 
                 {/* Back Button */}
                 <button
-                    onClick={() => setStep(3)}
+                    onClick={() => setStep(4)}
                     className="text-slate-700 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px] no-print"
                     aria-label="Go back to previous step"
                 >
