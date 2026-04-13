@@ -293,13 +293,13 @@ export default function MyMedications() {
         {/* Savings Calculator CTA */}
         <Link
           to="/savings-tracker"
-          className="block bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-4 text-white hover:from-emerald-700 hover:to-teal-700 transition-all"
+          className="block bg-gradient-to-r from-plum-600 to-teal-600 rounded-xl p-4 text-white hover:from-plum-700 hover:to-teal-700 transition-all"
         >
           <div className="flex items-center gap-3">
             <Calculator size={24} />
             <div>
               <div className="font-semibold">Savings Calculator</div>
-              <div className="text-emerald-100 text-sm">See how much you could save</div>
+              <div className="text-plum-100 text-sm">See how much you could save</div>
             </div>
           </div>
         </Link>
@@ -353,7 +353,7 @@ export default function MyMedications() {
       {/* Add Medication Form */}
       <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 mb-6">
         <h2 id="add-medication-heading" className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-          <Plus className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+          <Plus className="w-5 h-5 text-plum-600" aria-hidden="true" />
           Add a Medication
         </h2>
 
@@ -383,7 +383,7 @@ export default function MyMedications() {
                 placeholder="e.g., Tacrolimus"
                 aria-required="true"
                 aria-describedby="med-name-hint"
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               />
               <p id="med-name-hint" className="sr-only">Enter the generic or brand name of your medication</p>
             </div>
@@ -397,7 +397,7 @@ export default function MyMedications() {
                 value={newMed.brand}
                 onChange={(e) => setNewMed({ ...newMed, brand: e.target.value })}
                 placeholder="e.g., Prograf"
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               />
             </div>
             <div>
@@ -410,7 +410,7 @@ export default function MyMedications() {
                 value={newMed.dosage}
                 onChange={(e) => setNewMed({ ...newMed, dosage: e.target.value })}
                 placeholder="e.g., 1mg twice daily"
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               />
             </div>
             <div>
@@ -426,7 +426,7 @@ export default function MyMedications() {
                 onChange={(e) => setNewMed({ ...newMed, cost: e.target.value })}
                 placeholder="e.g., 150.00"
                 aria-describedby="med-cost-hint"
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               />
               <p id="med-cost-hint" className="sr-only">Enter the amount in US dollars</p>
             </div>
@@ -439,7 +439,7 @@ export default function MyMedications() {
                 type="date"
                 value={newMed.renewal}
                 onChange={(e) => setNewMed({ ...newMed, renewal: e.target.value })}
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               />
             </div>
             <div>
@@ -450,7 +450,7 @@ export default function MyMedications() {
                 id="med-renewal-type"
                 value={newMed.renewalType}
                 onChange={(e) => setNewMed({ ...newMed, renewalType: e.target.value })}
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               >
                 <option value="">-- Select --</option>
                 <option value="calendar_year">Calendar year (Jan 1)</option>
@@ -461,7 +461,7 @@ export default function MyMedications() {
           </div>
           <button
             type="submit"
-            className="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 flex items-center justify-center gap-2 min-h-[44px] focus:outline-none focus:ring-4 focus:ring-emerald-500/50"
+            className="w-full bg-plum-600 text-white py-3 rounded-lg font-semibold hover:bg-plum-700 flex items-center justify-center gap-2 min-h-[44px] focus:outline-none focus:ring-4 focus:ring-plum-500/50"
           >
             <Plus className="w-5 h-5" aria-hidden="true" />
             Save Medication
@@ -571,19 +571,19 @@ export default function MyMedications() {
                   {/* Copay Card Programs (Commercial Insurance) */}
                   {hasCommercialInsurance === 'yes' && copayCards.length > 0 && (
                     <div className="mt-3 border-t border-slate-100 pt-3">
-                      <h4 className="text-sm font-semibold text-emerald-700 mb-2 flex items-center gap-1.5">
+                      <h4 className="text-sm font-semibold text-plum-700 mb-2 flex items-center gap-1.5">
                         <CreditCard className="w-4 h-4" aria-hidden="true" />
                         Copay Card Programs Available
                       </h4>
                       <div className="space-y-2">
                         {copayCards.map((program) => (
-                          <div key={program.programId} className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                          <div key={program.programId} className="bg-plum-50 border border-plum-200 rounded-lg p-3">
                             <div className="flex items-start justify-between gap-2">
                               <div>
-                                <p className="font-medium text-emerald-900 text-sm">{program.name}</p>
-                                <p className="text-emerald-700 text-xs mt-0.5">{program.maxBenefit}</p>
+                                <p className="font-medium text-plum-900 text-sm">{program.name}</p>
+                                <p className="text-plum-700 text-xs mt-0.5">{program.maxBenefit}</p>
                                 {program.phone && (
-                                  <p className="text-emerald-700 text-xs mt-0.5">Phone: {program.phone}</p>
+                                  <p className="text-plum-700 text-xs mt-0.5">Phone: {program.phone}</p>
                                 )}
                               </div>
                               {program.url && (
@@ -591,7 +591,7 @@ export default function MyMedications() {
                                   href={`/out/copay/${program.programId}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="flex items-center gap-1 px-3 py-1.5 bg-emerald-600 text-white text-xs font-medium rounded-lg hover:bg-emerald-700 transition flex-shrink-0 min-h-[32px]"
+                                  className="flex items-center gap-1 px-3 py-1.5 bg-plum-600 text-white text-xs font-medium rounded-lg hover:bg-plum-700 transition flex-shrink-0 min-h-[32px]"
                                   onClick={() => trackProgramClick(med.medication_name)}
                                 >
                                   Apply
@@ -599,7 +599,7 @@ export default function MyMedications() {
                                 </a>
                               )}
                             </div>
-                            <p className="text-emerald-600 text-xs mt-1">{program.notes}</p>
+                            <p className="text-plum-600 text-xs mt-1">{program.notes}</p>
                           </div>
                         ))}
                       </div>
@@ -712,7 +712,7 @@ export default function MyMedications() {
         <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 mt-6">
           <fieldset>
             <legend className="text-lg font-semibold text-slate-900 mb-2 flex items-center gap-2">
-              <ClipboardCheck className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+              <ClipboardCheck className="w-5 h-5 text-plum-600" aria-hidden="true" />
               Did you get your medication today?
             </legend>
             <div className="space-y-2 mt-4" role="radiogroup" aria-label="Medication adherence check-in">
@@ -726,9 +726,9 @@ export default function MyMedications() {
                   key={option.value}
                   type="button"
                   onClick={() => handleAdherenceAnswer(option.value)}
-                  className={`w-full text-left py-3 px-4 rounded-lg font-medium transition min-h-[44px] focus:outline-none focus:ring-4 focus:ring-emerald-500/50 ${
+                  className={`w-full text-left py-3 px-4 rounded-lg font-medium transition min-h-[44px] focus:outline-none focus:ring-4 focus:ring-plum-500/50 ${
                     adherenceAnswer === option.value
-                      ? 'bg-emerald-600 text-white ring-2 ring-emerald-600'
+                      ? 'bg-plum-600 text-white ring-2 ring-plum-600'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300'
                   }`}
                   role="radio"
@@ -739,8 +739,8 @@ export default function MyMedications() {
               ))}
             </div>
             {adherenceAnswer === 'yes' && (
-              <div className="mt-4 p-3 bg-emerald-50 border border-emerald-200 rounded-lg">
-                <p className="text-emerald-800 text-sm font-medium">
+              <div className="mt-4 p-3 bg-plum-50 border border-plum-200 rounded-lg">
+                <p className="text-plum-800 text-sm font-medium">
                   Great! Staying on track with your medications is one of the most important things you can do for your transplant health.
                 </p>
               </div>

@@ -64,7 +64,7 @@ const FeedbackWidget = ({ medicationName }) => {
 
   const OptionButton = ({ onClick, color, children, disabled }) => {
     const colorClasses = {
-      green: 'bg-emerald-600 hover:bg-emerald-700',
+      green: 'bg-plum-600 hover:bg-plum-700',
       red: 'bg-rose-500 hover:bg-rose-600',
       amber: 'bg-amber-500 hover:bg-amber-600',
       gray: 'bg-slate-500 hover:bg-slate-600',
@@ -84,12 +84,12 @@ const FeedbackWidget = ({ medicationName }) => {
 
   if (step === 'submitted') {
     return (
-      <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-center">
-        <div className="flex items-center justify-center gap-2 text-emerald-700 font-semibold text-lg">
+      <div className="bg-plum-50 border border-plum-200 rounded-xl p-6 text-center">
+        <div className="flex items-center justify-center gap-2 text-plum-700 font-semibold text-lg">
           <CheckCircle size={24} aria-hidden="true" />
           Thank you!
         </div>
-        <p className="text-emerald-600 mt-2">Your feedback helps transplant centers understand patient needs.</p>
+        <p className="text-plum-600 mt-2">Your feedback helps transplant centers understand patient needs.</p>
       </div>
     );
   }

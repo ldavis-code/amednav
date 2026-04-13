@@ -9,8 +9,8 @@ const TermsAndConditions = () => {
     return (
         <article className="max-w-4xl mx-auto space-y-8 pb-12">
             <header className="text-center py-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-                    <FileText size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+                    <FileText size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Terms and Conditions</h1>
                 <p className="text-slate-600">Last Updated: January 1, 2026</p>
@@ -28,7 +28,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         1. No Medical Advice
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -44,7 +44,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         2. Use of Information
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -54,7 +54,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         3. Third-Party Links
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -64,7 +64,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         4. Intellectual Property
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -74,7 +74,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         5. Limitation of Liability
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -84,7 +84,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         6. Disclaimer
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -97,7 +97,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         7. Governing Law
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -110,7 +110,7 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         8. Changes
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -123,14 +123,14 @@ const TermsAndConditions = () => {
 
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         9. Contact Us
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
                         If you have any questions about these Terms, please contact us at{' '}
                         <a
                             href="mailto:info@transplantmedicationnavigator.com"
-                            className="text-emerald-600 hover:text-emerald-700 underline inline-flex items-center gap-1"
+                            className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                         >
                             <Mail size={16} aria-hidden="true" />
                             info@transplantmedicationnavigator.com
@@ -139,21 +139,21 @@ const TermsAndConditions = () => {
                 </section>
             </div>
 
-            <aside className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 md:p-8 text-center">
-                <h2 className="text-xl font-bold text-emerald-900 mb-3">Have Questions?</h2>
-                <p className="text-emerald-800 mb-6">
+            <aside className="bg-plum-50 border border-plum-200 rounded-xl p-6 md:p-8 text-center">
+                <h2 className="text-xl font-bold text-plum-900 mb-3">Have Questions?</h2>
+                <p className="text-plum-800 mb-6">
                     If you have any questions about these terms or how to use our site, we're here to help.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                         to="/faq"
-                        className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg shadow-md transition"
+                        className="px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg shadow-md transition"
                     >
                         View FAQ
                     </Link>
                     <Link
                         to="/"
-                        className="px-6 py-3 bg-white hover:bg-slate-50 text-emerald-700 font-bold rounded-lg shadow-md border border-emerald-200 transition"
+                        className="px-6 py-3 bg-white hover:bg-slate-50 text-plum-700 font-bold rounded-lg shadow-md border border-plum-200 transition"
                     >
                         Back to Home
                     </Link>

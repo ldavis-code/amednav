@@ -391,7 +391,7 @@ const ChatWidget = () => {
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="bg-emerald-700 hover:bg-emerald-800 text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center gap-2 group min-h-[44px]"
+                    className="bg-plum-700 hover:bg-plum-800 text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center gap-2 group min-h-[44px]"
                     aria-label="Open assistant chat"
                 >
                     <MessageCircle size={24} aria-hidden="true" />
@@ -410,14 +410,14 @@ const ChatWidget = () => {
                     aria-labelledby="chat-widget-title"
                 >
                     {/* Header */}
-                    <div className="bg-emerald-600 text-white p-4 rounded-t-2xl flex justify-between items-center">
+                    <div className="bg-plum-600 text-white p-4 rounded-t-2xl flex justify-between items-center">
                         <div className="flex items-center gap-2">
                             <div className="bg-white/20 p-2 rounded-lg" aria-hidden="true">
                                 <HeartHandshake size={20} />
                             </div>
                             <div>
                                 <h3 id="chat-widget-title" className="font-bold">Medication Navigator</h3>
-                                <p className="text-xs text-emerald-100">Always here to help</p>
+                                <p className="text-xs text-plum-100">Always here to help</p>
                             </div>
                         </div>
                         <button
@@ -439,7 +439,7 @@ const ChatWidget = () => {
                                 <div
                                     className={`max-w-[80%] rounded-2xl p-3 ${
                                         message.type === 'user'
-                                            ? 'bg-emerald-600 text-white'
+                                            ? 'bg-plum-600 text-white'
                                             : 'bg-white border border-slate-200 text-slate-800'
                                     }`}
                                 >
@@ -460,10 +460,10 @@ const ChatWidget = () => {
                                     <button
                                         key={action.id}
                                         onClick={() => handleQuickAction(action)}
-                                        className="flex items-center gap-2 p-3 rounded-lg border border-slate-200 hover:bg-emerald-50 hover:border-emerald-300 transition text-left min-h-[48px]"
+                                        className="flex items-center gap-2 p-3 rounded-lg border border-slate-200 hover:bg-plum-50 hover:border-plum-300 transition text-left min-h-[48px]"
                                         title={action.description}
                                     >
-                                        <Icon size={18} className="text-emerald-700 flex-shrink-0" />
+                                        <Icon size={18} className="text-plum-700 flex-shrink-0" />
                                         <span className="text-sm text-slate-800 truncate">{action.label}</span>
                                     </button>
                                 );
@@ -480,13 +480,13 @@ const ChatWidget = () => {
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                                 placeholder="Ask a question..."
-                                className="flex-1 px-4 py-3 border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 text-base min-h-[44px]"
+                                className="flex-1 px-4 py-3 border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-plum-500 text-base min-h-[44px]"
                                 aria-label="Type your message"
                             />
                             <button
                                 onClick={handleSendMessage}
                                 disabled={!inputValue.trim()}
-                                className="bg-emerald-700 hover:bg-emerald-800 disabled:bg-slate-400 text-white p-3 rounded-full transition disabled:cursor-not-allowed min-h-[48px] min-w-[48px] flex items-center justify-center"
+                                className="bg-plum-700 hover:bg-plum-800 disabled:bg-slate-400 text-white p-3 rounded-full transition disabled:cursor-not-allowed min-h-[48px] min-w-[48px] flex items-center justify-center"
                                 aria-label="Send message"
                             >
                                 <Send size={22} />
@@ -518,11 +518,11 @@ const Layout = ({ children }) => {
     ];
 
     return (
-        <div className="min-h-screen flex flex-col bg-slate-50 font-sans text-slate-900">
+        <div className="min-h-screen flex flex-col bg-canvas font-sans text-slate-900">
             {/* Safety Banner */}
-            <div className="bg-emerald-800 text-white px-4 py-3 text-base text-center font-medium no-print" role="alert">
+            <div className="bg-plum-800 text-white px-4 py-3 text-base text-center font-medium no-print" role="alert">
                 <span className="inline-flex items-center justify-center gap-2">
-                    <ShieldAlert size={18} className="text-emerald-100" aria-hidden="true" />
+                    <ShieldAlert size={18} className="text-plum-100" aria-hidden="true" />
                     Patient Assistance Programs provide FREE medication—never pay to apply. We help you find them.
                 </span>
             </div>
@@ -530,7 +530,7 @@ const Layout = ({ children }) => {
             {/* Skip to Main Content Link - Accessibility */}
             <a
                 href="#main-content"
-                className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-1/2 focus:-translate-x-1/2 focus:z-[100] focus:bg-emerald-700 focus:text-white focus:px-6 focus:py-3 focus:rounded-b-lg focus:font-semibold focus:shadow-lg"
+                className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-1/2 focus:-translate-x-1/2 focus:z-[100] focus:bg-plum-700 focus:text-white focus:px-6 focus:py-3 focus:rounded-b-lg focus:font-semibold focus:shadow-lg"
             >
                 Skip to main content
             </a>
@@ -538,7 +538,7 @@ const Layout = ({ children }) => {
             {/* Header */}
             <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200 no-print" role="banner">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-emerald-700 hover:text-emerald-800 transition" aria-label="AMedNav™ home">
+                    <Link to="/" className="flex items-center gap-2 text-plum-700 hover:text-plum-800 transition" aria-label="AMedNav™ home">
                         <img src="/photos/logo.png" alt="" width={32} height={32} aria-hidden="true" className="flex-shrink-0" />
                         <span className="font-bold text-lg md:text-xl leading-tight">
                             Transplant Medication<br className="md:hidden"/> Navigator<sup className="text-xs">™</sup>
@@ -554,8 +554,8 @@ const Layout = ({ children }) => {
                                 aria-label={link.ariaLabel}
                                 className={`text-base font-medium transition-colors px-3 py-2 rounded-lg min-h-[44px] flex items-center ${
                                     location.pathname === link.path
-                                        ? 'text-emerald-700 font-bold bg-emerald-50 border-b-2 border-emerald-600'
-                                        : 'text-slate-700 hover:text-emerald-700 hover:bg-emerald-50'
+                                        ? 'text-plum-700 font-bold bg-plum-50 border-b-2 border-plum-600'
+                                        : 'text-slate-700 hover:text-plum-700 hover:bg-plum-50'
                                 }`}
                             >
                                 {link.label}
@@ -566,8 +566,8 @@ const Layout = ({ children }) => {
                             aria-pressed={isSimpleView}
                             className={`ml-2 px-3 py-2 rounded-lg text-base font-medium min-h-[44px] flex items-center gap-2 border-2 transition-colors ${
                                 isSimpleView
-                                    ? 'bg-emerald-700 text-white border-emerald-700'
-                                    : 'bg-white text-slate-700 border-slate-300 hover:border-emerald-600 hover:text-emerald-700'
+                                    ? 'bg-plum-700 text-white border-plum-700'
+                                    : 'bg-white text-slate-700 border-slate-300 hover:border-plum-600 hover:text-plum-700'
                             }`}
                         >
                             {isSimpleView ? <EyeOff size={18} aria-hidden="true" /> : <Eye size={18} aria-hidden="true" />}
@@ -598,7 +598,7 @@ const Layout = ({ children }) => {
                                     aria-label={link.ariaLabel}
                                     className={`px-4 py-3 rounded-lg text-lg font-medium min-h-[48px] flex items-center ${
                                         location.pathname === link.path
-                                            ? 'bg-emerald-100 text-emerald-800 font-bold'
+                                            ? 'bg-plum-100 text-plum-800 font-bold'
                                             : 'text-slate-800 hover:bg-slate-100'
                                     }`}
                                 >
@@ -610,7 +610,7 @@ const Layout = ({ children }) => {
                                 aria-pressed={isSimpleView}
                                 className={`px-4 py-3 rounded-lg text-lg font-medium min-h-[48px] flex items-center gap-2 border-2 transition-colors ${
                                     isSimpleView
-                                        ? 'bg-emerald-700 text-white border-emerald-700'
+                                        ? 'bg-plum-700 text-white border-plum-700'
                                         : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-100'
                                 }`}
                             >
@@ -636,36 +636,36 @@ const Layout = ({ children }) => {
                     <p className="mb-4 text-slate-300 text-sm max-w-3xl mx-auto">
                         We use information from the U.S. National Library of Medicine (NLM). The NLM does not support or recommend this tool.
                     </p>
-                    <p className="mb-2 text-emerald-400 font-medium">
+                    <p className="mb-2 text-plum-400 font-medium">
                         <Clock className="inline-block w-4 h-4 mr-1 -mt-0.5" aria-hidden="true" />
                         Information last updated: {LAST_UPDATED}
                     </p>
                     <p>© 2026 AMedNav™. All Rights Reserved.</p>
                     <p className="mt-4 text-slate-300 text-sm">Created by Lorrinda Gray-Davis. est August 2025</p>
                     <p className="mt-2 text-slate-400 text-sm">
-                        <a href="mailto:info@transplantmedicationnavigator.com" className="text-emerald-400 hover:text-emerald-300 underline">info@transplantmedicationnavigator.com</a>
+                        <a href="mailto:info@transplantmedicationnavigator.com" className="text-plum-400 hover:text-plum-300 underline">info@transplantmedicationnavigator.com</a>
                     </p>
                     {/* Non-Discrimination Notice - Section 504 Compliance */}
                     <div className="mt-6 max-w-3xl mx-auto bg-slate-800 rounded-lg px-4 py-3 text-sm">
                         <p className="text-slate-300">
                             <strong className="text-slate-200">Non-Discrimination Notice:</strong> In accordance with Section 504 of the Rehabilitation Act of 1973, TransplantNav LLC does not discriminate on the basis of disability.{' '}
-                            <Link to="/accessibility#section-504" className="text-emerald-400 hover:text-emerald-300 underline transition">
+                            <Link to="/accessibility#section-504" className="text-plum-400 hover:text-plum-300 underline transition">
                                 Section 504 Notice & Grievance Procedure
                             </Link>
                         </p>
                     </div>
                     <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
-                        <Link to="/terms-and-conditions" className="text-slate-400 hover:text-emerald-400 underline transition">Terms of Service</Link>
+                        <Link to="/terms-and-conditions" className="text-slate-400 hover:text-plum-400 underline transition">Terms of Service</Link>
                         <span className="text-slate-600" aria-hidden="true">|</span>
-                        <Link to="/privacy" className="text-slate-400 hover:text-emerald-400 underline transition">Privacy Policy</Link>
+                        <Link to="/privacy" className="text-slate-400 hover:text-plum-400 underline transition">Privacy Policy</Link>
                         <span className="text-slate-600" aria-hidden="true">|</span>
-                        <Link to="/accessibility" className="text-slate-400 hover:text-emerald-400 underline transition">Accessibility & Section 504</Link>
+                        <Link to="/accessibility" className="text-slate-400 hover:text-plum-400 underline transition">Accessibility & Section 504</Link>
                         <span className="text-slate-600" aria-hidden="true">|</span>
-                        <Link to="/feedback" className="text-slate-400 hover:text-emerald-400 underline transition">Feedback</Link>
+                        <Link to="/feedback" className="text-slate-400 hover:text-plum-400 underline transition">Feedback</Link>
                         <span className="text-slate-600" aria-hidden="true">|</span>
-                        <Link to="/for-hospitals" className="text-slate-400 hover:text-emerald-400 underline transition">Hospitals</Link>
+                        <Link to="/for-hospitals" className="text-slate-400 hover:text-plum-400 underline transition">Hospitals</Link>
                         <span className="text-slate-600" aria-hidden="true">|</span>
-                        <Link to="/admin/login" className="text-slate-400 hover:text-emerald-400 underline transition">Admin</Link>
+                        <Link to="/admin/login" className="text-slate-400 hover:text-plum-400 underline transition">Admin</Link>
                     </div>
                 </div>
             </footer>
@@ -685,7 +685,7 @@ const Home = () => {
             {/* Hero Section */}
             <section className="text-center max-w-4xl mx-auto py-8 md:py-12">
                 <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-                    Compare medication prices and find verified assistance programs <span className="text-emerald-600">in one place.</span>
+                    Compare medication prices and find verified assistance programs <span className="text-plum-600">in one place.</span>
                 </h1>
                 <p className="text-lg md:text-xl font-medium italic text-slate-500 mb-4 tracking-wide">
                     From Prescription to Possession
@@ -705,7 +705,7 @@ const Home = () => {
                     </Link>
                     <Link
                         to="/education/appeals"
-                        className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition flex items-center gap-3"
+                        className="w-full sm:w-auto px-8 py-4 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-xl transition flex items-center gap-3"
                         aria-label="Get help with insurance denials"
                     >
                         <ShieldAlert size={20} aria-hidden="true" />
@@ -726,12 +726,12 @@ const Home = () => {
 
                 {/* Stats Banner */}
                 <div className="grid grid-cols-3 gap-3 md:gap-6 mt-10 max-w-3xl mx-auto">
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
+                    <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <Pill size={20} className="md:hidden" />
                             <Pill size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">184</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">184</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Medications</div>
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 md:p-6 text-center border border-amber-200 shadow-sm hover:shadow-md transition-shadow">
@@ -742,12 +742,12 @@ const Home = () => {
                         <div className="text-2xl md:text-4xl font-extrabold text-amber-700">60+</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Assistance Programs</div>
                     </div>
-                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
+                    <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <CreditCard size={20} className="md:hidden" />
                             <CreditCard size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">65+</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">65+</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Copay Cards</div>
                     </div>
                 </div>
@@ -755,19 +755,19 @@ const Home = () => {
 
             {/* Epic / MyChart Badge */}
             <div className="flex justify-center max-w-4xl mx-auto">
-                <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-emerald-50 to-green-50 border-2 border-emerald-300 rounded-2xl shadow-md">
+                <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-plum-50 to-green-50 border-2 border-plum-300 rounded-2xl shadow-md">
                     <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 bg-emerald-500 rounded-full ring-4 ring-emerald-100" aria-hidden="true" />
+                        <div className="w-4 h-4 bg-plum-500 rounded-full ring-4 ring-plum-100" aria-hidden="true" />
                         <span className="text-base md:text-lg font-extrabold text-slate-900">Listed in Epic Connection Hub</span>
                     </div>
-                    <div className="w-px h-8 bg-emerald-300" aria-hidden="true" />
-                    <span className="text-base md:text-lg font-extrabold text-emerald-700">MyChart Integrated</span>
+                    <div className="w-px h-8 bg-plum-300" aria-hidden="true" />
+                    <span className="text-base md:text-lg font-extrabold text-plum-700">MyChart Integrated</span>
                 </div>
             </div>
 
             {/* Features Grid */}
             <section className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" aria-label="Key features">
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-100 transition">
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-plum-100 transition">
                     <div className="w-12 h-12 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
                         <BookOpen size={24} />
                     </div>
@@ -775,25 +775,25 @@ const Home = () => {
                     <p className="text-slate-600 mb-4">
                         Learn how to fill out Patient Assistance Program (PAP) applications yourself—for free.
                     </p>
-                    <Link to="/application-help" className="text-emerald-700 font-medium hover:underline inline-flex items-center gap-1" aria-label="View application guide">
+                    <Link to="/application-help" className="text-plum-700 font-medium hover:underline inline-flex items-center gap-1" aria-label="View application guide">
                         View Guide <ArrowRight size={16} aria-hidden="true" />
                     </Link>
                 </div>
 
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-100 transition">
-                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-plum-100 transition">
+                    <div className="w-12 h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
                         <ShieldCheck size={24} />
                     </div>
                     <h2 className="text-xl font-bold text-slate-900 mb-2">Coverage Education</h2>
                     <p className="text-slate-600 mb-4">
                         Learn about Insurance, Medicare (including Part B-ID for kidney patients), Medicaid, and IHS benefits.
                     </p>
-                    <Link to="/education" className="text-emerald-700 font-medium hover:underline inline-flex items-center gap-1" aria-label="Learn about coverage options">
+                    <Link to="/education" className="text-plum-700 font-medium hover:underline inline-flex items-center gap-1" aria-label="Learn about coverage options">
                         Learn About Coverage <ArrowRight size={16} aria-hidden="true" />
                     </Link>
                 </div>
 
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-100 transition">
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-plum-100 transition">
                     <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
                         <Search size={24} />
                     </div>
@@ -801,7 +801,7 @@ const Home = () => {
                     <p className="text-slate-600 mb-4">
                         Direct, safe links to manufacturer programs, foundations, and government sites. No scams.
                     </p>
-                    <Link to="/education" className="text-emerald-700 font-medium hover:underline inline-flex items-center gap-1" aria-label="Browse available resources">
+                    <Link to="/education" className="text-plum-700 font-medium hover:underline inline-flex items-center gap-1" aria-label="Browse available resources">
                         Browse Resources <ArrowRight size={16} aria-hidden="true" />
                     </Link>
                 </div>
@@ -809,9 +809,9 @@ const Home = () => {
 
             {/* Real Patient Savings Story */}
             <section className="max-w-4xl mx-auto" aria-labelledby="savings-story-heading">
-                <div className="bg-gradient-to-br from-emerald-50 to-sky-50 rounded-2xl border-2 border-emerald-200 p-8 md:p-10 shadow-lg">
+                <div className="bg-gradient-to-br from-plum-50 to-sky-50 rounded-2xl border-2 border-plum-200 p-8 md:p-10 shadow-lg">
                     <div className="text-center mb-6">
-                        <span className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-1.5 rounded-full text-sm font-bold">
+                        <span className="inline-flex items-center gap-2 bg-plum-100 text-plum-800 px-4 py-1.5 rounded-full text-sm font-bold">
                             <DollarSign size={16} aria-hidden="true" />
                             Real Patient Story
                         </span>
@@ -820,12 +820,12 @@ const Home = () => {
                     <blockquote className="text-center">
                         <p className="text-xl md:text-2xl text-slate-800 leading-relaxed mb-6">
                             "My prescription was <span className="line-through text-slate-500">$624</span>. With insurance it dropped to <span className="line-through text-slate-500">$195</span>.
-                            But nobody told me about copay cards. I found one myself and now I pay just <strong className="text-emerald-700">$10</strong>."
+                            But nobody told me about copay cards. I found one myself and now I pay just <strong className="text-plum-700">$10</strong>."
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-6">
-                            <div className="bg-white rounded-xl px-6 py-4 shadow-sm border border-emerald-100">
-                                <div className="text-3xl font-extrabold text-emerald-600">$2,220</div>
+                            <div className="bg-white rounded-xl px-6 py-4 shadow-sm border border-plum-100">
+                                <div className="text-3xl font-extrabold text-plum-600">$2,220</div>
                                 <div className="text-sm text-slate-600 font-medium">Saved Per Year</div>
                             </div>
                             <div className="text-slate-600 text-sm max-w-xs">
@@ -837,7 +837,7 @@ const Home = () => {
             </section>
 
             {/* Mission & Vision Section */}
-            <section className="bg-emerald-900 rounded-3xl overflow-hidden shadow-2xl text-white my-16 max-w-6xl mx-auto" aria-labelledby="mission-heading">
+            <section className="bg-plum-900 rounded-3xl overflow-hidden shadow-2xl text-white my-16 max-w-6xl mx-auto" aria-labelledby="mission-heading">
 
                 {/* 988 Mental Health Hotline Banner */}
                 <div className="bg-gradient-to-r from-plum-600 to-plum-700 border-b-2 border-plum-800 px-6 py-4">
@@ -856,49 +856,49 @@ const Home = () => {
 
                 {/* Centered Badge Header */}
                 <div className="pt-10 pb-2 text-center">
-                    <div className="inline-flex items-center gap-2 bg-emerald-950/60 border border-emerald-700/50 px-5 py-2 rounded-full text-emerald-100 text-sm font-bold shadow-lg">
-                        <UserCheck size={18} className="text-emerald-400" aria-hidden="true" />
+                    <div className="inline-flex items-center gap-2 bg-plum-950/60 border border-plum-700/50 px-5 py-2 rounded-full text-plum-100 text-sm font-bold shadow-lg">
+                        <UserCheck size={18} className="text-plum-400" aria-hidden="true" />
                         Built by a patient, for patients.
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-2">
-                    <div className="p-8 md:p-12 md:pt-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-emerald-800">
+                    <div className="p-8 md:p-12 md:pt-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-plum-800">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="bg-emerald-800 p-2 rounded-lg" aria-hidden="true"><Anchor size={24} className="text-emerald-200"/></div>
+                            <div className="bg-plum-800 p-2 rounded-lg" aria-hidden="true"><Anchor size={24} className="text-plum-200"/></div>
                             <h2 id="mission-heading" className="text-2xl font-bold tracking-tight">Our Mission</h2>
                         </div>
 
-                        <p className="text-lg text-emerald-100 leading-relaxed">
+                        <p className="text-lg text-plum-100 leading-relaxed">
                             We help transplant patients get the medicine they need. We show you how to find help paying for your medicine. We give you clear, honest information.
                         </p>
                     </div>
-                    <div className="p-8 md:p-12 md:pt-8 flex flex-col justify-center bg-emerald-800/50">
+                    <div className="p-8 md:p-12 md:pt-8 flex flex-col justify-center bg-plum-800/50">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="bg-emerald-700 p-2 rounded-lg" aria-hidden="true"><Heart size={24} className="text-emerald-200"/></div>
+                            <div className="bg-plum-700 p-2 rounded-lg" aria-hidden="true"><Heart size={24} className="text-plum-200"/></div>
                             <h2 className="text-2xl font-bold tracking-tight">Our Vision</h2>
                         </div>
-                        <p className="text-lg text-emerald-100 leading-relaxed">
+                        <p className="text-lg text-plum-100 leading-relaxed">
                             Every transplant patient deserves a fair chance. You should not lose your health because medicine costs too much.
                         </p>
                     </div>
                 </div>
 
                 {/* Core Values / "The Why" */}
-                <div className="bg-emerald-950/50 p-8 md:p-10 border-t border-emerald-800">
-                    <h3 className="text-center font-bold text-emerald-100 uppercase tracking-wider text-sm mb-8">Why We Built This</h3>
+                <div className="bg-plum-950/50 p-8 md:p-10 border-t border-plum-800">
+                    <h3 className="text-center font-bold text-plum-100 uppercase tracking-wider text-sm mb-8">Why We Built This</h3>
                     <div className="grid md:grid-cols-3 gap-8 text-center">
                         <div>
                             <h4 className="font-bold text-white text-lg mb-2">Easy to Understand</h4>
-                            <p className="text-emerald-100 text-sm">We break down hard forms into easy steps so you don't need a college degree to get help with your medicine.</p>
+                            <p className="text-plum-100 text-sm">We break down hard forms into easy steps so you don't need a college degree to get help with your medicine.</p>
                         </div>
                         <div>
                             <h4 className="font-bold text-white text-lg mb-2">A Safe Place</h4>
-                            <p className="text-emerald-100 text-sm">We are on your side. We do not sell your info. We do not work for any pharmacy. We help protect you from people trying to trick you.</p>
+                            <p className="text-plum-100 text-sm">We are on your side. We do not sell your info. We do not work for any pharmacy. We help protect you from people trying to trick you.</p>
                         </div>
                         <div>
                             <h4 className="font-bold text-white text-lg mb-2">Save Money</h4>
-                            <p className="text-emerald-100 text-sm">We show you prices and free medicine programs all in one place. You can pick what works best for you.</p>
+                            <p className="text-plum-100 text-sm">We show you prices and free medicine programs all in one place. You can pick what works best for you.</p>
                         </div>
                     </div>
                 </div>
@@ -908,7 +908,7 @@ const Home = () => {
             <section className="text-center max-w-4xl mx-auto py-8">
                 <Link
                     to="/wizard"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                     aria-label="Start your personalized medication path"
                 >
                     <Map size={20} aria-hidden="true" />
@@ -920,10 +920,10 @@ const Home = () => {
             </section>
 
             {/* Created by Someone Who's Been There */}
-            <section className="bg-gradient-to-br from-slate-50 to-emerald-50 border-2 border-emerald-200 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto" aria-labelledby="founder-heading">
+            <section className="bg-gradient-to-br from-slate-50 to-plum-50 border-2 border-plum-200 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto" aria-labelledby="founder-heading">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="bg-emerald-100 p-2 rounded-lg" aria-hidden="true">
-                        <Heart size={24} className="text-emerald-600"/>
+                    <div className="bg-plum-100 p-2 rounded-lg" aria-hidden="true">
+                        <Heart size={24} className="text-plum-600"/>
                     </div>
                     <h2 id="founder-heading" className="text-xl md:text-2xl font-bold text-slate-900">
                         Created by Someone Who's Been There
@@ -935,12 +935,12 @@ const Home = () => {
                     <img
                         src="/photos/lorrinda-gray-davis.jpg"
                         alt="Lorrinda Gray-Davis, founder of AMedNav"
-                        className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-emerald-200 shadow-lg flex-shrink-0"
+                        className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-plum-200 shadow-lg flex-shrink-0"
                         onError={(e) => { e.target.style.display = 'none'; }}
                     />
                     <div>
                         <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-1">Lorrinda Gray-Davis</h3>
-                        <p className="text-emerald-700 font-medium text-sm mb-3">
+                        <p className="text-plum-700 font-medium text-sm mb-3">
                             Liver cancer survivor, liver transplant recipient, and President of Transplant Recipients International Organization (TRIO)
                         </p>
                         <p className="text-slate-700 leading-relaxed mb-3">
@@ -954,16 +954,16 @@ const Home = () => {
 
                 {/* Impact Stats */}
                 <div className="grid grid-cols-3 gap-3 mb-8">
-                    <div className="bg-white/80 rounded-xl p-4 text-center border border-emerald-100">
-                        <p className="text-2xl md:text-3xl font-extrabold text-emerald-700">7</p>
+                    <div className="bg-white/80 rounded-xl p-4 text-center border border-plum-100">
+                        <p className="text-2xl md:text-3xl font-extrabold text-plum-700">7</p>
                         <p className="text-xs md:text-sm text-slate-600 font-medium">Years Post-Transplant</p>
                     </div>
-                    <div className="bg-white/80 rounded-xl p-4 text-center border border-emerald-100">
-                        <p className="text-2xl md:text-3xl font-extrabold text-emerald-700">183</p>
+                    <div className="bg-white/80 rounded-xl p-4 text-center border border-plum-100">
+                        <p className="text-2xl md:text-3xl font-extrabold text-plum-700">183</p>
                         <p className="text-xs md:text-sm text-slate-600 font-medium">Transplants Facilitated</p>
                     </div>
-                    <div className="bg-white/80 rounded-xl p-4 text-center border border-emerald-100">
-                        <p className="text-2xl md:text-3xl font-extrabold text-emerald-700">500+</p>
+                    <div className="bg-white/80 rounded-xl p-4 text-center border border-plum-100">
+                        <p className="text-2xl md:text-3xl font-extrabold text-plum-700">500+</p>
                         <p className="text-xs md:text-sm text-slate-600 font-medium">Patients Supported</p>
                     </div>
                 </div>
@@ -971,7 +971,7 @@ const Home = () => {
                 {/* Credentials & Roles */}
                 <div className="mb-8">
                     <div className="flex items-center gap-2 mb-3">
-                        <Award size={18} className="text-emerald-600" aria-hidden="true" />
+                        <Award size={18} className="text-plum-600" aria-hidden="true" />
                         <h3 className="text-base md:text-lg font-bold text-slate-900">Leadership & Recognition</h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -983,8 +983,8 @@ const Home = () => {
                             'HRSA Commendation Letter',
                             'Co-First Author, Hepatology Communications'
                         ].map((credential) => (
-                            <span key={credential} className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-slate-700 text-xs md:text-sm font-medium px-3 py-1.5 rounded-full">
-                                <CheckCircle size={14} className="text-emerald-500 flex-shrink-0" aria-hidden="true" />
+                            <span key={credential} className="inline-flex items-center gap-1.5 bg-white border border-plum-200 text-slate-700 text-xs md:text-sm font-medium px-3 py-1.5 rounded-full">
+                                <CheckCircle size={14} className="text-plum-500 flex-shrink-0" aria-hidden="true" />
                                 {credential}
                             </span>
                         ))}
@@ -994,13 +994,13 @@ const Home = () => {
                 {/* Published Research & Presentations */}
                 <div>
                     <div className="flex items-center gap-2 mb-4">
-                        <BookOpen size={18} className="text-emerald-600" aria-hidden="true" />
+                        <BookOpen size={18} className="text-plum-600" aria-hidden="true" />
                         <h3 className="text-base md:text-lg font-bold text-slate-900">Published Research & Presentations (7 Publications)</h3>
                     </div>
                     <div className="space-y-4">
                         {/* Peer-Reviewed Journal */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
-                            <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mb-2">Peer-Reviewed Journal</span>
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
+                            <span className="inline-block bg-plum-100 text-plum-800 text-xs font-bold px-2 py-0.5 rounded mb-2">Peer-Reviewed Journal</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
                                 Enhancing Care in Alcohol-Associated Liver Disease Through Peer Support for Alcohol Use Disorder
                             </p>
@@ -1013,8 +1013,8 @@ const Home = () => {
                         </div>
 
                         {/* Peer-Reviewed Journal 2 */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
-                            <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mb-2">Peer-Reviewed Journal</span>
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
+                            <span className="inline-block bg-plum-100 text-plum-800 text-xs font-bold px-2 py-0.5 rounded mb-2">Peer-Reviewed Journal</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
                                 Fight Songs: Why Transplant Patients Battling for Life Deserve Positive Anthems, Too
                             </p>
@@ -1027,7 +1027,7 @@ const Home = () => {
                         </div>
 
                         {/* Poster of Distinction 1 */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
                             <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mb-2">
                                 <Star size={12} aria-hidden="true" /> Poster of Distinction
                             </span>
@@ -1040,7 +1040,7 @@ const Home = () => {
                         </div>
 
                         {/* Poster of Distinction 2 */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
                             <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mb-2">
                                 <Star size={12} aria-hidden="true" /> Poster of Distinction
                             </span>
@@ -1053,7 +1053,7 @@ const Home = () => {
                         </div>
 
                         {/* Conference Poster 1 */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
                             <span className="inline-block bg-slate-100 text-slate-700 text-xs font-bold px-2 py-0.5 rounded mb-2">Conference Poster</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
                                 Mental Health Needs of Patients Seeking Support Through TRIO
@@ -1064,7 +1064,7 @@ const Home = () => {
                         </div>
 
                         {/* Conference Poster 2 */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
                             <span className="inline-block bg-slate-100 text-slate-700 text-xs font-bold px-2 py-0.5 rounded mb-2">Conference Poster</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
                                 Value of Educational Components of a Peer-to-Peer Mentoring Program: A TRIO Study
@@ -1075,7 +1075,7 @@ const Home = () => {
                         </div>
 
                         {/* World Transplant Congress */}
-                        <div className="bg-white/80 border border-emerald-100 rounded-xl p-4">
+                        <div className="bg-white/80 border border-plum-100 rounded-xl p-4">
                             <span className="inline-block bg-plum-100 text-plum-800 text-xs font-bold px-2 py-0.5 rounded mb-2">World Transplant Congress</span>
                             <p className="text-slate-900 font-semibold text-sm leading-snug mb-1">
                                 Do Social Determinants of Health Contribute to Inactivation of Adult Kidney Candidates?
@@ -1088,7 +1088,7 @@ const Home = () => {
                 </div>
 
                 <div className="mt-6 text-center">
-                    <a href="https://www.lorrindagraydavis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold underline">
+                    <a href="https://www.lorrindagraydavis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-plum-600 hover:text-plum-700 font-semibold underline">
                         Learn more about Lorrinda <ExternalLink size={14} aria-hidden="true" />
                     </a>
                 </div>
@@ -1284,7 +1284,7 @@ const OrganMedicationGuide = ({ answers, onMedicationClick }) => {
         <div className="mb-6">
             <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
-                    <Pill size={18} className="text-emerald-600" />
+                    <Pill size={18} className="text-plum-600" />
                     <h3 className="font-bold text-slate-800">Common Medications by Organ Type</h3>
                 </div>
                 <p className="text-sm text-slate-600 mb-4">
@@ -1303,15 +1303,15 @@ const OrganMedicationGuide = ({ answers, onMedicationClick }) => {
                                 onClick={() => handleOrganClick(organ)}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition font-medium text-sm ${
                                     isExpanded
-                                        ? 'bg-emerald-600 text-white border-emerald-600'
+                                        ? 'bg-plum-600 text-white border-plum-600'
                                         : isSelected
-                                            ? 'bg-emerald-50 text-emerald-700 border-emerald-300 hover:border-emerald-400'
-                                            : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-300 hover:bg-emerald-50'
+                                            ? 'bg-plum-50 text-plum-700 border-plum-300 hover:border-plum-400'
+                                            : 'bg-white text-slate-700 border-slate-200 hover:border-plum-300 hover:bg-plum-50'
                                 }`}
                             >
                                 <IconComponent size={16} />
                                 {organ}
-                                {isSelected && !isExpanded && <CheckCircle size={14} className="text-emerald-600" />}
+                                {isSelected && !isExpanded && <CheckCircle size={14} className="text-plum-600" />}
                                 <ChevronDown size={14} className={`transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                             </button>
                         );
@@ -1324,7 +1324,7 @@ const OrganMedicationGuide = ({ answers, onMedicationClick }) => {
                         <div className="flex items-start gap-3 mb-4">
                             {(() => {
                                 const IconComponent = organIcons[expandedOrgan];
-                                return <IconComponent size={24} className="text-emerald-600 flex-shrink-0 mt-1" />;
+                                return <IconComponent size={24} className="text-plum-600 flex-shrink-0 mt-1" />;
                             })()}
                             <div>
                                 <h4 className="font-bold text-lg text-slate-900">{ORGAN_MEDICATIONS[expandedOrgan].title}</h4>
@@ -1349,9 +1349,9 @@ const OrganMedicationGuide = ({ answers, onMedicationClick }) => {
                                                 <td className="py-3 px-3">
                                                     <button
                                                         onClick={() => onMedicationClick && onMedicationClick(med.id)}
-                                                        className="text-left hover:text-emerald-700 transition-colors group"
+                                                        className="text-left hover:text-plum-700 transition-colors group"
                                                     >
-                                                        <span className="font-bold text-slate-900 group-hover:text-emerald-700 underline decoration-dotted underline-offset-2">{med.brand}</span>
+                                                        <span className="font-bold text-slate-900 group-hover:text-plum-700 underline decoration-dotted underline-offset-2">{med.brand}</span>
                                                         <span className="text-slate-500 ml-1">({med.name})</span>
                                                     </button>
                                                 </td>
@@ -1706,7 +1706,7 @@ const Wizard = () => {
                 {/* Progress bar - consistent emerald color for accessibility */}
                 <div className="w-full bg-slate-200 h-3 rounded-full overflow-hidden" role="progressbar" aria-valuenow={(displayStep / totalVisibleSteps) * 100} aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress">
                     <div
-                        className="bg-emerald-600 h-3 rounded-full transition-all duration-300"
+                        className="bg-plum-600 h-3 rounded-full transition-all duration-300"
                         style={{ width: `${(displayStep / totalVisibleSteps) * 100}%` }}
                     ></div>
                 </div>
@@ -1760,7 +1760,7 @@ const Wizard = () => {
             <div className="max-w-2xl mx-auto">
 
                 {renderProgress()}
-                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
+                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="flex items-center gap-3 mb-2">
                     <div className="bg-plum-100 p-2 rounded-lg">
                         <Shield size={24} className="text-plum-600" />
@@ -1853,7 +1853,7 @@ const Wizard = () => {
                 <button
                     disabled={!answers.insurance}
                     onClick={handleNextFromInsurance}
-                    className="w-full py-3 bg-emerald-700 disabled:bg-slate-300 text-white font-bold rounded-lg disabled:cursor-not-allowed transition hover:bg-emerald-800"
+                    className="w-full py-3 bg-plum-700 disabled:bg-slate-300 text-white font-bold rounded-lg disabled:cursor-not-allowed transition hover:bg-plum-800"
                     aria-label="Continue to next section"
                 >
                     Next Section
@@ -1898,8 +1898,8 @@ const Wizard = () => {
                 {/* Medication Search Box */}
                 <div className="mb-6 bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                     <div className="flex items-center gap-2 mb-3">
-                        <Search size={18} className="text-emerald-600" />
-                        <h3 className="font-bold text-slate-800">Type in medication and hit the <span className="text-emerald-600">+</span> button to add to your list</h3>
+                        <Search size={18} className="text-plum-600" />
+                        <h3 className="font-bold text-slate-800">Type in medication and hit the <span className="text-plum-600">+</span> button to add to your list</h3>
                     </div>
                     <div className="relative">
                         <label htmlFor="wizard-med-search" className="sr-only">Search for medications</label>
@@ -1908,7 +1908,7 @@ const Wizard = () => {
                             id="wizard-med-search"
                             type="text"
                             placeholder="Type medication name (e.g. Prograf, tacrolimus)..."
-                            className="w-full pl-10 pr-10 py-3 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition"
+                            className="w-full pl-10 pr-10 py-3 rounded-lg border border-slate-300 focus:border-plum-500 focus:ring-2 focus:ring-plum-100 outline-none transition"
                             value={medSearchTerm}
                             onChange={(e) => setMedSearchTerm(e.target.value)}
                             onKeyDown={(e) => {
@@ -1917,7 +1917,7 @@ const Wizard = () => {
                         />
                         {isMedSearching ? (
                             <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                                <Loader2 size={18} className="text-emerald-600 animate-spin" aria-label="Searching" />
+                                <Loader2 size={18} className="text-plum-600 animate-spin" aria-label="Searching" />
                             </div>
                         ) : medSearchTerm && (
                             <button onClick={() => { setMedSearchTerm(''); setMedSearchResult(null); }} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" aria-label="Clear search">
@@ -1936,16 +1936,16 @@ const Wizard = () => {
                                                 key={med.id}
                                                 onClick={() => addMedFromSearch(med.id)}
                                                 disabled={isAlreadySelected}
-                                                className="w-full text-left p-3 hover:bg-emerald-50 flex justify-between items-center transition disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className="w-full text-left p-3 hover:bg-plum-50 flex justify-between items-center transition disabled:opacity-50 disabled:cursor-not-allowed"
                                             >
                                                 <div>
                                                     <span className="font-bold text-slate-900">{med.brandName}</span>
                                                     <span className="text-sm text-slate-600 ml-2">({med.genericName})</span>
                                                 </div>
                                                 {isAlreadySelected ? (
-                                                    <span className="text-emerald-600 text-sm font-medium flex items-center gap-1"><CheckCircle size={14} /> Added</span>
+                                                    <span className="text-plum-600 text-sm font-medium flex items-center gap-1"><CheckCircle size={14} /> Added</span>
                                                 ) : (
-                                                    <span className="text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1"><PlusCircle size={12} /> Add</span>
+                                                    <span className="text-plum-600 bg-plum-100 px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1"><PlusCircle size={12} /> Add</span>
                                                 )}
                                             </button>
                                         );
@@ -1962,17 +1962,17 @@ const Wizard = () => {
 
                 {/* Selected Medications Display */}
                 {(answers.medications || []).length > 0 && (
-                    <div className="mb-6 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <div className="mb-6 bg-plum-50 border border-plum-200 rounded-xl p-4">
                         <div className="flex items-center gap-2 mb-3">
-                            <CheckCircle size={18} className="text-emerald-600" />
+                            <CheckCircle size={18} className="text-plum-600" />
                             <h3 className="font-bold text-slate-800">Your Selected Medications ({(answers.medications || []).length})</h3>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {(answers.medications || []).map(id => {
                                 const med = MEDICATIONS.find(m => m.id === id);
                                 return (
-                                    <span key={id} className="bg-white text-slate-700 px-3 py-1.5 rounded-full text-sm border border-emerald-200 shadow-sm flex items-center gap-2">
-                                        <Pill size={14} className="text-emerald-600" />
+                                    <span key={id} className="bg-white text-slate-700 px-3 py-1.5 rounded-full text-sm border border-plum-200 shadow-sm flex items-center gap-2">
+                                        <Pill size={14} className="text-plum-600" />
                                         {med?.brandName?.split('/')[0] || id}
                                         <button
                                             onClick={() => handleMultiSelect('medications', id)}
@@ -2003,7 +2003,7 @@ const Wizard = () => {
 
                 <button
                     onClick={handleNextFromMeds}
-                    className="w-full py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-emerald-700 hover:bg-emerald-800 text-white cursor-pointer"
+                    className="w-full py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-plum-700 hover:bg-plum-800 text-white cursor-pointer"
                     aria-label="Continue to next section"
                 >
                     My medications look right — continue →
@@ -2018,7 +2018,7 @@ const Wizard = () => {
             <div className="max-w-2xl mx-auto">
 
                 {renderProgress()}
-                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
+                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="flex items-center gap-3 mb-2">
                     <div className="bg-amber-100 p-2 rounded-lg">
                         <DollarSign size={24} className="text-amber-600" />
@@ -2041,11 +2041,11 @@ const Wizard = () => {
                         const isSelected = answers.financialStatus === opt.val;
                         const colorStyles = {
                             emerald: {
-                                selected: 'border-emerald-600 bg-emerald-100 ring-2 ring-emerald-300',
-                                unselected: 'border-emerald-300 bg-emerald-50 hover:border-emerald-500 hover:bg-emerald-100',
-                                label: isSelected ? 'text-emerald-800' : 'text-emerald-700',
-                                desc: isSelected ? 'text-emerald-700' : 'text-emerald-600',
-                                icon: 'text-emerald-600'
+                                selected: 'border-plum-600 bg-plum-100 ring-2 ring-plum-300',
+                                unselected: 'border-plum-300 bg-plum-50 hover:border-plum-500 hover:bg-plum-100',
+                                label: isSelected ? 'text-plum-800' : 'text-plum-700',
+                                desc: isSelected ? 'text-plum-700' : 'text-plum-600',
+                                icon: 'text-plum-600'
                             },
                             amber: {
                                 selected: 'border-amber-600 bg-amber-100 ring-2 ring-amber-300',
@@ -2106,7 +2106,7 @@ const Wizard = () => {
                 {/* Back Button */}
                 <button
                     onClick={() => setStep(3)}
-                    className="text-slate-700 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px] min-w-[44px] no-print"
+                    className="text-slate-700 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px] no-print"
                     aria-label="Go back to previous step"
                 >
                     <ChevronLeft size={16} aria-hidden="true" /> Back
@@ -2116,7 +2116,7 @@ const Wizard = () => {
                 <div className={`p-8 rounded-2xl shadow-xl text-white flex justify-between items-start ${
                     financial === FinancialStatus.CRISIS || financial === FinancialStatus.UNAFFORDABLE
                     ? 'bg-plum-900'
-                    : 'bg-emerald-900'
+                    : 'bg-plum-900'
                 }`}>
                     <div>
                         <h1 className="text-3xl font-bold mb-2">Your Medication Strategy</h1>
@@ -2168,7 +2168,7 @@ const Wizard = () => {
                                         id="results-med-search"
                                         type="text"
                                         placeholder="Add more medications..."
-                                        className="w-full pl-9 pr-8 py-2 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition text-sm"
+                                        className="w-full pl-9 pr-8 py-2 rounded-lg border border-slate-300 focus:border-plum-500 focus:ring-2 focus:ring-plum-100 outline-none transition text-sm"
                                         value={medSearchTerm}
                                         onChange={(e) => setMedSearchTerm(e.target.value)}
                                         onKeyDown={(e) => {
@@ -2192,16 +2192,16 @@ const Wizard = () => {
                                                             key={med.id}
                                                             onClick={() => addMedFromSearch(med.id)}
                                                             disabled={isAlreadySelected}
-                                                            className="w-full text-left p-2 hover:bg-emerald-50 flex justify-between items-center transition disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                                                            className="w-full text-left p-2 hover:bg-plum-50 flex justify-between items-center transition disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                                                         >
                                                             <div>
                                                                 <span className="font-medium text-slate-900">{med.brandName}</span>
                                                                 <span className="text-slate-500 ml-1">({med.genericName})</span>
                                                             </div>
                                                             {isAlreadySelected ? (
-                                                                <span className="text-emerald-600 text-xs"><CheckCircle size={14} /></span>
+                                                                <span className="text-plum-600 text-xs"><CheckCircle size={14} /></span>
                                                             ) : (
-                                                                <span className="text-emerald-600 text-xs"><PlusCircle size={14} /></span>
+                                                                <span className="text-plum-600 text-xs"><PlusCircle size={14} /></span>
                                                             )}
                                                         </button>
                                                     );
@@ -2220,7 +2220,7 @@ const Wizard = () => {
                                 {answers.medications.length > 0 && (
                                     <Link
                                         to={`/medications?ids=${answers.medications.join(',')}`}
-                                        className="w-full block text-center py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-lg shadow-md transition-all flex items-center justify-center gap-2"
+                                        className="w-full block text-center py-4 bg-plum-600 hover:bg-plum-700 text-white rounded-xl font-bold text-lg shadow-md transition-all flex items-center justify-center gap-2"
                                         aria-label="View price estimates for your selected medications"
                                     >
                                         <DollarSign size={22} aria-hidden="true" />
@@ -2236,13 +2236,13 @@ const Wizard = () => {
                             
                             <Link to="/application-help" className="flex items-center justify-between p-3 rounded-lg border border-slate-100 hover:bg-slate-50 group transition" aria-label="View application education guide">
                                 <div className="flex items-center gap-3">
-                                    <div className="bg-emerald-100 text-emerald-600 p-2 rounded" aria-hidden="true"><HeartHandshake size={18} /></div>
+                                    <div className="bg-plum-100 text-plum-600 p-2 rounded" aria-hidden="true"><HeartHandshake size={18} /></div>
                                     <div>
                                         <span className="font-bold text-slate-800 block text-sm">Application Education</span>
                                         <span className="text-xs text-slate-600">Scripts, checklists, and templates</span>
                                     </div>
                                 </div>
-                                <ArrowRight size={16} className="text-slate-300 group-hover:text-emerald-600 no-print" aria-hidden="true" />
+                                <ArrowRight size={16} className="text-slate-300 group-hover:text-plum-600 no-print" aria-hidden="true" />
                             </Link>
 
                             <Link to="/education" className="flex items-center justify-between p-3 rounded-lg border border-slate-100 hover:bg-slate-50 group transition mt-2" aria-label="View insurance and resources">
@@ -2253,7 +2253,7 @@ const Wizard = () => {
                                         <span className="text-xs text-slate-600">Medicaid directory, Medicare guides</span>
                                     </div>
                                 </div>
-                                <ArrowRight size={16} className="text-slate-300 group-hover:text-emerald-600 no-print" aria-hidden="true" />
+                                <ArrowRight size={16} className="text-slate-300 group-hover:text-plum-600 no-print" aria-hidden="true" />
                             </Link>
                         </section>
                     </div>
@@ -2262,13 +2262,13 @@ const Wizard = () => {
                     <div className="space-y-6">
                         {financial === FinancialStatus.MANAGEABLE && (
                             <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200" aria-labelledby="savings-heading">
-                                <h2 id="savings-heading" className="text-lg font-bold text-emerald-800 border-b pb-2 mb-4 flex items-center gap-2">
+                                <h2 id="savings-heading" className="text-lg font-bold text-plum-800 border-b pb-2 mb-4 flex items-center gap-2">
                                     <DollarSign size={20} aria-hidden="true" /> Maximize Your Savings
                                 </h2>
                                 <ul className="space-y-4 text-slate-700">
                                     {isCommercial && (
                                         <li className="flex gap-3 items-start">
-                                            <div className="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Priority recommendation">Priority</div>
+                                            <div className="bg-plum-100 text-plum-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Priority recommendation">Priority</div>
                                             <div>
                                                 <strong>Use Manufacturer <TermTooltip term="copay">Copay</TermTooltip> Cards.</strong>
                                                 <p className="text-sm text-slate-600 mt-1">Even if you can afford the copay, these cards can lower it to as little as $0. Look up each of your brand name meds.</p>
@@ -2365,7 +2365,7 @@ const Wizard = () => {
                 </div>
 
                 <div className="text-center pt-8 border-t border-slate-100 no-print">
-                    <button onClick={() => setStep(1)} className="text-slate-700 hover:text-emerald-600 text-sm underline min-h-[44px] px-4" aria-label="Restart the wizard from beginning">Restart Wizard</button>
+                    <button onClick={() => setStep(1)} className="text-slate-700 hover:text-plum-600 text-sm underline min-h-[44px] px-4" aria-label="Restart the wizard from beginning">Restart Wizard</button>
                 </div>
             </article>
         );
@@ -2634,7 +2634,7 @@ const MedicationSearch = () => {
                                 id="med-search"
                                 type="text"
                                 placeholder="Enter drug name (e.g. Prograf, Ozempic)..."
-                                className="w-full pl-12 pr-12 py-4 rounded-xl border border-slate-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none text-lg transition shadow-sm"
+                                className="w-full pl-12 pr-12 py-4 rounded-xl border border-slate-300 focus:border-plum-500 focus:ring-4 focus:ring-plum-100 outline-none text-lg transition shadow-sm"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 onKeyDown={(e) => {
@@ -2648,7 +2648,7 @@ const MedicationSearch = () => {
                             <span id="search-instructions" className="sr-only">Type medication name and press enter or click search button</span>
                             {isSearching ? (
                                 <div className="absolute right-4 top-1/2 -translate-y-1/2" aria-live="polite" aria-busy="true">
-                                    <Loader2 size={20} className="text-emerald-600 animate-spin" aria-label="Searching" />
+                                    <Loader2 size={20} className="text-plum-600 animate-spin" aria-label="Searching" />
                                 </div>
                             ) : searchTerm && (
                                 <button onClick={() => { setSearchTerm(''); setSearchResult(null); setIsSearching(false); }} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Clear search">
@@ -2656,7 +2656,7 @@ const MedicationSearch = () => {
                                 </button>
                             )}
                         </div>
-                        <button onClick={handleSearch} disabled={!searchTerm.trim()} className="bg-emerald-700 hover:bg-emerald-800 disabled:bg-slate-400 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-md transition flex items-center gap-2 justify-center shrink-0 disabled:cursor-not-allowed min-h-[56px]" aria-label="Search for medications">
+                        <button onClick={handleSearch} disabled={!searchTerm.trim()} className="bg-plum-700 hover:bg-plum-800 disabled:bg-slate-400 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-md transition flex items-center gap-2 justify-center shrink-0 disabled:cursor-not-allowed min-h-[56px]" aria-label="Search for medications">
                             <Search size={22} aria-hidden="true" /> Search
                         </button>
                     </div>
@@ -2664,15 +2664,15 @@ const MedicationSearch = () => {
                     {isSearching && !searchResult && searchTerm && (
                         <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-xl p-4 z-50" role="status" aria-label="Loading search results">
                             <div className="flex items-center justify-center gap-3 text-slate-700 py-4">
-                                <Loader2 size={20} className="animate-spin text-emerald-600" />
+                                <Loader2 size={20} className="animate-spin text-plum-600" />
                                 <span>Searching medications...</span>
                             </div>
                         </div>
                     )}
                     {searchResult && searchTerm && !isSearching && (
                         <div id="search-results-listbox" className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-xl p-2 max-h-[60vh] overflow-y-auto z-50" role="listbox" aria-label="Search results">
-                            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 mb-2 mx-2">
-                                <p className="text-emerald-800 text-sm font-medium">Help is here, let's find it together. Enter your medications and we'll search for savings, patient assistance programs, grants, and affordable pharmacy options.</p>
+                            <div className="bg-plum-50 border border-plum-200 rounded-lg p-3 mb-2 mx-2">
+                                <p className="text-plum-800 text-sm font-medium">Help is here, let's find it together. Enter your medications and we'll search for savings, patient assistance programs, grants, and affordable pharmacy options.</p>
                             </div>
                             <div className="px-4 py-2 text-sm font-bold text-slate-700 uppercase tracking-wider">Search Results</div>
                             {searchResult.internal.length > 0 ? (
@@ -2686,9 +2686,9 @@ const MedicationSearch = () => {
                                                     <span className="text-sm text-slate-600">{med.genericName}</span>
                                                 </div>
                                                 {isAlreadyIn ? (
-                                                    <span className="text-emerald-600 text-sm font-bold flex items-center gap-1" aria-label="Already added"><CheckCircle size={16} aria-hidden="true" /> Added</span>
+                                                    <span className="text-plum-600 text-sm font-bold flex items-center gap-1" aria-label="Already added"><CheckCircle size={16} aria-hidden="true" /> Added</span>
                                                 ) : (
-                                                    <span className="text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full text-sm font-bold group-hover:bg-emerald-100 flex items-center gap-1"><PlusCircle size={16} aria-hidden="true" /> Add</span>
+                                                    <span className="text-plum-600 bg-plum-50 px-3 py-1 rounded-full text-sm font-bold group-hover:bg-plum-100 flex items-center gap-1"><PlusCircle size={16} aria-hidden="true" /> Add</span>
                                                 )}
                                             </button>
                                         )
@@ -2770,7 +2770,7 @@ const MedicationSearch = () => {
                                     id="med-search-add"
                                     type="text"
                                     placeholder="Add another medication..."
-                                    className="w-full pl-12 pr-12 py-3 rounded-xl border border-slate-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none text-base transition shadow-sm"
+                                    className="w-full pl-12 pr-12 py-3 rounded-xl border border-slate-300 focus:border-plum-500 focus:ring-4 focus:ring-plum-100 outline-none text-base transition shadow-sm"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     onKeyDown={(e) => {
@@ -2799,9 +2799,9 @@ const MedicationSearch = () => {
                                                         <span className="text-sm text-slate-600">{med.genericName}</span>
                                                     </div>
                                                     {isAlreadyIn ? (
-                                                        <span className="text-emerald-600 text-sm font-bold flex items-center gap-1"><CheckCircle size={16} /> Added</span>
+                                                        <span className="text-plum-600 text-sm font-bold flex items-center gap-1"><CheckCircle size={16} /> Added</span>
                                                     ) : (
-                                                        <span className="text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1"><PlusCircle size={16} /> Add</span>
+                                                        <span className="text-plum-600 bg-plum-50 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1"><PlusCircle size={16} /> Add</span>
                                                     )}
                                                 </button>
                                             );
@@ -2867,7 +2867,7 @@ const MedicationSearch = () => {
                                             <button
                                                 key={opt.value}
                                                 onClick={() => setContextAnswer('insurance_type', opt.value)}
-                                                className="flex items-center gap-3 p-3 rounded-lg border-2 border-amber-200 bg-white hover:border-emerald-500 hover:bg-emerald-50 transition text-left min-h-[48px]"
+                                                className="flex items-center gap-3 p-3 rounded-lg border-2 border-amber-200 bg-white hover:border-plum-500 hover:bg-plum-50 transition text-left min-h-[48px]"
                                                 aria-label={`Select ${opt.label} as your insurance type`}
                                             >
                                                 <opt.icon size={20} className="text-slate-600 flex-shrink-0" aria-hidden="true" />
@@ -2881,12 +2881,12 @@ const MedicationSearch = () => {
                     )}
 
                     {/* Guidance to click My Medication Savings */}
-                    <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 no-print">
+                    <div className="bg-plum-50 border border-plum-200 rounded-xl p-4 no-print">
                         <div className="flex items-start gap-3">
-                            <DollarSign className="text-emerald-600 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
+                            <DollarSign className="text-plum-600 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
                             <div>
-                                <p className="font-bold text-emerald-800 mb-1">Ready to find savings?</p>
-                                <p className="text-emerald-700 text-sm">Click the <strong>"My Medication Savings"</strong> button below to see where you can save money on each medication. We'll show you copay cards, patient assistance programs, discount pharmacies, and more.</p>
+                                <p className="font-bold text-plum-800 mb-1">Ready to find savings?</p>
+                                <p className="text-plum-700 text-sm">Click the <strong>"My Medication Savings"</strong> button below to see where you can save money on each medication. We'll show you copay cards, patient assistance programs, discount pharmacies, and more.</p>
                             </div>
                         </div>
                     </div>
@@ -2896,14 +2896,14 @@ const MedicationSearch = () => {
             {hasItems && showSavings && (
                 <>
                 {/* Your Options - medication cards explanation */}
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-2xl p-6 mb-6 no-print shadow-md">
+                <div className="bg-gradient-to-r from-plum-50 to-teal-50 border-2 border-plum-300 rounded-2xl p-6 mb-6 no-print shadow-md">
                     <div className="flex items-start gap-4">
-                        <div className="bg-emerald-600 text-white p-3 rounded-full flex-shrink-0">
+                        <div className="bg-plum-600 text-white p-3 rounded-full flex-shrink-0">
                             <Info size={28} aria-hidden="true" />
                         </div>
                         <div className="flex-1">
-                            <h2 className="text-2xl font-bold text-emerald-800 mb-2">Your Options</h2>
-                            <p className="text-emerald-700 text-lg mb-4">Each card shows one of your medications. Click the tabs to see:</p>
+                            <h2 className="text-2xl font-bold text-plum-800 mb-2">Your Options</h2>
+                            <p className="text-plum-700 text-lg mb-4">Each card shows one of your medications. Click the tabs to see:</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div className="flex items-center gap-3 bg-pink-100 border border-pink-300 rounded-xl p-4">
                                     <Heart className="text-pink-600 flex-shrink-0" size={24} aria-hidden="true" />
@@ -2944,12 +2944,12 @@ const MedicationSearch = () => {
                 <div className="flex items-center justify-between mb-4 no-print">
                     <button
                         onClick={() => setShowSavings(false)}
-                        className="text-slate-700 flex items-center gap-1 text-sm hover:text-emerald-600 min-h-[44px]"
+                        className="text-slate-700 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px]"
                         aria-label="Go back to medication list"
                     >
                         <ChevronLeft size={16} aria-hidden="true" /> Back to Medications
                     </button>
-                    <h2 className="text-lg font-bold text-emerald-700">My Medication Savings</h2>
+                    <h2 className="text-lg font-bold text-plum-700">My Medication Savings</h2>
                 </div>
             )}
 
@@ -2994,7 +2994,7 @@ const MedicationSearch = () => {
                             }, 100);
                         }}
                         disabled={!insuranceType}
-                        className={`px-8 py-4 rounded-xl font-bold text-lg shadow-md transition flex items-center gap-2 ${!insuranceType ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-emerald-600 hover:bg-emerald-700 text-white'}`}
+                        className={`px-8 py-4 rounded-xl font-bold text-lg shadow-md transition flex items-center gap-2 ${!insuranceType ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-plum-600 hover:bg-plum-700 text-white'}`}
                     >
                         My Medication Savings
                     </button>
@@ -3013,10 +3013,10 @@ const MedicationSearch = () => {
             )}
 
             {hasItems && !showSavings && (
-                <section className="bg-gradient-to-r from-emerald-50 to-sky-50 border border-emerald-200 rounded-xl p-6 shadow-sm no-print" aria-labelledby="app-guide-heading">
+                <section className="bg-gradient-to-r from-plum-50 to-sky-50 border border-plum-200 rounded-xl p-6 shadow-sm no-print" aria-labelledby="app-guide-heading">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                         <div className="flex items-start gap-4">
-                            <div className="bg-emerald-600 text-white p-3 rounded-full" aria-hidden="true">
+                            <div className="bg-plum-600 text-white p-3 rounded-full" aria-hidden="true">
                                 <BookOpen size={24} />
                             </div>
                             <div>
@@ -3026,7 +3026,7 @@ const MedicationSearch = () => {
                         </div>
                         <Link
                             to="/application-help"
-                            className="flex items-center gap-2 px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg transition shadow-md whitespace-nowrap"
+                            className="flex items-center gap-2 px-6 py-3 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-lg transition shadow-md whitespace-nowrap"
                             aria-label="View application guide for step-by-step help"
                         >
                             <FileText size={18} aria-hidden="true" />
@@ -3108,7 +3108,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
                 <div className="flex justify-between items-start mb-4">
                     <div>
                         <h3 id="price-report-title" className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                            <Users size={20} className="text-emerald-600" aria-hidden="true" />
+                            <Users size={20} className="text-plum-600" aria-hidden="true" />
                             Report a Price
                         </h3>
                         <p className="text-sm text-slate-600 mt-1">{medicationName} via {source}</p>
@@ -3144,7 +3144,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
                                 min="0"
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
-                                className="w-full pl-8 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                className="w-full pl-8 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                 placeholder="0.00"
                                 required
                             />
@@ -3160,7 +3160,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
                             type="text"
                             value={location}
                             onChange={(e) => setLocation(e.target.value)}
-                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             placeholder="e.g., CVS in Seattle, WA"
                         />
                     </div>
@@ -3175,7 +3175,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
                             max={new Date().toISOString().split('T')[0]}
-                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                             required
                         />
                     </div>
@@ -3196,7 +3196,7 @@ const PriceReportModal = ({ isOpen, onClose, medicationId, medicationName, sourc
                         <button
                             type="submit"
                             disabled={submitting}
-                            className="flex-1 px-4 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="flex-1 px-4 py-2 bg-plum-700 text-white rounded-lg hover:bg-plum-800 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                         >
                             {submitting && <Loader2 size={16} className="animate-spin" aria-hidden="true" />}
                             {submitting ? 'Submitting...' : 'Submit Report'}
@@ -3310,7 +3310,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 <span className={`font-medium ${
                                     quizAnswers.cost_burden === 'struggling' ? 'text-red-700' :
                                     quizAnswers.cost_burden === 'challenging' ? 'text-amber-700' :
-                                    'text-emerald-700'
+                                    'text-plum-700'
                                 }`}>
                                     {quizAnswers.cost_burden === 'struggling' ? 'Struggling' :
                                      quizAnswers.cost_burden === 'challenging' ? 'Challenging' :
@@ -3325,12 +3325,12 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
 
             <header className="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-start md:items-center">
                 <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-plum-500 to-teal-600 flex items-center justify-center flex-shrink-0">
                         <Pill size={20} className="text-white" aria-hidden="true" />
                     </div>
                     <div>
                         <h2 id={`med-${med.id}-title`} className="text-xl font-bold text-slate-900">{med.brandName}</h2>
-                        <p className="text-slate-600 font-medium text-sm">{med.genericName} • <span className="text-emerald-600">{med.category}</span></p>
+                        <p className="text-slate-600 font-medium text-sm">{med.genericName} • <span className="text-plum-600">{med.category}</span></p>
                         {/* Cost Tier Badges */}
                         <div className="flex flex-wrap gap-2 mt-2">
                             {med.cost_tier && (
@@ -3354,7 +3354,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 </span>
                             )}
                             {med.generic_available && (
-                                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-plum-100 text-plum-800">
                                     <CheckCircle size={12} aria-hidden="true" />
                                     <TermTooltip term="generic" showIcon={false}>Generic</TermTooltip> Available
                                 </span>
@@ -3372,26 +3372,26 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
             {showCopayCards && hasCopayProgram && (() => {
                 const savingsEstimate = getMedicationSavingsEstimate(med);
                 return (
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 px-6 py-4 border-b border-emerald-100">
+                <div className="bg-gradient-to-r from-plum-50 to-teal-50 px-6 py-4 border-b border-plum-100">
                     <div className="flex items-center justify-between flex-wrap gap-4">
                         <div className="flex items-center gap-3">
-                            <div className="bg-emerald-600 text-white p-2 rounded-lg" aria-hidden="true">
+                            <div className="bg-plum-600 text-white p-2 rounded-lg" aria-hidden="true">
                                 <DollarSign size={20} />
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-emerald-800">Your Potential Savings</p>
+                                <p className="text-sm font-medium text-plum-800">Your Potential Savings</p>
                                 <div className="flex items-center gap-2 mt-0.5">
                                     <span className="text-slate-500 line-through text-sm">Without Help</span>
                                     <span className="text-red-600 font-bold line-through">${savingsEstimate.retailPrice.toLocaleString()}/mo</span>
                                     <ArrowRight size={16} className="text-slate-400" aria-hidden="true" />
-                                    <span className="text-emerald-700 text-sm">With Copay Card</span>
-                                    <span className="text-emerald-700 font-bold text-lg">${savingsEstimate.copayPrice}/mo</span>
+                                    <span className="text-plum-700 text-sm">With Copay Card</span>
+                                    <span className="text-plum-700 font-bold text-lg">${savingsEstimate.copayPrice}/mo</span>
                                 </div>
                             </div>
                         </div>
                         <div className="text-right">
-                            <p className="text-xs text-emerald-700">Annual Savings</p>
-                            <p className="text-2xl font-bold text-emerald-700">~${savingsEstimate.annualSavings.toLocaleString()}</p>
+                            <p className="text-xs text-plum-700">Annual Savings</p>
+                            <p className="text-2xl font-bold text-plum-700">~${savingsEstimate.annualSavings.toLocaleString()}</p>
                         </div>
                     </div>
                 </div>
@@ -3416,7 +3416,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                             onClick={() => setActiveFilter(filter.id)}
                             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition ${
                                 activeFilter === filter.id
-                                    ? 'bg-emerald-600 text-white'
+                                    ? 'bg-plum-600 text-white'
                                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                             }`}
                         >
@@ -3442,8 +3442,8 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                         aria-controls={`${med.id}-${tab.id}-panel`}
                         className={`flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition ${
                             activeTab === tab.id
-                                ? 'bg-emerald-700 text-white shadow-sm'
-                                : 'bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200'
+                                ? 'bg-plum-700 text-white shadow-sm'
+                                : 'bg-white text-slate-600 hover:bg-plum-50 hover:text-plum-700 border border-slate-200'
                         }`}
                     >
                         <tab.icon size={16} aria-hidden="true" /> {tab.label}
@@ -3464,13 +3464,13 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                             <strong>Tip:</strong> Always verify with your doctor if you can switch between Brand and Generic versions.
                         </div>
                         <div className="flex gap-4 mt-4 no-print">
-                            <a href={`/out/pap/drugs-com-search?q=${encodeURIComponent(med.brandName.split('/')[0])}`} target="_blank" rel="noreferrer" className="text-emerald-600 font-medium hover:underline flex items-center gap-1" aria-label={`Read full drug facts for ${med.brandName} on Drugs.com (opens in new tab)`}>Read full drug facts on Drugs.com <ExternalLink size={14} aria-hidden="true" /></a>
+                            <a href={`/out/pap/drugs-com-search?q=${encodeURIComponent(med.brandName.split('/')[0])}`} target="_blank" rel="noreferrer" className="text-plum-600 font-medium hover:underline flex items-center gap-1" aria-label={`Read full drug facts for ${med.brandName} on Drugs.com (opens in new tab)`}>Read full drug facts on Drugs.com <ExternalLink size={14} aria-hidden="true" /></a>
                         </div>
 
                         {/* Pharmacies Section */}
                         <section className="mt-6">
                             <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                                <Building size={20} className="text-emerald-600" aria-hidden="true" />
+                                <Building size={20} className="text-plum-600" aria-hidden="true" />
                                 Pharmacies (Where to fill your prescription)
                             </h3>
                             <div className="overflow-x-auto rounded-lg border border-slate-200">
@@ -3518,7 +3518,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                         {/* Discount Tools Section */}
                         <section className="mt-6">
                             <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                                <DollarSign size={20} className="text-emerald-600" aria-hidden="true" />
+                                <DollarSign size={20} className="text-plum-600" aria-hidden="true" />
                                 Discount Tools (Compare prices & get coupons)
                             </h3>
                             <div className="overflow-x-auto rounded-lg border border-slate-200">
@@ -3556,8 +3556,8 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                     <div className="space-y-4">
                         {/* Copay Card Section - RECOMMENDED FOR YOU - For Commercial Insurance ONLY */}
                         {showCopayCards && hasCopayProgram && (activeFilter === 'all' || activeFilter === 'eligible' || activeFilter === 'under50') && (
-                            <section className="border-2 border-emerald-400 rounded-xl overflow-hidden bg-gradient-to-r from-emerald-50 to-teal-50 shadow-md">
-                                <div className="bg-emerald-600 px-4 py-1.5">
+                            <section className="border-2 border-plum-400 rounded-xl overflow-hidden bg-gradient-to-r from-plum-50 to-teal-50 shadow-md">
+                                <div className="bg-plum-600 px-4 py-1.5">
                                     <span className="text-white text-xs font-bold flex items-center gap-1">
                                         <Star size={12} className="fill-current" aria-hidden="true" />
                                         RECOMMENDED FOR YOU
@@ -3566,13 +3566,13 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 <div className="p-5">
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex items-start gap-3">
-                                            <span className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0 mt-1.5"></span>
+                                            <span className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0 mt-1.5"></span>
                                             <div>
-                                                <h3 className="font-bold text-emerald-800 flex items-center gap-2">
+                                                <h3 className="font-bold text-plum-800 flex items-center gap-2">
                                                     {copayProgram?.name || `${med.brandName} Co-Pay Card`}
                                                 </h3>
                                                 <div className="flex items-center gap-2 mt-1">
-                                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700">
+                                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-plum-100 text-plum-700">
                                                         <CheckCircle size={12} aria-hidden="true" />
                                                         You're Eligible
                                                     </span>
@@ -3583,11 +3583,11 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                             </div>
                                         </div>
                                         <div className="text-right flex-shrink-0">
-                                            <div className="text-emerald-700 font-bold text-lg">$0 - $10</div>
+                                            <div className="text-plum-700 font-bold text-lg">$0 - $10</div>
                                             <div className="text-xs text-slate-500">/month</div>
                                         </div>
                                     </div>
-                                    <a href={copayUrl} target="_blank" rel="noreferrer" onClick={() => { trackServerEvent('copay_card_click', { medication: med.brandName, programId: copayProgramId }); }} className="mt-4 w-full block text-center bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg text-sm font-bold transition no-print flex items-center justify-center gap-1" aria-label={`Get Copay Card for ${med.brandName} (opens in new tab)`}>
+                                    <a href={copayUrl} target="_blank" rel="noreferrer" onClick={() => { trackServerEvent('copay_card_click', { medication: med.brandName, programId: copayProgramId }); }} className="mt-4 w-full block text-center bg-plum-600 hover:bg-plum-700 text-white py-2.5 rounded-lg text-sm font-bold transition no-print flex items-center justify-center gap-1" aria-label={`Get Copay Card for ${med.brandName} (opens in new tab)`}>
                                         Get Card <ArrowRight size={14} aria-hidden="true" />
                                     </a>
                                 </div>
@@ -3683,8 +3683,8 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                         If you use a card too early, you might pay more money over the year. The card pays for you, but that money doesn't count. You still have to pay your full deductible later.
                                     </p>
                                     <div className="grid grid-cols-2 gap-2 text-xs mb-3">
-                                        <div className="bg-white/80 p-2 rounded border border-emerald-200">
-                                            <div className="font-bold text-emerald-700">✅ Using Insurance</div>
+                                        <div className="bg-white/80 p-2 rounded border border-plum-200">
+                                            <div className="font-bold text-plum-700">✅ Using Insurance</div>
                                             <div className="text-slate-600">Pay more early → then $0 the rest of the year</div>
                                         </div>
                                         <div className="bg-white/80 p-2 rounded border border-red-200">
@@ -3702,7 +3702,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                         {/* Footer Notes */}
                         <div className="text-xs text-slate-500 space-y-1 pt-2">
                             <p className="flex items-center gap-1">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                                <span className="w-2 h-2 rounded-full bg-plum-500 inline-block"></span>
                                 Copay cards are for commercial/employer insurance only
                             </p>
                             <p className="flex items-center gap-1">
@@ -3746,9 +3746,9 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                             <div className={`grid grid-cols-2 ${showCopayCards ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-3 text-xs`}>
                                 {showCopayCards && (
                                     <div className="flex items-center gap-2">
-                                        <span className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                                        <span className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0"></span>
                                         <div>
-                                            <div className="font-semibold text-emerald-600">Copay Cards</div>
+                                            <div className="font-semibold text-plum-600">Copay Cards</div>
                                             <div className="text-slate-500">Best savings: $0-$10/mo</div>
                                         </div>
                                     </div>
@@ -3804,20 +3804,20 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 <tbody className="divide-y divide-slate-200">
                                     {/* Copay Card Row - Green - Only show for commercial insurance */}
                                     {showCopayCards && hasCopayProgram && (
-                                    <tr className="bg-emerald-50/50 hover:bg-emerald-50">
+                                    <tr className="bg-plum-50/50 hover:bg-plum-50">
                                         <td className="p-3">
                                             <div className="flex items-center gap-2">
-                                                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
-                                                <div className="font-bold text-emerald-600">{copayProgram?.name || `${med.manufacturer} Copay Card`}</div>
+                                                <span className="w-2.5 h-2.5 rounded-full bg-plum-500 flex-shrink-0"></span>
+                                                <div className="font-bold text-plum-600">{copayProgram?.name || `${med.manufacturer} Copay Card`}</div>
                                             </div>
                                             <div className="text-xs text-slate-500 mt-0.5 ml-4.5">For commercial/employer insurance</div>
                                         </td>
                                         <td className="p-3">
-                                            <div className="text-emerald-600 font-bold">$0 - $10/month</div>
+                                            <div className="text-plum-600 font-bold">$0 - $10/month</div>
                                             <div className="text-xs text-slate-500 mt-0.5">Manufacturer program</div>
                                         </td>
                                         <td className="p-3 no-print">
-                                            <button onClick={() => setActiveTab('ASSISTANCE')} className="text-emerald-600 hover:underline font-medium flex items-center gap-1" aria-label={`View Copay Card details for ${med.brandName}`}>
+                                            <button onClick={() => setActiveTab('ASSISTANCE')} className="text-plum-600 hover:underline font-medium flex items-center gap-1" aria-label={`View Copay Card details for ${med.brandName}`}>
                                                 Get Card <ArrowRight size={14} aria-hidden="true" />
                                             </button>
                                         </td>
@@ -4019,7 +4019,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 <p>These prices are for a 30-day supply. Your price may be different. Call the pharmacy to get your exact price. (Last updated: December 24, 2025)</p>
                             </div>
                             {(costPlusStats || goodRxStats || singleCareStats) && (
-                                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-xs text-emerald-800 flex items-start gap-2">
+                                <div className="bg-plum-50 border border-plum-200 rounded-lg p-3 text-xs text-plum-800 flex items-start gap-2">
                                     <Users size={14} className="flex-shrink-0 mt-0.5" />
                                     <p><strong>Community prices</strong> are real prices that other people paid in the last 90 days. Help others by telling us what you paid!</p>
                                 </div>
@@ -4050,8 +4050,8 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                             </div>
                                         )}
                                         <div className="grid grid-cols-2 gap-2 text-xs mb-3">
-                                            <div className="bg-white/80 p-2 rounded border border-emerald-200">
-                                                <div className="font-bold text-emerald-700">✅ Using Insurance</div>
+                                            <div className="bg-white/80 p-2 rounded border border-plum-200">
+                                                <div className="font-bold text-plum-700">✅ Using Insurance</div>
                                                 <div className="text-slate-600">Pay more early → then $0 the rest of the year</div>
                                             </div>
                                             <div className="bg-white/80 p-2 rounded border border-red-200">
@@ -4090,7 +4090,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 {showCopayCards && hasCopayProgram && (
                                     <div className="flex justify-between">
                                         <span>{copayProgram?.name || 'Manufacturer Copay Card'}:</span>
-                                        <strong className="text-emerald-600">$0 - $10/month</strong>
+                                        <strong className="text-plum-600">$0 - $10/month</strong>
                                     </div>
                                 )}
                                 {hasPapProgram && (
@@ -4137,8 +4137,8 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                     </div>
                                 )}
                                 {hasPapProgram && (
-                                    <div className="p-2 bg-emerald-50 rounded">
-                                        <strong className="text-emerald-800">{papProgram?.name || 'Patient Assistance Program (PAP)'}</strong>
+                                    <div className="p-2 bg-plum-50 rounded">
+                                        <strong className="text-plum-800">{papProgram?.name || 'Patient Assistance Program (PAP)'}</strong>
                                         <p className="text-slate-600 text-xs">{papProgram?.eligibility_notes || 'For Medicare, Medicaid, uninsured, or underinsured patients.'}</p>
                                     </div>
                                 )}
@@ -4184,7 +4184,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                         <div className="pt-4 no-print">
                             <button
                                 onClick={() => window.print()}
-                                className="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg flex items-center justify-center gap-2"
+                                className="w-full py-3 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-lg flex items-center justify-center gap-2"
                             >
                                 <Printer size={18} /> Print This Summary
                             </button>
@@ -4214,17 +4214,17 @@ const ExternalMedCard = ({ name, onRemove }) => {
                     <p><strong>Note:</strong> This drug is not in our education database. Use the links below to find pricing directly.</p>
                 </div>
                 <nav className="grid grid-cols-1 sm:grid-cols-3 gap-3" aria-label={`External price check options for ${name}`}>
-                    <a href={`/out/copay/costplus-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="flex items-center justify-between p-4 rounded-lg border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 hover:shadow-sm transition group" aria-label={`Check ${name} price on Cost Plus Drugs (opens in new tab)`}>
-                        <span className="font-bold text-slate-800 group-hover:text-emerald-800">Cost Plus</span>
-                        <ExternalLink size={16} className="text-slate-400 group-hover:text-emerald-500" aria-hidden="true" />
+                    <a href={`/out/copay/costplus-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="flex items-center justify-between p-4 rounded-lg border border-slate-200 hover:border-plum-400 hover:bg-plum-50 hover:shadow-sm transition group" aria-label={`Check ${name} price on Cost Plus Drugs (opens in new tab)`}>
+                        <span className="font-bold text-slate-800 group-hover:text-plum-800">Cost Plus</span>
+                        <ExternalLink size={16} className="text-slate-400 group-hover:text-plum-500" aria-hidden="true" />
                     </a>
-                    <a href={`/out/copay/goodrx-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="flex items-center justify-between p-4 rounded-lg border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 hover:shadow-sm transition group" aria-label={`Check ${name} price on GoodRx (opens in new tab)`}>
-                        <span className="font-bold text-slate-800 group-hover:text-emerald-800">GoodRx</span>
-                        <ExternalLink size={16} className="text-slate-400 group-hover:text-emerald-500" aria-hidden="true" />
+                    <a href={`/out/copay/goodrx-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="flex items-center justify-between p-4 rounded-lg border border-slate-200 hover:border-plum-400 hover:bg-plum-50 hover:shadow-sm transition group" aria-label={`Check ${name} price on GoodRx (opens in new tab)`}>
+                        <span className="font-bold text-slate-800 group-hover:text-plum-800">GoodRx</span>
+                        <ExternalLink size={16} className="text-slate-400 group-hover:text-plum-500" aria-hidden="true" />
                     </a>
-                    <a href={`/out/copay/singlecare-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="flex items-center justify-between p-4 rounded-lg border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 hover:shadow-sm transition group" aria-label={`Check ${name} price on SingleCare (opens in new tab)`}>
-                        <span className="font-bold text-slate-800 group-hover:text-emerald-800">SingleCare</span>
-                        <ExternalLink size={16} className="text-slate-400 group-hover:text-emerald-500" aria-hidden="true" />
+                    <a href={`/out/copay/singlecare-search?q=${encodedTerm}`} target="_blank" rel="noreferrer" className="flex items-center justify-between p-4 rounded-lg border border-slate-200 hover:border-plum-400 hover:bg-plum-50 hover:shadow-sm transition group" aria-label={`Check ${name} price on SingleCare (opens in new tab)`}>
+                        <span className="font-bold text-slate-800 group-hover:text-plum-800">SingleCare</span>
+                        <ExternalLink size={16} className="text-slate-400 group-hover:text-plum-500" aria-hidden="true" />
                     </a>
                 </nav>
                 <div className="mt-4 pt-4 border-t border-slate-100 text-center no-print">
@@ -4415,9 +4415,9 @@ const InsuranceChangeSimulator = () => {
                             ))}
                         </div>
 
-                        <div className="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
-                            <h4 className="font-bold text-emerald-800 mb-1">📋 Recommended Action</h4>
-                            <p className="text-sm text-emerald-900">{transition.action}</p>
+                        <div className="mt-6 p-4 bg-plum-50 border border-plum-200 rounded-lg">
+                            <h4 className="font-bold text-plum-800 mb-1">📋 Recommended Action</h4>
+                            <p className="text-sm text-plum-900">{transition.action}</p>
                         </div>
                     </div>
                 </div>
@@ -4476,8 +4476,8 @@ const Education = () => {
             aria-label={label}
             className={`flex items-center justify-center gap-2 px-3 sm:px-5 py-3 font-bold text-sm sm:text-base transition-all border-b-4 min-h-[48px] flex-1 min-w-[calc(33.333%-2px)] sm:min-w-0 ${
                 activeTab === id
-                    ? 'border-emerald-600 text-emerald-800 bg-emerald-50'
-                    : 'border-transparent text-slate-800 hover:text-emerald-700 hover:bg-slate-100'
+                    ? 'border-plum-600 text-plum-800 bg-plum-50'
+                    : 'border-transparent text-slate-800 hover:text-plum-700 hover:bg-slate-100'
             }`}
         >
             <Icon size={20} aria-hidden="true" />
@@ -4601,7 +4601,7 @@ const Education = () => {
                                         <li className="flex items-start gap-2"><span className="text-plum-600 font-bold">✓</span><span>$2,100 out-of-pocket cap (2026, up from $2,000 in 2025)</span></li>
                                     </ul>
                                 </section>
-                                <section className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
+                                <section className="bg-gradient-to-br from-green-50 to-plum-50 p-6 rounded-xl border border-green-200">
                                     <h3 className="font-bold text-green-900 text-xl mb-3">Medicare Advantage (MA-PD)</h3>
                                     <p className="text-sm text-slate-600 mb-4">An all-in-one plan that covers both doctor visits AND medicines.</p>
                                     <ul className="space-y-2 text-slate-700 text-sm">
@@ -4697,9 +4697,9 @@ const Education = () => {
                                 </section>
                             </div>
                         </div>
-                        <aside className="bg-emerald-50 p-6 rounded-xl border border-emerald-100" role="note">
-                            <h3 className="font-bold text-emerald-900 mb-2">Key Insight</h3>
-                            <p className="text-emerald-800">Many patients mix programs—for example, a Medicare patient might get foundation grants to help with copays. Also check cash prices for generic drugs.</p>
+                        <aside className="bg-plum-50 p-6 rounded-xl border border-plum-100" role="note">
+                            <h3 className="font-bold text-plum-900 mb-2">Key Insight</h3>
+                            <p className="text-plum-800">Many patients mix programs—for example, a Medicare patient might get foundation grants to help with copays. Also check cash prices for generic drugs.</p>
                         </aside>
 
                         <div className="border-t border-slate-200 pt-8">
@@ -4847,9 +4847,9 @@ const Education = () => {
                                     </ul>
                                 </div>
 
-                                <div className="mt-6 bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-                                    <h3 className="font-bold text-emerald-900 text-lg mb-3">Questions to Ask</h3>
-                                    <ul className="text-emerald-900 space-y-2 ml-6 list-disc">
+                                <div className="mt-6 bg-plum-50 border border-plum-200 rounded-lg p-6">
+                                    <h3 className="font-bold text-plum-900 text-lg mb-3">Questions to Ask</h3>
+                                    <ul className="text-plum-900 space-y-2 ml-6 list-disc">
                                         <li>What tier are my transplant medicines?</li>
                                         <li>How much is my deductible?</li>
                                         <li>When do I reach my yearly spending limit?</li>
@@ -4867,12 +4867,12 @@ const Education = () => {
                         {DIRECTORY_RESOURCES && DIRECTORY_RESOURCES.length > 0 ? (
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {DIRECTORY_RESOURCES.map((res) => (
-                                    <a key={res.name} href={res.url} target="_blank" rel="noreferrer" className="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-emerald-400 hover:shadow-md transition h-full" aria-label={`Visit ${res.name} (opens in new tab)`}>
+                                    <a key={res.name} href={res.url} target="_blank" rel="noreferrer" className="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-plum-400 hover:shadow-md transition h-full" aria-label={`Visit ${res.name} (opens in new tab)`}>
                                         <div className="flex justify-between items-start mb-2">
-                                            <h3 className="font-bold text-lg text-slate-900 group-hover:text-emerald-700 pr-2">{res.name}</h3>
+                                            <h3 className="font-bold text-lg text-slate-900 group-hover:text-plum-700 pr-2">{res.name}</h3>
                                             <ExternalLink size={16} className="opacity-50 group-hover:opacity-100 text-slate-400 flex-shrink-0 mt-1" aria-hidden="true" />
                                         </div>
-                                        <span className={`text-xs px-2 py-1 rounded-full font-bold mb-3 inline-block ${res.category === 'Foundation' ? 'bg-rose-50 text-rose-700' : res.category === 'Government' ? 'bg-purple-50 text-purple-700' : res.category === 'Support Group' ? 'bg-emerald-50 text-emerald-700' : 'bg-plum-50 text-plum-700'}`}>{res.category}</span>
+                                        <span className={`text-xs px-2 py-1 rounded-full font-bold mb-3 inline-block ${res.category === 'Foundation' ? 'bg-rose-50 text-rose-700' : res.category === 'Government' ? 'bg-purple-50 text-purple-700' : res.category === 'Support Group' ? 'bg-plum-50 text-plum-700' : 'bg-plum-50 text-plum-700'}`}>{res.category}</span>
                                         <p className="text-slate-600 text-sm leading-relaxed">{res.description}</p>
                                     </a>
                                 ))}
@@ -4997,23 +4997,23 @@ const Education = () => {
                                         <h3 className="font-bold text-slate-900 mb-2">Key Points</h3>
                                         <ul className="list-disc pl-5 text-slate-600 text-sm space-y-1"><li>Can use most drug maker PAPs</li><li>Copay cards often work</li><li>Foundations help with high copays</li><li>May need to use a certain pharmacy</li></ul>
                                     </div>
-                                    <div><h3 className="font-bold text-emerald-700 mb-2">Best Strategy</h3><p className="text-sm text-slate-700">Start with drug maker PAPs, then use foundations for any copays or deductibles left over.</p></div>
+                                    <div><h3 className="font-bold text-plum-700 mb-2">Best Strategy</h3><p className="text-sm text-slate-700">Start with drug maker PAPs, then use foundations for any copays or deductibles left over.</p></div>
                                 </div>
                             </div>
                         </section>
                         <div className="grid md:grid-cols-2 gap-6">
                             <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="va-health">
                                 <h2 id="va-health" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">VA Health Care</h2>
-                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For veterans who qualify.</p><div className="text-sm"><strong className="block text-emerald-700">Best Strategy</strong>Priority Groups 1–6: $0 for medicines. Use the VA pharmacy first. Work with your VA transplant team.</div><a href="https://www.va.gov/health-care/eligibility/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit VA Prescription Information (opens in new tab)">VA Prescription Information <ExternalLink size={12} aria-hidden="true" /></a></div>
+                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For veterans who qualify.</p><div className="text-sm"><strong className="block text-plum-700">Best Strategy</strong>Priority Groups 1–6: $0 for medicines. Use the VA pharmacy first. Work with your VA transplant team.</div><a href="https://www.va.gov/health-care/eligibility/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit VA Prescription Information (opens in new tab)">VA Prescription Information <ExternalLink size={12} aria-hidden="true" /></a></div>
                             </section>
                             <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="tricare">
                                 <h2 id="tricare" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">TRICARE</h2>
-                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For military members and families.</p><div className="text-sm"><strong className="block text-emerald-700">Best Strategy</strong>Use the military pharmacy ($0 copay). Use TRICARE mail order for ongoing medicines. Check the drug list search tool.</div><a href="https://www.tricare.mil/CoveredServices/Pharmacy" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit TRICARE Formulary Search (opens in new tab)">TRICARE Drug List Search <ExternalLink size={12} aria-hidden="true" /></a></div>
+                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For military members and families.</p><div className="text-sm"><strong className="block text-plum-700">Best Strategy</strong>Use the military pharmacy ($0 copay). Use TRICARE mail order for ongoing medicines. Check the drug list search tool.</div><a href="https://www.tricare.mil/CoveredServices/Pharmacy" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit TRICARE Formulary Search (opens in new tab)">TRICARE Drug List Search <ExternalLink size={12} aria-hidden="true" /></a></div>
                             </section>
                         </div>
                         <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="no-insurance">
                             <h2 id="no-insurance" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">No Insurance</h2>
-                            <div className="p-6 bg-white"><p className="text-slate-700 mb-4">For patients without insurance.</p><h3 className="font-bold text-emerald-700 mb-2">Best Strategy</h3><ul className="list-disc pl-5 text-slate-600 text-sm space-y-1"><li>Start with drug maker PAPs</li><li>Check Cost Plus Drugs prices</li><li>Use discount tools (GoodRx, SingleCare, etc.)</li><li>Look into Medicaid or Marketplace plans</li></ul><a href="https://www.healthcare.gov/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-4" aria-label="Explore Insurance Options on Healthcare.gov (opens in new tab)">Find Insurance Options <ExternalLink size={12} aria-hidden="true" /></a></div>
+                            <div className="p-6 bg-white"><p className="text-slate-700 mb-4">For patients without insurance.</p><h3 className="font-bold text-plum-700 mb-2">Best Strategy</h3><ul className="list-disc pl-5 text-slate-600 text-sm space-y-1"><li>Start with drug maker PAPs</li><li>Check Cost Plus Drugs prices</li><li>Use discount tools (GoodRx, SingleCare, etc.)</li><li>Look into Medicaid or Marketplace plans</li></ul><a href="https://www.healthcare.gov/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-4" aria-label="Explore Insurance Options on Healthcare.gov (opens in new tab)">Find Insurance Options <ExternalLink size={12} aria-hidden="true" /></a></div>
                         </section>
 
                         <section aria-labelledby="medicaid-section">
@@ -5023,14 +5023,14 @@ const Education = () => {
                                 <label htmlFor="state-select" className="block font-bold text-slate-700 mb-2">Select your State:</label>
                                 <div className="relative">
                                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" size={20} aria-hidden="true" />
-                                    <select id="state-select" className="w-full appearance-none p-4 pr-10 rounded-lg border border-slate-300 text-lg bg-white focus:ring-2 focus:ring-emerald-500 outline-none" onChange={(e) => setSelectedState(e.target.value)} value={selectedState}>
+                                    <select id="state-select" className="w-full appearance-none p-4 pr-10 rounded-lg border border-slate-300 text-lg bg-white focus:ring-2 focus:ring-plum-500 outline-none" onChange={(e) => setSelectedState(e.target.value)} value={selectedState}>
                                         <option value="">-- Choose a State --</option>
                                         {STATES.map(s => <option key={s.name} value={s.url}>{s.name}</option>)}
                                     </select>
                                 </div>
                                 {selectedState && (
                                     <div className="mt-6 text-center">
-                                        <a href={selectedState} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition" aria-label="Visit your state's Medicaid website (opens in new tab)">Go to Official Site <ExternalLink size={18} aria-hidden="true" /></a>
+                                        <a href={selectedState} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-plum-700 hover:bg-plum-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition" aria-label="Visit your state's Medicaid website (opens in new tab)">Go to Official Site <ExternalLink size={18} aria-hidden="true" /></a>
                                         <p className="text-xs text-slate-600 mt-3">You are leaving this app to visit a government website.</p>
                                     </div>
                                 )}
@@ -5041,11 +5041,11 @@ const Education = () => {
                             <h2 id="ihs-section" className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-200">Indian Health Service / Tribal Programs</h2>
                             <p className="text-slate-600 mb-6">For American Indian and Alaska Native patients who qualify.</p>
                             <div className="grid md:grid-cols-2 gap-6">
-                                <a href="https://www.ihs.gov/findhealthcare/" target="_blank" rel="noreferrer" className="bg-white p-6 rounded-xl border-2 border-emerald-100 hover:border-emerald-200 transition text-center group" aria-label="Find an IHS facility (opens in new tab)">
-                                    <div className="bg-emerald-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-700" aria-hidden="true"><LandPlot size={32} /></div>
+                                <a href="https://www.ihs.gov/findhealthcare/" target="_blank" rel="noreferrer" className="bg-white p-6 rounded-xl border-2 border-plum-100 hover:border-plum-200 transition text-center group" aria-label="Find an IHS facility (opens in new tab)">
+                                    <div className="bg-plum-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-plum-700" aria-hidden="true"><LandPlot size={32} /></div>
                                     <h3 className="font-bold text-lg text-slate-900 mb-2">Find a Facility</h3>
                                     <p className="text-sm text-slate-600 mb-6">Use the official IHS locator to find clinics and pharmacies near you.</p>
-                                    <span className="inline-block w-full bg-emerald-700 group-hover:bg-emerald-800 text-white font-bold py-2 rounded-lg">Open IHS Locator</span>
+                                    <span className="inline-block w-full bg-plum-700 group-hover:bg-plum-800 text-white font-bold py-2 rounded-lg">Open IHS Locator</span>
                                 </a>
                                 <section className="bg-white p-6 rounded-xl border border-slate-200" aria-labelledby="ihs-strategy"><h3 id="ihs-strategy" className="font-bold text-slate-900 mb-4">Best Strategy</h3><p className="text-slate-600 text-sm">Use your local IHS or Urban Indian Program — usually $0 cost.</p></section>
                             </div>
@@ -5079,12 +5079,12 @@ const Education = () => {
 
                         <section className="bg-slate-50 p-8 rounded-xl border border-slate-200" aria-labelledby="real-example">
                             <h2 id="real-example" className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                <DollarSign className="text-emerald-600" size={28} aria-hidden="true" />
+                                <DollarSign className="text-plum-600" size={28} aria-hidden="true" />
                                 Real-World Example
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
-                                <div className="bg-white p-6 rounded-xl border-2 border-emerald-200">
-                                    <div className="bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full inline-block mb-3">✅ The Right Way</div>
+                                <div className="bg-white p-6 rounded-xl border-2 border-plum-200">
+                                    <div className="bg-plum-100 text-plum-800 font-bold px-3 py-1 rounded-full inline-block mb-3">✅ The Right Way</div>
                                     <h3 className="font-bold text-lg text-slate-900 mb-4">Using Insurance</h3>
                                     <ul className="space-y-3 text-slate-700">
                                         <li className="flex items-start gap-2">
@@ -5095,8 +5095,8 @@ const Education = () => {
                                             <span className="font-bold text-slate-900">Month 4-12:</span>
                                             <span>Insurance pays 100% = $0 out-of-pocket</span>
                                         </li>
-                                        <li className="pt-3 border-t-2 border-emerald-200">
-                                            <span className="font-bold text-emerald-700 text-xl">Total Annual Cost: $2,100</span>
+                                        <li className="pt-3 border-t-2 border-plum-200">
+                                            <span className="font-bold text-plum-700 text-xl">Total Annual Cost: $2,100</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -5127,21 +5127,21 @@ const Education = () => {
                             <h2 id="when-to-use" className="text-2xl font-bold text-slate-900 mb-6">When Should Transplant Patients Use Discount Cards?</h2>
                             <div className="space-y-4">
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
                                         <CheckCircle size={20} aria-hidden="true" />
                                         Scenario 1: Drug NOT Covered by Insurance
                                     </h3>
                                     <p className="text-slate-700 text-sm">For a medicine NOT on your insurance's list and no cheaper generic option is available.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
                                         <CheckCircle size={20} aria-hidden="true" />
                                         Scenario 2: One-Time, Low-Cost Medications
                                     </h3>
                                     <p className="text-slate-700 text-sm">For short-term medicines not related to your transplant (like a round of antibiotics) where the discount price is less than your copay.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
                                         <CheckCircle size={20} aria-hidden="true" />
                                         Scenario 3: Extremely High Deductible
                                     </h3>
@@ -5159,14 +5159,14 @@ const Education = () => {
 
                         <section className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm" aria-labelledby="better-alternatives">
                             <h2 id="better-alternatives" className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                <HeartHandshake className="text-emerald-600" size={28} aria-hidden="true" />
+                                <HeartHandshake className="text-plum-600" size={28} aria-hidden="true" />
                                 Better Alternatives
                             </h2>
                             <div className="grid md:grid-cols-3 gap-6">
-                                <div className="bg-emerald-50 p-6 rounded-xl border border-emerald-200">
-                                    <h3 className="font-bold text-emerald-900 text-lg mb-3">Patient Assistance Programs (PAPs)</h3>
+                                <div className="bg-plum-50 p-6 rounded-xl border border-plum-200">
+                                    <h3 className="font-bold text-plum-900 text-lg mb-3">Patient Assistance Programs (PAPs)</h3>
                                     <p className="text-slate-700 text-sm mb-4">Free or low-cost medicines straight from drug makers.</p>
-                                    <p className="text-emerald-800 font-bold text-sm">✅ Counts toward your yearly limit</p>
+                                    <p className="text-plum-800 font-bold text-sm">✅ Counts toward your yearly limit</p>
                                 </div>
                                 <div className="bg-plum-50 p-6 rounded-xl border border-plum-200">
                                     <h3 className="font-bold text-plum-900 text-lg mb-3">Co-pay Foundations</h3>
@@ -5203,12 +5203,12 @@ const Education = () => {
                             </ul>
                         </section>
 
-                        <aside className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg" role="note">
-                            <h3 className="font-bold text-emerald-900 mb-3 flex items-center gap-2 text-lg">
+                        <aside className="bg-plum-50 border-l-4 border-plum-500 p-6 rounded-r-lg" role="note">
+                            <h3 className="font-bold text-plum-900 mb-3 flex items-center gap-2 text-lg">
                                 <Info size={24} aria-hidden="true" />
                                 Questions?
                             </h3>
-                            <p className="text-emerald-900 leading-relaxed">
+                            <p className="text-plum-900 leading-relaxed">
                                 Not sure if a discount card is right for you? Ask your transplant center's money helper or social worker. They can look at your insurance plan and help you choose.
                             </p>
                         </aside>
@@ -5305,7 +5305,7 @@ const Education = () => {
 
                         <section className="bg-slate-50 p-8 rounded-xl border border-slate-200" aria-labelledby="identify-heading">
                             <h2 id="identify-heading" className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                <Search className="text-emerald-600" size={28} aria-hidden="true" />
+                                <Search className="text-plum-600" size={28} aria-hidden="true" />
                                 How to Tell If This Is Happening to You
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6">
@@ -5358,43 +5358,43 @@ const Education = () => {
                             </div>
                         </section>
 
-                        <section className="bg-gradient-to-r from-emerald-50 to-teal-50 p-8 rounded-xl border border-emerald-200" aria-labelledby="protect-heading">
+                        <section className="bg-gradient-to-r from-plum-50 to-teal-50 p-8 rounded-xl border border-plum-200" aria-labelledby="protect-heading">
                             <h2 id="protect-heading" className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                                <ShieldCheck className="text-emerald-600" size={28} aria-hidden="true" />
+                                <ShieldCheck className="text-plum-600" size={28} aria-hidden="true" />
                                 How to Protect Yourself
                             </h2>
                             <div className="space-y-4">
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
-                                        <div className="bg-emerald-100 text-emerald-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">1</div>
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
+                                        <div className="bg-plum-100 text-plum-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">1</div>
                                         Read Your Plan Papers
                                     </h3>
                                     <p className="text-slate-700 text-sm">Look for words like "accumulator," "maximizer," or "alternative funding." These are clues.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
-                                        <div className="bg-emerald-100 text-emerald-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">2</div>
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
+                                        <div className="bg-plum-100 text-plum-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">2</div>
                                         Keep Track of What You Pay
                                     </h3>
                                     <p className="text-slate-700 text-sm">Save your receipts. Check if your copay card money shows up on your plan's tracker. If not, you may have an accumulator plan.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
-                                        <div className="bg-emerald-100 text-emerald-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">3</div>
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
+                                        <div className="bg-plum-100 text-plum-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">3</div>
                                         Appeal If They Say No
                                     </h3>
                                     <p className="text-slate-700 text-sm">If your plan won't cover your drug, you can fight back. Ask your transplant team to write a letter saying you need this drug.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
-                                        <div className="bg-emerald-100 text-emerald-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">4</div>
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
+                                        <div className="bg-plum-100 text-plum-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">4</div>
                                         Call Your State for Help
                                     </h3>
                                     <p className="text-slate-700 text-sm">Many states have laws to protect you. Call your state insurance office. They can tell you your rights and help you file a complaint.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
-                                    <h3 className="font-bold text-emerald-700 mb-2 flex items-center gap-2">
-                                        <div className="bg-emerald-100 text-emerald-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">5</div>
+                                    <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
+                                        <div className="bg-plum-100 text-plum-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">5</div>
                                         Talk to Your Boss (If You Get Insurance From Work)
                                     </h3>
                                     <p className="text-slate-700 text-sm">Your boss picks the plan. Tell HR how this hurts you. Ask them to pick a better plan.</p>
@@ -5439,16 +5439,16 @@ const Education = () => {
                             </ul>
                         </section>
 
-                        <aside className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg" role="note">
-                            <h3 className="font-bold text-emerald-900 mb-3 flex items-center gap-2 text-lg">
+                        <aside className="bg-plum-50 border-l-4 border-plum-500 p-6 rounded-r-lg" role="note">
+                            <h3 className="font-bold text-plum-900 mb-3 flex items-center gap-2 text-lg">
                                 <Info size={24} aria-hidden="true" />
                                 Need Help?
                             </h3>
-                            <p className="text-emerald-900 leading-relaxed mb-4">
+                            <p className="text-plum-900 leading-relaxed mb-4">
                                 Think this is happening to you? Talk to your transplant center's money helper or social worker. They know how to help.
                             </p>
-                            <p className="text-emerald-800 text-sm">
-                                You can also call the <a href="/out/foundation/paf-general" target="_blank" rel="noreferrer" className="font-bold text-emerald-700 hover:underline">Patient Advocate Foundation</a> for free help.
+                            <p className="text-plum-800 text-sm">
+                                You can also call the <a href="/out/foundation/paf-general" target="_blank" rel="noreferrer" className="font-bold text-plum-700 hover:underline">Patient Advocate Foundation</a> for free help.
                             </p>
                         </aside>
                     </div>
@@ -5516,15 +5516,15 @@ const Education = () => {
                                 </p>
                                 <ul className="space-y-2 text-sm text-slate-700">
                                     <li className="flex items-start gap-2">
-                                        <CheckCircle size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                        <CheckCircle size={16} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                         <span>Ask your transplant team about counseling services</span>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <CheckCircle size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                        <CheckCircle size={16} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                         <span>Many transplant centers have social workers and mental health experts</span>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <CheckCircle size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                        <CheckCircle size={16} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                         <span>Medicare and most insurance plans cover mental health services</span>
                                     </li>
                                 </ul>
@@ -5544,9 +5544,9 @@ const Education = () => {
                                 </p>
                             </a>
 
-                            <a href="https://findtreatment.gov/" target="_blank" rel="noreferrer" className="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition h-full" aria-label="Visit FindTreatment.gov (opens in new tab)">
+                            <a href="https://findtreatment.gov/" target="_blank" rel="noreferrer" className="group block bg-white p-6 rounded-xl border border-slate-200 hover:border-plum-300 hover:shadow-md transition h-full" aria-label="Visit FindTreatment.gov (opens in new tab)">
                                 <div className="flex justify-between items-start mb-3">
-                                    <h3 className="font-bold text-lg text-slate-900 group-hover:text-emerald-700">FindTreatment.gov</h3>
+                                    <h3 className="font-bold text-lg text-slate-900 group-hover:text-plum-700">FindTreatment.gov</h3>
                                     <ExternalLink size={16} className="opacity-50 group-hover:opacity-100 text-slate-400 flex-shrink-0" aria-hidden="true" />
                                 </div>
                                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -5862,7 +5862,7 @@ ${patientName || "[Your Name]"}`;
     );
 
     const TabButton = ({ id, label, icon: Icon, iconBg, iconColor }) => (
-        <button onClick={() => setActiveTab(id)} role="tab" id={`${id}-tab`} aria-selected={activeTab === id} aria-controls={`${id}-panel`} tabIndex={activeTab === id ? 0 : -1} className={`flex items-center justify-center gap-3 px-4 py-4 font-bold text-base md:text-lg transition-all border-b-4 min-h-[52px] flex-1 min-w-[calc(33.333%-2px)] sm:min-w-0 ${activeTab === id ? 'border-emerald-600 text-emerald-800 bg-emerald-50/50' : 'border-transparent text-slate-700 hover:text-emerald-600 hover:bg-slate-50'}`}>
+        <button onClick={() => setActiveTab(id)} role="tab" id={`${id}-tab`} aria-selected={activeTab === id} aria-controls={`${id}-panel`} tabIndex={activeTab === id ? 0 : -1} className={`flex items-center justify-center gap-3 px-4 py-4 font-bold text-base md:text-lg transition-all border-b-4 min-h-[52px] flex-1 min-w-[calc(33.333%-2px)] sm:min-w-0 ${activeTab === id ? 'border-plum-600 text-plum-800 bg-plum-50/50' : 'border-transparent text-slate-700 hover:text-plum-600 hover:bg-slate-50'}`}>
             <span className={`flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-lg ${iconBg} transition-transform ${activeTab === id ? 'scale-110' : ''}`} aria-hidden="true">
                 <Icon size={20} className={iconColor} strokeWidth={2.5} />
             </span>
@@ -5891,7 +5891,7 @@ ${patientName || "[Your Name]"}`;
             <nav className="bg-white rounded-xl shadow-md border border-slate-200" role="tablist" aria-label="Application help sections">
                 <div className="flex flex-wrap">
                     <TabButton id="START" label="Getting Started" icon={HeartHandshake} iconBg="bg-rose-100" iconColor="text-rose-600" />
-                    <TabButton id="INCOME" label="Income" icon={DollarSign} iconBg="bg-emerald-100" iconColor="text-emerald-600" />
+                    <TabButton id="INCOME" label="Income" icon={DollarSign} iconBg="bg-plum-100" iconColor="text-plum-600" />
                     <TabButton id="STEPS" label="Steps" icon={ArrowRight} iconBg="bg-plum-100" iconColor="text-plum-600" />
                     <TabButton id="CHECKLIST" label="Checklist" icon={ClipboardList} iconBg="bg-amber-100" iconColor="text-amber-600" />
                     <TabButton id="LETTERS" label="Letters" icon={FileText} iconBg="bg-purple-100" iconColor="text-purple-600" />
@@ -5901,10 +5901,10 @@ ${patientName || "[Your Name]"}`;
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 min-h-[200px]" role="tabpanel" id={`${activeTab}-panel`} aria-labelledby={`${activeTab}-tab`}>
                 {activeTab === 'START' && (
                     <div className="space-y-8">
-                        <aside className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg" role="note"><h2 className="text-emerald-800 font-bold text-xl mb-3 flex items-center gap-2"><CheckCircle size={24} aria-hidden="true" /> Good News</h2><ul className="list-disc pl-5 text-emerald-900 space-y-2 text-lg leading-relaxed"><li><strong>PAPs and Foundations ask for the same information.</strong></li><li>Gather documents once → apply to multiple programs.</li></ul></aside>
+                        <aside className="bg-plum-50 border-l-4 border-plum-500 p-6 rounded-r-lg" role="note"><h2 className="text-plum-800 font-bold text-xl mb-3 flex items-center gap-2"><CheckCircle size={24} aria-hidden="true" /> Good News</h2><ul className="list-disc pl-5 text-plum-900 space-y-2 text-lg leading-relaxed"><li><strong>PAPs and Foundations ask for the same information.</strong></li><li>Gather documents once → apply to multiple programs.</li></ul></aside>
 
-                        <section className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-2xl p-8" aria-labelledby="pap-definition">
-                            <h3 id="pap-definition" className="text-2xl font-bold text-emerald-900 mb-4">What are Patient Assistance Programs?</h3>
+                        <section className="bg-gradient-to-br from-plum-50 to-teal-50 border-2 border-plum-200 rounded-2xl p-8" aria-labelledby="pap-definition">
+                            <h3 id="pap-definition" className="text-2xl font-bold text-plum-900 mb-4">What are Patient Assistance Programs?</h3>
                             <p className="text-lg text-slate-800 leading-relaxed mb-4">
                                 Patient Assistance Programs (PAPs) are programs created by drug companies and medical supply makers to help patients access affordable medications. These programs provide prescription medications at no cost or low cost for individuals who need help affording their medications.
                             </p>
@@ -5968,15 +5968,15 @@ ${patientName || "[Your Name]"}`;
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
-                            <section className="border border-slate-200 rounded-xl p-6 hover:border-emerald-300 transition-colors" aria-labelledby="pap-heading">
+                            <section className="border border-slate-200 rounded-xl p-6 hover:border-plum-300 transition-colors" aria-labelledby="pap-heading">
                                 <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3"><div className="p-3 bg-plum-100 text-plum-700 rounded-lg" aria-hidden="true"><FileText size={28} /></div><div><h2 id="pap-heading" className="font-bold text-xl text-slate-900">Patient Assistance Program (PAP)</h2><p className="text-base text-slate-700">Direct from Manufacturer</p></div></div>
                                 <p className="text-slate-700 mb-4 text-base min-h-[40px]">Free or low-cost medications provided directly by the drug company.</p>
-                                <div className="space-y-3 text-base"><div><span className="font-bold text-slate-800 block">Best for:</span><ul className="list-disc pl-4 text-slate-700"><li>Commercial insurance</li><li>Uninsured</li><li>Underinsured</li></ul></div><div className="flex justify-between py-2 border-t border-slate-100"><span className="text-slate-700">Approval Time</span><span className="font-medium text-emerald-700">2–4 weeks</span></div></div>
+                                <div className="space-y-3 text-base"><div><span className="font-bold text-slate-800 block">Best for:</span><ul className="list-disc pl-4 text-slate-700"><li>Commercial insurance</li><li>Uninsured</li><li>Underinsured</li></ul></div><div className="flex justify-between py-2 border-t border-slate-100"><span className="text-slate-700">Approval Time</span><span className="font-medium text-plum-700">2–4 weeks</span></div></div>
                             </section>
                             <section className="border border-slate-200 rounded-xl p-6 hover:border-sky-300 transition-colors" aria-labelledby="foundation-heading">
                                 <div className="flex items-center gap-3 mb-4 border-b border-slate-100 pb-3"><div className="p-3 bg-sky-100 text-sky-700 rounded-lg" aria-hidden="true"><HeartHandshake size={28} /></div><div><h2 id="foundation-heading" className="font-bold text-xl text-slate-900">Foundation Grant</h2><p className="text-base text-slate-700">Non-profit Assistance</p></div></div>
                                 <p className="text-slate-700 mb-4 text-base min-h-[40px]">Helps with copays, premiums, deductibles, and out-of-pocket costs.</p>
-                                <div className="space-y-3 text-base"><div><span className="font-bold text-slate-800 block">Best for:</span><ul className="list-disc pl-4 text-slate-700"><li>Medicare patients</li><li>High copay patients</li><li>Premium burden</li></ul></div><div className="flex justify-between py-2 border-t border-slate-100"><span className="text-slate-700">Approval Time</span><span className="font-medium text-emerald-700">1–3 weeks</span></div></div>
+                                <div className="space-y-3 text-base"><div><span className="font-bold text-slate-800 block">Best for:</span><ul className="list-disc pl-4 text-slate-700"><li>Medicare patients</li><li>High copay patients</li><li>Premium burden</li></ul></div><div className="flex justify-between py-2 border-t border-slate-100"><span className="text-slate-700">Approval Time</span><span className="font-medium text-plum-700">1–3 weeks</span></div></div>
                             </section>
                         </div>
 
@@ -6000,26 +6000,26 @@ ${patientName || "[Your Name]"}`;
                     <div className="space-y-10 max-w-4xl mx-auto">
                         <div><h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Who Can Get Help</h2><p className="text-lg md:text-xl text-slate-700 mb-4 leading-relaxed">Most drug companies publish clear income guidelines. Here's what you need to know:</p><div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r" role="note"><p className="text-lg text-red-800 font-bold leading-relaxed">Don't Count Yourself Out: Many programs have much higher income limits than you might expect.</p></div></div>
                         <div className="grid md:grid-cols-2 gap-8"><div><h3 className="font-bold text-slate-800 text-xl mb-4">How Income Limits Work</h3><ul className="space-y-3 text-slate-700 text-base leading-relaxed list-disc pl-5"><li>Based on Federal Poverty Level (FPL) percentages</li><li>Vary by household size</li><li>Updated annually with FPL changes</li></ul></div><div><h3 className="font-bold text-slate-800 text-xl mb-4">Where to Find Guidelines</h3><ul className="space-y-3 text-slate-700 text-base leading-relaxed list-disc pl-5"><li>Manufacturer's website</li><li>MAT.org search results</li><li>Call the program directly</li></ul></div></div>
-                        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200" aria-labelledby="income-checker"><h3 id="income-checker" className="font-bold text-xl text-slate-900 mb-4 flex items-center gap-2"><DollarSign size={24} aria-hidden="true" /> Quick Income Checker</h3><p className="text-base text-slate-700 mb-4 leading-relaxed">Use these resources to check current Federal Poverty Level guidelines:</p><div className="flex flex-wrap gap-4"><a href="https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white border border-slate-300 px-5 py-3 rounded-lg text-base text-slate-700 font-medium hover:border-emerald-500 hover:text-emerald-600 transition" aria-label="Visit HHS Poverty Guidelines (opens in new tab)">HHS Poverty Guidelines <ExternalLink size={18} aria-hidden="true" /></a><a href="/out/pap/phrma-mat" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white border border-slate-300 px-5 py-3 rounded-lg text-base text-slate-700 font-medium hover:border-emerald-500 hover:text-emerald-600 transition" aria-label="Visit MAT.org to search by medication (opens in new tab)">MAT.org (Search by Med) <ExternalLink size={18} aria-hidden="true" /></a></div></section>
+                        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200" aria-labelledby="income-checker"><h3 id="income-checker" className="font-bold text-xl text-slate-900 mb-4 flex items-center gap-2"><DollarSign size={24} aria-hidden="true" /> Quick Income Checker</h3><p className="text-base text-slate-700 mb-4 leading-relaxed">Use these resources to check current Federal Poverty Level guidelines:</p><div className="flex flex-wrap gap-4"><a href="https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white border border-slate-300 px-5 py-3 rounded-lg text-base text-slate-700 font-medium hover:border-plum-500 hover:text-plum-600 transition" aria-label="Visit HHS Poverty Guidelines (opens in new tab)">HHS Poverty Guidelines <ExternalLink size={18} aria-hidden="true" /></a><a href="/out/pap/phrma-mat" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-white border border-slate-300 px-5 py-3 rounded-lg text-base text-slate-700 font-medium hover:border-plum-500 hover:text-plum-600 transition" aria-label="Visit MAT.org to search by medication (opens in new tab)">MAT.org (Search by Med) <ExternalLink size={18} aria-hidden="true" /></a></div></section>
                     </div>
                 )}
                 {activeTab === 'STEPS' && (
                     <div className="max-w-3xl mx-auto">
                         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Apply These Principles to Both PAPs and Foundations</h2>
-                        <section className="bg-white p-6 md:p-8 rounded-xl border-l-4 border-emerald-500 shadow-sm" aria-labelledby="requirements-heading">
+                        <section className="bg-white p-6 md:p-8 rounded-xl border-l-4 border-plum-500 shadow-sm" aria-labelledby="requirements-heading">
                             <h3 id="requirements-heading" className="font-bold text-xl text-slate-900 mb-5">Both require:</h3>
-                            <ul className="grid md:grid-cols-2 gap-x-8 gap-y-4"><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></div>Your name and contact info</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></div>Doctor / coordinator contact</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></div>Income and household size</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></div>Diagnosis + medication list</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></div>Insurance information</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></div>Patient history</li></ul>
+                            <ul className="grid md:grid-cols-2 gap-x-8 gap-y-4"><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0" aria-hidden="true"></div>Your name and contact info</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0" aria-hidden="true"></div>Doctor / coordinator contact</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0" aria-hidden="true"></div>Income and household size</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0" aria-hidden="true"></div>Diagnosis + medication list</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0" aria-hidden="true"></div>Insurance information</li><li className="flex items-center gap-3 text-base text-slate-800 leading-relaxed"><div className="w-3 h-3 rounded-full bg-plum-500 flex-shrink-0" aria-hidden="true"></div>Patient history</li></ul>
                         </section>
                     </div>
                 )}
                 {activeTab === 'CHECKLIST' && (
                     <div className="max-w-4xl mx-auto">
-                        <div className="flex items-center justify-between mb-6"><h2 className="text-2xl md:text-3xl font-bold text-slate-900">"Before You Apply" Checklist</h2><button onClick={() => window.print()} className="flex items-center gap-2 text-base text-emerald-600 hover:text-emerald-700 font-bold" aria-label="Print checklist"><Printer size={20} aria-hidden="true" /> Print</button></div>
+                        <div className="flex items-center justify-between mb-6"><h2 className="text-2xl md:text-3xl font-bold text-slate-900">"Before You Apply" Checklist</h2><button onClick={() => window.print()} className="flex items-center gap-2 text-base text-plum-600 hover:text-plum-700 font-bold" aria-label="Print checklist"><Printer size={20} aria-hidden="true" /> Print</button></div>
                         <div className="grid lg:grid-cols-5 gap-8">
                             <div className="lg:col-span-3 space-y-6">
-                                <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm" aria-labelledby="progress-heading"><div className="flex justify-between items-center mb-2"><span id="progress-heading" className="text-base font-bold text-slate-700">Your Responsibility</span><span className="text-base font-bold text-emerald-600" aria-live="polite">{progress}% Ready</span></div><div className="w-full bg-slate-100 rounded-full h-4" role="progressbar" aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100" aria-label={`Application preparation progress: ${progress} percent complete`}><div className="bg-emerald-500 h-4 rounded-full transition-all duration-500 ease-out" style={{ width: `${progress}%` }}></div></div><p className="text-slate-700 text-base mt-3 italic">Gather these items before you apply. Click to check them off.</p></section>
-                                <div className="space-y-3" role="list" aria-label="Application checklist items">{checklistItems.map((item, idx) => { const isChecked = !!checkedItems[idx]; return ( <button key={idx} onClick={() => toggleCheck(idx)} role="checkbox" aria-checked={isChecked} className={`w-full flex items-start gap-4 p-4 rounded-lg border transition-all text-left ${isChecked ? 'bg-emerald-50 border-emerald-200 shadow-sm' : 'bg-white border-slate-200 hover:border-emerald-300'}`}><div className={`flex-shrink-0 text-emerald-600 mt-0.5 transition-transform duration-200 ${isChecked ? 'scale-110' : 'scale-100 text-slate-300'}`} aria-hidden="true">{isChecked ? <CheckSquare size={24} /> : <Square size={24} />}</div><span className={`font-medium text-base leading-relaxed ${isChecked ? 'text-slate-900' : 'text-slate-700'}`}>{item}</span></button> ); })}</div>
-                                {progress === 100 && ( <div className="p-4 bg-emerald-100 text-emerald-800 rounded-xl text-center" role="alert" aria-live="polite"><span className="font-bold text-lg">🎉 You have everything you need! Time to apply.</span></div> )}
+                                <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm" aria-labelledby="progress-heading"><div className="flex justify-between items-center mb-2"><span id="progress-heading" className="text-base font-bold text-slate-700">Your Responsibility</span><span className="text-base font-bold text-plum-600" aria-live="polite">{progress}% Ready</span></div><div className="w-full bg-slate-100 rounded-full h-4" role="progressbar" aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100" aria-label={`Application preparation progress: ${progress} percent complete`}><div className="bg-plum-500 h-4 rounded-full transition-all duration-500 ease-out" style={{ width: `${progress}%` }}></div></div><p className="text-slate-700 text-base mt-3 italic">Gather these items before you apply. Click to check them off.</p></section>
+                                <div className="space-y-3" role="list" aria-label="Application checklist items">{checklistItems.map((item, idx) => { const isChecked = !!checkedItems[idx]; return ( <button key={idx} onClick={() => toggleCheck(idx)} role="checkbox" aria-checked={isChecked} className={`w-full flex items-start gap-4 p-4 rounded-lg border transition-all text-left ${isChecked ? 'bg-plum-50 border-plum-200 shadow-sm' : 'bg-white border-slate-200 hover:border-plum-300'}`}><div className={`flex-shrink-0 text-plum-600 mt-0.5 transition-transform duration-200 ${isChecked ? 'scale-110' : 'scale-100 text-slate-300'}`} aria-hidden="true">{isChecked ? <CheckSquare size={24} /> : <Square size={24} />}</div><span className={`font-medium text-base leading-relaxed ${isChecked ? 'text-slate-900' : 'text-slate-700'}`}>{item}</span></button> ); })}</div>
+                                {progress === 100 && ( <div className="p-4 bg-plum-100 text-plum-800 rounded-xl text-center" role="alert" aria-live="polite"><span className="font-bold text-lg">🎉 You have everything you need! Time to apply.</span></div> )}
                             </div>
                             <aside className="lg:col-span-2 space-y-6">
                                 <section className="bg-slate-50 p-6 rounded-xl border border-slate-200" aria-labelledby="clinic-handles"><h3 id="clinic-handles" className="font-bold text-lg text-slate-800 mb-4 flex items-center gap-2"><Stethoscope size={24} className="text-plum-600" aria-hidden="true" /> What the Clinic Handles</h3><p className="text-base text-slate-700 mb-4">You do <strong>NOT</strong> need to provide these. Your provider will fill them in:</p><ul className="space-y-3">{["ICD-10 diagnosis codes", "Provider NPI numbers", "Prescriber signatures", "Medical chart notes", "Treatment start dates"].map((item, i) => ( <li key={i} className="flex items-center gap-2 text-base text-slate-700"><CheckCircle size={18} className="text-plum-500 flex-shrink-0" aria-hidden="true" />{item}</li> ))}</ul></section>
@@ -6164,10 +6164,10 @@ ${patientName || "[Your Name]"}`;
 
                         {/* Quiz data indicator */}
                         {quizSelectedMeds && quizSelectedMeds.length > 0 && (
-                            <aside className="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg" role="note">
+                            <aside className="bg-plum-50 border-l-4 border-plum-500 p-4 rounded-r-lg" role="note">
                                 <div className="flex items-center gap-2">
-                                    <CheckCircle size={20} className="text-emerald-600" aria-hidden="true" />
-                                    <p className="text-emerald-800 font-medium">
+                                    <CheckCircle size={20} className="text-plum-600" aria-hidden="true" />
+                                    <p className="text-plum-800 font-medium">
                                         We loaded {quizSelectedMeds.length} medication{quizSelectedMeds.length !== 1 ? 's' : ''} from your My Path Quiz. Add more below or view program details.
                                     </p>
                                 </div>
@@ -6236,7 +6236,7 @@ ${patientName || "[Your Name]"}`;
                                                                 <span className="text-sm text-slate-600">{med.genericName}</span>
                                                             </div>
                                                             {isAlreadyIn ? (
-                                                                <span className="text-emerald-600 text-sm font-bold flex items-center gap-1"><CheckCircle size={16} /> Added</span>
+                                                                <span className="text-plum-600 text-sm font-bold flex items-center gap-1"><CheckCircle size={16} /> Added</span>
                                                             ) : (
                                                                 <span className="text-teal-600 bg-teal-50 px-3 py-1 rounded-full text-sm font-bold group-hover:bg-teal-100 flex items-center gap-1"><PlusCircle size={16} /> Add</span>
                                                             )}
@@ -6295,8 +6295,8 @@ ${patientName || "[Your Name]"}`;
                                         </button>
                                     </div>
                                     {localCommercialInsurance === 'yes' && (
-                                        <div className="mt-3 p-3 bg-emerald-50 border border-emerald-200 rounded-lg">
-                                            <p className="text-emerald-800 text-sm">
+                                        <div className="mt-3 p-3 bg-plum-50 border border-plum-200 rounded-lg">
+                                            <p className="text-plum-800 text-sm">
                                                 <strong>Copay cards can help!</strong> With commercial insurance, manufacturer copay cards can lower your cost to $0-$50/month for many transplant medications.
                                             </p>
                                         </div>
@@ -6326,7 +6326,7 @@ ${patientName || "[Your Name]"}`;
                                 </div>
 
                                 {/* Info box about what they're seeing */}
-                                <div className="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 rounded-xl p-4">
+                                <div className="bg-gradient-to-r from-teal-50 to-plum-50 border border-teal-200 rounded-xl p-4">
                                     <div className="flex items-start gap-3">
                                         <Info size={20} className="text-teal-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                         <div>
@@ -6421,7 +6421,7 @@ const FAQ = () => {
                     <span className="font-semibold text-slate-900 pr-4">{question}</span>
                     <ChevronDown
                         size={20}
-                        className={`flex-shrink-0 text-emerald-600 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        className={`flex-shrink-0 text-plum-600 transition-transform ${isOpen ? 'rotate-180' : ''}`}
                         aria-hidden="true"
                     />
                 </button>
@@ -6441,8 +6441,8 @@ const FAQ = () => {
     return (
         <article className="max-w-5xl mx-auto space-y-8 pb-12">
             <header className="text-center py-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-                    <Info size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+                    <Info size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Frequently Asked Questions</h1>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto">
@@ -6454,7 +6454,7 @@ const FAQ = () => {
                 {faqs.map((section, sectionIndex) => (
                     <section key={sectionIndex} className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8">
                         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                            <span className="w-1 h-8 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                            <span className="w-1 h-8 bg-plum-600 rounded-full" aria-hidden="true"></span>
                             {section.category}
                         </h2>
                         <div className="space-y-3">
@@ -6474,21 +6474,21 @@ const FAQ = () => {
                 ))}
             </div>
 
-            <aside className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 md:p-8 text-center">
-                <h2 className="text-xl font-bold text-emerald-900 mb-3">Still have questions?</h2>
-                <p className="text-emerald-800 mb-6">
+            <aside className="bg-plum-50 border border-plum-200 rounded-xl p-6 md:p-8 text-center">
+                <h2 className="text-xl font-bold text-plum-900 mb-3">Still have questions?</h2>
+                <p className="text-plum-800 mb-6">
                     Your transplant center's social worker or financial coordinator is your best resource for personalized guidance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                         to="/wizard"
-                        className="px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-md transition"
+                        className="px-6 py-3 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-lg shadow-md transition"
                     >
                         Start My Path Quiz
                     </Link>
                     <Link
                         to="/education"
-                        className="px-6 py-3 bg-white hover:bg-slate-50 text-emerald-700 font-bold rounded-lg shadow-md border border-emerald-200 transition"
+                        className="px-6 py-3 bg-white hover:bg-slate-50 text-plum-700 font-bold rounded-lg shadow-md border border-plum-200 transition"
                     >
                         Browse Resources
                     </Link>
@@ -6520,7 +6520,7 @@ const NotFound = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Link
                         to="/"
-                        className="w-full sm:w-auto px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2"
                         aria-label="Return to home page"
                     >
                         <HomeIcon size={20} aria-hidden="true" />
@@ -6528,7 +6528,7 @@ const NotFound = () => {
                     </Link>
                     <Link
                         to="/wizard"
-                        className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 font-bold rounded-xl hover:border-emerald-200 transition flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 font-bold rounded-xl hover:border-plum-200 transition flex items-center justify-center gap-2"
                         aria-label="Start medication assistance wizard"
                     >
                         <Map size={20} aria-hidden="true" />
@@ -6544,7 +6544,7 @@ const NotFound = () => {
 const PageLoadingFallback = () => (
     <div className="flex items-center justify-center min-h-[120px]">
         <div className="text-center">
-            <Loader2 size={40} className="animate-spin text-emerald-600 mx-auto mb-4" aria-hidden="true" />
+            <Loader2 size={40} className="animate-spin text-plum-600 mx-auto mb-4" aria-hidden="true" />
             <p className="text-slate-600 font-medium">Loading...</p>
         </div>
     </div>

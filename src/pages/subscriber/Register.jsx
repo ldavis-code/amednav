@@ -81,17 +81,17 @@ export default function SubscriberRegister() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-plum-600" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-plum-50 to-teal-100 flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-600 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-600 rounded-full mb-4">
             <Heart className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Create Your Account</h1>
@@ -116,7 +116,7 @@ export default function SubscriberRegister() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   autoComplete="name"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="Your name"
                 />
               </div>
@@ -136,7 +136,7 @@ export default function SubscriberRegister() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="you@example.com"
                 />
               </div>
@@ -156,7 +156,7 @@ export default function SubscriberRegister() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   autoComplete="new-password"
-                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                   placeholder="Create a password"
                 />
                 <button
@@ -173,7 +173,7 @@ export default function SubscriberRegister() {
               {password.length > 0 && (
                 <ul className="mt-2 space-y-1">
                   {passwordRequirements.map((req, i) => (
-                    <li key={i} className={`flex items-center gap-2 text-xs ${req.met ? 'text-emerald-600' : 'text-gray-600'}`}>
+                    <li key={i} className={`flex items-center gap-2 text-xs ${req.met ? 'text-plum-600' : 'text-gray-600'}`}>
                       <CheckCircle className={`h-3 w-3 ${req.met ? 'opacity-100' : 'opacity-40'}`} />
                       {req.text}
                     </li>
@@ -196,10 +196,10 @@ export default function SubscriberRegister() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                   autoComplete="new-password"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${
+                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500 ${
                     confirmPassword.length > 0
                       ? passwordsMatch
-                        ? 'border-emerald-500'
+                        ? 'border-plum-500'
                         : 'border-red-300'
                       : 'border-gray-300'
                   }`}
@@ -230,7 +230,7 @@ export default function SubscriberRegister() {
             <button
               type="submit"
               disabled={submitting || !isPasswordValid || !passwordsMatch}
-              className="w-full py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
+              className="w-full py-3 bg-plum-600 text-white rounded-lg font-medium hover:bg-plum-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition"
             >
               {submitting ? (
                 <>
@@ -256,7 +256,7 @@ export default function SubscriberRegister() {
           {/* Login Link */}
           <Link
             to="/login"
-            className="block w-full py-3 text-center border border-emerald-600 text-emerald-600 rounded-lg font-medium hover:bg-emerald-50 transition"
+            className="block w-full py-3 text-center border border-plum-600 text-plum-600 rounded-lg font-medium hover:bg-plum-50 transition"
           >
             Sign In
           </Link>
@@ -267,15 +267,15 @@ export default function SubscriberRegister() {
           <h3 className="font-medium text-gray-900 mb-2 text-center">Why create an account?</h3>
           <ul className="text-sm text-gray-600 space-y-2">
             <li className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+              <CheckCircle className="h-4 w-4 text-plum-600 flex-shrink-0" />
               Access your saved medications on any device
             </li>
             <li className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+              <CheckCircle className="h-4 w-4 text-plum-600 flex-shrink-0" />
               Keep your quiz results and recommendations
             </li>
             <li className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+              <CheckCircle className="h-4 w-4 text-plum-600 flex-shrink-0" />
               Track your savings progress over time
             </li>
           </ul>
@@ -283,7 +283,7 @@ export default function SubscriberRegister() {
 
         {/* Footer */}
         <div className="mt-4 text-center">
-          <Link to="/" className="text-sm text-gray-600 hover:text-emerald-600">
+          <Link to="/" className="text-sm text-gray-600 hover:text-plum-600">
             &larr; Back to main site
           </Link>
         </div>

@@ -162,7 +162,7 @@ const Account = () => {
   if (authLoading) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
-        <Loader2 size={32} className="animate-spin text-emerald-600" />
+        <Loader2 size={32} className="animate-spin text-plum-600" />
       </div>
     );
   }
@@ -182,24 +182,24 @@ const Account = () => {
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center">
           <div className="space-y-4 mb-6">
             <div className="flex items-center justify-center gap-3 text-slate-600">
-              <Cloud size={20} className="text-emerald-600" />
+              <Cloud size={20} className="text-plum-600" />
               <span>Sync your medications and quiz results</span>
             </div>
             <div className="flex items-center justify-center gap-3 text-slate-600">
-              <CheckCircle size={20} className="text-emerald-600" />
+              <CheckCircle size={20} className="text-plum-600" />
               <span>Access your data on any device</span>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/login"
-              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition"
+              className="px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg transition"
             >
               Sign In
             </Link>
             <Link
               to="/login/register"
-              className="px-6 py-3 bg-white hover:bg-slate-50 text-emerald-700 font-bold rounded-lg border border-emerald-200 transition"
+              className="px-6 py-3 bg-white hover:bg-slate-50 text-plum-700 font-bold rounded-lg border border-plum-200 transition"
             >
               Create Account
             </Link>
@@ -207,7 +207,7 @@ const Account = () => {
         </div>
 
         {/* Subscribe CTA */}
-        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 p-6 text-center">
+        <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-xl border border-plum-200 p-6 text-center">
           <Crown size={24} className="text-amber-500 mx-auto mb-2" />
           <h3 className="font-bold text-slate-900 mb-2">Get Pro for Unlimited Access</h3>
           <p className="text-slate-600 text-sm mb-4">
@@ -215,7 +215,7 @@ const Account = () => {
           </p>
           <Link
             to="/subscribe"
-            className="inline-block px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition"
+            className="inline-block px-6 py-2 bg-plum-600 hover:bg-plum-700 text-white font-medium rounded-lg transition"
           >
             View Plans
           </Link>
@@ -228,8 +228,8 @@ const Account = () => {
     <article className="max-w-2xl mx-auto space-y-8 pb-12">
       {/* Header */}
       <header className="text-center py-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-          <User size={32} className="text-emerald-700" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+          <User size={32} className="text-plum-700" />
         </div>
         <h1 className="text-3xl font-extrabold text-slate-900 mb-2">My Account</h1>
         <p className="text-slate-600">{user.name || user.email}</p>
@@ -278,9 +278,9 @@ const Account = () => {
 
       {/* Sync Success Message */}
       {migrationStatus === 'success' && (
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center gap-3">
-          <CheckCircle size={20} className="text-emerald-600 flex-shrink-0" />
-          <p className="text-emerald-800">Your data has been synced successfully!</p>
+        <div className="bg-plum-50 border border-plum-200 rounded-xl p-4 flex items-center gap-3">
+          <CheckCircle size={20} className="text-plum-600 flex-shrink-0" />
+          <p className="text-plum-800">Your data has been synced successfully!</p>
         </div>
       )}
 
@@ -294,7 +294,7 @@ const Account = () => {
             </h2>
             <button
               onClick={refreshSubscription}
-              className="p-2 text-slate-500 hover:text-emerald-600 transition"
+              className="p-2 text-slate-500 hover:text-plum-600 transition"
               title="Refresh subscription status"
               aria-label="Refresh subscription status"
             >
@@ -306,7 +306,7 @@ const Account = () => {
         <div className="p-6">
           {subLoading ? (
             <div className="flex items-center justify-center py-8">
-              <Loader2 size={24} className="animate-spin text-emerald-600" />
+              <Loader2 size={24} className="animate-spin text-plum-600" />
             </div>
           ) : (
             <div className="space-y-6">
@@ -328,7 +328,7 @@ const Account = () => {
                   </div>
                 )}
                 {isPro && !isPastDue && (
-                  <div className="flex items-center gap-2 text-emerald-600">
+                  <div className="flex items-center gap-2 text-plum-600">
                     <CheckCircle size={18} />
                     <span className="text-sm font-medium">Active</span>
                   </div>
@@ -364,7 +364,7 @@ const Account = () => {
 
               {/* Sync Status */}
               <div className="flex items-center gap-3 text-slate-600 bg-slate-50 rounded-lg p-3">
-                <Cloud size={18} className="text-emerald-600" />
+                <Cloud size={18} className="text-plum-600" />
                 <span className="text-sm">Your data is synced across all your devices</span>
               </div>
 
@@ -382,7 +382,7 @@ const Account = () => {
                   <button
                     onClick={handleOpenPortal}
                     disabled={portalLoading}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg transition disabled:opacity-50"
                   >
                     {portalLoading ? (
                       <>
@@ -400,7 +400,7 @@ const Account = () => {
                 ) : (
                   <Link
                     to="/subscribe"
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg transition"
                   >
                     <Crown size={18} />
                     Upgrade to Pro
@@ -410,12 +410,12 @@ const Account = () => {
 
               {/* Subscription Info */}
               {!hasSubscription && !isPro && (
-                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                  <h3 className="font-bold text-emerald-900 mb-2">Upgrade to Pro</h3>
-                  <p className="text-emerald-800 text-sm mb-3">
+                <div className="bg-plum-50 border border-plum-200 rounded-lg p-4">
+                  <h3 className="font-bold text-plum-900 mb-2">Upgrade to Pro</h3>
+                  <p className="text-plum-800 text-sm mb-3">
                     Get unlimited access to all features including My Path Quiz, medication savings tracker, and more.
                   </p>
-                  <ul className="text-sm text-emerald-700 space-y-1">
+                  <ul className="text-sm text-plum-700 space-y-1">
                     <li className="flex items-center gap-2">
                       <CheckCircle size={14} />
                       Unlimited My Path Quiz
@@ -436,7 +436,7 @@ const Account = () => {
               {!isPro && (
                 <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <Gift size={20} className="text-emerald-600" />
+                    <Gift size={20} className="text-plum-600" />
                     <div>
                       <h3 className="font-bold text-slate-900">Have a Patient Code?</h3>
                       <p className="text-slate-600 text-sm">
@@ -446,9 +446,9 @@ const Account = () => {
                   </div>
 
                   {codeSuccess ? (
-                    <div className="flex items-center gap-3 bg-emerald-50 border border-emerald-200 rounded-lg p-3">
-                      <CheckCircle size={18} className="text-emerald-600" />
-                      <p className="text-emerald-800 font-medium">Code redeemed! You now have Pro access.</p>
+                    <div className="flex items-center gap-3 bg-plum-50 border border-plum-200 rounded-lg p-3">
+                      <CheckCircle size={18} className="text-plum-600" />
+                      <p className="text-plum-800 font-medium">Code redeemed! You now have Pro access.</p>
                     </div>
                   ) : (
                     <form onSubmit={handleRedeemCode} className="space-y-2">
@@ -458,13 +458,13 @@ const Account = () => {
                           value={patientCode}
                           onChange={(e) => setPatientCode(e.target.value)}
                           placeholder="Enter patient code"
-                          className="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
+                          className="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-plum-500 focus:border-plum-500 text-sm"
                           disabled={codeLoading}
                         />
                         <button
                           type="submit"
                           disabled={codeLoading || !patientCode.trim()}
-                          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 text-sm"
+                          className="px-4 py-2 bg-plum-600 hover:bg-plum-700 text-white font-medium rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 text-sm"
                         >
                           {codeLoading ? (
                             <>
@@ -576,13 +576,13 @@ const Account = () => {
       <div className="text-center text-slate-500 text-sm">
         <p>
           Need help?{' '}
-          <Link to="/faq" className="text-emerald-600 hover:underline">
+          <Link to="/faq" className="text-plum-600 hover:underline">
             View FAQ
           </Link>
           {' or '}
           <a
             href="mailto:info@transplantmedicationnavigator.com"
-            className="text-emerald-600 hover:underline"
+            className="text-plum-600 hover:underline"
           >
             Contact Support
           </a>

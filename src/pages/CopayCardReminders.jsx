@@ -265,13 +265,13 @@ export default function CopayCardReminders() {
         {/* Link to My Medications */}
         <Link
           to="/my-medications"
-          className="block bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-4 mb-6 text-white hover:from-emerald-700 hover:to-teal-700 transition-all"
+          className="block bg-gradient-to-r from-plum-600 to-teal-600 rounded-xl p-4 mb-6 text-white hover:from-plum-700 hover:to-teal-700 transition-all"
         >
           <div className="flex items-center gap-3">
             <CreditCard size={24} />
             <div>
               <div className="font-semibold">My Medications</div>
-              <div className="text-emerald-100 text-sm">Track your medications and renewal dates</div>
+              <div className="text-plum-100 text-sm">Track your medications and renewal dates</div>
             </div>
           </div>
         </Link>
@@ -313,7 +313,7 @@ export default function CopayCardReminders() {
         {/* Add Reminder Form */}
         <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 mb-6">
           <h2 id="add-reminder-heading" className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-            <Plus className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+            <Plus className="w-5 h-5 text-plum-600" aria-hidden="true" />
             Add a Copay Card Reminder
           </h2>
 
@@ -342,7 +342,7 @@ export default function CopayCardReminders() {
                   onChange={(e) => setNewReminder({ ...newReminder, programName: e.target.value })}
                   placeholder="e.g., Prograf Copay Card"
                   aria-required="true"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                 />
               </div>
               <div>
@@ -355,7 +355,7 @@ export default function CopayCardReminders() {
                   value={newReminder.medicationName}
                   onChange={(e) => setNewReminder({ ...newReminder, medicationName: e.target.value })}
                   placeholder="e.g., Tacrolimus"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                 />
               </div>
               <div>
@@ -367,7 +367,7 @@ export default function CopayCardReminders() {
                   type="date"
                   value={newReminder.expirationDate}
                   onChange={(e) => setNewReminder({ ...newReminder, expirationDate: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                 />
               </div>
               <div>
@@ -378,7 +378,7 @@ export default function CopayCardReminders() {
                   id="renewal-type"
                   value={newReminder.renewalType}
                   onChange={(e) => setNewReminder({ ...newReminder, renewalType: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                 >
                   <option value="">-- Select --</option>
                   <option value="calendar_year">Calendar year (Jan 1)</option>
@@ -395,7 +395,7 @@ export default function CopayCardReminders() {
                   id="reminder-days"
                   value={newReminder.reminderDays}
                   onChange={(e) => setNewReminder({ ...newReminder, reminderDays: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                 >
                   {reminderDaysOptions.map(opt => (
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -414,7 +414,7 @@ export default function CopayCardReminders() {
                   value={newReminder.maxBenefit}
                   onChange={(e) => setNewReminder({ ...newReminder, maxBenefit: e.target.value })}
                   placeholder="e.g., 6000"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                 />
               </div>
             </div>
@@ -428,12 +428,12 @@ export default function CopayCardReminders() {
                 onChange={(e) => setNewReminder({ ...newReminder, notes: e.target.value })}
                 placeholder="e.g., Call 1-800-XXX-XXXX to re-enroll, need income verification"
                 rows={2}
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 flex items-center justify-center gap-2 min-h-[44px] focus:outline-none focus:ring-4 focus:ring-emerald-500/50"
+              className="w-full bg-plum-600 text-white py-3 rounded-lg font-semibold hover:bg-plum-700 flex items-center justify-center gap-2 min-h-[44px] focus:outline-none focus:ring-4 focus:ring-plum-500/50"
             >
               <Plus className="w-5 h-5" aria-hidden="true" />
               Save Reminder
@@ -472,7 +472,7 @@ export default function CopayCardReminders() {
                 const badgeClasses = {
                   red: 'bg-red-100 text-red-700',
                   amber: 'bg-amber-100 text-amber-700',
-                  emerald: 'bg-emerald-100 text-emerald-700',
+                  emerald: 'bg-plum-100 text-plum-700',
                   slate: 'bg-slate-100 text-slate-600'
                 };
 

@@ -600,11 +600,11 @@ const MedicationAssistantChat = () => {
           </div>
           <div style="padding: 16px;">
             ${medGroup.programs?.length > 0 ? medGroup.programs.map(program => `
-              <div style="border: 1px solid #10b981; border-radius: 8px; padding: 12px; margin-bottom: 12px; background: #ecfdf5;">
-                <strong style="color: #065f46;">${program.program_name}</strong>
+              <div style="border: 1px solid #CECBF6; border-radius: 8px; padding: 12px; margin-bottom: 12px; background: #EEEDFE;">
+                <strong style="color: #26215C;">${program.program_name}</strong>
                 ${program.max_benefit ? `<p style="margin: 4px 0; font-size: 13px;"><strong>Benefit:</strong> ${program.max_benefit}</p>` : ''}
                 ${program.eligibility_summary ? `<p style="margin: 4px 0; font-size: 13px;"><strong>Eligibility:</strong> ${program.eligibility_summary}</p>` : ''}
-                ${program.application_url ? `<p style="margin: 8px 0 0 0; font-size: 13px;"><strong>Apply:</strong> <a href="${program.application_url}" style="color: #059669;">${program.application_url}</a></p>` : ''}
+                ${program.application_url ? `<p style="margin: 8px 0 0 0; font-size: 13px;"><strong>Apply:</strong> <a href="${program.application_url}" style="color: #534AB7;">${program.application_url}</a></p>` : ''}
               </div>
             `).join('') : '<p style="color: #64748b;">Contact your transplant center social worker for assistance.</p>'}
           </div>
@@ -628,7 +628,7 @@ const MedicationAssistantChat = () => {
         <title>Medication Assistance Action Plan</title>
         <style>
           body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 24px; color: #1e293b; }
-          h1 { color: #065f46; border-bottom: 2px solid #10b981; padding-bottom: 12px; }
+          h1 { color: #26215C; border-bottom: 2px solid #CECBF6; padding-bottom: 12px; }
           @media print { body { padding: 0; } }
         </style>
       </head>
@@ -669,7 +669,7 @@ const MedicationAssistantChat = () => {
       let processedLine = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
       processedLine = processedLine.replace(
         /\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">$1</a>'
+        '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-plum-600 hover:text-plum-700 underline">$1</a>'
       );
 
       if (line.startsWith('### ')) {
@@ -721,12 +721,12 @@ const MedicationAssistantChat = () => {
                   {selectedMedications.map((med) => (
                     <span
                       key={med.id}
-                      className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-base font-medium"
+                      className="inline-flex items-center gap-2 bg-plum-100 text-plum-800 px-4 py-2 rounded-full text-base font-medium"
                     >
                       {med.brand_name}
                       <button
                         onClick={() => handleMedicationRemove(med.id)}
-                        className="hover:bg-emerald-200 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors"
+                        className="hover:bg-plum-200 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors"
                         aria-label={`Remove ${med.brand_name}`}
                       >
                         <X size={16} aria-hidden="true" />
@@ -737,7 +737,7 @@ const MedicationAssistantChat = () => {
               </div>
               <button
                 onClick={handleMedicationsContinue}
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-lg flex items-center justify-center gap-2 transition"
+                className="w-full bg-plum-600 hover:bg-plum-700 text-white font-medium py-3 rounded-lg flex items-center justify-center gap-2 transition"
               >
                 Continue with {selectedMedications.length} medication{selectedMedications.length > 1 ? 's' : ''}
                 <ChevronRight size={18} />
@@ -790,7 +790,7 @@ const MedicationAssistantChat = () => {
         {selectedMedications.length > 0 && (
           <div className="space-y-3">
             <div className="text-sm font-semibold text-slate-700 flex items-center gap-2">
-              <CheckCircle2 size={18} className="text-emerald-600" aria-hidden="true" />
+              <CheckCircle2 size={18} className="text-plum-600" aria-hidden="true" />
               Selected Medications ({selectedMedications.length}):
             </div>
             <div className="flex flex-wrap gap-2" role="list" aria-label="Selected medications">
@@ -798,12 +798,12 @@ const MedicationAssistantChat = () => {
                 <span
                   key={med.id}
                   role="listitem"
-                  className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-base font-medium"
+                  className="inline-flex items-center gap-2 bg-plum-100 text-plum-800 px-4 py-2 rounded-full text-base font-medium"
                 >
                   {med.brand_name}
                   <button
                     onClick={() => handleMedicationRemove(med.id)}
-                    className="hover:bg-emerald-200 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors"
+                    className="hover:bg-plum-200 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors"
                     aria-label={`Remove ${med.brand_name} from selection`}
                   >
                     <X size={16} aria-hidden="true" />
@@ -826,7 +826,7 @@ const MedicationAssistantChat = () => {
             value={medicationSearch}
             onChange={(e) => setMedicationSearch(e.target.value)}
             placeholder={selectedMedications.length > 0 ? "Add another medication..." : "Type medication name..."}
-            className="w-full pl-12 pr-12 py-4 border-2 border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-base"
+            className="w-full pl-12 pr-12 py-4 border-2 border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-plum-500 focus:border-plum-500 text-base"
             autoFocus
             role="combobox"
             aria-expanded={medicationResults.length > 0}
@@ -836,7 +836,7 @@ const MedicationAssistantChat = () => {
           />
           {isSearching && (
             <div className="absolute right-4 top-1/2 -translate-y-1/2" aria-hidden="true">
-              <Loader2 className="text-emerald-500 animate-spin" size={20} />
+              <Loader2 className="text-plum-500 animate-spin" size={20} />
             </div>
           )}
           {isSearching && (
@@ -866,7 +866,7 @@ const MedicationAssistantChat = () => {
                   aria-selected={isAlreadySelected}
                   aria-disabled={isAlreadySelected}
                   className={`w-full text-left p-4 border-b border-slate-100 last:border-b-0 transition min-h-[60px] ${
-                    isAlreadySelected ? 'bg-emerald-50 cursor-not-allowed' : 'hover:bg-emerald-50 cursor-pointer'
+                    isAlreadySelected ? 'bg-plum-50 cursor-not-allowed' : 'hover:bg-plum-50 cursor-pointer'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-3">
@@ -874,13 +874,13 @@ const MedicationAssistantChat = () => {
                       <div className="font-semibold text-lg text-slate-900 flex items-center gap-2">
                         {med.brand_name}
                         {isAlreadySelected && (
-                          <span className="text-xs bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded-full">Added</span>
+                          <span className="text-xs bg-plum-200 text-plum-800 px-2 py-0.5 rounded-full">Added</span>
                         )}
                       </div>
                       <div className="text-base text-slate-600">{med.generic_name} {med.category && `· ${med.category}`}</div>
                     </div>
                     {isAlreadySelected ? (
-                      <CheckCircle2 size={24} className="text-emerald-600 flex-shrink-0" aria-hidden="true" />
+                      <CheckCircle2 size={24} className="text-plum-600 flex-shrink-0" aria-hidden="true" />
                     ) : (
                       <PlusCircle size={24} className="text-slate-400 flex-shrink-0" aria-hidden="true" />
                     )}
@@ -895,14 +895,14 @@ const MedicationAssistantChat = () => {
         {medicationSearch && medicationSearch.length >= 2 && medicationResults.length === 0 && !isSearching && (
           <button
             onClick={() => handleMedicationSelect({ id: medicationSearch, brand_name: medicationSearch, generic_name: 'Custom entry' })}
-            className="w-full text-left p-4 bg-white border-2 border-emerald-300 rounded-xl hover:bg-emerald-50 transition min-h-[60px]"
+            className="w-full text-left p-4 bg-white border-2 border-plum-300 rounded-xl hover:bg-plum-50 transition min-h-[60px]"
           >
             <div className="flex items-center justify-between gap-3">
               <div>
-                <div className="font-semibold text-lg text-emerald-700">Add "{medicationSearch}"</div>
+                <div className="font-semibold text-lg text-plum-700">Add "{medicationSearch}"</div>
                 <div className="text-base text-slate-600">Add this medication to your list</div>
               </div>
-              <PlusCircle size={24} className="text-emerald-500 flex-shrink-0" aria-hidden="true" />
+              <PlusCircle size={24} className="text-plum-500 flex-shrink-0" aria-hidden="true" />
             </div>
           </button>
         )}
@@ -911,7 +911,7 @@ const MedicationAssistantChat = () => {
         {selectedMedications.length > 0 && (
           <button
             onClick={handleMedicationsContinue}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition text-lg min-h-[56px] shadow-lg"
+            className="w-full bg-plum-600 hover:bg-plum-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition text-lg min-h-[56px] shadow-lg"
           >
             Continue with {selectedMedications.length} medication{selectedMedications.length > 1 ? 's' : ''}
             <ChevronRight size={24} aria-hidden="true" />
@@ -951,8 +951,8 @@ const MedicationAssistantChat = () => {
         <div className="max-w-sm mx-auto space-y-4">
           {/* Welcome Header */}
           <div className="text-center pt-2">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full mb-3">
-              <HeartHandshake size={32} className="text-emerald-600" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-plum-100 to-teal-100 rounded-full mb-3">
+              <HeartHandshake size={32} className="text-plum-600" />
             </div>
             <h3 className="text-xl font-bold text-slate-800 mb-2">
               Find Your Medication Pathway
@@ -964,16 +964,16 @@ const MedicationAssistantChat = () => {
 
           {/* Pro Feature Banner */}
           {hasAccess && (
-            <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-4">
+            <div className="bg-plum-50 border-2 border-plum-200 rounded-xl p-4">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <CheckCircle2 size={20} className="text-emerald-600" />
+                <div className="flex-shrink-0 w-10 h-10 bg-plum-100 rounded-full flex items-center justify-center">
+                  <CheckCircle2 size={20} className="text-plum-600" />
                 </div>
                 <div className="flex-1">
-                  <p className="font-semibold text-emerald-800 text-sm mb-1">
+                  <p className="font-semibold text-plum-800 text-sm mb-1">
                     {isDemo ? 'Demo mode' : isPro ? 'Pro subscriber' : 'Promo access'} — unlimited access
                   </p>
-                  <p className="text-emerald-700 text-xs leading-relaxed">
+                  <p className="text-plum-700 text-xs leading-relaxed">
                     You have unlimited pathway quizzes, medication searches, and savings tracking.
                   </p>
                 </div>
@@ -989,19 +989,19 @@ const MedicationAssistantChat = () => {
             </h4>
             <ul className="space-y-2 text-sm text-slate-600">
               <li className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-emerald-500 flex-shrink-0" />
+                <CheckCircle2 size={16} className="text-plum-500 flex-shrink-0" />
                 Copay assistance and savings cards
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-emerald-500 flex-shrink-0" />
+                <CheckCircle2 size={16} className="text-plum-500 flex-shrink-0" />
                 Patient assistance programs (free meds)
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-emerald-500 flex-shrink-0" />
+                <CheckCircle2 size={16} className="text-plum-500 flex-shrink-0" />
                 Foundation grants for out-of-pocket costs
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-emerald-500 flex-shrink-0" />
+                <CheckCircle2 size={16} className="text-plum-500 flex-shrink-0" />
                 Low-cost pharmacy alternatives
               </li>
             </ul>
@@ -1018,7 +1018,7 @@ const MedicationAssistantChat = () => {
             onClick={() => {
               setHasStartedQuiz(true);
             }}
-            className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition text-lg shadow-lg hover:shadow-xl"
+            className="w-full bg-gradient-to-r from-plum-600 to-teal-600 hover:from-plum-700 hover:to-teal-700 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition text-lg shadow-lg hover:shadow-xl"
           >
             Start My Path Quiz
             <ChevronRight size={20} />
@@ -1048,12 +1048,12 @@ const MedicationAssistantChat = () => {
         {/* Visual progress */}
         <div className="flex items-center justify-between text-sm text-slate-600 mb-2 font-medium">
           <span className="flex items-center gap-2">
-            <span className="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full text-xs font-bold">
+            <span className="bg-plum-100 text-plum-700 px-2 py-0.5 rounded-full text-xs font-bold">
               {currentPosition + 1}/{visibleQuestionCount}
             </span>
             <span>Question {currentPosition + 1} of {visibleQuestionCount}</span>
           </span>
-          <span className="text-emerald-600 font-semibold">{progressPercent}% complete</span>
+          <span className="text-plum-600 font-semibold">{progressPercent}% complete</span>
         </div>
 
         {/* Progress bar with better visibility */}
@@ -1066,7 +1066,7 @@ const MedicationAssistantChat = () => {
           aria-label={`Quiz progress: ${progressPercent}% complete`}
         >
           <div
-            className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-500 ease-out rounded-full"
+            className="h-full bg-gradient-to-r from-plum-500 to-teal-500 transition-all duration-500 ease-out rounded-full"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -1078,9 +1078,9 @@ const MedicationAssistantChat = () => {
               key={index}
               className={`w-2 h-2 rounded-full transition-all ${
                 index < currentPosition
-                  ? 'bg-emerald-500'
+                  ? 'bg-plum-500'
                   : index === currentPosition
-                  ? 'bg-emerald-500 ring-2 ring-emerald-200 ring-offset-1'
+                  ? 'bg-plum-500 ring-2 ring-plum-200 ring-offset-1'
                   : 'bg-slate-300'
               }`}
               aria-hidden="true"
@@ -1119,7 +1119,7 @@ const MedicationAssistantChat = () => {
         <div className="bg-white rounded-xl border-2 border-slate-200 p-6 shadow-md mb-5">
           <div className="flex items-start gap-4">
             {/* Question number badge */}
-            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-plum-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
               {Math.max(0, currentVisibleQuestionIndex) + 1}
             </div>
             <div className="flex-1">
@@ -1158,10 +1158,10 @@ const MedicationAssistantChat = () => {
                     aria-describedby={option.description ? `${optionId}-desc` : undefined}
                     className={`w-auto min-w-[280px] max-w-sm text-left p-5 rounded-xl border transition-all min-h-[64px] bg-white ${
                       isSelected
-                        ? 'border-emerald-400 bg-emerald-50 shadow-sm'
+                        ? 'border-plum-400 bg-plum-50 shadow-sm'
                         : option.urgent
                         ? 'border-slate-200 hover:border-red-300 hover:bg-red-50'
-                        : 'border-slate-200 hover:border-emerald-300 hover:bg-slate-50'
+                        : 'border-slate-200 hover:border-plum-300 hover:bg-slate-50'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-4">
@@ -1169,7 +1169,7 @@ const MedicationAssistantChat = () => {
                         {/* Radio indicator */}
                         <div className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
                           isSelected
-                            ? 'border-emerald-500 bg-emerald-500'
+                            ? 'border-plum-500 bg-plum-500'
                             : option.urgent
                             ? 'border-slate-300'
                             : 'border-slate-300'
@@ -1180,7 +1180,7 @@ const MedicationAssistantChat = () => {
                           <div className="font-semibold text-lg text-slate-900 flex items-center gap-2 flex-wrap">
                             {option.label}
                             {option.hint && (
-                              <span className="text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-medium">
+                              <span className="text-xs bg-plum-100 text-plum-700 px-2.5 py-1 rounded-full font-medium">
                                 {option.hint}
                               </span>
                             )}
@@ -1197,7 +1197,7 @@ const MedicationAssistantChat = () => {
                       </div>
                       {/* Selection indicator */}
                       {isSelected && (
-                        <CheckCircle2 size={28} className="text-emerald-600 flex-shrink-0" aria-hidden="true" />
+                        <CheckCircle2 size={28} className="text-plum-600 flex-shrink-0" aria-hidden="true" />
                       )}
                     </div>
                   </button>
@@ -1228,7 +1228,7 @@ const MedicationAssistantChat = () => {
         {quizProgress.currentQuestionIndex > 0 && (
           <button
             onClick={prevQuizQuestion}
-            className="mt-5 flex items-center gap-2 text-slate-600 hover:text-emerald-700 text-base font-medium py-3 px-4 rounded-lg hover:bg-slate-100 transition-colors min-h-[48px]"
+            className="mt-5 flex items-center gap-2 text-slate-600 hover:text-plum-700 text-base font-medium py-3 px-4 rounded-lg hover:bg-slate-100 transition-colors min-h-[48px]"
             aria-label={`Go back to question ${quizProgress.currentQuestionIndex}`}
           >
             <ChevronLeft size={20} aria-hidden="true" />
@@ -1256,10 +1256,10 @@ const MedicationAssistantChat = () => {
     return (
       <div className="flex-1 overflow-y-auto p-4 bg-gradient-to-b from-slate-50 to-white">
         {/* Success Header */}
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-4 text-center">
-          <Sparkles className="mx-auto text-emerald-600 mb-2" size={28} />
-          <h3 className="font-bold text-emerald-800 text-lg">Your Personalized Results</h3>
-          <p className="text-sm text-emerald-600">Based on your profile, here are programs you may qualify for</p>
+        <div className="bg-plum-50 border border-plum-200 rounded-xl p-4 mb-4 text-center">
+          <Sparkles className="mx-auto text-plum-600 mb-2" size={28} />
+          <h3 className="font-bold text-plum-800 text-lg">Your Personalized Results</h3>
+          <p className="text-sm text-plum-600">Based on your profile, here are programs you may qualify for</p>
         </div>
 
         {/* Profile Summary */}
@@ -1283,7 +1283,7 @@ const MedicationAssistantChat = () => {
               <div key={idx} className="border border-slate-300 rounded-xl overflow-hidden">
                 <div className="bg-slate-100 px-3 py-2 border-b border-slate-300">
                   <div className="font-bold text-slate-800 flex items-center gap-2">
-                    <Pill size={16} className="text-emerald-600" />
+                    <Pill size={16} className="text-plum-600" />
                     {medGroup.medication_name}
                   </div>
                   <div className="text-xs text-slate-500">{medGroup.generic_name}</div>
@@ -1327,11 +1327,11 @@ const MedicationAssistantChat = () => {
 
                     return filteredPrograms.length > 0 ? (
                       filteredPrograms.map((program, pIdx) => (
-                      <div key={pIdx} className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                      <div key={pIdx} className="bg-plum-50 border border-plum-200 rounded-lg p-3">
                         <div className="flex items-start justify-between gap-2">
-                          <div className="font-semibold text-emerald-800 text-sm">{program.program_name}</div>
+                          <div className="font-semibold text-plum-800 text-sm">{program.program_name}</div>
                           {program.program_type && (
-                            <span className="text-xs bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded-full whitespace-nowrap">
+                            <span className="text-xs bg-plum-200 text-plum-800 px-2 py-0.5 rounded-full whitespace-nowrap">
                               {program.program_type === 'copay_card' && 'Copay Card'}
                               {program.program_type === 'pap' && 'Free Meds'}
                               {program.program_type === 'foundation' && 'Foundation'}
@@ -1339,7 +1339,7 @@ const MedicationAssistantChat = () => {
                           )}
                         </div>
                         {program.max_benefit && (
-                          <div className="text-xs text-emerald-700 mt-1">
+                          <div className="text-xs text-plum-700 mt-1">
                             <strong>Benefit:</strong> {program.max_benefit}
                           </div>
                         )}
@@ -1348,13 +1348,13 @@ const MedicationAssistantChat = () => {
                             href={program.application_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
+                            className="inline-flex items-center gap-1 text-xs bg-plum-600 hover:bg-plum-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
                           >
                             Apply <ExternalLink size={12} />
                           </a>
                         )}
                         {program.program_type === 'foundation' && (
-                          <p className="text-xs text-emerald-600 mt-2 italic">
+                          <p className="text-xs text-plum-600 mt-2 italic">
                             💡 Tip: Funds open throughout the year—check back if currently closed!
                           </p>
                         )}
@@ -1404,7 +1404,7 @@ const MedicationAssistantChat = () => {
             className={`w-auto min-w-[260px] max-w-xs text-left p-3 rounded-xl border transition-all bg-white ${
               option.urgent
                 ? 'border-slate-200 hover:border-red-300 hover:bg-red-50'
-                : 'border-slate-200 hover:border-emerald-300 hover:bg-slate-50'
+                : 'border-slate-200 hover:border-plum-300 hover:bg-slate-50'
             }`}
           >
             <div className="flex items-start gap-3">
@@ -1412,7 +1412,7 @@ const MedicationAssistantChat = () => {
                 <div className="font-medium text-slate-900 flex items-center gap-2">
                   {option.label}
                   {option.hint && (
-                    <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">
+                    <span className="text-xs bg-plum-100 text-plum-700 px-2 py-0.5 rounded-full">
                       {option.hint}
                     </span>
                   )}
@@ -1444,7 +1444,7 @@ const MedicationAssistantChat = () => {
             <div key={medIdx} className="border border-slate-300 rounded-xl overflow-hidden">
               <div className="bg-slate-100 px-3 py-2 border-b border-slate-300">
                 <div className="font-bold text-slate-800 flex items-center gap-2">
-                  <Pill size={16} className="text-emerald-600" />
+                  <Pill size={16} className="text-plum-600" />
                   {medGroup.medication_name}
                 </div>
                 <div className="text-xs text-slate-500">{medGroup.generic_name}</div>
@@ -1478,14 +1478,14 @@ const MedicationAssistantChat = () => {
 
                   return filteredPrograms.length > 0 ? (
                     filteredPrograms.map((program, idx) => (
-                      <div key={idx} className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
-                        <div className="font-semibold text-emerald-800 text-sm">{program.program_name}</div>
+                      <div key={idx} className="bg-plum-50 border border-plum-200 rounded-lg p-3">
+                        <div className="font-semibold text-plum-800 text-sm">{program.program_name}</div>
                         {program.application_url && (
                           <a
                             href={program.application_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
+                            className="inline-flex items-center gap-1 text-xs bg-plum-600 hover:bg-plum-700 text-white px-3 py-1.5 rounded-lg mt-2 font-medium transition"
                           >
                             Apply <ExternalLink size={12} />
                           </a>
@@ -1522,7 +1522,7 @@ const MedicationAssistantChat = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center gap-2 group hover:scale-105"
+          className="bg-plum-600 hover:bg-plum-700 text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center gap-2 group hover:scale-105"
           aria-label="Open medication assistance"
         >
           <MessageCircle size={24} />
@@ -1541,7 +1541,7 @@ const MedicationAssistantChat = () => {
           aria-label="Medication assistance"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-4 rounded-t-2xl">
+          <div className="bg-gradient-to-r from-plum-600 to-teal-600 text-white p-4 rounded-t-2xl">
             <div className="flex justify-between items-center mb-3">
               <div className="flex items-center gap-3">
                 <div className="bg-white/20 p-2 rounded-xl">
@@ -1549,7 +1549,7 @@ const MedicationAssistantChat = () => {
                 </div>
                 <div>
                   <h2 className="font-bold text-lg">Medication Navigator</h2>
-                  <p className="text-xs text-emerald-100">Find assistance programs</p>
+                  <p className="text-xs text-plum-100">Find assistance programs</p>
                 </div>
               </div>
               <div className="flex items-center gap-1">
@@ -1584,7 +1584,7 @@ const MedicationAssistantChat = () => {
                     onClick={() => handleModeSwitch(tab.id)}
                     className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition ${
                       isActive
-                        ? 'bg-white text-emerald-700'
+                        ? 'bg-white text-plum-700'
                         : 'text-white/80 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -1617,7 +1617,7 @@ const MedicationAssistantChat = () => {
                     <div
                       className={`max-w-[85%] rounded-2xl p-4 ${
                         message.role === 'user'
-                          ? 'bg-emerald-600 text-white'
+                          ? 'bg-plum-600 text-white'
                           : 'bg-white border border-slate-200 text-slate-800 shadow-sm'
                       }`}
                     >
@@ -1681,7 +1681,7 @@ const MedicationAssistantChat = () => {
                 </button>
                 <button
                   onClick={handleReset}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 rounded-xl flex items-center justify-center gap-2 transition"
+                  className="w-full bg-plum-600 hover:bg-plum-700 text-white font-medium py-3 rounded-xl flex items-center justify-center gap-2 transition"
                 >
                   <RefreshCw size={18} />
                   Start New Search
@@ -1703,13 +1703,13 @@ const MedicationAssistantChat = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleTextSubmit()}
                   placeholder="Or type a question..."
-                  className="flex-1 px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
+                  className="flex-1 px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-plum-500 text-sm"
                   disabled={isLoading}
                 />
                 <button
                   onClick={handleTextSubmit}
                   disabled={!inputValue.trim() || isLoading}
-                  className="bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 text-white p-3 rounded-xl transition disabled:cursor-not-allowed min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  className="bg-plum-600 hover:bg-plum-700 disabled:bg-slate-300 text-white p-3 rounded-xl transition disabled:cursor-not-allowed min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label="Send message"
                 >
                   <Send size={20} aria-hidden="true" />

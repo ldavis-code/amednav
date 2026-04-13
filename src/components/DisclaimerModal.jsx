@@ -147,7 +147,7 @@ const DisclaimerModal = () => {
         <button
           ref={acceptButtonRef}
           onClick={handleAccept}
-          className="w-full py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-lg rounded-xl transition shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-emerald-500/50 min-h-[52px]"
+          className="w-full py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold text-lg rounded-xl transition shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-plum-500/50 min-h-[52px]"
         >
           I Agree
         </button>

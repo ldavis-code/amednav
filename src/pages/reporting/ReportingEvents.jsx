@@ -41,7 +41,7 @@ const eventNameColors = {
     copay_card_click: 'bg-plum-100 text-plum-700',
     foundation_click: 'bg-pink-100 text-pink-700',
     pap_click: 'bg-green-100 text-green-700',
-    helpful_vote_yes: 'bg-emerald-100 text-emerald-700',
+    helpful_vote_yes: 'bg-plum-100 text-plum-700',
     helpful_vote_no: 'bg-red-100 text-red-700',
 };
 

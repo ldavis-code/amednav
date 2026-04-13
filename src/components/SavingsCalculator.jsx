@@ -182,8 +182,8 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
         <div className="space-y-6">
             {/* Header */}
             <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-                    <Calculator className="w-8 h-8 text-emerald-600" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+                    <Calculator className="w-8 h-8 text-plum-600" aria-hidden="true" />
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">
                     Estimate Your Medication Savings
@@ -213,7 +213,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                                     id={`medication-select-${index}`}
                                     value={med.id}
                                     onChange={(e) => updateMedication(index, 'medication', e.target.value)}
-                                    className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white min-h-[44px] ${errors[`medication-${index}`] ? 'border-red-500' : 'border-slate-300'}`}
+                                    className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500 bg-white min-h-[44px] ${errors[`medication-${index}`] ? 'border-red-500' : 'border-slate-300'}`}
                                     aria-describedby={errors[`medication-${index}`] ? `medication-error-${index}` : undefined}
                                     aria-invalid={errors[`medication-${index}`] ? 'true' : undefined}
                                 >
@@ -239,7 +239,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                                     max="12"
                                     value={med.quantity}
                                     onChange={(e) => updateMedication(index, 'quantity', parseInt(e.target.value) || 1)}
-                                    className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-center min-h-[44px] ${errors[`quantity-${index}`] ? 'border-red-500' : 'border-slate-300'}`}
+                                    className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500 text-center min-h-[44px] ${errors[`quantity-${index}`] ? 'border-red-500' : 'border-slate-300'}`}
                                     aria-describedby={errors[`quantity-${index}`] ? `quantity-error-${index}` : undefined}
                                     aria-invalid={errors[`quantity-${index}`] ? 'true' : undefined}
                                 />
@@ -265,7 +265,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                 {/* Add Medication Button */}
                 <button
                     onClick={addMedication}
-                    className="mt-4 w-full py-3 border-2 border-dashed rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[44px] border-slate-300 text-slate-600 hover:border-emerald-400 hover:text-emerald-600"
+                    className="mt-4 w-full py-3 border-2 border-dashed rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[44px] border-slate-300 text-slate-600 hover:border-plum-400 hover:text-plum-600"
                 >
                     <Plus size={18} aria-hidden="true" />
                     Add Another Medication
@@ -275,7 +275,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                 <button
                     onClick={calculateSavings}
                     disabled={!selectedMeds.some(m => m.id || m.name)}
-                    className="mt-6 w-full bg-emerald-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg min-h-[44px]"
+                    className="mt-6 w-full bg-plum-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-plum-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg min-h-[44px]"
                 >
                     <Calculator size={22} aria-hidden="true" />
                     Calculate My Savings
@@ -287,27 +287,27 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
             {showResults && calculations && (
                 <div className="space-y-6 animate-fadeIn">
                     {/* Main Savings Display */}
-                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-8 text-white text-center">
-                        <p className="text-emerald-100 text-sm uppercase tracking-wide mb-2">
+                    <div className="bg-gradient-to-br from-plum-500 to-teal-600 rounded-2xl p-8 text-white text-center">
+                        <p className="text-plum-100 text-sm uppercase tracking-wide mb-2">
                             Potential Annual Savings
                         </p>
                         <div className="text-6xl font-bold mb-2">
                             ${calculations.totalAnnualSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                         </div>
-                        <p className="text-emerald-100">
+                        <p className="text-plum-100">
                             Based on estimated retail vs. assisted prices
                         </p>
 
                         {/* Monthly Comparison */}
                         <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/20">
                             <div>
-                                <p className="text-emerald-100 text-xs uppercase mb-1">Monthly Retail Cost</p>
+                                <p className="text-plum-100 text-xs uppercase mb-1">Monthly Retail Cost</p>
                                 <p className="text-2xl font-bold">
                                     ${calculations.totalMonthlyRetail.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-emerald-100 text-xs uppercase mb-1">New Monthly Cost</p>
+                                <p className="text-plum-100 text-xs uppercase mb-1">New Monthly Cost</p>
                                 <p className="text-2xl font-bold">
                                     ${calculations.totalMonthlyAssisted.toLocaleString('en-US', { maximumFractionDigits: 0 })}
                                 </p>
@@ -328,7 +328,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                                         </p>
                                     </div>
                                     <div className="text-right">
-                                        <p className="font-bold text-emerald-600 text-lg">
+                                        <p className="font-bold text-plum-600 text-lg">
                                             -${med.annualSavings.toLocaleString('en-US', { maximumFractionDigits: 0 })}/yr
                                         </p>
                                     </div>
@@ -359,8 +359,8 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
             {/* Trust Indicators */}
             <div className="grid md:grid-cols-3 gap-4 mt-8">
                 <div className="bg-slate-50 rounded-xl p-4 text-center">
-                    <div className="inline-flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full mb-3">
-                        <Shield className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-plum-100 rounded-full mb-3">
+                        <Shield className="w-5 h-5 text-plum-600" aria-hidden="true" />
                     </div>
                     <h4 className="font-semibold text-slate-900 mb-1">Verified Programs</h4>
                     <p className="text-sm text-slate-600">

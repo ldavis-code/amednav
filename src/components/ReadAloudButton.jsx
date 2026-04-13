@@ -73,7 +73,7 @@ const ReadAloudButton = ({ contentRef, label = 'Read Aloud' }) => {
             ) : (
                 <button
                     onClick={speak}
-                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition min-h-[44px] min-w-[44px]"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium bg-plum-100 text-plum-700 hover:bg-plum-200 transition min-h-[44px] min-w-[44px]"
                     aria-label={label}
                 >
                     <Volume2 size={16} aria-hidden="true" />

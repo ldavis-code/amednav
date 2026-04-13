@@ -42,8 +42,8 @@ const ForTransplantPrograms = () => {
         <article className="max-w-5xl mx-auto space-y-12 pb-12">
             {/* Hero Section */}
             <header className="text-center py-8 md:py-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-6">
-                    <Building2 size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-6">
+                    <Building2 size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     Help Your Patients Find Affordable Medications
@@ -54,7 +54,7 @@ const ForTransplantPrograms = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                         href="mailto:info@transplantmedicationnavigator.com?subject=Pilot%20Program%20Request"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                     >
                         <Mail size={20} aria-hidden="true" />
                         Request a Pilot
@@ -65,8 +65,8 @@ const ForTransplantPrograms = () => {
             {/* Value Props */}
             <section className="grid md:grid-cols-2 gap-6">
                 {valueProps.map((prop, index) => (
-                    <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-100 transition">
-                        <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
+                    <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-plum-100 transition">
+                        <div className="w-12 h-12 bg-plum-100 text-plum-600 rounded-full flex items-center justify-center mb-4" aria-hidden="true">
                             <prop.icon size={24} />
                         </div>
                         <h2 className="text-xl font-bold text-slate-900 mb-2">{prop.title}</h2>
@@ -78,8 +78,8 @@ const ForTransplantPrograms = () => {
             {/* What You Can Track */}
             <section className="bg-slate-50 rounded-2xl p-8 md:p-10">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="bg-emerald-100 p-2 rounded-lg" aria-hidden="true">
-                        <BarChart3 size={24} className="text-emerald-600" />
+                    <div className="bg-plum-100 p-2 rounded-lg" aria-hidden="true">
+                        <BarChart3 size={24} className="text-plum-600" />
                     </div>
                     <h2 className="text-2xl font-bold text-slate-900">What You Can Report</h2>
                 </div>
@@ -89,7 +89,7 @@ const ForTransplantPrograms = () => {
                 <div className="grid md:grid-cols-2 gap-3">
                     {trackingCapabilities.map((capability, index) => (
                         <div key={index} className="flex items-center gap-3 bg-white p-3 rounded-lg">
-                            <CheckCircle size={20} className="text-emerald-600 flex-shrink-0" aria-hidden="true" />
+                            <CheckCircle size={20} className="text-plum-600 flex-shrink-0" aria-hidden="true" />
                             <span className="text-slate-700">{capability}</span>
                         </div>
                     ))}
@@ -101,17 +101,17 @@ const ForTransplantPrograms = () => {
                 <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">How the Pilot Works</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center">
-                        <div className="w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
+                        <div className="w-12 h-12 bg-plum-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
                         <h3 className="font-bold text-slate-900 mb-2">Get Your Pilot URL</h3>
                         <p className="text-slate-600 text-sm">We create a branded landing page for your program (e.g., /pilot/your-program)</p>
                     </div>
                     <div className="text-center">
-                        <div className="w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
+                        <div className="w-12 h-12 bg-plum-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
                         <h3 className="font-bold text-slate-900 mb-2">Share With Patients</h3>
                         <p className="text-slate-600 text-sm">Give patients the link via discharge materials, patient portals, or social workers</p>
                     </div>
                     <div className="text-center">
-                        <div className="w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
+                        <div className="w-12 h-12 bg-plum-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
                         <h3 className="font-bold text-slate-900 mb-2">Review Engagement</h3>
                         <p className="text-slate-600 text-sm">After 90 days, receive a detailed report on patient engagement with resources</p>
                     </div>
@@ -119,17 +119,17 @@ const ForTransplantPrograms = () => {
             </section>
 
             {/* For Patients Callout */}
-            <section className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center">
+            <section className="bg-plum-50 border border-plum-200 rounded-2xl p-8 text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                    <Users size={24} className="text-emerald-700" aria-hidden="true" />
-                    <h2 className="text-xl font-bold text-emerald-900">What Patients See</h2>
+                    <Users size={24} className="text-plum-700" aria-hidden="true" />
+                    <h2 className="text-xl font-bold text-plum-900">What Patients See</h2>
                 </div>
-                <p className="text-emerald-800 mb-6 max-w-2xl mx-auto">
+                <p className="text-plum-800 mb-6 max-w-2xl mx-auto">
                     Patients get access to medication search, assistance programs, and free educational resources—no login required for education.
                 </p>
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 text-emerald-700 font-medium hover:underline"
+                    className="inline-flex items-center gap-2 text-plum-700 font-medium hover:underline"
                 >
                     Preview the patient experience
                     <ArrowRight size={16} aria-hidden="true" />
@@ -144,7 +144,7 @@ const ForTransplantPrograms = () => {
                 </p>
                 <a
                     href="mailto:info@transplantmedicationnavigator.com?subject=Pilot%20Program%20Inquiry"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                 >
                     <Mail size={20} aria-hidden="true" />
                     Contact Us

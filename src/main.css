@@ -76,18 +76,13 @@ body {
     }
 
     /* High contrast focus for dark backgrounds - white outline */
-    .bg-emerald-600 *:focus-visible,
-    .bg-emerald-700 *:focus-visible,
-    .bg-emerald-800 *:focus-visible,
-    .bg-emerald-900 *:focus-visible,
-    .bg-emerald-950 *:focus-visible,
-    .bg-slate-800 *:focus-visible,
-    .bg-slate-900 *:focus-visible,
     .bg-plum-600 *:focus-visible,
     .bg-plum-700 *:focus-visible,
     .bg-plum-800 *:focus-visible,
     .bg-plum-900 *:focus-visible,
-    .bg-plum-950 *:focus-visible {
+    .bg-plum-950 *:focus-visible,
+    .bg-slate-800 *:focus-visible,
+    .bg-slate-900 *:focus-visible {
         outline-color: #fff !important;
         box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
     }
@@ -164,11 +159,11 @@ body {
         color: #cbd5e1 !important; /* slate-300 for better contrast on dark */
     }
 
-    /* Emerald text on emerald backgrounds - ensure contrast */
-    .bg-emerald-800 .text-emerald-100,
-    .bg-emerald-900 .text-emerald-100,
-    .bg-emerald-950 .text-emerald-100 {
-        color: #d1fae5 !important; /* emerald-100 - good contrast */
+    /* Plum text on plum backgrounds - ensure contrast */
+    .bg-plum-800 .text-plum-100,
+    .bg-plum-900 .text-plum-100,
+    .bg-plum-950 .text-plum-100 {
+        color: #DEDCFA !important; /* plum-100 - good contrast */
     }
 }
 
@@ -282,7 +277,7 @@ body {
     /* Selected states must be very clear */
     [aria-selected="true"],
     [aria-checked="true"],
-    .bg-emerald-50 {
+    .bg-plum-50 {
         outline: 3px solid #000 !important;
         outline-offset: -3px !important;
     }
@@ -608,8 +603,8 @@ kbd {
     }
 
     /* Remove colored backgrounds */
-    .bg-emerald-50,
-    .bg-emerald-100,
+    .bg-plum-50,
+    .bg-plum-100,
     .bg-blue-50,
     .bg-indigo-50,
     .bg-plum-50,
@@ -727,7 +722,7 @@ kbd {
     }
 
     /* Keep checkmarks visible */
-    svg.text-emerald-500,
+    svg.text-plum-500,
     svg.text-green-500 {
         display: inline !important;
         width: 12pt !important;
@@ -869,7 +864,7 @@ html.simple-view .text-slate-900 {
 }
 
 /* High contrast links */
-html.simple-view a:not([role="button"]):not([class*="bg-emerald"]):not([class*="bg-plum"]) {
+html.simple-view a:not([role="button"]):not([class*="bg-plum"]) {
     color: #26215C !important;
     text-decoration: underline !important;
     text-decoration-thickness: 2px !important;
@@ -937,9 +932,9 @@ html.simple-view .bg-gray-100 {
     background-color: #ffffff !important;
 }
 
-html.simple-view .bg-emerald-50 {
-    background-color: #ecfdf5 !important;
-    border: 2px solid #047857 !important;
+html.simple-view .bg-plum-50 {
+    background-color: #EEEDFE !important;
+    border: 2px solid #26215C !important;
 }
 
 /* Ensure form inputs are highly visible */

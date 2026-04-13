@@ -168,11 +168,11 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                     )}
 
                     {importedData && importedData.matched && importedData.matched.length > 0 && (
-                        <div className="mb-3 p-3 bg-emerald-50 border border-emerald-200 rounded-lg" role="status">
+                        <div className="mb-3 p-3 bg-plum-50 border border-plum-200 rounded-lg" role="status">
                             <div className="flex items-start gap-2">
-                                <ShieldCheck size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                                <ShieldCheck size={16} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                 <div className="text-sm">
-                                    <p className="text-emerald-700">
+                                    <p className="text-plum-700">
                                         Imported {importedData.matched.length} medication{importedData.matched.length !== 1 ? 's' : ''} from your health system.
                                         {importedData.unmatched && importedData.unmatched.length > 0 && (
                                             <span className="block mt-1 text-slate-600">

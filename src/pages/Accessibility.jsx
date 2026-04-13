@@ -9,8 +9,8 @@ const Accessibility = () => {
     return (
         <article className="max-w-4xl mx-auto space-y-8 pb-12">
             <header className="text-center py-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4">
-                    <AccessibilityIcon size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-4">
+                    <AccessibilityIcon size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Accessibility &amp; Section 504 Compliance</h1>
                 <p className="text-slate-600">Last Updated: February 12, 2026</p>
@@ -21,7 +21,7 @@ const Accessibility = () => {
                 {/* Section 504 Non-Discrimination Notice */}
                 <section id="section-504">
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Section 504 Non-Discrimination Notice
                     </h2>
                     <div className="bg-plum-50 border border-plum-200 rounded-lg p-4 mb-4">
@@ -45,7 +45,7 @@ const Accessibility = () => {
                             href="https://www.w3.org/TR/WCAG21/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-emerald-600 hover:text-emerald-700 underline inline-flex items-center gap-1"
+                            className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                         >
                             Web Content Accessibility Guidelines (WCAG) 2.1 Level AA
                             <ExternalLink size={14} aria-hidden="true" />
@@ -57,7 +57,7 @@ const Accessibility = () => {
                 {/* Commitment */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Our Commitment
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -71,12 +71,12 @@ const Accessibility = () => {
                 {/* Conformance Status */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Conformance Status
                     </h2>
-                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 flex items-start gap-3 mb-4">
-                        <CheckCircle className="text-emerald-600 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
-                        <p className="text-emerald-800">
+                    <div className="bg-plum-50 border border-plum-200 rounded-lg p-4 flex items-start gap-3 mb-4">
+                        <CheckCircle className="text-plum-600 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
+                        <p className="text-plum-800">
                             <strong>Partially conformant</strong> with WCAG 2.1 Level AA. "Partially conformant" means that some parts of the content do not fully meet the standard. We continuously work to maintain and improve accessibility across all features.
                         </p>
                     </div>
@@ -88,7 +88,7 @@ const Accessibility = () => {
                 {/* What We Do Well */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Accessibility Features
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -185,7 +185,7 @@ const Accessibility = () => {
                 {/* Technical Details */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Technical Details
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -206,7 +206,7 @@ const Accessibility = () => {
                 {/* Compatibility */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Compatibility
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -228,7 +228,7 @@ const Accessibility = () => {
                 {/* Known Limitations */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Known Limitations
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -252,7 +252,7 @@ const Accessibility = () => {
                 {/* Assessment Approach */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         How We Test
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -275,7 +275,7 @@ const Accessibility = () => {
                 {/* Section 504 Grievance Procedure */}
                 <section id="grievance-procedure">
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Section 504 Grievance Procedure
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -297,7 +297,7 @@ const Accessibility = () => {
                                     Email:{' '}
                                     <a
                                         href="mailto:504coordinator@transplantmedicationnavigator.com?subject=Section%20504%20Grievance"
-                                        className="text-emerald-600 hover:text-emerald-700 underline"
+                                        className="text-plum-600 hover:text-plum-700 underline"
                                     >
                                         504coordinator@transplantmedicationnavigator.com
                                     </a>
@@ -325,7 +325,7 @@ const Accessibility = () => {
                 {/* Feedback */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         Feedback
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -336,7 +336,7 @@ const Accessibility = () => {
                             <strong>Email:</strong>{' '}
                             <a
                                 href="mailto:info@transplantmedicationnavigator.com?subject=Accessibility%20Feedback"
-                                className="text-emerald-600 hover:text-emerald-700 underline inline-flex items-center gap-1"
+                                className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                             >
                                 <Mail size={16} aria-hidden="true" />
                                 info@transplantmedicationnavigator.com
@@ -364,7 +364,7 @@ const Accessibility = () => {
                 {/* Formal Complaint Process */}
                 <section>
                     <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span className="w-1 h-6 bg-emerald-600 rounded-full" aria-hidden="true"></span>
+                        <span className="w-1 h-6 bg-plum-600 rounded-full" aria-hidden="true"></span>
                         External Complaints
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
@@ -373,7 +373,7 @@ const Accessibility = () => {
                             href="https://www.hhs.gov/civil-rights/filing-a-complaint/index.html"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-emerald-600 hover:text-emerald-700 underline inline-flex items-center gap-1"
+                            className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                         >
                             U.S. Department of Health and Human Services, Office for Civil Rights
                             <ExternalLink size={14} aria-hidden="true" />
@@ -384,13 +384,13 @@ const Accessibility = () => {
                         <p className="text-slate-700"><strong>HHS Office for Civil Rights</strong></p>
                         <p className="text-slate-700">
                             Phone:{' '}
-                            <a href="tel:1-800-368-1019" className="text-emerald-600 hover:text-emerald-700 underline">
+                            <a href="tel:1-800-368-1019" className="text-plum-600 hover:text-plum-700 underline">
                                 1-800-368-1019
                             </a>
                         </p>
                         <p className="text-slate-700">
                             TDD:{' '}
-                            <a href="tel:1-800-537-7697" className="text-emerald-600 hover:text-emerald-700 underline">
+                            <a href="tel:1-800-537-7697" className="text-plum-600 hover:text-plum-700 underline">
                                 1-800-537-7697
                             </a>
                         </p>
@@ -400,7 +400,7 @@ const Accessibility = () => {
                                 href="https://ocrportal.hhs.gov/ocr/smartscreen/main.jsf"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-emerald-600 hover:text-emerald-700 underline inline-flex items-center gap-1"
+                                className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                             >
                                 HHS OCR Complaint Portal
                                 <ExternalLink size={14} aria-hidden="true" />
@@ -411,22 +411,22 @@ const Accessibility = () => {
             </div>
 
             {/* Help CTA */}
-            <aside className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 md:p-8 text-center">
-                <h2 className="text-xl font-bold text-emerald-900 mb-3">Need Assistance?</h2>
-                <p className="text-emerald-800 mb-6">
+            <aside className="bg-plum-50 border border-plum-200 rounded-xl p-6 md:p-8 text-center">
+                <h2 className="text-xl font-bold text-plum-900 mb-3">Need Assistance?</h2>
+                <p className="text-plum-800 mb-6">
                     If you need help accessing any content on this website or have accessibility concerns, we are here to help.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
                         href="mailto:info@transplantmedicationnavigator.com?subject=Accessibility%20Assistance"
-                        className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg shadow-md transition inline-flex items-center justify-center gap-2 min-h-[44px]"
+                        className="px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg shadow-md transition inline-flex items-center justify-center gap-2 min-h-[44px]"
                     >
                         <Mail size={18} aria-hidden="true" />
                         Contact Us
                     </a>
                     <Link
                         to="/"
-                        className="px-6 py-3 bg-white hover:bg-slate-50 text-emerald-700 font-bold rounded-lg shadow-md border border-emerald-200 transition min-h-[44px] inline-flex items-center justify-center"
+                        className="px-6 py-3 bg-white hover:bg-slate-50 text-plum-700 font-bold rounded-lg shadow-md border border-plum-200 transition min-h-[44px] inline-flex items-center justify-center"
                     >
                         Back to Home
                     </Link>

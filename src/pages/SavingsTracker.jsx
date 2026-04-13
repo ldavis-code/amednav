@@ -133,7 +133,7 @@ export default function SavingsTracker() {
         />
         <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 mb-6 text-white">
+            <div className="bg-gradient-to-r from-plum-600 to-teal-600 rounded-2xl p-6 mb-6 text-white">
                 <div className="flex items-center gap-2 mb-2">
                     <Link
                         to="/my-medications"
@@ -148,7 +148,7 @@ export default function SavingsTracker() {
                     <Calculator size={32} aria-hidden="true" />
                     <div>
                         <h1 className="text-2xl font-bold">Savings Calculator</h1>
-                        <p className="text-emerald-100">
+                        <p className="text-plum-100">
                             See how much you could save with assistance programs
                         </p>
                     </div>
@@ -165,7 +165,7 @@ export default function SavingsTracker() {
                     aria-controls="tabpanel-calculator"
                     className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium transition-colors min-h-[44px] ${
                         activeTab === 'calculator'
-                            ? 'bg-white text-emerald-700 shadow-sm'
+                            ? 'bg-white text-plum-700 shadow-sm'
                             : 'text-slate-600 hover:text-slate-900'
                     }`}
                 >
@@ -180,7 +180,7 @@ export default function SavingsTracker() {
                     aria-controls="tabpanel-tracker"
                     className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium transition-colors min-h-[44px] ${
                         activeTab === 'tracker'
-                            ? 'bg-white text-emerald-700 shadow-sm'
+                            ? 'bg-white text-plum-700 shadow-sm'
                             : 'text-slate-600 hover:text-slate-900'
                     }`}
                 >

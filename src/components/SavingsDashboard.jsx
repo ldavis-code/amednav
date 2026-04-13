@@ -138,16 +138,16 @@ export default function SavingsDashboard({ refreshTrigger }) {
                 </div>
             )}
             {/* Main Stats Card */}
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 p-6">
+            <div className="bg-gradient-to-br from-plum-50 to-teal-50 rounded-xl border border-plum-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
-                        <TrendingUp className="text-emerald-600" size={24} aria-hidden="true" />
-                        <h3 className="text-lg font-bold text-emerald-900">Your Total Savings</h3>
+                        <TrendingUp className="text-plum-600" size={24} aria-hidden="true" />
+                        <h3 className="text-lg font-bold text-plum-900">Your Total Savings</h3>
                     </div>
                     <div className="flex gap-2">
                         <button
                             onClick={loadData}
-                            className="p-2 text-emerald-600 hover:bg-emerald-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                            className="p-2 text-plum-600 hover:bg-plum-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                             aria-label="Refresh savings data"
                             title="Refresh"
                         >
@@ -157,7 +157,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
                         {totalSaved > 0 && (
                             <button
                                 onClick={handleShare}
-                                className="p-2 text-emerald-600 hover:bg-emerald-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                                className="p-2 text-plum-600 hover:bg-plum-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                                 aria-label="Share your savings on social media"
                                 title="Share your savings"
                             >
@@ -168,10 +168,10 @@ export default function SavingsDashboard({ refreshTrigger }) {
                 </div>
 
                 <div className="text-center py-4">
-                    <div className="text-5xl font-bold text-emerald-600 mb-2">
+                    <div className="text-5xl font-bold text-plum-600 mb-2">
                         ${totalSaved.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </div>
-                    <p className="text-emerald-700">
+                    <p className="text-plum-700">
                         across {totalEntries} {totalEntries === 1 ? 'fill' : 'fills'}
                     </p>
                 </div>
@@ -180,14 +180,14 @@ export default function SavingsDashboard({ refreshTrigger }) {
                 {nextMilestone && (
                     <div className="mt-4 bg-white/50 rounded-lg p-3">
                         <div className="flex justify-between text-sm mb-1">
-                            <span className="text-emerald-700">Progress to {nextMilestone.label}</span>
-                            <span className="text-emerald-800 font-medium">
+                            <span className="text-plum-700">Progress to {nextMilestone.label}</span>
+                            <span className="text-plum-800 font-medium">
                                 ${totalSaved.toFixed(0)} / ${nextMilestone.amount}
                             </span>
                         </div>
-                        <div className="h-2 bg-emerald-200 rounded-full overflow-hidden">
+                        <div className="h-2 bg-plum-200 rounded-full overflow-hidden">
                             <div
-                                className="h-full bg-emerald-500 rounded-full transition-all duration-500"
+                                className="h-full bg-plum-500 rounded-full transition-all duration-500"
                                 style={{ width: `${Math.min(100, (totalSaved / nextMilestone.amount) * 100)}%` }}
                             />
                         </div>
@@ -198,7 +198,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
                 {achievedMilestones.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2 justify-center">
                         {achievedMilestones.map(m => (
-                            <span key={m.amount} className="bg-white px-3 py-1 rounded-full text-sm font-medium text-emerald-800 border border-emerald-200">
+                            <span key={m.amount} className="bg-white px-3 py-1 rounded-full text-sm font-medium text-plum-800 border border-plum-200">
                                 {m.emoji} {m.label}
                             </span>
                         ))}
@@ -225,7 +225,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
                         <div className="text-sm text-slate-500">Total fills</div>
                     </div>
                     <div className="bg-white rounded-xl border border-slate-200 p-4 text-center">
-                        <Award className="mx-auto text-emerald-500 mb-2" size={24} aria-hidden="true" />
+                        <Award className="mx-auto text-plum-500 mb-2" size={24} aria-hidden="true" />
                         <div className="text-2xl font-bold text-slate-900">{achievedMilestones.length}</div>
                         <div className="text-sm text-slate-500">Milestones</div>
                     </div>
@@ -245,13 +245,13 @@ export default function SavingsDashboard({ refreshTrigger }) {
                                 <div className="flex items-center gap-3">
                                     <div className="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
                                         <div
-                                            className="h-full bg-emerald-500 rounded-full"
+                                            className="h-full bg-plum-500 rounded-full"
                                             style={{
                                                 width: `${Math.min(100, (parseFloat(month.monthly_saved) / Math.max(...summary.monthly.map(m => parseFloat(m.monthly_saved)))) * 100)}%`
                                             }}
                                         />
                                     </div>
-                                    <span className="font-medium text-emerald-700 w-20 text-right">
+                                    <span className="font-medium text-plum-700 w-20 text-right">
                                         ${parseFloat(month.monthly_saved).toFixed(0)}
                                     </span>
                                 </div>
@@ -288,7 +288,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
                         <h4 className="font-bold text-slate-900">Recent Savings</h4>
                         <button
                             onClick={() => setShowEntries(!showEntries)}
-                            className="text-sm text-emerald-600 hover:text-emerald-700 min-h-[44px] px-3 flex items-center"
+                            className="text-sm text-plum-600 hover:text-plum-700 min-h-[44px] px-3 flex items-center"
                             aria-expanded={showEntries}
                         >
                             {showEntries ? 'Hide entries' : `Show all (${entries.length})`}
@@ -305,7 +305,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <span className="font-bold text-emerald-600">
+                                    <span className="font-bold text-plum-600">
                                         +${parseFloat(entry.amount_saved).toFixed(2)}
                                     </span>
                                     <button

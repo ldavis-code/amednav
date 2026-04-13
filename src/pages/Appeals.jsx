@@ -176,13 +176,13 @@ Contact: [Your Phone Number]
         hoverBg: 'hover:bg-plum-100'
       },
       emerald: {
-        bg: 'bg-emerald-50',
-        border: 'border-emerald-200',
-        iconBg: 'bg-emerald-100',
-        iconColor: 'text-emerald-600',
-        headerBg: 'bg-emerald-100',
-        text: 'text-emerald-900',
-        hoverBg: 'hover:bg-emerald-100'
+        bg: 'bg-plum-50',
+        border: 'border-plum-200',
+        iconBg: 'bg-plum-100',
+        iconColor: 'text-plum-600',
+        headerBg: 'bg-plum-100',
+        text: 'text-plum-900',
+        hoverBg: 'hover:bg-plum-100'
       },
       purple: {
         bg: 'bg-purple-50',
@@ -230,8 +230,8 @@ Contact: [Your Phone Number]
   const AppealStep = ({ number, title, description, tips, isCompleted, onToggle }) => (
     <div className={`p-4 rounded-lg border-2 transition-all duration-200 ${
       isCompleted
-        ? 'bg-emerald-50 border-emerald-300'
-        : 'bg-white border-slate-200 hover:border-emerald-300'
+        ? 'bg-plum-50 border-plum-300'
+        : 'bg-white border-slate-200 hover:border-plum-300'
     }`}>
       <button
         onClick={onToggle}
@@ -240,25 +240,25 @@ Contact: [Your Phone Number]
       >
         <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${
           isCompleted
-            ? 'bg-emerald-500 text-white'
+            ? 'bg-plum-500 text-white'
             : 'bg-slate-200 text-slate-600'
         }`}>
           {isCompleted ? <Check size={20} aria-hidden="true" /> : number}
         </div>
         <div className="flex-1">
-          <h4 className={`font-bold text-lg mb-1 ${isCompleted ? 'text-emerald-800' : 'text-slate-800'}`}>
+          <h4 className={`font-bold text-lg mb-1 ${isCompleted ? 'text-plum-800' : 'text-slate-800'}`}>
             {title}
           </h4>
-          <p className={`text-base ${isCompleted ? 'text-emerald-700' : 'text-slate-600'}`}>
+          <p className={`text-base ${isCompleted ? 'text-plum-700' : 'text-slate-600'}`}>
             {description}
           </p>
           {tips && (
-            <div className={`mt-3 p-3 rounded-lg ${isCompleted ? 'bg-emerald-100' : 'bg-amber-50'}`}>
+            <div className={`mt-3 p-3 rounded-lg ${isCompleted ? 'bg-plum-100' : 'bg-amber-50'}`}>
               <div className="flex items-center gap-2 mb-1">
-                <Lightbulb size={16} className={isCompleted ? 'text-emerald-600' : 'text-amber-600'} aria-hidden="true" />
-                <span className={`font-semibold text-sm ${isCompleted ? 'text-emerald-700' : 'text-amber-700'}`}>Tip:</span>
+                <Lightbulb size={16} className={isCompleted ? 'text-plum-600' : 'text-amber-600'} aria-hidden="true" />
+                <span className={`font-semibold text-sm ${isCompleted ? 'text-plum-700' : 'text-amber-700'}`}>Tip:</span>
               </div>
-              <p className={`text-sm ${isCompleted ? 'text-emerald-700' : 'text-amber-700'}`}>{tips}</p>
+              <p className={`text-sm ${isCompleted ? 'text-plum-700' : 'text-amber-700'}`}>{tips}</p>
             </div>
           )}
         </div>
@@ -290,20 +290,20 @@ Contact: [Your Phone Number]
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
       {/* Back link */}
-      <Link to="/education" className="inline-flex items-center gap-2 text-slate-600 hover:text-emerald-600 mb-6 transition-colors">
+      <Link to="/education" className="inline-flex items-center gap-2 text-slate-600 hover:text-plum-600 mb-6 transition-colors">
         <ArrowLeft size={16} aria-hidden="true" />
         Back to Education & Resources
       </Link>
 
       {/* Page Header - Color coded hero */}
-      <header className="mb-8 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-8 border-2 border-emerald-200">
+      <header className="mb-8 bg-gradient-to-r from-plum-50 via-teal-50 to-cyan-50 rounded-2xl p-8 border-2 border-plum-200">
         <div className="flex items-center gap-4 mb-4">
-          <div className="bg-emerald-600 text-white p-4 rounded-xl shadow-lg" aria-hidden="true">
+          <div className="bg-plum-600 text-white p-4 rounded-xl shadow-lg" aria-hidden="true">
             <ShieldAlert size={32} />
           </div>
           <div>
             <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">Got Denied? Don't Give Up.</h1>
-            <p className="text-emerald-700 font-semibold text-lg mt-1">You can fight back — and WIN!</p>
+            <p className="text-plum-700 font-semibold text-lg mt-1">You can fight back — and WIN!</p>
           </div>
         </div>
         <p className="text-lg text-slate-700 leading-relaxed">
@@ -312,26 +312,26 @@ Contact: [Your Phone Number]
 
         {/* Quick stats */}
         <div className="grid grid-cols-3 gap-4 mt-6">
-          <div className="bg-white rounded-lg p-4 text-center border border-emerald-200">
-            <div className="text-2xl font-bold text-emerald-600">50%+</div>
+          <div className="bg-white rounded-lg p-4 text-center border border-plum-200">
+            <div className="text-2xl font-bold text-plum-600">50%+</div>
             <div className="text-sm text-slate-600">Appeals are won</div>
           </div>
-          <div className="bg-white rounded-lg p-4 text-center border border-emerald-200">
-            <div className="text-2xl font-bold text-emerald-600">30-60</div>
+          <div className="bg-white rounded-lg p-4 text-center border border-plum-200">
+            <div className="text-2xl font-bold text-plum-600">30-60</div>
             <div className="text-sm text-slate-600">Days to appeal</div>
           </div>
-          <div className="bg-white rounded-lg p-4 text-center border border-emerald-200">
-            <div className="text-2xl font-bold text-emerald-600">Free</div>
+          <div className="bg-white rounded-lg p-4 text-center border border-plum-200">
+            <div className="text-2xl font-bold text-plum-600">Free</div>
             <div className="text-sm text-slate-600">To file an appeal</div>
           </div>
         </div>
 
         {/* Download Appeal Guide CTA */}
-        <div className="mt-6 bg-white rounded-lg p-4 border-2 border-emerald-300 shadow-sm">
+        <div className="mt-6 bg-white rounded-lg p-4 border-2 border-plum-300 shadow-sm">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="bg-emerald-100 p-2 rounded-lg">
-                <FileText size={24} className="text-emerald-600" aria-hidden="true" />
+              <div className="bg-plum-100 p-2 rounded-lg">
+                <FileText size={24} className="text-plum-600" aria-hidden="true" />
               </div>
               <div>
                 <p className="font-bold text-slate-800">Free Appeal Guide</p>
@@ -342,7 +342,7 @@ Contact: [Your Phone Number]
               href="/appeal-guide.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition shadow-md hover:shadow-lg whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-plum-600 hover:bg-plum-700 text-white font-semibold rounded-lg transition shadow-md hover:shadow-lg whitespace-nowrap"
             >
               <Download size={18} aria-hidden="true" />
               Download Free Guide
@@ -381,7 +381,7 @@ Contact: [Your Phone Number]
           </button>
           <button
             onClick={() => { setExpandedSections(prev => ({...prev, howToAppeal: true})); document.getElementById('how-to-appeal')?.scrollIntoView({ behavior: 'smooth' }); }}
-            className="flex items-center gap-2 p-3 rounded-lg bg-emerald-50 border-2 border-emerald-200 text-emerald-800 font-semibold hover:bg-emerald-100 transition text-sm"
+            className="flex items-center gap-2 p-3 rounded-lg bg-plum-50 border-2 border-plum-200 text-plum-800 font-semibold hover:bg-plum-100 transition text-sm"
           >
             <CheckCircle size={18} aria-hidden="true" />
             How to Appeal
@@ -477,9 +477,9 @@ Contact: [Your Phone Number]
           </div>
 
           {/* What you can do */}
-          <div className="bg-white rounded-lg p-5 border-2 border-emerald-200">
-            <h3 className="text-lg font-bold text-emerald-800 mb-3 flex items-center gap-2">
-              <CheckCircle size={20} className="text-emerald-600" aria-hidden="true" />
+          <div className="bg-white rounded-lg p-5 border-2 border-plum-200">
+            <h3 className="text-lg font-bold text-plum-800 mb-3 flex items-center gap-2">
+              <CheckCircle size={20} className="text-plum-600" aria-hidden="true" />
               What You Can Do
             </h3>
             <ul className="space-y-2">
@@ -490,7 +490,7 @@ Contact: [Your Phone Number]
                 "Many states have laws that protect patients."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-slate-700">
-                  <span className="text-emerald-500 mt-1">✓</span>
+                  <span className="text-plum-500 mt-1">✓</span>
                   {item}
                 </li>
               ))}
@@ -583,14 +583,14 @@ Contact: [Your Phone Number]
         onToggle={() => toggleSection('howToAppeal')}
       >
         {/* Progress tracker */}
-        <div className="mb-6 bg-white rounded-lg p-4 border-2 border-emerald-200">
+        <div className="mb-6 bg-white rounded-lg p-4 border-2 border-plum-200">
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-slate-700">Your Progress</span>
-            <span className="text-emerald-600 font-bold">{completedCount} of {totalSteps} steps</span>
+            <span className="text-plum-600 font-bold">{completedCount} of {totalSteps} steps</span>
           </div>
           <div className="w-full bg-slate-100 rounded-full h-4">
             <div
-              className="bg-emerald-500 h-4 rounded-full transition-all duration-500 ease-out"
+              className="bg-plum-500 h-4 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progressPercent}%` }}
             ></div>
           </div>
@@ -651,10 +651,10 @@ Contact: [Your Phone Number]
         </div>
 
         {completedCount === totalSteps && (
-          <div className="mt-6 p-5 bg-emerald-100 rounded-lg border-2 border-emerald-300 text-center">
-            <CheckCircle size={40} className="text-emerald-600 mx-auto mb-2" aria-hidden="true" />
-            <p className="text-emerald-800 font-bold text-xl">Congratulations! You've completed all the steps!</p>
-            <p className="text-emerald-700 mt-2">You're well on your way to winning your appeal. Stay strong!</p>
+          <div className="mt-6 p-5 bg-plum-100 rounded-lg border-2 border-plum-300 text-center">
+            <CheckCircle size={40} className="text-plum-600 mx-auto mb-2" aria-hidden="true" />
+            <p className="text-plum-800 font-bold text-xl">Congratulations! You've completed all the steps!</p>
+            <p className="text-plum-700 mt-2">You're well on your way to winning your appeal. Stay strong!</p>
           </div>
         )}
       </SectionHeader>
@@ -829,25 +829,25 @@ Contact: [Your Phone Number]
       </section>
 
       {/* Downloadable Resources */}
-      <section className="mb-8 rounded-xl border-2 border-emerald-200 overflow-hidden">
-        <div className="bg-emerald-100 px-6 py-4 border-b-2 border-emerald-200">
+      <section className="mb-8 rounded-xl border-2 border-plum-200 overflow-hidden">
+        <div className="bg-plum-100 px-6 py-4 border-b-2 border-plum-200">
           <div className="flex items-center gap-3">
-            <div className="bg-emerald-600 text-white p-3 rounded-lg">
+            <div className="bg-plum-600 text-white p-3 rounded-lg">
               <Download size={24} aria-hidden="true" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-emerald-900">Free Downloadable Resources</h2>
-              <p className="text-emerald-700">Print these guides to help with your appeal</p>
+              <h2 className="text-xl font-bold text-plum-900">Free Downloadable Resources</h2>
+              <p className="text-plum-700">Print these guides to help with your appeal</p>
             </div>
           </div>
         </div>
 
-        <div className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div className="p-6 bg-gradient-to-br from-plum-50 to-teal-50">
           <div className="grid md:grid-cols-2 gap-6">
             {/* Appeal Guide */}
-            <div className="bg-white rounded-lg p-5 border-2 border-emerald-200 shadow-sm">
+            <div className="bg-white rounded-lg p-5 border-2 border-plum-200 shadow-sm">
               <div className="flex items-center gap-3 mb-3">
-                <FileText size={24} className="text-emerald-600" aria-hidden="true" />
+                <FileText size={24} className="text-plum-600" aria-hidden="true" />
                 <h3 className="text-lg font-bold text-slate-800">Complete Appeal Guide</h3>
               </div>
               <p className="text-slate-600 mb-4 text-sm">
@@ -855,15 +855,15 @@ Contact: [Your Phone Number]
               </p>
               <ul className="text-sm text-slate-600 mb-4 space-y-1">
                 <li className="flex items-center gap-2">
-                  <Check size={14} className="text-emerald-500" aria-hidden="true" />
+                  <Check size={14} className="text-plum-500" aria-hidden="true" />
                   Printable checklists
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check size={14} className="text-emerald-500" aria-hidden="true" />
+                  <Check size={14} className="text-plum-500" aria-hidden="true" />
                   Sample appeal letter template
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check size={14} className="text-emerald-500" aria-hidden="true" />
+                  <Check size={14} className="text-plum-500" aria-hidden="true" />
                   Phone scripts for calling insurance
                 </li>
               </ul>
@@ -871,7 +871,7 @@ Contact: [Your Phone Number]
                 href="/appeal-guide.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition shadow-md hover:shadow-lg w-full justify-center"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-plum-600 hover:bg-plum-700 text-white font-semibold rounded-lg transition shadow-md hover:shadow-lg w-full justify-center"
               >
                 <Download size={18} aria-hidden="true" />
                 Download Appeal Guide

@@ -230,7 +230,7 @@ const Subscribe = () => {
             {/* Back Link */}
             <Link
                 to="/pricing"
-                className="inline-flex items-center gap-2 text-slate-600 hover:text-emerald-700 transition"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-plum-700 transition"
             >
                 <ArrowLeft size={18} />
                 Back to Pricing
@@ -238,8 +238,8 @@ const Subscribe = () => {
 
             {/* Header */}
             <header className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-6">
-                    <CreditCard size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-6">
+                    <CreditCard size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl font-extrabold text-slate-900 mb-2">
                     Subscribe to Pro
@@ -253,7 +253,7 @@ const Subscribe = () => {
             {!isAuthenticated && (
                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
                     <div className="flex items-center gap-3 mb-4">
-                        <User size={24} className="text-emerald-600" />
+                        <User size={24} className="text-plum-600" />
                         <div>
                             <h3 className="font-bold text-slate-900">Create Your Account</h3>
                             <p className="text-slate-600 text-sm">
@@ -276,7 +276,7 @@ const Subscribe = () => {
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     autoComplete="name"
-                                    className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                    className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                     placeholder="Your name"
                                 />
                             </div>
@@ -296,7 +296,7 @@ const Subscribe = () => {
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
                                     autoComplete="email"
-                                    className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                    className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                     placeholder="you@example.com"
                                 />
                             </div>
@@ -316,7 +316,7 @@ const Subscribe = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                     autoComplete="new-password"
-                                    className="w-full pl-10 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                    className="w-full pl-10 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                     placeholder="Create a password (8+ characters)"
                                 />
                                 <button
@@ -347,10 +347,10 @@ const Subscribe = () => {
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
                                     autoComplete="new-password"
-                                    className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 ${
+                                    className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500 ${
                                         confirmPassword.length > 0
                                             ? passwordsMatch
-                                                ? 'border-emerald-500'
+                                                ? 'border-plum-500'
                                                 : 'border-red-300'
                                             : 'border-slate-300'
                                     }`}
@@ -369,7 +369,7 @@ const Subscribe = () => {
                             Already have an account?{' '}
                             <Link
                                 to={`/login?redirect=/subscribe?plan=${plan}`}
-                                className="text-emerald-700 hover:text-emerald-800 font-medium underline"
+                                className="text-plum-700 hover:text-plum-800 font-medium underline"
                             >
                                 Sign in here
                             </Link>
@@ -379,12 +379,12 @@ const Subscribe = () => {
             )}
 
             {isAuthenticated && (
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <div className="bg-plum-50 border border-plum-200 rounded-xl p-4">
                     <div className="flex items-center gap-3">
-                        <CheckCircle size={20} className="text-emerald-600" />
+                        <CheckCircle size={20} className="text-plum-600" />
                         <div>
-                            <p className="text-emerald-800 font-medium">Signed in as {user.email}</p>
-                            <p className="text-emerald-700 text-sm">Your subscription will be linked to your account.</p>
+                            <p className="text-plum-800 font-medium">Signed in as {user.email}</p>
+                            <p className="text-plum-700 text-sm">Your subscription will be linked to your account.</p>
                         </div>
                     </div>
                 </div>
@@ -474,7 +474,7 @@ const Subscribe = () => {
             {/* Patient Code Section */}
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                    <Gift size={24} className="text-emerald-600" />
+                    <Gift size={24} className="text-plum-600" />
                     <div>
                         <h3 className="font-bold text-slate-900">Have a Patient Code?</h3>
                         <p className="text-slate-600 text-sm">
@@ -492,11 +492,11 @@ const Subscribe = () => {
                 )}
 
                 {codeSuccess ? (
-                    <div className="flex items-center gap-3 bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                        <CheckCircle size={20} className="text-emerald-600" />
+                    <div className="flex items-center gap-3 bg-plum-50 border border-plum-200 rounded-lg p-4">
+                        <CheckCircle size={20} className="text-plum-600" />
                         <div>
-                            <p className="text-emerald-800 font-medium">Code redeemed successfully!</p>
-                            <p className="text-emerald-700 text-sm">Redirecting to your account...</p>
+                            <p className="text-plum-800 font-medium">Code redeemed successfully!</p>
+                            <p className="text-plum-700 text-sm">Redirecting to your account...</p>
                         </div>
                     </div>
                 ) : (
@@ -508,13 +508,13 @@ const Subscribe = () => {
                                 onChange={(e) => setPatientCode(e.target.value)}
                                 placeholder="Enter patient code"
                                 aria-label="Patient assistance code"
-                                className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
                                 disabled={codeLoading}
                             />
                             <button
                                 type="submit"
                                 disabled={codeLoading || !patientCode.trim()}
-                                className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                className="px-6 py-2 bg-plum-600 hover:bg-plum-700 text-white font-medium rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                             >
                                 {codeLoading ? (
                                     <>
@@ -539,9 +539,9 @@ const Subscribe = () => {
             {/* Terms */}
             <p className="text-center text-slate-500 text-sm">
                 By subscribing, you agree to our{' '}
-                <Link to="/terms-and-conditions" className="text-emerald-700 hover:underline">Terms of Service</Link>
+                <Link to="/terms-and-conditions" className="text-plum-700 hover:underline">Terms of Service</Link>
                 {' '}and{' '}
-                <Link to="/privacy" className="text-emerald-700 hover:underline">Privacy Policy</Link>.
+                <Link to="/privacy" className="text-plum-700 hover:underline">Privacy Policy</Link>.
                 Cancel anytime from your account settings.
             </p>
         </article>

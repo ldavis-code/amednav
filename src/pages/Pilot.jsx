@@ -56,13 +56,13 @@ const Pilot = () => {
             {/* Hero Section */}
             <header className="text-center py-8 md:py-12">
                 {!isGenericPilot && (
-                    <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <div className="inline-flex items-center gap-2 bg-plum-100 text-plum-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                         <Building2 size={16} aria-hidden="true" />
                         {partnerConfig.name} Partner Program
                     </div>
                 )}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-6">
-                    <HeartHandshake size={32} className="text-emerald-700" aria-hidden="true" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-6">
+                    <HeartHandshake size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     {isGenericPilot ? 'Welcome, Partner Patients' : partnerConfig.welcome}
@@ -81,9 +81,9 @@ const Pilot = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                     <Link
                         to="/medications"
-                        className="flex flex-col items-center text-center p-6 bg-emerald-50 hover:bg-emerald-100 rounded-xl border border-emerald-200 transition group"
+                        className="flex flex-col items-center text-center p-6 bg-plum-50 hover:bg-plum-100 rounded-xl border border-plum-200 transition group"
                     >
-                        <div className="w-14 h-14 bg-emerald-600 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-emerald-700 transition">
+                        <div className="w-14 h-14 bg-plum-600 text-white rounded-full flex items-center justify-center mb-4 group-hover:bg-plum-700 transition">
                             <Search size={24} aria-hidden="true" />
                         </div>
                         <h3 className="font-bold text-slate-900 mb-2">Search Medications</h3>
@@ -117,23 +117,23 @@ const Pilot = () => {
                 <h2 className="text-xl font-bold text-slate-900 mb-4">What You Can Do Here</h2>
                 <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                        <ShieldCheck size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="text-slate-700">Search for your transplant medications and compare prices</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <ShieldCheck size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="text-slate-700">Find Patient Assistance Programs (PAPs) for free medications</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <ShieldCheck size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="text-slate-700">Discover copay cards and manufacturer savings programs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <ShieldCheck size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="text-slate-700">Access foundation grants for financial assistance</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <ShieldCheck size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                        <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="text-slate-700">Learn about insurance navigation and specialty pharmacies</span>
                     </li>
                 </ul>
@@ -142,15 +142,15 @@ const Pilot = () => {
             {/* Trust Indicators */}
             <section className="grid md:grid-cols-3 gap-4">
                 <div className="bg-white p-4 rounded-xl border border-slate-200 text-center">
-                    <p className="font-bold text-emerald-700 text-lg">Free Education</p>
+                    <p className="font-bold text-plum-700 text-lg">Free Education</p>
                     <p className="text-slate-600 text-sm">Educational resources at no cost</p>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 text-center">
-                    <p className="font-bold text-emerald-700 text-lg">No Login</p>
+                    <p className="font-bold text-plum-700 text-lg">No Login</p>
                     <p className="text-slate-600 text-sm">No account required</p>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-200 text-center">
-                    <p className="font-bold text-emerald-700 text-lg">Privacy-Safe</p>
+                    <p className="font-bold text-plum-700 text-lg">Privacy-Safe</p>
                     <p className="text-slate-600 text-sm">No personal data collected</p>
                 </div>
             </section>
@@ -168,7 +168,7 @@ const Pilot = () => {
                 <p className="text-slate-600 text-sm">
                     AMedNav™ was built by a transplant recipient to help patients find medication assistance with free educational resources.
                 </p>
-                <Link to="/" className="text-emerald-700 font-medium hover:underline text-sm mt-2 inline-block">
+                <Link to="/" className="text-plum-700 font-medium hover:underline text-sm mt-2 inline-block">
                     Learn more about us
                 </Link>
             </section>

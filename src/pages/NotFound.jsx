@@ -24,14 +24,14 @@ const NotFound = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Link
                         to="/"
-                        className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-4 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2"
                         aria-label="Return to home page"
                     >
                         Go to Home
                     </Link>
                     <Link
                         to="/wizard"
-                        className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 font-bold rounded-xl hover:border-emerald-200 transition flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 font-bold rounded-xl hover:border-plum-200 transition flex items-center justify-center gap-2"
                         aria-label="Start medication assistance wizard"
                     >
                         <Map size={20} aria-hidden="true" />
