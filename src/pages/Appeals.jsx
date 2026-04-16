@@ -27,9 +27,9 @@ import { useMetaTags } from '../hooks/useMetaTags.js';
 
 export default function Appeals() {
   useMetaTags({
-    title: 'Got Denied? Appeal Help for Patients | TransplantMedicationNavigator',
-    description: 'Learn how to appeal insurance denials for transplant medications. Includes step therapy exceptions, generic vs brand guidance, and medical necessity letter templates.',
-    keywords: 'insurance appeal, step therapy, prior authorization, transplant medication denial, medical necessity letter'
+    title: 'Got Denied? Appeal Help for Patients | AMedNav',
+    description: 'Learn how to appeal insurance denials for your medications. Includes step therapy exceptions, generic vs brand guidance, and medical necessity letter templates.',
+    keywords: 'insurance appeal, step therapy, prior authorization, medication denial, medical necessity letter'
   });
 
   // Interactive section states
@@ -47,8 +47,8 @@ export default function Appeals() {
   const [patientName, setPatientName] = useState('');
   const [doctorName, setDoctorName] = useState('');
   const [medicationName, setMedicationName] = useState('');
-  const [transplantType, setTransplantType] = useState('');
-  const [transplantDate, setTransplantDate] = useState('');
+  const [conditionType, setConditionType] = useState('');
+  const [diagnosisDate, setDiagnosisDate] = useState('');
   const [denialReason, setDenialReason] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [generatedLetter, setGeneratedLetter] = useState('');
@@ -90,16 +90,16 @@ export default function Appeals() {
 
 Dear Dr. ${doctorName || "[Doctor's Name]"},
 
-I am writing to ask for your help with an insurance appeal for my transplant medication.
+I am writing to ask for your help with an insurance appeal for my medication.
 
 My insurance company has denied coverage for ${medicationName || "[Medication Name]"}. ${denialReason ? `They stated the reason was: ${denialReason}.` : ''}
 
-As you know, I received a ${transplantType || "[organ type]"} transplant${transplantDate ? ` on ${transplantDate}` : ''}, and I need this medication to prevent rejection of my transplant.
+As you know, I have a ${conditionType || "[condition]"} diagnosis${diagnosisDate ? ` (diagnosed on ${diagnosisDate})` : ''}, and I need this medication to manage my condition.
 
 I am requesting that you write a letter of medical necessity on my behalf to support my appeal. A strong letter from you explaining why I need this specific medication would greatly help my case.
 
 In your letter, it would be helpful if you could include:
-• My diagnosis and transplant history
+• My diagnosis and medical history
 • Why this specific medication is necessary for my care
 • Any clinical reasons why alternative medications are not appropriate for me
 • The risks of not having access to this medication
@@ -128,12 +128,12 @@ Contact: [Your Phone Number]
 
   const generateSpAppealLetter = () => {
     const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    const text = `Date: ${date}\n\nTo Whom It May Concern:\n\nI am writing to appeal the coverage denial or specialty pharmacy requirement for my medication, ${spAppealDrug}. \n\nPatient Name: ${spAppealName}\nMedication: ${spAppealDrug}\n\nReason for Appeal: ${spAppealReason}\n\nThis medication is medically necessary for my transplant care. The current requirement creates a significant barrier to my adherence and health outcomes because ${
+    const text = `Date: ${date}\n\nTo Whom It May Concern:\n\nI am writing to appeal the coverage denial or specialty pharmacy requirement for my medication, ${spAppealDrug}. \n\nPatient Name: ${spAppealName}\nMedication: ${spAppealDrug}\n\nReason for Appeal: ${spAppealReason}\n\nThis medication is medically necessary for my care. The current requirement creates a significant barrier to my adherence and health outcomes because ${
       spAppealReason === 'Financial Hardship'
         ? 'the cost at the required specialty pharmacy creates an undue financial burden.'
         : spAppealReason === 'Access Issues'
           ? 'the specialty pharmacy has caused repeated delays in delivery, putting my health at risk.'
-          : 'I am clinically stable on my current medication regimen and any changes could jeopardize my transplant.'
+          : 'I am clinically stable on my current medication regimen and any changes could jeopardize my health.'
     }\n\nPlease review this appeal and allow me to access my medication at my pharmacy of choice.\n\nSincerely,\n${spAppealName}`;
     setSpGeneratedLetter(text);
     setSpCopied(false);
@@ -463,10 +463,10 @@ Contact: [Your Phone Number]
             </h3>
             <ul className="space-y-2">
               {[
-                "Anti-rejection drugs need exact blood levels. Small changes matter a lot.",
-                "Trying the wrong drug could hurt your transplant.",
-                "Your transplant team picked your drug for good reasons.",
-                "Switching means more blood tests and doctor visits."
+                "Many specialty drugs need exact dosing. Small changes can matter a lot.",
+                "Trying the wrong drug could hurt your health.",
+                "Your care team picked your drug for good reasons.",
+                "Switching means more lab tests and doctor visits."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-slate-700">
                   <span className="text-red-500 mt-1">•</span>
@@ -485,8 +485,8 @@ Contact: [Your Phone Number]
             <ul className="space-y-2">
               {[
                 "You can ask them to skip step therapy.",
-                "Transplant drugs often get approved when your doctor explains why.",
-                "A letter from your transplant doctor helps a lot.",
+                "Specialty drugs often get approved when your doctor explains why.",
+                "A letter from your doctor helps a lot.",
                 "Many states have laws that protect patients."
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-slate-700">
@@ -535,16 +535,16 @@ Contact: [Your Phone Number]
             </ul>
           </div>
 
-          {/* Why Transplant is Different */}
+          {/* Why Specialty Drugs Are Different */}
           <div className="bg-white rounded-lg p-5 border-2 border-purple-200">
-            <h3 className="text-lg font-bold text-purple-800 mb-3">Why Transplant Drugs Are Different</h3>
+            <h3 className="text-lg font-bold text-purple-800 mb-3">Why Some Specialty Drugs Are Different</h3>
             <p className="text-slate-700 mb-3">
-              Anti-rejection drugs are special. Even tiny changes can cause problems:
+              Narrow-therapeutic-index medications (like anti-rejection drugs and many specialty drugs) are special. Even tiny changes can cause problems:
             </p>
             <ul className="space-y-2 text-slate-700">
               <li className="flex items-center gap-2">
                 <span className="text-red-500">↓</span>
-                <strong>Too little:</strong> Your body might reject the transplant
+                <strong>Too little:</strong> Your condition may not be controlled
               </li>
               <li className="flex items-center gap-2">
                 <span className="text-red-500">↑</span>
@@ -561,7 +561,7 @@ Contact: [Your Phone Number]
             {[
               "Your drug levels have been steady on this brand",
               "You had problems when you switched before",
-              "Your transplant center requires brand-name",
+              "Your care center requires brand-name",
               "Your body has trouble absorbing the drug"
             ].map((item, i) => (
               <div key={i} className="bg-white p-3 rounded-lg flex items-center gap-2">
@@ -619,7 +619,7 @@ Contact: [Your Phone Number]
           <AppealStep
             number={3}
             title="Get Your Papers Together"
-            description="Ask your transplant team for: a letter from your doctor, your transplant records, recent lab results, and notes about why other drugs won't work."
+            description="Ask your care team for: a letter from your doctor, your medical records, recent lab results, and notes about why other drugs won't work."
             tips="Use the letter builder below to help your doctor write a support letter!"
             isCompleted={completedSteps[3]}
             onToggle={() => toggleStep(3)}
@@ -635,8 +635,8 @@ Contact: [Your Phone Number]
           <AppealStep
             number={5}
             title="Ask for a Fast Review If You Need It"
-            description="If you're going to run out of your medicine soon, ask for an expedited (fast) review. For transplant drugs, this almost always counts as urgent."
-            tips="Say 'I need an expedited appeal because running out of my transplant medication is life-threatening.'"
+            description="If you're going to run out of your medicine soon, ask for an expedited (fast) review. For critical medications, this almost always counts as urgent."
+            tips="Say 'I need an expedited appeal because running out of my medication is life-threatening.'"
             isCompleted={completedSteps[5]}
             onToggle={() => toggleStep(5)}
           />
@@ -733,32 +733,32 @@ Contact: [Your Phone Number]
                 />
               </div>
               <div>
-                <label htmlFor="transplant-type" className="block text-base font-bold text-slate-800 mb-2">
-                  Transplant Type
+                <label htmlFor="condition-type" className="block text-base font-bold text-slate-800 mb-2">
+                  Condition
                 </label>
                 <input
-                  id="transplant-type"
+                  id="condition-type"
                   type="text"
-                  placeholder="e.g., Kidney, Liver, Heart"
+                  placeholder="e.g., Crohn's, Kidney transplant, Multiple sclerosis"
                   className="w-full p-3 text-base rounded-lg border-2 border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400"
-                  value={transplantType}
-                  onChange={(e) => setTransplantType(e.target.value)}
+                  value={conditionType}
+                  onChange={(e) => setConditionType(e.target.value)}
                 />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="transplant-date" className="block text-base font-bold text-slate-800 mb-2">
-                  Transplant Date <span className="font-normal text-slate-500">(optional)</span>
+                <label htmlFor="diagnosis-date" className="block text-base font-bold text-slate-800 mb-2">
+                  Diagnosis Date <span className="font-normal text-slate-500">(optional)</span>
                 </label>
                 <input
-                  id="transplant-date"
+                  id="diagnosis-date"
                   type="text"
                   placeholder="e.g., January 2023"
                   className="w-full p-3 text-base rounded-lg border-2 border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400"
-                  value={transplantDate}
-                  onChange={(e) => setTransplantDate(e.target.value)}
+                  value={diagnosisDate}
+                  onChange={(e) => setDiagnosisDate(e.target.value)}
                 />
               </div>
               <div>
@@ -885,7 +885,7 @@ Contact: [Your Phone Number]
                 <h3 className="text-lg font-bold text-slate-800">Doctor's Letter Template</h3>
               </div>
               <p className="text-slate-600 mb-4 text-sm">
-                Share this with your transplant doctor. A ready-to-use medical necessity letter template they can customize for your appeal.
+                Share this with your doctor. A ready-to-use medical necessity letter template they can customize for your appeal.
               </p>
               <ul className="text-sm text-slate-600 mb-4 space-y-1">
                 <li className="flex items-center gap-2">

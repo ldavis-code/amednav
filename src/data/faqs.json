@@ -3,7 +3,7 @@
     "category": "About This Site",
     "questions": [
       {
-        "q": "What is Transplant AMedNav?",
+        "q": "What is AMedNav?",
         "a": "We help patients find free or low-cost medicine. We show you programs that can help pay for your drugs."
       },
       {
@@ -99,7 +99,7 @@
       },
       {
         "q": "What is a copay accumulator or maximizer program?",
-        "a": "This is increasingly important for patients on expensive immunosuppressants.\n\n**What it is:**\nSome insurance plans use \"copay accumulator\" or \"copay maximizer\" programs that do NOT count manufacturer copay assistance toward your deductible or out-of-pocket maximum.\n\n**Why this matters:**\nNormally, your copays count toward your deductible. Once you hit your out-of-pocket max, insurance pays 100%. But with accumulator programs:\n• The copay card pays your costs\n• But those payments don't count toward your deductible\n• When the copay card runs out, you still have your full deductible to meet\n• You could face thousands in unexpected costs\n\n**What to do:**\n• Ask your insurance if they have an accumulator or maximizer program\n• Read your plan documents carefully\n• Budget for costs after your copay card benefit is exhausted\n• Talk to your transplant social worker about backup options"
+        "a": "This is increasingly important for patients on expensive specialty medications.\n\n**What it is:**\nSome insurance plans use \"copay accumulator\" or \"copay maximizer\" programs that do NOT count manufacturer copay assistance toward your deductible or out-of-pocket maximum.\n\n**Why this matters:**\nNormally, your copays count toward your deductible. Once you hit your out-of-pocket max, insurance pays 100%. But with accumulator programs:\n• The copay card pays your costs\n• But those payments don't count toward your deductible\n• When the copay card runs out, you still have your full deductible to meet\n• You could face thousands in unexpected costs\n\n**What to do:**\n• Ask your insurance if they have an accumulator or maximizer program\n• Read your plan documents carefully\n• Budget for costs after your copay card benefit is exhausted\n• Talk to your social worker about backup options"
       }
     ]
   },
@@ -112,7 +112,7 @@
       },
       {
         "q": "What is alternative funding (AFP)?",
-        "a": "This is when your work plan says: \"We won't cover this drug. Go get it free from the drug maker.\"\n\n**How it works:**\n• Your plan won't pay for some drugs\n• Another company calls you to help apply for free drugs\n• If you can't get free drugs, then your plan might pay\n\n**Why this is risky:**\n• You may wait weeks or months\n• You might not get the free drugs\n• If you can't get free drugs, you pay full price\n• Missing your transplant drugs is dangerous"
+        "a": "This is when your work plan says: \"We won't cover this drug. Go get it free from the drug maker.\"\n\n**How it works:**\n• Your plan won't pay for some drugs\n• Another company calls you to help apply for free drugs\n• If you can't get free drugs, then your plan might pay\n\n**Why this is risky:**\n• You may wait weeks or months\n• You might not get the free drugs\n• If you can't get free drugs, you pay full price\n• Missing doses of your specialty medications is dangerous"
       },
       {
         "q": "How do I know if my plan does this?",
@@ -124,7 +124,7 @@
       },
       {
         "q": "What can I do if this happens to me?",
-        "a": "**Step 1:** Read your plan papers. Look for words like \"accumulator\" or \"alternative funding.\"\n\n**Step 2:** Keep track of what you pay. Check if it shows on your plan's tracker.\n\n**Step 3:** If they say no, appeal. Ask your transplant team to write a letter saying you need this drug.\n\n**Step 4:** Call your state insurance office. They can help you file a complaint.\n\n**Step 5:** If you get insurance from work, talk to HR. Tell them how this hurts you.\n\n**Get help:** Call the Patient Advocate Foundation. They help for free."
+        "a": "**Step 1:** Read your plan papers. Look for words like \"accumulator\" or \"alternative funding.\"\n\n**Step 2:** Keep track of what you pay. Check if it shows on your plan's tracker.\n\n**Step 3:** If they say no, appeal. Ask your care team to write a letter saying you need this drug.\n\n**Step 4:** Call your state insurance office. They can help you file a complaint.\n\n**Step 5:** If you get insurance from work, talk to HR. Tell them how this hurts you.\n\n**Get help:** Call the Patient Advocate Foundation. They help for free."
       },
       {
         "q": "Why is this so bad for patients?",
@@ -137,7 +137,7 @@
     "questions": [
       {
         "q": "What is a Specialty Pharmacy?",
-        "a": "A specialty pharmacy handles expensive drugs like transplant medicine. They often ship drugs to your home.\n\nMost insurance plans make you use a specific specialty pharmacy. You usually cannot fill these drugs at your local store."
+        "a": "A specialty pharmacy handles expensive or complex medications. They often ship drugs to your home.\n\nMost insurance plans make you use a specific specialty pharmacy. You usually cannot fill these drugs at your local store."
       },
       {
         "q": "Can I use copay cards with Medicare?",
@@ -157,7 +157,7 @@
       },
       {
         "q": "My pharmacy gave me a different brand of my medicine. Is that a problem?",
-        "a": "For patients, this CAN be a problem.\n\n**Why it matters:**\nAnti-rejection drugs need to stay at steady levels in your body. Switching brands can change those levels.\n\n**What to do:**\n• Tell your transplant team right away\n• Ask for blood tests within a week\n• Write down the new brand name\n• Watch for any new symptoms\n\n**To prevent this:**\n• Ask your doctor to write \"Do Not Substitute\" on your prescription\n• Ask your pharmacy to notify you before any changes\n\n**Important:** Do not stop taking your medicine because of a switch. Take what you have and call your transplant team."
+        "a": "For patients on narrow therapeutic index drugs, this CAN be a problem.\n\n**Why it matters:**\nSome medications (like anti-rejection drugs) need to stay at steady levels in your body. Switching brands can change those levels.\n\n**What to do:**\n• Tell your care team right away\n• Ask for blood tests within a week\n• Write down the new brand name\n• Watch for any new symptoms\n\n**To prevent this:**\n• Ask your doctor to write \"Do Not Substitute\" on your prescription\n• Ask your pharmacy to notify you before any changes\n\n**Important:** Do not stop taking your medicine because of a switch. Take what you have and call your care team."
       },
       {
         "q": "What are State Drug Programs?",
@@ -173,7 +173,7 @@
       },
       {
         "q": "What is the CMS WISeR prior authorization pilot?",
-        "a": "Starting January 2026, CMS launched the **WISeR** (Wasteful and Inappropriate Service Reduction) model. It adds prior authorization for 17 outpatient Medicare Part B services.\n\n**Affected states:** Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington.\n\n**What patients should know:**\n• WISeR does NOT affect your transplant medications\n• It covers outpatient procedures like nerve stimulators, spinal procedures, and wound care\n• If you need one of these procedures, your provider must get approval first\n• Decisions are made within 72 hours (48 hours for urgent cases)\n\n**Important:** This only affects Original Medicare (fee-for-service), not Medicare Advantage plans. The model runs through December 2031."
+        "a": "Starting January 2026, CMS launched the **WISeR** (Wasteful and Inappropriate Service Reduction) model. It adds prior authorization for 17 outpatient Medicare Part B services.\n\n**Affected states:** Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington.\n\n**What patients should know:**\n• WISeR does NOT affect your prescription medications\n• It covers outpatient procedures like nerve stimulators, spinal procedures, and wound care\n• If you need one of these procedures, your provider must get approval first\n• Decisions are made within 72 hours (48 hours for urgent cases)\n\n**Important:** This only affects Original Medicare (fee-for-service), not Medicare Advantage plans. The model runs through December 2031."
       }
     ]
   },
@@ -190,7 +190,7 @@
       },
       {
         "q": "What should I do before January each year?",
-        "a": "Check your insurance during open enrollment (usually in the fall). Make sure your plan still covers your transplant drugs the same way in the new year."
+        "a": "Check your insurance during open enrollment (usually in the fall). Make sure your plan still covers your medications the same way in the new year."
       },
       {
         "q": "Why does my generic medicine cost different amounts each month?",
@@ -202,7 +202,7 @@
       },
       {
         "q": "What drugs are being negotiated by Medicare?",
-        "a": "Medicare is negotiating drug prices under the Inflation Reduction Act. Here is where things stand:\n\n**First 10 drugs (prices in effect January 2026):**\nEliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, and NovoLog/Fiasp. These save patients up to 79% on some drugs.\n\n**Second round (15 drugs, prices effective 2027):**\nA second group of 15 drugs was selected for negotiation with prices taking effect in 2027.\n\n**Third round (announced January 27, 2026, prices effective 2028):**\n15 new drugs including the first-ever Part B drugs. Transplant-relevant picks include Orencia (related to Belatacept for kidney transplant), Trulicity (for post-transplant diabetes), Xolair and Anoro Ellipta (for lung patients). Also includes Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, and Xeljanz.\n\n**Why it matters:** Lower prices mean you hit your $2,100 out-of-pocket cap faster, or pay less overall."
+        "a": "Medicare is negotiating drug prices under the Inflation Reduction Act. Here is where things stand:\n\n**First 10 drugs (prices in effect January 2026):**\nEliquis, Jardiance, Xarelto, Januvia, Farxiga, Entresto, Enbrel, Imbruvica, Stelara, and NovoLog/Fiasp. These save patients up to 79% on some drugs.\n\n**Second round (15 drugs, prices effective 2027):**\nA second group of 15 drugs was selected for negotiation with prices taking effect in 2027.\n\n**Third round (announced January 27, 2026, prices effective 2028):**\n15 new drugs including the first-ever Part B drugs. Notable picks include Orencia (related to Belatacept for kidney transplant), Trulicity (for post-transplant diabetes), Xolair and Anoro Ellipta (for lung conditions). Also includes Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, and Xeljanz.\n\n**Why it matters:** Lower prices mean you hit your $2,100 out-of-pocket cap faster, or pay less overall."
       }
     ]
   },
@@ -223,7 +223,7 @@
       },
       {
         "q": "When should patients use discount cards?",
-        "a": "Only in limited cases:\n1. For a drug your insurance does not cover\n2. For a cheap, one-time drug (like an antibiotic)\n3. If you have no insurance\n\n**Never use discount cards** for your daily transplant drugs like Tacrolimus or Mycophenolate."
+        "a": "Only in limited cases:\n1. For a drug your insurance does not cover\n2. For a cheap, one-time drug (like an antibiotic)\n3. If you have no insurance\n\n**Never use discount cards** for your daily specialty medications like Tacrolimus or Mycophenolate."
       },
       {
         "q": "What are better options than discount cards?",
@@ -265,7 +265,7 @@
       },
       {
         "q": "Are generic anti-rejection drugs safe?",
-        "a": "Generic drugs are FDA approved and work the same as brand drugs.\n\n**Why some centers are careful:**\nAnti-rejection drugs need to stay at steady levels in your body. Switching between different generics can cause changes.\n\n**What you can do:**\n• Ask your doctor to specify one generic maker on your prescription\n• Ask for more blood tests after any change\n• If your pharmacy switches your generic, call your transplant team right away\n\n**Important:** Talk to your transplant team about this. Do not decide based on cost alone."
+        "a": "Generic drugs are FDA approved and work the same as brand drugs.\n\n**Why some centers are careful:**\nAnti-rejection drugs need to stay at steady levels in your body. Switching between different generics can cause changes.\n\n**What you can do:**\n• Ask your doctor to specify one generic maker on your prescription\n• Ask for more blood tests after any change\n• If your pharmacy switches your generic, call your care team right away\n\n**Important:** Talk to your care team about this. Do not decide based on cost alone."
       },
       {
         "q": "What happens when I hit the Medicare donut hole?",
@@ -281,28 +281,28 @@
       },
       {
         "q": "My specialty pharmacy will not ship to my state. What do I do?",
-        "a": "This happens due to pharmacy licensing rules.\n\n**What to try:**\n1. Call your transplant center. They may know other pharmacies.\n2. Ask your insurance which pharmacies can ship to you.\n3. Check if your transplant center has its own pharmacy.\n4. Contact the drug company for direct help.\n\n**Do not wait** until you run out of medicine. These issues can take weeks to fix."
+        "a": "This happens due to pharmacy licensing rules.\n\n**What to try:**\n1. Call your care team. They may know other pharmacies.\n2. Ask your insurance which pharmacies can ship to you.\n3. Check if your care center has its own pharmacy.\n4. Contact the drug company for direct help.\n\n**Do not wait** until you run out of medicine. These issues can take weeks to fix."
       },
       {
         "q": "My insurance denied my medicine. How do I appeal?",
-        "a": "Denials are common. Appeals often work. Do not give up.\n\n**Step 1:** Find out why it was denied. Get it in writing.\n\n**Step 2:** Work with your transplant team. They can write a letter saying why you need this medicine.\n\n**Step 3:** File the appeal before the deadline (usually 30-60 days).\n\n**Step 4:** If you will run out of medicine soon, ask for an urgent review.\n\n**Step 5:** If denied again, you can ask for a review by an outside group.\n\nYour social worker or pharmacist can help with this."
+        "a": "Denials are common. Appeals often work. Do not give up.\n\n**Step 1:** Find out why it was denied. Get it in writing.\n\n**Step 2:** Work with your care team. They can write a letter saying why you need this medicine.\n\n**Step 3:** File the appeal before the deadline (usually 30-60 days).\n\n**Step 4:** If you will run out of medicine soon, ask for an urgent review.\n\n**Step 5:** If denied again, you can ask for a review by an outside group.\n\nYour social worker or pharmacist can help with this."
       },
       {
         "q": "It is Friday night and I just ran out of my medicine. What do I do?",
-        "a": "**This is urgent.** Stopping your anti-rejection drugs can cause problems.\n\n**Tonight:**\n• Call your transplant center's after-hours line. They have 24/7 help.\n• Check for 24-hour pharmacies (CVS, Walgreens). Your team can send a prescription there.\n• As a last resort, an ER can give you a small emergency supply.\n\n**To prevent this in the future:**\n• Set up automatic refills\n• Keep a 3-5 day emergency supply at home\n• Set phone reminders 7 days before you run out\n• When traveling, bring extra medicine"
+        "a": "**This is urgent.** Missing doses of critical medications (like anti-rejection drugs) can cause problems.\n\n**Tonight:**\n• Call your care team's after-hours line. They have 24/7 help.\n• Check for 24-hour pharmacies (CVS, Walgreens). Your team can send a prescription there.\n• As a last resort, an ER can give you a small emergency supply.\n\n**To prevent this in the future:**\n• Set up automatic refills\n• Keep a 3-5 day emergency supply at home\n• Set phone reminders 7 days before you run out\n• When traveling, bring extra medicine"
       },
       {
         "q": "How do I deal with side effects from my drugs?",
-        "a": "Anti-rejection drugs have side effects. Here are common ones and what to do:\n\n**Tacrolimus:**\n• Shaking hands - Tell your team. Limit caffeine.\n• Headaches - Stay hydrated. Ask about safe pain medicine.\n• High blood sugar - Check your levels often.\n\n**Mycophenolate (CellCept):**\n• Upset stomach, nausea, diarrhea - Take with food. Tell your team if you feel bad.\n\n**Prednisone:**\n• Weight gain, mood changes, trouble sleeping - Usually gets better as the dose goes down.\n\n**Important:** Never stop or change your drugs on your own. Talk to your transplant team first."
+        "a": "Anti-rejection drugs have side effects. Here are common ones and what to do:\n\n**Tacrolimus:**\n• Shaking hands - Tell your team. Limit caffeine.\n• Headaches - Stay hydrated. Ask about safe pain medicine.\n• High blood sugar - Check your levels often.\n\n**Mycophenolate (CellCept):**\n• Upset stomach, nausea, diarrhea - Take with food. Tell your team if you feel bad.\n\n**Prednisone:**\n• Weight gain, mood changes, trouble sleeping - Usually gets better as the dose goes down.\n\n**Important:** Never stop or change your drugs on your own. Talk to your care team first."
       },
       {
         "q": "Are medicine needs different for each organ type?",
-        "a": "Yes. The core drugs are similar, but there are differences:\n\n**Kidney transplant:**\n• Special Medicare coverage (Part B-ID)\n• May be able to reduce drugs over time\n\n**Liver transplant:**\n• May need less immune suppression over time\n\n**Heart transplant:**\n• Needs more intense drug treatment\n• Regular heart checks required\n\n**Lung transplant:**\n• Highest rejection risk\n• Needs the most drugs\n\nYour transplant team knows what is best for your organ type."
+        "a": "Yes. The core drugs are similar, but there are differences:\n\n**Kidney transplant:**\n• Special Medicare coverage (Part B-ID)\n• May be able to reduce drugs over time\n\n**Liver transplant:**\n• May need less immune suppression over time\n\n**Heart transplant:**\n• Needs more intense drug treatment\n• Regular heart checks required\n\n**Lung transplant:**\n• Highest rejection risk\n• Needs the most drugs\n\nYour care team knows what is best for your organ type."
       }
     ]
   },
   {
-    "category": "Medication Regimens by Transplant Type",
+    "category": "Medication Regimens by Organ Type",
     "questions": [
       {
         "q": "What medications do heart patients typically take?",
@@ -325,8 +325,8 @@
         "a": "Pancreas transplant immunosuppression is similar to kidney transplantation, as the two are often performed together:\n\n**Calcineurin Inhibitor (Tacrolimus)**\n• Standard of care for maintenance therapy\n\n**Antimetabolite (Mycophenolate Mofetil)**\n• Used in combination with tacrolimus\n\n**Corticosteroid (Prednisone)**\n• Often tapered to a low dose or discontinued over time"
       },
       {
-        "q": "Important: What should I know about managing my transplant medications?",
-        "a": "Post-transplant medication regimens are complex and require careful management by a specialized transplant team.\n\n**Key points to remember:**\n• Lifelong adherence to these medications is crucial for the long-term success of your transplant and your health\n• Never change your medication regimen without consulting your transplant team first\n• This includes stopping, adjusting doses, or adding new medications\n• Even over-the-counter drugs and supplements can interact with your transplant medications\n\n**Always consult your transplant team before:**\n• Making any changes to your medication schedule\n• Starting any new medications\n• Taking over-the-counter drugs\n• Using herbal supplements or vitamins\n\nYour transplant team is your best resource for medication questions."
+        "q": "Important: What should I know about managing my anti-rejection medications?",
+        "a": "Post-transplant medication regimens are complex and require careful management by a specialized care team.\n\n**Key points to remember:**\n• Lifelong adherence to these medications is crucial for the long-term success of your transplant and your health\n• Never change your medication regimen without consulting your care team first\n• This includes stopping, adjusting doses, or adding new medications\n• Even over-the-counter drugs and supplements can interact with your anti-rejection medications\n\n**Always consult your care team before:**\n• Making any changes to your medication schedule\n• Starting any new medications\n• Taking over-the-counter drugs\n• Using herbal supplements or vitamins\n\nYour care team is your best resource for medication questions."
       }
     ]
   },
@@ -335,7 +335,7 @@
     "questions": [
       {
         "q": "How does the \"My Path\" quiz work?",
-        "a": "The quiz is available to subscribers. It asks about you:\n• Your role (patient, caregiver, etc.)\n• Your transplant status\n• Your organ type\n• Your insurance\n• Your medicines\n\nBased on your answers, we show you programs that help you pay for your medicine."
+        "a": "The quiz is available to subscribers. It asks about you:\n• Your role (patient, caregiver, etc.)\n• Your medical condition\n• Your insurance\n• Your medicines\n\nBased on your answers, we show you programs that help you pay for your medicine."
       },
       {
         "q": "Can I search for a specific medicine?",
@@ -359,7 +359,7 @@
       },
       {
         "q": "What if my medicine is not listed?",
-        "a": "We focus on common transplant medicines, but our list is growing. You can also check GoodRx, RxAssist, or NeedyMeds for other medicines."
+        "a": "We focus on common specialty medicines, but our list is growing. You can also check GoodRx, RxAssist, or NeedyMeds for other medicines."
       },
       {
         "q": "Can I print my results?",
@@ -372,11 +372,11 @@
     "questions": [
       {
         "q": "I am overwhelmed. Where do I start?",
-        "a": "Start by browsing our free drug information and assistance programs. For personalized guidance, subscribe and take the \"My Path\" quiz - it will guide you step by step. If you need more help, contact your transplant center's social worker."
+        "a": "Start by browsing our free drug information and assistance programs. For personalized guidance, subscribe and take the \"My Path\" quiz - it will guide you step by step. If you need more help, contact your care team's social worker."
       },
       {
         "q": "Can you help me fill out applications?",
-        "a": "We cannot fill out forms for you. But our site explains each step. Your transplant center's social worker can help you fill out forms."
+        "a": "We cannot fill out forms for you. But our site explains each step. Your care team's social worker can help you fill out forms."
       },
       {
         "q": "What if I get denied?",
@@ -388,7 +388,7 @@
       },
       {
         "q": "Who can I contact for more help?",
-        "a": "Contact your transplant center's social worker. They know these programs well.\n\nYou can also reach out to:\n• National Kidney Foundation\n• American Liver Foundation\n• Other organ-specific groups"
+        "a": "Contact your care team's social worker. They know these programs well.\n\nYou can also reach out to:\n• National Kidney Foundation\n• American Liver Foundation\n• Other condition-specific groups"
       }
     ]
   },
@@ -396,32 +396,32 @@
     "category": "Got Denied? Fighting Insurance Denials",
     "questions": [
       {
-        "q": "Why did my insurance deny my transplant medication?",
+        "q": "Why did my insurance deny my medication?",
         "a": "Your denial letter tells you why they said no. Here are the most common reasons:\n\n• **Prior Auth Needed:** Your doctor needs to ask permission first\n• **Not on the List:** Your drug isn't on their approved list (formulary)\n• **Step Therapy:** They want you to try a cheaper drug first\n• **Quantity Limits:** They say you're getting too much of this drug\n• **Use the Generic:** They want you to use a cheaper version\n\nThe letter should say what to do next. If it doesn't, call your insurance and ask."
       },
       {
         "q": "What is step therapy and why is it bad for patients?",
-        "a": "**Step therapy** means your insurance wants you to try a cheaper drug before they'll pay for the one your doctor picked. Some people call this \"fail first.\"\n\n**Why This Can Be Bad for Patients:**\n• Anti-rejection drugs need to stay at the right level in your blood. Small changes matter a lot.\n• Trying the wrong drug could hurt your transplant.\n• Your transplant team picked your drug for good reasons.\n• Switching drugs means more blood tests and doctor visits.\n\n**Good News:** You can ask them to skip step therapy. Transplant drugs often get approved when your doctor says you need them."
+        "a": "**Step therapy** means your insurance wants you to try a cheaper drug before they'll pay for the one your doctor picked. Some people call this \"fail first.\"\n\n**Why This Can Be Bad for Patients:**\n• Some medications (like anti-rejection drugs) need to stay at the right level in your blood. Small changes matter a lot.\n• Trying the wrong drug could harm your health.\n• Your care team picked your drug for good reasons.\n• Switching drugs means more blood tests and doctor visits.\n\n**Good News:** You can ask them to skip step therapy. Critical medications often get approved when your doctor says you need them."
       },
       {
         "q": "Can I ask my insurance to skip step therapy?",
-        "a": "Yes! You can request a step therapy exception.\n\n**What helps:**\n• A letter from your transplant doctor explaining why you need this specific drug\n• Your transplant records and lab results\n• Notes about why other drugs won't work for you\n\n**Also know:**\n• Many states have laws that protect patients from step therapy\n• Transplant drugs often get exceptions because of medical necessity\n• Your transplant center can help you fight this"
+        "a": "Yes! You can request a step therapy exception.\n\n**What helps:**\n• A letter from your doctor explaining why you need this specific drug\n• Your medical records and lab results\n• Notes about why other drugs won't work for you\n\n**Also know:**\n• Many states have laws that protect patients from step therapy\n• Critical medications often get exceptions because of medical necessity\n• Your care team can help you fight this"
       },
       {
         "q": "Why does my insurance want me to use a generic instead of brand-name?",
-        "a": "Generic drugs cost less, so insurance prefers them. For most drugs, generics are fine - the FDA says they work the same way.\n\n**But transplant drugs are different:**\n• Anti-rejection drugs are \"narrow therapeutic index\" drugs\n• Even tiny changes in how much gets into your blood can cause problems\n• Too little drug = your body might reject the transplant\n• Too much drug = side effects and toxicity\n• Switching brands can change how your body absorbs the drug\n\nMany transplant centers don't allow switches for tacrolimus and other critical drugs."
+        "a": "Generic drugs cost less, so insurance prefers them. For most drugs, generics are fine - the FDA says they work the same way.\n\n**But some drugs are different:**\n• Anti-rejection drugs and other \"narrow therapeutic index\" drugs have tight dosing requirements\n• Even tiny changes in how much gets into your blood can cause problems\n• Too little drug = your body might reject the transplant or your condition might worsen\n• Too much drug = side effects and toxicity\n• Switching brands can change how your body absorbs the drug\n\nMany care centers don't allow switches for tacrolimus and other critical drugs."
       },
       {
         "q": "When should I fight for brand-name instead of generic?",
-        "a": "Consider fighting for brand-name when:\n\n• Your drug levels have been steady on this brand\n• You had problems when you switched before\n• Your transplant center requires brand-name\n• Your body has trouble absorbing the drug\n• You're taking tacrolimus or another narrow therapeutic index drug\n\n**What to do:**\n• Ask your transplant doctor to write a letter explaining why you need brand-name\n• Include your lab history showing stable levels\n• Note any past problems with generic versions"
+        "a": "Consider fighting for brand-name when:\n\n• Your drug levels have been steady on this brand\n• You had problems when you switched before\n• Your care center requires brand-name\n• Your body has trouble absorbing the drug\n• You're taking tacrolimus or another narrow therapeutic index drug\n\n**What to do:**\n• Ask your doctor to write a letter explaining why you need brand-name\n• Include your lab history showing stable levels\n• Note any past problems with generic versions"
       },
       {
         "q": "How do I appeal an insurance denial?",
-        "a": "**Step 1: Get It in Writing**\nAsk for a letter that says exactly why they said no. You need this to know what to say in your appeal.\n\n**Step 2: Watch the Clock**\nYou usually have 30 to 60 days to appeal. Mark the date on your calendar.\n\n**Step 3: Get Your Papers Together**\n• A letter from your doctor saying why you need this drug\n• Your transplant records\n• Recent lab results\n• Any records of past rejection or problems\n\n**Step 4: Send Your Appeal**\nSend everything together. Keep copies of everything.\n\n**Step 5: Ask for Fast Review**\nIf you're going to run out of medicine soon, ask for an expedited (fast) review."
+        "a": "**Step 1: Get It in Writing**\nAsk for a letter that says exactly why they said no. You need this to know what to say in your appeal.\n\n**Step 2: Watch the Clock**\nYou usually have 30 to 60 days to appeal. Mark the date on your calendar.\n\n**Step 3: Get Your Papers Together**\n• A letter from your doctor saying why you need this drug\n• Your medical records\n• Recent lab results\n• Any records of past problems with other treatments\n\n**Step 4: Send Your Appeal**\nSend everything together. Keep copies of everything.\n\n**Step 5: Ask for Fast Review**\nIf you're going to run out of medicine soon, ask for an expedited (fast) review."
       },
       {
         "q": "What should be in my doctor's appeal letter?",
-        "a": "A strong medical necessity letter should include:\n\n• **Your diagnosis:** The specific transplant and date\n• **Current medication:** What you're taking and why\n• **Why this specific drug:** Medical reasons for this choice\n• **Why alternatives won't work:** Side effects, absorption issues, past failures\n• **Risk of changing:** Rejection risk, hospitalization risk\n• **Clinical guidelines:** References to KDIGO, ISHLT, or other transplant guidelines\n\nWe have a letter template on our Appeals page that your doctor can use. Visit our Education section and click \"Got Denied?\" to find it."
+        "a": "A strong medical necessity letter should include:\n\n• **Your diagnosis:** The specific condition and date\n• **Current medication:** What you're taking and why\n• **Why this specific drug:** Medical reasons for this choice\n• **Why alternatives won't work:** Side effects, absorption issues, past failures\n• **Risk of changing:** Rejection risk, hospitalization risk\n• **Clinical guidelines:** References to relevant clinical guidelines (e.g., KDIGO, ISHLT)\n\nWe have a letter template on our Appeals page that your doctor can use. Visit our Education section and click \"Got Denied?\" to find it."
       },
       {
         "q": "What if my first appeal is denied?",
@@ -429,11 +429,11 @@
       },
       {
         "q": "Can I get my medicine while I wait for my appeal?",
-        "a": "Sometimes! Here's what to ask for:\n\n**Expedited Review:** If you're running low on medicine, tell them it's urgent. Transplant drugs usually count as urgent because stopping them is dangerous.\n\n**Continuation of Coverage:** If you were already on the drug and they're now denying it, you may be able to keep getting it while you appeal.\n\n**Bridge Supply:** Some pharmacies or drug companies can give you a short supply while you wait.\n\n**Emergency Supply:** If it's an emergency, call your transplant center. They may have samples or other options."
+        "a": "Sometimes! Here's what to ask for:\n\n**Expedited Review:** If you're running low on medicine, tell them it's urgent. Critical medications (like anti-rejection drugs) usually count as urgent because stopping them is dangerous.\n\n**Continuation of Coverage:** If you were already on the drug and they're now denying it, you may be able to keep getting it while you appeal.\n\n**Bridge Supply:** Some pharmacies or drug companies can give you a short supply while you wait.\n\n**Emergency Supply:** If it's an emergency, call your care team. They may have samples or other options."
       },
       {
         "q": "Who can help me with my appeal?",
-        "a": "You don't have to do this alone:\n\n• **Transplant Social Worker:** They know these systems and can help with paperwork\n• **Your Transplant Coordinator:** Can provide medical records quickly\n• **Your Doctor's Office:** They file appeals often and know what works\n• **Patient Advocates:** Your hospital may have staff who help with insurance\n• **State Insurance Office:** They can explain your rights and file complaints\n\nAsk for help early. Don't wait until your medicine runs out."
+        "a": "You don't have to do this alone:\n\n• **Social Worker:** They know these systems and can help with paperwork\n• **Your Care Coordinator:** Can provide medical records quickly\n• **Your Doctor's Office:** They file appeals often and know what works\n• **Patient Advocates:** Your hospital may have staff who help with insurance\n• **State Insurance Office:** They can explain your rights and file complaints\n\nAsk for help early. Don't wait until your medicine runs out."
       }
     ]
   },
@@ -441,20 +441,20 @@
     "category": "Special Situations",
     "questions": [
       {
-        "q": "How do I travel with my transplant drugs?",
+        "q": "How do I travel with my medications?",
         "a": "**Before you travel:**\n• Get extra medicine (at least 7 extra days)\n• Get a letter from your doctor listing your drugs\n• Check if any drugs need to stay cold\n\n**When packing:**\n• ALWAYS keep drugs in your carry-on bag\n• Keep them in the original bottles\n• Bring more than you need\n\n**At the airport:**\n• Drugs do not have to follow the liquid rules\n• You can show your doctor's letter if asked\n\n**Time zones:**\n• For short trips, keep taking drugs on your home time\n• For longer trips, slowly shift your times by 1-2 hours a day"
       },
       {
-        "q": "I am a parent of a child with a transplant. What should I know?",
+        "q": "I am a parent of a child with a chronic condition. What should I know?",
         "a": "**Medicine tips:**\n• Doses change as kids grow\n• Liquid forms are available for kids who cannot swallow pills\n• Make taking medicine part of the daily routine\n\n**School tips:**\n• Work with the school nurse on a medicine plan\n• Provide written instructions\n• Make sure the school can store medicine properly\n\n**Helping teens:**\n• Start teaching them to manage their own medicine around age 10-12\n• Use pill boxes and phone apps\n• Include them in doctor visits\n\n**Insurance:**\n• Kids may qualify for state programs with higher income limits\n• Plan ahead for when they turn 26 and lose your insurance"
       },
       {
         "q": "I live outside the United States. Can this site help me?",
-        "a": "Our site is made for the U.S. health care system.\n\n**What works anywhere:**\n• General medicine info\n• Tips for staying on your medicine\n• Emergency planning\n\n**What is U.S.-only:**\n• PAPs from drug companies\n• Medicare/Medicaid info\n• Copay foundations\n• Discount cards\n\n**For international patients:**\n• Contact your transplant center for local resources\n• Connect with transplant groups in your country"
+        "a": "Our site is made for the U.S. health care system.\n\n**What works anywhere:**\n• General medicine info\n• Tips for staying on your medicine\n• Emergency planning\n\n**What is U.S.-only:**\n• PAPs from drug companies\n• Medicare/Medicaid info\n• Copay foundations\n• Discount cards\n\n**For international patients:**\n• Contact your care center for local resources\n• Connect with patient advocacy groups in your country"
       },
       {
         "q": "I am a young adult living on my own for the first time. Any tips?",
-        "a": "**Medicine tips:**\n• Set up a system NOW (pill box, phone alarms, or apps)\n• Never rely on memory alone\n• Find a pharmacy near your new home\n• Keep your transplant center's number in your phone\n\n**Insurance:**\n• If you are turning 26, start planning at 25\n• Learn about your coverage - deductibles, copays, which pharmacy to use\n\n**College tips:**\n• Tell at least one trusted friend about your transplant\n• Know where student health services is\n• Plan how to store medicine in a dorm\n\n**Money tips:**\n• Learn about financial help programs\n• Keep records of all medical costs\n• Ask about income-based help if money is tight"
+        "a": "**Medicine tips:**\n• Set up a system NOW (pill box, phone alarms, or apps)\n• Never rely on memory alone\n• Find a pharmacy near your new home\n• Keep your care team's number in your phone\n\n**Insurance:**\n• If you are turning 26, start planning at 25\n• Learn about your coverage - deductibles, copays, which pharmacy to use\n\n**College tips:**\n• Tell at least one trusted friend about your health condition\n• Know where student health services is\n• Plan how to store medicine in a dorm\n\n**Money tips:**\n• Learn about financial help programs\n• Keep records of all medical costs\n• Ask about income-based help if money is tight"
       }
     ]
   }

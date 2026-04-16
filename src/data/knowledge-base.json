@@ -1,7 +1,7 @@
 {
   "greeting": {
     "keywords": ["hello", "hi", "hey", "help"],
-    "response": "Hi! I am here to help you find ways to pay for your transplant medicine. I can help you:\n\n• Learn about your insurance\n• Find programs that give free or low-cost medicine\n• Take the My Path quiz\n• Learn about specific drugs\n\nWhat would you like to know?"
+    "response": "Hi! I am here to help you find ways to pay for your medicine. I can help you:\n\n• Learn about your insurance\n• Find programs that give free or low-cost medicine\n• Take the My Path quiz\n• Learn about specific drugs\n\nWhat would you like to know?"
   },
   "insurance": {
     "keywords": ["insurance", "medicare", "medicaid", "commercial", "coverage"],
@@ -17,15 +17,15 @@
   },
   "specialtyPharmacy": {
     "keywords": ["specialty pharmacy", "mail order", "cvs", "walgreens"],
-    "response": "**Specialty Pharmacy Info:**\n\nMost private insurance makes you fill transplant drugs at a specific pharmacy (not your local store).\n\n**Common specialty pharmacies:**\n• Accredo\n• CVS Specialty\n• Walgreens Specialty\n• Briova/Optum\n\n**Important:** If you use the wrong pharmacy, you may pay full price! Call your insurance to find out which pharmacy you must use."
+    "response": "**Specialty Pharmacy Info:**\n\nMost private insurance makes you fill specialty medications at a specific pharmacy (not your local store).\n\n**Common specialty pharmacies:**\n• Accredo\n• CVS Specialty\n• Walgreens Specialty\n• Briova/Optum\n\n**Important:** If you use the wrong pharmacy, you may pay full price! Call your insurance to find out which pharmacy you must use."
   },
   "medications": {
     "keywords": ["tacrolimus", "prograf", "cyclosporine", "mycophenolate", "cellcept", "medication"],
-    "response": "**Common Transplant Drugs:**\n\n**Anti-rejection drugs** (keep your body from rejecting the organ):\n• Tacrolimus (Prograf)\n• Cyclosporine (Neoral)\n• Mycophenolate (CellCept)\n\n**Anti-virus drugs** (prevent infections):\n• Valganciclovir (Valcyte)\n• Acyclovir (Zovirax)\n\nUse our **Search Meds** tool to find prices and help programs for your drugs."
+    "response": "**Common Medications:**\n\n**Anti-rejection drugs** (for transplant recipients, to keep your body from rejecting the organ):\n• Tacrolimus (Prograf)\n• Cyclosporine (Neoral)\n• Mycophenolate (CellCept)\n\n**Anti-virus drugs** (prevent infections):\n• Valganciclovir (Valcyte)\n• Acyclovir (Zovirax)\n\nUse our **Search Meds** tool to find prices and help programs for your drugs."
   },
   "wizard": {
     "keywords": ["my path", "wizard", "quiz", "start"],
-    "response": "**My Path Quiz Guide:**\n\nThe quiz helps you find programs that fit your needs. It asks about:\n\n1. Who you are (patient, caregiver, or social worker)\n2. If you have had your transplant yet\n3. Your organ type\n4. Your insurance\n5. Your medicines\n6. How you are doing with costs\n\nIt takes about 3-5 minutes. Your answers stay on your device. We do not save them. Ready to start?"
+    "response": "**My Path Quiz Guide:**\n\nThe quiz helps you find programs that fit your needs. It asks about:\n\n1. Who you are (patient, caregiver, or social worker)\n2. Your medical condition\n3. Your insurance\n4. Your medicines\n5. How you are doing with costs\n\nIt takes about 3-5 minutes. Your answers stay on your device. We do not save them. Ready to start?"
   },
   "application": {
     "keywords": ["apply", "application", "how to apply", "documents", "forms"],
@@ -37,18 +37,18 @@
   },
   "medicare2026costs": {
     "keywords": ["part b premium", "part b cost", "part b deductible", "medicare premium 2026", "part b-id premium", "b-id cost", "immunosuppressive drug premium", "121", "202", "283"],
-    "response": "**2026 Medicare Part B Costs:**\n\n• **Standard Part B premium:** $202.90/month (up from $185.00 in 2025)\n• **Part B deductible:** $283/year (up from $257 in 2025)\n• **Part B-ID premium** (kidney transplant): $121.60/month (up from $110.40 in 2025)\n• **Part D out-of-pocket cap:** $2,100/year\n\n**Part B-ID** is a special benefit for kidney patients that covers immunosuppressive drugs for life, even after full Medicare ends. You pay the $121.60 premium plus 20% coinsurance after the $283 deductible.\n\nMedicare Savings Programs (QMB, SLMB, QI) can help pay premiums if your income is low."
+    "response": "**2026 Medicare Part B Costs:**\n\n• **Standard Part B premium:** $202.90/month (up from $185.00 in 2025)\n• **Part B deductible:** $283/year (up from $257 in 2025)\n• **Part B-ID premium** (kidney transplant recipients): $121.60/month (up from $110.40 in 2025)\n• **Part D out-of-pocket cap:** $2,100/year\n\n**Part B-ID** is a special benefit for kidney transplant patients that covers immunosuppressive drugs for life, even after full Medicare ends. You pay the $121.60 premium plus 20% coinsurance after the $283 deductible.\n\nMedicare Savings Programs (QMB, SLMB, QI) can help pay premiums if your income is low."
   },
   "wiser": {
     "keywords": ["wiser", "prior authorization pilot", "cms pilot", "prior auth 2026", "wasteful and inappropriate"],
-    "response": "**CMS WISeR Prior Authorization Pilot (2026):**\n\nStarting January 2026, the WISeR (Wasteful and Inappropriate Service Reduction) model adds prior authorization for 17 outpatient Medicare Part B services in 6 states: Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington.\n\n**For patients:** WISeR does NOT directly affect your transplant medications or immunosuppressants. It covers outpatient procedures (nerve stimulators, spinal procedures, wound care). However, if you need any of these procedures, your provider must get prior authorization first.\n\nThis applies only to Original Medicare, not Medicare Advantage."
+    "response": "**CMS WISeR Prior Authorization Pilot (2026):**\n\nStarting January 2026, the WISeR (Wasteful and Inappropriate Service Reduction) model adds prior authorization for 17 outpatient Medicare Part B services in 6 states: Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington.\n\n**For patients:** WISeR does NOT directly affect your prescription medications or immunosuppressants. It covers outpatient procedures (nerve stimulators, spinal procedures, wound care). However, if you need any of these procedures, your provider must get prior authorization first.\n\nThis applies only to Original Medicare, not Medicare Advantage."
   },
   "negotiatedDrugs": {
     "keywords": ["negotiated price", "drug negotiation", "inflation reduction", "IRA drugs", "medicare negotiation", "third cycle", "2028 prices"],
-    "response": "**Medicare Drug Price Negotiation:**\n\n**First 10 drugs (prices effective Jan 2026):** Eliquis, Entresto, Jardiance, Farxiga, Januvia, Xarelto, Stelara, Enbrel, Imbruvica, NovoLog/Fiasp. Savings up to 79%.\n\n**Third round (announced Jan 27, 2026, prices effective 2028):** 15 new drugs including first-ever Part B drugs. Transplant-relevant picks: Orencia (related to Belatacept), Trulicity (post-transplant diabetes), Xolair & Anoro Ellipta (lung transplant). Also Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, Xeljanz.\n\nLower prices = you hit your $2,100 out-of-pocket cap faster."
+    "response": "**Medicare Drug Price Negotiation:**\n\n**First 10 drugs (prices effective Jan 2026):** Eliquis, Entresto, Jardiance, Farxiga, Januvia, Xarelto, Stelara, Enbrel, Imbruvica, NovoLog/Fiasp. Savings up to 79%.\n\n**Third round (announced Jan 27, 2026, prices effective 2028):** 15 new drugs including first-ever Part B drugs. Notable picks: Orencia (related to Belatacept for kidney transplant), Trulicity (post-transplant diabetes), Xolair & Anoro Ellipta (lung conditions). Also Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, Xeljanz.\n\nLower prices = you hit your $2,100 out-of-pocket cap faster."
   },
   "diversion": {
     "keywords": ["diversion", "accumulator", "maximizer", "afp", "alternative funding", "copay accumulator", "copay maximizer", "carved out", "carve out"],
-    "response": "**When Plans Send You Away:**\n\nSome plans try to avoid paying for your drugs:\n\n• **Copay Accumulator**: Takes your copay card help but does not count it toward what you owe\n• **Copay Maximizer**: Keeps the savings for the plan, not you\n• **Alternative Funding (AFP)**: Won't cover your drug. Makes you get free drugs from drug makers.\n\n**Watch for these signs:**\n• Copay card money not showing on your tracker\n• They tell you to get free drugs first\n• Your drug is \"carved out\" (not covered)\n\n**What to do:**\n• Ask your plan if they use these tricks\n• Many states have laws to protect you\n• Appeal if your plan says no\n• Talk to your transplant team's money helper\n\nVisit our **Diversion Programs** tab in Education to learn more."
+    "response": "**When Plans Send You Away:**\n\nSome plans try to avoid paying for your drugs:\n\n• **Copay Accumulator**: Takes your copay card help but does not count it toward what you owe\n• **Copay Maximizer**: Keeps the savings for the plan, not you\n• **Alternative Funding (AFP)**: Won't cover your drug. Makes you get free drugs from drug makers.\n\n**Watch for these signs:**\n• Copay card money not showing on your tracker\n• They tell you to get free drugs first\n• Your drug is \"carved out\" (not covered)\n\n**What to do:**\n• Ask your plan if they use these tricks\n• Many states have laws to protect you\n• Appeal if your plan says no\n• Talk to your care team's social worker\n\nVisit our **Diversion Programs** tab in Education to learn more."
   }
 }

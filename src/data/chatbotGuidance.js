@@ -152,7 +152,7 @@ export const getMedicationGuidance = (medication, eligibilityFlags, insuranceTyp
       title: 'Generic Version Available',
       description: `${medication.genericName} has a generic version that often costs less. Ask your doctor if you can use the generic safely.`,
       steps: [
-        'Ask your transplant doctor if the generic is OK for you',
+        'Ask your doctor if the generic is OK for you',
         'Check if your insurance covers the generic (it often costs less)',
         'Get blood tests after any medicine change',
       ],
@@ -233,7 +233,7 @@ export const generateGuidanceSummary = (answers, medications) => {
       summary.keyMessages.push({
         type: 'warning',
         title: 'Use the Right Pharmacy',
-        message: 'Most plans make you use a specific specialty pharmacy for transplant drugs. Using the wrong one can cost you full price!',
+        message: 'Most plans make you use a specific specialty pharmacy for specialty medications. Using the wrong one can cost you full price!',
       });
       break;
 
@@ -256,7 +256,7 @@ export const generateGuidanceSummary = (answers, medications) => {
       summary.keyMessages.push({
         type: 'success',
         title: 'Good Coverage',
-        message: 'Medicaid usually covers transplant drugs with low or no copay. Check which drugs your state covers.',
+        message: 'Medicaid usually covers prescription drugs with low or no copay. Check which drugs your state covers.',
       });
       break;
 
@@ -277,7 +277,7 @@ export const generateGuidanceSummary = (answers, medications) => {
       summary.keyMessages.push({
         type: 'info',
         title: 'VA Pharmacy Help',
-        message: 'VA pharmacies often fill transplant drugs at very low cost. Call your VA pharmacy team.',
+        message: 'VA pharmacies often fill prescription drugs at very low cost. Call your VA pharmacy team.',
       });
       break;
 
@@ -285,7 +285,7 @@ export const generateGuidanceSummary = (answers, medications) => {
       summary.keyMessages.push({
         type: 'info',
         title: 'IHS Can Help',
-        message: 'Indian Health Service may provide transplant drugs. Call your IHS pharmacy.',
+        message: 'Indian Health Service may provide prescription drugs. Call your IHS pharmacy.',
       });
       break;
   }
@@ -295,7 +295,7 @@ export const generateGuidanceSummary = (answers, medications) => {
     summary.urgentActions.push({
       title: 'Do This Now',
       actions: [
-        'Call your transplant center social worker TODAY',
+        'Call your care team social worker TODAY',
         'Ask about emergency medicine supplies',
         'Apply for free medicine programs right away (many can help fast)',
         'Call HealthWell Foundation or PAN Foundation for emergency help',

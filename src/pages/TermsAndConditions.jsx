@@ -19,7 +19,7 @@ const TermsAndConditions = () => {
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-8">
                 <section>
                     <p className="text-slate-700 leading-relaxed">
-                        Welcome to the AMedNav website (the "Website"), operated by TransplantNav LLC ("we," "us," or "our"). These Terms and Conditions ("Terms") govern your access to and use of the Website and its content, which is intended to be an educational resource for patients and their caregivers.
+                        Welcome to the AMedNav website (the "Website"), operated by AMedNav LLC ("we," "us," or "our"). These Terms and Conditions ("Terms") govern your access to and use of the Website and its content, which is intended to be an educational resource for patients and their caregivers.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         By accessing or using the Website, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Website.
@@ -32,7 +32,7 @@ const TermsAndConditions = () => {
                         1. No Medical Advice
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your transplant team or healthcare provider with any questions about your medical condition or treatment.
+                        This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your care team or healthcare provider with any questions about your medical condition or treatment.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         Never disregard professional medical advice or delay in seeking it because of something you have read on this Website.
@@ -58,7 +58,7 @@ const TermsAndConditions = () => {
                         3. Third-Party Links
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        The Website may contain links to third-party websites or services that are not owned or controlled by TransplantNav LLC. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that TransplantNav LLC shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such websites or services.
+                        The Website may contain links to third-party websites or services that are not owned or controlled by AMedNav LLC. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that AMedNav LLC shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such websites or services.
                     </p>
                 </section>
 
@@ -68,7 +68,7 @@ const TermsAndConditions = () => {
                         4. Intellectual Property
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        The Website and its original content, features, and functionality are and will remain the exclusive property of TransplantNav LLC and its licensors. The Website is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of TransplantNav LLC.
+                        The Website and its original content, features, and functionality are and will remain the exclusive property of AMedNav LLC and its licensors. The Website is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of AMedNav LLC.
                     </p>
                 </section>
 
@@ -78,7 +78,7 @@ const TermsAndConditions = () => {
                         5. Limitation of Liability
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        In no event shall TransplantNav LLC, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Website; (ii) any conduct or content of any third party on the Website; (iii) any content obtained from the Website; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
+                        In no event shall AMedNav LLC, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Website; (ii) any conduct or content of any third party on the Website; (iii) any content obtained from the Website; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
                     </p>
                 </section>
 
@@ -91,7 +91,7 @@ const TermsAndConditions = () => {
                         Your use of the Website is at your sole risk. The Website is provided on an "AS IS" and "AS AVAILABLE" basis. The Website is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
-                        TransplantNav LLC its subsidiaries, affiliates, and its licensors do not warrant that a) the Website will function uninterrupted, secure, or available at any particular time or location; b) any errors or defects will be corrected; c) the Website is free of viruses or other harmful components; or d) the results of using the Website will meet your requirements.
+                        AMedNav LLC its subsidiaries, affiliates, and its licensors do not warrant that a) the Website will function uninterrupted, secure, or available at any particular time or location; b) any errors or defects will be corrected; c) the Website is free of viruses or other harmful components; or d) the results of using the Website will meet your requirements.
                     </p>
                 </section>
 
@@ -129,11 +129,11 @@ const TermsAndConditions = () => {
                     <p className="text-slate-700 leading-relaxed">
                         If you have any questions about these Terms, please contact us at{' '}
                         <a
-                            href="mailto:info@transplantmedicationnavigator.com"
+                            href="mailto:info@amednav.com"
                             className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                         >
                             <Mail size={16} aria-hidden="true" />
-                            info@transplantmedicationnavigator.com
+                            info@amednav.com
                         </a>
                     </p>
                 </section>

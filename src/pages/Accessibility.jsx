@@ -36,7 +36,7 @@ const Accessibility = () => {
                                 U.S. Department of Health and Human Services (HHS) Final Rule
                                 <ExternalLink size={14} aria-hidden="true" />
                             </a>
-                            , TransplantNav LLC does not discriminate on the basis of disability in its programs, services, or activities. This website is designed to be accessible to all users, including people with disabilities.
+                            , AMedNav LLC does not discriminate on the basis of disability in its programs, services, or activities. This website is designed to be accessible to all users, including people with disabilities.
                         </p>
                     </div>
                     <p className="text-slate-700 leading-relaxed">
@@ -61,7 +61,7 @@ const Accessibility = () => {
                         Our Commitment
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        TransplantNav LLC is committed to making the AMedNav website accessible to everyone, including people with disabilities. We believe that all patients deserve equal access to medication assistance information, regardless of ability.
+                        AMedNav LLC is committed to making the AMedNav website accessible to everyone, including people with disabilities. We believe that all patients deserve equal access to medication assistance information, regardless of ability.
                     </p>
                     <p className="text-slate-700 leading-relaxed mt-4">
                         We work to follow the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines help make web content more usable for people with disabilities and better for everyone.
@@ -279,7 +279,7 @@ const Accessibility = () => {
                         Section 504 Grievance Procedure
                     </h2>
                     <p className="text-slate-700 leading-relaxed mb-4">
-                        TransplantNav LLC has adopted an internal grievance procedure for the prompt and equitable resolution of complaints alleging any action prohibited by Section 504 of the Rehabilitation Act of 1973.
+                        AMedNav LLC has adopted an internal grievance procedure for the prompt and equitable resolution of complaints alleging any action prohibited by Section 504 of the Rehabilitation Act of 1973.
                     </p>
                     <div className="bg-slate-50 rounded-lg p-4 space-y-4">
                         <div>
@@ -292,14 +292,14 @@ const Accessibility = () => {
                             <h3 className="font-semibold text-slate-900 mb-2">Submit Your Grievance To</h3>
                             <div className="text-slate-700 space-y-1">
                                 <p><strong>Section 504 Coordinator</strong></p>
-                                <p>TransplantNav LLC</p>
+                                <p>AMedNav LLC</p>
                                 <p>
                                     Email:{' '}
                                     <a
-                                        href="mailto:504coordinator@transplantmedicationnavigator.com?subject=Section%20504%20Grievance"
+                                        href="mailto:504coordinator@amednav.com?subject=Section%20504%20Grievance"
                                         className="text-plum-600 hover:text-plum-700 underline"
                                     >
-                                        504coordinator@transplantmedicationnavigator.com
+                                        504coordinator@amednav.com
                                     </a>
                                 </p>
                             </div>
@@ -335,11 +335,11 @@ const Accessibility = () => {
                         <p className="text-slate-700">
                             <strong>Email:</strong>{' '}
                             <a
-                                href="mailto:info@transplantmedicationnavigator.com?subject=Accessibility%20Feedback"
+                                href="mailto:info@amednav.com?subject=Accessibility%20Feedback"
                                 className="text-plum-600 hover:text-plum-700 underline inline-flex items-center gap-1"
                             >
                                 <Mail size={16} aria-hidden="true" />
-                                info@transplantmedicationnavigator.com
+                                info@amednav.com
                             </a>
                         </p>
                         <p className="text-slate-700">
@@ -418,7 +418,7 @@ const Accessibility = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                        href="mailto:info@transplantmedicationnavigator.com?subject=Accessibility%20Assistance"
+                        href="mailto:info@amednav.com?subject=Accessibility%20Assistance"
                         className="px-6 py-3 bg-plum-600 hover:bg-plum-700 text-white font-bold rounded-lg shadow-md transition inline-flex items-center justify-center gap-2 min-h-[44px]"
                     >
                         <Mail size={18} aria-hidden="true" />

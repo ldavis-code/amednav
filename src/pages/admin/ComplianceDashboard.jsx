@@ -500,7 +500,7 @@ export default function ComplianceDashboard() {
                           {isExpanded ? <ChevronUp className="h-3.5 w-3.5 text-gray-400" /> : <ChevronDown className="h-3.5 w-3.5 text-gray-400" />}
                           <span className="text-sm font-medium text-gray-900">{p.patientId}</span>
                           {p.hasHighPriorityMeds && (
-                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-purple-100 text-purple-700" title="Taking immunosuppressants or other high-priority transplant medications">
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-purple-100 text-purple-700" title="Taking immunosuppressants or other high-priority specialty medications">
                               <Pill className="h-3 w-3" />
                               IMM
                             </span>

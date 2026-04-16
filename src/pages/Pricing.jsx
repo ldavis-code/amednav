@@ -18,13 +18,13 @@ const Pricing = () => {
                 'Epic MyChart integration with SMART on FHIR R4',
                 'Branded patient portal with the center\'s logo and colors',
                 'Patient engagement and adherence dashboard',
-                'Copay card and PAP matching for full transplant medication formulary',
-                'CMS/IOTA-ready compliance documentation and reporting',
-                'Implementation support and transplant coordinator training',
-                'Multi-organ program support (kidney, liver, heart, lung)'
+                'Copay card and PAP matching for full medication formulary',
+                'CMS-ready compliance documentation and reporting',
+                'Implementation support and care coordinator training',
+                'Multi-program support across specialty therapeutic areas'
             ],
             cta: 'Contact Us',
-            ctaLink: 'mailto:info@transplantmedicationnavigator.com?subject=Enterprise%20Pricing%20Inquiry',
+            ctaLink: 'mailto:info@amednav.com?subject=Enterprise%20Pricing%20Inquiry',
             highlighted: false
         }
     ];
@@ -97,7 +97,7 @@ const Pricing = () => {
 
                         {/* Medical Disclaimer */}
                         <p className="text-center text-sm text-slate-500 max-w-2xl mx-auto">
-                            This tool is designed to help you organize and understand your medications. It does not replace medical advice. Always review medication changes with your transplant team.
+                            This tool is designed to help you organize and understand your medications. It does not replace medical advice. Always review medication changes with your care team.
                         </p>
 
                         {/* FAQ Section */}
@@ -107,7 +107,7 @@ const Pricing = () => {
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-2">What does Enterprise include?</h3>
                                     <p className="text-slate-600">
-                                        Enterprise plans include Epic MyChart integration with SMART on FHIR R4, a branded patient portal with your center's logo and colors, patient engagement and adherence dashboards, copay card and PAP matching for your full transplant medication formulary, CMS/IOTA-ready compliance documentation and reporting, implementation support with transplant coordinator training, and multi-organ program support. Contact us to learn more.
+                                        Enterprise plans include Epic MyChart integration with SMART on FHIR R4, a branded patient portal with your organization's logo and colors, patient engagement and adherence dashboards, copay card and PAP matching for your full medication formulary, CMS-ready compliance documentation and reporting, implementation support with care coordinator training, and multi-program support across specialty therapeutic areas. Contact us to learn more.
                                     </p>
                                 </div>
                                 <div>
@@ -128,7 +128,7 @@ const Pricing = () => {
                     We're happy to help you find the right plan.
                 </p>
                 <a
-                    href="mailto:info@transplantmedicationnavigator.com?subject=Pricing%20Question"
+                    href="mailto:info@amednav.com?subject=Pricing%20Question"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                 >
                     <Mail size={20} aria-hidden="true" />

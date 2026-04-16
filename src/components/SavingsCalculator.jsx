@@ -189,7 +189,7 @@ export default function SavingsCalculator({ medications = [], isPro = false, onU
                     Estimate Your Medication Savings
                 </h2>
                 <p className="text-slate-600 max-w-xl mx-auto">
-                    Transplant medications are expensive, but you shouldn't have to overpay.
+                    Specialty medications are expensive, but you shouldn't have to overpay.
                     Use our calculator to see how much you could save with assistance programs.
                 </p>
             </div>

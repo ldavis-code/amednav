@@ -132,7 +132,7 @@ const DisclaimerModal = () => {
           id="disclaimer-description"
           className="text-slate-700 text-center mb-6 leading-relaxed"
         >
-          This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your transplant team or healthcare provider with any questions about your medical condition or treatment.
+          This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your care team or healthcare provider with any questions about your medical condition or treatment.
         </p>
 
         {/* Emergency Notice */}

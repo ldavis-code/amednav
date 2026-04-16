@@ -13,7 +13,7 @@ import { Loader2, ShieldCheck, AlertCircle, Zap, ChevronDown, Search } from 'luc
 const HEALTH_SYSTEMS = [
     { id: 'epic-sandbox', name: 'Epic Sandbox (Test Patients)', fhirBaseUrl: 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4' },
     { id: 'mychart', name: 'MyChart (Epic)', fhirBaseUrl: 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4' },
-    // Major transplant centers — add real FHIR endpoints as they become available
+    // Major care centers — add real FHIR endpoints as they become available
     { id: 'mayo-clinic', name: 'Mayo Clinic', fhirBaseUrl: 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4' },
     { id: 'cleveland-clinic', name: 'Cleveland Clinic', fhirBaseUrl: 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4' },
     { id: 'johns-hopkins', name: 'Johns Hopkins', fhirBaseUrl: 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4' },
@@ -29,7 +29,7 @@ const HEALTH_SYSTEMS = [
 /**
  * EpicConnectButton - Shared button that initiates Epic FHIR OAuth2 PKCE flow.
  * Includes a health system selector so patients from any Epic-connected hospital
- * can import their transplant medications.
+ * can import their medications.
  *
  * @param {function} onMedicationsImported - Called with (matchedIds[], unmatchedNames[])
  * @param {string} className - Optional additional CSS classes for the wrapper div
@@ -176,7 +176,7 @@ const EpicConnectButton = ({ onMedicationsImported, className = '' }) => {
                                         Imported {importedData.matched.length} medication{importedData.matched.length !== 1 ? 's' : ''} from your health system.
                                         {importedData.unmatched && importedData.unmatched.length > 0 && (
                                             <span className="block mt-1 text-slate-600">
-                                                {importedData.unmatched.length} medication{importedData.unmatched.length !== 1 ? 's' : ''} not in our transplant database were skipped.
+                                                {importedData.unmatched.length} medication{importedData.unmatched.length !== 1 ? 's' : ''} not in our database were skipped.
                                             </span>
                                         )}
                                     </p>

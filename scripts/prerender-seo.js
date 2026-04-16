@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 
 // SEO metadata for each page (copied from src/data/seo-metadata.js)
-const BASE_URL = 'https://transplantmedicationnavigator.com';
+const BASE_URL = 'https://amednav.com';
 const SITE_NAME = 'AMedNav™';
 
 const pages = [
@@ -24,28 +24,28 @@ const pages = [
     route: '/faq',
     title: 'Frequently Asked Questions | AMedNav™',
     description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for patients.',
-    ogTitle: 'Transplant Medication Assistance FAQs',
+    ogTitle: 'Medication Assistance FAQs',
     ogDescription: 'Get answers to common questions about medication assistance, Patient Assistance Programs, copay support, and financial help for patients.',
   },
   {
     route: '/wizard',
     title: 'My Path Quiz - Find Free Medication Help | AMedNav™',
-    description: 'Take our free 2-minute quiz to find Patient Assistance Programs for your transplant medications. Get personalized recommendations for free tacrolimus, mycophenolate, and copay help based on your insurance and income.',
-    ogTitle: 'Find Your Path to Free Transplant Medications',
+    description: 'Take our free 2-minute quiz to find Patient Assistance Programs for your medications. Get personalized recommendations for free specialty medications and copay help based on your insurance and income.',
+    ogTitle: 'Find Your Path to Free Medications',
     ogDescription: 'Answer a few questions to get personalized recommendations for FREE medications through Patient Assistance Programs. Takes 2 minutes.',
   },
   {
     route: '/medications',
-    title: 'Search Transplant Medications & Prices | AMedNav™',
-    description: 'Compare transplant medication prices and find FREE assistance programs. Search tacrolimus (Prograf), mycophenolate (CellCept), prednisone, sirolimus (Rapamune), and more. Find copay cards, PAPs, and foundation grants.',
-    ogTitle: 'Search Transplant Medications - Compare Prices & Find Free Help',
-    ogDescription: 'Search transplant medications, compare retail prices, and find Patient Assistance Programs offering FREE medications.',
+    title: 'Search Medications & Prices | AMedNav™',
+    description: 'Compare medication prices and find FREE assistance programs. Search specialty medications and generics. Find copay cards, PAPs, and foundation grants.',
+    ogTitle: 'Search Medications - Compare Prices & Find Free Help',
+    ogDescription: 'Search medications, compare retail prices, and find Patient Assistance Programs offering FREE medications.',
   },
   {
     route: '/education',
     title: 'Education & Resources for Patients | AMedNav™',
-    description: 'Educational guides on transplant medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
-    ogTitle: 'Transplant Medication Education & Resources',
+    description: 'Educational guides on medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
+    ogTitle: 'Medication Education & Resources',
     ogDescription: 'Learn about Medicare, Medicaid, insurance coverage, specialty pharmacies, and how to avoid the deductible trap.',
   },
   {
@@ -65,9 +65,9 @@ const pages = [
   {
     route: '/savings-tracker',
     title: 'Savings Calculator | AMedNav™',
-    description: 'Calculate how much you could save on transplant medications with assistance programs. Track actual savings and see your total benefits over time.',
+    description: 'Calculate how much you could save on medications with assistance programs. Track actual savings and see your total benefits over time.',
     ogTitle: 'Medication Savings Calculator',
-    ogDescription: 'See how much you could save on transplant medications with assistance programs.',
+    ogDescription: 'See how much you could save on medications with assistance programs.',
   },
   {
     route: '/subscribe',
@@ -79,16 +79,9 @@ const pages = [
   {
     route: '/survey',
     title: 'Share Your Journey | AMedNav™',
-    description: 'Share your medication experience to help improve access for all patients. Anonymous surveys for transplant recipients and anyone managing chronic conditions.',
+    description: 'Share your medication experience to help improve access for all patients. Anonymous surveys for anyone managing chronic conditions or specialty medications.',
     ogTitle: 'Share Your Medication Journey',
     ogDescription: 'Your experience can change the system. Take our anonymous survey to help improve medication access.',
-  },
-  {
-    route: '/survey/transplant',
-    title: 'Transplant Medication Survey | AMedNav™',
-    description: 'Share your transplant medication journey. Help us understand challenges with anti-rejection drugs, pharmacies, insurance, and assistance programs.',
-    ogTitle: 'Transplant Medication Journey Survey',
-    ogDescription: 'Share your experience with transplant medications. Your anonymous feedback helps improve access for all patients.',
   },
   {
     route: '/survey/general',
@@ -100,7 +93,7 @@ const pages = [
   {
     route: '/pilot',
     title: 'Partner Pilot Program | AMedNav™',
-    description: 'Welcome to the pilot program. Find medication assistance programs, search transplant medications, and access verified financial resources.',
+    description: 'Welcome to the pilot program. Find medication assistance programs, search medications, and access verified financial resources.',
     ogTitle: 'Partner Pilot Program',
     ogDescription: 'Your healthcare provider has partnered with us to help you find medication assistance programs.',
   },

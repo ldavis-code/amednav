@@ -148,7 +148,7 @@ const EpicCallback = () => {
                 setMatchedCount(medsData.matched?.length || 0);
                 setProgramCount(medsData.assistancePrograms?.length || 0);
                 setStatus('success');
-                setMessage(`Found ${medsData.matched?.length || 0} transplant medication${(medsData.matched?.length || 0) !== 1 ? 's' : ''} in your health system.`);
+                setMessage(`Found ${medsData.matched?.length || 0} medication${(medsData.matched?.length || 0) !== 1 ? 's' : ''} in your health system.`);
 
                 // Auto-redirect back after a brief delay
                 const returnPath = sessionStorage.getItem('epic_return_path') || '/wizard';
@@ -236,7 +236,7 @@ const EpicCallback = () => {
                             <ArrowRight size={16} aria-hidden="true" />
                         </Link>
                         <p className="text-sm text-slate-500">
-                            If this continues, your transplant center may not support this integration. You can always add medications manually.
+                            If this continues, your care center may not support this integration. You can always add medications manually.
                         </p>
                     </div>
                 )}

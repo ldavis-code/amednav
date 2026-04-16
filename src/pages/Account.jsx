@@ -581,7 +581,7 @@ const Account = () => {
           </Link>
           {' or '}
           <a
-            href="mailto:info@transplantmedicationnavigator.com"
+            href="mailto:info@amednav.com"
             className="text-plum-600 hover:underline"
           >
             Contact Support

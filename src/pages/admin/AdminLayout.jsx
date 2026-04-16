@@ -44,7 +44,7 @@ export default function AdminLayout({ children, title, subtitle, actions }) {
             <img src="/logo.svg" alt="" className="h-9 w-9 rounded-lg bg-white p-1" />
             <div className="min-w-0">
               <p className="text-sm font-bold truncate leading-tight">AMedNav Admin</p>
-              <p className="text-xs text-white/70 truncate">{org?.name || 'Transplant Med Nav'}</p>
+              <p className="text-xs text-white/70 truncate">{org?.name || 'AMedNav'}</p>
             </div>
           </div>
 
