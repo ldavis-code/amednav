@@ -3378,6 +3378,27 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
         )}
 
         <article className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition hover:shadow-md break-inside-avoid" aria-labelledby={`med-${med.id}-title`}>
+            {/* HHS Poverty Guidelines Banner - Shown at top of every medication card */}
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 px-6 py-3 border-b border-amber-200 no-print">
+                <div className="flex items-start gap-3">
+                    <div className="bg-amber-500 text-white p-1.5 rounded-lg flex-shrink-0" aria-hidden="true">
+                        <HeartHandshake size={16} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-amber-900 mb-1">HHS Poverty Guidelines — Don't Disqualify Yourself</p>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1 text-xs text-amber-900 mb-1">
+                            <div><span className="font-semibold">Family of 1:</span> $15,960</div>
+                            <div><span className="font-semibold">Family of 2:</span> $21,640</div>
+                            <div><span className="font-semibold">Family of 3:</span> $27,320</div>
+                            <div><span className="font-semibold">Family of 4:</span> $33,000</div>
+                        </div>
+                        <p className="text-xs text-amber-800">
+                            Patient assistance programs often qualify applicants up to <strong>300%, 400%, or 500%</strong> of these amounts depending on the program. Apply even if your income seems high.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* User Context Banner - Shows quiz answers */}
             {(quizAnswers?.insurance_type || quizAnswers?.organ_type || quizAnswers?.cost_burden) && (
                 <div className="bg-slate-100 px-6 py-3 border-b border-slate-200 no-print">
