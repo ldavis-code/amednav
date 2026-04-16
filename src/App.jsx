@@ -737,7 +737,7 @@ const Home = () => {
                             <Pill size={20} className="md:hidden" />
                             <Pill size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">474</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">452</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Medications</div>
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 md:p-6 text-center border border-amber-200 shadow-sm hover:shadow-md transition-shadow">
@@ -745,15 +745,15 @@ const Home = () => {
                             <HeartHandshake size={20} className="md:hidden" />
                             <HeartHandshake size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-amber-700">96</div>
-                        <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Assistance Programs</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-amber-700">94</div>
+                        <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Patient Assistance Programs</div>
                     </div>
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
                         <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3" aria-hidden="true">
                             <CreditCard size={20} className="md:hidden" />
                             <CreditCard size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">121</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">117</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Copay Cards</div>
                     </div>
                 </div>
