@@ -2013,13 +2013,29 @@ const Wizard = () => {
     // Step 1: Your Conditions
     if (step === 1) {
         const conditionOptions = [
-            { value: OrganType.KIDNEY, label: 'Kidney Transplant', description: 'Including living donor, deceased donor, and kidney-pancreas' },
-            { value: OrganType.LIVER, label: 'Liver Transplant', description: 'Including living donor and deceased donor' },
-            { value: OrganType.HEART, label: 'Heart Transplant', description: 'Including mechanical circulatory support bridge' },
-            { value: OrganType.LUNG, label: 'Lung Transplant', description: 'Including single and bilateral lung' },
-            { value: OrganType.PANCREAS, label: 'Pancreas Transplant', description: 'Including simultaneous kidney-pancreas' },
-            { value: OrganType.MULTI, label: 'Multi-organ Transplant', description: 'Two or more organ transplants' },
-            { value: OrganType.OTHER, label: 'Other / Not Transplant', description: 'Chronic condition, autoimmune, or other medication needs' },
+            { value: 'Oncology', label: 'Oncology' },
+            { value: 'Cardiovascular', label: 'Cardiovascular' },
+            { value: 'Mental Health', label: 'Mental Health' },
+            { value: 'Neurological', label: 'Neurological' },
+            { value: 'Autoimmune', label: 'Autoimmune' },
+            { value: 'Hepatology', label: 'Hepatology' },
+            { value: 'Gastrointestinal', label: 'Gastrointestinal' },
+            { value: 'Respiratory', label: 'Respiratory' },
+            { value: 'Infectious Disease', label: 'Infectious Disease' },
+            { value: 'Metabolic', label: 'Metabolic' },
+            { value: 'Dermatology', label: 'Dermatology' },
+            { value: 'Urology', label: 'Urology' },
+            { value: 'Musculoskeletal', label: 'Musculoskeletal' },
+            { value: 'Nephrology', label: 'Nephrology' },
+            { value: 'Endocrine', label: 'Endocrine' },
+            { value: 'Pain Management', label: 'Pain Management' },
+            { value: 'Sleep', label: 'Sleep' },
+            { value: 'Immunology', label: 'Immunology' },
+            { value: 'Ophthalmology', label: 'Ophthalmology' },
+            { value: 'Hematology', label: 'Hematology' },
+            { value: 'Transplant', label: 'Transplant' },
+            { value: 'Behavioral Health', label: 'Behavioral Health' },
+            { value: "Women's Health", label: "Women's Health" },
         ];
 
         return (
@@ -2051,7 +2067,9 @@ const Wizard = () => {
                                 <div className="flex justify-between items-start">
                                     <div>
                                         <div className={`font-bold text-lg ${isSelected ? 'text-sky-800' : 'text-slate-800'}`}>{option.label}</div>
-                                        <div className={`text-sm mt-1 ${isSelected ? 'text-sky-700' : 'text-slate-600'}`}>{option.description}</div>
+                                        {option.description && (
+                                            <div className={`text-sm mt-1 ${isSelected ? 'text-sky-700' : 'text-slate-600'}`}>{option.description}</div>
+                                        )}
                                     </div>
                                     {isSelected && <CheckCircle className="text-sky-600 flex-shrink-0" size={24} aria-hidden="true" />}
                                 </div>
