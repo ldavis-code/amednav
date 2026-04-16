@@ -273,7 +273,7 @@ export default function OrganizationSettings() {
                   value={formData.contactEmail}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
-                  placeholder="transplant@hospital.org"
+                  placeholder="contact@hospital.org"
                 />
               </div>
 

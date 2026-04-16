@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const BASE_URL = 'https://transplantmedicationnavigator.com';
+const BASE_URL = 'https://amednav.com';
 
 /**
  * Custom hook for managing dynamic meta tags for SEO

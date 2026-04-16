@@ -6,9 +6,7 @@ import Fuse from 'fuse.js';
 const LazyFAQ = lazy(() => import('./pages/FAQ.jsx'));
 const LazyNotFound = lazy(() => import('./pages/NotFound.jsx'));
 const LazySurveyLanding = lazy(() => import('./pages/SurveyLanding.jsx'));
-const LazyTransplantMedicationSurvey = lazy(() => import('./pages/TransplantMedicationSurvey.jsx'));
 const LazyGeneralMedicationSurvey = lazy(() => import('./pages/GeneralMedicationSurvey.jsx'));
-const LazyForTransplantPrograms = lazy(() => import('./pages/ForTransplantPrograms.jsx'));
 const LazyForEmployers = lazy(() => import('./pages/ForEmployers.jsx'));
 const LazyForPayers = lazy(() => import('./pages/ForPayers.jsx'));
 const LazyForHospitalAdmin = lazy(() => import('./pages/ForHospitalAdmin.jsx'));
@@ -511,7 +509,7 @@ const Layout = ({ children }) => {
         { path: '/education', label: 'Education & Resources', ariaLabel: 'Browse education and resources' },
         { path: '/application-help', label: 'Grants & Foundations', ariaLabel: 'View grants and foundations guide' },
         { path: '/savings-tracker', label: 'Savings Calculator', ariaLabel: 'Calculate your medication savings' },
-        { path: '/for-hospitals', label: 'Hospitals', ariaLabel: 'Information for hospital administrators and transplant coordinators' },
+        { path: '/for-hospitals', label: 'Hospitals', ariaLabel: 'Information for hospital administrators and care coordinators' },
         { path: '/pricing', label: 'Pricing', ariaLabel: 'View pricing information' },
         { path: '/faq', label: 'FAQ', ariaLabel: 'View frequently asked questions' },
         { path: '/feedback', label: 'Feedback', ariaLabel: 'Share your feedback' },
@@ -631,7 +629,7 @@ const Layout = ({ children }) => {
             <footer className="bg-slate-900 text-slate-200 py-8 text-base no-print" role="contentinfo">
                 <div className="container mx-auto px-4 text-center">
                     <p className="mb-4">
-                        <strong>Disclaimer:</strong> This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your transplant team or healthcare provider with any questions about your medical condition or treatment.
+                        <strong>Disclaimer:</strong> This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice. Always consult your healthcare provider with any questions about your medical condition or treatment.
                     </p>
                     <p className="mb-4 text-slate-300 text-sm max-w-3xl mx-auto">
                         We use information from the U.S. National Library of Medicine (NLM). The NLM does not support or recommend this tool.
@@ -643,12 +641,12 @@ const Layout = ({ children }) => {
                     <p>© 2026 AMedNav™ - Medication Navigator. All Rights Reserved.</p>
                     <p className="mt-4 text-slate-300 text-sm">Created by Lorrinda Gray-Davis. est August 2025</p>
                     <p className="mt-2 text-slate-400 text-sm">
-                        <a href="mailto:info@transplantmedicationnavigator.com" className="text-plum-400 hover:text-plum-300 underline">info@transplantmedicationnavigator.com</a>
+                        <a href="mailto:info@amednav.com" className="text-plum-400 hover:text-plum-300 underline">info@amednav.com</a>
                     </p>
                     {/* Non-Discrimination Notice - Section 504 Compliance */}
                     <div className="mt-6 max-w-3xl mx-auto bg-slate-800 rounded-lg px-4 py-3 text-sm">
                         <p className="text-slate-300">
-                            <strong className="text-slate-200">Non-Discrimination Notice:</strong> In accordance with Section 504 of the Rehabilitation Act of 1973, TransplantNav LLC does not discriminate on the basis of disability.{' '}
+                            <strong className="text-slate-200">Non-Discrimination Notice:</strong> In accordance with Section 504 of the Rehabilitation Act of 1973, AMedNav LLC does not discriminate on the basis of disability.{' '}
                             <Link to="/accessibility#section-504" className="text-plum-400 hover:text-plum-300 underline transition">
                                 Section 504 Notice & Grievance Procedure
                             </Link>
@@ -1109,7 +1107,7 @@ const Home = () => {
                     <p className="text-sm text-slate-600 mt-1">24/7 • Confidential</p>
                 </div>
                 <p className="text-sm text-slate-700 max-w-2xl mx-auto mb-6 leading-relaxed">
-                    Asking for help shows strength, not weakness. Life after a transplant is hard on your body and your feelings. Taking care of how you feel is just as important as taking your medicine. Having a hard time? Please reach out. We want to help you.
+                    Asking for help shows strength, not weakness. Living with a serious medical condition can be hard on your body and your feelings. Taking care of how you feel is just as important as taking your medicine. Having a hard time? Please reach out. We want to help you.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3 max-w-lg mx-auto text-left text-sm">
                     <div className="bg-white/80 p-3 rounded-lg">
@@ -1815,7 +1813,7 @@ const Wizard = () => {
                             <span className="bg-plum-600 text-white text-xs font-bold px-2 py-1 rounded">3b</span>
                             <h2 className="text-lg font-bold text-slate-800">Does your plan require a specific specialty pharmacy?</h2>
                         </div>
-                        <p className="text-slate-600 text-sm mb-4">Some commercial plans require you to use a specific pharmacy for transplant medications.</p>
+                        <p className="text-slate-600 text-sm mb-4">Some commercial plans require you to use a specific pharmacy for your medications.</p>
                         <div className="space-y-3" role="radiogroup" aria-label="Specialty pharmacy requirement">
                             {['Yes', 'No', 'Not Sure'].map(opt => {
                                 const isSelected = (opt === 'Yes' && answers.specialtyPharmacyAware === true) ||
@@ -2459,8 +2457,8 @@ const Wizard = () => {
 };
 
 // --- PRICE REPORTING HELPERS ---
-const PRICE_REPORTS_KEY = 'transplant_med_price_reports';
-const PRICE_STATS_KEY = 'transplant_med_price_stats';
+const PRICE_REPORTS_KEY = 'amednav_price_reports';
+const PRICE_STATS_KEY = 'amednav_price_stats';
 const PRICE_ESTIMATES_LAST_UPDATED = '2026-04-07'; // April 7, 2026
 
 // Get cached stats from localStorage (for immediate render)
@@ -2705,7 +2703,7 @@ const MedicationSearch = () => {
                         <AlertTriangle className="text-red-600 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
                         <div>
                             <p className="font-bold text-red-800 mb-1">Important Safety Note for Patients</p>
-                            <p className="text-red-700 text-sm">Never switch from brand name to generic (or between different generic manufacturers) without your transplant team's approval. In transplant medicine, slight variations in bioavailability can cause organ rejection. <strong>"Cheaper" isn't always "safe"</strong> if the manufacturer changes.</p>
+                            <p className="text-red-700 text-sm">Never switch from brand name to generic (or between different generic manufacturers) without your care team's approval. For some medications, slight variations in bioavailability can cause problems. <strong>"Cheaper" isn't always "safe"</strong> if the manufacturer changes.</p>
                         </div>
                     </div>
                 </div>
@@ -2784,7 +2782,7 @@ const MedicationSearch = () => {
                                     <div className="text-slate-400 mb-2">
                                         <Search size={24} className="mx-auto" aria-hidden="true" />
                                     </div>
-                                    <p className="text-slate-700 font-medium mb-1">No matches in our transplant database</p>
+                                    <p className="text-slate-700 font-medium mb-1">No matches in our database</p>
                                     <p className="text-slate-500 text-sm">Try a different spelling, or use the option below to add it as a custom medication.</p>
                                 </div>
                             )}
@@ -2836,7 +2834,7 @@ const MedicationSearch = () => {
                                     Please Verify Your Medications
                                 </h2>
                                 <p className="text-plum-700 mb-3">
-                                    Review the medication list below carefully. If you take other transplant medications not shown, add them using the search box.
+                                    Review the medication list below carefully. If you take other medications not shown, add them using the search box.
                                 </p>
                                 <p className="text-plum-600 text-sm font-medium">
                                     Accurate medication information helps us find the best savings options for you.
@@ -3043,7 +3041,7 @@ const MedicationSearch = () => {
                     <div className="text-center py-16 border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50">
                         <div className="text-slate-400 mb-4" aria-hidden="true"><List size={64} className="mx-auto"/></div>
                         <h2 className="text-xl font-bold text-slate-900 mb-2">Your list is empty</h2>
-                        <p className="text-slate-700 max-w-md mx-auto">Use the search box above to add medications. You can add standard transplant drugs or any other medication you take.</p>
+                        <p className="text-slate-700 max-w-md mx-auto">Use the search box above to add medications. You can add any medication you take.</p>
                     </div>
                 )}
                 {hasItems && showSavings && (
@@ -3573,7 +3571,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                         </tr>
                                         <tr className="bg-white hover:bg-slate-50">
                                             <td className="p-3 font-medium text-slate-900">TrumpRx.gov</td>
-                                            <td className="p-3 text-slate-600">Government-negotiated cash prices on 43 brand-name drugs; cash-pay only, some exclude Medicare/Medicaid. <a href="/trumprx" className="text-teal-600 hover:underline font-medium">See our transplant guide</a></td>
+                                            <td className="p-3 text-slate-600">Government-negotiated cash prices on 43 brand-name drugs; cash-pay only, some exclude Medicare/Medicaid. <a href="/trumprx" className="text-teal-600 hover:underline font-medium">See our guide</a></td>
                                         </tr>
                                         <tr className="bg-white hover:bg-slate-50">
                                             <td className="p-3 font-medium text-slate-900">Walmart Pharmacy</td>
@@ -4260,7 +4258,7 @@ const MedicationCard = ({ med, onRemove, onPriceReportSubmit, showCopayCards = t
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="w-4 h-4 border border-slate-400 rounded inline-block flex-shrink-0"></span>
-                                    Ask transplant team about generic alternatives
+                                    Ask your care team about generic alternatives
                                 </li>
                             </ul>
                         </div>
@@ -4358,7 +4356,7 @@ const InsuranceChangeSimulator = () => {
                 { type: 'gain', icon: '✅', title: 'PAP Access', desc: 'Some PAPs still available as secondary assistance.' },
                 { type: 'change', icon: '🔄', title: 'Covered Medicines', desc: 'May need to switch to Medicaid-preferred medications or get prior authorization.' },
             ],
-            action: 'Work with your transplant coordinator to ensure your medications are on the Medicaid covered medicines list before switching.',
+            action: 'Work with your care coordinator to ensure your medications are on the Medicaid covered medicines list before switching.',
         },
         'medicaid_medicare': {
             title: 'Medicaid → Medicare (Dual Eligible)',
@@ -4377,7 +4375,7 @@ const InsuranceChangeSimulator = () => {
             changes: [
                 { type: 'gain', icon: '✅', title: 'Copay Cards OK', desc: 'Manufacturer copay cards CAN be used with Marketplace plans.' },
                 { type: 'gain', icon: '✅', title: 'Subsidies Available', desc: 'Premium tax credits based on income can significantly reduce costs.' },
-                { type: 'change', icon: '🔄', title: 'Network Changes', desc: 'Check if your transplant center and pharmacy are in-network before enrolling.' },
+                { type: 'change', icon: '🔄', title: 'Network Changes', desc: 'Check if your care center and pharmacy are in-network before enrolling.' },
                 { type: 'info', icon: '💡', title: 'CSR Plans', desc: 'If income <250% FPL, Silver plans offer reduced deductibles and copays.' },
             ],
             action: 'Use healthcare.gov to compare plans. Filter by your medications and doctors to find the best fit.',
@@ -4399,9 +4397,9 @@ const InsuranceChangeSimulator = () => {
             changes: [
                 { type: 'gain', icon: '✅', title: 'Coverage', desc: 'Comprehensive coverage including prescriptions, often $0-$3 copays.' },
                 { type: 'gain', icon: '✅', title: 'Retroactive', desc: 'Coverage goes back up to 3 months before you apply.' },
-                { type: 'change', icon: '🔄', title: 'Covered Medicines', desc: 'Must use Medicaid covered medicines list - may need prior approval for some transplant drugs.' },
+                { type: 'change', icon: '🔄', title: 'Covered Medicines', desc: 'Must use Medicaid covered medicines list - may need prior approval for some specialty drugs.' },
             ],
-            action: 'Apply at your state Medicaid office or healthcare.gov. Bring proof of income and transplant papers.',
+            action: 'Apply at your state Medicaid office or healthcare.gov. Bring proof of income and medical records.',
         },
         'uninsured_marketplace': {
             title: 'Uninsured → ACA Marketplace',
@@ -4409,7 +4407,7 @@ const InsuranceChangeSimulator = () => {
             changes: [
                 { type: 'gain', icon: '✅', title: 'Subsidies', desc: 'Help paying for insurance based on income - may get $0 premium plans.' },
                 { type: 'gain', icon: '✅', title: 'Copay Cards', desc: 'Can use drug company help with what you owe on Marketplace plans.' },
-                { type: 'gain', icon: '✅', title: 'Pre-existing OK', desc: 'Cannot be denied or charged more for transplant history.' },
+                { type: 'gain', icon: '✅', title: 'Pre-existing OK', desc: 'Cannot be denied or charged more for pre-existing conditions.' },
                 { type: 'info', icon: '💡', title: 'Plan Selection', desc: 'Silver plans best value if income 100-250% FPL due to cost-sharing reductions.' },
             ],
             action: 'Apply at healthcare.gov during Open Enrollment (Nov 1 - Jan 15) or after a qualifying event.',
@@ -4510,7 +4508,7 @@ const InsuranceChangeSimulator = () => {
 
             {showResults && !transition && currentInsurance !== futureInsurance && (
                 <div className="mt-6 p-4 bg-slate-100 rounded-lg text-center">
-                    <p className="text-slate-600">Detailed transition info for this combination coming soon. Contact your transplant coordinator for guidance.</p>
+                    <p className="text-slate-600">Detailed transition info for this combination coming soon. Contact your care coordinator for guidance.</p>
                 </div>
             )}
 
@@ -4535,7 +4533,7 @@ const Education = () => {
 
     const generateAppealLetter = () => {
         const date = new Date().toLocaleDateString();
-        const text = `Date: ${date}\n\nTo Whom It May Concern:\n\nI am writing to appeal the coverage denial or specialty pharmacy requirement for my medication, ${appealDrug}. \n\nPatient Name: ${appealName}\nMedication: ${appealDrug}\n\nReason for Appeal: ${appealReason}\n\nThis medication is medically necessary for my transplant care. The current requirement creates a significant barrier to my adherence and health outcomes because ${
+        const text = `Date: ${date}\n\nTo Whom It May Concern:\n\nI am writing to appeal the coverage denial or specialty pharmacy requirement for my medication, ${appealDrug}. \n\nPatient Name: ${appealName}\nMedication: ${appealDrug}\n\nReason for Appeal: ${appealReason}\n\nThis medication is medically necessary for my care. The current requirement creates a significant barrier to my adherence and health outcomes because ${
             appealReason === 'Financial Hardship' 
             ? 'the cost at the required pharmacy is unaffordable compared to available alternatives, putting me at risk of missing doses.' 
             : appealReason === 'Access Issues' 
@@ -4649,7 +4647,7 @@ const Education = () => {
                                  <div className="mt-4 p-3 bg-purple-100 rounded-lg border border-purple-200">
                                      <p className="text-purple-900 text-sm font-bold mb-1">Third Round Announced January 27, 2026</p>
                                      <p className="text-slate-700 text-sm mb-2">CMS selected 15 new drugs for negotiation, including the <strong>first-ever Part B drugs</strong>. New prices take effect January 1, 2028.</p>
-                                     <p className="text-slate-700 text-xs"><strong>Transplant-relevant picks:</strong> Orencia (abatacept, related to Belatacept), Trulicity (dulaglutide, for post-transplant diabetes), Xolair (omalizumab, lung transplant), Anoro Ellipta (lung transplant). Also includes Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, and Xeljanz.</p>
+                                     <p className="text-slate-700 text-xs"><strong>Relevant picks:</strong> Orencia (abatacept, related to Belatacept), Trulicity (dulaglutide, for post-transplant diabetes), Xolair (omalizumab, lung transplant), Anoro Ellipta (lung transplant). Also includes Botox, Biktarvy, Cimzia, Cosentyx, Entyvio, Erleada, Kisqali, Lenvima, Rexulti, Verzenio, and Xeljanz.</p>
                                  </div>
                              </section>
                              <section className="bg-teal-50 p-6 rounded-xl border border-teal-100">
@@ -4675,7 +4673,7 @@ const Education = () => {
 
                         <div className="border-t border-slate-200 pt-8">
                             <h2 className="text-2xl font-bold text-slate-900 mb-4">Part D vs Medicare Advantage: Picking Your Plan</h2>
-                            <p className="text-slate-600 mb-6">Knowing the differences can save you a lot of money on transplant medicines.</p>
+                            <p className="text-slate-600 mb-6">Knowing the differences can save you a lot of money on your medicines.</p>
                             <div className="grid md:grid-cols-2 gap-6 mb-8">
                                 <section className="bg-gradient-to-br from-plum-50 to-plum-50 p-6 rounded-xl border border-plum-200">
                                     <h3 className="font-bold text-plum-900 text-xl mb-3">Medicare Part D (Traditional)</h3>
@@ -4735,8 +4733,8 @@ const Education = () => {
                             </div>
 
                             <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                                <h3 className="text-xl font-bold text-slate-900 mb-4">Medicare Parts for Transplant Drugs</h3>
-                                <p className="text-slate-600 mb-4">Knowing which part of Medicare pays for your transplant medicines is key.</p>
+                                <h3 className="text-xl font-bold text-slate-900 mb-4">Medicare Parts for Your Medications</h3>
+                                <p className="text-slate-600 mb-4">Knowing which part of Medicare pays for your medications is key.</p>
                                 <div className="grid md:grid-cols-3 gap-4">
                                     <div className="bg-white p-4 rounded-lg border border-slate-200">
                                         <h4 className="font-bold text-plum-700 text-lg mb-2">Part A (Hospital)</h4>
@@ -4841,7 +4839,7 @@ const Education = () => {
                                         <p className="text-slate-700 text-sm">When you need insurance company approval before they will pay for a medicine. Your doctor must explain why you need that specific medicine.</p>
                                         <div className="mt-3 p-2 bg-amber-50 rounded border border-amber-200">
                                             <p className="text-amber-900 text-xs font-bold">New in 2026: CMS WISeR Pilot</p>
-                                            <p className="text-slate-700 text-xs">The WISeR (Wasteful and Inappropriate Service Reduction) model requires prior authorization for 17 outpatient Medicare Part B services in 6 states: Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington. While it does not directly affect transplant medications, it may add steps for some procedures. <a href="/appeals" className="text-plum-600 hover:underline">Learn more on our Appeals page</a>.</p>
+                                            <p className="text-slate-700 text-xs">The WISeR (Wasteful and Inappropriate Service Reduction) model requires prior authorization for 17 outpatient Medicare Part B services in 6 states: Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington. While it does not directly affect your medications, it may add steps for some procedures. <a href="/appeals" className="text-plum-600 hover:underline">Learn more on our Appeals page</a>.</p>
                                         </div>
                                     </div>
 
@@ -4857,7 +4855,7 @@ const Education = () => {
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
                                         <h3 className="font-bold text-lg text-plum-800 mb-2"><TermTooltip term="specialty-pharmacy" showIcon={false}>Specialty</TermTooltip> Medication</h3>
-                                        <p className="text-slate-700 text-sm">Expensive medicines that need special handling or monitoring. Most transplant medicines are specialty medications. They often cost $600+ per month.</p>
+                                        <p className="text-slate-700 text-sm">Expensive medicines that need special handling or monitoring. Many specialty medications require special handling. They often cost $600+ per month.</p>
                                     </div>
 
                                     <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
@@ -4927,7 +4925,7 @@ const Education = () => {
                                     <ul className="text-yellow-900 space-y-2 ml-6 list-disc">
                                         <li>Know what you'll pay</li>
                                         <li>Find help when costs are too high</li>
-                                        <li>Talk to your transplant team about options</li>
+                                        <li>Talk to your care team about options</li>
                                         <li>Apply for assistance programs</li>
                                     </ul>
                                 </div>
@@ -4935,7 +4933,7 @@ const Education = () => {
                                 <div className="mt-6 bg-plum-50 border border-plum-200 rounded-lg p-6">
                                     <h3 className="font-bold text-plum-900 text-lg mb-3">Questions to Ask</h3>
                                     <ul className="text-plum-900 space-y-2 ml-6 list-disc">
-                                        <li>What tier are my transplant medicines?</li>
+                                        <li>What tier are my medicines?</li>
                                         <li>How much is my deductible?</li>
                                         <li>When do I reach my yearly spending limit?</li>
                                         <li>Are my medicines on the covered medicines list?</li>
@@ -4997,7 +4995,7 @@ const Education = () => {
                                 <div className="bg-white p-4 rounded-lg border border-amber-200">
                                     <h3 className="font-bold text-amber-900 mb-2">What Patients Should Know</h3>
                                     <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
-                                        <li>WISeR covers outpatient procedures (nerve stimulators, spinal procedures, wound care), <strong>not</strong> transplant medications</li>
+                                        <li>WISeR covers outpatient procedures (nerve stimulators, spinal procedures, wound care), <strong>not</strong> your specialty medications</li>
                                         <li>Your immunosuppressant drugs are NOT affected</li>
                                         <li>If you need any of the 17 listed procedures (e.g., wound care with skin substitutes), your provider must get prior authorization</li>
                                         <li>Coverage decisions are made within 72 hours (48 hours for urgent cases)</li>
@@ -5017,16 +5015,16 @@ const Education = () => {
                         <div className="flex justify-center mb-8">
                             <img
                                 src="/photos/tmn_infographic.jpg"
-                                alt="Comparison chart of transplant medication help by insurance type: Commercial, Medicare, Medicaid, and Uninsured"
+                                alt="Comparison chart of medication help by insurance type: Commercial, Medicare, Medicaid, and Uninsured"
                                 aria-describedby="insurance-infographic-desc"
                                 className="max-w-full h-auto rounded-lg shadow-md"
                             />
                         </div>
                         <div id="insurance-infographic-desc" className="sr-only">
-                            This infographic compares what transplant medication help is available across four insurance types.
+                            This infographic compares what medication help is available across four insurance types.
                             Commercial Insurance: Insurance through your job or that you buy on your own. You may qualify for manufacturer copay cards, patient assistance programs, and copay foundations. You pay monthly premiums, copays, and deductibles, then insurance covers the rest. Common problems include high deductibles, prior authorization requirements, and copay accumulators. Next step: search your medications to find copay cards and assistance programs.
-                            Medicare: Government insurance for people 65 and older or with disabilities. You may qualify for patient assistance programs, Extra Help or Low Income Subsidy, and copay foundations. Part D covers most transplant drugs with monthly premiums and copays. Common problems include the coverage gap, Part D costs, and you cannot use manufacturer copay cards. Next step: check if you qualify for Extra Help and search for patient assistance programs.
-                            Medicaid: Government insurance for people with low income. You may qualify for patient assistance programs and state-specific programs. Covers most transplant drugs with very low or no copays. Common problems include limited pharmacy networks, formulary restrictions, and coverage ending if income changes. Next step: search your medications and check with your state Medicaid office.
+                            Medicare: Government insurance for people 65 and older or with disabilities. You may qualify for patient assistance programs, Extra Help or Low Income Subsidy, and copay foundations. Part D covers most specialty drugs with monthly premiums and copays. Common problems include the coverage gap, Part D costs, and you cannot use manufacturer copay cards. Next step: check if you qualify for Extra Help and search for patient assistance programs.
+                            Medicaid: Government insurance for people with low income. You may qualify for patient assistance programs and state-specific programs. Covers most specialty drugs with very low or no copays. Common problems include limited pharmacy networks, formulary restrictions, and coverage ending if income changes. Next step: search your medications and check with your state Medicaid office.
                             Uninsured or Self-Pay: No current insurance coverage. You may qualify for manufacturer patient assistance programs for free medications, state programs, and discount cards. You pay the full retail price without help. Common problems include very high costs, no negotiated rates, and difficulty affording specialty medications. Next step: apply for patient assistance programs immediately as most offer free medications for qualifying patients.
                             The infographic concludes with an encouraging message: You are not alone and there is help available no matter what type of insurance you have.
                         </div>
@@ -5037,7 +5035,7 @@ const Education = () => {
                         <section aria-labelledby="medicare-guide">
                             <h2 id="medicare-guide" className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-200">Medicare Guide</h2>
                             <div className="mb-8">
-                                <h3 className="font-bold text-lg text-slate-800 mb-4">Medicare Parts for Transplant Drugs</h3>
+                                <h3 className="font-bold text-lg text-slate-800 mb-4">Medicare Parts for Specialty Drugs</h3>
                                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                                     <div className="border border-slate-200 p-4 rounded-lg bg-slate-50">
                                         <strong className="text-plum-700 text-lg block mb-1">Part A (Hospital)</strong>
@@ -5089,7 +5087,7 @@ const Education = () => {
                         <div className="grid md:grid-cols-2 gap-6">
                             <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="va-health">
                                 <h2 id="va-health" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">VA Health Care</h2>
-                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For veterans who qualify.</p><div className="text-sm"><strong className="block text-plum-700">Best Strategy</strong>Priority Groups 1–6: $0 for medicines. Use the VA pharmacy first. Work with your VA transplant team.</div><a href="https://www.va.gov/health-care/eligibility/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit VA Prescription Information (opens in new tab)">VA Prescription Information <ExternalLink size={12} aria-hidden="true" /></a></div>
+                                <div className="p-4 space-y-3"><p className="text-sm text-slate-600">For veterans who qualify.</p><div className="text-sm"><strong className="block text-plum-700">Best Strategy</strong>Priority Groups 1–6: $0 for medicines. Use the VA pharmacy first. Work with your VA care team.</div><a href="https://www.va.gov/health-care/eligibility/" target="_blank" rel="noreferrer" className="text-plum-600 hover:underline text-sm flex items-center gap-1 mt-2" aria-label="Visit VA Prescription Information (opens in new tab)">VA Prescription Information <ExternalLink size={12} aria-hidden="true" /></a></div>
                             </section>
                             <section className="border border-slate-200 rounded-xl overflow-hidden" aria-labelledby="tricare">
                                 <h2 id="tricare" className="font-bold bg-slate-50 p-3 border-b border-slate-200 text-slate-800">TRICARE</h2>
@@ -5223,7 +5221,7 @@ const Education = () => {
                                         <CheckCircle size={20} aria-hidden="true" />
                                         Scenario 2: One-Time, Low-Cost Medications
                                     </h3>
-                                    <p className="text-slate-700 text-sm">For short-term medicines not related to your transplant (like a round of antibiotics) where the discount price is less than your copay.</p>
+                                    <p className="text-slate-700 text-sm">For short-term medicines not related to your condition (like a round of antibiotics) where the discount price is less than your copay.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
                                     <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
@@ -5283,7 +5281,7 @@ const Education = () => {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="bg-amber-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">4</div>
-                                    <p className="text-slate-800 pt-1"><span className="font-bold">Talk to your transplant team.</span> They can connect you with people who know these programs and can help you through the system.</p>
+                                    <p className="text-slate-800 pt-1"><span className="font-bold">Talk to your care team.</span> They can connect you with people who know these programs and can help you through the system.</p>
                                 </li>
                             </ul>
                         </section>
@@ -5294,7 +5292,7 @@ const Education = () => {
                                 Questions?
                             </h3>
                             <p className="text-plum-900 leading-relaxed">
-                                Not sure if a discount card is right for you? Ask your transplant center's money helper or social worker. They can look at your insurance plan and help you choose.
+                                Not sure if a discount card is right for you? Ask your care center's money helper or social worker. They can look at your insurance plan and help you choose.
                             </p>
                         </aside>
                     </div>
@@ -5468,7 +5466,7 @@ const Education = () => {
                                         <div className="bg-plum-100 text-plum-700 rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">3</div>
                                         Appeal If They Say No
                                     </h3>
-                                    <p className="text-slate-700 text-sm">If your plan won't cover your drug, you can fight back. Ask your transplant team to write a letter saying you need this drug.</p>
+                                    <p className="text-slate-700 text-sm">If your plan won't cover your drug, you can fight back. Ask your care team to write a letter saying you need this drug.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-200">
                                     <h3 className="font-bold text-plum-700 mb-2 flex items-center gap-2">
@@ -5507,7 +5505,7 @@ const Education = () => {
                             <ul className="space-y-4">
                                 <li className="flex items-start gap-3">
                                     <div className="bg-amber-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</div>
-                                    <p className="text-slate-800 pt-1"><span className="font-bold">You can't skip your drugs.</span> Missing doses can hurt your transplant. Waiting weeks for free drugs is risky.</p>
+                                    <p className="text-slate-800 pt-1"><span className="font-bold">You can't skip your drugs.</span> Missing doses can harm your health. Waiting weeks for free drugs is risky.</p>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="bg-amber-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</div>
@@ -5530,7 +5528,7 @@ const Education = () => {
                                 Need Help?
                             </h3>
                             <p className="text-plum-900 leading-relaxed mb-4">
-                                Think this is happening to you? Talk to your transplant center's money helper or social worker. They know how to help.
+                                Think this is happening to you? Talk to your care center's money helper or social worker. They know how to help.
                             </p>
                             <p className="text-plum-800 text-sm">
                                 You can also call the <a href="/out/foundation/paf-general" target="_blank" rel="noreferrer" className="font-bold text-plum-700 hover:underline">Patient Advocate Foundation</a> for free help.
@@ -5646,7 +5644,7 @@ const Education = () => {
                                 Support for Caregivers & Care Partners
                             </h3>
                             <p className="text-slate-700 mb-6 leading-relaxed">
-                                You are essential to the transplant journey. Your well-being matters too. Caring for a loved one can feel rewarding but also physically and emotionally demanding. Take care of yourself so you can keep providing the best support.
+                                You are essential to the care journey. Your well-being matters too. Caring for a loved one can feel rewarding but also physically and emotionally demanding. Take care of yourself so you can keep providing the best support.
                             </p>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="bg-white/80 p-5 rounded-xl">
@@ -5689,7 +5687,7 @@ const Education = () => {
                                 Remember
                             </h3>
                             <p className="text-amber-900 text-sm leading-relaxed">
-                                Seeking help for mental health is a sign of strength, not weakness. The transplant journey is physically and emotionally demanding. Taking care of your mental health is just as important as taking your medications. If you're struggling, reach out—there are people who want to help.
+                                Seeking help for mental health is a sign of strength, not weakness. Managing a serious condition is physically and emotionally demanding. Taking care of your mental health is just as important as taking your medications. If you're struggling, reach out—there are people who want to help.
                             </p>
                         </aside>
                     </div>
@@ -5862,7 +5860,7 @@ Medication: ${medicationName || "[Medication Name]"}
 
 Reason for Appeal: ${appealReason}
 
-This medication is medically necessary for my transplant care. The current requirement creates a significant barrier to my adherence and health outcomes because ${
+This medication is medically necessary for my care. The current requirement creates a significant barrier to my adherence and health outcomes because ${
                 appealReason === 'Financial Hardship'
                 ? 'the cost at the required pharmacy is unaffordable compared to available alternatives, putting me at risk of missing doses.'
                 : appealReason === 'Access Issues'
@@ -6275,7 +6273,7 @@ ${patientName || "[Your Name]"}`;
                                 <Search size={20} className="text-teal-600" aria-hidden="true" />
                                 Search for Medications
                             </h3>
-                            <p className="text-slate-600 text-sm mb-4">Search for your transplant medications to see their Patient Assistance Program information.</p>
+                            <p className="text-slate-600 text-sm mb-4">Search for your medications to see their Patient Assistance Program information.</p>
                             <div className="relative">
                                 <div className="flex flex-col md:flex-row gap-3">
                                     <div className="flex-grow relative">
@@ -6382,7 +6380,7 @@ ${patientName || "[Your Name]"}`;
                                     {localCommercialInsurance === 'yes' && (
                                         <div className="mt-3 p-3 bg-plum-50 border border-plum-200 rounded-lg">
                                             <p className="text-plum-800 text-sm">
-                                                <strong>Copay cards can help!</strong> With commercial insurance, manufacturer copay cards can lower your cost to $0-$50/month for many transplant medications.
+                                                <strong>Copay cards can help!</strong> With commercial insurance, manufacturer copay cards can lower your cost to $0-$50/month for many specialty medications.
                                             </p>
                                         </div>
                                     )}
@@ -6531,7 +6529,7 @@ const FAQ = () => {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Frequently Asked Questions</h1>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                    Find answers to common questions about transplant medications, assistance programs, and using this site.
+                    Find answers to common questions about medications, assistance programs, and using this site.
                 </p>
             </header>
 
@@ -6562,7 +6560,7 @@ const FAQ = () => {
             <aside className="bg-plum-50 border border-plum-200 rounded-xl p-6 md:p-8 text-center">
                 <h2 className="text-xl font-bold text-plum-900 mb-3">Still have questions?</h2>
                 <p className="text-plum-800 mb-6">
-                    Your transplant center's social worker or financial coordinator is your best resource for personalized guidance.
+                    Your care center's social worker or financial coordinator is your best resource for personalized guidance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
@@ -6660,11 +6658,9 @@ const MainSiteRoutes = () => (
                 <Route path="/savings-calculator" element={<Navigate to="/savings-tracker" replace />} />
                 <Route path="/calculator" element={<Navigate to="/savings-tracker" replace />} />
                 <Route path="/survey" element={<LazySurveyLanding />} />
-                <Route path="/survey/transplant" element={<LazyTransplantMedicationSurvey />} />
                 <Route path="/survey/general" element={<LazyGeneralMedicationSurvey />} />
                 <Route path="/feedback" element={<LazyFeedbackSurvey />} />
                 <Route path="/for-hospitals" element={<LazyForHospitalAdmin />} />
-                <Route path="/for-transplant-programs" element={<Navigate to="/pricing#transplant-programs" replace />} />
                 <Route path="/for-employers" element={<Navigate to="/pricing#employers" replace />} />
                 <Route path="/for-payers" element={<Navigate to="/pricing#payers" replace />} />
                 <Route path="/pricing" element={<LazyPricing />} />

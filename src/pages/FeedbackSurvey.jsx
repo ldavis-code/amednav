@@ -48,7 +48,7 @@ const SAVINGS_OPTIONS = [
 const WITHOUT_TOOL_OPTIONS = [
   { value: 'paid_full', label: 'Paid full price', color: 'blue' },
   { value: 'skipped_rationed', label: 'Skipped or rationed doses', color: 'rose' },
-  { value: 'called_coordinator', label: 'Called my transplant coordinator', color: 'amber' },
+  { value: 'called_coordinator', label: 'Called my care coordinator', color: 'amber' },
   { value: 'not_filled', label: 'Not filled the prescription', color: 'rose' },
   { value: 'other', label: 'Other', color: 'slate' },
 ];
@@ -203,7 +203,7 @@ export default function FeedbackSurvey() {
               Thank You!
             </h1>
             <p className="text-lg text-slate-600 mb-8">
-              Your feedback helps us improve and helps transplant centers understand patient needs.
+              Your feedback helps us improve and helps care centers understand patient needs.
             </p>
             <Link
               to="/"

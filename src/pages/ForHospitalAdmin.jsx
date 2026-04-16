@@ -20,7 +20,7 @@ const ForHospitalAdmin = () => {
         {
             icon: FileCheck,
             title: 'Strengthen CMS Documentation Compliance',
-            description: 'CMS Conditions of Participation require transplant programs to document patient education and financial planning. This tool provides a trackable, standardized resource that supports your compliance documentation.'
+            description: 'CMS Conditions of Participation require specialty care programs to document patient education and financial planning. This tool provides a trackable, standardized resource that supports your compliance documentation.'
         },
         {
             icon: Lock,
@@ -38,7 +38,7 @@ const ForHospitalAdmin = () => {
         {
             icon: HeartPulse,
             title: 'Discharge Workflow Integration',
-            description: 'Provide a branded URL or QR code for discharge packets. Social workers and transplant coordinators can share the resource during the discharge education process.'
+            description: 'Provide a branded URL or QR code for discharge packets. Social workers and care coordinators can share the resource during the discharge education process.'
         },
         {
             icon: ClipboardCheck,
@@ -49,7 +49,7 @@ const ForHospitalAdmin = () => {
 
     const outcomesData = [
         'Graft survival support through medication access',
-        'Reduced cost-driven non-adherence post-transplant',
+        'Reduced cost-driven medication non-adherence',
         'Trackable patient education for CMS documentation',
         'Aggregate engagement data for quality improvement',
         'Social worker and coordinator workflow support',
@@ -67,7 +67,7 @@ const ForHospitalAdmin = () => {
         },
         {
             stat: '~36%',
-            label: 'of graft losses are associated with immunosuppressant non-adherence — the leading modifiable cause of transplant failure (Dew MA et al., Transplantation, 2007)'
+            label: 'of graft losses are associated with immunosuppressant non-adherence — the leading modifiable cause of graft failure in organ-transplant patients (Dew MA et al., Transplantation, 2007)'
         }
     ];
 
@@ -78,16 +78,16 @@ const ForHospitalAdmin = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-plum-100 rounded-full mb-6">
                     <Building2 size={32} className="text-plum-700" aria-hidden="true" />
                 </div>
-                <p className="text-plum-700 font-semibold text-lg mb-2">For Hospital Administrators & Transplant Coordinators</p>
+                <p className="text-plum-700 font-semibold text-lg mb-2">For Hospital Administrators & Care Coordinators</p>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
                     Built at the Intersection of Patient Experience and Health Policy
                 </h1>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-                    This platform was developed by a liver transplant recipient who serves on the OPTN Patient Affairs Committee and holds a seat at the national table where transplant policy is made. TransplantMedicationNavigator isn't a software product — it's a policy intervention, built to address a documented, systemic gap in post-transplant care and CMS-recognized medication access barriers.
+                    This platform was developed by a liver transplant recipient who serves on the OPTN Patient Affairs Committee and holds a seat at the national table where organ-transplant policy is made. AMedNav isn't a software product — it's a policy intervention, built to address a documented, systemic gap in post-transplant care and CMS-recognized medication access barriers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                        href="mailto:info@transplantmedicationnavigator.com?subject=Hospital%20Partnership%20Inquiry"
+                        href="mailto:info@amednav.com?subject=Hospital%20Partnership%20Inquiry"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                     >
                         <Mail size={20} aria-hidden="true" />
@@ -217,7 +217,7 @@ const ForHospitalAdmin = () => {
                     Connecting even a fraction of at-risk patients to manufacturer assistance programs that eliminate the cost barrier to adherence generates measurable ROI in reduced readmissions, preserved grafts, and improved SRTR performance.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
-                    A single graft loss costs the healthcare system over $150,000 in incremental annual costs from dialysis and re-transplant workup (Samoylova ML et al., Transplant International, 2022). Connecting even a fraction of at-risk patients to manufacturer assistance programs — which can reduce monthly out-of-pocket costs from $624 to under $15 — represents a compelling return on investment for any transplant program.
+                    A single graft loss costs the healthcare system over $150,000 in incremental annual costs from dialysis and re-transplant workup (Samoylova ML et al., Transplant International, 2022). Connecting even a fraction of at-risk patients to manufacturer assistance programs — which can reduce monthly out-of-pocket costs from $624 to under $15 — represents a compelling return on investment for any specialty care program.
                 </p>
             </section>
 
@@ -307,7 +307,7 @@ const ForHospitalAdmin = () => {
                     <h2 className="text-xl font-bold text-plum-900">What Your Patients See</h2>
                 </div>
                 <p className="text-plum-800 mb-6 max-w-2xl mx-auto">
-                    Patients get a simple, accessible interface to search 184+ transplant medications, find copay cards and assistance programs, and access educational content—no login required.
+                    Patients get a simple, accessible interface to search specialty medications, find copay cards and assistance programs, and access educational content—no login required.
                 </p>
                 <Link
                     to="/"
@@ -325,7 +325,7 @@ const ForHospitalAdmin = () => {
                     <h2 className="text-xl font-bold text-plum-900">Built by a Patient Advocate</h2>
                 </div>
                 <p className="text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                    This tool was built by a transplant recipient with a seat at OPTN, not by a software company. When you recommend it to your patients, you are connecting them to a resource developed from lived experience, validated by published research, and grounded in seven years of post-patient advocacy.
+                    This tool was built by a patient advocate with a seat at OPTN, not by a software company. When you recommend it to your patients, you are connecting them to a resource developed from lived experience, validated by published research, and grounded in seven years of patient advocacy.
                 </p>
             </section>
 
@@ -333,18 +333,18 @@ const ForHospitalAdmin = () => {
             <section className="text-center py-8">
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Ready to Improve Outcomes for Your Program?</h2>
                 <p className="text-slate-600 mb-6 max-w-xl mx-auto">
-                    Contact us to schedule a demo and discuss how we can support your transplant program's quality metrics and patient outcomes.
+                    Contact us to schedule a demo and discuss how we can support your program's quality metrics and patient outcomes.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                        href="mailto:info@transplantmedicationnavigator.com?subject=Hospital%20Administrator%20Demo%20Request"
+                        href="mailto:info@amednav.com?subject=Hospital%20Administrator%20Demo%20Request"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-plum-700 hover:bg-plum-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition"
                     >
                         <Mail size={20} aria-hidden="true" />
                         Schedule a Demo
                     </a>
                     <a
-                        href="mailto:info@transplantmedicationnavigator.com?subject=Hospital%20Pilot%20RFI"
+                        href="mailto:info@amednav.com?subject=Hospital%20Pilot%20RFI"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-bold rounded-xl shadow-sm border-2 border-slate-200 hover:border-slate-300 transition"
                     >
                         Request RFI Package

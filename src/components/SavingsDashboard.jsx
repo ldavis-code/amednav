@@ -62,7 +62,7 @@ export default function SavingsDashboard({ refreshTrigger }) {
 
     async function handleShare() {
         const total = summary?.summary?.total_saved || 0;
-        const text = `I've saved $${parseFloat(total).toFixed(2)} on my medications with Transplant AMedNav! Track your savings too: transplantmednavigator.com`;
+        const text = `I've saved $${parseFloat(total).toFixed(2)} on my medications with AMedNav! Track your savings too: amednav.com`;
 
         if (navigator.share) {
             navigator.share({ text });

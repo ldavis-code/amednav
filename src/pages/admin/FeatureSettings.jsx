@@ -18,7 +18,7 @@ const FEATURES = [
   {
     key: 'surveys',
     label: 'Patient Surveys',
-    description: 'Enable transplant medication and general surveys for patients.',
+    description: 'Enable medication and general surveys for patients.',
   },
   {
     key: 'wizard',

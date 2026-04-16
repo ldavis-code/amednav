@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Heart, Pill, Shield, Quote } from 'lucide-react';
+import { Pill, Shield, Quote } from 'lucide-react';
 import { useMetaTags } from '../hooks/useMetaTags';
 import { seoMetadata } from '../data/seo-metadata';
-
-// Survey Landing Page
-// Offers transplant-specific and general medication surveys
 
 export default function SurveyLanding() {
   useMetaTags(seoMetadata.survey);
@@ -24,40 +21,15 @@ export default function SurveyLanding() {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-10">
-        {/* Survey Cards */}
-        <div className="grid gap-6 md:grid-cols-2 mb-12">
-          {/* Transplant Survey Card */}
-          <div className="bg-white rounded-2xl border-2 border-plum-200 p-8 shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-plum-100 rounded-xl flex items-center justify-center">
-                <Heart className="w-6 h-6 text-plum-600" />
-              </div>
-              <h2 className="text-xl font-bold text-slate-800">
-                Transplant Journey Survey
-              </h2>
-            </div>
-            <p className="text-slate-600 mb-4">
-              For patients dealing with anti-rejection drugs, pharmacies, and insurance.
-            </p>
-            <p className="text-sm text-slate-500 mb-6">
-              8 topic areas - complete only the ones relevant to you
-            </p>
-            <Link
-              to="/survey/transplant"
-              className="block w-full py-3 px-6 bg-gradient-to-r from-plum-600 to-teal-600 text-white text-center rounded-xl font-medium hover:from-plum-700 hover:to-teal-700 transition-all shadow-md hover:shadow-lg"
-            >
-              Start Transplant Survey
-            </Link>
-          </div>
-
-          {/* General Medication Survey Card */}
+        {/* Survey Card */}
+        <div className="max-w-xl mx-auto mb-12">
           <div className="bg-white rounded-2xl border-2 border-slate-200 p-8 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center">
                 <Pill className="w-6 h-6 text-slate-600" />
               </div>
               <h2 className="text-xl font-bold text-slate-800">
-                General Medication Survey
+                Medication Survey
               </h2>
             </div>
             <p className="text-slate-600 mb-4">
@@ -70,7 +42,7 @@ export default function SurveyLanding() {
               to="/survey/general"
               className="block w-full py-3 px-6 bg-slate-700 text-white text-center rounded-xl font-medium hover:bg-slate-800 transition-all shadow-md hover:shadow-lg"
             >
-              Start General Survey
+              Start Survey
             </Link>
           </div>
         </div>
@@ -96,7 +68,7 @@ export default function SurveyLanding() {
             <span><strong>Privacy:</strong> No names, dates, or medical records collected</span>
           </div>
           <p className="text-xs text-slate-400 mt-4">
-            Powered by TransplantMedicationNavigator.com — By patients, for patients
+            Powered by Amednav.com — By patients, for patients
           </p>
         </div>
       </div>

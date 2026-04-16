@@ -69,7 +69,7 @@ const COB_RESULTS = {
         tips: [
             'Call Medicare: 1-800-MEDICARE',
             'Call your other insurance company',
-            'Ask your transplant social worker for help'
+            'Ask your care team social worker for help'
         ]
     }
 };
@@ -484,7 +484,7 @@ const FAQ = () => {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Frequently Asked Questions</h1>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                    Find answers to common questions about transplant medications, assistance programs, and using this site.
+                    Find answers to common questions about medications, assistance programs, and using this site.
                 </p>
             </header>
 
@@ -534,7 +534,7 @@ const FAQ = () => {
             <aside className="bg-plum-50 border border-plum-200 rounded-xl p-6 md:p-8 text-center">
                 <h2 className="text-xl font-bold text-plum-900 mb-3">Still have questions?</h2>
                 <p className="text-plum-800 mb-6">
-                    Your transplant center's social worker or financial coordinator is your best resource for personalized guidance.
+                    Your care team's social worker or financial coordinator is your best resource for personalized guidance.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link

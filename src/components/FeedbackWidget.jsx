@@ -89,7 +89,7 @@ const FeedbackWidget = ({ medicationName }) => {
           <CheckCircle size={24} aria-hidden="true" />
           Thank you!
         </div>
-        <p className="text-plum-600 mt-2">Your feedback helps transplant centers understand patient needs.</p>
+        <p className="text-plum-600 mt-2">Your feedback helps care centers understand patient needs.</p>
       </div>
     );
   }
@@ -107,7 +107,7 @@ const FeedbackWidget = ({ medicationName }) => {
           Skipped or rationed doses
         </OptionButton>
         <OptionButton onClick={() => answerQ3('called_coordinator')} color="amber" disabled={isSubmitting}>
-          Called my transplant coordinator
+          Called my care coordinator
         </OptionButton>
         <OptionButton onClick={() => answerQ3('not_filled')} color="red" disabled={isSubmitting}>
           Not filled the prescription

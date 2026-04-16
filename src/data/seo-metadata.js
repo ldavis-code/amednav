@@ -3,50 +3,50 @@
  * Each page has unique title, description, and social media tags
  */
 
-const BASE_URL = 'https://transplantmedicationnavigator.com';
+const BASE_URL = 'https://amednav.com';
 const SITE_NAME = 'AMedNav™';
 
 export const seoMetadata = {
   home: {
     title: 'AMedNav™',
-    description: 'Get FREE transplant medications through Patient Assistance Programs. Find help paying for tacrolimus, mycophenolate, immunosuppressants. Compare prices, copay foundations & grants for kidney, liver, heart patients. Created by a transplant recipient.',
+    description: 'Get FREE medications through Patient Assistance Programs. Find help paying for specialty medications and prescriptions. Compare prices, copay foundations & grants. Created by patients, for patients.',
     canonical: `${BASE_URL}/`,
-    ogTitle: 'Free Transplant Medication Help | AMedNav™',
-    ogDescription: 'Find FREE medications for patients through Patient Assistance Programs. Get tacrolimus, mycophenolate & immunosuppressants at no cost. Compare prices, find copay foundations & grants. Created by a transplant recipient.',
-    twitterTitle: 'Free Transplant Medication Help | Medication Navigator',
+    ogTitle: 'Free Medication Help | AMedNav™',
+    ogDescription: 'Find FREE medications for patients through Patient Assistance Programs. Get specialty medications at no cost. Compare prices, find copay foundations & grants. Created by patients, for patients.',
+    twitterTitle: 'Free Medication Help | Medication Navigator',
     twitterDescription: 'Find FREE medications through Patient Assistance Programs. Compare prices, find copay foundations & grants for patients.',
     breadcrumbName: 'Home',
   },
 
   wizard: {
     title: 'My Path Quiz - Find Free Medication Help | AMedNav™',
-    description: 'Take our free 2-minute quiz to find Patient Assistance Programs for your transplant medications. Get personalized recommendations for free tacrolimus, mycophenolate, and copay help based on your insurance and income.',
+    description: 'Take our free 2-minute quiz to find Patient Assistance Programs for your medications. Get personalized recommendations for free prescriptions and copay help based on your insurance and income.',
     canonical: `${BASE_URL}/wizard`,
-    ogTitle: 'Find Your Path to Free Transplant Medications',
+    ogTitle: 'Find Your Path to Free Medications',
     ogDescription: 'Answer a few questions to get personalized recommendations for FREE medications through Patient Assistance Programs. Takes 2 minutes.',
     twitterTitle: 'My Path Quiz - Free Medication Finder',
-    twitterDescription: 'Take our free quiz to discover Patient Assistance Programs for your transplant medications. Personalized recommendations in 2 minutes.',
+    twitterDescription: 'Take our free quiz to discover Patient Assistance Programs for your medications. Personalized recommendations in 2 minutes.',
     breadcrumbName: 'My Path Quiz',
   },
 
   medications: {
-    title: 'Search Transplant Medications & Prices | AMedNav™',
-    description: 'Compare transplant medication prices and find FREE assistance programs. Search tacrolimus (Prograf), mycophenolate (CellCept), prednisone, sirolimus (Rapamune), and more. Find copay cards, PAPs, and foundation grants.',
+    title: 'Search Medications & Prices | AMedNav™',
+    description: 'Compare medication prices and find FREE assistance programs. Search specialty and everyday medications, find copay cards, PAPs, and foundation grants.',
     canonical: `${BASE_URL}/medications`,
-    ogTitle: 'Search Transplant Medications - Compare Prices & Find Free Help',
-    ogDescription: 'Search transplant medications, compare retail prices, and find Patient Assistance Programs offering FREE medications. Tacrolimus, mycophenolate, sirolimus, and more.',
-    twitterTitle: 'Search Transplant Medications & Find Free Help',
-    twitterDescription: 'Compare prices and find FREE medication assistance for tacrolimus, mycophenolate, prednisone, and other transplant drugs.',
+    ogTitle: 'Search Medications - Compare Prices & Find Free Help',
+    ogDescription: 'Search medications, compare retail prices, and find Patient Assistance Programs offering FREE medications.',
+    twitterTitle: 'Search Medications & Find Free Help',
+    twitterDescription: 'Compare prices and find FREE medication assistance for specialty and everyday medications.',
     breadcrumbName: 'Medications',
   },
 
   education: {
     title: 'Education & Resources for Patients | AMedNav™',
-    description: 'Educational guides on transplant medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
+    description: 'Educational guides on medication coverage: Medicare Part D, Medicaid, insurance appeals, specialty pharmacies, the deductible trap, and copay foundation eligibility. Learn before you apply.',
     canonical: `${BASE_URL}/education`,
-    ogTitle: 'Transplant Medication Education & Resources',
+    ogTitle: 'Medication Education & Resources',
     ogDescription: 'Learn about Medicare, Medicaid, insurance coverage, specialty pharmacies, and how to avoid the deductible trap. Educational guides for patients.',
-    twitterTitle: 'Transplant Medication Education Resources',
+    twitterTitle: 'Medication Education Resources',
     twitterDescription: 'Educational guides on Medicare, insurance, specialty pharmacies and medication coverage for patients.',
     breadcrumbName: 'Education & Resources',
   },
@@ -66,7 +66,7 @@ export const seoMetadata = {
     title: 'Frequently Asked Questions | AMedNav™',
     description: 'Find answers to common questions about Patient Assistance Programs, copay foundations, medication costs, and financial help for patients.',
     canonical: `${BASE_URL}/faq`,
-    ogTitle: 'Transplant Medication Assistance FAQs',
+    ogTitle: 'Medication Assistance FAQs',
     ogDescription: 'Get answers to common questions about medication assistance, Patient Assistance Programs, copay support, and financial help for patients.',
     twitterTitle: 'Medication Assistance FAQs',
     twitterDescription: 'Answers to common questions about Patient Assistance Programs, copay foundations, and financial help for patients.',
@@ -84,47 +84,36 @@ export const seoMetadata = {
     breadcrumbName: 'Page Not Found',
   },
 
-  forTransplantPrograms: {
-    title: 'For Transplant Programs | AMedNav™',
-    description: 'Help patients find affordable medications with our privacy-safe resource. Reduce financial barriers to adherence with verified help programs.',
-    canonical: `${BASE_URL}/for-transplant-programs`,
-    ogTitle: 'Transplant Program Partnerships',
-    ogDescription: 'Partner with AMedNav to help your patients find medication assistance programs. Privacy-safe, no PHI collected.',
-    twitterTitle: 'For Transplant Programs',
-    twitterDescription: 'Help your patients find affordable medications with free educational resources and verified help programs.',
-    breadcrumbName: 'For Transplant Programs',
-  },
-
   forEmployers: {
     title: 'For Employers | AMedNav™',
-    description: 'Reduce specialty drug costs for transplant employees. Connect your workforce to copay cards, manufacturer assistance, and foundation support.',
+    description: 'Reduce specialty drug costs for employees. Connect your workforce to copay cards, manufacturer assistance, and foundation support.',
     canonical: `${BASE_URL}/for-employers`,
-    ogTitle: 'Employer Benefits for Transplant Employees',
-    ogDescription: 'Help transplant employees find medication assistance programs. Complement existing pharmacy benefits with free educational resources.',
+    ogTitle: 'Employer Benefits for Medication Access',
+    ogDescription: 'Help employees find medication assistance programs. Complement existing pharmacy benefits with free educational resources.',
     twitterTitle: 'For Employers',
-    twitterDescription: 'Reduce specialty drug costs for transplant employees with our medication assistance resource and free educational content.',
+    twitterDescription: 'Reduce specialty drug costs for employees with our medication assistance resource and free educational content.',
     breadcrumbName: 'For Employers',
   },
 
   forHospitalAdmin: {
     title: 'For Hospital Administrators | AMedNav\u2122',
-    description: 'Improve SRTR outcomes, reduce readmissions, and strengthen CMS compliance. HIPAA-compliant medication assistance tool with Epic integration for transplant programs.',
+    description: 'Improve patient outcomes, reduce readmissions, and strengthen CMS compliance. HIPAA-compliant medication assistance tool with Epic integration.',
     canonical: `${BASE_URL}/for-hospitals`,
-    ogTitle: 'For Hospital Administrators & Transplant Coordinators',
-    ogDescription: 'Protect graft survival by removing medication cost barriers. HIPAA-compliant, Epic-integrated tool supporting SRTR outcomes and CMS documentation compliance.',
+    ogTitle: 'For Hospital Administrators & Care Coordinators',
+    ogDescription: 'Protect patient outcomes by removing medication cost barriers. HIPAA-compliant, Epic-integrated tool supporting CMS documentation compliance.',
     twitterTitle: 'For Hospital Administrators',
-    twitterDescription: 'Improve SRTR outcomes and reduce readmissions with a HIPAA-compliant medication assistance tool for transplant programs.',
+    twitterDescription: 'Improve outcomes and reduce readmissions with a HIPAA-compliant medication assistance tool.',
     breadcrumbName: 'Hospitals',
   },
 
   forPayers: {
     title: 'For Payers | AMedNav™',
-    description: 'Help members access manufacturer assistance programs for transplant medications. Reduce plan spend on high-cost drugs with our privacy-safe resource.',
+    description: 'Help members access manufacturer assistance programs for specialty medications. Reduce plan spend on high-cost drugs with our privacy-safe resource.',
     canonical: `${BASE_URL}/for-payers`,
     ogTitle: 'Payer Partnerships for Medication Assistance',
-    ogDescription: 'Help members find manufacturer copay assistance and PAPs for transplant medications. Privacy-safe engagement tracking.',
+    ogDescription: 'Help members find manufacturer copay assistance and PAPs for specialty medications. Privacy-safe engagement tracking.',
     twitterTitle: 'For Payers',
-    twitterDescription: 'Help members access manufacturer assistance programs for transplant medications.',
+    twitterDescription: 'Help members access manufacturer assistance programs for specialty medications.',
     breadcrumbName: 'For Payers',
   },
 
@@ -141,10 +130,10 @@ export const seoMetadata = {
 
   pilot: {
     title: 'Partner Pilot Program | AMedNav™',
-    description: 'Welcome to the pilot program. Find medication assistance programs, search transplant medications, and access verified financial resources.',
+    description: 'Welcome to the pilot program. Find medication assistance programs, search medications, and access verified financial resources.',
     canonical: `${BASE_URL}/pilot`,
     ogTitle: 'Partner Pilot Program',
-    ogDescription: 'Your healthcare provider has partnered with us to help you find medication assistance programs for transplant medications.',
+    ogDescription: 'Your healthcare provider has partnered with us to help you find medication assistance programs.',
     twitterTitle: 'Partner Pilot Program',
     twitterDescription: 'Find medication assistance programs through your healthcare provider partnership.',
     breadcrumbName: 'Pilot Program',
@@ -185,24 +174,13 @@ export const seoMetadata = {
 
   survey: {
     title: 'Share Your Journey | AMedNav™',
-    description: 'Share your medication experience to help improve access for all patients. Anonymous surveys for transplant recipients and anyone managing chronic conditions.',
+    description: 'Share your medication experience to help improve access for all patients. Anonymous surveys for anyone managing chronic conditions.',
     canonical: `${BASE_URL}/survey`,
     ogTitle: 'Share Your Medication Journey',
     ogDescription: 'Your experience can change the system. Take our anonymous survey to help improve medication access for patients everywhere.',
     twitterTitle: 'Share Your Journey',
     twitterDescription: 'Share your medication experience to help improve access for all patients. Anonymous surveys available.',
     breadcrumbName: 'Survey',
-  },
-
-  surveyTransplant: {
-    title: 'Transplant Medication Survey | AMedNav™',
-    description: 'Share your transplant medication journey. Help us understand challenges with anti-rejection drugs, pharmacies, insurance, and assistance programs.',
-    canonical: `${BASE_URL}/survey/transplant`,
-    ogTitle: 'Transplant Medication Journey Survey',
-    ogDescription: 'Share your experience with transplant medications. Your anonymous feedback helps improve access for all patients.',
-    twitterTitle: 'Transplant Medication Survey',
-    twitterDescription: 'Share your transplant medication journey to help improve access for all patients.',
-    breadcrumbName: 'Transplant Survey',
   },
 
   surveyGeneral: {
@@ -218,24 +196,24 @@ export const seoMetadata = {
 
   myMedications: {
     title: 'My Medications | AMedNav™',
-    description: 'Track your transplant medications, renewal dates, and costs. Manage your medication list privately on your device with export and import options.',
+    description: 'Track your medications, renewal dates, and costs. Manage your medication list privately on your device with export and import options.',
     canonical: `${BASE_URL}/my-medications`,
     ogTitle: 'My Medications - Track Your Prescriptions',
-    ogDescription: 'Track your transplant medications, renewal dates, and costs. Manage your medication list privately on your device.',
+    ogDescription: 'Track your medications, renewal dates, and costs. Manage your medication list privately on your device.',
     twitterTitle: 'My Medications',
-    twitterDescription: 'Track your transplant medications, renewal dates, and costs privately.',
+    twitterDescription: 'Track your medications, renewal dates, and costs privately.',
     breadcrumbName: 'My Medications',
     noindex: true, // Private user feature - do not index in search engines
   },
 
   savingsTracker: {
     title: 'Savings Calculator | AMedNav™',
-    description: 'Calculate how much you could save on transplant medications with assistance programs. Track actual savings and see your total benefits over time.',
+    description: 'Calculate how much you could save on medications with assistance programs. Track actual savings and see your total benefits over time.',
     canonical: `${BASE_URL}/savings-tracker`,
     ogTitle: 'Medication Savings Calculator',
-    ogDescription: 'See how much you could save on transplant medications with assistance programs. Calculate and track your actual savings.',
+    ogDescription: 'See how much you could save on medications with assistance programs. Calculate and track your actual savings.',
     twitterTitle: 'Savings Calculator',
-    twitterDescription: 'Calculate how much you could save on transplant medications with assistance programs.',
+    twitterDescription: 'Calculate how much you could save on medications with assistance programs.',
     breadcrumbName: 'Savings Calculator',
   },
 

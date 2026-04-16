@@ -346,7 +346,7 @@ export default function MyMedications() {
           </div>
         </div>
         <p className="text-slate-600 text-sm">
-          Track your transplant medications and renewal dates
+          Track your medications and renewal dates
         </p>
       </div>
 
@@ -510,7 +510,7 @@ export default function MyMedications() {
           {hasCommercialInsurance === 'yes' && (
             <div className="mt-3 p-3 bg-plum-50 border border-plum-200 rounded-lg">
               <p className="text-plum-800 text-sm">
-                <strong>Copay cards can help!</strong> With commercial insurance, manufacturer copay cards can lower your cost to $0-$50/month for many transplant medications.
+                <strong>Copay cards can help!</strong> With commercial insurance, manufacturer copay cards can lower your cost to $0-$50/month for many specialty medications.
               </p>
             </div>
           )}
@@ -741,14 +741,14 @@ export default function MyMedications() {
             {adherenceAnswer === 'yes' && (
               <div className="mt-4 p-3 bg-plum-50 border border-plum-200 rounded-lg">
                 <p className="text-plum-800 text-sm font-medium">
-                  Great! Staying on track with your medications is one of the most important things you can do for your transplant health.
+                  Great! Staying on track with your medications is one of the most important things you can do for your health.
                 </p>
               </div>
             )}
             {adherenceAnswer && adherenceAnswer !== 'yes' && (
               <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
                 <p className="text-amber-800 text-sm font-medium">
-                  Missing doses can put your transplant at risk. If cost is a barrier, check the assistance programs listed with your medications above or talk to your transplant team.
+                  Missing doses can put your health at risk. If cost is a barrier, check the assistance programs listed with your medications above or talk to your care team.
                 </p>
               </div>
             )}

@@ -57,8 +57,8 @@ const SubscribeCancel = () => {
                 <HelpCircle size={16} />
                 <span>
                     Questions? Email us at{' '}
-                    <a href="mailto:info@transplantmedicationnavigator.com" className="text-plum-700 hover:underline">
-                        info@transplantmedicationnavigator.com
+                    <a href="mailto:info@amednav.com" className="text-plum-700 hover:underline">
+                        info@amednav.com
                     </a>
                 </span>
             </div>

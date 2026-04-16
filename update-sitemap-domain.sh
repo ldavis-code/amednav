@@ -11,12 +11,12 @@ if [ -z "$1" ]; then
     echo "Examples:"
     echo "  ./update-sitemap-domain.sh my-site.netlify.app"
     echo "  ./update-sitemap-domain.sh my-site.vercel.app"
-    echo "  ./update-sitemap-domain.sh transplantmedicationnavigator.com"
+    echo "  ./update-sitemap-domain.sh amednav.com"
     exit 1
 fi
 
 NEW_DOMAIN="$1"
-OLD_DOMAIN="transplantmedicationnavigator.com"
+OLD_DOMAIN="amednav.com"
 
 echo "🔄 Updating domain from '$OLD_DOMAIN' to '$NEW_DOMAIN'..."
 echo ""

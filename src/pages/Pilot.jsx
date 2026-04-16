@@ -118,7 +118,7 @@ const Pilot = () => {
                 <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                         <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                        <span className="text-slate-700">Search for your transplant medications and compare prices</span>
+                        <span className="text-slate-700">Search for your medications and compare prices</span>
                     </li>
                     <li className="flex items-start gap-3">
                         <ShieldCheck size={20} className="text-plum-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -166,7 +166,7 @@ const Pilot = () => {
             {/* About Section */}
             <section className="text-center py-4">
                 <p className="text-slate-600 text-sm">
-                    AMedNav™ was built by a transplant recipient to help patients find medication assistance with free educational resources.
+                    AMedNav™ was built by patients to help patients find medication assistance with free educational resources.
                 </p>
                 <Link to="/" className="text-plum-700 font-medium hover:underline text-sm mt-2 inline-block">
                     Learn more about us

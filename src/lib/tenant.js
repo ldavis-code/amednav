@@ -24,7 +24,7 @@ export const DEFAULT_ORG = {
 
 /**
  * Extract tenant slug from current URL
- * Supports: subdomain (mayo.transplantmedicationnavigator.com)
+ * Supports: subdomain (mayo.amednav.com)
  *           path prefix (/org/mayo/...)
  *           query param (?org=mayo) - for development
  */
@@ -51,7 +51,7 @@ export function detectTenantSlug() {
     return 'public';
   }
 
-  // Handle subdomains: mayo.transplantmedicationnavigator.com
+  // Handle subdomains: mayo.amednav.com
   // Ignore www, app, admin subdomains
   const ignoredSubdomains = ['www', 'app', 'admin', 'api', 'staging', 'dev'];
   if (parts.length >= 3 && !ignoredSubdomains.includes(parts[0])) {

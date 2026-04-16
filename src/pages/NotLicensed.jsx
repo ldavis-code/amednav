@@ -3,7 +3,7 @@ import { ShieldAlert, Mail, Building2 } from 'lucide-react';
 /**
  * NotLicensed Page
  *
- * Shown when an Epic EHR launch comes from a transplant center
+ * Shown when an Epic EHR launch comes from a care center
  * that hasn't activated their AMedNav license yet.
  * The epic-ehr-callback sets short-lived cookies (tmn_org_id, tmn_iss)
  * so this page could read them if needed in the future.
@@ -20,7 +20,7 @@ const NotLicensed = () => {
         </h1>
 
         <p className="text-slate-500 mb-6 leading-relaxed">
-          Your transplant center hasn't activated TMN yet.
+          Your care center hasn't activated AMedNav yet.
           Contact us to get your center set up — it takes less than a week
           and integrates directly into Epic.
         </p>
@@ -30,8 +30,8 @@ const NotLicensed = () => {
           <div className="flex items-start gap-2">
             <Building2 size={18} className="text-green-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
             <p className="text-sm text-green-800 leading-relaxed">
-              <strong>For your transplant center's Epic team:</strong><br />
-              Ask about activating TransplantMedicationNavigator.com —
+              <strong>For your care center's Epic team:</strong><br />
+              Ask about activating Amednav.com —
               listed in Epic Connection Hub, FHIR R4 compliant,
               zero PHI stored.
             </p>
@@ -40,7 +40,7 @@ const NotLicensed = () => {
 
         {/* CTA */}
         <a
-          href="mailto:lorrinda@transplantmedicationnavigator.com?subject=Epic Activation Request"
+          href="mailto:lorrinda@amednav.com?subject=Epic Activation Request"
           className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl transition shadow-md hover:shadow-lg min-h-[48px]"
         >
           <Mail size={18} aria-hidden="true" />

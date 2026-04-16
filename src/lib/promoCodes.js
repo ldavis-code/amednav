@@ -21,10 +21,10 @@ const VALID_PROMO_CODES = {
     expires: null,
     description: 'Free access to Quiz and Calculator',
   },
-  'TRANSPLANT2024': {
+  'COMMUNITY2024': {
     features: ['quiz', 'calculator'],
     expires: null,
-    description: 'Transplant community access',
+    description: 'Community access',
   },
   'LOUE!!A2749': {
     features: ['quiz', 'calculator'],

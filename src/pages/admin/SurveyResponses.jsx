@@ -99,7 +99,7 @@ export default function SurveyResponses() {
                 >
                   <div className="flex items-center gap-4">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      resp.survey_type === 'transplant' ? 'bg-purple-100 text-purple-800' : 'bg-plum-100 text-plum-800'
+                      resp.survey_type === 'specialty' ? 'bg-purple-100 text-purple-800' : 'bg-plum-100 text-plum-800'
                     }`}>
                       {resp.survey_type || 'general'}
                     </span>

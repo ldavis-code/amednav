@@ -51,7 +51,7 @@ const Demo = () => {
     {
       icon: FileText,
       title: 'Medication Search',
-      description: 'Search 100+ transplant medications with assistance program details',
+      description: 'Search 100+ specialty medications with assistance program details',
       path: '/medications',
     },
     {
@@ -84,9 +84,9 @@ const Demo = () => {
     },
     {
       icon: Shield,
-      title: 'Protect Organ Investment',
+      title: 'Protect High-Cost Care',
       stat: '$500K+',
-      description: 'average cost of a transplant that medication non-adherence risks',
+      description: 'average cost of care that medication non-adherence can put at risk',
     },
     {
       icon: Users,
@@ -113,7 +113,7 @@ const Demo = () => {
 
             <p className="text-xl text-purple-100 max-w-2xl mx-auto mb-8">
               Help your patients find affordable medications and reduce
-              the #1 cause of preventable graft loss: medication non-adherence.
+              the #1 cause of preventable harm: medication non-adherence.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -155,7 +155,7 @@ const Demo = () => {
       {/* Value Props for Enterprise */}
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-2xl font-bold text-slate-900 text-center mb-12">
-          Why Transplant Programs Choose Us
+          Why Specialty Care Programs Choose Us
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -231,12 +231,12 @@ const Demo = () => {
           </h2>
           <p className="text-slate-600 mb-8 max-w-xl mx-auto">
             Schedule a call to discuss enterprise pricing, white-label options,
-            and integration with your transplant program.
+            and integration with your specialty care program.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/pricing#transplant-programs"
+              to="/pricing#enterprise"
               className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl shadow transition"
             >
               <Building2 size={18} />
@@ -244,7 +244,7 @@ const Demo = () => {
             </Link>
 
             <a
-              href="mailto:info@transplantmedicationnavigator.com?subject=Enterprise Demo Follow-up"
+              href="mailto:info@amednav.com?subject=Enterprise Demo Follow-up"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-xl shadow border border-slate-200 transition"
             >
               Contact Sales
