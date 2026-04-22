@@ -76,6 +76,8 @@ import { DemoModeProvider } from './context/DemoModeContext.jsx';
 import { SimpleViewProvider, useSimpleView } from './context/SimpleViewContext.jsx';
 // Demo Banner Component
 import DemoBanner from './components/DemoBanner.jsx';
+
+import Wordmark from './components/Wordmark.jsx';
 // Feedback Widget for medication results
 import FeedbackWidget from './components/FeedbackWidget.jsx';
 // Read Aloud Button for accessibility
@@ -536,10 +538,17 @@ const Layout = ({ children }) => {
             {/* Header */}
             <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200 no-print" role="banner">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-plum-700 hover:text-plum-800 transition" aria-label="AMedNav™ home">
-                        <span className="font-bold text-lg md:text-xl leading-tight">
-                            AMedNav<sup className="text-xs">™</sup><br/>
-                            <span className="text-xs md:text-sm font-medium text-slate-500">Medication Navigator</span>
+                    <Link
+                        to="/"
+                        className="flex flex-col items-start leading-tight transition hover:opacity-90"
+                        aria-label="AMedNav home"
+                    >
+                        <Wordmark size="1.75rem" className="md:text-[2rem]" />
+                        <span
+                            className="text-xs md:text-sm font-medium tracking-wide mt-0.5"
+                            style={{ color: 'var(--navy-60)' }}
+                        >
+                            Medication Navigator
                         </span>
                     </Link>
 
@@ -638,7 +647,11 @@ const Layout = ({ children }) => {
                         <Clock className="inline-block w-4 h-4 mr-1 -mt-0.5" aria-hidden="true" />
                         Information last updated: {LAST_UPDATED}
                     </p>
-                    <p>© 2026 AMedNav™ - Medication Navigator. All Rights Reserved.</p>
+                    <p className="flex flex-wrap justify-center items-baseline gap-x-2">
+                        <span>© 2026</span>
+                        <Wordmark size="1.5rem" onDark />
+                        <span>— Medication Navigator. All Rights Reserved.</span>
+                    </p>
                     <p className="mt-4 text-slate-300 text-sm">Created by Lorrinda Gray-Davis. est August 2025</p>
                     <p className="mt-2 text-slate-400 text-sm">
                         <a href="mailto:info@amednav.com" className="text-plum-400 hover:text-plum-300 underline">info@amednav.com</a>
