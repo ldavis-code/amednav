@@ -26,8 +26,8 @@ export default function OrganizationSettings() {
   const [formData, setFormData] = useState({
     name: '',
     logoUrl: '',
-    primaryColor: '#26215C',
-    secondaryColor: '#534AB7',
+    primaryColor: '#12284C',
+    secondaryColor: '#12284C',
     contactEmail: '',
     websiteUrl: '',
   });
@@ -41,8 +41,8 @@ export default function OrganizationSettings() {
       setFormData({
         name: org.name || '',
         logoUrl: org.logoUrl || '',
-        primaryColor: org.primaryColor || '#26215C',
-        secondaryColor: org.secondaryColor || '#534AB7',
+        primaryColor: org.primaryColor || '#12284C',
+        secondaryColor: org.secondaryColor || '#12284C',
         contactEmail: org.contactEmail || '',
         websiteUrl: org.websiteUrl || '',
       });
@@ -203,7 +203,7 @@ export default function OrganizationSettings() {
                       handleChange({ target: { name: 'primaryColor', value: e.target.value } })
                     }
                     className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
-                    placeholder="#26215C"
+                    placeholder="#12284C"
                   />
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function OrganizationSettings() {
                       handleChange({ target: { name: 'secondaryColor', value: e.target.value } })
                     }
                     className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-plum-500 focus:border-plum-500"
-                    placeholder="#534AB7"
+                    placeholder="#12284C"
                   />
                 </div>
               </div>
