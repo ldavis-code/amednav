@@ -77,8 +77,112 @@ html {
 
 /* Ensure body text is readable */
 body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11'; /* Inter's refined alternates */
     font-size: 1rem;
     line-height: 1.6;
+}
+
+/* ========================================
+   Type system — two families, one job each.
+   Instrument Serif = emotion / display / editorial weight.
+   Inter            = UI / body / data / buttons.
+   Rule of thumb: if it's something you FEEL, it's serif.
+                  if it's something you DO,   it's sans.
+   ======================================== */
+
+/* Display voices — always serif, always navy or coral, never in buttons,
+   never under 22px. Sizes follow fluid clamp() so they scale from
+   phone to billboard without breakpoint management. */
+.display-hero {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6.2vw, 5.5rem);   /* 40 → 88px */
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    text-wrap: balance;
+}
+
+.display-section {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 4.4vw, 3.5rem);      /* 32 → 56px */
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: var(--navy);
+    text-wrap: balance;
+}
+
+.display-card {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(1.625rem, 2.4vw, 2.25rem); /* 26 → 36px */
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+}
+
+.display-stat {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(2.75rem, 4vw, 3.5rem);     /* 44 → 56px */
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.display-quote {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 2rem;                             /* 32px */
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+}
+
+/* The italic trick: one word per headline gets italic + coral. Emotion
+   inside an otherwise factual sentence. Apply inline around the word
+   that should carry the weight. */
+.italic-accent {
+    font-style: italic;
+    color: var(--coral);
+}
+
+/* Label voices — always Inter, uppercase, widely tracked. Labels
+   organize; they don't speak. Put them ABOVE the thing they label. */
+.eyebrow {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.75rem;                          /* 12px */
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy-60, rgba(18, 40, 76, 0.60));
+}
+
+.kv-label {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.6875rem;                        /* 11px */
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--navy-60, rgba(18, 40, 76, 0.60));
+}
+
+.badge-text {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.6875rem;                        /* 11px */
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* Button typography — slightly tight so CTAs feel snappy. */
+.btn-type {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.005em;
 }
 
 /* Minimum tap target size for touch devices (44x44px) - WCAG 2.1 AAA */

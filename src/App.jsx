@@ -696,14 +696,12 @@ const Home = () => {
         <article className="space-y-8">
             {/* Hero Section */}
             <section className="text-center max-w-4xl mx-auto py-8 md:py-12">
-                <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-                    Compare medication prices and find verified assistance programs <span className="text-plum-600">in one place.</span>
+                <p className="eyebrow mb-4">From Prescription to Possession</p>
+                <h1 className="display-hero mb-6">
+                    Compare medication prices and find verified assistance programs <span className="italic-accent">in one place.</span>
                 </h1>
-                <p className="text-lg md:text-xl font-medium italic text-slate-500 mb-4 tracking-wide">
-                    From Prescription to Possession
-                </p>
-                <p className="text-lg md:text-xl font-semibold text-slate-900 mb-8 max-w-2xl mx-auto">
-                    One patient went from $624/month to $10 with a copay card. Find out what you could save.
+                <p className="text-lg md:text-xl font-semibold text-ink mb-8 max-w-2xl mx-auto leading-relaxed">
+                    One patient went from <span className="font-bold">$624/month to $10</span> with a copay card. Find out what you could save.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

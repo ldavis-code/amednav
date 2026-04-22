@@ -83,6 +83,27 @@ export default {
           'light':     '#f1f5f9', // slate-100 — text on dark backgrounds
         },
       },
+      fontFamily: {
+        // Inter handles everything transactional: body, buttons, nav, forms.
+        sans: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'sans-serif',
+        ],
+        // Instrument Serif handles display / emotion: headlines, pull quotes,
+        // stat numbers, the wordmark. Never in buttons or body copy.
+        serif: [
+          'Instrument Serif',
+          'Georgia',
+          'Times New Roman',
+          'serif',
+        ],
+      },
       fontSize: {
         'xs':   ['0.875rem',  { lineHeight: '1.5' }], // 14px minimum
         'sm':   ['0.9375rem', { lineHeight: '1.5' }], // 15px minimum
