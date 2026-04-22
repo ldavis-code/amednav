@@ -30,7 +30,7 @@ function pct(n, total) {
 const STATUS_ORDER = { implemented: 0, 'in-progress': 1, 'not-started': 2 };
 
 const FRAMEWORK_META = {
-  hipaa: { label: 'HIPAA', color: '#534AB7', bg: 'bg-plum-50', border: 'border-plum-200', text: 'text-plum-700' },
+  hipaa: { label: 'HIPAA', color: '#12284C', bg: 'bg-plum-50', border: 'border-plum-200', text: 'text-plum-700' },
   gdpr:  { label: 'GDPR',  color: '#7c3aed', bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700' },
   soc2:  { label: 'SOC 2', color: '#0891b2', bg: 'bg-cyan-50', border: 'border-cyan-200', text: 'text-cyan-700' },
 };

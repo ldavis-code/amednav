@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================
+   AMedNav Color System — shared custom properties
+   Every "gray" in the UI is navy at reduced opacity so the
+   whole page feels like one family instead of a UI kit.
+   ======================================== */
+:root {
+    /* Semantic palette (hex) */
+    --navy:     #12284C; /* Primary  — Deep Navy   */
+    --blue:     #2E7FC1; /* Secondary — Mid Blue   */
+    --coral:    #E27B5E; /* Accent   — Warm Coral  */
+    --surface:  #F7F1EA; /* Surface  — Soft White  */
+    --ink:      #232832; /* Ink      — Charcoal    */
+
+    /* Derived tints & states (per spec) */
+    --navy-10:  rgba(18, 40, 76, 0.10);   /* borders, dividers */
+    --navy-60:  rgba(18, 40, 76, 0.60);   /* muted labels */
+    --navy-72:  rgba(35, 40, 50, 0.72);   /* body paragraphs */
+    --coral-14: rgba(226, 123, 94, 0.14); /* coral tint fills */
+    --blue-12:  rgba(46, 127, 193, 0.12); /* verified badge bg */
+}
+
 /* Custom utility classes for quiz accessibility */
 @layer utilities {
     /* Border width 3px (not in default Tailwind) */
@@ -47,7 +68,7 @@ body {
 @layer base {
     /* Global focus styles - high contrast ring with increased visibility */
     *:focus-visible {
-        outline: 3px solid #26215C !important; /* plum-900 for better contrast */
+        outline: 3px solid #12284C !important; /* Deep Navy */
         outline-offset: 3px !important;
     }
 
@@ -70,12 +91,17 @@ body {
     input:focus-visible,
     select:focus-visible,
     textarea:focus-visible {
-        outline: 3px solid #26215C !important; /* plum-900 */
+        outline: 3px solid #12284C !important; /* Deep Navy */
         outline-offset: 3px !important;
-        box-shadow: 0 0 0 6px rgba(38, 33, 92, 0.25);
+        box-shadow: 0 0 0 6px rgba(18, 40, 76, 0.25);
     }
 
     /* High contrast focus for dark backgrounds - white outline */
+    .bg-navy-600 *:focus-visible,
+    .bg-navy-700 *:focus-visible,
+    .bg-navy-800 *:focus-visible,
+    .bg-navy-900 *:focus-visible,
+    .bg-navy-950 *:focus-visible,
     .bg-plum-600 *:focus-visible,
     .bg-plum-700 *:focus-visible,
     .bg-plum-800 *:focus-visible,
@@ -90,7 +116,7 @@ body {
     /* Focus indicator for cards and larger clickable areas */
     .group:focus-visible,
     [role="listitem"]:focus-visible {
-        outline: 3px solid #26215C !important;
+        outline: 3px solid #12284C !important; /* Deep Navy */
         outline-offset: 2px !important;
         border-radius: 0.5rem;
     }
@@ -159,11 +185,14 @@ body {
         color: #cbd5e1 !important; /* slate-300 for better contrast on dark */
     }
 
-    /* Plum text on plum backgrounds - ensure contrast */
+    /* Navy text on navy backgrounds - ensure contrast */
+    .bg-navy-800 .text-navy-100,
+    .bg-navy-900 .text-navy-100,
+    .bg-navy-950 .text-navy-100,
     .bg-plum-800 .text-plum-100,
     .bg-plum-900 .text-plum-100,
     .bg-plum-950 .text-plum-100 {
-        color: #DEDCFA !important; /* plum-100 - good contrast */
+        color: #CDD5E5 !important; /* navy-100 — good contrast on deep navy */
     }
 }
 
@@ -277,6 +306,7 @@ body {
     /* Selected states must be very clear */
     [aria-selected="true"],
     [aria-checked="true"],
+    .bg-navy-50,
     .bg-plum-50 {
         outline: 3px solid #000 !important;
         outline-offset: -3px !important;
@@ -396,8 +426,8 @@ body {
     top: -100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #26215C;
-    color: white;
+    background: #12284C; /* Deep Navy */
+    color: #F7F1EA;      /* Soft White */
     padding: 1rem 2rem;
     border-radius: 0 0 0.5rem 0.5rem;
     z-index: 9999;
@@ -603,16 +633,20 @@ kbd {
     }
 
     /* Remove colored backgrounds */
+    .bg-navy-50,
+    .bg-navy-100,
     .bg-plum-50,
     .bg-plum-100,
     .bg-blue-50,
+    .bg-blue-100,
+    .bg-coral-50,
+    .bg-coral-100,
     .bg-indigo-50,
-    .bg-plum-50,
-    .bg-plum-100,
     .bg-purple-50,
     .bg-rose-50,
     .bg-slate-50,
     .bg-slate-100,
+    .bg-surface,
     .bg-canvas,
     .bg-white {
         background: white !important;
@@ -722,7 +756,11 @@ kbd {
     }
 
     /* Keep checkmarks visible */
+    svg.text-navy-500,
+    svg.text-navy-600,
     svg.text-plum-500,
+    svg.text-plum-600,
+    svg.text-coral-500,
     svg.text-green-500 {
         display: inline !important;
         width: 12pt !important;
@@ -864,8 +902,8 @@ html.simple-view .text-slate-900 {
 }
 
 /* High contrast links */
-html.simple-view a:not([role="button"]):not([class*="bg-plum"]) {
-    color: #26215C !important;
+html.simple-view a:not([role="button"]):not([class*="bg-navy"]):not([class*="bg-plum"]) {
+    color: #12284C !important; /* Deep Navy */
     text-decoration: underline !important;
     text-decoration-thickness: 2px !important;
 }
@@ -932,9 +970,10 @@ html.simple-view .bg-gray-100 {
     background-color: #ffffff !important;
 }
 
+html.simple-view .bg-navy-50,
 html.simple-view .bg-plum-50 {
-    background-color: #EEEDFE !important;
-    border: 2px solid #26215C !important;
+    background-color: #E8ECF4 !important; /* navy-50 */
+    border: 2px solid #12284C !important; /* Deep Navy */
 }
 
 /* Ensure form inputs are highly visible */

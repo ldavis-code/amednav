@@ -600,11 +600,11 @@ const MedicationAssistantChat = () => {
           </div>
           <div style="padding: 16px;">
             ${medGroup.programs?.length > 0 ? medGroup.programs.map(program => `
-              <div style="border: 1px solid #CECBF6; border-radius: 8px; padding: 12px; margin-bottom: 12px; background: #EEEDFE;">
-                <strong style="color: #26215C;">${program.program_name}</strong>
+              <div style="border: 1px solid #9AACCB; border-radius: 8px; padding: 12px; margin-bottom: 12px; background: #E8ECF4;">
+                <strong style="color: #12284C;">${program.program_name}</strong>
                 ${program.max_benefit ? `<p style="margin: 4px 0; font-size: 13px;"><strong>Benefit:</strong> ${program.max_benefit}</p>` : ''}
                 ${program.eligibility_summary ? `<p style="margin: 4px 0; font-size: 13px;"><strong>Eligibility:</strong> ${program.eligibility_summary}</p>` : ''}
-                ${program.application_url ? `<p style="margin: 8px 0 0 0; font-size: 13px;"><strong>Apply:</strong> <a href="${program.application_url}" style="color: #534AB7;">${program.application_url}</a></p>` : ''}
+                ${program.application_url ? `<p style="margin: 8px 0 0 0; font-size: 13px;"><strong>Apply:</strong> <a href="${program.application_url}" style="color: #12284C;">${program.application_url}</a></p>` : ''}
               </div>
             `).join('') : '<p style="color: #64748b;">Contact your care center social worker for assistance.</p>'}
           </div>
@@ -628,7 +628,7 @@ const MedicationAssistantChat = () => {
         <title>Medication Assistance Action Plan</title>
         <style>
           body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 24px; color: #1e293b; }
-          h1 { color: #26215C; border-bottom: 2px solid #CECBF6; padding-bottom: 12px; }
+          h1 { color: #12284C; border-bottom: 2px solid #9AACCB; padding-bottom: 12px; }
           @media print { body { padding: 0; } }
         </style>
       </head>
