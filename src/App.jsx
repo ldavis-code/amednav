@@ -511,7 +511,8 @@ const Layout = ({ children }) => {
         { path: '/education', label: 'Education & Resources', ariaLabel: 'Browse education and resources' },
         { path: '/application-help', label: 'Grants & Foundations', ariaLabel: 'View grants and foundations guide' },
         { path: '/savings-tracker', label: 'Savings Calculator', ariaLabel: 'Calculate your medication savings' },
-        { path: '/for-hospitals', label: 'Hospitals', ariaLabel: 'Information for hospital administrators and care coordinators' },
+        // Hospitals tab temporarily hidden from main nav (route still reachable at /for-hospitals).
+        // { path: '/for-hospitals', label: 'Hospitals', ariaLabel: 'Information for hospital administrators and care coordinators' },
         { path: '/pricing', label: 'Pricing', ariaLabel: 'View pricing information' },
         { path: '/faq', label: 'FAQ', ariaLabel: 'View frequently asked questions' },
         { path: '/feedback', label: 'Feedback', ariaLabel: 'Share your feedback' },
