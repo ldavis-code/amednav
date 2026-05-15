@@ -1585,6 +1585,7 @@ const Wizard = () => {
     const [conditionLinkedMedIds, setConditionLinkedMedIds] = useState(null);
     const [isLoadingLinks, setIsLoadingLinks] = useState(false);
     const [showAllMeds, setShowAllMeds] = useState(false);
+    const [categoryQuery, setCategoryQuery] = useState('');
 
     // Conditions available for the chosen category (for Step 2)
     const conditionsForCategory = useConditionsByCategory(answers.category);
@@ -1945,7 +1946,7 @@ const Wizard = () => {
                         <h1 className="text-2xl font-bold">Your Medications</h1>
                     </div>
                     <p className="text-slate-600 mb-3">
-                        Search and select the medications you currently take.
+                        We've pulled the medications commonly used for your condition{(answers.conditionIds || []).length > 1 ? 's' : ''}. Tap to add the ones you take, or use the search box below to add anything else.
                     </p>
                     <p className="text-sm text-slate-500 mb-4 bg-slate-50 border border-slate-200 rounded-lg p-3">
                         <strong>Note:</strong> This tool provides educational information to help you navigate medication assistance options. It is not a substitute for professional medical advice.
@@ -1964,107 +1965,7 @@ const Wizard = () => {
                     }}
                 />
 
-                {/* Medication Search Box */}
-                <div className="mb-6 bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                    <div className="flex items-center gap-2 mb-3">
-                        <Search size={18} className="text-plum-600" />
-                        <h3 className="font-bold text-slate-800">Type in medication and hit the <span className="text-plum-600">+</span> button to add to your list</h3>
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="wizard-med-search" className="sr-only">Search for medications</label>
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} aria-hidden="true" />
-                        <input
-                            id="wizard-med-search"
-                            type="text"
-                            placeholder="Type medication name (e.g. Prograf, tacrolimus)..."
-                            className="w-full pl-10 pr-10 py-3 rounded-lg border border-slate-300 focus:border-plum-500 focus:ring-2 focus:ring-plum-100 outline-none transition"
-                            value={medSearchTerm}
-                            onChange={(e) => setMedSearchTerm(e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Escape') { setMedSearchResult(null); setMedSearchTerm(''); }
-                            }}
-                        />
-                        {isMedSearching ? (
-                            <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                                <Loader2 size={18} className="text-plum-600 animate-spin" aria-label="Searching" />
-                            </div>
-                        ) : medSearchTerm && (
-                            <button onClick={() => { setMedSearchTerm(''); setMedSearchResult(null); }} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" aria-label="Clear search">
-                                <X size={18} />
-                            </button>
-                        )}
-                    </div>
-                    {medSearchResult && medSearchTerm && !isMedSearching && (() => {
-                        const visibleResults = hasLinkFilter
-                            ? medSearchResult.filter(m => conditionLinkedMedIds.includes(m.id))
-                            : medSearchResult;
-                        return (
-                        <div className="mt-2 bg-slate-50 border border-slate-200 rounded-lg max-h-60 overflow-y-auto">
-                            {visibleResults.length > 0 ? (
-                                <div className="divide-y divide-slate-100">
-                                    {visibleResults.slice(0, 8).map(med => {
-                                        const isAlreadySelected = (answers.medications || []).includes(med.id);
-                                        return (
-                                            <button
-                                                key={med.id}
-                                                onClick={() => addMedFromSearch(med.id)}
-                                                disabled={isAlreadySelected}
-                                                className="w-full text-left p-3 hover:bg-plum-50 flex justify-between items-center transition disabled:opacity-50 disabled:cursor-not-allowed"
-                                            >
-                                                <div>
-                                                    <span className="font-bold text-slate-900">{med.brandName}</span>
-                                                    <span className="text-sm text-slate-600 ml-2">({med.genericName})</span>
-                                                </div>
-                                                {isAlreadySelected ? (
-                                                    <span className="text-plum-600 text-sm font-medium flex items-center gap-1"><CheckCircle size={14} /> Added</span>
-                                                ) : (
-                                                    <span className="text-plum-600 bg-plum-100 px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1"><PlusCircle size={12} /> Add</span>
-                                                )}
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            ) : (
-                                <div className="p-4 text-center text-slate-500 text-sm">
-                                    {hasLinkFilter
-                                        ? 'No matches in your condition-linked list. Toggle "Show all medications" below to search the full catalog.'
-                                        : 'No medications found. Try a different spelling or browse the list below.'}
-                                </div>
-                            )}
-                        </div>
-                        );
-                    })()}
-                </div>
-
-                {/* Selected Medications Display */}
-                {(answers.medications || []).length > 0 && (
-                    <div className="mb-6 bg-plum-50 border border-plum-200 rounded-xl p-4">
-                        <div className="flex items-center gap-2 mb-3">
-                            <CheckCircle size={18} className="text-plum-600" />
-                            <h3 className="font-bold text-slate-800">Your Selected Medications ({(answers.medications || []).length})</h3>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                            {(answers.medications || []).map(id => {
-                                const med = MEDICATIONS.find(m => m.id === id);
-                                return (
-                                    <span key={id} className="bg-white text-slate-700 px-3 py-1.5 rounded-full text-sm border border-plum-200 shadow-sm flex items-center gap-2">
-                                        <Pill size={14} className="text-plum-600" />
-                                        {med?.brandName?.split('/')[0] || id}
-                                        <button
-                                            onClick={() => handleMultiSelect('medications', id)}
-                                            className="text-slate-400 hover:text-red-500 transition"
-                                            aria-label={`Remove ${med?.brandName || id}`}
-                                        >
-                                            <X size={14} />
-                                        </button>
-                                    </span>
-                                );
-                            })}
-                        </div>
-                    </div>
-                )}
-
-                {/* Browseable list: condition-linked meds (default) or full catalog */}
+                {/* Condition-linked medications (or full catalog when "show all" is on) */}
                 <div className="mb-6 bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                     <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
                         <h3 className="font-bold text-slate-800">
@@ -2123,6 +2024,100 @@ const Wizard = () => {
                     )}
                 </div>
 
+                {/* Selected Medications Display */}
+                {(answers.medications || []).length > 0 && (
+                    <div className="mb-6 bg-plum-50 border border-plum-200 rounded-xl p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                            <CheckCircle size={18} className="text-plum-600" />
+                            <h3 className="font-bold text-slate-800">Your Selected Medications ({(answers.medications || []).length})</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {(answers.medications || []).map(id => {
+                                const med = MEDICATIONS.find(m => m.id === id);
+                                return (
+                                    <span key={id} className="bg-white text-slate-700 px-3 py-1.5 rounded-full text-sm border border-plum-200 shadow-sm flex items-center gap-2">
+                                        <Pill size={14} className="text-plum-600" />
+                                        {med?.brandName?.split('/')[0] || id}
+                                        <button
+                                            onClick={() => handleMultiSelect('medications', id)}
+                                            className="text-slate-400 hover:text-red-500 transition"
+                                            aria-label={`Remove ${med?.brandName || id}`}
+                                        >
+                                            <X size={14} />
+                                        </button>
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
+                {/* Add another medication: search the full catalog */}
+                <div className="mb-6 bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                    <div className="flex items-center gap-2 mb-3">
+                        <Search size={18} className="text-plum-600" />
+                        <h3 className="font-bold text-slate-800">Add another medication</h3>
+                    </div>
+                    <p className="text-sm text-slate-500 mb-3">Don't see what you take above? Search the full catalog.</p>
+                    <div className="relative">
+                        <label htmlFor="wizard-med-search" className="sr-only">Search for medications</label>
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} aria-hidden="true" />
+                        <input
+                            id="wizard-med-search"
+                            type="text"
+                            placeholder="Type medication name (e.g. Prograf, tacrolimus)..."
+                            className="w-full pl-10 pr-10 py-3 rounded-lg border border-slate-300 focus:border-plum-500 focus:ring-2 focus:ring-plum-100 outline-none transition"
+                            value={medSearchTerm}
+                            onChange={(e) => setMedSearchTerm(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Escape') { setMedSearchResult(null); setMedSearchTerm(''); }
+                            }}
+                        />
+                        {isMedSearching ? (
+                            <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                <Loader2 size={18} className="text-plum-600 animate-spin" aria-label="Searching" />
+                            </div>
+                        ) : medSearchTerm && (
+                            <button onClick={() => { setMedSearchTerm(''); setMedSearchResult(null); }} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" aria-label="Clear search">
+                                <X size={18} />
+                            </button>
+                        )}
+                    </div>
+                    {medSearchResult && medSearchTerm && !isMedSearching && (
+                        <div className="mt-2 bg-slate-50 border border-slate-200 rounded-lg max-h-60 overflow-y-auto">
+                            {medSearchResult.length > 0 ? (
+                                <div className="divide-y divide-slate-100">
+                                    {medSearchResult.slice(0, 8).map(med => {
+                                        const isAlreadySelected = (answers.medications || []).includes(med.id);
+                                        return (
+                                            <button
+                                                key={med.id}
+                                                onClick={() => addMedFromSearch(med.id)}
+                                                disabled={isAlreadySelected}
+                                                className="w-full text-left p-3 hover:bg-plum-50 flex justify-between items-center transition disabled:opacity-50 disabled:cursor-not-allowed"
+                                            >
+                                                <div>
+                                                    <span className="font-bold text-slate-900">{med.brandName}</span>
+                                                    <span className="text-sm text-slate-600 ml-2">({med.genericName})</span>
+                                                </div>
+                                                {isAlreadySelected ? (
+                                                    <span className="text-plum-600 text-sm font-medium flex items-center gap-1"><CheckCircle size={14} /> Added</span>
+                                                ) : (
+                                                    <span className="text-plum-600 bg-plum-100 px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1"><PlusCircle size={12} /> Add</span>
+                                                )}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <div className="p-4 text-center text-slate-500 text-sm">
+                                    No medications found. Try a different spelling.
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+
                 {/* Important Medical Information */}
                 <div className="mb-6 bg-amber-50 border border-amber-200 rounded-lg p-4">
                     <div className="flex items-start gap-3">
@@ -2158,6 +2153,11 @@ const Wizard = () => {
             setShowAllMeds(false);
         };
 
+        const q = categoryQuery.trim().toLowerCase();
+        const filteredCategories = q
+            ? categoryOptions.filter(cat => cat.toLowerCase().includes(q))
+            : categoryOptions;
+
         return (
             <div className="max-w-2xl mx-auto">
 
@@ -2175,29 +2175,60 @@ const Wizard = () => {
                         Conditions data could not be loaded. Please refresh and try again, or contact support if the problem persists.
                     </div>
                 ) : (
-                    <div className="space-y-3" role="radiogroup" aria-label="Select a category">
-                        {categoryOptions.map((cat) => {
-                            const isSelected = answers.category === cat;
-                            return (
+                    <>
+                        {/* Search input */}
+                        <div className="relative mb-4">
+                            <label htmlFor="wizard-category-search" className="sr-only">Search categories</label>
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} aria-hidden="true" />
+                            <input
+                                id="wizard-category-search"
+                                type="text"
+                                placeholder="Search categories (e.g. hepatology, oncology)..."
+                                className="w-full pl-10 pr-10 py-3 rounded-lg border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-none transition"
+                                value={categoryQuery}
+                                onChange={(e) => setCategoryQuery(e.target.value)}
+                                onKeyDown={(e) => { if (e.key === 'Escape') setCategoryQuery(''); }}
+                            />
+                            {categoryQuery && (
                                 <button
-                                    key={cat}
-                                    onClick={() => handleCategoryPick(cat)}
-                                    className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
-                                        isSelected
-                                            ? 'border-sky-600 bg-sky-100 ring-2 ring-sky-300 shadow-md'
-                                            : 'border-slate-300 bg-slate-50 hover:border-sky-400 hover:bg-sky-50 hover:shadow-md'
-                                    }`}
-                                    role="radio"
-                                    aria-checked={isSelected}
+                                    onClick={() => setCategoryQuery('')}
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                                    aria-label="Clear search"
                                 >
-                                    <div className="flex justify-between items-start">
-                                        <div className={`font-bold text-lg ${isSelected ? 'text-sky-800' : 'text-slate-800'}`}>{cat}</div>
-                                        {isSelected && <CheckCircle className="text-sky-600 flex-shrink-0" size={24} aria-hidden="true" />}
-                                    </div>
+                                    <X size={18} />
                                 </button>
-                            );
-                        })}
-                    </div>
+                            )}
+                        </div>
+
+                        {/* Filtered chips */}
+                        {filteredCategories.length === 0 ? (
+                            <div className="text-sm text-slate-500 bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+                                No categories match "{categoryQuery}".
+                            </div>
+                        ) : (
+                            <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Select a category">
+                                {filteredCategories.map((cat) => {
+                                    const isSelected = answers.category === cat;
+                                    return (
+                                        <button
+                                            key={cat}
+                                            onClick={() => handleCategoryPick(cat)}
+                                            className={`px-4 py-2 rounded-full border-2 text-sm font-medium transition shadow-sm min-h-[44px] flex items-center gap-1.5 ${
+                                                isSelected
+                                                    ? 'border-sky-600 bg-sky-100 text-sky-800 ring-2 ring-sky-300'
+                                                    : 'border-slate-300 bg-white text-slate-700 hover:border-sky-400 hover:bg-sky-50'
+                                            }`}
+                                            role="radio"
+                                            aria-checked={isSelected}
+                                        >
+                                            {isSelected && <CheckCircle size={14} className="text-sky-600" aria-hidden="true" />}
+                                            {cat}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        )}
+                    </>
                 )}
 
                 <button
@@ -2206,7 +2237,7 @@ const Wizard = () => {
                     className="w-full mt-6 py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-sky-600 hover:bg-sky-700 text-white cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
                     aria-label="Continue to conditions"
                 >
-                    Continue to Conditions →
+                    {answers.category ? `Continue with ${answers.category} →` : 'Pick a category to continue'}
                 </button>
             </div>
         );
@@ -2246,29 +2277,23 @@ const Wizard = () => {
                         No conditions found for {answers.category}. Go back and pick a different category.
                     </div>
                 ) : (
-                    <div className="space-y-3" role="group" aria-label="Select conditions">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="group" aria-label="Select conditions">
                         {conditionsForCategory.map((cond) => {
                             const isSelected = selectedIds.includes(cond.id);
                             return (
                                 <button
                                     key={cond.id}
                                     onClick={() => toggleCondition(cond.id)}
-                                    className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
+                                    title={cond.description || undefined}
+                                    className={`p-3 text-left rounded-lg border-2 transition shadow-sm min-h-[56px] flex justify-between items-center gap-2 ${
                                         isSelected
-                                            ? 'border-purple-600 bg-purple-100 ring-2 ring-purple-300 shadow-md'
-                                            : 'border-slate-300 bg-slate-50 hover:border-purple-400 hover:bg-purple-50 hover:shadow-md'
+                                            ? 'border-purple-600 bg-purple-100 ring-2 ring-purple-300'
+                                            : 'border-slate-300 bg-white hover:border-purple-400 hover:bg-purple-50'
                                     }`}
                                     aria-pressed={isSelected}
                                 >
-                                    <div className="flex justify-between items-start gap-3">
-                                        <div className="min-w-0">
-                                            <div className={`font-bold text-lg ${isSelected ? 'text-purple-800' : 'text-slate-800'}`}>{cond.name}</div>
-                                            {cond.description && (
-                                                <div className={`text-sm mt-1 ${isSelected ? 'text-purple-700' : 'text-slate-600'}`}>{cond.description}</div>
-                                            )}
-                                        </div>
-                                        {isSelected && <CheckCircle className="text-purple-600 flex-shrink-0" size={24} aria-hidden="true" />}
-                                    </div>
+                                    <span className={`font-semibold text-sm ${isSelected ? 'text-purple-800' : 'text-slate-800'}`}>{cond.name}</span>
+                                    {isSelected && <CheckCircle className="text-purple-600 flex-shrink-0" size={18} aria-hidden="true" />}
                                 </button>
                             );
                         })}
