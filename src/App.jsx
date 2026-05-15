@@ -88,6 +88,7 @@ import RouteAnnouncer from './components/RouteAnnouncer.jsx';
 import EpicConnectButton from './components/EpicConnectButton.jsx';
 // Medications Context Provider - fetches from database with JSON fallback
 import { MedicationsProvider, useMedicationsList } from './context/MedicationsContext.jsx';
+import { ConditionsProvider } from './context/ConditionsContext.jsx';
 // Reporting Admin Auth Provider
 import { ReportingAuthProvider } from './context/ReportingAuthContext.jsx';
 // Hospital Admin Auth + Tenant Providers
@@ -6821,19 +6822,21 @@ const App = () => {
     return (
         <SimpleViewProvider>
             <MedicationsProvider>
-                <SubscriberAuthProvider>
-                    <ChatQuizProvider>
-                        <BrowserRouter>
-                            <DemoModeProvider>
-                                <DemoBanner />
-                                <GoogleAnalytics />
-                                <ScrollToTop />
-                                <RouteAnnouncer />
-                                <AppRoutes />
-                            </DemoModeProvider>
-                        </BrowserRouter>
-                    </ChatQuizProvider>
-                </SubscriberAuthProvider>
+                <ConditionsProvider>
+                    <SubscriberAuthProvider>
+                        <ChatQuizProvider>
+                            <BrowserRouter>
+                                <DemoModeProvider>
+                                    <DemoBanner />
+                                    <GoogleAnalytics />
+                                    <ScrollToTop />
+                                    <RouteAnnouncer />
+                                    <AppRoutes />
+                                </DemoModeProvider>
+                            </BrowserRouter>
+                        </ChatQuizProvider>
+                    </SubscriberAuthProvider>
+                </ConditionsProvider>
             </MedicationsProvider>
         </SimpleViewProvider>
     );

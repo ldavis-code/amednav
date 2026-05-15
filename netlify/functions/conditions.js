@@ -18,29 +18,50 @@ export async function handler(event) {
   try {
     // Single condition by ID
     if (params.id) {
-      const rows = await sql(`SELECT * FROM ${table} WHERE id = $1 LIMIT 1`, [params.id]);
+      const rows = await sql(
+        `SELECT id, name, category, description FROM ${table} WHERE id = $1 LIMIT 1`,
+        [params.id]
+      );
       if (rows.length === 0) {
         return { statusCode: 404, headers, body: JSON.stringify({ error: 'Condition not found' }) };
       }
-      return { statusCode: 200, headers, body: JSON.stringify({ condition: rows[0] }) };
+      return { statusCode: 200, headers, body: JSON.stringify({ condition: formatCondition(rows[0]) }) };
     }
 
-    // Search by name
+    // Search by name or description
     if (params.search) {
       const term = `%${params.search}%`;
       const rows = await sql(
-        `SELECT * FROM ${table} WHERE name ILIKE $1 OR description ILIKE $1 ORDER BY name`,
+        `SELECT id, name, category, description FROM ${table} WHERE name ILIKE $1 OR description ILIKE $1 ORDER BY name`,
         [term]
       );
-      return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows }) };
+      return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows.map(formatCondition) }) };
+    }
+
+    // Filter by category (exact match)
+    if (params.category) {
+      const rows = await sql(
+        `SELECT id, name, category, description FROM ${table} WHERE category = $1 ORDER BY name`,
+        [params.category]
+      );
+      return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows.map(formatCondition) }) };
     }
 
     // All conditions
-    const rows = await sql(`SELECT * FROM ${table} ORDER BY name`);
-    return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows }) };
+    const rows = await sql(`SELECT id, name, category, description FROM ${table} ORDER BY name`);
+    return { statusCode: 200, headers, body: JSON.stringify({ conditions: rows.map(formatCondition) }) };
 
   } catch (error) {
     console.error('Conditions query error:', error);
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Database query failed' }) };
   }
+}
+
+function formatCondition(row) {
+  return {
+    id: row.id,
+    name: row.name,
+    category: row.category,
+    description: row.description,
+  };
 }
