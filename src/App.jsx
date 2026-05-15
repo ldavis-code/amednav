@@ -88,8 +88,8 @@ import RouteAnnouncer from './components/RouteAnnouncer.jsx';
 import EpicConnectButton from './components/EpicConnectButton.jsx';
 // Medications Context Provider - fetches from database with JSON fallback
 import { MedicationsProvider, useMedicationsList } from './context/MedicationsContext.jsx';
-import { ConditionsProvider } from './context/ConditionsContext.jsx';
-import { SavingsProgramsProvider } from './context/SavingsProgramsContext.jsx';
+import { ConditionsProvider, useConditionsList, useConditionsByCategory } from './context/ConditionsContext.jsx';
+import { SavingsProgramsProvider, useSavingsProgramsList } from './context/SavingsProgramsContext.jsx';
 // Reporting Admin Auth Provider
 import { ReportingAuthProvider } from './context/ReportingAuthContext.jsx';
 // Hospital Admin Auth + Tenant Providers
@@ -263,14 +263,17 @@ const getAssistantResponse = (userMessage, context = {}) => {
 
     // Context-aware responses based on wizard state
     if (context.wizardStep) {
-        if (context.wizardStep === 5) {
-            return "**Selecting Medications:**\n\nChoose all medications you currently take or expect to take. Don't worry if you're not sure - you can always update this later.\n\n💡 **Tip:** If you select medications, we'll show you direct links to their manufacturer assistance programs in your results.";
+        if (context.wizardStep === 1) {
+            return "**Choosing a Category:**\n\nPick the medical specialty that best fits the conditions you're managing (e.g. Hepatology for liver-related conditions, Oncology for cancer). The next step will show conditions specific to that category.";
         }
-        if (context.wizardStep === 6) {
+        if (context.wizardStep === 2) {
+            return "**Selecting Conditions:**\n\nChoose all conditions that apply within the category you picked. The medication step will suggest drugs commonly used for these conditions, but you can always add others.";
+        }
+        if (context.wizardStep === 3) {
+            return "**Selecting Medications:**\n\nWe've suggested medications commonly used for your condition(s). Add the ones you take, or use the search box / \"Show all medications\" toggle to find others.\n\n💡 **Tip:** Selected medications drive the copay-card and PAP recommendations on the results page.";
+        }
+        if (context.wizardStep === 4) {
             return ASSISTANT_KNOWLEDGE_BASE.specialtyPharmacy.response;
-        }
-        if (context.wizardStep === 7) {
-            return "**Financial Status:**\n\nBe honest about your situation - this helps us prioritize the best programs for you:\n\n• **Manageable**: Focus on copay cards and savings\n• **Challenging**: PAPs + foundations recommended\n• **Unaffordable/Crisis**: Immediate PAP applications + Medicaid check\n\nYour answer is never stored or shared.";
         }
     }
 
@@ -1548,6 +1551,8 @@ function useLocalSubscriptionStatus(feature = null) {
 const Wizard = () => {
     useMetaTags(seoMetadata.wizard);
     const MEDICATIONS = useMedicationsList();
+    const allConditions = useConditionsList();
+    const allPrograms = useSavingsProgramsList();
     const { setAnswer: setContextAnswer } = useChatQuiz();
 
     // Map InsuranceType display values to ChatQuizContext format
@@ -1567,12 +1572,32 @@ const Wizard = () => {
 
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState({
-        conditions: [],
+        category: null,
+        conditionIds: [],
         insurance: null,
         medications: [],
         specialtyPharmacyAware: null,
-        financialStatus: null,
     });
+
+    // Medication IDs linked to the selected conditions (populated when leaving
+    // Step 2). null = no filter applied yet. Empty array = filter applied but
+    // no links were found.
+    const [conditionLinkedMedIds, setConditionLinkedMedIds] = useState(null);
+    const [isLoadingLinks, setIsLoadingLinks] = useState(false);
+    const [showAllMeds, setShowAllMeds] = useState(false);
+
+    // Conditions available for the chosen category (for Step 2)
+    const conditionsForCategory = useConditionsByCategory(answers.category);
+
+    // Derive the Category list from DISTINCT category values present in the
+    // conditions data. Sorted alphabetically.
+    const categoryOptions = useMemo(() => {
+        const seen = new Set();
+        for (const c of allConditions) {
+            if (c.category) seen.add(c.category);
+        }
+        return [...seen].sort((a, b) => a.localeCompare(b));
+    }, [allConditions]);
 
     // Search state for medication step
     const [medSearchTerm, setMedSearchTerm] = useState('');
@@ -1653,14 +1678,38 @@ const Wizard = () => {
     const nextStep = () => setStep(step + 1);
     const prevStep = () => setStep(step - 1);
 
-    // Navigation Logic - 4 quiz steps + results
-    const handleNextFromConditions = () => { trackServerEvent('quiz_start'); setStep(2); };
-    const handleNextFromMeds = () => setStep(3);
-    const handleNextFromInsurance = () => setStep(4);
-    const handleNextFromAffordability = () => {
-        // Go directly to results
-        setStep(5);
+    // Navigation Logic - 4 quiz steps + results (Step 5)
+    const handleNextFromCategory = () => { trackServerEvent('quiz_start'); setStep(2); };
+
+    // Step 2 -> Step 3: fetch the medications linked to each selected condition
+    // and union them. The Step 3 UI uses this as the default filtered list.
+    const handleNextFromCondition = async () => {
+        const ids = answers.conditionIds || [];
+        if (ids.length === 0) return;
+        setIsLoadingLinks(true);
+        try {
+            const responses = await Promise.all(
+                ids.map(id =>
+                    fetch(`/.netlify/functions/condition-med-links?conditionId=${encodeURIComponent(id)}`)
+                        .then(r => r.ok ? r.json() : { links: [] })
+                        .catch(() => ({ links: [] }))
+                )
+            );
+            const linked = new Set();
+            for (const res of responses) {
+                for (const link of (res.links || [])) {
+                    if (link.medication_id) linked.add(link.medication_id);
+                }
+            }
+            setConditionLinkedMedIds([...linked]);
+        } finally {
+            setIsLoadingLinks(false);
+            setStep(3);
+        }
     };
+
+    const handleNextFromMeds = () => setStep(4);
+    const handleNextFromInsurance = () => setStep(5);
 
     // Track quiz completion when user reaches results
     useEffect(() => {
@@ -1671,7 +1720,7 @@ const Wizard = () => {
     const isCommercialInsurance = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
 
     // Step labels for progress bar (4 quiz steps, results is step 5)
-    const stepLabels = ['Conditions', 'Medications', 'Insurance', 'Affordability'];
+    const stepLabels = ['Category', 'Condition', 'Medications', 'Insurance'];
     const totalVisibleSteps = 4; // 4 sections shown in progress
 
     // Color themes for each step
@@ -1727,8 +1776,8 @@ const Wizard = () => {
     };
 
 
-    // Step 3: Your Insurance (combines Insurance + Specialty Pharmacy for commercial)
-    if (step === 3) {
+    // Step 4: Your Insurance (combines Insurance + Specialty Pharmacy for commercial)
+    if (step === 4) {
         const insuranceOptions = [
             {
                 value: InsuranceType.COMMERCIAL,
@@ -1866,16 +1915,23 @@ const Wizard = () => {
                     disabled={!answers.insurance}
                     onClick={handleNextFromInsurance}
                     className="w-full py-3 bg-plum-700 disabled:bg-slate-300 text-white font-bold rounded-lg disabled:cursor-not-allowed transition hover:bg-plum-800"
-                    aria-label="Continue to next section"
+                    aria-label="See your results"
                 >
-                    Next Section
+                    See Your Results →
                 </button>
             </div>
         );
     }
 
-    // Step 2: Your Medications
-    if (step === 2) {
+    // Step 3: Your Medications
+    if (step === 3) {
+        // Default-filter the catalog to medications linked to the chosen
+        // conditions. The "Show all medications" toggle reveals the full
+        // catalog and broadens the search scope.
+        const hasLinkFilter = Array.isArray(conditionLinkedMedIds) && conditionLinkedMedIds.length > 0 && !showAllMeds;
+        const browsableMeds = hasLinkFilter
+            ? MEDICATIONS.filter(m => conditionLinkedMedIds.includes(m.id))
+            : MEDICATIONS;
         return (
             <div className="max-w-3xl mx-auto">
 
@@ -1938,11 +1994,15 @@ const Wizard = () => {
                             </button>
                         )}
                     </div>
-                    {medSearchResult && medSearchTerm && !isMedSearching && (
+                    {medSearchResult && medSearchTerm && !isMedSearching && (() => {
+                        const visibleResults = hasLinkFilter
+                            ? medSearchResult.filter(m => conditionLinkedMedIds.includes(m.id))
+                            : medSearchResult;
+                        return (
                         <div className="mt-2 bg-slate-50 border border-slate-200 rounded-lg max-h-60 overflow-y-auto">
-                            {medSearchResult.length > 0 ? (
+                            {visibleResults.length > 0 ? (
                                 <div className="divide-y divide-slate-100">
-                                    {medSearchResult.slice(0, 8).map(med => {
+                                    {visibleResults.slice(0, 8).map(med => {
                                         const isAlreadySelected = (answers.medications || []).includes(med.id);
                                         return (
                                             <button
@@ -1966,11 +2026,14 @@ const Wizard = () => {
                                 </div>
                             ) : (
                                 <div className="p-4 text-center text-slate-500 text-sm">
-                                    No medications found. Try a different spelling or browse the list below.
+                                    {hasLinkFilter
+                                        ? 'No matches in your condition-linked list. Toggle "Show all medications" below to search the full catalog.'
+                                        : 'No medications found. Try a different spelling or browse the list below.'}
                                 </div>
                             )}
                         </div>
-                    )}
+                        );
+                    })()}
                 </div>
 
                 {/* Selected Medications Display */}
@@ -2001,6 +2064,65 @@ const Wizard = () => {
                     </div>
                 )}
 
+                {/* Browseable list: condition-linked meds (default) or full catalog */}
+                <div className="mb-6 bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                    <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                        <h3 className="font-bold text-slate-800">
+                            {hasLinkFilter
+                                ? `Common medications for your condition${(answers.conditionIds || []).length > 1 ? 's' : ''} (${browsableMeds.length})`
+                                : `All medications (${browsableMeds.length})`}
+                        </h3>
+                        {Array.isArray(conditionLinkedMedIds) && conditionLinkedMedIds.length > 0 && (
+                            <button
+                                onClick={() => setShowAllMeds(prev => !prev)}
+                                className="text-sm text-plum-700 hover:text-plum-900 underline min-h-[44px] px-2"
+                                aria-pressed={showAllMeds}
+                            >
+                                {showAllMeds ? 'Show only condition-linked' : 'Show all medications'}
+                            </button>
+                        )}
+                    </div>
+                    {isLoadingLinks && hasLinkFilter ? (
+                        <div className="flex items-center gap-2 text-slate-500 text-sm p-4">
+                            <Loader2 size={16} className="animate-spin" /> Loading suggested medications...
+                        </div>
+                    ) : browsableMeds.length === 0 ? (
+                        <div className="p-4 text-center text-slate-500 text-sm">
+                            {hasLinkFilter
+                                ? 'No medications linked to your selected conditions. Toggle "Show all medications" to see the full catalog.'
+                                : 'No medications available.'}
+                        </div>
+                    ) : (
+                        <div className="grid sm:grid-cols-2 gap-2 max-h-96 overflow-y-auto">
+                            {browsableMeds.map(med => {
+                                const isAlreadySelected = (answers.medications || []).includes(med.id);
+                                return (
+                                    <button
+                                        key={med.id}
+                                        onClick={() => isAlreadySelected ? handleMultiSelect('medications', med.id) : addMedFromSearch(med.id)}
+                                        className={`text-left p-3 rounded-lg border transition flex justify-between items-center gap-2 ${
+                                            isAlreadySelected
+                                                ? 'bg-plum-50 border-plum-300'
+                                                : 'bg-white border-slate-200 hover:border-plum-300 hover:bg-plum-50'
+                                        }`}
+                                        aria-pressed={isAlreadySelected}
+                                    >
+                                        <div className="min-w-0">
+                                            <div className="font-bold text-slate-900 text-sm truncate">{med.brandName}</div>
+                                            <div className="text-xs text-slate-500 truncate">{med.genericName}</div>
+                                        </div>
+                                        {isAlreadySelected ? (
+                                            <CheckCircle size={18} className="text-plum-600 flex-shrink-0" />
+                                        ) : (
+                                            <PlusCircle size={18} className="text-slate-400 flex-shrink-0" />
+                                        )}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
+
                 {/* Important Medical Information */}
                 <div className="mb-6 bg-amber-50 border border-amber-200 rounded-lg p-4">
                     <div className="flex items-start gap-3">
@@ -2026,32 +2148,15 @@ const Wizard = () => {
     }
 
     // Step 1: Your Conditions
+    // Step 1: Category (single-select). Source: DISTINCT category values
+    // present in the conditions table.
     if (step === 1) {
-        const conditionOptions = [
-            { value: 'Autoimmune', label: 'Autoimmune' },
-            { value: 'Behavioral Health', label: 'Behavioral Health' },
-            { value: 'Cardiovascular', label: 'Cardiovascular' },
-            { value: 'Dermatology', label: 'Dermatology' },
-            { value: 'Endocrine', label: 'Endocrine' },
-            { value: 'Gastrointestinal', label: 'Gastrointestinal' },
-            { value: 'Hematology', label: 'Hematology' },
-            { value: 'Hepatology', label: 'Hepatology' },
-            { value: 'Immunology', label: 'Immunology' },
-            { value: 'Infectious Disease', label: 'Infectious Disease' },
-            { value: 'Mental Health', label: 'Mental Health' },
-            { value: 'Metabolic', label: 'Metabolic' },
-            { value: 'Musculoskeletal', label: 'Musculoskeletal' },
-            { value: 'Nephrology', label: 'Nephrology' },
-            { value: 'Neurological', label: 'Neurological' },
-            { value: 'Oncology', label: 'Oncology' },
-            { value: 'Ophthalmology', label: 'Ophthalmology' },
-            { value: 'Pain Management', label: 'Pain Management' },
-            { value: 'Respiratory', label: 'Respiratory' },
-            { value: 'Sleep', label: 'Sleep' },
-            { value: 'Transplant', label: 'Transplant' },
-            { value: 'Urology', label: 'Urology' },
-            { value: "Women's Health", label: "Women's Health" },
-        ];
+        const handleCategoryPick = (cat) => {
+            // Switching category resets the chosen conditions + linked-med cache.
+            setAnswers({ ...answers, category: cat, conditionIds: [] });
+            setConditionLinkedMedIds(null);
+            setShowAllMeds(false);
+        };
 
         return (
             <div className="max-w-2xl mx-auto">
@@ -2061,160 +2166,136 @@ const Wizard = () => {
                     <div className="bg-sky-100 p-2 rounded-lg">
                         <Activity size={24} className="text-sky-600" />
                     </div>
-                    <h1 className="text-2xl font-bold">Your Condition</h1>
+                    <h1 className="text-2xl font-bold">Your Category</h1>
                 </div>
-                <p className="text-slate-600 mb-6">Select the condition(s) that apply to you. This helps us tailor your medication and assistance options.</p>
+                <p className="text-slate-600 mb-6">Pick the medical specialty that best fits the condition you're managing. You'll choose specific conditions next.</p>
 
-                <div className="space-y-3" role="group" aria-label="Select your conditions">
-                    {conditionOptions.map((option) => {
-                        const isSelected = (answers.conditions || []).includes(option.value);
-                        return (
-                            <button
-                                key={option.value}
-                                onClick={() => handleMultiSelect('conditions', option.value)}
-                                className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
-                                    isSelected
-                                        ? 'border-sky-600 bg-sky-100 ring-2 ring-sky-300 shadow-md'
-                                        : 'border-slate-300 bg-slate-50 hover:border-sky-400 hover:bg-sky-50 hover:shadow-md'
-                                }`}
-                                aria-pressed={isSelected}
-                            >
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <div className={`font-bold text-lg ${isSelected ? 'text-sky-800' : 'text-slate-800'}`}>{option.label}</div>
-                                        {option.description && (
-                                            <div className={`text-sm mt-1 ${isSelected ? 'text-sky-700' : 'text-slate-600'}`}>{option.description}</div>
-                                        )}
+                {categoryOptions.length === 0 ? (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+                        Conditions data could not be loaded. Please refresh and try again, or contact support if the problem persists.
+                    </div>
+                ) : (
+                    <div className="space-y-3" role="radiogroup" aria-label="Select a category">
+                        {categoryOptions.map((cat) => {
+                            const isSelected = answers.category === cat;
+                            return (
+                                <button
+                                    key={cat}
+                                    onClick={() => handleCategoryPick(cat)}
+                                    className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
+                                        isSelected
+                                            ? 'border-sky-600 bg-sky-100 ring-2 ring-sky-300 shadow-md'
+                                            : 'border-slate-300 bg-slate-50 hover:border-sky-400 hover:bg-sky-50 hover:shadow-md'
+                                    }`}
+                                    role="radio"
+                                    aria-checked={isSelected}
+                                >
+                                    <div className="flex justify-between items-start">
+                                        <div className={`font-bold text-lg ${isSelected ? 'text-sky-800' : 'text-slate-800'}`}>{cat}</div>
+                                        {isSelected && <CheckCircle className="text-sky-600 flex-shrink-0" size={24} aria-hidden="true" />}
                                     </div>
-                                    {isSelected && <CheckCircle className="text-sky-600 flex-shrink-0" size={24} aria-hidden="true" />}
-                                </div>
-                            </button>
-                        );
-                    })}
-                </div>
-
-                {(answers.conditions || []).length > 0 && (
-                    <div className="mt-4 bg-sky-50 border border-sky-200 rounded-xl p-4">
-                        <div className="flex items-center gap-2 mb-2">
-                            <CheckCircle size={18} className="text-sky-600" />
-                            <h3 className="font-bold text-slate-800">Selected ({(answers.conditions || []).length})</h3>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                            {(answers.conditions || []).map(val => (
-                                <span key={val} className="bg-white text-slate-700 px-3 py-1.5 rounded-full text-sm border border-sky-200 shadow-sm flex items-center gap-2">
-                                    {val}
-                                    <button
-                                        onClick={() => handleMultiSelect('conditions', val)}
-                                        className="text-slate-400 hover:text-red-500 transition"
-                                        aria-label={`Remove ${val}`}
-                                    >
-                                        <X size={14} />
-                                    </button>
-                                </span>
-                            ))}
-                        </div>
+                                </button>
+                            );
+                        })}
                     </div>
                 )}
 
                 <button
-                    disabled={(answers.conditions || []).length === 0}
-                    onClick={handleNextFromConditions}
+                    disabled={!answers.category}
+                    onClick={handleNextFromCategory}
                     className="w-full mt-6 py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-sky-600 hover:bg-sky-700 text-white cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
-                    aria-label="Continue to medications"
+                    aria-label="Continue to conditions"
                 >
-                    Continue to Medications →
+                    Continue to Conditions →
                 </button>
             </div>
         );
     }
 
-    // Step 4: Affordability (Financial Status)
-    if (step === 4) {
+    // Step 2: Condition (multi-select) filtered by chosen category.
+    if (step === 2) {
+        const selectedIds = answers.conditionIds || [];
+        const toggleCondition = (id) => {
+            const updated = selectedIds.includes(id)
+                ? selectedIds.filter(x => x !== id)
+                : [...selectedIds, id];
+            setAnswers({ ...answers, conditionIds: updated });
+            // Selection changed -> drop any cached link result so the next
+            // continue refetches.
+            setConditionLinkedMedIds(null);
+            setShowAllMeds(false);
+        };
+
         return (
             <div className="max-w-2xl mx-auto">
 
                 {renderProgress()}
-                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to previous section"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
+                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to category"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-amber-100 p-2 rounded-lg">
-                        <DollarSign size={24} className="text-amber-600" />
+                    <div className="bg-purple-100 p-2 rounded-lg">
+                        <Activity size={24} className="text-purple-600" />
                     </div>
-                    <h1 className="text-2xl font-bold">Affordability</h1>
+                    <h1 className="text-2xl font-bold">Your Condition{conditionsForCategory.length > 1 ? 's' : ''}</h1>
                 </div>
-                <p className="text-slate-600 mb-6">How would you describe your current medication costs?</p>
+                <p className="text-slate-600 mb-6">
+                    Select the condition(s) you're managing under <strong>{answers.category}</strong>.
+                </p>
 
-                <div className="bg-slate-50 p-4 rounded-lg mb-6 border border-slate-200 text-sm text-slate-600" role="note">
-                    This helps us prioritize the best assistance programs for you. We do not store this answer.
-                </div>
+                {conditionsForCategory.length === 0 ? (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+                        No conditions found for {answers.category}. Go back and pick a different category.
+                    </div>
+                ) : (
+                    <div className="space-y-3" role="group" aria-label="Select conditions">
+                        {conditionsForCategory.map((cond) => {
+                            const isSelected = selectedIds.includes(cond.id);
+                            return (
+                                <button
+                                    key={cond.id}
+                                    onClick={() => toggleCondition(cond.id)}
+                                    className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm ${
+                                        isSelected
+                                            ? 'border-purple-600 bg-purple-100 ring-2 ring-purple-300 shadow-md'
+                                            : 'border-slate-300 bg-slate-50 hover:border-purple-400 hover:bg-purple-50 hover:shadow-md'
+                                    }`}
+                                    aria-pressed={isSelected}
+                                >
+                                    <div className="flex justify-between items-start gap-3">
+                                        <div className="min-w-0">
+                                            <div className={`font-bold text-lg ${isSelected ? 'text-purple-800' : 'text-slate-800'}`}>{cond.name}</div>
+                                            {cond.description && (
+                                                <div className={`text-sm mt-1 ${isSelected ? 'text-purple-700' : 'text-slate-600'}`}>{cond.description}</div>
+                                            )}
+                                        </div>
+                                        {isSelected && <CheckCircle className="text-purple-600 flex-shrink-0" size={24} aria-hidden="true" />}
+                                    </div>
+                                </button>
+                            );
+                        })}
+                    </div>
+                )}
 
-                <div className="space-y-4" role="radiogroup" aria-label="Select your financial status">
-                    {[
-                        { val: FinancialStatus.MANAGEABLE, label: 'Manageable', desc: 'I can afford my medications but would like to save money', color: 'emerald' },
-                        { val: FinancialStatus.CHALLENGING, label: 'Challenging', desc: 'Medication costs are a significant burden', color: 'amber' },
-                        { val: FinancialStatus.UNAFFORDABLE, label: 'Unaffordable', desc: 'I struggle to pay for my medications', color: 'orange' },
-                        { val: FinancialStatus.CRISIS, label: 'I can\'t afford my medications', desc: 'I cannot afford my medications without help', color: 'rose' },
-                    ].map(opt => {
-                        const isSelected = answers.financialStatus === opt.val;
-                        const colorStyles = {
-                            emerald: {
-                                selected: 'border-plum-600 bg-plum-100 ring-2 ring-plum-300',
-                                unselected: 'border-plum-300 bg-plum-50 hover:border-plum-500 hover:bg-plum-100',
-                                label: isSelected ? 'text-plum-800' : 'text-plum-700',
-                                desc: isSelected ? 'text-plum-700' : 'text-plum-600',
-                                icon: 'text-plum-600'
-                            },
-                            amber: {
-                                selected: 'border-amber-600 bg-amber-100 ring-2 ring-amber-300',
-                                unselected: 'border-amber-300 bg-amber-50 hover:border-amber-500 hover:bg-amber-100',
-                                label: isSelected ? 'text-amber-800' : 'text-amber-700',
-                                desc: isSelected ? 'text-amber-700' : 'text-amber-600',
-                                icon: 'text-amber-600'
-                            },
-                            orange: {
-                                selected: 'border-orange-600 bg-orange-100 ring-2 ring-orange-300',
-                                unselected: 'border-orange-300 bg-orange-50 hover:border-orange-500 hover:bg-orange-100',
-                                label: isSelected ? 'text-orange-800' : 'text-orange-700',
-                                desc: isSelected ? 'text-orange-700' : 'text-orange-600',
-                                icon: 'text-orange-600'
-                            },
-                            rose: {
-                                selected: 'border-rose-600 bg-rose-100 ring-2 ring-rose-300',
-                                unselected: 'border-rose-300 bg-rose-50 hover:border-rose-500 hover:bg-rose-100',
-                                label: isSelected ? 'text-rose-800' : 'text-rose-700',
-                                desc: isSelected ? 'text-rose-700' : 'text-rose-600',
-                                icon: 'text-rose-600'
-                            }
-                        };
-                        const styles = colorStyles[opt.color];
-                        return (
-                            <button
-                                key={opt.val}
-                                onClick={() => { handleSingleSelect('financialStatus', opt.val); handleNextFromAffordability(); }}
-                                className={`w-full p-5 text-left rounded-xl border-3 transition-all duration-200 shadow-sm hover:shadow-md ${
-                                    isSelected ? styles.selected + ' shadow-md' : styles.unselected
-                                }`}
-                                role="radio"
-                                aria-checked={isSelected}
-                            >
-                                <div className="flex items-center justify-between mb-2">
-                                    <span className={`font-bold text-xl ${styles.label}`}>{opt.label}</span>
-                                    {isSelected && <CheckCircle className={styles.icon} size={24} aria-hidden="true" />}
-                                </div>
-                                <div className={`text-base ${styles.desc}`}>{opt.desc}</div>
-                            </button>
-                        );
-                    })}
-                </div>
+                <button
+                    disabled={selectedIds.length === 0 || isLoadingLinks}
+                    onClick={handleNextFromCondition}
+                    className="w-full mt-6 py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-purple-600 hover:bg-purple-700 text-white cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    aria-label="Continue to medications"
+                >
+                    {isLoadingLinks ? (<><Loader2 size={16} className="animate-spin" /> Loading...</>) : 'Continue to Medications →'}
+                </button>
             </div>
         );
     }
 
     // Step 5: Results
     if (step === 5) {
-        const isMedicare = answers.insurance === InsuranceType.MEDICARE;
-        const isCommercial = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
-        const isUninsured = answers.insurance === InsuranceType.UNINSURED;
-        const financial = answers.financialStatus;
+        const isCommercial = isCommercialInsurance;
+        const selectedMeds = (answers.medications || [])
+            .map(id => MEDICATIONS.find(m => m.id === id))
+            .filter(Boolean);
+        const selectedConditionNames = (answers.conditionIds || [])
+            .map(id => allConditions.find(c => c.id === id)?.name)
+            .filter(Boolean);
 
         return (
             <article className="max-w-4xl mx-auto space-y-8 pb-12">
@@ -2229,16 +2310,17 @@ const Wizard = () => {
                 </button>
 
                 {/* Header */}
-                <div className={`p-8 rounded-2xl shadow-xl text-white flex justify-between items-start ${
-                    financial === FinancialStatus.CRISIS || financial === FinancialStatus.UNAFFORDABLE
-                    ? 'bg-plum-900'
-                    : 'bg-plum-900'
-                }`}>
+                <div className="p-8 rounded-2xl shadow-xl text-white flex justify-between items-start bg-plum-900">
                     <div>
                         <h1 className="text-3xl font-bold mb-2">Your Medication Strategy</h1>
                         <p className="opacity-90">
                             Based on your inputs, here is how to navigate your costs.
                         </p>
+                        {selectedConditionNames.length > 0 && (
+                            <p className="opacity-80 mt-2 text-sm">
+                                Plan for: <strong>{selectedConditionNames.join(', ')}</strong>
+                            </p>
+                        )}
                     </div>
                     <button 
                         onClick={() => window.print()}
@@ -2374,109 +2456,129 @@ const Wizard = () => {
                         </section>
                     </div>
 
-                    {/* Column 2 (Right): Strategy / Action Plan */}
+                    {/* Column 2 (Right): Per-medication program cards */}
                     <div className="space-y-6">
-                        {financial === FinancialStatus.MANAGEABLE && (
-                            <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200" aria-labelledby="savings-heading">
-                                <h2 id="savings-heading" className="text-lg font-bold text-plum-800 border-b pb-2 mb-4 flex items-center gap-2">
-                                    <DollarSign size={20} aria-hidden="true" /> Maximize Your Savings
-                                </h2>
-                                <ul className="space-y-4 text-slate-700">
-                                    {isCommercial && (
-                                        <li className="flex gap-3 items-start">
-                                            <div className="bg-plum-100 text-plum-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Priority recommendation">Priority</div>
-                                            <div>
-                                                <strong>Use Manufacturer <TermTooltip term="copay">Copay</TermTooltip> Cards.</strong>
-                                                <p className="text-sm text-slate-600 mt-1">Even if you can afford the copay, these cards can lower it to as little as $0. Look up each of your brand name meds.</p>
+                        <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200" aria-labelledby="programs-heading">
+                            <h2 id="programs-heading" className="text-lg font-bold text-plum-800 border-b pb-2 mb-4 flex items-center gap-2">
+                                <HeartHandshake size={20} aria-hidden="true" /> Assistance for Your Medications
+                            </h2>
+                            {selectedMeds.length === 0 ? (
+                                <p className="text-sm text-slate-600">Add medications to see copay cards and patient assistance programs.</p>
+                            ) : (
+                                <div className="space-y-4">
+                                    {selectedMeds.map(med => {
+                                        const matches = allPrograms.filter(p => p.medicationId === med.id);
+                                        const copayCards = matches.filter(p => p.programType === 'copay_card');
+                                        const paps = matches.filter(p => p.programType === 'pap');
+                                        const foundations = matches.filter(p => p.programType === 'foundation');
+                                        // Copay cards only when commercially insured; everything else always.
+                                        const showCopay = isCommercial && copayCards.length > 0;
+                                        const hasAny = showCopay || paps.length > 0 || foundations.length > 0;
+
+                                        return (
+                                            <div key={med.id} className="border border-slate-200 rounded-lg p-4">
+                                                <div className="mb-2">
+                                                    <div className="font-bold text-slate-900">{med.brandName}</div>
+                                                    <div className="text-xs text-slate-500">{med.genericName}</div>
+                                                </div>
+                                                {!hasAny && (
+                                                    <p className="text-sm text-slate-500">
+                                                        No assistance programs on file. Visit the manufacturer site to check eligibility.
+                                                    </p>
+                                                )}
+                                                {showCopay && (
+                                                    <div className="mt-3">
+                                                        <h3 className="text-sm font-semibold text-plum-700 mb-2 flex items-center gap-1.5">
+                                                            <DollarSign className="w-4 h-4" aria-hidden="true" /> Copay Card Programs
+                                                        </h3>
+                                                        <div className="space-y-2">
+                                                            {copayCards.map(p => (
+                                                                <div key={p.id} className="bg-plum-50 border border-plum-200 rounded-lg p-3">
+                                                                    <div className="flex items-start justify-between gap-2">
+                                                                        <div className="min-w-0">
+                                                                            <p className="font-medium text-plum-900 text-sm">{p.programName}</p>
+                                                                            {p.maxBenefit && <p className="text-plum-700 text-xs mt-0.5">{p.maxBenefit}</p>}
+                                                                            {p.phone && <p className="text-plum-700 text-xs mt-0.5">Phone: {p.phone}</p>}
+                                                                        </div>
+                                                                        {p.url && (
+                                                                            <a href={p.url} target="_blank" rel="noopener noreferrer"
+                                                                                className="flex items-center gap-1 px-3 py-1.5 bg-plum-600 text-white text-xs font-medium rounded-lg hover:bg-plum-700 transition flex-shrink-0 min-h-[32px]">
+                                                                                Apply <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                                                                            </a>
+                                                                        )}
+                                                                    </div>
+                                                                    {p.notes && <p className="text-plum-600 text-xs mt-1">{p.notes}</p>}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {paps.length > 0 && (
+                                                    <div className="mt-3">
+                                                        <h3 className="text-sm font-semibold text-purple-700 mb-2 flex items-center gap-1.5">
+                                                            <Heart className="w-4 h-4" aria-hidden="true" /> Patient Assistance Programs
+                                                        </h3>
+                                                        <div className="space-y-2">
+                                                            {paps.map(p => (
+                                                                <div key={p.id} className="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                                                                    <div className="flex items-start justify-between gap-2">
+                                                                        <div className="min-w-0">
+                                                                            <p className="font-medium text-purple-900 text-sm">{p.programName}</p>
+                                                                            {p.maxBenefit && <p className="text-purple-700 text-xs mt-0.5">{p.maxBenefit}</p>}
+                                                                            {p.incomeLimit && <p className="text-purple-700 text-xs mt-0.5">Income: {p.incomeLimit}</p>}
+                                                                            {p.phone && <p className="text-purple-700 text-xs mt-0.5">Phone: {p.phone}</p>}
+                                                                        </div>
+                                                                        {p.url && (
+                                                                            <a href={p.url} target="_blank" rel="noopener noreferrer"
+                                                                                className="flex items-center gap-1 px-3 py-1.5 bg-purple-600 text-white text-xs font-medium rounded-lg hover:bg-purple-700 transition flex-shrink-0 min-h-[32px]">
+                                                                                Apply <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                                                                            </a>
+                                                                        )}
+                                                                    </div>
+                                                                    {p.notes && <p className="text-purple-600 text-xs mt-1">{p.notes}</p>}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {foundations.length > 0 && (
+                                                    <div className="mt-3">
+                                                        <h3 className="text-sm font-semibold text-amber-700 mb-2 flex items-center gap-1.5">
+                                                            <Award className="w-4 h-4" aria-hidden="true" /> Foundation Grants
+                                                        </h3>
+                                                        <div className="space-y-2">
+                                                            {foundations.map(p => (
+                                                                <div key={p.id} className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                                                                    <div className="flex items-start justify-between gap-2">
+                                                                        <div className="min-w-0">
+                                                                            <p className="font-medium text-amber-900 text-sm">{p.programName}</p>
+                                                                            {p.maxBenefit && <p className="text-amber-700 text-xs mt-0.5">{p.maxBenefit}</p>}
+                                                                            {p.phone && <p className="text-amber-700 text-xs mt-0.5">Phone: {p.phone}</p>}
+                                                                        </div>
+                                                                        {p.url && (
+                                                                            <a href={p.url} target="_blank" rel="noopener noreferrer"
+                                                                                className="flex items-center gap-1 px-3 py-1.5 bg-amber-600 text-white text-xs font-medium rounded-lg hover:bg-amber-700 transition flex-shrink-0 min-h-[32px]">
+                                                                                Apply <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                                                                            </a>
+                                                                        )}
+                                                                    </div>
+                                                                    {p.notes && <p className="text-amber-600 text-xs mt-1">{p.notes}</p>}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {!isCommercial && copayCards.length > 0 && (
+                                                    <p className="text-xs text-slate-400 italic mt-3">
+                                                        Copay card programs require commercial insurance and are hidden based on your selection.
+                                                    </p>
+                                                )}
                                             </div>
-                                        </li>
-                                    )}
-                                    <li className="flex gap-3 items-start">
-                                        <div className="bg-plum-100 text-plum-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Comparison tip">Compare</div>
-                                        <div>
-                                            <strong>Check Cash Prices.</strong>
-                                            <p className="text-sm text-slate-600 mt-1">Compare your insurance copay against cash prices at Mark Cuban Cost Plus Drugs or using GoodRx.</p>
-                                        </div>
-                                    </li>
-                                    {isCommercial && (
-                                        <li className="flex gap-3 items-start">
-                                            <div className="bg-slate-100 text-slate-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Verification step">Verify</div>
-                                            <div>
-                                                <strong><TermTooltip term="specialty-pharmacy">Specialty Pharmacy</TermTooltip>.</strong>
-                                                <p className="text-sm text-slate-600 mt-1">Ensure you are using the mandated pharmacy to avoid surprise full-price bills.</p>
-                                            </div>
-                                        </li>
-                                    )}
-                                </ul>
-                                <div className="mt-6 pt-4 border-t border-slate-100">
-                                    <p className="text-sm text-slate-600 italic">Tip: You may still qualify for <TermTooltip term="pap">PAPs</TermTooltip> based on income, even if costs feel manageable right now.</p>
+                                        );
+                                    })}
                                 </div>
-                            </section>
-                        )}
-
-                        {financial === FinancialStatus.CHALLENGING && (
-                            <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200" aria-labelledby="burden-heading">
-                                <h2 id="burden-heading" className="text-lg font-bold text-amber-700 border-b pb-2 mb-4 flex items-center gap-2">
-                                    <Shield size={20} aria-hidden="true" /> Reduce Your Burden
-                                </h2>
-                                <ul className="space-y-4 text-slate-700">
-                                    <li className="flex gap-3 items-start">
-                                        <div className="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Step one">Step 1</div>
-                                        <div>
-                                            <strong>Check Manufacturer PAPs.</strong>
-                                            <p className="text-sm text-slate-600 mt-1">Go to the manufacturer website for your brand name meds. If eligible, you could get the med for free.</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex gap-3 items-start">
-                                        <div className="bg-sky-100 text-sky-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Step two">Step 2</div>
-                                        <div>
-                                            <strong>Apply to <TermTooltip term="foundation-grant">Foundations</TermTooltip>.</strong>
-                                            <p className="text-sm text-slate-600 mt-1">Organizations like HealthWell or PAN Foundation help pay for copays. Apply to them for your specific disease fund.</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex gap-3 items-start">
-                                        <div className="bg-slate-100 text-slate-800 text-xs font-bold px-2 py-1 rounded mt-0.5" aria-label="Step three">Step 3</div>
-                                        <div>
-                                            <strong>Compare vs. Cash.</strong>
-                                            <p className="text-sm text-slate-600 mt-1">Sometimes the cash price (e.g. Cost Plus Drugs) is cheaper than your insurance copay.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </section>
-                        )}
-
-                        {(financial === FinancialStatus.UNAFFORDABLE || financial === FinancialStatus.CRISIS) && (
-                            <section className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-rose-500" role="alert" aria-labelledby="assistance-heading">
-                                <h2 id="assistance-heading" className="text-lg font-bold text-rose-800 border-b pb-2 mb-4 flex items-center gap-2">
-                                    <AlertTriangle size={20} aria-hidden="true" /> Immediate Assistance Path
-                                </h2>
-                                {financial === FinancialStatus.CRISIS && (
-                                    <p className="text-sm text-slate-600 mb-4 bg-slate-50 p-3 rounded">
-                                        You are not alone. Help is available. Please follow these steps in order.
-                                    </p>
-                                )}
-                                <ol className="space-y-4 text-slate-700 list-decimal pl-6">
-                                    <li>
-                                        <strong>Manufacturer PAPs (Free Drug).</strong>
-                                        <p className="text-sm text-slate-600 mt-1">
-                                            Most manufacturers have a "Patient Assistance Program". This is your best route for free medication. 
-                                            <br/>
-                                            <Link to={`/medications?ids=${(answers.medications || []).join(',')}`} className="text-rose-700 font-bold underline">Search your med here</Link> to find the manufacturer link.
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <strong>Check Medicaid Eligibility.</strong>
-                                        <p className="text-sm text-slate-600 mt-1">If you have low income, check if you qualify for state Medicaid or "Extra Help" (if on Medicare).</p>
-                                    </li>
-                                    {answers.insurance === InsuranceType.IHS && (
-                                        <li>
-                                            <strong>Contact IHS / Tribal Health.</strong>
-                                            <p className="text-sm text-slate-600 mt-1">You likely have coverage for these medications at $0 cost at IHS facilities.</p>
-                                        </li>
-                                    )}
-                                </ol>
-                            </section>
-                        )}
+                            )}
+                        </section>
                     </div>
                 </div>
 
