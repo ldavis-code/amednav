@@ -19,37 +19,57 @@ export function MedicationsProvider({ children }) {
                 const dbMedications = await fetchAllMedications();
 
                 if (!cancelled && dbMedications && dbMedications.length > 0) {
-                    // Merge database data with JSON fallback to ensure all medications are present
-                    // Start with ALL fallback medications, then merge in database values
-                    // This ensures medications like prednisone are always included even if missing from DB
-                    const dbMedicationsMap = new Map(dbMedications.map(m => [m.id, m]));
+                    // The JSON file uses string slug IDs ("tacrolimus") while the
+                    // Neon medications table uses integer IDs. Match rows by
+                    // normalized generic_name so JSON's rich field set can be
+                    // joined with the DB's integer id (attached as `dbId` for
+                    // use in tables that FK to medications.id, e.g.
+                    // condition_medications, savings_programs).
+                    const normalize = (s) => (s || '').toLowerCase().trim();
+                    const dbByGeneric = new Map(
+                        dbMedications
+                            .filter(m => m.genericName)
+                            .map(m => [normalize(m.genericName), m])
+                    );
 
                     const mergedMedications = MEDICATIONS_FALLBACK.map(fallbackMed => {
-                        const dbMed = dbMedicationsMap.get(fallbackMed.id);
-                        if (dbMed) {
-                            // Database values take priority, but use fallback for missing/null fields
-                            return {
-                                ...fallbackMed,
-                                ...dbMed,
-                                // Explicit fallbacks for critical program fields
-                                copayUrl: dbMed.copayUrl || fallbackMed.copayUrl,
-                                copayProgramId: dbMed.copayProgramId || fallbackMed.copayProgramId,
-                                papUrl: dbMed.papUrl || fallbackMed.papUrl,
-                                papProgramId: dbMed.papProgramId || fallbackMed.papProgramId,
-                                supportUrl: dbMed.supportUrl || fallbackMed.supportUrl,
-                                medicarePartDUrl: dbMed.medicarePartDUrl || fallbackMed.medicarePartDUrl,
-                                medicare2026Note: dbMed.medicare2026Note || fallbackMed.medicare2026Note,
-                            };
-                        }
-                        // Medication exists in fallback but not in database - use fallback
-                        return fallbackMed;
+                        const dbMed = dbByGeneric.get(normalize(fallbackMed.genericName));
+                        if (!dbMed) return fallbackMed;
+                        return {
+                            ...fallbackMed,
+                            // Preserve string slug as `id` for app code that
+                            // hardcodes slugs (App.jsx ORGAN_MEDICATIONS,
+                            // SavingsCalculator, chatbotGuidance, URL params).
+                            id: fallbackMed.id,
+                            // Attach DB integer id separately for joins.
+                            dbId: dbMed.id,
+                        };
                     });
 
-                    // Also add any medications that exist in database but not in fallback
-                    const fallbackIds = new Set(MEDICATIONS_FALLBACK.map(m => m.id));
-                    const dbOnlyMedications = dbMedications.filter(m => !fallbackIds.has(m.id));
+                    // Log unmatched rows so data drift is visible in dev tools.
+                    const matchedGenerics = new Set(
+                        mergedMedications
+                            .filter(m => m.dbId != null)
+                            .map(m => normalize(m.genericName))
+                    );
+                    const unmatchedDb = dbMedications.filter(
+                        m => m.genericName && !matchedGenerics.has(normalize(m.genericName))
+                    );
+                    if (unmatchedDb.length > 0) {
+                        console.warn(
+                            `MedicationsContext: ${unmatchedDb.length} DB row(s) with no JSON match.`,
+                            unmatchedDb.map(m => ({ dbId: m.id, genericName: m.genericName }))
+                        );
+                    }
+                    const unmatchedJson = mergedMedications.filter(m => m.dbId == null);
+                    if (unmatchedJson.length > 0) {
+                        console.warn(
+                            `MedicationsContext: ${unmatchedJson.length} JSON med(s) with no DB match (joins by dbId will skip these).`,
+                            unmatchedJson.map(m => ({ id: m.id, genericName: m.genericName }))
+                        );
+                    }
 
-                    setMedications([...mergedMedications, ...dbOnlyMedications]);
+                    setMedications(mergedMedications);
                     setSource('database');
                     setError(null);
                 }

@@ -1931,7 +1931,7 @@ const Wizard = () => {
         // catalog and broadens the search scope.
         const hasLinkFilter = Array.isArray(conditionLinkedMedIds) && conditionLinkedMedIds.length > 0 && !showAllMeds;
         const browsableMeds = hasLinkFilter
-            ? MEDICATIONS.filter(m => conditionLinkedMedIds.includes(m.id))
+            ? MEDICATIONS.filter(m => m.dbId != null && conditionLinkedMedIds.includes(m.dbId))
             : MEDICATIONS;
         return (
             <div className="max-w-3xl mx-auto">
@@ -2492,7 +2492,11 @@ const Wizard = () => {
                             ) : (
                                 <div className="space-y-4">
                                     {selectedMeds.map(med => {
-                                        const matches = allPrograms.filter(p => p.medicationId === med.id);
+                                        // savings_programs.medication_id is integer FK to medications.id,
+                                        // so match on the merged dbId rather than the slug-style m.id.
+                                        const matches = med.dbId != null
+                                            ? allPrograms.filter(p => p.medicationId === med.dbId)
+                                            : [];
                                         const copayCards = matches.filter(p => p.programType === 'copay_card');
                                         const paps = matches.filter(p => p.programType === 'pap');
                                         const foundations = matches.filter(p => p.programType === 'foundation');
