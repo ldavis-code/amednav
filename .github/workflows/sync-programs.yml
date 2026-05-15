@@ -1,0 +1,47 @@
+name: Sync programs.json to Neon
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode"
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - apply
+  push:
+    branches: [main]
+    paths:
+      - src/data/programs.json
+      - scripts/sync_programs_to_neon.js
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run sync
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "::error::DATABASE_URL secret is not set on this repository."
+            exit 1
+          fi
+          MODE="${{ github.event.inputs.mode || 'dry-run' }}"
+          echo "Running sync in $MODE mode"
+          if [ "$MODE" = "apply" ]; then
+            node scripts/sync_programs_to_neon.js --apply --verbose
+          else
+            node scripts/sync_programs_to_neon.js --verbose
+          fi
