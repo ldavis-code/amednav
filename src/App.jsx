@@ -747,7 +747,7 @@ const Home = () => {
                             <Activity size={20} className="md:hidden" />
                             <Activity size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-sky-700">76</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-sky-700">88</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Conditions</div>
                     </div>
                     <div className="bg-gradient-to-br from-plum-50 to-plum-100 rounded-2xl p-4 md:p-6 text-center border border-plum-200 shadow-sm hover:shadow-md transition-shadow">
@@ -755,7 +755,7 @@ const Home = () => {
                             <Pill size={20} className="md:hidden" />
                             <Pill size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">452</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-plum-700">470</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Medications</div>
                     </div>
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 md:p-6 text-center border border-amber-200 shadow-sm hover:shadow-md transition-shadow">
@@ -763,7 +763,7 @@ const Home = () => {
                             <HeartHandshake size={20} className="md:hidden" />
                             <HeartHandshake size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-amber-700">94</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-amber-700">105</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Patient Assistance Programs</div>
                     </div>
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-4 md:p-6 text-center border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
@@ -771,7 +771,7 @@ const Home = () => {
                             <CreditCard size={20} className="md:hidden" />
                             <CreditCard size={24} className="hidden md:block" />
                         </div>
-                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">117</div>
+                        <div className="text-2xl md:text-4xl font-extrabold text-emerald-700">128</div>
                         <div className="text-xs md:text-sm text-slate-600 font-medium mt-1">Copay Cards</div>
                     </div>
                 </div>
