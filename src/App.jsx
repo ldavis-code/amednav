@@ -1721,8 +1721,8 @@ const Wizard = () => {
     const isCommercialInsurance = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
 
     // Step labels for progress bar (4 quiz steps, results is step 5)
-    const stepLabels = ['Category', 'Condition', 'Medications', 'Insurance'];
-    const totalVisibleSteps = 4; // 4 sections shown in progress
+    const stepLabels = ['Category', 'Condition', 'Medications', 'Insurance', 'Med Strategy'];
+    const totalVisibleSteps = 5; // 5 sections shown in progress
 
     // Color themes for each step
     const stepColors = {
@@ -1730,6 +1730,7 @@ const Wizard = () => {
         2: { bg: 'bg-purple-500', bgLight: 'bg-purple-100', ring: 'ring-purple-100', text: 'text-purple-600', textBold: 'text-purple-700', border: 'border-purple-500', bgSelect: 'bg-purple-50', hoverBorder: 'hover:border-purple-200', badge: 'bg-purple-600' },
         3: { bg: 'bg-plum-500', bgLight: 'bg-plum-100', ring: 'ring-plum-100', text: 'text-plum-600', textBold: 'text-plum-700', border: 'border-plum-500', bgSelect: 'bg-plum-50', hoverBorder: 'hover:border-plum-200', badge: 'bg-plum-600' },
         4: { bg: 'bg-teal-500', bgLight: 'bg-teal-100', ring: 'ring-teal-100', text: 'text-teal-600', textBold: 'text-teal-700', border: 'border-teal-500', bgSelect: 'bg-teal-50', hoverBorder: 'hover:border-teal-200', badge: 'bg-teal-600' },
+        5: { bg: 'bg-emerald-500', bgLight: 'bg-emerald-100', ring: 'ring-emerald-100', text: 'text-emerald-600', textBold: 'text-emerald-700', border: 'border-emerald-500', bgSelect: 'bg-emerald-50', hoverBorder: 'hover:border-emerald-200', badge: 'bg-emerald-600' },
     };
 
     const renderProgress = () => {
@@ -2324,6 +2325,8 @@ const Wizard = () => {
 
         return (
             <article className="max-w-4xl mx-auto space-y-8 pb-12">
+
+                {renderProgress()}
 
                 {/* Back Button */}
                 <button
