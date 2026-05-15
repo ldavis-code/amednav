@@ -12,7 +12,7 @@ export async function handler(event) {
   }
 
   const sql = neon(process.env.DATABASE_URL);
-  const linksTable = process.env.CONDITION_MED_LINKS || 'condition_med_links';
+  const linksTable = process.env.CONDITION_MED_LINKS || 'condition_medications';
   const medsTable = process.env.MEDICATIONS || 'medications';
   const condTable = process.env.CONDITIONS || 'conditions';
   const params = event.queryStringParameters || {};
