@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { fetchAllMedications } from '../lib/medicationsApi.js';
 import MEDICATIONS_FALLBACK from '../data/medications.json';
+import { LIVER_ONLY, isLiverMedicationId } from '../lib/liverScope.js';
 
 const MedicationsContext = createContext(null);
 
@@ -16,7 +17,10 @@ export function MedicationsProvider({ children }) {
         async function loadMedications() {
             try {
                 setIsLoading(true);
-                const dbMedications = await fetchAllMedications();
+                const dbMedicationsRaw = await fetchAllMedications();
+                const dbMedications = LIVER_ONLY
+                    ? (dbMedicationsRaw || []).filter((m) => isLiverMedicationId(m.id))
+                    : dbMedicationsRaw;
 
                 if (!cancelled && dbMedications && dbMedications.length > 0) {
                     // The JSON file uses string slug IDs ("tacrolimus") while the

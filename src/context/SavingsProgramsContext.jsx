@@ -10,6 +10,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchAllPrograms } from '../lib/savingsProgramsApi.js';
+import { LIVER_ONLY, isLiverMedicationId } from '../lib/liverScope.js';
 
 const SavingsProgramsContext = createContext(null);
 
@@ -27,7 +28,10 @@ export function SavingsProgramsProvider({ children }) {
                 const dbPrograms = await fetchAllPrograms();
 
                 if (!cancelled && dbPrograms) {
-                    setPrograms(dbPrograms);
+                    const scoped = LIVER_ONLY
+                        ? dbPrograms.filter((p) => isLiverMedicationId(p.medicationId))
+                        : dbPrograms;
+                    setPrograms(scoped);
                     setError(null);
                 }
             } catch (err) {
