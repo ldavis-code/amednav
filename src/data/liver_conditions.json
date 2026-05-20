@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "exported_at": null,
+    "mode": "liver_only",
+    "condition_count": 0,
+    "medication_count": 0,
+    "savings_program_count": 0,
+    "skipped_blank_programs": 0,
+    "skipped_unknown_programs": 0,
+    "note": "Placeholder. Regenerate with: DATABASE_URL=... node export_from_neon.js --liver-only"
+  },
+  "conditions": []
+}
