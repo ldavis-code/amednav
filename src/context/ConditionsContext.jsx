@@ -11,6 +11,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchAllConditions } from '../lib/conditionsApi.js';
+import { LIVER_ONLY, isLiverCategory, isLiverConditionId } from '../lib/liverScope.js';
 
 const ConditionsContext = createContext(null);
 
@@ -28,7 +29,12 @@ export function ConditionsProvider({ children }) {
                 const dbConditions = await fetchAllConditions();
 
                 if (!cancelled && dbConditions) {
-                    setConditions(dbConditions);
+                    const scoped = LIVER_ONLY
+                        ? dbConditions.filter(
+                              (c) => isLiverCategory(c.category) || isLiverConditionId(c.id)
+                          )
+                        : dbConditions;
+                    setConditions(scoped);
                     setError(null);
                 }
             } catch (err) {
