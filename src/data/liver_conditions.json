@@ -1,13 +1,1348 @@
 {
   "metadata": {
-    "exported_at": null,
+    "exported_at": "2026-05-20T22:36:30.180Z",
     "mode": "liver_only",
-    "condition_count": 0,
-    "medication_count": 0,
-    "savings_program_count": 0,
+    "condition_count": 17,
+    "medication_count": 46,
+    "savings_program_count": 39,
     "skipped_blank_programs": 0,
-    "skipped_unknown_programs": 0,
-    "note": "Placeholder. Regenerate with: DATABASE_URL=... node export_from_neon.js --liver-only"
+    "skipped_unknown_programs": 0
   },
-  "conditions": []
+  "conditions": [
+    {
+      "id": 111,
+      "name": "Acute Liver Failure",
+      "category": "Hepatology",
+      "description": "Rapid loss of liver function in patients without pre-existing liver disease",
+      "medication_count": 2,
+      "medications": [
+        {
+          "id": 537,
+          "brand_name": "Acetadote/Mucomyst",
+          "generic_name": "acetylcysteine",
+          "manufacturer": "Various",
+          "drug_class": "Glutathione Precursor / Mucolytic",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "N-acetylcysteine (NAC). Standard antidote for acetaminophen-induced acute liver failure. Also studied in non-acetaminophen ALF. IV or oral formulations.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 532,
+          "brand_name": "Terlivaz",
+          "generic_name": "terlipressin",
+          "manufacturer": "Mallinckrodt Pharmaceuticals",
+          "drug_class": "Vasopressin Analog",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "Synthetic vasopressin analog for hepatorenal syndrome (HRS-1 / HRS-AKI). FDA-approved September 2022 — first US treatment for HRS. IV administration in hospital setting.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Alagille Syndrome",
+      "category": "Hepatology",
+      "description": "Rare genetic cholestatic disease with onset typically in infancy or childhood",
+      "medication_count": 2,
+      "medications": [
+        {
+          "id": 530,
+          "brand_name": "Livmarli",
+          "generic_name": "maralixibat",
+          "manufacturer": "Mirum Pharmaceuticals",
+          "drug_class": "IBAT Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "IBAT (ileal bile acid transporter) inhibitor for cholestatic pruritus. FDA-approved for Alagille syndrome (≥3 months) and PFIC (≥12 months). Reduces serum bile acids and pruritus.",
+          "copay_cards": [
+            {
+              "id": 269,
+              "program_name": "Mirum Access Plus Savings Program",
+              "max_savings": "Pay as little as $10 per fill",
+              "application_url": "https://livmarli.com/alagille-syndrome-itch/mirum-access-plus-map/",
+              "phone_number": "1-855-676-4968",
+              "eligibility": "Commercially or privately insured patients. Enrolled in Mirum Access Plus. US resident. Not eligible if on federal/state-funded insurance.",
+              "notes": "Mirum Access Plus (MAP). Same program covers Livmarli for both Alagille syndrome and PFIC. Single specialty pharmacy (Eversana). Text ENROLL to 1-833-MAP-4YOU.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 270,
+              "program_name": "Mirum Patient Assistance Program",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://livmarli.com/alagille-syndrome-itch/mirum-access-plus-map/",
+              "phone_number": "1-855-676-4968",
+              "eligibility": "Uninsured or health plan does not cover Livmarli. US resident. Income and clinical criteria apply.",
+              "notes": "Mirum PAP through Mirum Access Plus. Drug shipped directly to patient home via Eversana specialty pharmacy.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 531,
+          "brand_name": "Bylvay",
+          "generic_name": "odevixibat",
+          "manufacturer": "Ipsen (Albireo)",
+          "drug_class": "IBAT Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "IBAT inhibitor for cholestatic pruritus. FDA-approved for PFIC (≥3 months) and Alagille syndrome. Acquired by Ipsen via Albireo acquisition 2023.",
+          "copay_cards": [
+            {
+              "id": 271,
+              "program_name": "IPSEN CARES Bylvay Copay Assistance",
+              "max_savings": "Pay as little as $0 per prescription (annual cap applies)",
+              "application_url": "https://www.bylvay.com/pfic/resources",
+              "phone_number": "1-866-435-5677",
+              "eligibility": "Commercially insured, US resident, enrolled in IPSEN CARES. Not eligible if on Medicare, Medicaid, Medigap, VA, DoD, or TRICARE.",
+              "notes": "IPSEN CARES program. Same hub as Iqirvo and other Ipsen products. Single enrollment covers copay and PAP. Same phone for all IPSEN CARES products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 272,
+              "program_name": "IPSEN CARES Bylvay Patient Assistance",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.bylvay.com/pfic/resources",
+              "phone_number": "1-866-435-5677",
+              "eligibility": "Uninsured or underinsured, income at or below 500% FPL, US resident, financial hardship meeting eligibility criteria",
+              "notes": "IPSEN CARES PAP. Soft credit check for income verification. Same program covers Iqirvo and other Ipsen products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Alcohol-Associated Liver Disease",
+      "category": "Hepatology",
+      "description": "Alcohol-related steatosis, hepatitis, fibrosis, and cirrhosis",
+      "medication_count": 3,
+      "medications": [
+        {
+          "id": 71,
+          "brand_name": "Deltasone",
+          "generic_name": "prednisone",
+          "manufacturer": "Various",
+          "drug_class": "Corticosteroid",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 538,
+          "brand_name": "Vivitrol/Revia",
+          "generic_name": "naltrexone",
+          "manufacturer": "Various / Alkermes (Vivitrol)",
+          "drug_class": "Opioid Antagonist",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Oral or long-acting injectable opioid antagonist for alcohol use disorder. Reduces cravings and heavy drinking. Note: Vivitrol injectable has a manufacturer copay program (Alkermes); oral generic does not.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 539,
+          "brand_name": "Campral",
+          "generic_name": "acamprosate",
+          "manufacturer": "Various",
+          "drug_class": "GABA Modulator",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Oral medication for alcohol use disorder maintenance. Reduces post-acute withdrawal symptoms and supports abstinence. Generic available.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "name": "Alpha-1 Antitrypsin Deficiency",
+      "category": "Hepatology",
+      "description": "Genetic disorder causing liver and lung disease",
+      "medication_count": 1,
+      "medications": [
+        {
+          "id": 529,
+          "brand_name": "Prolastin-C/Aralast NP/Zemaira/Glassia",
+          "generic_name": "alpha-1 proteinase inhibitor",
+          "manufacturer": "Grifols/Takeda/CSL Behring",
+          "drug_class": "Plasma-Derived Protein Replacement",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "IV augmentation therapy for Alpha-1 Antitrypsin Deficiency with established emphysema. Weekly infusions raise serum AAT levels above protective threshold.",
+          "copay_cards": [
+            {
+              "id": 263,
+              "program_name": "Prolastin Direct Copay Assistance (Grifols)",
+              "max_savings": "Reduced or $0 copay for eligible patients (program-specific limits)",
+              "application_url": "https://www.prolastindirect.com",
+              "phone_number": "1-800-305-7881",
+              "eligibility": "Commercially insured patients prescribed Prolastin-C. US resident. Not eligible if on federal/state-funded insurance.",
+              "notes": "Grifols Prolastin Direct program. Provides home infusion coordination and copay support. Connects patients with AlphaNet.",
+              "last_verified": "2026-05-15"
+            },
+            {
+              "id": 265,
+              "program_name": "Takeda OnePath Copay Assistance (Aralast NP/Glassia)",
+              "max_savings": "Reduced or $0 copay for eligible patients (program-specific limits)",
+              "application_url": "https://www.takedaonepath.com",
+              "phone_number": "1-866-625-7421",
+              "eligibility": "Commercially insured patients prescribed Aralast NP or Glassia. US resident. Not eligible if on federal/state-funded insurance.",
+              "notes": "Takeda OnePath program. Covers Aralast NP and Glassia. Single phone (1-866-6-ALPHA1) for both products.",
+              "last_verified": "2026-05-15"
+            },
+            {
+              "id": 267,
+              "program_name": "Zemaira Copay Assistance (CSL Behring)",
+              "max_savings": "Reduced or $0 copay for eligible patients (program-specific limits)",
+              "application_url": "https://www.zemaira.com",
+              "phone_number": "1-877-355-4407",
+              "eligibility": "Commercially insured patients prescribed Zemaira. US resident. Not eligible if on federal/state-funded insurance.",
+              "notes": "CSL Behring Zemaira Alpha-1 Treatment Support program.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 264,
+              "program_name": "Prolastin Direct Patient Assistance (Grifols)",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.prolastindirect.com",
+              "phone_number": "1-800-305-7881",
+              "eligibility": "Uninsured or underinsured patients prescribed Prolastin-C. US resident. Income and clinical criteria apply.",
+              "notes": "Grifols PAP for Prolastin-C. Application via Prolastin Direct program.",
+              "last_verified": "2026-05-15"
+            },
+            {
+              "id": 266,
+              "program_name": "Takeda OnePath Patient Assistance (Aralast NP/Glassia)",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.takedaonepath.com",
+              "phone_number": "1-866-625-7421",
+              "eligibility": "Uninsured or underinsured patients prescribed Aralast NP or Glassia. Income and clinical criteria apply.",
+              "notes": "Takeda OnePath PAP. Covers Aralast NP and Glassia plus other Takeda products.",
+              "last_verified": "2026-05-15"
+            },
+            {
+              "id": 268,
+              "program_name": "Zemaira Patient Assistance (CSL Behring)",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.cslbehring.com/patient-support",
+              "phone_number": "1-877-355-4407",
+              "eligibility": "Uninsured or underinsured patients prescribed Zemaira. Income and clinical criteria apply.",
+              "notes": "CSL Behring PAP. Covers Zemaira and other CSL Behring products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Autoimmune Hepatitis",
+      "category": "Hepatology",
+      "description": "Autoimmune liver inflammation",
+      "medication_count": 3,
+      "medications": [
+        {
+          "id": 71,
+          "brand_name": "Deltasone",
+          "generic_name": "prednisone",
+          "manufacturer": "Various",
+          "drug_class": "Corticosteroid",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 255,
+          "brand_name": "Imuran",
+          "generic_name": "azathioprine",
+          "manufacturer": "Various",
+          "drug_class": "Antimetabolite",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 251,
+          "brand_name": "CellCept",
+          "generic_name": "mycophenolate mofetil",
+          "manufacturer": "Genentech",
+          "drug_class": "Antimetabolite",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Cholangiocarcinoma",
+      "category": "Hepatology",
+      "description": "Cancer of the bile ducts, intrahepatic and extrahepatic",
+      "medication_count": 0,
+      "medications": []
+    },
+    {
+      "id": 110,
+      "name": "Cirrhosis",
+      "category": "Hepatology",
+      "description": "End-stage scarring from any chronic liver disease; cross-cutting management of complications",
+      "medication_count": 8,
+      "medications": [
+        {
+          "id": 28,
+          "brand_name": "Inderal",
+          "generic_name": "propranolol",
+          "manufacturer": "Various",
+          "drug_class": "Beta Blocker",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 27,
+          "brand_name": "Coreg",
+          "generic_name": "carvedilol",
+          "manufacturer": "Various",
+          "drug_class": "Beta Blocker",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 29,
+          "brand_name": "Aldactone",
+          "generic_name": "spironolactone",
+          "manufacturer": "Various",
+          "drug_class": "Potassium-Sparing Diuretic",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 19,
+          "brand_name": "Lasix",
+          "generic_name": "furosemide",
+          "manufacturer": "Various",
+          "drug_class": "Loop Diuretic",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 534,
+          "brand_name": "Corgard",
+          "generic_name": "nadolol",
+          "manufacturer": "Various",
+          "drug_class": "Non-selective Beta-Blocker",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Long-acting non-selective beta-blocker for variceal bleed prophylaxis in cirrhosis. Alternative to propranolol with once-daily dosing.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 535,
+          "brand_name": "ProAmatine/Orvaten",
+          "generic_name": "midodrine",
+          "manufacturer": "Various",
+          "drug_class": "Alpha-1 Adrenergic Agonist",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Oral alpha-1 agonist for orthostatic hypotension and hepatorenal syndrome (HRS-2 outpatient management). Used in cirrhosis to manage refractory ascites and HRS.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 536,
+          "brand_name": "Sandostatin",
+          "generic_name": "octreotide",
+          "manufacturer": "Various",
+          "drug_class": "Somatostatin Analog",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Somatostatin analog for acute variceal bleeding in cirrhosis. Reduces portal pressure and splanchnic blood flow. Also used for hepatorenal syndrome.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 532,
+          "brand_name": "Terlivaz",
+          "generic_name": "terlipressin",
+          "manufacturer": "Mallinckrodt Pharmaceuticals",
+          "drug_class": "Vasopressin Analog",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "Synthetic vasopressin analog for hepatorenal syndrome (HRS-1 / HRS-AKI). FDA-approved September 2022 — first US treatment for HRS. IV administration in hospital setting.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Hemochromatosis",
+      "category": "Hepatology",
+      "description": "Iron overload disorder, hereditary or secondary, with hepatic and systemic manifestations",
+      "medication_count": 2,
+      "medications": [
+        {
+          "id": 533,
+          "brand_name": "Jadenu/Exjade",
+          "generic_name": "deferasirox",
+          "manufacturer": "Novartis",
+          "drug_class": "Iron Chelator",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Oral iron chelator for chronic iron overload from transfusions or non-transfusion-dependent thalassemia. Used in secondary hemochromatosis. Generic available — patients routed to GoodRx/Cost Plus Drugs/SingleCare via discount programs rather than manufacturer copay/PAP.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 540,
+          "brand_name": "Desferal",
+          "generic_name": "deferoxamine",
+          "manufacturer": "Various",
+          "drug_class": "Iron Chelator",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Parenteral iron chelator for acute iron poisoning and chronic iron overload. Older agent; deferasirox is preferred for chronic use due to oral administration.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Hepatic Encephalopathy",
+      "category": "Hepatology",
+      "description": "Neurocognitive complication of cirrhosis and liver failure",
+      "medication_count": 2,
+      "medications": [
+        {
+          "id": 462,
+          "brand_name": "Xifaxan",
+          "generic_name": "rifaximin",
+          "manufacturer": "Salix",
+          "drug_class": "Antibiotic",
+          "has_generic": false,
+          "typical_cost_range": "$1,500-$2,000/month",
+          "notes": "Minimal systemic absorption; used in Crohns",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 525,
+          "brand_name": "Generlac/Kristalose/Enulose",
+          "generic_name": "lactulose",
+          "manufacturer": "Various",
+          "drug_class": "Osmotic Laxative / Ammonia-Reducing Agent",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "First-line treatment for hepatic encephalopathy. Reduces ammonia absorption. Often used in combination with rifaximin.",
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Hepatitis B",
+      "category": "Hepatology",
+      "description": "Chronic viral liver infection",
+      "medication_count": 3,
+      "medications": [
+        {
+          "id": 152,
+          "brand_name": "Baraclude",
+          "generic_name": "entecavir",
+          "manufacturer": "Bristol-Myers Squibb",
+          "drug_class": "HBV Antiviral",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 153,
+          "brand_name": "Viread",
+          "generic_name": "tenofovir disoproxil",
+          "manufacturer": "Gilead",
+          "drug_class": "HBV Antiviral",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 154,
+          "brand_name": "Vemlidy",
+          "generic_name": "tenofovir alafenamide",
+          "manufacturer": "Gilead",
+          "drug_class": "HBV Antiviral",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 45,
+              "program_name": "Vemlidy Copay Card",
+              "max_savings": "Pay as little as $0/month (up to $6,000/year max)",
+              "application_url": "https://www.vemlidy.com/savings",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Commercially insured",
+              "notes": "Gilead Support Path (1-855-7-MYPATH). Over 90% of enrolled commercially insured patients pay $0.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 46,
+              "program_name": "Gilead Support Path (HBV PAP)",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://www.mysupportpath.com",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "CORRECTION: Vemlidy PAP is Gilead Support Path, not Advancing Access (which is HIV-only). 500% FPL limit.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Hepatitis C",
+      "category": "Hepatology",
+      "description": "Viral liver infection",
+      "medication_count": 7,
+      "medications": [
+        {
+          "id": 148,
+          "brand_name": "Epclusa",
+          "generic_name": "sofosbuvir-velpatasvir",
+          "manufacturer": "Gilead",
+          "drug_class": "HCV Antiviral",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 39,
+              "program_name": "Epclusa Copay Card",
+              "max_savings": "Pay as little as $5/month (up to 25% of catalog price, 6-month validity)",
+              "application_url": "https://www.mysupportpath.com/co-pay",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Commercially insured",
+              "notes": "Gilead Support Path (1-855-7-MYPATH). For HCV/HBV/PBC meds - not to be confused with Advancing Access (HIV program).",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 40,
+              "program_name": "Gilead Support Path (PAP)",
+              "max_savings": "Varies by product; $7,200-$9,600 annual max for HIV meds; free via PAP/MAP for eligible",
+              "application_url": "https://www.mysupportpath.com/financial-assistance",
+              "phone_number": "1-800-226-2056",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "CORRECTION: Previously mislabeled as 'Gilead Advancing Access' (HIV program). Corrected to Gilead Support Path PAP for HCV/HBV/PBC medications including Epclusa, Harvoni, Vemlidy, Sovaldi, Vosevi, Livdelzi. Advancing Access (1-800-226-2056) is for HIV/COVID meds only.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 149,
+          "brand_name": "Harvoni",
+          "generic_name": "sofosbuvir-ledipasvir",
+          "manufacturer": "Gilead",
+          "drug_class": "HCV Antiviral",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 41,
+              "program_name": "Harvoni Copay Card",
+              "max_savings": "Pay as little as $5/month (up to 25% of catalog price, 6-month validity)",
+              "application_url": "https://www.mysupportpath.com/co-pay",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Commercially insured",
+              "notes": "Gilead Support Path (1-855-7-MYPATH). Authorized generic available via Asegua Therapeutics.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 42,
+              "program_name": "Gilead Support Path (HCV PAP)",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://www.mysupportpath.com",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "CORRECTION: Harvoni PAP is Gilead Support Path, not Advancing Access (which is HIV-only). 500% FPL limit.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 150,
+          "brand_name": "Mavyret",
+          "generic_name": "glecaprevir-pibrentasvir",
+          "manufacturer": "AbbVie",
+          "drug_class": "HCV Antiviral",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 43,
+              "program_name": "Mavyret Copay Card",
+              "max_savings": "Pay as little as $5/fill (up to $6,000 first fill, $3,000 subsequent, $12,000 total)",
+              "application_url": "https://www.mavyret.com/savings",
+              "phone_number": "1-877-628-9738",
+              "eligibility": "Commercially insured",
+              "notes": "AbbVie myAbbVieAssist. Card expires 12 months after first use.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 44,
+              "program_name": "AbbVie Patient Assistance",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.abbvie.com/patients/patient-assistance.html",
+              "phone_number": "1-800-222-6885",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "AbbVie Patient Assistance Foundation (myAbbVie Assist). Covers Mavyret, Humira, Rinvoq, Skyrizi, etc.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 151,
+          "brand_name": "Vosevi",
+          "generic_name": "sofosbuvir-velpatasvir-voxilaprevir",
+          "manufacturer": "Gilead",
+          "drug_class": "HCV Antiviral",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 317,
+          "brand_name": "Zepatier",
+          "generic_name": "elbasvir-grazoprevir",
+          "manufacturer": "Merck",
+          "drug_class": "HCV Direct-Acting Antiviral",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 318,
+          "brand_name": "Sovaldi",
+          "generic_name": "sofosbuvir",
+          "manufacturer": "Gilead",
+          "drug_class": "HCV NS5B Polymerase Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 319,
+          "brand_name": "Rebetol/Copegus",
+          "generic_name": "ribavirin",
+          "manufacturer": "Various",
+          "drug_class": "Antiviral",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Hepatocellular Carcinoma",
+      "category": "Hepatology",
+      "description": "Primary liver cancer arising from hepatocytes",
+      "medication_count": 8,
+      "medications": [
+        {
+          "id": 391,
+          "brand_name": "Tecentriq",
+          "generic_name": "atezolizumab",
+          "manufacturer": "Genentech",
+          "drug_class": "PD-L1 Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 509,
+          "brand_name": "Avastin",
+          "generic_name": "bevacizumab",
+          "manufacturer": "Genentech",
+          "drug_class": "VEGF Inhibitor",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "Four biosimilars available: Mvasi (2019), Zirabev (2020), Alymsys (2022), Vegzelma (2023).",
+          "copay_cards": [
+            {
+              "id": 230,
+              "program_name": "Avastin Copay Card",
+              "max_savings": "Copay assistance for eligible commercially insured (annual cap applies)",
+              "application_url": "https://www.genentech-access.com/patient/brands/avastin",
+              "phone_number": "1-888-249-4918",
+              "eligibility": "Commercially insured",
+              "notes": "Genentech Access Solutions for Avastin (bevacizumab). ⚠️ MULTIPLE BIOSIMILARS AVAILABLE: Mvasi (Amgen, 2019), Zirabev (Pfizer, 2020), Alymsys (Amneal, 2022), Vegzelma (Celltrion, 2023). All interchangeable for same indications including mCRC, NSCLC, glioblastoma, RCC, cervical/ovarian cancer. Biosimilar adoption growing rapidly in oncology.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 231,
+              "program_name": "Genentech Patient Assistance",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://www.genentech-access.com",
+              "phone_number": "1-888-941-3331",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "Genentech Patient Foundation (general). Covers Avastin, Herceptin, Rituxan, Tecentriq, Ocrevus, Perjeta, and other Genentech/Roche products. For HIV/Transplant-specific drugs like CellCept and Valcyte, use GATCF at 1-888-754-7651 instead.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 392,
+          "brand_name": "Imfinzi",
+          "generic_name": "durvalumab",
+          "manufacturer": "AstraZeneca",
+          "drug_class": "PD-L1 Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 261,
+              "program_name": "Imfinzi Co-pay Savings Program",
+              "max_savings": "Pay as little as $0/month, up to $26,000 per year per drug, with up to $100 in infusion costs per administration",
+              "application_url": "https://www.myaccess360.com/imfinzi-durvalumab/patient-affordability.html",
+              "phone_number": "1-844-275-2360",
+              "eligibility": "Commercially insured. Not eligible if on Medicare Part B, Medicare Part D, Medicaid, Medigap, VA, DoD, or TRICARE.",
+              "notes": "AstraZeneca Access 360 (1-844-ASK-A360). Same program covers Imjudo (tremelimumab). Used in HCC STRIDE regimen with Imjudo.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 262,
+              "program_name": "AZ&Me Prescription Savings Program (Imfinzi)",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.azandmeapp.com",
+              "phone_number": "1-844-275-2360",
+              "eligibility": "Uninsured patients with income at or below program threshold; also available to Medicare patients with no other prescription coverage",
+              "notes": "AstraZeneca AZ&Me PAP. Covers Imfinzi, Imjudo, and other AstraZeneca oncology products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 520,
+          "brand_name": "Lenvima",
+          "generic_name": "lenvatinib",
+          "manufacturer": "Eisai/Merck",
+          "drug_class": "Multi-TKI",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 246,
+              "program_name": "Lenvima Copay Card",
+              "max_savings": "Pay as little as $5/month for eligible commercially insured (annual cap applies)",
+              "application_url": "https://www.lenvima.com/savings-and-support",
+              "phone_number": "1-866-61-EISAI",
+              "eligibility": "Commercially insured",
+              "notes": "Eisai Assistance Program (1-866-613-4724). Lenvatinib co-marketed with Merck in certain indications. For thyroid cancer, HCC (liver cancer), RCC, endometrial cancer (often with Keytruda).",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 247,
+              "program_name": "Eisai Reimbursement Hotline",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://www.eisaireimbursement.com",
+              "phone_number": "1-866-613-4724",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "Eisai Reimbursement Hotline + Eisai Assistance Program. Covers Lenvima and other Eisai oncology products.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 512,
+          "brand_name": "Stivarga",
+          "generic_name": "regorafenib",
+          "manufacturer": "Bayer",
+          "drug_class": "Multi-kinase Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 236,
+              "program_name": "Stivarga Copay Card",
+              "max_savings": "Pay as little as $0/month for eligible commercially insured (annual cap applies)",
+              "application_url": "https://www.stivarga-us.com/patient/stivarga-savings-and-support",
+              "phone_number": "1-855-784-8727",
+              "eligibility": "Commercially insured",
+              "notes": "Bayer US Stivarga Patient Support (1-855-STIVARGA). Regorafenib for metastatic colorectal cancer, GIST, HCC. Oral kinase inhibitor.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 237,
+              "program_name": "Bayer Patient Assistance",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://www.bayerpatientsupport.com",
+              "phone_number": "1-866-575-5002",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "Bayer US Patient Assistance Foundation. Covers Stivarga, Nexavar, Nubeqa, Vitrakvi, Xofigo, Kerendia, Adempas, and other Bayer products.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 526,
+          "brand_name": "Nexavar",
+          "generic_name": "sorafenib",
+          "manufacturer": "Bayer",
+          "drug_class": "Multi-Kinase Inhibitor",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": "First systemic therapy approved for advanced hepatocellular carcinoma (2007). Still used as alternative first-line or in second-line settings.",
+          "copay_cards": [
+            {
+              "id": 255,
+              "program_name": "Nexavar Copay Card",
+              "max_savings": "Pay as little as $0/month, up to $25,000 annual savings, no monthly maximum",
+              "application_url": "https://www.nexavar-us.com",
+              "phone_number": "1-866-639-2827",
+              "eligibility": "Commercially insured. Not eligible if on Medicare Part D, Medicaid, TRICARE, or other federal/state programs.",
+              "notes": "Access Services by Bayer. Bayer covers Nexavar, Stivarga, Nubeqa, Vitrakvi under same program. Annual eligibility reassessment.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 256,
+              "program_name": "Bayer Patient Assistance",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://www.bayerpatientsupport.com",
+              "phone_number": "1-866-575-5002",
+              "eligibility": "Uninsured or underinsured. No income requirements stated; eligibility determined per application.",
+              "notes": "Bayer US Patient Assistance Foundation. Covers Nexavar, Stivarga, Nubeqa, Vitrakvi, Xofigo, and other Bayer products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 527,
+          "brand_name": "Cabometyx",
+          "generic_name": "cabozantinib",
+          "manufacturer": "Exelixis",
+          "drug_class": "Tyrosine Kinase Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "Second-line therapy for advanced hepatocellular carcinoma after prior sorafenib. Also approved for renal cell carcinoma and other indications.",
+          "copay_cards": [
+            {
+              "id": 257,
+              "program_name": "Cabometyx Co-Pay Assistance Program",
+              "max_savings": "Pay as little as $0 per prescription (annual and transaction limits apply)",
+              "application_url": "https://www.cabometyx.com/financial-support",
+              "phone_number": "1-844-900-3273",
+              "eligibility": "Commercially insured, US resident. Not eligible for federal/state-funded insurance (Medicare, Medicaid, TRICARE).",
+              "notes": "Exelixis Access Services (EASE). 30-Day Free Trial Program also available for new starts regardless of insurance type.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 258,
+              "program_name": "EASE Patient Assistance Program",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.cabometyx.com/financial-support",
+              "phone_number": "1-844-900-3273",
+              "eligibility": "Uninsured or unable to afford medication costs, US resident. Income and insurance criteria apply.",
+              "notes": "Exelixis Access Services (EASE) PAP. Enrollment also available via CoverMyMeds.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 528,
+          "brand_name": "Imjudo",
+          "generic_name": "tremelimumab",
+          "manufacturer": "AstraZeneca",
+          "drug_class": "CTLA-4 Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "First-line treatment for unresectable hepatocellular carcinoma in combination with durvalumab (STRIDE regimen). FDA-approved 2022.",
+          "copay_cards": [
+            {
+              "id": 259,
+              "program_name": "Imjudo Co-pay Savings Program",
+              "max_savings": "Pay as little as $0/month, up to $26,000 per year per drug, with up to $100 in infusion costs per administration",
+              "application_url": "https://www.myaccess360.com/imfinzi-durvalumab/patient-affordability.html",
+              "phone_number": "1-844-275-2360",
+              "eligibility": "Commercially insured. Not eligible if on Medicare Part B, Medicare Part D, Medicaid, Medigap, VA, DoD, or TRICARE.",
+              "notes": "AstraZeneca Access 360 (1-844-ASK-A360). Same program covers Imfinzi (durvalumab). Imjudo only prescribed with Imfinzi.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 260,
+              "program_name": "AZ&Me Prescription Savings Program (Imjudo)",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.azandmeapp.com",
+              "phone_number": "1-844-275-2360",
+              "eligibility": "Uninsured patients with income at or below program threshold; also available to Medicare patients with no other prescription coverage",
+              "notes": "AstraZeneca AZ&Me PAP. Covers Imjudo, Imfinzi, and other AstraZeneca oncology products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "MASLD/MASH (Fatty Liver Disease)",
+      "category": "Hepatology",
+      "description": "Metabolic dysfunction-associated steatotic liver disease",
+      "medication_count": 1,
+      "medications": [
+        {
+          "id": 146,
+          "brand_name": "Rezdiffra",
+          "generic_name": "resmetirom",
+          "manufacturer": "Madrigal Pharmaceuticals",
+          "drug_class": "THR-β Agonist",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 35,
+              "program_name": "Rezdiffra Copay Assistance",
+              "max_savings": "Pay as little as $0/month",
+              "application_url": "https://www.rezdiffra.com/savings-and-support",
+              "phone_number": "1-877-219-7770",
+              "eligibility": "Commercially insured",
+              "notes": "Madrigal Patient Support. Copay valid 12 months; commercial insurance only.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 36,
+              "program_name": "Madrigal Patient Assistance",
+              "max_savings": "Free medication for eligible uninsured patients",
+              "application_url": "https://madrigalpatientsupport.com",
+              "phone_number": "1-877-219-7770",
+              "eligibility": "Uninsured or underinsured",
+              "notes": "Madrigal Patient Support. Single number for copay and PAP.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Primary Biliary Cholangitis",
+      "category": "Hepatology",
+      "description": "Autoimmune bile duct disease",
+      "medication_count": 3,
+      "medications": [
+        {
+          "id": 155,
+          "brand_name": "Urso/Actigall",
+          "generic_name": "ursodiol",
+          "manufacturer": "Various",
+          "drug_class": "Bile Acid",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 523,
+          "brand_name": "Iqirvo",
+          "generic_name": "elafibranor",
+          "manufacturer": "Ipsen",
+          "drug_class": "PPAR α/δ Agonist",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "Second-line for Primary Biliary Cholangitis (PBC). FDA-approved June 2024. Indicated in combination with ursodiol or as monotherapy in adults intolerant to ursodiol.",
+          "copay_cards": [
+            {
+              "id": 251,
+              "program_name": "Iqirvo Copay Assistance",
+              "max_savings": "Pay as little as $0 per prescription (annual cap applies)",
+              "application_url": "https://www.ipsencares.com/iqirvo-patient-support",
+              "phone_number": "1-866-435-5677",
+              "eligibility": "Commercially insured, US resident, enrolled in IPSEN CARES. Not eligible if on Medicare, Medicaid, Medigap, VA, DoD, or TRICARE.",
+              "notes": "IPSEN CARES program. Single enrollment covers copay and PAP. Patient Authorization Form required every 3 years. Ipsen for PBC.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 252,
+              "program_name": "IPSEN CARES Iqirvo Patient Assistance",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.ipsencares.com/iqirvo-patient-support",
+              "phone_number": "1-866-435-5677",
+              "eligibility": "Uninsured or functionally uninsured, US resident, financial hardship meeting eligibility criteria, valid prescription for on-label use",
+              "notes": "IPSEN CARES PAP. Soft credit check for income verification. Patient Authorization Form required every 3 years.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 524,
+          "brand_name": "Livdelzi",
+          "generic_name": "seladelpar",
+          "manufacturer": "Gilead Sciences",
+          "drug_class": "PPAR δ Agonist",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "Second-line for Primary Biliary Cholangitis (PBC). FDA-approved August 2024. Indicated in combination with ursodiol or as monotherapy in adults intolerant to ursodiol.",
+          "copay_cards": [
+            {
+              "id": 253,
+              "program_name": "Livdelzi Co-pay Savings Program",
+              "max_savings": "Pay as little as $0/month, up to $10,000 annual savings",
+              "application_url": "https://www.mysupportpath.com/en/co-pay",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Commercially insured, US resident. Not eligible if on Medicare, Medicaid, Medigap, VA, DoD, TRICARE. Subject to accumulator/maximizer programs.",
+              "notes": "Gilead Support Path. 92% of Livdelzi patients pay $0-$10/month. Single phone covers copay and PAP enrollment.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 254,
+              "program_name": "Livdelzi Support Path Patient Assistance",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.mysupportpath.com",
+              "phone_number": "1-855-769-7284",
+              "eligibility": "Uninsured or underinsured, at or below 500% Federal Poverty Level, US resident",
+              "notes": "Gilead Support Path PAP. Same program covers Vemlidy, Vosevi, Sovaldi, and other Gilead products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Primary Sclerosing Cholangitis",
+      "category": "Hepatology",
+      "description": "Progressive inflammatory bile duct disease",
+      "medication_count": 1,
+      "medications": [
+        {
+          "id": 155,
+          "brand_name": "Urso/Actigall",
+          "generic_name": "ursodiol",
+          "manufacturer": "Various",
+          "drug_class": "Bile Acid",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Progressive Familial Intrahepatic Cholestasis",
+      "category": "Hepatology",
+      "description": "Rare pediatric cholestatic liver disorders (PFIC types 1-6)",
+      "medication_count": 2,
+      "medications": [
+        {
+          "id": 530,
+          "brand_name": "Livmarli",
+          "generic_name": "maralixibat",
+          "manufacturer": "Mirum Pharmaceuticals",
+          "drug_class": "IBAT Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "IBAT (ileal bile acid transporter) inhibitor for cholestatic pruritus. FDA-approved for Alagille syndrome (≥3 months) and PFIC (≥12 months). Reduces serum bile acids and pruritus.",
+          "copay_cards": [
+            {
+              "id": 269,
+              "program_name": "Mirum Access Plus Savings Program",
+              "max_savings": "Pay as little as $10 per fill",
+              "application_url": "https://livmarli.com/alagille-syndrome-itch/mirum-access-plus-map/",
+              "phone_number": "1-855-676-4968",
+              "eligibility": "Commercially or privately insured patients. Enrolled in Mirum Access Plus. US resident. Not eligible if on federal/state-funded insurance.",
+              "notes": "Mirum Access Plus (MAP). Same program covers Livmarli for both Alagille syndrome and PFIC. Single specialty pharmacy (Eversana). Text ENROLL to 1-833-MAP-4YOU.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 270,
+              "program_name": "Mirum Patient Assistance Program",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://livmarli.com/alagille-syndrome-itch/mirum-access-plus-map/",
+              "phone_number": "1-855-676-4968",
+              "eligibility": "Uninsured or health plan does not cover Livmarli. US resident. Income and clinical criteria apply.",
+              "notes": "Mirum PAP through Mirum Access Plus. Drug shipped directly to patient home via Eversana specialty pharmacy.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 531,
+          "brand_name": "Bylvay",
+          "generic_name": "odevixibat",
+          "manufacturer": "Ipsen (Albireo)",
+          "drug_class": "IBAT Inhibitor",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": "IBAT inhibitor for cholestatic pruritus. FDA-approved for PFIC (≥3 months) and Alagille syndrome. Acquired by Ipsen via Albireo acquisition 2023.",
+          "copay_cards": [
+            {
+              "id": 271,
+              "program_name": "IPSEN CARES Bylvay Copay Assistance",
+              "max_savings": "Pay as little as $0 per prescription (annual cap applies)",
+              "application_url": "https://www.bylvay.com/pfic/resources",
+              "phone_number": "1-866-435-5677",
+              "eligibility": "Commercially insured, US resident, enrolled in IPSEN CARES. Not eligible if on Medicare, Medicaid, Medigap, VA, DoD, or TRICARE.",
+              "notes": "IPSEN CARES program. Same hub as Iqirvo and other Ipsen products. Single enrollment covers copay and PAP. Same phone for all IPSEN CARES products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "patient_assistance": [
+            {
+              "id": 272,
+              "program_name": "IPSEN CARES Bylvay Patient Assistance",
+              "max_savings": "Free medication for eligible patients",
+              "application_url": "https://www.bylvay.com/pfic/resources",
+              "phone_number": "1-866-435-5677",
+              "eligibility": "Uninsured or underinsured, income at or below 500% FPL, US resident, financial hardship meeting eligibility criteria",
+              "notes": "IPSEN CARES PAP. Soft credit check for income verification. Same program covers Iqirvo and other Ipsen products.",
+              "last_verified": "2026-05-15"
+            }
+          ],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Wilson's Disease",
+      "category": "Hepatology",
+      "description": "Copper metabolism disorder",
+      "medication_count": 3,
+      "medications": [
+        {
+          "id": 156,
+          "brand_name": "Cuprimine",
+          "generic_name": "penicillamine",
+          "manufacturer": "Valeant",
+          "drug_class": "Chelating Agent",
+          "has_generic": true,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 157,
+          "brand_name": "Syprine",
+          "generic_name": "trientine",
+          "manufacturer": "Valeant",
+          "drug_class": "Chelating Agent",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [
+            {
+              "id": 47,
+              "program_name": "Syprine Copay Assistance",
+              "max_savings": "Copay as low as $25/fill (commercially insured); PAP free for eligible",
+              "application_url": "https://www.bauschhealth.com/siteassets/pdf/WDRxAccessProgram_SYPRINEenrollmentform.pdf",
+              "phone_number": "1-888-607-7267",
+              "eligibility": "Commercially insured",
+              "notes": "Bausch WD Rx Access Program. wdrxaccess.com is no longer active but enrollment forms still accessible. Generic trientine available. Consider Cuvrior (Orphalan) as alternative formulation for Wilson disease patients.",
+              "last_verified": "2026-04-16"
+            }
+          ],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        },
+        {
+          "id": 158,
+          "brand_name": "Galzin",
+          "generic_name": "zinc acetate",
+          "manufacturer": "Teva",
+          "drug_class": "Zinc Supplement",
+          "has_generic": false,
+          "typical_cost_range": null,
+          "notes": null,
+          "copay_cards": [],
+          "patient_assistance": [],
+          "discount_programs": [],
+          "free_trials": []
+        }
+      ]
+    }
+  ]
 }
