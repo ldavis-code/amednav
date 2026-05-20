@@ -206,6 +206,17 @@ export const seoMetadata = {
     noindex: true, // Private user feature - do not index in search engines
   },
 
+  liverConditions: {
+    title: 'Liver Conditions & Medications | AMedNav™',
+    description: 'Browse liver conditions and see the medications used to treat them, with copay cards and patient assistance programs listed separately for each drug.',
+    canonical: `${BASE_URL}/liver-conditions`,
+    ogTitle: 'Liver Conditions & Medications',
+    ogDescription: 'Find medications and savings programs by liver condition.',
+    twitterTitle: 'Liver Conditions & Medications',
+    twitterDescription: 'Find medications and savings programs by liver condition.',
+    breadcrumbName: 'Liver Conditions',
+  },
+
   savingsTracker: {
     title: 'Savings Calculator | AMedNav™',
     description: 'Calculate how much you could save on medications with assistance programs. Track actual savings and see your total benefits over time.',
