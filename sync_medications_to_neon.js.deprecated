@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+/**
+ * DEPRECATED -- DO NOT RUN.
+ *
+ * The source-of-truth direction has been reversed: Neon is now authoritative
+ * and src/data/medications.json is generated from it via export_from_neon.js.
+ * Running this script would overwrite cleaned Neon data with stale JSON.
+ *
+ * It also references columns that no longer exist on the medications table
+ * (rxcui, category, stage, pap_url, copay_url, pap_program_id,
+ * copay_program_id, ...), so the INSERT would fail regardless.
+ *
+ * Renamed from sync_medications_to_neon.js so it is not picked up by
+ * `node sync_medications_to_neon.js` muscle memory or tab completion.
+ * The .deprecated extension also makes Node refuse to execute it directly.
+ *
+ * Original implementation preserved in git history -- see the commit that
+ * introduced this rename.
+ */
+
+console.error(
+  'sync_medications_to_neon.js is deprecated. Neon is the source of truth; ' +
+  'use export_from_neon.js to regenerate src/data/medications.json instead.'
+);
+process.exit(1);
