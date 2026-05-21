@@ -15,6 +15,10 @@ import liverData from '../data/liver_conditions.json';
 import { useMetaTags } from '../hooks/useMetaTags';
 import { seoMetadata } from '../data/seo-metadata';
 
+// TEMPORARY: surface a small debug strip so we can diagnose the "46 meds
+// per condition" report without DevTools. Remove once verified.
+const DEBUG = true;
+
 const PROGRAM_SECTIONS = [
   {
     key: 'copay_cards',
@@ -310,6 +314,17 @@ export default function LiverConditions() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+      {DEBUG && (
+        <div className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 font-mono text-xs text-amber-900">
+          <strong>DEBUG /liver-conditions:</strong>{' '}
+          metadata.condition_count={liverData.metadata?.condition_count ?? 'n/a'},{' '}
+          metadata.medication_count={liverData.metadata?.medication_count ?? 'n/a'},{' '}
+          loaded.conditions.length={conditions.length},{' '}
+          selectedId={String(selectedId)},{' '}
+          selected.medications.length={selected?.medications?.length ?? '—'},{' '}
+          selected.medication_ids=[{(selected?.medications || []).map((m) => m.id).join(',')}]
+        </div>
+      )}
       <nav className="mb-6 text-sm text-navy/60">
         <Link to="/" className="hover:text-navy">Home</Link>
         <span className="mx-2">/</span>
