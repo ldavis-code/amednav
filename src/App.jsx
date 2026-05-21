@@ -130,6 +130,7 @@ import CATEGORY_ORDER_DATA from './data/category-order.json';
 import APPLICATION_CHECKLIST_DATA from './data/application-checklist.json';
 import FAQS_DATA from './data/faqs.json';
 import PRICE_ESTIMATES_DATA from './data/price-estimates.json';
+import LIVER_CONDITIONS_DATA from './data/liver_conditions.json';
 import { useMetaTags } from './hooks/useMetaTags.js';
 import { seoMetadata } from './data/seo-metadata.js';
 import { fetchPriceStats, submitPriceReport, fetchAllPriceStats } from './lib/priceReportsApi.js';
@@ -1683,24 +1684,29 @@ const Wizard = () => {
     // Navigation Logic - 4 quiz steps + results (Step 5)
     const handleNextFromCategory = () => { trackServerEvent('quiz_start'); setStep(2); };
 
-    // Step 2 -> Step 3: fetch the medications linked to each selected condition
-    // and union them. The Step 3 UI uses this as the default filtered list.
+    // Step 2 -> Step 3: resolve the medications linked to each selected
+    // condition from liver_conditions.json (bundled, no network) and union
+    // them. The Step 3 UI uses this as the default filtered list.
+    //
+    // We bypass /.netlify/functions/condition-med-links because (a) that
+    // function isn't served during `npm run dev`, so the dress-rehearsal
+    // path silently failed and showed all medications, and (b) the JSON is
+    // the canonical liver dataset post-Neon-export anyway.
     const handleNextFromCondition = async () => {
         const ids = answers.conditionIds || [];
         if (ids.length === 0) return;
         setIsLoadingLinks(true);
         try {
-            const responses = await Promise.all(
-                ids.map(id =>
-                    fetch(`/.netlify/functions/condition-med-links?conditionId=${encodeURIComponent(id)}`)
-                        .then(r => r.ok ? r.json() : { links: [] })
-                        .catch(() => ({ links: [] }))
-                )
+            const conditionById = new Map(
+                (LIVER_CONDITIONS_DATA.conditions || []).map(c => [c.id, c])
             );
             const linked = new Set();
-            for (const res of responses) {
-                for (const link of (res.links || [])) {
-                    if (link.medication_id) linked.add(link.medication_id);
+            for (const id of ids) {
+                const numericId = Number(id);
+                const condition = conditionById.get(id) || conditionById.get(numericId);
+                if (!condition) continue;
+                for (const med of (condition.medications || [])) {
+                    if (med && med.id != null) linked.add(med.id);
                 }
             }
             setConditionLinkedMedIds([...linked]);
@@ -1931,8 +1937,14 @@ const Wizard = () => {
         // conditions. The "Show all medications" toggle reveals the full
         // catalog and broadens the search scope.
         const hasLinkFilter = Array.isArray(conditionLinkedMedIds) && conditionLinkedMedIds.length > 0 && !showAllMeds;
+        // Match on m.id first (post-Neon-export medications.json uses integer
+        // DB ids directly). Fall back to m.dbId for any record still on the
+        // legacy slug-id shape.
         const browsableMeds = hasLinkFilter
-            ? MEDICATIONS.filter(m => m.dbId != null && conditionLinkedMedIds.includes(m.dbId))
+            ? MEDICATIONS.filter(m =>
+                conditionLinkedMedIds.includes(m.id) ||
+                (m.dbId != null && conditionLinkedMedIds.includes(m.dbId))
+              )
             : MEDICATIONS;
         return (
             <div className="max-w-3xl mx-auto">
