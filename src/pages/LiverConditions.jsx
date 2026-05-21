@@ -145,50 +145,80 @@ function ProgramSection({ section, programs }) {
   );
 }
 
+// When a medication has a widely-used generic, lead with the generic name --
+// many "brands" in the dataset are historical (e.g. Deltasone for prednisone)
+// and showing them first is misleading. Brand stays as secondary context only
+// when it adds info beyond the generic.
+function displayNames(med) {
+  const generic = (med.generic_name || '').trim();
+  const brand = (med.brand_name || '').trim();
+  const capitalize = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+  const sameish = (a, b) => a && b && a.toLowerCase() === b.toLowerCase();
+
+  if (med.has_generic === true && generic) {
+    return {
+      primary: capitalize(generic),
+      secondary: !sameish(brand, generic) ? brand : null,
+    };
+  }
+  return {
+    primary: brand || capitalize(generic),
+    secondary: brand && generic && !sameish(brand, generic) ? capitalize(generic) : null,
+  };
+}
+
 function MedicationBlock({ med }) {
+  const { primary, secondary } = displayNames(med);
   return (
-    <article className="rounded-2xl border border-navy/10 bg-surface p-5 sm:p-6">
-      <header className="flex flex-wrap items-baseline justify-between gap-2">
-        <div>
-          <h3 className="text-xl font-semibold text-navy">
-            {med.brand_name}
-            {med.generic_name && (
-              <span className="ml-2 text-base font-normal text-navy/60">
-                ({med.generic_name})
-              </span>
+    <article className="overflow-hidden rounded-2xl border-2 border-navy/15 bg-white shadow-sm">
+      {/* Medication header: visually distinct band so the drug name doesn't
+          compete with the four program section headers below. */}
+      <header className="border-b border-navy/10 bg-navy/[0.04] px-5 py-4 sm:px-6 sm:py-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h3 className="text-2xl font-bold leading-tight text-navy">{primary}</h3>
+            {secondary && (
+              <p className="mt-0.5 text-sm font-medium text-navy/60">
+                also known as {secondary}
+              </p>
             )}
-          </h3>
-          <p className="mt-1 text-sm text-navy/60">
-            {med.manufacturer && <span>{med.manufacturer}</span>}
-            {med.manufacturer && med.drug_class && <span> &middot; </span>}
-            {med.drug_class && <span>{med.drug_class}</span>}
-          </p>
+            <p className="mt-2 text-sm text-navy/60">
+              {med.manufacturer && <span>{med.manufacturer}</span>}
+              {med.manufacturer && med.drug_class && <span> &middot; </span>}
+              {med.drug_class && <span>{med.drug_class}</span>}
+            </p>
+          </div>
+          {med.has_generic && (
+            <span className="rounded-full bg-navy/10 px-2.5 py-1 text-xs font-medium text-navy">
+              Generic available
+            </span>
+          )}
         </div>
-        {med.has_generic && (
-          <span className="rounded-full bg-navy/10 px-2.5 py-1 text-xs font-medium text-navy">
-            Generic available
-          </span>
-        )}
       </header>
 
-      {med.typical_cost_range && (
-        <p className="mt-3 text-sm text-navy/72">
-          <span className="font-medium text-navy">Typical cost: </span>
-          {med.typical_cost_range}
-        </p>
-      )}
-      {med.notes && (
-        <p className="mt-2 text-sm text-navy/72">{med.notes}</p>
-      )}
+      <div className="px-5 py-5 sm:px-6 sm:py-6">
+        {med.typical_cost_range && (
+          <p className="text-sm text-navy/72">
+            <span className="font-medium text-navy">Typical cost: </span>
+            {med.typical_cost_range}
+          </p>
+        )}
+        {med.notes && (
+          <p className="mt-2 text-sm text-navy/72">{med.notes}</p>
+        )}
 
-      <div className="mt-5 grid gap-4 sm:grid-cols-2">
-        {PROGRAM_SECTIONS.map((section) => (
-          <ProgramSection
-            key={section.key}
-            section={section}
-            programs={med[section.key] || []}
-          />
-        ))}
+        <h4 className="mt-5 text-xs font-semibold uppercase tracking-wider text-navy/50">
+          Assistance programs for {primary}
+        </h4>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          {PROGRAM_SECTIONS.map((section) => (
+            <ProgramSection
+              key={section.key}
+              section={section}
+              programs={med[section.key] || []}
+            />
+          ))}
+        </div>
       </div>
     </article>
   );

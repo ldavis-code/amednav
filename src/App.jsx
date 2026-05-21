@@ -1701,28 +1701,14 @@ const Wizard = () => {
                 (LIVER_CONDITIONS_DATA.conditions || []).map(c => [c.id, c])
             );
             const linked = new Set();
-            const debugRows = [];
             for (const id of ids) {
                 const numericId = Number(id);
                 const condition = conditionById.get(id) || conditionById.get(numericId);
-                if (!condition) {
-                    debugRows.push({ conditionId: id, matched: false, medIds: [] });
-                    continue;
+                if (!condition) continue;
+                for (const med of (condition.medications || [])) {
+                    if (med && med.id != null) linked.add(med.id);
                 }
-                const medIds = (condition.medications || [])
-                    .map(m => m && m.id)
-                    .filter(v => v != null);
-                medIds.forEach(mid => linked.add(mid));
-                debugRows.push({ conditionId: id, matched: true, name: condition.name, medIds });
             }
-            // TEMPORARY: log wizard link resolution so we can debug "all 46"
-            // reports in the browser console. Remove once verified.
-            console.info('[wizard] condition->med link resolution', {
-                picked: ids,
-                liverConditionCount: LIVER_CONDITIONS_DATA.conditions?.length,
-                rows: debugRows,
-                linkedIds: [...linked],
-            });
             setConditionLinkedMedIds([...linked]);
         } finally {
             setIsLoadingLinks(false);
