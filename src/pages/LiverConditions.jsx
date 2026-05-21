@@ -278,6 +278,46 @@ function ConditionList({ conditions, onPick }) {
         </p>
       </header>
 
+      {/* How-it-works strip: three numbered steps so a conference visitor
+          can grasp the flow without watching a walkthrough. */}
+      <ol className="mt-6 grid gap-3 sm:grid-cols-3" aria-label="How this works">
+        {[
+          {
+            n: 1,
+            title: 'Pick a condition',
+            body: 'Choose what you (or your patient) are managing.',
+          },
+          {
+            n: 2,
+            title: 'See the medications',
+            body: 'Only the drugs actually used to treat that condition.',
+          },
+          {
+            n: 3,
+            title: 'Find the right help',
+            body: 'Copay cards if insured, PAPs if uninsured -- never mixed.',
+          },
+        ].map((step) => (
+          <li
+            key={step.n}
+            className="rounded-xl border border-navy/10 bg-white p-4 shadow-sm"
+          >
+            <div className="flex items-start gap-3">
+              <span
+                aria-hidden="true"
+                className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-coral text-sm font-bold text-white"
+              >
+                {step.n}
+              </span>
+              <div className="min-w-0">
+                <p className="font-semibold text-navy">{step.title}</p>
+                <p className="mt-0.5 text-sm text-navy/65">{step.body}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+
       {conditions.length === 0 ? (
         <div className="mt-8 flex items-start gap-3 rounded-lg border border-navy/15 bg-white p-5">
           <AlertCircle className="h-5 w-5 flex-none text-coral" aria-hidden="true" />
