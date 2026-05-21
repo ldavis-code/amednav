@@ -145,10 +145,12 @@ function ProgramSection({ section, programs }) {
   );
 }
 
-// When a medication has a widely-used generic, lead with the generic name --
-// many "brands" in the dataset are historical (e.g. Deltasone for prednisone)
-// and showing them first is misleading. Brand stays as secondary context only
-// when it adds info beyond the generic.
+// Decide which name to lead with so the heading is clinically accurate:
+// when a widely-used generic exists, the generic is more useful as the
+// primary (Prednisone, not Deltasone). When the brand is the only real
+// name (Livmarli, Bylvay), the brand stays primary. The *other* name is
+// always returned so we can render both at near-equal weight -- patients
+// recognize whichever one their pharmacy / doctor uses.
 function displayNames(med) {
   const generic = (med.generic_name || '').trim();
   const brand = (med.brand_name || '').trim();
@@ -158,29 +160,43 @@ function displayNames(med) {
   if (med.has_generic === true && generic) {
     return {
       primary: capitalize(generic),
+      primaryLabel: 'Generic',
       secondary: !sameish(brand, generic) ? brand : null,
+      secondaryLabel: 'Brand',
     };
   }
   return {
     primary: brand || capitalize(generic),
+    primaryLabel: 'Brand',
     secondary: brand && generic && !sameish(brand, generic) ? capitalize(generic) : null,
+    secondaryLabel: 'Generic',
   };
 }
 
 function MedicationBlock({ med }) {
-  const { primary, secondary } = displayNames(med);
+  const { primary, primaryLabel, secondary, secondaryLabel } = displayNames(med);
   return (
     <article className="overflow-hidden rounded-2xl border-2 border-navy/15 bg-white shadow-sm">
       {/* Medication header: visually distinct band so the drug name doesn't
-          compete with the four program section headers below. */}
+          compete with the four program section headers below. Both the
+          generic and the brand are shown -- equal weight as names, with
+          small labels so patients can pick the one they know. */}
       <header className="border-b border-navy/10 bg-navy/[0.04] px-5 py-4 sm:px-6 sm:py-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="text-2xl font-bold leading-tight text-navy">{primary}</h3>
+            <div className="flex items-center gap-2">
+              <span className="rounded bg-navy/10 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-navy/70">
+                {primaryLabel}
+              </span>
+              <h3 className="text-2xl font-bold leading-tight text-navy">{primary}</h3>
+            </div>
             {secondary && (
-              <p className="mt-0.5 text-sm font-medium text-navy/60">
-                also known as {secondary}
-              </p>
+              <div className="mt-1 flex items-center gap-2">
+                <span className="rounded bg-coral/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-coral">
+                  {secondaryLabel}
+                </span>
+                <p className="text-lg font-semibold text-navy/80">{secondary}</p>
+              </div>
             )}
             <p className="mt-2 text-sm text-navy/60">
               {med.manufacturer && <span>{med.manufacturer}</span>}
