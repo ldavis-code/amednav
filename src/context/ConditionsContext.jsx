@@ -12,6 +12,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchAllConditions } from '../lib/conditionsApi.js';
 import { LIVER_ONLY, isLiverCategory, isLiverConditionId } from '../lib/liverScope.js';
+import { getOrganForCategory } from '../lib/organs.js';
 
 const ConditionsContext = createContext(null);
 
@@ -86,14 +87,15 @@ export function useConditionsList() {
     return conditions;
 }
 
-// Returns conditions filtered to a single category (e.g., 'Hepatology').
-// Intended for the Category -> Condition step of the wizard.
-export function useConditionsByCategory(category) {
+// Returns conditions filtered to a single organ (e.g., 'Liver'). Condition
+// categories are medical specialties; getOrganForCategory maps them to the
+// organ names shown in the wizard's Organ step.
+export function useConditionsByOrgan(organ) {
     const { conditions } = useConditions();
     return useMemo(() => {
-        if (!category) return [];
-        return conditions.filter(c => c.category === category);
-    }, [conditions, category]);
+        if (!organ) return [];
+        return conditions.filter(c => getOrganForCategory(c.category) === organ);
+    }, [conditions, organ]);
 }
 
 export default ConditionsContext;
