@@ -50,21 +50,23 @@ export function MedicationsProvider({ children }) {
                         };
                     });
 
-                    // Log unmatched rows so data drift is visible in dev tools.
                     const matchedGenerics = new Set(
                         mergedMedications
                             .filter(m => m.dbId != null)
                             .map(m => normalize(m.genericName))
                     );
-                    const unmatchedDb = dbMedications.filter(
-                        m => m.genericName && !matchedGenerics.has(normalize(m.genericName))
+                    // DB rows with no JSON counterpart (e.g. medications for
+                    // newly added organs) are appended so they show up in the
+                    // catalog. Their DB integer id doubles as `dbId` for joins.
+                    const mergedIds = new Set(
+                        mergedMedications.flatMap(m => [m.id, m.dbId]).filter(x => x != null)
                     );
-                    if (unmatchedDb.length > 0) {
-                        console.warn(
-                            `MedicationsContext: ${unmatchedDb.length} DB row(s) with no JSON match.`,
-                            unmatchedDb.map(m => ({ dbId: m.id, genericName: m.genericName }))
-                        );
-                    }
+                    const dbOnlyMedications = dbMedications
+                        .filter(m => !(m.genericName && matchedGenerics.has(normalize(m.genericName))))
+                        .filter(m => !mergedIds.has(m.id))
+                        .map(m => ({ ...m, dbId: m.id }));
+
+                    // Log unmatched JSON rows so data drift is visible in dev tools.
                     const unmatchedJson = mergedMedications.filter(m => m.dbId == null);
                     if (unmatchedJson.length > 0) {
                         console.warn(
@@ -73,7 +75,7 @@ export function MedicationsProvider({ children }) {
                         );
                     }
 
-                    setMedications(mergedMedications);
+                    setMedications([...mergedMedications, ...dbOnlyMedications]);
                     setSource('database');
                     setError(null);
                 }

@@ -89,7 +89,8 @@ import RouteAnnouncer from './components/RouteAnnouncer.jsx';
 import EpicConnectButton from './components/EpicConnectButton.jsx';
 // Medications Context Provider - fetches from database with JSON fallback
 import { MedicationsProvider, useMedicationsList } from './context/MedicationsContext.jsx';
-import { ConditionsProvider, useConditionsList, useConditionsByCategory } from './context/ConditionsContext.jsx';
+import { ConditionsProvider, useConditionsList, useConditionsByOrgan } from './context/ConditionsContext.jsx';
+import { getOrganForCategory } from './lib/organs.js';
 import { SavingsProgramsProvider, useSavingsProgramsList } from './context/SavingsProgramsContext.jsx';
 // Reporting Admin Auth Provider
 import { ReportingAuthProvider } from './context/ReportingAuthContext.jsx';
@@ -1574,7 +1575,7 @@ const Wizard = () => {
 
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState({
-        category: null,
+        organ: null,
         conditionIds: [],
         insurance: null,
         medications: [],
@@ -1587,17 +1588,18 @@ const Wizard = () => {
     const [conditionLinkedMedIds, setConditionLinkedMedIds] = useState(null);
     const [isLoadingLinks, setIsLoadingLinks] = useState(false);
     const [showAllMeds, setShowAllMeds] = useState(false);
-    const [categoryQuery, setCategoryQuery] = useState('');
+    const [organQuery, setOrganQuery] = useState('');
 
-    // Conditions available for the chosen category (for Step 2)
-    const conditionsForCategory = useConditionsByCategory(answers.category);
+    // Conditions available for the chosen organ (for Step 2)
+    const conditionsForOrgan = useConditionsByOrgan(answers.organ);
 
-    // Derive the Category list from DISTINCT category values present in the
-    // conditions data. Sorted alphabetically.
-    const categoryOptions = useMemo(() => {
+    // Derive the Organ list from DISTINCT specialty categories present in
+    // the conditions data, mapped to organ names. Sorted alphabetically.
+    const organOptions = useMemo(() => {
         const seen = new Set();
         for (const c of allConditions) {
-            if (c.category) seen.add(c.category);
+            const organ = getOrganForCategory(c.category);
+            if (organ) seen.add(organ);
         }
         return [...seen].sort((a, b) => a.localeCompare(b));
     }, [allConditions]);
@@ -1682,16 +1684,18 @@ const Wizard = () => {
     const prevStep = () => setStep(step - 1);
 
     // Navigation Logic - 4 quiz steps + results (Step 5)
-    const handleNextFromCategory = () => { trackServerEvent('quiz_start'); setStep(2); };
+    const handleNextFromOrgan = () => { trackServerEvent('quiz_start'); setStep(2); };
 
     // Step 2 -> Step 3: resolve the medications linked to each selected
-    // condition from liver_conditions.json (bundled, no network) and union
-    // them. The Step 3 UI uses this as the default filtered list.
+    // condition and union them. The Step 3 UI uses this as the default
+    // filtered list.
     //
-    // We bypass /.netlify/functions/condition-med-links because (a) that
-    // function isn't served during `npm run dev`, so the dress-rehearsal
-    // path silently failed and showed all medications, and (b) the JSON is
-    // the canonical liver dataset post-Neon-export anyway.
+    // Liver conditions resolve from the bundled liver_conditions.json
+    // (no network). Conditions outside that export (newly added organs)
+    // resolve through /.netlify/functions/condition-med-links, which reads
+    // the condition_medications table. If that endpoint is unavailable
+    // (e.g. `npm run dev` without Netlify functions), those conditions
+    // contribute no links and Step 3 falls back to the full catalog.
     const handleNextFromCondition = async () => {
         const ids = answers.conditionIds || [];
         if (ids.length === 0) return;
@@ -1701,12 +1705,31 @@ const Wizard = () => {
                 (LIVER_CONDITIONS_DATA.conditions || []).map(c => [c.id, c])
             );
             const linked = new Set();
+            const unresolved = [];
             for (const id of ids) {
-                const numericId = Number(id);
-                const condition = conditionById.get(id) || conditionById.get(numericId);
-                if (!condition) continue;
+                const condition = conditionById.get(id) || conditionById.get(Number(id));
+                if (!condition) {
+                    unresolved.push(id);
+                    continue;
+                }
                 for (const med of (condition.medications || [])) {
                     if (med && med.id != null) linked.add(med.id);
+                }
+            }
+            if (unresolved.length > 0) {
+                const results = await Promise.allSettled(
+                    unresolved.map(async (id) => {
+                        const res = await fetch(`/.netlify/functions/condition-med-links?conditionId=${encodeURIComponent(id)}`);
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        const data = await res.json();
+                        return (data.links || []).map(link => link.medication_id);
+                    })
+                );
+                for (const result of results) {
+                    if (result.status !== 'fulfilled') continue;
+                    for (const medId of result.value) {
+                        if (medId != null) linked.add(medId);
+                    }
                 }
             }
             setConditionLinkedMedIds([...linked]);
@@ -1728,7 +1751,7 @@ const Wizard = () => {
     const isCommercialInsurance = answers.insurance === InsuranceType.COMMERCIAL || answers.insurance === InsuranceType.MARKETPLACE;
 
     // Step labels for progress bar (4 quiz steps, results is step 5)
-    const stepLabels = ['Category', 'Condition', 'Medications', 'Insurance'];
+    const stepLabels = ['Organ', 'Condition', 'Medications', 'Insurance'];
     const totalVisibleSteps = 4; // 4 sections shown in progress
 
     // Color themes for each step
@@ -2155,21 +2178,22 @@ const Wizard = () => {
         );
     }
 
-    // Step 1: Your Conditions
-    // Step 1: Category (single-select). Source: DISTINCT category values
-    // present in the conditions table.
+    // Step 1: Organ (single-select). Source: DISTINCT category values
+    // present in the conditions table, mapped to organ names.
     if (step === 1) {
-        const handleCategoryPick = (cat) => {
-            // Switching category resets the chosen conditions + linked-med cache.
-            setAnswers({ ...answers, category: cat, conditionIds: [] });
+        const handleOrganPick = (organ) => {
+            // Switching organ resets the chosen conditions + linked-med cache.
+            setAnswers({ ...answers, organ, conditionIds: [] });
             setConditionLinkedMedIds(null);
             setShowAllMeds(false);
+            // Sync to ChatQuizContext so results cards show the organ context.
+            setContextAnswer('organ_type', organ.toLowerCase());
         };
 
-        const q = categoryQuery.trim().toLowerCase();
-        const filteredCategories = q
-            ? categoryOptions.filter(cat => cat.toLowerCase().includes(q))
-            : categoryOptions;
+        const q = organQuery.trim().toLowerCase();
+        const filteredOrgans = q
+            ? organOptions.filter(organ => organ.toLowerCase().includes(q))
+            : organOptions;
 
         return (
             <div className="max-w-2xl mx-auto">
@@ -2179,11 +2203,11 @@ const Wizard = () => {
                     <div className="bg-sky-100 p-2 rounded-lg">
                         <Activity size={24} className="text-sky-600" />
                     </div>
-                    <h1 className="text-2xl font-bold">Your Category</h1>
+                    <h1 className="text-2xl font-bold">Your Organ</h1>
                 </div>
-                <p className="text-slate-600 mb-6">Pick the medical specialty that best fits the condition you're managing. You'll choose specific conditions next.</p>
+                <p className="text-slate-600 mb-6">Pick the organ or body system affected by the condition you're managing. You'll choose specific conditions next.</p>
 
-                {categoryOptions.length === 0 ? (
+                {organOptions.length === 0 ? (
                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
                         Conditions data could not be loaded. Please refresh and try again, or contact support if the problem persists.
                     </div>
@@ -2191,20 +2215,20 @@ const Wizard = () => {
                     <>
                         {/* Search input */}
                         <div className="relative mb-4">
-                            <label htmlFor="wizard-category-search" className="sr-only">Search categories</label>
+                            <label htmlFor="wizard-organ-search" className="sr-only">Search organs</label>
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} aria-hidden="true" />
                             <input
-                                id="wizard-category-search"
+                                id="wizard-organ-search"
                                 type="text"
-                                placeholder="Search categories (e.g. hepatology, oncology)..."
+                                placeholder="Search organs (e.g. liver, heart, lung)..."
                                 className="w-full pl-10 pr-10 py-3 rounded-lg border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-100 outline-none transition"
-                                value={categoryQuery}
-                                onChange={(e) => setCategoryQuery(e.target.value)}
-                                onKeyDown={(e) => { if (e.key === 'Escape') setCategoryQuery(''); }}
+                                value={organQuery}
+                                onChange={(e) => setOrganQuery(e.target.value)}
+                                onKeyDown={(e) => { if (e.key === 'Escape') setOrganQuery(''); }}
                             />
-                            {categoryQuery && (
+                            {organQuery && (
                                 <button
-                                    onClick={() => setCategoryQuery('')}
+                                    onClick={() => setOrganQuery('')}
                                     className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
                                     aria-label="Clear search"
                                 >
@@ -2214,18 +2238,18 @@ const Wizard = () => {
                         </div>
 
                         {/* Filtered chips */}
-                        {filteredCategories.length === 0 ? (
+                        {filteredOrgans.length === 0 ? (
                             <div className="text-sm text-slate-500 bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
-                                No categories match "{categoryQuery}".
+                                No organs match "{organQuery}".
                             </div>
                         ) : (
-                            <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Select a category">
-                                {filteredCategories.map((cat) => {
-                                    const isSelected = answers.category === cat;
+                            <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Select an organ">
+                                {filteredOrgans.map((organ) => {
+                                    const isSelected = answers.organ === organ;
                                     return (
                                         <button
-                                            key={cat}
-                                            onClick={() => handleCategoryPick(cat)}
+                                            key={organ}
+                                            onClick={() => handleOrganPick(organ)}
                                             className={`px-4 py-2 rounded-full border-2 text-sm font-medium transition shadow-sm min-h-[44px] flex items-center gap-1.5 ${
                                                 isSelected
                                                     ? 'border-sky-600 bg-sky-100 text-sky-800 ring-2 ring-sky-300'
@@ -2235,7 +2259,7 @@ const Wizard = () => {
                                             aria-checked={isSelected}
                                         >
                                             {isSelected && <CheckCircle size={14} className="text-sky-600" aria-hidden="true" />}
-                                            {cat}
+                                            {organ}
                                         </button>
                                     );
                                 })}
@@ -2245,18 +2269,18 @@ const Wizard = () => {
                 )}
 
                 <button
-                    disabled={!answers.category}
-                    onClick={handleNextFromCategory}
+                    disabled={!answers.organ}
+                    onClick={handleNextFromOrgan}
                     className="w-full mt-6 py-3 font-bold rounded-lg shadow-md transition-all min-h-[48px] bg-sky-600 hover:bg-sky-700 text-white cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
                     aria-label="Continue to conditions"
                 >
-                    {answers.category ? `Continue with ${answers.category} →` : 'Pick a category to continue'}
+                    {answers.organ ? `Continue with ${answers.organ} →` : 'Pick an organ to continue'}
                 </button>
             </div>
         );
     }
 
-    // Step 2: Condition (multi-select) filtered by chosen category.
+    // Step 2: Condition (multi-select) filtered by chosen organ.
     if (step === 2) {
         const selectedIds = answers.conditionIds || [];
         const toggleCondition = (id) => {
@@ -2274,24 +2298,24 @@ const Wizard = () => {
             <div className="max-w-2xl mx-auto">
 
                 {renderProgress()}
-                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to category"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
+                <button onClick={prevStep} className="text-slate-700 mb-4 flex items-center gap-1 text-sm hover:text-plum-600 min-h-[44px] min-w-[44px]" aria-label="Go back to organ"><ChevronLeft size={16} aria-hidden="true" /> Back</button>
                 <div className="flex items-center gap-3 mb-2">
                     <div className="bg-purple-100 p-2 rounded-lg">
                         <Activity size={24} className="text-purple-600" />
                     </div>
-                    <h1 className="text-2xl font-bold">Your Condition{conditionsForCategory.length > 1 ? 's' : ''}</h1>
+                    <h1 className="text-2xl font-bold">Your Condition{conditionsForOrgan.length > 1 ? 's' : ''}</h1>
                 </div>
                 <p className="text-slate-600 mb-6">
-                    Select the condition(s) you're managing under <strong>{answers.category}</strong>.
+                    Select the condition(s) you're managing under <strong>{answers.organ}</strong>.
                 </p>
 
-                {conditionsForCategory.length === 0 ? (
+                {conditionsForOrgan.length === 0 ? (
                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
-                        No conditions found for {answers.category}. Go back and pick a different category.
+                        No conditions found for {answers.organ}. Go back and pick a different organ.
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="group" aria-label="Select conditions">
-                        {conditionsForCategory.map((cond) => {
+                        {conditionsForOrgan.map((cond) => {
                             const isSelected = selectedIds.includes(cond.id);
                             return (
                                 <button
