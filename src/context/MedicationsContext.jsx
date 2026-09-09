@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { mergeMedicationCatalog } from '../lib/mergeMedicationCatalog.js';
 import { fetchAllMedications } from '../lib/medicationsApi.js';
 import MEDICATIONS_FALLBACK from '../data/medications.json';
 import { LIVER_ONLY, isLiverMedicationId } from '../lib/liverScope.js';
@@ -22,60 +23,8 @@ export function MedicationsProvider({ children }) {
                     ? (dbMedicationsRaw || []).filter((m) => isLiverMedicationId(m.id))
                     : dbMedicationsRaw;
 
-                if (!cancelled && dbMedications && dbMedications.length > 0) {
-                    // The JSON file uses string slug IDs ("tacrolimus") while the
-                    // Neon medications table uses integer IDs. Match rows by
-                    // normalized generic_name so JSON's rich field set can be
-                    // joined with the DB's integer id (attached as `dbId` for
-                    // use in tables that FK to medications.id, e.g.
-                    // condition_medications, savings_programs).
-                    const normalize = (s) => (s || '').toLowerCase().trim();
-                    const dbByGeneric = new Map(
-                        dbMedications
-                            .filter(m => m.genericName)
-                            .map(m => [normalize(m.genericName), m])
-                    );
-
-                    const mergedMedications = MEDICATIONS_FALLBACK.map(fallbackMed => {
-                        const dbMed = dbByGeneric.get(normalize(fallbackMed.genericName));
-                        if (!dbMed) return fallbackMed;
-                        return {
-                            ...fallbackMed,
-                            // Preserve string slug as `id` for app code that
-                            // hardcodes slugs (App.jsx ORGAN_MEDICATIONS,
-                            // SavingsCalculator, chatbotGuidance, URL params).
-                            id: fallbackMed.id,
-                            // Attach DB integer id separately for joins.
-                            dbId: dbMed.id,
-                        };
-                    });
-
-                    const matchedGenerics = new Set(
-                        mergedMedications
-                            .filter(m => m.dbId != null)
-                            .map(m => normalize(m.genericName))
-                    );
-                    // DB rows with no JSON counterpart (e.g. medications for
-                    // newly added organs) are appended so they show up in the
-                    // catalog. Their DB integer id doubles as `dbId` for joins.
-                    const mergedIds = new Set(
-                        mergedMedications.flatMap(m => [m.id, m.dbId]).filter(x => x != null)
-                    );
-                    const dbOnlyMedications = dbMedications
-                        .filter(m => !(m.genericName && matchedGenerics.has(normalize(m.genericName))))
-                        .filter(m => !mergedIds.has(m.id))
-                        .map(m => ({ ...m, dbId: m.id }));
-
-                    // Log unmatched JSON rows so data drift is visible in dev tools.
-                    const unmatchedJson = mergedMedications.filter(m => m.dbId == null);
-                    if (unmatchedJson.length > 0) {
-                        console.warn(
-                            `MedicationsContext: ${unmatchedJson.length} JSON med(s) with no DB match (joins by dbId will skip these).`,
-                            unmatchedJson.map(m => ({ id: m.id, genericName: m.genericName }))
-                        );
-                    }
-
-                    setMedications([...mergedMedications, ...dbOnlyMedications]);
+                if (!cancelled && Array.isArray(dbMedications)) {
+                    setMedications(mergeMedicationCatalog(MEDICATIONS_FALLBACK, dbMedications));
                     setSource('database');
                     setError(null);
                 }
