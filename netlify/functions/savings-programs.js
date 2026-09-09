@@ -28,8 +28,8 @@ export async function handler(event) {
     // Filter by program type (copay_card, pap, foundation)
     if (params.type) {
       const rows = await sql(
-        `SELECT * FROM ${table} WHERE program_type = $1 ORDER BY program_name`,
-        [params.type]
+        `SELECT * FROM ${table} WHERE program_type = $1 OR program_type = $2 ORDER BY program_name`,
+        [PROGRAM_TYPES[params.type] || params.type, params.type]
       );
       return { statusCode: 200, headers, body: JSON.stringify({ programs: rows.map(formatProgram) }) };
     }
@@ -38,7 +38,7 @@ export async function handler(event) {
     if (params.search) {
       const term = `%${params.search}%`;
       const rows = await sql(
-        `SELECT * FROM ${table} WHERE program_name ILIKE $1 OR manufacturer ILIKE $1 ORDER BY program_name`,
+        `SELECT * FROM ${table} WHERE program_name ILIKE $1 OR manufacturer_rebrand ILIKE $1 ORDER BY program_name`,
         [term]
       );
       return { statusCode: 200, headers, body: JSON.stringify({ programs: rows.map(formatProgram) }) };
@@ -54,18 +54,27 @@ export async function handler(event) {
   }
 }
 
+const PROGRAM_TYPES = {
+  copay_card: 'Copay Card',
+  pap: 'Patient Assistance',
+  discount_program: 'Discount Program',
+  free_trial: 'Free Trial',
+  foundation: 'Foundation',
+};
+
 function formatProgram(row) {
   return {
     id: row.id,
-    programId: row.program_id,
+    programId: row.program_id ?? String(row.id),
     programName: row.program_name,
-    programType: row.program_type,
-    manufacturer: row.manufacturer,
+    programType: Object.keys(PROGRAM_TYPES).find(key => PROGRAM_TYPES[key] === row.program_type) || row.program_type,
+    manufacturer: row.manufacturer_rebrand,
     medicationId: row.medication_id,
-    url: row.url,
-    phone: row.phone,
+    url: row.application_url,
+    phone: row.phone_number,
     eligibility: row.eligibility,
-    maxBenefit: row.max_benefit,
+    maxBenefit: row.max_savings,
+    lastVerified: row.last_verified,
     incomeLimit: row.income_limit,
     notes: row.notes,
   };

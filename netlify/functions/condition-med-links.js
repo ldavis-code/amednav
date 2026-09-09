@@ -21,7 +21,7 @@ export async function handler(event) {
     // Medications for a specific condition
     if (params.conditionId) {
       const rows = await sql(
-        `SELECT cml.*, m.brand_name, m.generic_name, m.category
+        `SELECT cml.*, m.brand_name, m.generic_name, m.drug_class AS category
          FROM ${linksTable} cml
          JOIN ${medsTable} m ON m.id = cml.medication_id
          WHERE cml.condition_id = $1

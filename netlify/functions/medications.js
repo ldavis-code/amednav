@@ -38,7 +38,7 @@ export async function handler(event) {
     // Filter by category
     if (params.category) {
       const rows = await sql(
-        `SELECT * FROM ${table} WHERE category = $1 ORDER BY brand_name`,
+        `SELECT * FROM ${table} WHERE drug_class = $1 ORDER BY brand_name`,
         [params.category]
       );
       return { statusCode: 200, headers, body: JSON.stringify({ medications: rows.map(formatMedication) }) };
@@ -60,13 +60,16 @@ function formatMedication(row) {
     brandName: row.brand_name,
     genericName: row.generic_name,
     rxcui: row.rxcui,
-    category: row.category,
+    category: row.drug_class,
     manufacturer: row.manufacturer,
     stage: row.stage,
     commonOrgans: row.common_organs,
     papUrl: row.pap_url,
     cost_tier: row.cost_tier,
-    generic_available: row.generic_available,
+    generic_available: row.has_generic,
+    typical_cost_range: row.typical_cost_range,
+    notes: row.notes,
+    lastVerified: row.last_verified,
     typical_copay_tier: row.typical_copay_tier,
     papProgramId: row.pap_program_id,
     copayUrl: row.copay_url,
